@@ -1634,3 +1634,41 @@ const u16 gTilesetPalettes_UnionRoom[][16] =
 };
 
 const u32 gTilesetTiles_UnionRoom[] = INCBIN_U32("data/tilesets/secondary/union_room/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_desert_tiles[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/desert_tiles/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/desert_tiles/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/desert_tiles/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/desert_tiles/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/desert_tiles/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/desert_tiles/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/desert_tiles/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/desert_tiles/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/desert_tiles/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/desert_tiles/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/desert_tiles/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/desert_tiles/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/desert_tiles/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_desert_tiles[] = INCBIN_U32("data/tilesets/primary/desert_tiles/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_Forest_Tiles[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/forest_tiles/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/forest_tiles/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/forest_tiles/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/forest_tiles/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/forest_tiles/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/forest_tiles/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/forest_tiles/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/forest_tiles/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/forest_tiles/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/forest_tiles/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/forest_tiles/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/forest_tiles/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/forest_tiles/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_Forest_Tiles[] = INCBIN_U32("data/tilesets/primary/forest_tiles/tiles.4bpp.lz");

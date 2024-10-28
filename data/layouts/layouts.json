@@ -4410,6 +4410,36 @@
       "secondary_tileset": "gTileset_MysteryEventsHouse",
       "border_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/border.bin",
       "blockdata_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/map.bin"
+    },
+    {
+      "id": "LAYOUT_TEST_MAP",
+      "name": "TestMap_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/TestMap/border.bin",
+      "blockdata_filepath": "data/layouts/TestMap/map.bin"
+    },
+    {
+      "id": "LAYOUT_TEST_CAVE",
+      "name": "TestCave_Layout",
+      "width": 10,
+      "height": 10,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/TestCave/border.bin",
+      "blockdata_filepath": "data/layouts/TestCave/map.bin"
+    },
+    {
+      "id": "LAYOUT_DESERT_RANCH",
+      "name": "Desert_Ranch_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_desert_tiles",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Desert_Ranch/border.bin",
+      "blockdata_filepath": "data/layouts/Desert_Ranch/map.bin"
     }
   ]
 }

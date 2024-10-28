@@ -1,0 +1,19 @@
+mapscripts TestCave_MapScripts{}
+
+script GiveMon{
+    lock
+    removeobject(2)
+    msgbox(MonRecieved)
+    playse(MUS_OBTAIN_ITEM)
+    givemon(SPECIES_GENGAR, 50, ITEM_GENGARITE, ITEM_CHERISH_BALL, 10, 0, MALE, 0, 0, 0, 252, 252, 4, 31, 31, 31, 31, 31, 31, MOVE_NASTY_PLOT, MOVE_SHADOW_BALL, MOVE_PSYCHIC, MOVE_WILL_O_WISP, TRUE)
+    waitse
+    closemessage
+    setflag(FLAG_HIDE_BALL)
+    setflag(FLAG_SYS_POKEMON_GET)
+    release
+    end
+}
+
+text MonRecieved{
+    "{COLOR RED}{SHADOW LIGHT_RED}GENGAR added to party."
+}

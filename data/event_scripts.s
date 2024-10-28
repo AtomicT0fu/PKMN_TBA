@@ -1074,3 +1074,9 @@ EventScript_VsSeekerChargingDone::
 	.include "data/text/frontier_brain.inc"
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
+
+	.include "data/maps/TestMap/scripts.inc"
+
+	.include "data/maps/TestCave/scripts.inc"
+
+	.include "data/maps/Desert_Ranch/scripts.inc"

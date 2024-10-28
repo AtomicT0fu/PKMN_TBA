@@ -1047,7 +1047,7 @@ void MainCB2_Intro(void)
     BuildOamBuffer();
     UpdatePaletteFade();
     if (gMain.newKeys != 0 && !gPaletteFade.active)
-        SetMainCallback2(MainCB2_EndIntro);
+        SetMainCallback2(CB2_InitTitleScreen);
     else if (gIntroFrameCounter != -1)
         gIntroFrameCounter++;
 }

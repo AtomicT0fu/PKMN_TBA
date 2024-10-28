@@ -1,0 +1,9 @@
+mapscripts TestMap_MapScripts{}
+
+script SetFlags{
+    setflag(FLAG_SYS_B_DASH)
+    setflag(FLAG_SYS_POKEDEX_GET)
+    playse(SE_E)
+    releaseall
+    end
+}
