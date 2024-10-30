@@ -757,7 +757,7 @@ static void MoveRelearnerLoadBattleMoveDescription(u32 chosenMove)
     const u8 *str;
 
     if (B_SHOW_CATEGORY_ICON == TRUE)
-        MoveRelearnerShowHideCategoryIcon(chosenMove);
+        MoveRelearnerShowHideHearts(chosenMove);
 
     FillWindowPixelBuffer(RELEARNERWIN_DESC_BATTLE, PIXEL_FILL(1));
     str = gText_MoveRelearnerBattleMoves;

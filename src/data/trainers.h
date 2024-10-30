@@ -42183,3 +42183,111 @@ F_TRAINER_FEMALE |
             },
         },
     },
+#line 16877
+    [TRAINER_RED_L] =
+    {
+#line 16878
+        .trainerName = _("RED"),
+#line 16879
+        .trainerClass = TRAINER_CLASS_CHAMPION,
+#line 16880
+        .trainerPic = TRAINER_PIC_RED,
+        .encounterMusic_gender = 
+#line 16882
+            TRAINER_ENCOUNTER_MUSIC_MALE,
+#line 16883
+        .doubleBattle = FALSE,
+#line 16884
+        .aiFlags = AI_FLAG_SMART_TRAINER,
+        .partySize = 3,
+        .party = (const struct TrainerMon[])
+        {
+            {
+#line 16886
+            .species = SPECIES_ARTICUNO,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 16886
+            .heldItem = ITEM_LIGHT_CLAY,
+#line 16891
+            .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
+#line 16893
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 16887
+            .ability = ABILITY_PRESSURE,
+#line 16888
+            .lvl = 80,
+#line 16892
+            .nature = NATURE_TIMID,
+#line 16889
+            .isShiny = TRUE,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+#line 16890
+            .teraType = TYPE_ICE,
+            .moves = {
+#line 16893
+                MOVE_FREEZE_DRY,
+                MOVE_HAZE,
+                MOVE_LIGHT_SCREEN,
+                MOVE_ROOST,
+            },
+            },
+            {
+#line 16898
+            .species = SPECIES_ZAPDOS,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 16898
+            .heldItem = ITEM_CHOICE_SCARF,
+#line 16903
+            .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
+#line 16905
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 16899
+            .ability = ABILITY_PRESSURE,
+#line 16900
+            .lvl = 80,
+#line 16904
+            .nature = NATURE_TIMID,
+#line 16901
+            .isShiny = TRUE,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+#line 16902
+            .teraType = TYPE_ELECTRIC,
+            .moves = {
+#line 16905
+                MOVE_HEAT_WAVE,
+                MOVE_HURRICANE,
+                MOVE_THUNDERBOLT,
+                MOVE_VOLT_SWITCH,
+            },
+            },
+            {
+#line 16910
+            .species = SPECIES_MOLTRES,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 16910
+            .heldItem = ITEM_ASSAULT_VEST,
+#line 16915
+            .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
+#line 16917
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 16911
+            .ability = ABILITY_PRESSURE,
+#line 16912
+            .lvl = 80,
+#line 16916
+            .nature = NATURE_TIMID,
+#line 16913
+            .isShiny = TRUE,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+#line 16914
+            .teraType = TYPE_FIRE,
+            .moves = {
+#line 16917
+                MOVE_ANCIENT_POWER,
+                MOVE_FLAMETHROWER,
+                MOVE_HURRICANE,
+                MOVE_WILL_O_WISP,
+            },
+            },
+        },
+    },

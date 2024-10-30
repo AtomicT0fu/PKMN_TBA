@@ -16873,3 +16873,48 @@ Double Battle: No
 Kyogre
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_RED_L ===
+Name: RED
+Class: Champion
+Pic: Red
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Smart Trainer
+
+Articuno @ Light Clay  
+Ability: Pressure  
+Level: 80  
+Shiny: Yes  
+Tera Type: Ice  
+EVs: 4 HP / 252 SpA / 252 Spe  
+Timid Nature  
+- Freeze-Dry  
+- Haze  
+- Light Screen  
+- Roost
+
+Zapdos @ Choice Scarf  
+Ability: Pressure  
+Level: 80  
+Shiny: Yes  
+Tera Type: Electric  
+EVs: 4 HP / 252 SpA / 252 Spe  
+Timid Nature  
+- Heat Wave  
+- Hurricane  
+- Thunderbolt  
+- Volt Switch
+
+Moltres @ Assault Vest  
+Ability: Pressure  
+Level: 80  
+Shiny: Yes  
+Tera Type: Fire  
+EVs: 4 HP / 252 SpA / 252 Spe  
+Timid Nature  
+- Ancient Power  
+- Flamethrower  
+- Hurricane  
+- Will-O-Wisp
