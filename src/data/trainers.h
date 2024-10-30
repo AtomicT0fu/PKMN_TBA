@@ -42219,7 +42219,7 @@ F_TRAINER_FEMALE |
 #line 16892
             .nature = NATURE_TIMID,
 #line 16889
-            .isShiny = TRUE,
+            .isShiny = FALSE,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
 #line 16890
             .teraType = TYPE_ICE,
