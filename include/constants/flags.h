@@ -46,7 +46,7 @@
 #define FLAG_HIDE_BALL       0x20 // TESTING***
 #define FLAG_HIDE_BALL_2     0x21 // *_*
 #define FLAG_HIDE_BALL_3     0x22 // *_*
-#define FLAG_UNUSED_0x023    0x23 // Unused Flag
+#define FLAG_SUPPRESS_SPEAKER_NAME    0x23 // Hides Speaker box
 #define FLAG_UNUSED_0x024    0x24 // Unused Flag
 #define FLAG_UNUSED_0x025    0x25 // Unused Flag
 #define FLAG_UNUSED_0x026    0x26 // Unused Flag

@@ -18,7 +18,10 @@ script SetFlags{
 }
 
 script MewBattle{
+    lock
+    faceplayer
     playmoncry(SPECIES_MEW, 0)
+    speakername("{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Mew")
     msgbox("Myyyuuuuu!")
     waitmessage
     setwildbattle(SPECIES_MEW, 100, ITEM_NONE)
@@ -27,9 +30,57 @@ script MewBattle{
     end
 }
 
+script LugiaBattle{
+    lock
+    faceplayer
+    playmoncry(SPECIES_LUGIA, 0)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_RED}Lugia")
+    msgbox("{COLOR GREEN}{SHADOW LIGHT_GREEN}(Battle me, human.)")
+    waitmessage
+    setwildbattle(SPECIES_LUGIA, 100, ITEM_NONE)
+    special(BattleSetup_StartLegendaryBattle)
+    releaseall
+    end
+}
+
 script SignTest{
     msgbox({}"Hello, world!", MSGBOX_SIGN)
     waitmessage
+    releaseall
+    end
+}
+
+script NameBoxTest{
+    lock
+    faceplayer
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}Archie")
+    msgbox("Expand the Sea!")
+    waitmessage
+    closemessage
+    releaseall
+    end
+}
+
+script NameBoxTest_2{
+    lock
+    faceplayer
+    speakername("{COLOR RED}{SHADOW LIGHT_RED}Maxie")
+    msgbox("Expand the Land!")
+    waitmessage
+    closemessage
+    releaseall
+    end
+}
+
+script TriggerMayFollow{
+    lock
+    speakername("{COLOR RED}{SHADOW LIGHT_RED}SYSTEM")
+    msgbox("MAY IS FOLLOWING YOU")
+    waitmessage
+    closemessage
+    removeobject(5)
+    addobject(6)
+    setvar(VAR_TEST_1, 1)
     releaseall
     end
 }

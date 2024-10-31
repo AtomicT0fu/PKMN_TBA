@@ -37,8 +37,60 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
+      "script": "NameBoxTest",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAXIE",
+      "x": 8,
+      "y": 14,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NameBoxTest_2",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(LUGIA)",
+      "x": 14,
+      "y": 10,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LugiaBattle",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAY_NORMAL",
+      "x": 13,
+      "y": 2,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAY_NORMAL",
+      "x": 13,
+      "y": 2,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FOLLOW_PLAYER",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_CHAMPIONS_ROOM_RIVAL"
     }
   ],
   "warp_events": [
@@ -51,7 +103,15 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_TEST_1",
+      "var_value": "0",
+      "script": "TriggerMayFollow"
+    }
   ],
   "bg_events": [
     {
