@@ -28,7 +28,7 @@ script MewBattle{
 }
 
 script SignTest{
-    msgbox("Hello, world!", MSGBOX_SIGN)
+    msgbox({}"Hello, world!", MSGBOX_SIGN)
     waitmessage
     releaseall
     end
