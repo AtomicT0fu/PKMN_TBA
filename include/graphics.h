@@ -2,8 +2,9 @@
 #define GUARD_GRAPHICS_H
 
 // overworld
-extern const u32 gSignpostWindow_Gfx[];
+extern const u32 gSignPostWindow_Gfx[];
 extern const u32 gMessageBox_Gfx[];
+extern const u16 gSignPostWindow_Pal[];
 extern const u16 gMessageBox_Pal[];
 
 // pokeballs

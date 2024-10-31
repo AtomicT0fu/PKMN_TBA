@@ -31,3 +31,37 @@ SetFlags::
 	releaseall
 	end
 
+
+MewBattle::
+# 21 "data/maps/TestMap/scripts.pory"
+	playmoncry SPECIES_MEW, 0
+# 22 "data/maps/TestMap/scripts.pory"
+	msgbox MewBattle_Text_0
+# 23 "data/maps/TestMap/scripts.pory"
+	waitmessage
+# 24 "data/maps/TestMap/scripts.pory"
+	setwildbattle SPECIES_MEW, 100, ITEM_NONE
+# 25 "data/maps/TestMap/scripts.pory"
+	special BattleSetup_StartLegendaryBattle
+# 26 "data/maps/TestMap/scripts.pory"
+	releaseall
+	end
+
+
+SignTest::
+# 31 "data/maps/TestMap/scripts.pory"
+	msgbox SignTest_Text_0, MSGBOX_SIGN
+# 32 "data/maps/TestMap/scripts.pory"
+	waitmessage
+# 33 "data/maps/TestMap/scripts.pory"
+	releaseall
+	end
+
+
+MewBattle_Text_0:
+# 22 "data/maps/TestMap/scripts.pory"
+	.string "Myyyuuuuu!$"
+
+SignTest_Text_0:
+# 31 "data/maps/TestMap/scripts.pory"
+	.string "Hello, world!$"

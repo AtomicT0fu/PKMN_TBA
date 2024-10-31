@@ -16,3 +16,20 @@ script SetFlags{
     releaseall
     end
 }
+
+script MewBattle{
+    playmoncry(SPECIES_MEW, 0)
+    msgbox("Myyyuuuuu!")
+    waitmessage
+    setwildbattle(SPECIES_MEW, 100, ITEM_NONE)
+    special(BattleSetup_StartLegendaryBattle)
+    releaseall
+    end
+}
+
+script SignTest{
+    msgbox("Hello, world!", MSGBOX_SIGN)
+    waitmessage
+    releaseall
+    end
+}

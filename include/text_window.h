@@ -24,6 +24,7 @@ void DrawTextBorderInner(u8 windowId, u16 tileNum, u8 palNum);
 void rbox_fill_rectangle(u8 windowId);
 const u16 *GetTextWindowPalette(u8 id);
 const u16 *GetOverworldTextboxPalettePtr(void);
+const u16 *GetOverworldSignPostPalettePtr(void);
 void LoadSignPostWindowFrameGfx(void);
 
 #endif // GUARD_TEXT_WINDOW_H

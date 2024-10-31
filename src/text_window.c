@@ -99,8 +99,8 @@ void LoadMessageBoxGfx(u8 windowId, u16 destOffset, u8 palOffset)
 
 void LoadSignBoxGfx(u8 windowId, u16 destOffset, u8 palOffset)
 {
-    LoadBgTiles(GetWindowAttribute(windowId, WINDOW_BG), gSignpostWindow_Gfx, 0x1C0, destOffset);
-    LoadPalette(GetTextWindowPalette(1), palOffset, PLTT_SIZE_4BPP);
+    LoadBgTiles(GetWindowAttribute(windowId, WINDOW_BG), gSignPostWindow_Gfx, 0x1C0, destOffset);
+    LoadPalette(GetOverworldSignPostPalettePtr(), palOffset, PLTT_SIZE_4BPP);
 }
 
 void LoadUserWindowBorderGfx_(u8 windowId, u16 destOffset, u8 palOffset)
@@ -194,6 +194,11 @@ const u16 *GetTextWindowPalette(u8 id)
 const u16 *GetOverworldTextboxPalettePtr(void)
 {
     return gMessageBox_Pal;
+}
+
+const u16 *GetOverworldSignPostPalettePtr(void)
+{
+    return gSignPostWindow_Pal;
 }
 
 // Effectively LoadUserWindowBorderGfx but specifying the bg directly instead of a window from that bg
