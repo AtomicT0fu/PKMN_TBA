@@ -16883,38 +16883,27 @@ Music: Male
 Double Battle: No
 AI: Smart Trainer
 
-Articuno @ Light Clay  
-Ability: Pressure  
-Level: 80  
-Shiny: No  
-Tera Type: Ice  
-EVs: 4 HP / 252 SpA / 252 Spe  
-Timid Nature  
-- Freeze-Dry  
-- Haze  
-- Light Screen  
-- Roost
+Feraligatr  
+Ability: Torrent  
+Tera Type: Water  
+- Aqua Tail  
+- Avalanche  
+- Body Slam  
+- Brick Break
 
-Zapdos @ Choice Scarf  
-Ability: Pressure  
-Level: 80  
-Shiny: Yes  
-Tera Type: Electric  
-EVs: 4 HP / 252 SpA / 252 Spe  
-Timid Nature  
-- Heat Wave  
-- Hurricane  
-- Thunderbolt  
-- Volt Switch
+Meganium  
+Ability: Overgrow  
+Tera Type: Grass  
+- Curse  
+- Earthquake  
+- Dragon Tail  
+- Double-Edge
 
-Moltres @ Assault Vest  
-Ability: Pressure  
-Level: 80  
-Shiny: Yes  
+Typhlosion  
+Ability: Blaze  
 Tera Type: Fire  
-EVs: 4 HP / 252 SpA / 252 Spe  
-Timid Nature  
-- Ancient Power  
-- Flamethrower  
-- Hurricane  
-- Will-O-Wisp
+IVs: 0 Atk  
+- Eruption  
+- Extrasensory  
+- Focus Blast  
+- Scorching Sands

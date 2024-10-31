@@ -10,11 +10,11 @@ GiveMon::
 # 6 "data/maps/TestCave/scripts.pory"
 	playse MUS_OBTAIN_ITEM
 # 7 "data/maps/TestCave/scripts.pory"
-	showmonpic SPECIES_PALKIA, 10, 3
+	showmonpic SPECIES_CHARIZARD, 10, 3
 # 8 "data/maps/TestCave/scripts.pory"
 	msgbox MonRecieved
 # 9 "data/maps/TestCave/scripts.pory"
-	givemon SPECIES_PALKIA, 80, ITEM_LUSTROUS_ORB, ITEM_STRANGE_BALL, 10, 0, MALE, 4, 0, 0, 252, 252, 0, 31, 31, 31, 31, 31, 31, MOVE_SPACIAL_REND, MOVE_AURA_SPHERE, MOVE_EARTH_POWER, MOVE_GRAVITY, TRUE
+	givemon SPECIES_CHARIZARD, 100, ITEM_CHARIZARDITE_Y, ITEM_POKE_BALL, 10, 0, MALE, 4, 0, 0, 252, 252, 0, 31, 31, 31, 31, 31, 31, MOVE_FLAMETHROWER, MOVE_AIR_SLASH, MOVE_DRAGON_PULSE, MOVE_FOCUS_BLAST, TRUE
 # 10 "data/maps/TestCave/scripts.pory"
 	waitse
 # 11 "data/maps/TestCave/scripts.pory"
@@ -38,11 +38,11 @@ GiveMon2::
 # 22 "data/maps/TestCave/scripts.pory"
 	playse MUS_OBTAIN_ITEM
 # 23 "data/maps/TestCave/scripts.pory"
-	showmonpic SPECIES_GIRATINA, 10, 3
+	showmonpic SPECIES_BLASTOISE, 10, 3
 # 24 "data/maps/TestCave/scripts.pory"
 	msgbox Mon2Recieved
 # 25 "data/maps/TestCave/scripts.pory"
-	givemon SPECIES_GIRATINA, 80, ITEM_GRISEOUS_ORB, ITEM_STRANGE_BALL, 3, 0, MALE, 252, 252, 0, 4, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_PHANTOM_FORCE, MOVE_EARTHQUAKE, MOVE_DRAGON_CLAW, MOVE_REST, TRUE
+	givemon SPECIES_BLASTOISE, 100, ITEM_BLASTOISINITE, ITEM_POKE_BALL, 3, 0, MALE, 252, 0, 0, 0, 252, 4, 31, 31, 31, 31, 31, 31, MOVE_WATER_PULSE, MOVE_AURA_SPHERE, MOVE_ICE_BEAM, MOVE_RAPID_SPIN, TRUE
 # 26 "data/maps/TestCave/scripts.pory"
 	waitse
 # 27 "data/maps/TestCave/scripts.pory"
@@ -66,11 +66,11 @@ GiveMon3::
 # 38 "data/maps/TestCave/scripts.pory"
 	playse MUS_OBTAIN_ITEM
 # 39 "data/maps/TestCave/scripts.pory"
-	showmonpic SPECIES_DIALGA, 10, 3
+	showmonpic SPECIES_VENUSAUR, 10, 3
 # 40 "data/maps/TestCave/scripts.pory"
 	msgbox Mon3Recieved
 # 41 "data/maps/TestCave/scripts.pory"
-	givemon SPECIES_DIALGA, 80, ITEM_ADAMANT_ORB, ITEM_STRANGE_BALL, 10, 0, MALE, 4, 0, 0, 252, 252, 0, 31, 31, 31, 31, 31, 31, MOVE_ROAR_OF_TIME, MOVE_POWER_GEM, MOVE_THUNDERBOLT, MOVE_FLASH_CANNON, TRUE
+	givemon SPECIES_VENUSAUR, 100, ITEM_VENUSAURITE, ITEM_POKE_BALL, 10, 0, MALE, 0, 0, 0, 252, 252, 4, 31, 31, 31, 31, 31, 31, MOVE_SUNNY_DAY, MOVE_SOLAR_BEAM, MOVE_SLUDGE_BOMB, MOVE_EARTH_POWER, TRUE
 # 42 "data/maps/TestCave/scripts.pory"
 	waitse
 # 43 "data/maps/TestCave/scripts.pory"
@@ -98,15 +98,15 @@ TestBattle::
 
 MonRecieved::
 # 58 "data/maps/TestCave/scripts.pory"
-	.string "{COLOR RED}{SHADOW LIGHT_RED}PALKIA added to party.$"
+	.string "{COLOR RED}{SHADOW LIGHT_RED}CHARIZARD added to party.$"
 
 Mon2Recieved::
 # 62 "data/maps/TestCave/scripts.pory"
-	.string "{COLOR RED}{SHADOW LIGHT_RED}GIRATINA added to party.$"
+	.string "{COLOR RED}{SHADOW LIGHT_RED}BLASTOISE added to party.$"
 
 Mon3Recieved::
 # 66 "data/maps/TestCave/scripts.pory"
-	.string "{COLOR RED}{SHADOW LIGHT_RED}DIALGA added to party.$"
+	.string "{COLOR RED}{SHADOW LIGHT_RED}VENUSAUR added to party.$"
 
 LoseText::
 # 70 "data/maps/TestCave/scripts.pory"

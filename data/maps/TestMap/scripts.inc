@@ -26,6 +26,8 @@ SetFlags::
 # 14 "data/maps/TestMap/scripts.pory"
 	playse SE_E
 # 15 "data/maps/TestMap/scripts.pory"
+	giveitem ITEM_MEGA_RING, 1
+# 16 "data/maps/TestMap/scripts.pory"
 	releaseall
 	end
 

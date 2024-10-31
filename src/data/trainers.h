@@ -42204,89 +42204,68 @@ F_TRAINER_FEMALE |
         {
             {
 #line 16886
-            .species = SPECIES_ARTICUNO,
+            .species = SPECIES_FERALIGATR,
             .gender = TRAINER_MON_RANDOM_GENDER,
-#line 16886
-            .heldItem = ITEM_LIGHT_CLAY,
-#line 16891
-            .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-#line 16893
+#line 16889
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 16887
-            .ability = ABILITY_PRESSURE,
-#line 16888
-            .lvl = 80,
-#line 16892
-            .nature = NATURE_TIMID,
+            .ability = ABILITY_TORRENT,
 #line 16889
-            .isShiny = FALSE,
+            .lvl = 100,
+            .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
-#line 16890
-            .teraType = TYPE_ICE,
+#line 16888
+            .teraType = TYPE_WATER,
             .moves = {
-#line 16893
-                MOVE_FREEZE_DRY,
-                MOVE_HAZE,
-                MOVE_LIGHT_SCREEN,
-                MOVE_ROOST,
+#line 16889
+                MOVE_AQUA_TAIL,
+                MOVE_AVALANCHE,
+                MOVE_BODY_SLAM,
+                MOVE_BRICK_BREAK,
             },
             },
             {
-#line 16898
-            .species = SPECIES_ZAPDOS,
+#line 16894
+            .species = SPECIES_MEGANIUM,
             .gender = TRAINER_MON_RANDOM_GENDER,
-#line 16898
-            .heldItem = ITEM_CHOICE_SCARF,
-#line 16903
-            .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-#line 16905
+#line 16897
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-#line 16899
-            .ability = ABILITY_PRESSURE,
-#line 16900
-            .lvl = 80,
-#line 16904
-            .nature = NATURE_TIMID,
-#line 16901
-            .isShiny = TRUE,
+#line 16895
+            .ability = ABILITY_OVERGROW,
+#line 16897
+            .lvl = 100,
+            .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+#line 16896
+            .teraType = TYPE_GRASS,
+            .moves = {
+#line 16897
+                MOVE_CURSE,
+                MOVE_EARTHQUAKE,
+                MOVE_DRAGON_TAIL,
+                MOVE_DOUBLE_EDGE,
+            },
+            },
+            {
 #line 16902
-            .teraType = TYPE_ELECTRIC,
-            .moves = {
-#line 16905
-                MOVE_HEAT_WAVE,
-                MOVE_HURRICANE,
-                MOVE_THUNDERBOLT,
-                MOVE_VOLT_SWITCH,
-            },
-            },
-            {
-#line 16910
-            .species = SPECIES_MOLTRES,
+            .species = SPECIES_TYPHLOSION,
             .gender = TRAINER_MON_RANDOM_GENDER,
-#line 16910
-            .heldItem = ITEM_ASSAULT_VEST,
-#line 16915
-            .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 252, 0),
-#line 16917
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-#line 16911
-            .ability = ABILITY_PRESSURE,
-#line 16912
-            .lvl = 80,
-#line 16916
-            .nature = NATURE_TIMID,
-#line 16913
-            .isShiny = TRUE,
+#line 16905
+            .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
+#line 16903
+            .ability = ABILITY_BLAZE,
+#line 16906
+            .lvl = 100,
+            .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
-#line 16914
+#line 16904
             .teraType = TYPE_FIRE,
             .moves = {
-#line 16917
-                MOVE_ANCIENT_POWER,
-                MOVE_FLAMETHROWER,
-                MOVE_HURRICANE,
-                MOVE_WILL_O_WISP,
+#line 16906
+                MOVE_ERUPTION,
+                MOVE_EXTRASENSORY,
+                MOVE_FOCUS_BLAST,
+                MOVE_SCORCHING_SANDS,
             },
             },
         },
