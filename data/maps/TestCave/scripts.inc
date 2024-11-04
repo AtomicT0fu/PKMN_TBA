@@ -16,98 +16,116 @@ GiveMon::
 # 9 "data/maps/TestCave/scripts.pory"
 	givemon SPECIES_CHARIZARD, 100, ITEM_CHARIZARDITE_Y, ITEM_POKE_BALL, 10, 0, MALE, 4, 0, 0, 252, 252, 0, 31, 31, 31, 31, 31, 31, MOVE_FLAMETHROWER, MOVE_AIR_SLASH, MOVE_DRAGON_PULSE, MOVE_FOCUS_BLAST, TRUE
 # 10 "data/maps/TestCave/scripts.pory"
-	waitse
+	setcaughtmon SPECIES_CHARMANDER
 # 11 "data/maps/TestCave/scripts.pory"
-	hidemonpic
+	setcaughtmon SPECIES_CHARMELEON
 # 12 "data/maps/TestCave/scripts.pory"
-	closemessage
+	setcaughtmon SPECIES_CHARIZARD
 # 13 "data/maps/TestCave/scripts.pory"
-	setflag FLAG_HIDE_BALL
+	waitse
 # 14 "data/maps/TestCave/scripts.pory"
-	setflag FLAG_SYS_POKEMON_GET
+	hidemonpic
 # 15 "data/maps/TestCave/scripts.pory"
+	closemessage
+# 16 "data/maps/TestCave/scripts.pory"
+	setflag FLAG_HIDE_BALL
+# 17 "data/maps/TestCave/scripts.pory"
+	setflag FLAG_SYS_POKEMON_GET
+# 18 "data/maps/TestCave/scripts.pory"
 	release
 	end
 
 
 GiveMon2::
-# 20 "data/maps/TestCave/scripts.pory"
-	lock
-# 21 "data/maps/TestCave/scripts.pory"
-	removeobject 3
-# 22 "data/maps/TestCave/scripts.pory"
-	playse MUS_OBTAIN_ITEM
 # 23 "data/maps/TestCave/scripts.pory"
-	showmonpic SPECIES_BLASTOISE, 10, 3
+	lock
 # 24 "data/maps/TestCave/scripts.pory"
-	msgbox Mon2Recieved
+	removeobject 3
 # 25 "data/maps/TestCave/scripts.pory"
-	givemon SPECIES_BLASTOISE, 100, ITEM_BLASTOISINITE, ITEM_POKE_BALL, 3, 0, MALE, 252, 0, 0, 0, 252, 4, 31, 31, 31, 31, 31, 31, MOVE_WATER_PULSE, MOVE_AURA_SPHERE, MOVE_ICE_BEAM, MOVE_RAPID_SPIN, TRUE
+	playse MUS_OBTAIN_ITEM
 # 26 "data/maps/TestCave/scripts.pory"
-	waitse
+	showmonpic SPECIES_BLASTOISE, 10, 3
 # 27 "data/maps/TestCave/scripts.pory"
-	hidemonpic
+	msgbox Mon2Recieved
 # 28 "data/maps/TestCave/scripts.pory"
-	closemessage
+	givemon SPECIES_BLASTOISE, 100, ITEM_BLASTOISINITE, ITEM_POKE_BALL, 15, 0, MALE, 252, 0, 0, 0, 252, 4, 31, 31, 31, 31, 31, 31, MOVE_WATER_PULSE, MOVE_AURA_SPHERE, MOVE_ICE_BEAM, MOVE_RAPID_SPIN, TRUE
 # 29 "data/maps/TestCave/scripts.pory"
-	setflag FLAG_HIDE_BALL_2
+	setcaughtmon SPECIES_SQUIRTLE
 # 30 "data/maps/TestCave/scripts.pory"
-	setflag FLAG_SYS_POKEMON_GET
+	setcaughtmon SPECIES_WARTORTLE
 # 31 "data/maps/TestCave/scripts.pory"
+	setcaughtmon SPECIES_BLASTOISE
+# 32 "data/maps/TestCave/scripts.pory"
+	waitse
+# 33 "data/maps/TestCave/scripts.pory"
+	hidemonpic
+# 34 "data/maps/TestCave/scripts.pory"
+	closemessage
+# 35 "data/maps/TestCave/scripts.pory"
+	setflag FLAG_HIDE_BALL_2
+# 36 "data/maps/TestCave/scripts.pory"
+	setflag FLAG_SYS_POKEMON_GET
+# 37 "data/maps/TestCave/scripts.pory"
 	release
 	end
 
 
 GiveMon3::
-# 36 "data/maps/TestCave/scripts.pory"
-	lock
-# 37 "data/maps/TestCave/scripts.pory"
-	removeobject 4
-# 38 "data/maps/TestCave/scripts.pory"
-	playse MUS_OBTAIN_ITEM
-# 39 "data/maps/TestCave/scripts.pory"
-	showmonpic SPECIES_VENUSAUR, 10, 3
-# 40 "data/maps/TestCave/scripts.pory"
-	msgbox Mon3Recieved
-# 41 "data/maps/TestCave/scripts.pory"
-	givemon SPECIES_VENUSAUR, 100, ITEM_VENUSAURITE, ITEM_POKE_BALL, 10, 0, MALE, 0, 0, 0, 252, 252, 4, 31, 31, 31, 31, 31, 31, MOVE_SUNNY_DAY, MOVE_SOLAR_BEAM, MOVE_SLUDGE_BOMB, MOVE_EARTH_POWER, TRUE
 # 42 "data/maps/TestCave/scripts.pory"
-	waitse
+	lock
 # 43 "data/maps/TestCave/scripts.pory"
-	hidemonpic
+	removeobject 4
 # 44 "data/maps/TestCave/scripts.pory"
-	closemessage
+	playse MUS_OBTAIN_ITEM
 # 45 "data/maps/TestCave/scripts.pory"
-	setflag FLAG_HIDE_BALL_3
+	showmonpic SPECIES_VENUSAUR, 10, 3
 # 46 "data/maps/TestCave/scripts.pory"
-	setflag FLAG_SYS_POKEMON_GET
+	msgbox Mon3Recieved
 # 47 "data/maps/TestCave/scripts.pory"
+	givemon SPECIES_VENUSAUR, 100, ITEM_VENUSAURITE, ITEM_POKE_BALL, 10, 0, MALE, 0, 0, 0, 252, 252, 4, 31, 31, 31, 31, 31, 31, MOVE_SUNNY_DAY, MOVE_SOLAR_BEAM, MOVE_SLUDGE_BOMB, MOVE_EARTH_POWER, TRUE
+# 48 "data/maps/TestCave/scripts.pory"
+	setcaughtmon SPECIES_BULBASAUR
+# 49 "data/maps/TestCave/scripts.pory"
+	setcaughtmon SPECIES_IVYSAUR
+# 50 "data/maps/TestCave/scripts.pory"
+	setcaughtmon SPECIES_VENUSAUR
+# 51 "data/maps/TestCave/scripts.pory"
+	waitse
+# 52 "data/maps/TestCave/scripts.pory"
+	hidemonpic
+# 53 "data/maps/TestCave/scripts.pory"
+	closemessage
+# 54 "data/maps/TestCave/scripts.pory"
+	setflag FLAG_HIDE_BALL_3
+# 55 "data/maps/TestCave/scripts.pory"
+	setflag FLAG_SYS_POKEMON_GET
+# 56 "data/maps/TestCave/scripts.pory"
 	release
 	end
 
 
 TestBattle::
-# 52 "data/maps/TestCave/scripts.pory"
+# 61 "data/maps/TestCave/scripts.pory"
 	lock
-# 53 "data/maps/TestCave/scripts.pory"
+# 62 "data/maps/TestCave/scripts.pory"
 	trainerbattle_no_intro TRAINER_RED_L, LoseText
-# 54 "data/maps/TestCave/scripts.pory"
+# 63 "data/maps/TestCave/scripts.pory"
 	release
 	end
 
 
 MonRecieved::
-# 58 "data/maps/TestCave/scripts.pory"
+# 67 "data/maps/TestCave/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_RED}CHARIZARD added to party.$"
 
 Mon2Recieved::
-# 62 "data/maps/TestCave/scripts.pory"
+# 71 "data/maps/TestCave/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_RED}BLASTOISE added to party.$"
 
 Mon3Recieved::
-# 66 "data/maps/TestCave/scripts.pory"
+# 75 "data/maps/TestCave/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_RED}VENUSAUR added to party.$"
 
 LoseText::
-# 70 "data/maps/TestCave/scripts.pory"
+# 79 "data/maps/TestCave/scripts.pory"
 	.string "!!!$"

@@ -80,66 +80,70 @@ SignTest::
 # 47 "data/maps/TestMap/scripts.pory"
 	msgbox SignTest_Text_0, MSGBOX_SIGN
 # 48 "data/maps/TestMap/scripts.pory"
-	waitmessage
+	setflag FLAG_SYS_NATIONAL_DEX
 # 49 "data/maps/TestMap/scripts.pory"
+	special EnableNationalPokedex
+# 50 "data/maps/TestMap/scripts.pory"
+	waitmessage
+# 51 "data/maps/TestMap/scripts.pory"
 	releaseall
 	end
 
 
 NameBoxTest::
-# 54 "data/maps/TestMap/scripts.pory"
-	lock
-# 55 "data/maps/TestMap/scripts.pory"
-	faceplayer
 # 56 "data/maps/TestMap/scripts.pory"
-	speakername NameBoxTest_Text_0
+	lock
 # 57 "data/maps/TestMap/scripts.pory"
-	msgbox NameBoxTest_Text_1
+	faceplayer
 # 58 "data/maps/TestMap/scripts.pory"
-	waitmessage
+	speakername NameBoxTest_Text_0
 # 59 "data/maps/TestMap/scripts.pory"
-	closemessage
+	msgbox NameBoxTest_Text_1
 # 60 "data/maps/TestMap/scripts.pory"
+	waitmessage
+# 61 "data/maps/TestMap/scripts.pory"
+	closemessage
+# 62 "data/maps/TestMap/scripts.pory"
 	releaseall
 	end
 
 
 NameBoxTest_2::
-# 65 "data/maps/TestMap/scripts.pory"
-	lock
-# 66 "data/maps/TestMap/scripts.pory"
-	faceplayer
 # 67 "data/maps/TestMap/scripts.pory"
-	speakername NameBoxTest_2_Text_0
+	lock
 # 68 "data/maps/TestMap/scripts.pory"
-	msgbox NameBoxTest_2_Text_1
+	faceplayer
 # 69 "data/maps/TestMap/scripts.pory"
-	waitmessage
+	speakername NameBoxTest_2_Text_0
 # 70 "data/maps/TestMap/scripts.pory"
-	closemessage
+	msgbox NameBoxTest_2_Text_1
 # 71 "data/maps/TestMap/scripts.pory"
+	waitmessage
+# 72 "data/maps/TestMap/scripts.pory"
+	closemessage
+# 73 "data/maps/TestMap/scripts.pory"
 	releaseall
 	end
 
 
 TriggerMayFollow::
-# 76 "data/maps/TestMap/scripts.pory"
-	lock
-# 77 "data/maps/TestMap/scripts.pory"
-	speakername TriggerMayFollow_Text_0
 # 78 "data/maps/TestMap/scripts.pory"
-	msgbox TriggerMayFollow_Text_1
+	lock
 # 79 "data/maps/TestMap/scripts.pory"
-	waitmessage
+	speakername TriggerMayFollow_Text_0
 # 80 "data/maps/TestMap/scripts.pory"
-	closemessage
+	msgbox TriggerMayFollow_Text_1
 # 81 "data/maps/TestMap/scripts.pory"
-	removeobject 5
+	waitmessage
 # 82 "data/maps/TestMap/scripts.pory"
-	addobject 6
+	closemessage
 # 83 "data/maps/TestMap/scripts.pory"
-	setvar VAR_TEST_1, 1
+	removeobject 5
 # 84 "data/maps/TestMap/scripts.pory"
+	addobject 6
+# 85 "data/maps/TestMap/scripts.pory"
+	setvar VAR_TEST_1, 1
+# 86 "data/maps/TestMap/scripts.pory"
 	releaseall
 	end
 
@@ -165,25 +169,25 @@ SignTest_Text_0:
 	.string "Hello, world!$"
 
 NameBoxTest_Text_0:
-# 56 "data/maps/TestMap/scripts.pory"
+# 58 "data/maps/TestMap/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}Archie$"
 
 NameBoxTest_Text_1:
-# 57 "data/maps/TestMap/scripts.pory"
+# 59 "data/maps/TestMap/scripts.pory"
 	.string "Expand the Sea!$"
 
 NameBoxTest_2_Text_0:
-# 67 "data/maps/TestMap/scripts.pory"
+# 69 "data/maps/TestMap/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_RED}Maxie$"
 
 NameBoxTest_2_Text_1:
-# 68 "data/maps/TestMap/scripts.pory"
+# 70 "data/maps/TestMap/scripts.pory"
 	.string "Expand the Land!$"
 
 TriggerMayFollow_Text_0:
-# 77 "data/maps/TestMap/scripts.pory"
+# 79 "data/maps/TestMap/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_RED}SYSTEM$"
 
 TriggerMayFollow_Text_1:
-# 78 "data/maps/TestMap/scripts.pory"
+# 80 "data/maps/TestMap/scripts.pory"
 	.string "MAY IS FOLLOWING YOU$"

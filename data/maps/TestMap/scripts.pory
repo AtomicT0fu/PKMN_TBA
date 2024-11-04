@@ -45,6 +45,8 @@ script LugiaBattle{
 
 script SignTest{
     msgbox({}"Hello, world!", MSGBOX_SIGN)
+    setflag(FLAG_SYS_NATIONAL_DEX)
+    special(EnableNationalPokedex)
     waitmessage
     releaseall
     end

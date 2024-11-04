@@ -7,6 +7,9 @@ script GiveMon{
     showmonpic(SPECIES_CHARIZARD, 10, 3)
     msgbox(MonRecieved)
     givemon(SPECIES_CHARIZARD, 100, ITEM_CHARIZARDITE_Y, ITEM_POKE_BALL, 10, 0, MALE, 4, 0, 0, 252, 252, 0, 31, 31, 31, 31, 31, 31, MOVE_FLAMETHROWER, MOVE_AIR_SLASH, MOVE_DRAGON_PULSE, MOVE_FOCUS_BLAST, TRUE)
+    setcaughtmon(SPECIES_CHARMANDER)
+    setcaughtmon(SPECIES_CHARMELEON)
+    setcaughtmon(SPECIES_CHARIZARD)
     waitse
     hidemonpic
     closemessage
@@ -22,7 +25,10 @@ script GiveMon2{
     playse(MUS_OBTAIN_ITEM)
     showmonpic(SPECIES_BLASTOISE, 10, 3)
     msgbox(Mon2Recieved)
-    givemon(SPECIES_BLASTOISE, 100, ITEM_BLASTOISINITE, ITEM_POKE_BALL, 3, 0, MALE, 252, 0, 0, 0, 252, 4, 31, 31, 31, 31, 31, 31, MOVE_WATER_PULSE, MOVE_AURA_SPHERE, MOVE_ICE_BEAM, MOVE_RAPID_SPIN, TRUE)
+    givemon(SPECIES_BLASTOISE, 100, ITEM_BLASTOISINITE, ITEM_POKE_BALL, 15, 0, MALE, 252, 0, 0, 0, 252, 4, 31, 31, 31, 31, 31, 31, MOVE_WATER_PULSE, MOVE_AURA_SPHERE, MOVE_ICE_BEAM, MOVE_RAPID_SPIN, TRUE)
+    setcaughtmon(SPECIES_SQUIRTLE)
+    setcaughtmon(SPECIES_WARTORTLE)
+    setcaughtmon(SPECIES_BLASTOISE)
     waitse
     hidemonpic
     closemessage
@@ -39,6 +45,9 @@ script GiveMon3{
     showmonpic(SPECIES_VENUSAUR, 10, 3)
     msgbox(Mon3Recieved)
     givemon(SPECIES_VENUSAUR, 100, ITEM_VENUSAURITE, ITEM_POKE_BALL, 10, 0, MALE, 0, 0, 0, 252, 252, 4, 31, 31, 31, 31, 31, 31, MOVE_SUNNY_DAY, MOVE_SOLAR_BEAM, MOVE_SLUDGE_BOMB, MOVE_EARTH_POWER, TRUE)
+    setcaughtmon(SPECIES_BULBASAUR)
+    setcaughtmon(SPECIES_IVYSAUR)
+    setcaughtmon(SPECIES_VENUSAUR)
     waitse
     hidemonpic
     closemessage
