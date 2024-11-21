@@ -249,6 +249,9 @@
 #define METATILE_GenericBuilding_TrickHouse_Door_Closed  0x021B
 #define METATILE_GenericBuilding_TrickHouse_Stairs_Down  0x0219
 
+// gTileset_Highland_Farms
+#define METATILE_Highland_Farms_Dark_Oak_Door  0x0219
+
 // gTileset_InsideOfTruck
 #define METATILE_InsideOfTruck_DoorClosedFloor_Bottom  0x021D
 #define METATILE_InsideOfTruck_DoorClosedFloor_Mid     0x0215

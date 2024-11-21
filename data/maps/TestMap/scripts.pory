@@ -86,3 +86,11 @@ script TriggerMayFollow{
     releaseall
     end
 }
+
+script AbraTeleport{
+    faceplayer
+    playmoncry(SPECIES_ABRA, 0)
+    waitmoncry
+    warpteleport(MAP_HIGHLAND_FARMS, 41, 27)
+    end
+}

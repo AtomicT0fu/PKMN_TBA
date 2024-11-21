@@ -4440,6 +4440,26 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/Desert_Ranch/border.bin",
       "blockdata_filepath": "data/layouts/Desert_Ranch/map.bin"
+    },
+    {
+      "id": "LAYOUT_HIGHLAND_FARMS",
+      "name": "Highland_Farms_Layout",
+      "width": 58,
+      "height": 40,
+      "primary_tileset": "gTileset_Grass_1",
+      "secondary_tileset": "gTileset_Highland_Farms",
+      "border_filepath": "data/layouts/Highland_Farms/border.bin",
+      "blockdata_filepath": "data/layouts/Highland_Farms/map.bin"
+    },
+    {
+      "id": "LAYOUT_PLAYER_HOUSE_1F",
+      "name": "Player_House_1F_Layout",
+      "width": 8,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/Player_House_1F/border.bin",
+      "blockdata_filepath": "data/layouts/Player_House_1F/map.bin"
     }
   ]
 }

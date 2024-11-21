@@ -6,6 +6,8 @@ void InitSecondaryTilesetAnimation(void);
 void UpdateTilesetAnimations(void);
 void TransferTilesetAnimsBuffer(void);
 
+void InitTilesetAnim_Highland_Farms(void);
+void InitTilesetAnim_Grass_1(void);
 void InitTilesetAnim_General(void);
 void InitTilesetAnim_Petalburg(void);
 void InitTilesetAnim_Rustboro(void);

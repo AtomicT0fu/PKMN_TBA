@@ -148,6 +148,18 @@ TriggerMayFollow::
 	end
 
 
+AbraTeleport::
+# 91 "data/maps/TestMap/scripts.pory"
+	faceplayer
+# 92 "data/maps/TestMap/scripts.pory"
+	playmoncry SPECIES_ABRA, 0
+# 93 "data/maps/TestMap/scripts.pory"
+	waitmoncry
+# 94 "data/maps/TestMap/scripts.pory"
+	warpteleport MAP_HIGHLAND_FARMS, 41, 27
+	end
+
+
 MewBattle_Text_0:
 # 24 "data/maps/TestMap/scripts.pory"
 	.string "{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Mew$"

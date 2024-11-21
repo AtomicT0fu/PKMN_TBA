@@ -29,6 +29,12 @@ struct DoorAnimFrame
 
 static bool8 ShouldUseMultiCorridorDoor(void);
 
+
+
+static const u8 sDoorAnimTiles_Dark_Oak_Door[] = INCBIN_U8("graphics/door_anims/dark_oak_door_anim.4bpp");
+
+
+
 static const u8 sDoorAnimTiles_Littleroot[] = INCBIN_U8("graphics/door_anims/littleroot.4bpp");
 static const u16 sDoorNullPalette1[16] = {};
 static const u8 sDoorAnimTiles_BirchsLab[] = INCBIN_U8("graphics/door_anims/birchs_lab.4bpp");
@@ -168,6 +174,11 @@ static const struct DoorAnimFrame sBigDoorCloseAnimFrames[] =
     {0, 0},
 };
 
+
+static const u8 sDoorAnimPalettes_Dark_Oak_Door[] = {9, 9, 9, 9, 9, 9, 9, 9};
+
+
+
 static const u8 sDoorAnimPalettes_General[] = {1, 1, 1, 1, 1, 1, 1, 1};
 static const u8 sDoorAnimPalettes_PokeCenter[] = {1, 1, 1, 1, 1, 1, 1, 1};
 static const u8 sDoorAnimPalettes_Gym[] = {5, 5, 5, 5, 5, 5, 5, 5};
@@ -222,6 +233,8 @@ static const u8 sDoorAnimPalettes_TrainerHillRoofElevator[] = {9, 9, 7, 7, 7, 7,
 
 static const struct DoorGraphics sDoorAnimGraphicsTable[] =
 {
+    {METATILE_Highland_Farms_Dark_Oak_Door,                 DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Dark_Oak_Door, sDoorAnimPalettes_Dark_Oak_Door},
+
     {METATILE_General_Door,                                 DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_General, sDoorAnimPalettes_General},
     {METATILE_General_Door_PokeCenter,                      DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_PokeCenter, sDoorAnimPalettes_PokeCenter},
     {METATILE_General_Door_Gym,                             DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_Gym, sDoorAnimPalettes_Gym},

@@ -24,6 +24,12 @@ static void (*sSecondaryTilesetAnimCallback)(u16);
 static void _InitPrimaryTilesetAnimation(void);
 static void _InitSecondaryTilesetAnimation(void);
 static void TilesetAnim_General(u16);
+
+static void TilesetAnim_Grass_1(u16);
+static void TilesetAnim_Highland_Farms(u16);
+
+
+
 static void TilesetAnim_Building(u16);
 static void TilesetAnim_Rustboro(u16);
 static void TilesetAnim_Dewford(u16);
@@ -48,6 +54,15 @@ static void QueueAnimTiles_General_Water(u16);
 static void QueueAnimTiles_General_SandWaterEdge(u16);
 static void QueueAnimTiles_General_Waterfall(u16);
 static void QueueAnimTiles_General_LandWaterEdge(u16);
+
+static void QueueAnimTiles_Grass_1_Purple_Flower(u16);
+static void QueueAnimTiles_Grass_1_Red_Flower(u16);
+static void QueueAnimTiles_Grass_1_Green_Sprout(u16);
+
+static void QueueAnimTiles_Highland_Farms_Red_Sprout(u16);
+static void QueueAnimTiles_Highland_Farms_Yellow_Sprout(u16);
+
+
 static void QueueAnimTiles_Building_TVTurnedOn(u16);
 static void QueueAnimTiles_Rustboro_WindyWater(u16, u8);
 static void QueueAnimTiles_Rustboro_Fountain(u16);
@@ -74,6 +89,8 @@ static void QueueAnimTiles_SootopolisGym_Waterfalls(u16);
 static void QueueAnimTiles_EliteFour_GroundLights(u16);
 static void QueueAnimTiles_EliteFour_WallLights(u16);
 
+
+
 const u16 gTilesetAnims_General_Flower_Frame1[] = INCBIN_U16("data/tilesets/primary/general/anim/flower/1.4bpp");
 const u16 gTilesetAnims_General_Flower_Frame0[] = INCBIN_U16("data/tilesets/primary/general/anim/flower/0.4bpp");
 const u16 gTilesetAnims_General_Flower_Frame2[] = INCBIN_U16("data/tilesets/primary/general/anim/flower/2.4bpp");
@@ -85,6 +102,73 @@ const u16 *const gTilesetAnims_General_Flower[] = {
     gTilesetAnims_General_Flower_Frame0,
     gTilesetAnims_General_Flower_Frame2
 };
+
+const u16 gTilsetAnims_Grass_1_Purple_Flower_Frame0[] = INCBIN_U16("data/tilesets/primary/grass_1/anim/purple_00.4bpp");
+const u16 gTilsetAnims_Grass_1_Purple_Flower_Frame1[] = INCBIN_U16("data/tilesets/primary/grass_1/anim/purple_01.4bpp");
+const u16 gTilsetAnims_Grass_1_Purple_Flower_Frame2[] = INCBIN_U16("data/tilesets/primary/grass_1/anim/purple_02.4bpp");
+const u16 gTilsetAnims_Grass_1_Purple_Flower_Frame3[] = INCBIN_U16("data/tilesets/primary/grass_1/anim/purple_03.4bpp");
+const u16 gTilsetAnims_Grass_1_Purple_Flower_Frame4[] = INCBIN_U16("data/tilesets/primary/grass_1/anim/purple_04.4bpp");
+
+const u16 *const gTilesetAnims_Grass_1_Purple_Flower[] = {
+    gTilsetAnims_Grass_1_Purple_Flower_Frame0, 
+    gTilsetAnims_Grass_1_Purple_Flower_Frame1, 
+    gTilsetAnims_Grass_1_Purple_Flower_Frame2, 
+    gTilsetAnims_Grass_1_Purple_Flower_Frame3, 
+    gTilsetAnims_Grass_1_Purple_Flower_Frame4
+};
+
+const u16 gTilsetAnims_Grass_1_Red_Flower_Frame0[] = INCBIN_U16("data/tilesets/primary/grass_1/anim/red_00.4bpp");
+const u16 gTilsetAnims_Grass_1_Red_Flower_Frame1[] = INCBIN_U16("data/tilesets/primary/grass_1/anim/red_01.4bpp");
+const u16 gTilsetAnims_Grass_1_Red_Flower_Frame2[] = INCBIN_U16("data/tilesets/primary/grass_1/anim/red_02.4bpp");
+const u16 gTilsetAnims_Grass_1_Red_Flower_Frame3[] = INCBIN_U16("data/tilesets/primary/grass_1/anim/red_03.4bpp");
+const u16 gTilsetAnims_Grass_1_Red_Flower_Frame4[] = INCBIN_U16("data/tilesets/primary/grass_1/anim/red_04.4bpp");
+
+const u16 *const gTilesetAnims_Grass_1_Red_Flower[] = {
+    gTilsetAnims_Grass_1_Red_Flower_Frame0, 
+    gTilsetAnims_Grass_1_Red_Flower_Frame1, 
+    gTilsetAnims_Grass_1_Red_Flower_Frame2, 
+    gTilsetAnims_Grass_1_Red_Flower_Frame3, 
+    gTilsetAnims_Grass_1_Red_Flower_Frame4
+};
+
+const u16 gTilsetAnims_Grass_1_Green_Sprout_Frame0[] = INCBIN_U16("data/tilesets/primary/grass_1/anim/sprouts/green_00.4bpp");
+const u16 gTilsetAnims_Grass_1_Green_Sprout_Frame1[] = INCBIN_U16("data/tilesets/primary/grass_1/anim/sprouts/green_01.4bpp");
+const u16 gTilsetAnims_Grass_1_Green_Sprout_Frame2[] = INCBIN_U16("data/tilesets/primary/grass_1/anim/sprouts/green_02.4bpp");
+
+const u16 *const gTilesetAnims_Grass_1_Green_Sprout[] = {
+    gTilsetAnims_Grass_1_Green_Sprout_Frame0, 
+    gTilsetAnims_Grass_1_Green_Sprout_Frame1, 
+    gTilsetAnims_Grass_1_Green_Sprout_Frame0, 
+    gTilsetAnims_Grass_1_Green_Sprout_Frame2
+};
+
+
+const u16 gTilsetAnims_Highland_Farms_Red_Sprout_Frame0[] = INCBIN_U16("data/tilesets/secondary/highland_farms/anim/sprouts/red_00.4bpp");
+const u16 gTilsetAnims_Highland_Farms_Red_Sprout_Frame1[] = INCBIN_U16("data/tilesets/secondary/highland_farms/anim/sprouts/red_01.4bpp");
+const u16 gTilsetAnims_Highland_Farms_Red_Sprout_Frame2[] = INCBIN_U16("data/tilesets/secondary/highland_farms/anim/sprouts/red_02.4bpp");
+
+const u16 *const gTilesetAnims_Highland_Farms_Red_Sprout[] = {
+    gTilsetAnims_Highland_Farms_Red_Sprout_Frame0, 
+    gTilsetAnims_Highland_Farms_Red_Sprout_Frame1, 
+    gTilsetAnims_Highland_Farms_Red_Sprout_Frame0, 
+    gTilsetAnims_Highland_Farms_Red_Sprout_Frame2
+};
+
+const u16 gTilsetAnims_Highland_Farms_Yellow_Sprout_Frame0[] = INCBIN_U16("data/tilesets/secondary/highland_farms/anim/sprouts/yellow_00.4bpp");
+const u16 gTilsetAnims_Highland_Farms_Yellow_Sprout_Frame1[] = INCBIN_U16("data/tilesets/secondary/highland_farms/anim/sprouts/yellow_01.4bpp");
+const u16 gTilsetAnims_Highland_Farms_Yellow_Sprout_Frame2[] = INCBIN_U16("data/tilesets/secondary/highland_farms/anim/sprouts/yellow_02.4bpp");
+
+const u16 *const gTilesetAnims_Highland_Farms_Yellow_Sprout[] = {
+    gTilsetAnims_Highland_Farms_Yellow_Sprout_Frame0, 
+    gTilsetAnims_Highland_Farms_Yellow_Sprout_Frame1, 
+    gTilsetAnims_Highland_Farms_Yellow_Sprout_Frame0, 
+    gTilsetAnims_Highland_Farms_Yellow_Sprout_Frame2
+};
+
+
+
+
+
 
 const u16 gTilesetAnims_General_Water_Frame0[] = INCBIN_U16("data/tilesets/primary/general/anim/water/0.4bpp");
 const u16 gTilesetAnims_General_Water_Frame1[] = INCBIN_U16("data/tilesets/primary/general/anim/water/1.4bpp");
@@ -622,6 +706,29 @@ void InitTilesetAnim_General(void)
     sPrimaryTilesetAnimCallback = TilesetAnim_General;
 }
 
+
+
+void InitTilesetAnim_Grass_1(void)
+{
+    sPrimaryTilesetAnimCounter = 0;
+    sPrimaryTilesetAnimCounterMax = 256;
+    sPrimaryTilesetAnimCallback = TilesetAnim_Grass_1;
+}
+
+
+void InitTilesetAnim_Highland_Farms(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;
+    sSecondaryTilesetAnimCallback = TilesetAnim_Highland_Farms;
+}
+
+
+
+
+
+
+
 void InitTilesetAnim_Building(void)
 {
     sPrimaryTilesetAnimCounter = 0;
@@ -643,17 +750,86 @@ static void TilesetAnim_General(u16 timer)
         QueueAnimTiles_General_LandWaterEdge(timer / 16);
 }
 
+
+
+
+
+
+static void TilesetAnim_Grass_1(u16 timer)
+{
+    if (timer % 16 == 0)
+        QueueAnimTiles_Grass_1_Purple_Flower(timer / 16);
+    if (timer % 16 == 1)
+        QueueAnimTiles_Grass_1_Red_Flower(timer / 16);
+    if (timer % 16 == 2)
+        QueueAnimTiles_Grass_1_Green_Sprout(timer / 16);
+}
+
+static void TilesetAnim_Highland_Farms(u16 timer)
+{
+    if (timer % 16 == 0)
+        QueueAnimTiles_Highland_Farms_Red_Sprout(timer / 16);
+    if (timer % 16 == 1)
+        QueueAnimTiles_Highland_Farms_Yellow_Sprout(timer / 16);
+}
+
+
+
+
 static void TilesetAnim_Building(u16 timer)
 {
     if (timer % 8 == 0)
         QueueAnimTiles_Building_TVTurnedOn(timer / 8);
 }
 
+
+
+
+
+static void QueueAnimTiles_Grass_1_Purple_Flower(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_Grass_1_Purple_Flower);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Grass_1_Purple_Flower[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(87)), 4 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_Grass_1_Red_Flower(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_Grass_1_Red_Flower);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Grass_1_Red_Flower[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(91)), 4 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_Grass_1_Green_Sprout(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_Grass_1_Green_Sprout);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Grass_1_Green_Sprout[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(434)), 4 * TILE_SIZE_4BPP);
+}
+
+
+static void QueueAnimTiles_Highland_Farms_Red_Sprout(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_Highland_Farms_Red_Sprout);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Highland_Farms_Red_Sprout[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 80)), 4 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_Highland_Farms_Yellow_Sprout(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_Highland_Farms_Yellow_Sprout);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Highland_Farms_Yellow_Sprout[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 84)), 4 * TILE_SIZE_4BPP);
+}
+
+
+
+
+
+
 static void QueueAnimTiles_General_Flower(u16 timer)
 {
     u16 i = timer % ARRAY_COUNT(gTilesetAnims_General_Flower);
     AppendTilesetAnimToBuffer(gTilesetAnims_General_Flower[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(508)), 4 * TILE_SIZE_4BPP);
 }
+
+
+
 
 static void QueueAnimTiles_General_Water(u16 timer)
 {
@@ -955,6 +1131,8 @@ static void TilesetAnim_BattleFrontierOutsideEast(u16 timer)
         QueueAnimTiles_BattleFrontierOutsideEast_Flag(timer / 8);
 }
 
+
+
 static void QueueAnimTiles_General_LandWaterEdge(u16 timer)
 {
     u16 i = timer % ARRAY_COUNT(gTilesetAnims_General_LandWaterEdge);
@@ -1004,6 +1182,8 @@ static void QueueAnimTiles_Mauville_Flowers(u16 timer_div, u8 timer_mod)
         AppendTilesetAnimToBuffer(gTilesetAnims_Mauville_Flower2_B[timer_div], gTilesetAnims_Mauville_Flower2_VDests[timer_mod], 4 * TILE_SIZE_4BPP);
     }
 }
+
+
 
 static void QueueAnimTiles_Rustboro_WindyWater(u16 timer_div, u8 timer_mod)
 {

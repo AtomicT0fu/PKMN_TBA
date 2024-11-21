@@ -1158,3 +1158,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/TestCave/scripts.inc"
 
 	.include "data/maps/Desert_Ranch/scripts.inc"
+
+	.include "data/maps/Highland_Farms/scripts.inc"
+
+	.include "data/maps/Player_House_1F/scripts.inc"

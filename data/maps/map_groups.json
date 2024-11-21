@@ -95,7 +95,9 @@
     "Underwater_Route125",
     "TestMap",
     "TestCave",
-    "Desert_Ranch"
+    "Desert_Ranch",
+    "Highland_Farms",
+    "Player_House_1F"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
