@@ -1710,3 +1710,22 @@ const u16 gTilesetPalettes_Highland_Farms[][16] =
 };
 
 const u32 gTilesetTiles_Highland_Farms[] = INCBIN_U32("data/tilesets/secondary/highland_farms/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_Bo_Ranch[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/bo_ranch/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/bo_ranch/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/bo_ranch/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/bo_ranch/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/bo_ranch/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/bo_ranch/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/bo_ranch/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/bo_ranch/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/bo_ranch/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/bo_ranch/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/bo_ranch/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/bo_ranch/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/bo_ranch/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_Bo_Ranch[] = INCBIN_U32("data/tilesets/secondary/bo_ranch/tiles.4bpp.lz");

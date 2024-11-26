@@ -1,0 +1,39 @@
+{
+  "id": "MAP_HIGHLAND_PATH",
+  "name": "Highland_Path",
+  "layout": "LAYOUT_HIGHLAND_PATH",
+  "music": "MUS_DUMMY",
+  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_NONE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_HIGHLAND_FARMS",
+      "offset": 14,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_OLD_BOS_RANCH",
+      "offset": -14,
+      "direction": "left"
+    }
+  ],
+  "object_events": [
+
+  ],
+  "warp_events": [
+
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}

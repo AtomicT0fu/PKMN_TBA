@@ -219,3 +219,6 @@ const u16 gMetatileAttributes_Grass_1[] = INCBIN_U16("data/tilesets/primary/gras
 
 const u16 gMetatiles_Highland_Farms[] = INCBIN_U16("data/tilesets/secondary/highland_farms/metatiles.bin");
 const u16 gMetatileAttributes_Highland_Farms[] = INCBIN_U16("data/tilesets/secondary/highland_farms/metatile_attributes.bin");
+
+const u16 gMetatiles_Bo_Ranch[] = INCBIN_U16("data/tilesets/secondary/bo_ranch/metatiles.bin");
+const u16 gMetatileAttributes_Bo_Ranch[] = INCBIN_U16("data/tilesets/secondary/bo_ranch/metatile_attributes.bin");

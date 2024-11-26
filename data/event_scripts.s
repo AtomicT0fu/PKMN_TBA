@@ -1162,3 +1162,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Highland_Farms/scripts.inc"
 
 	.include "data/maps/Player_House_1F/scripts.inc"
+
+	.include "data/maps/Highland_Path/scripts.inc"
+
+	.include "data/maps/Old_Bos_Ranch/scripts.inc"

@@ -97,7 +97,9 @@
     "TestCave",
     "Desert_Ranch",
     "Highland_Farms",
-    "Player_House_1F"
+    "Player_House_1F",
+    "Highland_Path",
+    "Old_Bos_Ranch"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",

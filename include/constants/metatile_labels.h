@@ -102,6 +102,9 @@
 #define METATILE_BikeShop_Generator_Off_Tile7      0x02F7
 #define METATILE_BikeShop_Wall_Edge_Top            0x0281
 
+// gTileset_Bo_Ranch
+#define METATILE_Bo_Ranch_Barn_Door  0x0241
+
 // gTileset_BrendansMaysHouse
 #define METATILE_BrendansMaysHouse_BookOnTable       0x0293
 #define METATILE_BrendansMaysHouse_BrendanPC_Off     0x025A

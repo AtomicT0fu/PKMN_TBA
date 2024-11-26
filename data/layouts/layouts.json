@@ -4460,6 +4460,26 @@
       "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/Player_House_1F/border.bin",
       "blockdata_filepath": "data/layouts/Player_House_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_HIGHLAND_PATH",
+      "name": "Highland_Path_Layout",
+      "width": 40,
+      "height": 30,
+      "primary_tileset": "gTileset_Grass_1",
+      "secondary_tileset": "gTileset_Highland_Farms",
+      "border_filepath": "data/layouts/Highland_Path/border.bin",
+      "blockdata_filepath": "data/layouts/Highland_Path/map.bin"
+    },
+    {
+      "id": "LAYOUT_OLD_BOS_RANCH",
+      "name": "Old_Bos_Ranch_Layout",
+      "width": 36,
+      "height": 36,
+      "primary_tileset": "gTileset_Grass_1",
+      "secondary_tileset": "gTileset_Bo_Ranch",
+      "border_filepath": "data/layouts/Old_Bos_Ranch/border.bin",
+      "blockdata_filepath": "data/layouts/Old_Bos_Ranch/map.bin"
     }
   ]
 }
