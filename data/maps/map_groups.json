@@ -99,7 +99,10 @@
     "Highland_Farms",
     "Player_House_1F",
     "Highland_Path",
-    "Old_Bos_Ranch"
+    "Old_Bos_Ranch",
+    "Player_House_B1F",
+    "Rival_House_1F",
+    "Rival_House_B1F"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",

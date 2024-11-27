@@ -54,6 +54,13 @@
       "elevation": 0,
       "dest_map": "MAP_PLAYER_HOUSE_1F",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 4,
+      "y": 15,
+      "elevation": 0,
+      "dest_map": "MAP_RIVAL_HOUSE_1F",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

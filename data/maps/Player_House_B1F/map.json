@@ -1,7 +1,7 @@
 {
-  "id": "MAP_PLAYER_HOUSE_1F",
-  "name": "Player_House_1F",
-  "layout": "LAYOUT_PLAYER_HOUSE_1F",
+  "id": "MAP_PLAYER_HOUSE_B1F",
+  "name": "Player_House_B1F",
+  "layout": "LAYOUT_PLAYER_HOUSE_B1F",
   "music": "MUS_DUMMY",
   "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
   "requires_flash": false,
@@ -18,18 +18,11 @@
   ],
   "warp_events": [
     {
-      "x": 10,
-      "y": 8,
+      "x": 1,
+      "y": 1,
       "elevation": 0,
-      "dest_map": "MAP_HIGHLAND_FARMS",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 7,
-      "y": 2,
-      "elevation": 0,
-      "dest_map": "MAP_PLAYER_HOUSE_B1F",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_PLAYER_HOUSE_1F",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [

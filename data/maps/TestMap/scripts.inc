@@ -32,174 +32,150 @@ SetFlags::
 	end
 
 
-MewBattle::
-# 21 "data/maps/TestMap/scripts.pory"
-	lock
-# 22 "data/maps/TestMap/scripts.pory"
-	faceplayer
-# 23 "data/maps/TestMap/scripts.pory"
-	playmoncry SPECIES_MEW, 0
-# 24 "data/maps/TestMap/scripts.pory"
-	speakername MewBattle_Text_0
-# 25 "data/maps/TestMap/scripts.pory"
-	msgbox MewBattle_Text_1
-# 26 "data/maps/TestMap/scripts.pory"
-	waitmessage
-# 27 "data/maps/TestMap/scripts.pory"
-	setwildbattle SPECIES_MEW, 100, ITEM_NONE
-# 28 "data/maps/TestMap/scripts.pory"
-	special BattleSetup_StartLegendaryBattle
-# 29 "data/maps/TestMap/scripts.pory"
-	releaseall
-	end
-
-
-LugiaBattle::
-# 34 "data/maps/TestMap/scripts.pory"
-	lock
-# 35 "data/maps/TestMap/scripts.pory"
-	faceplayer
-# 36 "data/maps/TestMap/scripts.pory"
-	playmoncry SPECIES_LUGIA, 0
-# 37 "data/maps/TestMap/scripts.pory"
-	speakername LugiaBattle_Text_0
-# 38 "data/maps/TestMap/scripts.pory"
-	msgbox LugiaBattle_Text_1
-# 39 "data/maps/TestMap/scripts.pory"
-	waitmessage
-# 40 "data/maps/TestMap/scripts.pory"
-	setwildbattle SPECIES_LUGIA, 100, ITEM_NONE
-# 41 "data/maps/TestMap/scripts.pory"
-	special BattleSetup_StartLegendaryBattle
-# 42 "data/maps/TestMap/scripts.pory"
-	releaseall
-	end
-
-
 SignTest::
-# 47 "data/maps/TestMap/scripts.pory"
+# 21 "data/maps/TestMap/scripts.pory"
 	msgbox SignTest_Text_0, MSGBOX_SIGN
-# 48 "data/maps/TestMap/scripts.pory"
+# 22 "data/maps/TestMap/scripts.pory"
 	setflag FLAG_SYS_NATIONAL_DEX
-# 49 "data/maps/TestMap/scripts.pory"
+# 23 "data/maps/TestMap/scripts.pory"
 	special EnableNationalPokedex
-# 50 "data/maps/TestMap/scripts.pory"
+# 24 "data/maps/TestMap/scripts.pory"
 	waitmessage
-# 51 "data/maps/TestMap/scripts.pory"
+# 25 "data/maps/TestMap/scripts.pory"
 	releaseall
 	end
 
 
 NameBoxTest::
-# 56 "data/maps/TestMap/scripts.pory"
+# 30 "data/maps/TestMap/scripts.pory"
 	lock
-# 57 "data/maps/TestMap/scripts.pory"
+# 31 "data/maps/TestMap/scripts.pory"
 	faceplayer
-# 58 "data/maps/TestMap/scripts.pory"
+# 32 "data/maps/TestMap/scripts.pory"
 	speakername NameBoxTest_Text_0
-# 59 "data/maps/TestMap/scripts.pory"
+# 33 "data/maps/TestMap/scripts.pory"
 	msgbox NameBoxTest_Text_1
-# 60 "data/maps/TestMap/scripts.pory"
+# 34 "data/maps/TestMap/scripts.pory"
 	waitmessage
-# 61 "data/maps/TestMap/scripts.pory"
+# 35 "data/maps/TestMap/scripts.pory"
 	closemessage
-# 62 "data/maps/TestMap/scripts.pory"
+# 36 "data/maps/TestMap/scripts.pory"
 	releaseall
 	end
 
 
 NameBoxTest_2::
-# 67 "data/maps/TestMap/scripts.pory"
+# 41 "data/maps/TestMap/scripts.pory"
 	lock
-# 68 "data/maps/TestMap/scripts.pory"
+# 42 "data/maps/TestMap/scripts.pory"
 	faceplayer
-# 69 "data/maps/TestMap/scripts.pory"
+# 43 "data/maps/TestMap/scripts.pory"
 	speakername NameBoxTest_2_Text_0
-# 70 "data/maps/TestMap/scripts.pory"
+# 44 "data/maps/TestMap/scripts.pory"
 	msgbox NameBoxTest_2_Text_1
-# 71 "data/maps/TestMap/scripts.pory"
+# 45 "data/maps/TestMap/scripts.pory"
 	waitmessage
-# 72 "data/maps/TestMap/scripts.pory"
+# 46 "data/maps/TestMap/scripts.pory"
 	closemessage
-# 73 "data/maps/TestMap/scripts.pory"
+# 47 "data/maps/TestMap/scripts.pory"
 	releaseall
 	end
 
 
 TriggerMayFollow::
-# 78 "data/maps/TestMap/scripts.pory"
+# 52 "data/maps/TestMap/scripts.pory"
 	lock
-# 79 "data/maps/TestMap/scripts.pory"
+# 53 "data/maps/TestMap/scripts.pory"
 	speakername TriggerMayFollow_Text_0
-# 80 "data/maps/TestMap/scripts.pory"
+# 54 "data/maps/TestMap/scripts.pory"
 	msgbox TriggerMayFollow_Text_1
-# 81 "data/maps/TestMap/scripts.pory"
+# 55 "data/maps/TestMap/scripts.pory"
 	waitmessage
-# 82 "data/maps/TestMap/scripts.pory"
+# 56 "data/maps/TestMap/scripts.pory"
 	closemessage
-# 83 "data/maps/TestMap/scripts.pory"
+# 57 "data/maps/TestMap/scripts.pory"
 	removeobject 5
-# 84 "data/maps/TestMap/scripts.pory"
+# 58 "data/maps/TestMap/scripts.pory"
 	addobject 6
-# 85 "data/maps/TestMap/scripts.pory"
+# 59 "data/maps/TestMap/scripts.pory"
 	setvar VAR_TEST_1, 1
-# 86 "data/maps/TestMap/scripts.pory"
+# 60 "data/maps/TestMap/scripts.pory"
 	releaseall
 	end
 
 
 AbraTeleport::
-# 91 "data/maps/TestMap/scripts.pory"
+# 65 "data/maps/TestMap/scripts.pory"
 	faceplayer
-# 92 "data/maps/TestMap/scripts.pory"
+# 66 "data/maps/TestMap/scripts.pory"
 	playmoncry SPECIES_ABRA, 0
-# 93 "data/maps/TestMap/scripts.pory"
+# 67 "data/maps/TestMap/scripts.pory"
 	waitmoncry
-# 94 "data/maps/TestMap/scripts.pory"
+# 68 "data/maps/TestMap/scripts.pory"
 	warpteleport MAP_HIGHLAND_FARMS, 41, 27
 	end
 
 
-MewBattle_Text_0:
-# 24 "data/maps/TestMap/scripts.pory"
-	.string "{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Mew$"
+RedFly::
+# 73 "data/maps/TestMap/scripts.pory"
+	lock
+# 74 "data/maps/TestMap/scripts.pory"
+	setfieldeffectargument 0, 1
+# 75 "data/maps/TestMap/scripts.pory"
+	dofieldeffect FLDEFF_NPCFLY_OUT
+# 76 "data/maps/TestMap/scripts.pory"
+	delay 15
+# 77 "data/maps/TestMap/scripts.pory"
+	removeobject 6
+# 78 "data/maps/TestMap/scripts.pory"
+	waitfieldeffect FLDEFF_NPCFLY_OUT
+# 79 "data/maps/TestMap/scripts.pory"
+	release
+	end
 
-MewBattle_Text_1:
-# 25 "data/maps/TestMap/scripts.pory"
-	.string "Myyyuuuuu!$"
 
-LugiaBattle_Text_0:
-# 37 "data/maps/TestMap/scripts.pory"
-	.string "{COLOR BLUE}{SHADOW LIGHT_RED}Lugia$"
+FlyIn::
+# 84 "data/maps/TestMap/scripts.pory"
+	lock
+# 85 "data/maps/TestMap/scripts.pory"
+	setfieldeffectargument 0, 2
+# 86 "data/maps/TestMap/scripts.pory"
+	dofieldeffect FLDEFF_NPCFLY_OUT
+# 87 "data/maps/TestMap/scripts.pory"
+	delay 15
+# 88 "data/maps/TestMap/scripts.pory"
+	addobject 6
+# 89 "data/maps/TestMap/scripts.pory"
+	waitfieldeffect FLDEFF_NPCFLY_OUT
+# 90 "data/maps/TestMap/scripts.pory"
+	release
+	end
 
-LugiaBattle_Text_1:
-# 38 "data/maps/TestMap/scripts.pory"
-	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}(Battle me, human.)$"
 
 SignTest_Text_0:
-# 47 "data/maps/TestMap/scripts.pory"
+# 21 "data/maps/TestMap/scripts.pory"
 	.string "Hello, world!$"
 
 NameBoxTest_Text_0:
-# 58 "data/maps/TestMap/scripts.pory"
+# 32 "data/maps/TestMap/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}Archie$"
 
 NameBoxTest_Text_1:
-# 59 "data/maps/TestMap/scripts.pory"
+# 33 "data/maps/TestMap/scripts.pory"
 	.string "Expand the Sea!$"
 
 NameBoxTest_2_Text_0:
-# 69 "data/maps/TestMap/scripts.pory"
+# 43 "data/maps/TestMap/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_RED}Maxie$"
 
 NameBoxTest_2_Text_1:
-# 70 "data/maps/TestMap/scripts.pory"
+# 44 "data/maps/TestMap/scripts.pory"
 	.string "Expand the Land!$"
 
 TriggerMayFollow_Text_0:
-# 79 "data/maps/TestMap/scripts.pory"
+# 53 "data/maps/TestMap/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_RED}SYSTEM$"
 
 TriggerMayFollow_Text_1:
-# 80 "data/maps/TestMap/scripts.pory"
+# 54 "data/maps/TestMap/scripts.pory"
 	.string "MAY IS FOLLOWING YOU$"

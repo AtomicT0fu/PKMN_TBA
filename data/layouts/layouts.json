@@ -4454,9 +4454,9 @@
     {
       "id": "LAYOUT_PLAYER_HOUSE_1F",
       "name": "Player_House_1F_Layout",
-      "width": 8,
+      "width": 13,
       "height": 9,
-      "primary_tileset": "gTileset_Building",
+      "primary_tileset": "gTileset_Indoor_Cabin",
       "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/Player_House_1F/border.bin",
       "blockdata_filepath": "data/layouts/Player_House_1F/map.bin"
@@ -4480,6 +4480,36 @@
       "secondary_tileset": "gTileset_Bo_Ranch",
       "border_filepath": "data/layouts/Old_Bos_Ranch/border.bin",
       "blockdata_filepath": "data/layouts/Old_Bos_Ranch/map.bin"
+    },
+    {
+      "id": "LAYOUT_PLAYER_HOUSE_B1F",
+      "name": "Player_House_B1F_Layout",
+      "width": 8,
+      "height": 7,
+      "primary_tileset": "gTileset_Indoor_Cabin",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Player_House_B1F/border.bin",
+      "blockdata_filepath": "data/layouts/Player_House_B1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_RIVAL_HOUSE_1F",
+      "name": "Rival_House_1F_Layout",
+      "width": 8,
+      "height": 9,
+      "primary_tileset": "gTileset_Indoor_Cabin",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Rival_House_1F/border.bin",
+      "blockdata_filepath": "data/layouts/Rival_House_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_RIVAL_HOUSE_B1F",
+      "name": "Rival_House_B1F_Layout",
+      "width": 8,
+      "height": 9,
+      "primary_tileset": "gTileset_Indoor_Cabin",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Rival_House_B1F/border.bin",
+      "blockdata_filepath": "data/layouts/Rival_House_B1F/map.bin"
     }
   ]
 }

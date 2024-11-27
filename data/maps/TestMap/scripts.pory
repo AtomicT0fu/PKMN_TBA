@@ -17,32 +17,6 @@ script SetFlags{
     end
 }
 
-script MewBattle{
-    lock
-    faceplayer
-    playmoncry(SPECIES_MEW, 0)
-    speakername("{COLOR LIGHT_RED}{SHADOW LIGHT_GRAY}Mew")
-    msgbox("Myyyuuuuu!")
-    waitmessage
-    setwildbattle(SPECIES_MEW, 100, ITEM_NONE)
-    special(BattleSetup_StartLegendaryBattle)
-    releaseall
-    end
-}
-
-script LugiaBattle{
-    lock
-    faceplayer
-    playmoncry(SPECIES_LUGIA, 0)
-    speakername("{COLOR BLUE}{SHADOW LIGHT_RED}Lugia")
-    msgbox("{COLOR GREEN}{SHADOW LIGHT_GREEN}(Battle me, human.)")
-    waitmessage
-    setwildbattle(SPECIES_LUGIA, 100, ITEM_NONE)
-    special(BattleSetup_StartLegendaryBattle)
-    releaseall
-    end
-}
-
 script SignTest{
     msgbox({}"Hello, world!", MSGBOX_SIGN)
     setflag(FLAG_SYS_NATIONAL_DEX)
@@ -92,5 +66,27 @@ script AbraTeleport{
     playmoncry(SPECIES_ABRA, 0)
     waitmoncry
     warpteleport(MAP_HIGHLAND_FARMS, 41, 27)
+    end
+}
+
+script RedFly{
+    lock
+    setfieldeffectargument(0, 1)
+    dofieldeffect(FLDEFF_NPCFLY_OUT)
+    delay(15)
+    removeobject(6)
+    waitfieldeffect(FLDEFF_NPCFLY_OUT)
+    release
+    end
+}
+
+script FlyIn{
+    lock
+    setfieldeffectargument(0, 2)
+    dofieldeffect(FLDEFF_NPCFLY_OUT)
+    delay(15)
+    addobject(6)
+    waitfieldeffect(FLDEFF_NPCFLY_OUT)
+    release 
     end
 }
