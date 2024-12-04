@@ -2,7 +2,7 @@
   "id": "MAP_HIGHLAND_PATH",
   "name": "Highland_Path",
   "layout": "LAYOUT_HIGHLAND_PATH",
-  "music": "MUS_DUMMY",
+  "music": "MUS_LILYCOVE_MUSEUM",
   "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

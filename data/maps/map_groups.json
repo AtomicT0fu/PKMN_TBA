@@ -102,7 +102,9 @@
     "Old_Bos_Ranch",
     "Player_House_B1F",
     "Rival_House_1F",
-    "Rival_House_B1F"
+    "Rival_House_B1F",
+    "Black_Screen",
+    "Player_Shed"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",

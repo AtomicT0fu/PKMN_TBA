@@ -2,7 +2,7 @@
   "id": "MAP_OLD_BOS_RANCH",
   "name": "Old_Bos_Ranch",
   "layout": "LAYOUT_OLD_BOS_RANCH",
-  "music": "MUS_DUMMY",
+  "music": "MUS_LILYCOVE_MUSEUM",
   "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

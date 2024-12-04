@@ -69,6 +69,14 @@ script AbraTeleport{
     end
 }
 
+script AbraTeleport_2{
+    faceplayer
+    playmoncry(SPECIES_KADABRA, 0)
+    waitmoncry
+    warpsilent(MAP_BLACK_SCREEN, 5, 4)
+    end
+}
+
 script RedFly{
     lock
     setfieldeffectargument(0, 1)

@@ -2,7 +2,7 @@
   "id": "MAP_RIVAL_HOUSE_1F",
   "name": "Rival_House_1F",
   "layout": "LAYOUT_RIVAL_HOUSE_1F",
-  "music": "MUS_DUMMY",
+  "music": "MUS_LILYCOVE_MUSEUM",
   "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -19,7 +19,7 @@
   "warp_events": [
     {
       "x": 3,
-      "y": 8,
+      "y": 7,
       "elevation": 0,
       "dest_map": "MAP_HIGHLAND_FARMS",
       "dest_warp_id": "1"

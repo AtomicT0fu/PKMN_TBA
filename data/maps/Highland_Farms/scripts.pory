@@ -1,1 +1,257 @@
-mapscripts Highland_Farms_MapScripts{}
+mapscripts Highland_Farms_MapScripts{
+    MAP_SCRIPT_ON_LOAD: CheckSproutFlag
+}
+
+script HF_DadIntro_A{
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, HF_CAM_1A)
+    waitmovement(0)
+    applymovement(2, HF_M_Dad1)
+    playse(SE_M_DIG)
+    waitse
+    playse(SE_M_DIG)
+    waitse
+    playse(SE_M_DIG)
+    waitse
+    waitmovement(2)
+    setmetatile(47, 13, 0x00EF, TRUE)
+    playse(SE_BALL_BOUNCE_1)
+    special(DrawWholeMapView)
+    waitse
+    delay(30)
+    applymovement(2, HF_M_Dad2)
+    waitmovement(0)
+    applymovement(2, HF_M_Dad1)
+    playse(SE_M_DIG)
+    waitse
+    playse(SE_M_DIG)
+    waitse
+    playse(SE_M_DIG)
+    waitse
+    waitmovement(2)
+    setmetatile(46, 13, 0x0268, TRUE)
+    playse(SE_BALL_BOUNCE_1)
+    special(DrawWholeMapView)
+    waitse
+    delay(30)
+    applymovement(2, HF_M_Dad2)
+    waitmovement(0)
+    applymovement(2, HF_M_Dad1)
+    playse(SE_M_DIG)
+    waitse
+    playse(SE_M_DIG)
+    waitse
+    playse(SE_M_DIG)
+    waitse
+    waitmovement(2)
+    setmetatile(45, 13, 0x026A, TRUE)
+    playse(SE_BALL_BOUNCE_1)
+    special(DrawWholeMapView)
+    waitse
+    delay(30)
+    applymovement(2, HF_M_Dad3)
+    applymovement(OBJ_EVENT_ID_CAMERA, HF_M_Dad3)
+    waitmovement(0)
+    delay(60)
+    turnobject(2, DIR_SOUTH)
+    applymovement(2, Univ_Exclam)
+    playse(SE_PIN)
+    waitmovement(0)
+    waitse
+    delay(60)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Dad")
+    msgbox(HF_T_Dad1)
+    closemessage
+    applymovement(OBJ_EVENT_ID_PLAYER, HF_M_Player1A)
+    waitmovement(0)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Dad")
+    msgbox(HF_T_Dad2)
+    closemessage
+    applymovement(2, HF_M_Dad4)
+    waitmovement(0)
+    opendoor(45, 7)
+    waitdooranim
+    applymovement(2, Univ_StepUp1)
+    waitmovement(0)
+    playse(SE_EXIT)
+    removeobject(2)
+    waitse
+    closedoor(45, 7)
+    waitdooranim
+    applymovement(OBJ_EVENT_ID_CAMERA, Univ_StepDown1)
+    waitmovement(0)
+    special(RemoveCameraObject)
+    setflag(FLAG_HIDE_DAD_1)
+    setflag(FLAG_SPROUTS_PLANTED)
+    setvar(VAR_ADVENTURE_START, 4)
+    release
+    end
+}
+
+script HF_DadIntro_B{
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, HF_CAM_1B)
+    waitmovement(0)
+    applymovement(2, HF_M_Dad1)
+    playse(SE_M_DIG)
+    waitse
+    playse(SE_M_DIG)
+    waitse
+    playse(SE_M_DIG)
+    waitse
+    waitmovement(2)
+    setmetatile(47, 13, 0x00EF, TRUE)
+    playse(SE_BALL_BOUNCE_1)
+    special(DrawWholeMapView)
+    waitse
+    delay(30)
+    applymovement(2, HF_M_Dad2)
+    waitmovement(0)
+    applymovement(2, HF_M_Dad1)
+    playse(SE_M_DIG)
+    waitse
+    playse(SE_M_DIG)
+    waitse
+    playse(SE_M_DIG)
+    waitse
+    waitmovement(2)
+    setmetatile(46, 13, 0x0268, TRUE)
+    playse(SE_BALL_BOUNCE_1)
+    special(DrawWholeMapView)
+    waitse
+    delay(30)
+    applymovement(2, HF_M_Dad2)
+    waitmovement(0)
+    applymovement(2, HF_M_Dad1)
+    playse(SE_M_DIG)
+    waitse
+    playse(SE_M_DIG)
+    waitse
+    playse(SE_M_DIG)
+    waitse
+    waitmovement(2)
+    setmetatile(45, 13, 0x026A, TRUE)
+    playse(SE_BALL_BOUNCE_1)
+    special(DrawWholeMapView)
+    waitse
+    delay(30)
+    applymovement(2, HF_M_Dad3)
+    applymovement(OBJ_EVENT_ID_CAMERA, HF_M_Dad3)
+    waitmovement(0)
+    delay(60)
+    turnobject(2, DIR_SOUTH)
+    applymovement(2, Univ_Exclam)
+    playse(SE_PIN)
+    waitmovement(0)
+    waitse
+    delay(60)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Dad")
+    msgbox(HF_T_Dad1)
+    closemessage
+    applymovement(OBJ_EVENT_ID_PLAYER, HF_M_Player1B)
+    waitmovement(0)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Dad")
+    msgbox(HF_T_Dad2)
+    closemessage
+    applymovement(2, HF_M_Dad4)
+    waitmovement(0)
+    opendoor(45, 7)
+    waitdooranim
+    applymovement(2, Univ_StepUp1)
+    waitmovement(0)
+    playse(SE_EXIT)
+    removeobject(2)
+    waitse
+    closedoor(45, 7)
+    waitdooranim
+    applymovement(OBJ_EVENT_ID_CAMERA, Univ_StepDown1)
+    waitmovement(0)
+    special(RemoveCameraObject)
+    setflag(FLAG_HIDE_DAD_1)
+    setflag(FLAG_SPROUTS_PLANTED)
+    setvar(VAR_ADVENTURE_START, 4)
+    release
+    end
+}
+
+script CheckSproutFlag{
+    if(flag(FLAG_SPROUTS_PLANTED) == TRUE){
+        setmetatile(47, 13, 0x00EF, TRUE)
+        setmetatile(46, 13, 0x0268, TRUE)
+        setmetatile(45, 13, 0x026A, TRUE)
+    }
+    else{
+    }
+    end
+}
+
+script BattleMike{
+    lock
+    faceplayer
+    trainerbattle_no_intro(TRAINER_RIVAL_MIKE, LoseText)
+    release
+    end
+}
+
+
+movement HF_CAM_1A{
+    walk_up * 4
+    walk_right * 3
+}
+
+movement HF_CAM_1B{
+    walk_up * 4
+    walk_right * 4
+}
+
+movement HF_M_Dad1{
+    walk_in_place_up * 3
+}
+
+movement HF_M_Dad2{
+    walk_left
+    face_up
+}
+
+movement HF_M_Dad3{
+    walk_left
+    walk_up
+    walk_left * 2
+    walk_up
+}
+
+movement HF_M_Dad4{
+    walk_up * 3
+    walk_right * 3
+    walk_up
+}
+
+movement HF_M_Player1A{
+    walk_up * 5
+}
+
+movement HF_M_Player1B{
+    walk_fast_right 
+    walk_up * 5
+}
+
+
+
+
+
+text HF_T_Dad1{
+    "Mornin', {PLAYER}!\n"
+    "Come on over here, we got a job to do."
+}
+
+text HF_T_Dad2{
+    "I already got them new plants in the \n"
+    "ground, and the harvest herbs moved\p"
+    "over into the shed.\p"
+    "If you wanna meet me in there, we can\n"
+    "get to processin' this new batch.\p"
+    "I'll bet'cha we can get finished before\n"
+    "Momma finishes lunch if we stick to it!\p"
+    "It sure is great having your help out\n"
+    "here, {PLAYER}."
+}

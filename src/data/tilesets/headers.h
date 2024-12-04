@@ -891,3 +891,14 @@ const struct Tileset gTileset_Indoor_Cabin =
     .metatileAttributes = gMetatileAttributes_Indoor_Cabin,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_Indoor_Dad_Shed_Equip =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Indoor_Dad_Shed_Equip,
+    .palettes = gTilesetPalettes_Indoor_Dad_Shed_Equip,
+    .metatiles = gMetatiles_Indoor_Dad_Shed_Equip,
+    .metatileAttributes = gMetatileAttributes_Indoor_Dad_Shed_Equip,
+    .callback = NULL,
+};

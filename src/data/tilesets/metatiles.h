@@ -225,3 +225,6 @@ const u16 gMetatileAttributes_Bo_Ranch[] = INCBIN_U16("data/tilesets/secondary/b
 
 const u16 gMetatiles_Indoor_Cabin[] = INCBIN_U16("data/tilesets/primary/indoor_cabin/metatiles.bin");
 const u16 gMetatileAttributes_Indoor_Cabin[] = INCBIN_U16("data/tilesets/primary/indoor_cabin/metatile_attributes.bin");
+
+const u16 gMetatiles_Indoor_Dad_Shed_Equip[] = INCBIN_U16("data/tilesets/secondary/indoor_dad_shed_equip/metatiles.bin");
+const u16 gMetatileAttributes_Indoor_Dad_Shed_Equip[] = INCBIN_U16("data/tilesets/secondary/indoor_dad_shed_equip/metatile_attributes.bin");

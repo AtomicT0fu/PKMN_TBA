@@ -1,0 +1,163 @@
+mapscripts Black_Screen_MapScripts{
+    MAP_SCRIPT_ON_FRAME_TABLE[
+        VAR_ADVENTURE_START, 0: WarpToStart
+    ]
+}
+
+script WarpToStart{
+    lock
+    delay(60)
+    fadescreen(FADE_TO_BLACK)
+    call(ReDrawRoom)
+    fadenewbgm(MUS_LILYCOVE_MUSEUM)
+    delay(30)
+    addobject(1)
+    playse(SE_EXIT)
+    waitse
+    playmoncry(SPECIES_LILLIPUP, 0)
+    waitmoncry
+    applymovement(1, JumpInPlace_Down)
+    playse(SE_BIKE_HOP)
+    waitmovement(0)
+    applymovement(1, PHB1F_Lillipup_Walk1)
+    waitmovement(0)
+    applymovement(1, JumpInPlace_Right)
+    playse(SE_BIKE_HOP)
+    waitmovement(0)
+    removeobject(1)
+    addobject(2)
+    playmoncry(SPECIES_LILLIPUP, 0)
+    waitmoncry
+    setvar(VAR_ADVENTURE_START, 1)
+    release
+    end
+}
+
+script BS_Leave_Bed{
+    speakername("{COLOR RED}{SHADOW LIGHT_RED}{FONT_SHORT}Mom")
+    msgbox(BS_T_Mom1)
+    closemessage
+    turnobject(2, DIR_NORTH)
+    playse(SE_PIN)
+    applymovement(2, BS_Lilli_Ex1)
+    waitmovement(0)
+    delay(90)
+    speakername("{COLOR RED}{SHADOW LIGHT_RED}{FONT_SHORT}Mom")
+    msgbox(BS_T_Mom2)
+    closemessage
+    applymovement(2, JumpInPlace_Up)
+    playse(SE_BIKE_HOP)
+    waitmovement(0)
+    playmoncry(SPECIES_LILLIPUP, 0)
+    waitmoncry
+    applymovement(2, BS_Lilli_Move1)
+    waitmovement(0)
+    playse(SE_EXIT)
+    removeobject(2)
+    setvar(VAR_ADVENTURE_START, 2)
+    release
+    end
+}
+
+script ReDrawRoom{
+    setmetatile(0, 0, 0x001B, TRUE)
+    setmetatile(1, 0, 0x001C, TRUE)
+    setmetatile(2, 0, 0x001D, TRUE)
+    setmetatile(3, 0, 0x0019, TRUE)
+    setmetatile(4, 0, 0x009E, TRUE)
+    setmetatile(5, 0, 0x0019, TRUE)
+    setmetatile(6, 0, 0x0088, TRUE)
+    setmetatile(7, 0, 0x0089, TRUE) // 8
+    setmetatile(0, 1, 0x0023, TRUE)
+    setmetatile(1, 1, 0x0011, FALSE)
+    setmetatile(2, 1, 0x0025, TRUE)
+    setmetatile(3, 1, 0x007D, TRUE)
+    setmetatile(4, 1, 0x00A6, TRUE)
+    setmetatile(5, 1, 0x007F, TRUE)
+    setmetatile(6, 1, 0x0090, TRUE)
+    setmetatile(7, 1, 0x0091, TRUE) // 16
+    setmetatile(0, 2, 0x000E, FALSE)
+    setmetatile(1, 2, 0x0003, FALSE)
+    setmetatile(2, 2, 0x0003, FALSE)
+    setmetatile(3, 2, 0x0085, FALSE)
+    setmetatile(4, 2, 0x0086, FALSE)
+    setmetatile(5, 2, 0x0087, FALSE)
+    setmetatile(6, 2, 0x0098, FALSE)
+    setmetatile(7, 2, 0x0099, FALSE) // 24
+    setmetatile(0, 3, 0x0005, FALSE)
+    setmetatile(1, 3, 0x0001, FALSE)
+    setmetatile(2, 3, 0x0001, FALSE)
+    setmetatile(3, 3, 0x0060, FALSE)
+    setmetatile(4, 3, 0x0061, FALSE)
+    setmetatile(5, 3, 0x0061, FALSE)
+    setmetatile(6, 3, 0x0061, FALSE)
+    setmetatile(7, 3, 0x0062, FALSE) // 32
+    setmetatile(0, 4, 0x0005, FALSE)
+    setmetatile(1, 4, 0x0001, FALSE)
+    setmetatile(2, 4, 0x0001, FALSE)
+    setmetatile(3, 4, 0x0068, FALSE)
+    setmetatile(4, 4, 0x00B0, FALSE)
+    setmetatile(5, 4, 0x00B1, FALSE)
+    setmetatile(6, 4, 0x00B2, FALSE)
+    setmetatile(7, 4, 0x006A, FALSE) // 40
+    setmetatile(0, 5, 0x00A4, TRUE)
+    setmetatile(1, 5, 0x007C, FALSE)
+    setmetatile(2, 5, 0x0001, FALSE)
+    setmetatile(3, 5, 0x0068, FALSE)
+    setmetatile(4, 5, 0x00B8, FALSE)
+    setmetatile(5, 5, 0x00B9, TRUE)
+    setmetatile(6, 5, 0x00BA, FALSE)
+    setmetatile(7, 5, 0x006A, FALSE) // 48
+    setmetatile(0, 6, 0x00A3, TRUE)
+    setmetatile(1, 6, 0x009C, TRUE)
+    setmetatile(2, 6, 0x009B, TRUE)
+    setmetatile(3, 6, 0x0070, FALSE)
+    setmetatile(4, 6, 0x0071, FALSE)
+    setmetatile(5, 6, 0x0071, FALSE)
+    setmetatile(6, 6, 0x0071, FALSE)
+    setmetatile(7, 6, 0x0072, FALSE) // 56
+    special(DrawWholeMapView)
+    fadescreenspeed(FADE_FROM_BLACK, 15)
+    return
+}
+
+
+
+
+
+
+movement PHB1F_Lillipup_Walk1{
+    walk_fast_down * 3
+    walk_fast_right * 2
+}
+
+movement JumpInPlace_Down{
+    jump_in_place_down
+}
+
+movement JumpInPlace_Right{
+    jump_in_place_right
+}
+
+movement JumpInPlace_Up{
+    jump_in_place_up
+}
+
+movement BS_Lilli_Ex1{
+    emote_exclamation_mark
+}
+
+movement BS_Lilli_Move1{
+    walk_fast_left * 2
+    walk_fast_up * 3
+}
+
+
+
+text BS_T_Mom1{
+    "{FONT_SMALL_NARROWER}Lilli!"
+    }
+
+text BS_T_Mom2{
+    "{FONT_SMALL_NARROWER}Where'd you go, sweetie??"
+}

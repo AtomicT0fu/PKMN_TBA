@@ -1172,3 +1172,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Rival_House_1F/scripts.inc"
 
 	.include "data/maps/Rival_House_B1F/scripts.inc"
+
+	.include "data/maps/Black_Screen/scripts.inc"
+
+	.include "data/maps/Player_Shed/scripts.inc"

@@ -116,38 +116,50 @@ AbraTeleport::
 	end
 
 
-RedFly::
+AbraTeleport_2::
 # 73 "data/maps/TestMap/scripts.pory"
-	lock
+	faceplayer
 # 74 "data/maps/TestMap/scripts.pory"
-	setfieldeffectargument 0, 1
+	playmoncry SPECIES_KADABRA, 0
 # 75 "data/maps/TestMap/scripts.pory"
-	dofieldeffect FLDEFF_NPCFLY_OUT
+	waitmoncry
 # 76 "data/maps/TestMap/scripts.pory"
+	warpsilent MAP_BLACK_SCREEN, 5, 4
+	end
+
+
+RedFly::
+# 81 "data/maps/TestMap/scripts.pory"
+	lock
+# 82 "data/maps/TestMap/scripts.pory"
+	setfieldeffectargument 0, 1
+# 83 "data/maps/TestMap/scripts.pory"
+	dofieldeffect FLDEFF_NPCFLY_OUT
+# 84 "data/maps/TestMap/scripts.pory"
 	delay 15
-# 77 "data/maps/TestMap/scripts.pory"
+# 85 "data/maps/TestMap/scripts.pory"
 	removeobject 6
-# 78 "data/maps/TestMap/scripts.pory"
+# 86 "data/maps/TestMap/scripts.pory"
 	waitfieldeffect FLDEFF_NPCFLY_OUT
-# 79 "data/maps/TestMap/scripts.pory"
+# 87 "data/maps/TestMap/scripts.pory"
 	release
 	end
 
 
 FlyIn::
-# 84 "data/maps/TestMap/scripts.pory"
+# 92 "data/maps/TestMap/scripts.pory"
 	lock
-# 85 "data/maps/TestMap/scripts.pory"
+# 93 "data/maps/TestMap/scripts.pory"
 	setfieldeffectargument 0, 2
-# 86 "data/maps/TestMap/scripts.pory"
+# 94 "data/maps/TestMap/scripts.pory"
 	dofieldeffect FLDEFF_NPCFLY_OUT
-# 87 "data/maps/TestMap/scripts.pory"
+# 95 "data/maps/TestMap/scripts.pory"
 	delay 15
-# 88 "data/maps/TestMap/scripts.pory"
+# 96 "data/maps/TestMap/scripts.pory"
 	addobject 6
-# 89 "data/maps/TestMap/scripts.pory"
+# 97 "data/maps/TestMap/scripts.pory"
 	waitfieldeffect FLDEFF_NPCFLY_OUT
-# 90 "data/maps/TestMap/scripts.pory"
+# 98 "data/maps/TestMap/scripts.pory"
 	release
 	end
 

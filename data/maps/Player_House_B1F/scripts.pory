@@ -1,0 +1,24 @@
+mapscripts Player_House_B1F_MapScripts{}
+
+script GiveMon4{
+    lock
+    removeobject(2)
+    playse(MUS_OBTAIN_ITEM)
+    showmonpic(SPECIES_SKIDDO, 10, 3)
+    givemon(SPECIES_SKIDDO, 15, ITEM_MIRACLE_SEED, ITEM_POKE_BALL, 3, 0, MALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_RAZOR_LEAF, MOVE_LEECH_SEED, MOVE_TACKLE, MOVE_GROWL, TRUE)
+    waitse
+    hidemonpic
+    closemessage
+    setflag(FLAG_HIDE_BALL)
+    setflag(FLAG_SYS_POKEMON_GET)
+    release
+    end
+}
+
+script BattleNorman{
+    lock
+    faceplayer
+    trainerbattle_no_intro(TRAINER_CHAMPION_NORMAN, LoseText)
+    release
+    end
+}

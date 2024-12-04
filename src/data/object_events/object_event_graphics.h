@@ -156,7 +156,6 @@ const u32 gObjectEventPic_Wally[] = INCBIN_U32("graphics/object_events/pics/peop
 const u32 gObjectEventPic_RubySapphireLittleBoy[] = INCBIN_U32("graphics/object_events/pics/people/rs_little_boy.4bpp");
 const u32 gObjectEventPic_HotSpringsOldWoman[] = INCBIN_U32("graphics/object_events/pics/people/hot_springs_old_woman.4bpp");
 const u32 gObjectEventPic_LatiasLatios[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/latias_latios.4bpp");
-const u32 gObjectEventPic_GameboyKid[] = INCBIN_U32("graphics/object_events/pics/people/gameboy_kid.4bpp");
 const u32 gObjectEventPic_ContestJudge[] = INCBIN_U32("graphics/object_events/pics/people/contest_judge.4bpp");
 const u32 gObjectEventPic_Archie[] = INCBIN_U32("graphics/object_events/pics/people/team_aqua/archie.4bpp");
 const u32 gObjectEventPic_Maxie[] = INCBIN_U32("graphics/object_events/pics/people/team_magma/maxie.4bpp");
@@ -379,6 +378,14 @@ const u32 gObjectEventPic_RayquazaCutscene[] = INCBIN_U32("graphics/object_event
 
 const u16 gObjectEventPal_HoOh[] = INCBIN_U16("graphics/object_events/palettes/ho_oh.gbapal");
 const u16 gObjectEventPal_Lugia[] = INCBIN_U16("graphics/object_events/palettes/lugia.gbapal");
+
+const u32 gObjectEventPic_ChampionNorman[] = INCBIN_U32("graphics/object_events/pics/people/gym_leaders/champion_norman_ow_m.4bpp");
+const u16 gObjectEventPal_ChampionNorman[] = INCBIN_U16("graphics/object_events/palettes/champion_norman_ow.gbapal");
+
+const u32 gObjectEventPic_RivalMike[] = INCBIN_U32("graphics/object_events/pics/people/rival_mike_ow.4bpp");
+const u16 gObjectEventPal_RivalMike[] = INCBIN_U16("graphics/object_events/palettes/rival_mike_ow.gbapal");
+
+
 
 const u16 gObjectEventPal_Substitute[] = INCBIN_U16("graphics/pokemon/question_mark/overworld.gbapal");
 

@@ -4495,7 +4495,7 @@
       "id": "LAYOUT_RIVAL_HOUSE_1F",
       "name": "Rival_House_1F_Layout",
       "width": 8,
-      "height": 9,
+      "height": 8,
       "primary_tileset": "gTileset_Indoor_Cabin",
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/Rival_House_1F/border.bin",
@@ -4505,11 +4505,31 @@
       "id": "LAYOUT_RIVAL_HOUSE_B1F",
       "name": "Rival_House_B1F_Layout",
       "width": 8,
-      "height": 9,
+      "height": 8,
       "primary_tileset": "gTileset_Indoor_Cabin",
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/Rival_House_B1F/border.bin",
       "blockdata_filepath": "data/layouts/Rival_House_B1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_BLACK_SCREEN",
+      "name": "Black_Screen_Layout",
+      "width": 8,
+      "height": 7,
+      "primary_tileset": "gTileset_Indoor_Cabin",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Black_Screen/border.bin",
+      "blockdata_filepath": "data/layouts/Black_Screen/map.bin"
+    },
+    {
+      "id": "LAYOUT_PLAYER_SHED",
+      "name": "Player_Shed_Layout",
+      "width": 10,
+      "height": 9,
+      "primary_tileset": "gTileset_Indoor_Cabin",
+      "secondary_tileset": "gTileset_Indoor_Dad_Shed_Equip",
+      "border_filepath": "data/layouts/Player_Shed/border.bin",
+      "blockdata_filepath": "data/layouts/Player_Shed/map.bin"
     }
   ]
 }

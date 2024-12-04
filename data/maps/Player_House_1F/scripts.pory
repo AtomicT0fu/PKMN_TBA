@@ -1,0 +1,105 @@
+mapscripts Player_House_1F_MapScripts{
+    MAP_SCRIPT_ON_FRAME_TABLE[
+        VAR_ADVENTURE_START, 2: PH1F_MomIntro
+    ]
+}
+
+script PH1F_MomIntro{
+    turnobject(1, DIR_WEST)
+    applymovement(1, Univ_Exclam)
+    playse(SE_PIN)
+    waitmovement(0)
+    applymovement(1, PH1F_M_Mom1)
+    waitmovement(0)
+    speakername("{COLOR RED}{SHADOW LIGHT_RED}{FONT_SHORT}Mom")
+    msgbox(PH1F_T_Mom1)
+    closemessage
+    applymovement(1, PH1F_M_Mom2)
+    waitmovement(0)
+    setvar(VAR_ADVENTURE_START, 3)
+    releaseall
+    end
+}
+
+
+
+
+//UNIVERSAL MOVEMENTS////////////
+movement Univ_Exclam{
+    emote_exclamation_mark
+}
+
+movement Univ_Question{
+    emote_question_mark
+}
+
+movement Univ_DoubleExclam{
+    emote_double_exclamation_mark
+}
+
+movement Univ_Heart{
+    emote_heart
+}
+
+movement Univ_X{
+    emote_x
+}
+
+movement Univ_StepUp1{
+    walk_up
+}
+
+movement Univ_StepDown1{
+    walk_down
+}
+
+movement Univ_StepRight1{
+    walk_right
+}
+
+movement Univ_StepLeft1{
+    walk_left
+}
+
+movement Univ_JumpIP_1Up{
+    jump_in_place_up
+}
+
+movement Univ_JumpIP_1Down{
+    jump_in_place_down
+}
+
+movement Univ_JumpIP_1Right{
+    jump_in_place_right
+}
+
+movement Univ_JumpIP_1Left{
+    jump_in_place_left
+}
+/////////////////////////////////
+
+
+movement PH1F_M_Mom1{
+    walk_left * 4
+    walk_up 
+}
+
+movement PH1F_M_Mom2{
+    walk_down
+    walk_right * 4
+    face_up
+}
+
+
+
+text PH1F_T_Mom1{
+    "Oh, good morning honey! I'm sorry if\n" 
+    "Lilli woke you...\p"
+    "Isn't she the cutest little Lillipad\n" 
+    "you've ever seen though?\p"
+    "Oh!\p"
+    "Your father wanted to get an early\n" 
+    "start on the crop today.\p"
+    "You'd better get out there, {PLAYER}.\n"
+    "You know how much he values your help."
+}

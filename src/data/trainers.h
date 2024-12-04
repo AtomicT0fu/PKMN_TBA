@@ -42270,3 +42270,106 @@ F_TRAINER_FEMALE |
             },
         },
     },
+#line 16911
+    [TRAINER_CHAMPION_NORMAN] =
+    {
+#line 16912
+        .trainerName = _("NORMAN"),
+#line 16913
+        .trainerClass = TRAINER_CLASS_CHAMPION,
+#line 16914
+        .trainerPic = TRAINER_PIC_CHAMPION_NORMAN,
+        .encounterMusic_gender = 
+#line 16916
+            TRAINER_ENCOUNTER_MUSIC_MALE,
+#line 16917
+        .doubleBattle = FALSE,
+#line 16918
+        .aiFlags = AI_FLAG_SMART_TRAINER,
+#line 16919
+        .mugshotEnabled = TRUE,
+        .mugshotColor = MUGSHOT_COLOR_YELLOW,
+        .partySize = 1,
+        .party = (const struct TrainerMon[])
+        {
+            {
+#line 16921
+            .species = SPECIES_GYARADOS,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 16921
+            .heldItem = ITEM_FOCUS_SASH,
+#line 16926
+            .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
+#line 16928
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 16922
+            .ability = ABILITY_INTIMIDATE,
+#line 16923
+            .lvl = 50,
+#line 16927
+            .nature = NATURE_JOLLY,
+#line 16924
+            .isShiny = TRUE,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+#line 16925
+            .teraType = TYPE_WATER,
+            .moves = {
+#line 16928
+                MOVE_WATERFALL,
+                MOVE_BOUNCE,
+                MOVE_EARTHQUAKE,
+                MOVE_DRAGON_TAIL,
+            },
+            },
+        },
+    },
+#line 16933
+    [TRAINER_RIVAL_MIKE] =
+    {
+#line 16934
+        .trainerName = _("MIKE"),
+#line 16935
+        .trainerClass = TRAINER_CLASS_RIVAL,
+#line 16936
+        .trainerPic = TRAINER_PIC_RIVAL_MIKE,
+        .encounterMusic_gender = 
+#line 16938
+            TRAINER_ENCOUNTER_MUSIC_MALE,
+#line 16939
+        .doubleBattle = FALSE,
+#line 16940
+        .aiFlags = AI_FLAG_SMART_TRAINER,
+#line 16941
+        .mugshotEnabled = TRUE,
+        .mugshotColor = MUGSHOT_COLOR_BLUE,
+        .partySize = 1,
+        .party = (const struct TrainerMon[])
+        {
+            {
+#line 16943
+            .species = SPECIES_MUDBRAY,
+#line 16943
+            .gender = TRAINER_MON_MALE,
+#line 16947
+            .ev = TRAINER_PARTY_EVS(31, 31, 31, 31, 31, 31),
+#line 16949
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 16944
+            .ability = ABILITY_OWN_TEMPO,
+#line 16945
+            .lvl = 15,
+#line 16948
+            .nature = NATURE_ADAMANT,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+#line 16946
+            .teraType = TYPE_GROUND,
+            .moves = {
+#line 16949
+                MOVE_STOMP,
+                MOVE_ROCK_SMASH,
+                MOVE_ROCK_TOMB,
+                MOVE_TAIL_WHIP,
+            },
+            },
+        },
+    },
