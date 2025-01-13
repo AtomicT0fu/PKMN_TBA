@@ -9,6 +9,7 @@ script PH1F_MomIntro{
     applymovement(1, Univ_Exclam)
     playse(SE_PIN)
     waitmovement(0)
+    delay(60)
     applymovement(1, PH1F_M_Mom1)
     waitmovement(0)
     speakername("{COLOR RED}{SHADOW LIGHT_RED}{FONT_SHORT}Mom")
@@ -21,6 +22,12 @@ script PH1F_MomIntro{
     end
 }
 
+script WarpTo_Test{
+    lock
+    warpsilent(MAP_TEST_MAP, 9, 14)
+    release
+    end
+}
 
 
 
