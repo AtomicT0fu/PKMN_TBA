@@ -66,6 +66,7 @@ SECTIONS {
         src/main.o(.text);
         src/*.o(.text*);
         asm/*.o(.text*);
+        src/map_preview_screen.o(.text);
     } > ROM =0
 
     script_data :
@@ -123,6 +124,7 @@ SECTIONS {
         *libc.a:*.o(.rodata*);
         *libc.a:*.o(.data*);
         src/libisagbprn.o(.rodata);
+        src/map_preview_screen.o(.rodata);
     } > ROM =0
 
     multiboot_data :
