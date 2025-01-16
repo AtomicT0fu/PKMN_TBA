@@ -656,9 +656,9 @@
 #define FLAG_HIDDEN_ITEM_ROUTE_123_RARE_CANDY                (FLAG_HIDDEN_ITEMS_START + 0x6E)
 #define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                 (FLAG_HIDDEN_ITEMS_START + 0x6F)
 
-#define FLAG_UNUSED_0x264  0x264 // Unused Flag
-#define FLAG_UNUSED_0x265  0x265 // Unused Flag
-#define FLAG_UNUSED_0x266  0x266 // Unused Flag
+#define FLAG_OBT_RED_HERB   0x264 // Player has picked up red herbs from bin
+#define FLAG_OBT_RED_BRICK  0x265 // Player has picked up the red brick
+#define FLAG_NO_INT_BINS    0x266 // Player cannot grab other herbs while doing a batch
 #define FLAG_UNUSED_0x267  0x267 // Unused Flag
 #define FLAG_UNUSED_0x268  0x268 // Unused Flag
 #define FLAG_UNUSED_0x269  0x269 // Unused Flag

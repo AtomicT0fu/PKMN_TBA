@@ -1,0 +1,277 @@
+mapscripts Player_Shed_MapScripts{
+    MAP_SCRIPT_ON_FRAME_TABLE[
+        VAR_ADVENTURE_START, 4: PS_Dad_Intro
+    ]
+}
+
+script PS_Dad_Intro{
+    applymovement(OBJ_EVENT_ID_PLAYER, PS_Player_Walk1)
+    waitmovement(0)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Dad")
+    msgbox(PS_T_Dad1)
+    waitmessage
+    closemessage
+    applymovement(1, PS_W_Dad1)
+    delay(10)
+    applymovement(OBJ_EVENT_ID_PLAYER, PS_W_Dad1)
+    waitmovement(0)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Dad")
+    msgbox(PS_T_Dad2)
+    waitmessage
+    delay(20)
+    turnobject(1, DIR_SOUTH)
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Dad")
+    msgbox(PS_T_Dad3, MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES){
+        speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Dad")
+        msgbox(PS_T_Dad4A)
+        waitmessage
+        closemessage
+    }
+    else{
+        speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Dad")
+        msgbox(PS_T_Dad4B)
+        waitmessage
+        closemessage
+    }
+    applymovement(1, PS_W_Dad2)
+    applymovement(OBJ_EVENT_ID_PLAYER, PS_W_Player2)
+    waitmovement(0)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Dad")
+    msgbox(PS_T_Dad5)
+    waitmessage
+    closemessage
+    applymovement(1, PS_W_Dad3)
+    applymovement(OBJ_EVENT_ID_PLAYER, PS_W_Player3)
+    waitmovement(0)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Dad")
+    msgbox(PS_T_Dad6)
+    waitmessage
+    turnobject(1, DIR_NORTH)
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_SOUTH)
+    waitmovement(0)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Dad")
+    msgbox(PS_T_Dad7)
+    waitmessage
+    closemessage
+    applymovement(1, PS_W_Dad4)
+    delay(20)
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_EAST)
+    waitmovement(1)
+    delay(30)
+    playse(SE_SWITCH)
+    setmetatile(6, 2, 0x22E, TRUE)
+    special(DrawWholeMapView)
+    waitse
+    delay(10)
+    playse(SE_TRUCK_DOOR)
+    setmetatile(2, 2, 0x225, TRUE)
+    setmetatile(3, 2, 0x226, TRUE)
+    setmetatile(4, 2, 0x227, TRUE)
+    special(DrawWholeMapView)
+    waitse
+    setvar(VAR_ADVENTURE_START, 5)
+    release
+    end
+}
+
+script RedHerb_Collect{
+    msgbox(PS_T_SYS1, MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES){
+            playse(SE_MUD_BALL)
+            setmetatile(8, 3, 0x205, TRUE)
+            setmetatile(9, 3, 0x206, TRUE)
+            special(DrawWholeMapView)
+            waitse
+            setflag(FLAG_OBT_RED_HERB)
+            setflag(FLAG_NO_INT_BINS)
+            release
+        }
+        else{
+            release
+        }
+    end
+}
+
+script RedHerb_Bin{
+    goto_if_set(FLAG_OBT_RED_HERB, Player_Has_Red_Herb)
+    goto_if_set(FLAG_NO_INT_BINS, Player_Carrying_Herb)
+    goto_if_unset(FLAG_OBT_RED_HERB, RedHerb_Collect)
+}
+
+script Player_Has_Red_Herb{
+    msgbox(PS_T_Player1)
+    waitmessage
+    closemessage
+    release
+    end
+}
+
+script Player_Carrying_Herb{
+    msgbox(PS_T_Player2)
+    waitmessage
+    closemessage
+    release
+    end
+}
+
+script PS_NoExit_Trig{
+    lock
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, PS_CAM_1)
+    waitmovement(0)
+    turnobject(1, DIR_SOUTH)
+    applymovement(1, Univ_Exclam)
+    playse(SE_PIN)
+    waitmovement(0)
+    waitse
+    delay(60)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Dad")
+    msgbox(PS_T_Dad8)
+    waitmessage
+    closemessage
+    applymovement(OBJ_EVENT_ID_PLAYER, Univ_StepUp1)
+    applymovement(OBJ_EVENT_ID_CAMERA, Univ_StepDown1)
+    turnobject(1, DIR_NORTH)
+    waitmovement(OBJ_EVENT_ID_CAMERA)
+    special(RemoveCameraObject)
+    releaseall
+    end
+}
+
+
+movement PS_Player_Walk1{
+    walk_up * 2
+}
+
+movement PS_W_Player2{
+    walk_up * 2
+    walk_left
+    face_up
+}
+
+movement PS_W_Player3{
+    walk_left * 3
+    walk_down
+    face_left
+}
+
+movement PS_W_Dad1{
+    walk_right * 2
+}
+
+movement PS_W_Dad2{
+    walk_up
+    walk_left * 2
+    face_up
+}
+
+movement PS_W_Dad3{
+    walk_left * 2
+    walk_down * 2
+    face_left
+}
+
+movement PS_W_Dad4{
+    walk_right * 4
+    walk_up * 3
+}
+
+movement PS_CAM_1{
+    walk_up * 2
+}
+
+
+
+
+
+
+
+text PS_T_Dad1{
+    "Oh boy, there sure aint nothin' like\n"
+    "processin' a new batch huh, {PLAYER}?\p"
+    "Now I know you've done this plenty of\n"
+    "times, but I'm gonna give you the\p"
+    "rundown again.\p"
+    "One day you're gonna have to do this all\n"
+    "on 'yer own!\p"
+    "Your old man can't stay in prime\n"
+    "condition forever ya know?"
+}
+
+text PS_T_Dad2{
+    "Over here we got our plucked herbs all\n"
+    "sorted in them bins."
+}
+
+text PS_T_Dad3{
+    "You 'member what the different colored\n"
+    "herbs are for, don't ya?"
+}
+
+text PS_T_Dad4A{
+    "Haha, of course you would, {PLAYER}.\n"
+    "I wouldn't expect anythin' less!\p"
+    "Now, let's keep movin'."
+}
+
+text PS_T_Dad4B{
+    "No problem kiddo.\n"
+    "I'll learn ya up real quick!\p"
+    "Our herbs are mighty important to big\n"
+    "city supplement companies.\p"
+    "All those items that them hot shot\n"
+    "title contenders use on their Pokemon\p"
+    "to make 'em real strong, depend on the\n"
+    "herbs we grow here on the farm!\p"
+    "Our Red Herbs are used fer a Pokemon's\n"
+    "physical stats.\p"
+    "The Green Herbs help boost the special\n"
+    "stats.\p"
+    "And the Yellow Herbs make a Pokemon\n"
+    "lightnin' quick!\p"
+    "Now lets keep movin'."
+}
+
+text PS_T_Dad5{
+    "Now here's the crown jewel of the farm!\n"
+    "The Herb Processor Turbo 9000!\p"
+    "This beauty takes our herbs and breaks\n"
+    "'em down real nice into compact bricks.\p"
+    "That way they're nice'n easy to handle.\p"
+    "Them city boys got some soft hands...\p"
+    "We wouldn't want them gettin' a splinter\n"
+    "now would we? Haha!"
+}
+
+text PS_T_Dad6{
+    "Lastly, we got our packagin' area.\n"
+    "Just drop the brick in the same colored\p"
+    "box and we'll be good to go!"
+}
+
+text PS_T_Dad7{
+    "Alrighty then, {PLAYER}.\p"
+    "I'm gonna open the loading door, you go\n"
+    "ahead and throw them herbs in!"
+}
+
+text PS_T_Dad8{
+    "Where ya goin', {PLAYER}?\n"
+    "We got work to do here!"
+}
+
+text PS_T_SYS1{
+    "Take the {COLOR RED}{SHADOW LIGHT_RED}Red Herbs{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}?"
+}
+
+text PS_T_Player1{
+    "{COLOR GREEN}{SHADOW LIGHT_GREEN}(Bin looks pretty empty...)"
+}
+
+text PS_T_Player2{
+    "{COLOR GREEN}{SHADOW LIGHT_GREEN}(I should finish the batch before I\n"
+    "move on...)\p"
+    "(That's what Dad would do!)"
+}
