@@ -78,19 +78,20 @@ script PS_Dad_Intro{
 
 script RedHerb_Collect{
     msgbox(PS_T_SYS1, MSGBOX_YESNO)
-        if(var(VAR_RESULT) == YES){
-            playse(SE_MUD_BALL)
-            setmetatile(8, 3, 0x205, TRUE)
-            setmetatile(9, 3, 0x206, TRUE)
-            special(DrawWholeMapView)
-            waitse
-            setflag(FLAG_OBT_RED_HERB)
-            setflag(FLAG_NO_INT_BINS)
-            release
-        }
-        else{
-            release
-        }
+    if(var(VAR_RESULT) == YES){
+        setmetatile(8, 3, 0x205, TRUE)
+        setmetatile(9, 3, 0x206, TRUE)
+        delay(10)
+        playse(SE_MUD_BALL)
+        special(DrawWholeMapView)
+        waitse
+        setflag(FLAG_OBT_RED_HERB)
+        setflag(FLAG_NO_INT_BINS)
+        release
+    }
+    else{
+        release
+    }
     end
 }
 
@@ -116,6 +117,108 @@ script Player_Carrying_Herb{
     end
 }
 
+script Machine_Interact{
+    goto_if_set(FLAG_OBT_RED_HERB, Red_Herb_In_Machine)
+    goto_if_unset(FLAG_NO_INT_BINS, Player_Has_No_Herb)
+}
+
+script Red_Herb_In_Machine{
+    msgbox(PS_T_SYS2, MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES){
+        closemessage
+        setmetatile(2, 2, 0x235, TRUE)
+        setmetatile(3, 2, 0x236, TRUE)
+        setmetatile(4, 2, 0x237, TRUE)
+        delay(10)
+        playse(SE_BALL)
+        special(DrawWholeMapView)
+        waitse
+        delay(20)
+        turnobject(1, DIR_WEST)
+        turnobject(OBJ_EVENT_ID_PLAYER, DIR_EAST)
+        speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Dad")
+        msgbox(PS_T_Dad9)
+        waitmessage
+        closemessage
+        turnobject(1, DIR_NORTH)
+        delay(20)
+        playse(SE_SWITCH)
+        setmetatile(6, 2, 0x224, TRUE)
+        special(DrawWholeMapView)
+        waitse
+        delay(10)
+        playse(SE_TRUCK_DOOR)
+        setmetatile(2, 2, 0x220, TRUE)
+        setmetatile(3, 2, 0x221, TRUE)
+        setmetatile(4, 2, 0x222, TRUE)
+        special(DrawWholeMapView)
+        waitse
+        delay(40)
+        playse(SE_SWITCH)
+        setmetatile(6, 2, 0x21D, TRUE)
+        special(DrawWholeMapView)
+        waitse
+        delay(10)
+        playse(SE_ESCALATOR)
+        waitse
+        setmetatile(6, 2, 0x21E, TRUE)
+        call(PS_Grinder_Shake_Vars)
+        delay(20)
+        playse(SE_CLICK)
+        special(DrawWholeMapView)
+        delay(20)
+        special(ShakeCamera)
+        playse(SE_TRUCK_MOVE)
+        delay(180)
+        playse(SE_TRUCK_STOP)
+        waitse
+        setmetatile(6, 2, 0x21D, TRUE)
+        playse(SE_CLICK)
+        special(DrawWholeMapView)
+        waitse
+        delay(20)
+        setmetatile(6, 2, 0x224, TRUE)
+        playse(SE_SWITCH)
+        special(DrawWholeMapView)
+        waitse
+        delay(40)
+        setmetatile(6, 2, 0x22F, TRUE)
+        playse(SE_SWITCH)
+        special(DrawWholeMapView)
+        waitse
+        delay(10)
+        playse(SE_TRUCK_DOOR)
+        setmetatile(5, 2, 0x234, TRUE)
+        special(DrawWholeMapView)
+        waitse
+        delay(10)
+        turnobject(1, DIR_WEST)
+        speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Dad")
+        msgbox(PS_T_Dad10)
+        waitmessage
+        closemessage
+        applymovement(OBJ_EVENT_ID_PLAYER, PS_W_Dad1)
+        waitmovement(0)
+        turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+        setmetatile(5, 2, 0x22D, TRUE)
+        delay(30)
+        playse(SE_MUD_BALL)
+        special(DrawWholeMapView)
+        waitse
+        delay(50)
+        turnobject(OBJ_EVENT_ID_PLAYER, DIR_EAST)
+        release
+    }
+    else{
+        release
+    }
+    end
+}
+
+script Player_Has_No_Herb{
+
+}
+
 script PS_NoExit_Trig{
     lock
     special(SpawnCameraObject)
@@ -138,6 +241,14 @@ script PS_NoExit_Trig{
     special(RemoveCameraObject)
     releaseall
     end
+}
+
+script PS_Grinder_Shake_Vars{
+    setvar(VAR_0x8004, 1)
+    setvar(VAR_0x8005, 1)
+    setvar(VAR_0x8006, 45)
+    setvar(VAR_0x8007, 5)
+    return
 }
 
 
@@ -262,8 +373,21 @@ text PS_T_Dad8{
     "We got work to do here!"
 }
 
+text PS_T_Dad9{
+    "Nice work, {PLAYER}!\n"
+    "Let me start 'er up!"
+}
+
+text PS_T_Dad10{
+    "One brick ready fer ya, {PLAYER}!"
+}
+
 text PS_T_SYS1{
     "Take the {COLOR RED}{SHADOW LIGHT_RED}Red Herbs{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}?"
+}
+
+text PS_T_SYS2{
+    "Place the {COLOR RED}{SHADOW LIGHT_RED}Red Herbs {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}in the processor?"
 }
 
 text PS_T_Player1{
