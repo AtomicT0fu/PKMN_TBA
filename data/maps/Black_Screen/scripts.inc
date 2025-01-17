@@ -19,7 +19,7 @@ WarpToStart::
 # 11 "data/maps/Black_Screen/scripts.pory"
 	call ReDrawRoom
 # 12 "data/maps/Black_Screen/scripts.pory"
-	fadenewbgm MUS_LILYCOVE_MUSEUM
+	fadenewbgm MUS_FORTREE
 # 13 "data/maps/Black_Screen/scripts.pory"
 	delay 30
 # 14 "data/maps/Black_Screen/scripts.pory"

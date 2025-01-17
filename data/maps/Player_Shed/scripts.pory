@@ -77,7 +77,7 @@ script PS_Dad_Intro{
 }
 
 script RedHerb_Collect{
-    msgbox(PS_T_SYS1, MSGBOX_YESNO)
+    msgbox(PS_T_SYS1_R, MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
         setmetatile(8, 3, 0x205, TRUE)
         setmetatile(9, 3, 0x206, TRUE)
@@ -86,7 +86,45 @@ script RedHerb_Collect{
         special(DrawWholeMapView)
         waitse
         setflag(FLAG_OBT_RED_HERB)
-        setflag(FLAG_NO_INT_BINS)
+        setflag(FLAG_PLAYER_HAS_HERBS)
+        release
+    }
+    else{
+        release
+    }
+    end
+}
+
+script YellowHerb_Collect{
+    msgbox(PS_T_SYS1_Y, MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES){
+        setmetatile(8, 5, 0x20D, TRUE)
+        setmetatile(9, 5, 0x20E, TRUE)
+        delay(10)
+        playse(SE_MUD_BALL)
+        special(DrawWholeMapView)
+        waitse
+        setflag(FLAG_OBT_YELLOW_HERB)
+        setflag(FLAG_PLAYER_HAS_HERBS)
+        release
+    }
+    else{
+        release
+    }
+    end
+}
+
+script GreenHerb_Collect{
+    msgbox(PS_T_SYS1_G, MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES){
+        setmetatile(8, 7, 0x20D, TRUE)
+        setmetatile(9, 7, 0x20E, TRUE)
+        delay(10)
+        playse(SE_MUD_BALL)
+        special(DrawWholeMapView)
+        waitse
+        setflag(FLAG_OBT_GREEN_HERB)
+        setflag(FLAG_PLAYER_HAS_HERBS)
         release
     }
     else{
@@ -96,12 +134,30 @@ script RedHerb_Collect{
 }
 
 script RedHerb_Bin{
-    goto_if_set(FLAG_OBT_RED_HERB, Player_Has_Red_Herb)
-    goto_if_set(FLAG_NO_INT_BINS, Player_Carrying_Herb)
+    goto_if_set(FLAG_OBT_RED_HERB, Bin_Is_Empty)
+    goto_if_set(FLAG_OBT_RED_BRICK, Bin_Is_Empty)
+    goto_if_set(FLAG_RED_HERB_COMPLETE, Bin_Is_Empty)
+    goto_if_set(FLAG_PLAYER_HAS_HERBS, Player_Carrying_Other_Herb)
     goto_if_unset(FLAG_OBT_RED_HERB, RedHerb_Collect)
 }
 
-script Player_Has_Red_Herb{
+script YellowHerb_Bin{
+    goto_if_set(FLAG_OBT_YELLOW_HERB, Bin_Is_Empty)
+    goto_if_set(FLAG_OBT_YELLOW_BRICK, Bin_Is_Empty)
+    goto_if_set(FLAG_YELLOW_HERB_COMPLETE, Bin_Is_Empty)
+    goto_if_set(FLAG_PLAYER_HAS_HERBS, Player_Carrying_Other_Herb)
+    goto_if_unset(FLAG_OBT_YELLOW_HERB, YellowHerb_Collect)
+}
+
+script GreenHerb_Bin{
+    goto_if_set(FLAG_OBT_GREEN_HERB, Bin_Is_Empty)
+    goto_if_set(FLAG_OBT_GREEN_BRICK, Bin_Is_Empty)
+    goto_if_set(FLAG_GREEN_HERB_COMPLETE, Bin_Is_Empty)
+    goto_if_set(FLAG_PLAYER_HAS_HERBS, Player_Carrying_Other_Herb)
+    goto_if_unset(FLAG_OBT_GREEN_HERB, GreenHerb_Collect)
+}
+
+script Bin_Is_Empty{
     msgbox(PS_T_Player1)
     waitmessage
     closemessage
@@ -109,7 +165,7 @@ script Player_Has_Red_Herb{
     end
 }
 
-script Player_Carrying_Herb{
+script Player_Carrying_Other_Herb{
     msgbox(PS_T_Player2)
     waitmessage
     closemessage
@@ -118,12 +174,18 @@ script Player_Carrying_Herb{
 }
 
 script Machine_Interact{
+    goto_if_set(FLAG_ALL_HERBS_COMPLETE, Door_Is_Sealed)
     goto_if_set(FLAG_OBT_RED_HERB, Red_Herb_In_Machine)
-    goto_if_unset(FLAG_NO_INT_BINS, Player_Has_No_Herb)
+    goto_if_set(FLAG_OBT_GREEN_HERB, Green_Herb_In_Machine)
+    goto_if_set(FLAG_OBT_YELLOW_HERB, Yellow_Herb_In_Machine)
+    goto_if_set(FLAG_OBT_RED_BRICK, Door_Is_Sealed)
+    goto_if_set(FLAG_OBT_GREEN_BRICK, Door_Is_Sealed)
+    goto_if_set(FLAG_OBT_YELLOW_BRICK, Door_Is_Sealed)
+    goto_if_unset(FLAG_PLAYER_HAS_HERBS, Player_Has_No_Herb)
 }
 
 script Red_Herb_In_Machine{
-    msgbox(PS_T_SYS2, MSGBOX_YESNO)
+    msgbox(PS_T_SYS2_R, MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
         closemessage
         setmetatile(2, 2, 0x235, TRUE)
@@ -207,6 +269,14 @@ script Red_Herb_In_Machine{
         waitse
         delay(50)
         turnobject(OBJ_EVENT_ID_PLAYER, DIR_EAST)
+        delay(30)
+        speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Dad")
+        msgbox(PS_T_Dad11)
+        waitmessage
+        closemessage
+        setflag(FLAG_OBT_RED_BRICK)
+        clearflag(FLAG_OBT_RED_HERB)
+        setvar(VAR_ADVENTURE_START, 6)
         release
     }
     else{
@@ -215,8 +285,542 @@ script Red_Herb_In_Machine{
     end
 }
 
-script Player_Has_No_Herb{
+script Yellow_Herb_In_Machine{
+    msgbox(PS_T_SYS2_Y, MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES){
+        closemessage
+        setmetatile(2, 2, 0x23D, TRUE)
+        setmetatile(3, 2, 0x23E, TRUE)
+        setmetatile(4, 2, 0x23F, TRUE)
+        delay(10)
+        playse(SE_BALL)
+        special(DrawWholeMapView)
+        waitse
+        delay(20)
+        turnobject(1, DIR_WEST)
+        turnobject(OBJ_EVENT_ID_PLAYER, DIR_EAST)
+        speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Dad")
+        msgbox(PS_T_Dad9)
+        waitmessage
+        closemessage
+        turnobject(1, DIR_NORTH)
+        delay(20)
+        playse(SE_SWITCH)
+        setmetatile(6, 2, 0x224, TRUE)
+        special(DrawWholeMapView)
+        waitse
+        delay(10)
+        playse(SE_TRUCK_DOOR)
+        setmetatile(2, 2, 0x220, TRUE)
+        setmetatile(3, 2, 0x221, TRUE)
+        setmetatile(4, 2, 0x222, TRUE)
+        special(DrawWholeMapView)
+        waitse
+        delay(40)
+        playse(SE_SWITCH)
+        setmetatile(6, 2, 0x21D, TRUE)
+        special(DrawWholeMapView)
+        waitse
+        delay(10)
+        playse(SE_ESCALATOR)
+        waitse
+        setmetatile(6, 2, 0x21E, TRUE)
+        call(PS_Grinder_Shake_Vars)
+        delay(20)
+        playse(SE_CLICK)
+        special(DrawWholeMapView)
+        delay(20)
+        special(ShakeCamera)
+        playse(SE_TRUCK_MOVE)
+        delay(180)
+        playse(SE_TRUCK_STOP)
+        waitse
+        setmetatile(6, 2, 0x21D, TRUE)
+        playse(SE_CLICK)
+        special(DrawWholeMapView)
+        waitse
+        delay(20)
+        setmetatile(6, 2, 0x224, TRUE)
+        playse(SE_SWITCH)
+        special(DrawWholeMapView)
+        waitse
+        delay(40)
+        setmetatile(6, 2, 0x22F, TRUE)
+        playse(SE_SWITCH)
+        special(DrawWholeMapView)
+        waitse
+        delay(10)
+        playse(SE_TRUCK_DOOR)
+        setmetatile(5, 2, 0x23C, TRUE)
+        special(DrawWholeMapView)
+        waitse
+        delay(10)
+        turnobject(1, DIR_WEST)
+        speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Dad")
+        msgbox(PS_T_Dad10)
+        waitmessage
+        closemessage
+        applymovement(OBJ_EVENT_ID_PLAYER, PS_W_Dad1)
+        waitmovement(0)
+        turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+        setmetatile(5, 2, 0x22D, TRUE)
+        delay(30)
+        playse(SE_MUD_BALL)
+        special(DrawWholeMapView)
+        waitse
+        delay(50)
+        turnobject(OBJ_EVENT_ID_PLAYER, DIR_EAST)
+        delay(30)
+        speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Dad")
+        msgbox(PS_T_Dad11)
+        waitmessage
+        closemessage
+        setflag(FLAG_OBT_YELLOW_BRICK)
+        clearflag(FLAG_OBT_YELLOW_HERB)
+        setvar(VAR_ADVENTURE_START, 6)
+        release
+    }
+    else{
+        release
+    }
+    end
+}
 
+script Green_Herb_In_Machine{
+    msgbox(PS_T_SYS2_G, MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES){
+        closemessage
+        setmetatile(2, 2, 0x245, TRUE)
+        setmetatile(3, 2, 0x246, TRUE)
+        setmetatile(4, 2, 0x247, TRUE)
+        delay(10)
+        playse(SE_BALL)
+        special(DrawWholeMapView)
+        waitse
+        delay(20)
+        turnobject(1, DIR_WEST)
+        turnobject(OBJ_EVENT_ID_PLAYER, DIR_EAST)
+        speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Dad")
+        msgbox(PS_T_Dad9)
+        waitmessage
+        closemessage
+        turnobject(1, DIR_NORTH)
+        delay(20)
+        playse(SE_SWITCH)
+        setmetatile(6, 2, 0x224, TRUE)
+        special(DrawWholeMapView)
+        waitse
+        delay(10)
+        playse(SE_TRUCK_DOOR)
+        setmetatile(2, 2, 0x220, TRUE)
+        setmetatile(3, 2, 0x221, TRUE)
+        setmetatile(4, 2, 0x222, TRUE)
+        special(DrawWholeMapView)
+        waitse
+        delay(40)
+        playse(SE_SWITCH)
+        setmetatile(6, 2, 0x21D, TRUE)
+        special(DrawWholeMapView)
+        waitse
+        delay(10)
+        playse(SE_ESCALATOR)
+        waitse
+        setmetatile(6, 2, 0x21E, TRUE)
+        call(PS_Grinder_Shake_Vars)
+        delay(20)
+        playse(SE_CLICK)
+        special(DrawWholeMapView)
+        delay(20)
+        special(ShakeCamera)
+        playse(SE_TRUCK_MOVE)
+        delay(180)
+        playse(SE_TRUCK_STOP)
+        waitse
+        setmetatile(6, 2, 0x21D, TRUE)
+        playse(SE_CLICK)
+        special(DrawWholeMapView)
+        waitse
+        delay(20)
+        setmetatile(6, 2, 0x224, TRUE)
+        playse(SE_SWITCH)
+        special(DrawWholeMapView)
+        waitse
+        delay(40)
+        setmetatile(6, 2, 0x22F, TRUE)
+        playse(SE_SWITCH)
+        special(DrawWholeMapView)
+        waitse
+        delay(10)
+        playse(SE_TRUCK_DOOR)
+        setmetatile(5, 2, 0x244, TRUE)
+        special(DrawWholeMapView)
+        waitse
+        delay(10)
+        turnobject(1, DIR_WEST)
+        speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Dad")
+        msgbox(PS_T_Dad10)
+        waitmessage
+        closemessage
+        applymovement(OBJ_EVENT_ID_PLAYER, PS_W_Dad1)
+        waitmovement(0)
+        turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+        setmetatile(5, 2, 0x22D, TRUE)
+        delay(30)
+        playse(SE_MUD_BALL)
+        special(DrawWholeMapView)
+        waitse
+        delay(50)
+        turnobject(OBJ_EVENT_ID_PLAYER, DIR_EAST)
+        delay(30)
+        speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Dad")
+        msgbox(PS_T_Dad11)
+        waitmessage
+        closemessage
+        setflag(FLAG_OBT_GREEN_BRICK)
+        clearflag(FLAG_OBT_GREEN_HERB)
+        setvar(VAR_ADVENTURE_START, 6)
+        release
+    }
+    else{
+        release
+    }
+    end
+}
+
+script Door_Is_Sealed{
+    msgbox(PS_T_SYS4)
+    waitmessage
+    closemessage
+    release
+    end
+}
+
+script Brick_Goes_Here{
+    msgbox(PS_T_Player3)
+    waitmessage
+    closemessage
+    release
+    end
+}
+
+script Red_Herb_Shipment{
+    msgbox(PS_T_SYS5_R)
+    waitmessage
+    closemessage
+    release
+    end
+}
+
+script Yellow_Herb_Shipment{
+    msgbox(PS_T_SYS5_Y)
+    waitmessage
+    closemessage
+    release
+    end
+}
+
+script Green_Herb_Shipment{
+    msgbox(PS_T_SYS5_G)
+    waitmessage
+    closemessage
+    release
+    end
+}
+
+script Int_Package_Red_Herb{
+    goto_if_set(FLAG_RED_HERB_COMPLETE, Red_Herb_Shipment)
+    goto_if_set(FLAG_OBT_RED_BRICK, Red_Herb_In_Package)
+    goto_if_unset(FLAG_OBT_RED_BRICK, Brick_Goes_Here)
+}
+
+script Int_Package_Yellow_Herb{
+    goto_if_set(FLAG_YELLOW_HERB_COMPLETE, Yellow_Herb_Shipment)
+    goto_if_set(FLAG_OBT_YELLOW_BRICK, Yellow_Herb_In_Package)
+    goto_if_unset(FLAG_OBT_YELLOW_BRICK, Brick_Goes_Here)
+}
+
+script Int_Package_Green_Herb{
+    goto_if_set(FLAG_GREEN_HERB_COMPLETE, Green_Herb_Shipment)
+    goto_if_set(FLAG_OBT_GREEN_BRICK, Green_Herb_In_Package)
+    goto_if_unset(FLAG_OBT_GREEN_BRICK, Brick_Goes_Here)
+}
+
+script Red_Herb_In_Package{
+    msgbox(PS_T_SYS3_R, MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES){
+        setmetatile(0, 4, 0x239, TRUE)
+        delay(10)
+        playse(SE_BALL)
+        special(DrawWholeMapView)
+        waitse
+        playfanfare(MUS_OBTAIN_ITEM)
+        waitfanfare
+        delay(30)
+        clearflag(FLAG_OBT_RED_BRICK)
+        clearflag(FLAG_PLAYER_HAS_HERBS)
+        setflag(FLAG_RED_HERB_COMPLETE)
+        if((flag(FLAG_RED_HERB_COMPLETE)) && (flag(FLAG_GREEN_HERB_COMPLETE)) && (flag(FLAG_YELLOW_HERB_COMPLETE))){
+            closemessage
+            setflag(FLAG_ALL_HERBS_COMPLETE)
+            turnobject(OBJ_EVENT_ID_PLAYER, DIR_EAST)
+            delay(30)
+            speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Dad")
+            msgbox(PS_T_Dad13)
+            waitmessage
+            closemessage
+            delay(30)
+            turnobject(1, DIR_NORTH)
+            setmetatile(6, 2, 0x224, TRUE)
+            delay(30)
+            playse(SE_SWITCH)
+            special(DrawWholeMapView)
+            waitse
+            delay(20)
+            playse(SE_TRUCK_DOOR)
+            setmetatile(5, 2, 0x223, TRUE)
+            special(DrawWholeMapView)
+            waitse
+            delay(30)
+            applymovement(1, PS_W_Dad5)
+            applymovement(OBJ_EVENT_ID_PLAYER, PS_W_Player4_Red)
+            waitmovement(1)
+            delay(30)
+            speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Dad")
+            msgbox(PS_T_Dad14)
+            waitmessage
+            closemessage
+            setvar(VAR_ADVENTURE_START, 7)
+            releaseall
+            end
+        }
+        else{
+            closemessage
+            turnobject(OBJ_EVENT_ID_PLAYER, DIR_EAST)
+            delay(30)
+            speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Dad")
+            msgbox(PS_T_Dad12)
+            waitmessage
+            closemessage
+            delay(30)
+            turnobject(1, DIR_NORTH)
+            setmetatile(6, 2, 0x224, TRUE)
+            delay(30)
+            playse(SE_SWITCH)
+            special(DrawWholeMapView)
+            waitse
+            delay(20)
+            playse(SE_TRUCK_DOOR)
+            setmetatile(5, 2, 0x223, TRUE)
+            special(DrawWholeMapView)
+            waitse
+            delay(20)
+            setmetatile(6, 2, 0x22E, TRUE)
+            playse(SE_SWITCH)
+            special(DrawWholeMapView)
+            waitse
+            delay(20)
+            playse(SE_TRUCK_DOOR)
+            setmetatile(2, 2, 0x225, TRUE)
+            setmetatile(3, 2, 0x226, TRUE)
+            setmetatile(4, 2, 0x227, TRUE)
+            special(DrawWholeMapView)
+            waitse
+        }
+        setvar(VAR_ADVENTURE_START, 5)
+        release
+    }
+    else{
+        release
+    }
+    end
+}
+
+script Yellow_Herb_In_Package{
+    msgbox(PS_T_SYS3_Y, MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES){
+        closemessage
+        setmetatile(0, 5, 0x23A, TRUE)
+        delay(10)
+        playse(SE_BALL)
+        special(DrawWholeMapView)
+        waitse
+        playfanfare(MUS_OBTAIN_ITEM)
+        waitfanfare
+        delay(30)
+        clearflag(FLAG_OBT_YELLOW_BRICK)
+        clearflag(FLAG_PLAYER_HAS_HERBS)
+        setflag(FLAG_YELLOW_HERB_COMPLETE)
+        if((flag(FLAG_RED_HERB_COMPLETE)) && (flag(FLAG_GREEN_HERB_COMPLETE)) && (flag(FLAG_YELLOW_HERB_COMPLETE))){
+            setflag(FLAG_ALL_HERBS_COMPLETE)
+            turnobject(OBJ_EVENT_ID_PLAYER, DIR_EAST)
+            delay(30)
+            speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Dad")
+            msgbox(PS_T_Dad13)
+            waitmessage
+            closemessage
+            delay(30)
+            turnobject(1, DIR_NORTH)
+            setmetatile(6, 2, 0x224, TRUE)
+            delay(30)
+            playse(SE_SWITCH)
+            special(DrawWholeMapView)
+            waitse
+            delay(20)
+            playse(SE_TRUCK_DOOR)
+            setmetatile(5, 2, 0x223, TRUE)
+            special(DrawWholeMapView)
+            waitse
+            delay(30)
+            applymovement(1, PS_W_Dad5)
+            applymovement(OBJ_EVENT_ID_PLAYER, PS_W_Player4_Yellow)
+            waitmovement(1)
+            delay(30)
+            speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Dad")
+            msgbox(PS_T_Dad14)
+            waitmessage
+            closemessage
+            setvar(VAR_ADVENTURE_START, 7)
+            releaseall
+            end
+        }
+        else{
+            turnobject(OBJ_EVENT_ID_PLAYER, DIR_EAST)
+            delay(30)
+            speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Dad")
+            msgbox(PS_T_Dad12)
+            waitmessage
+            closemessage
+            delay(30)
+            turnobject(1, DIR_NORTH)
+            setmetatile(6, 2, 0x224, TRUE)
+            delay(30)
+            playse(SE_SWITCH)
+            special(DrawWholeMapView)
+            waitse
+            delay(20)
+            playse(SE_TRUCK_DOOR)
+            setmetatile(5, 2, 0x223, TRUE)
+            special(DrawWholeMapView)
+            waitse
+            delay(20)
+            setmetatile(6, 2, 0x22E, TRUE)
+            playse(SE_SWITCH)
+            special(DrawWholeMapView)
+            waitse
+            delay(20)
+            playse(SE_TRUCK_DOOR)
+            setmetatile(2, 2, 0x225, TRUE)
+            setmetatile(3, 2, 0x226, TRUE)
+            setmetatile(4, 2, 0x227, TRUE)
+            special(DrawWholeMapView)
+            waitse
+        }
+        setvar(VAR_ADVENTURE_START, 5)
+        release
+    }
+    else{
+        closemessage
+        release
+    }
+    end
+}
+
+script Green_Herb_In_Package{
+    msgbox(PS_T_SYS3_G, MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES){
+        closemessage
+        setmetatile(0, 6, 0x238, TRUE)
+        delay(10)
+        playse(SE_BALL)
+        special(DrawWholeMapView)
+        waitse
+        playfanfare(MUS_OBTAIN_ITEM)
+        waitfanfare
+        delay(30)
+        clearflag(FLAG_OBT_GREEN_BRICK)
+        clearflag(FLAG_PLAYER_HAS_HERBS)
+        setflag(FLAG_GREEN_HERB_COMPLETE)
+        if((flag(FLAG_RED_HERB_COMPLETE)) && (flag(FLAG_GREEN_HERB_COMPLETE)) && (flag(FLAG_YELLOW_HERB_COMPLETE))){
+            setflag(FLAG_ALL_HERBS_COMPLETE)
+            turnobject(OBJ_EVENT_ID_PLAYER, DIR_EAST)
+            delay(30)
+            speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Dad")
+            msgbox(PS_T_Dad13)
+            waitmessage
+            closemessage
+            delay(30)
+            turnobject(1, DIR_NORTH)
+            setmetatile(6, 2, 0x224, TRUE)
+            delay(30)
+            playse(SE_SWITCH)
+            special(DrawWholeMapView)
+            waitse
+            delay(20)
+            playse(SE_TRUCK_DOOR)
+            setmetatile(5, 2, 0x223, TRUE)
+            special(DrawWholeMapView)
+            waitse
+            delay(30)
+            applymovement(1, PS_W_Dad5)
+            applymovement(OBJ_EVENT_ID_PLAYER, PS_W_Player4_Green)
+            waitmovement(1)
+            delay(30)
+            speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Dad")
+            msgbox(PS_T_Dad14)
+            waitmessage
+            closemessage
+            setvar(VAR_ADVENTURE_START, 7)
+            releaseall
+            end
+        }
+        else{
+            turnobject(OBJ_EVENT_ID_PLAYER, DIR_EAST)
+            delay(30)
+            speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Dad")
+            msgbox(PS_T_Dad12)
+            waitmessage
+            closemessage
+            delay(30)
+            turnobject(1, DIR_NORTH)
+            setmetatile(6, 2, 0x224, TRUE)
+            delay(30)
+            playse(SE_SWITCH)
+            special(DrawWholeMapView)
+            waitse
+            delay(20)
+            playse(SE_TRUCK_DOOR)
+            setmetatile(5, 2, 0x223, TRUE)
+            special(DrawWholeMapView)
+            waitse
+            delay(20)
+            setmetatile(6, 2, 0x22E, TRUE)
+            playse(SE_SWITCH)
+            special(DrawWholeMapView)
+            waitse
+            delay(20)
+            playse(SE_TRUCK_DOOR)
+            setmetatile(2, 2, 0x225, TRUE)
+            setmetatile(3, 2, 0x226, TRUE)
+            setmetatile(4, 2, 0x227, TRUE)
+            special(DrawWholeMapView)
+            waitse
+        }
+        setvar(VAR_ADVENTURE_START, 5)
+        release
+    }
+    else{
+        closemessage
+        release
+    }
+    end
+}
+
+script Player_Has_No_Herb{
+    msgbox(PS_T_Player4)
+    waitmessage
+    closemessage
+    release
+    end
 }
 
 script PS_NoExit_Trig{
@@ -237,6 +841,30 @@ script PS_NoExit_Trig{
     applymovement(OBJ_EVENT_ID_PLAYER, Univ_StepUp1)
     applymovement(OBJ_EVENT_ID_CAMERA, Univ_StepDown1)
     turnobject(1, DIR_NORTH)
+    waitmovement(OBJ_EVENT_ID_CAMERA)
+    special(RemoveCameraObject)
+    releaseall
+    end
+}
+
+script PS_NoExit_Trig_2{
+    lock
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, PS_CAM_1)
+    waitmovement(0)
+    turnobject(1, DIR_SOUTH)
+    applymovement(1, Univ_Exclam)
+    playse(SE_PIN)
+    waitmovement(0)
+    waitse
+    delay(60)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Dad")
+    msgbox(PS_T_Dad8)
+    waitmessage
+    closemessage
+    applymovement(OBJ_EVENT_ID_PLAYER, Univ_StepUp1)
+    applymovement(OBJ_EVENT_ID_CAMERA, Univ_StepDown1)
+    turnobject(1, DIR_WEST)
     waitmovement(OBJ_EVENT_ID_CAMERA)
     special(RemoveCameraObject)
     releaseall
@@ -268,6 +896,20 @@ movement PS_W_Player3{
     face_left
 }
 
+movement PS_W_Player4_Red{
+    walk_down
+    walk_right * 2
+}
+
+movement PS_W_Player4_Yellow{
+    walk_right * 2
+}
+
+movement PS_W_Player4_Green{
+    walk_up
+    walk_right * 2
+}
+
 movement PS_W_Dad1{
     walk_right * 2
 }
@@ -287,6 +929,11 @@ movement PS_W_Dad3{
 movement PS_W_Dad4{
     walk_right * 4
     walk_up * 3
+}
+
+movement PS_W_Dad5{
+    walk_down * 2
+    walk_left
 }
 
 movement PS_CAM_1{
@@ -382,12 +1029,78 @@ text PS_T_Dad10{
     "One brick ready fer ya, {PLAYER}!"
 }
 
-text PS_T_SYS1{
+text PS_T_Dad11{
+    "Now go n' get that packaged up!"
+}
+
+text PS_T_Dad12{
+    "Looks great, {PLAYER}!\n"
+    "Let's get another batch goin'."
+}
+
+text PS_T_Dad13{
+    "Seems like that's all the herbs that\n"
+    "needed processin'!\p"
+    "Let me just shut this 'ol thing down..."
+}
+
+text PS_T_Dad14{
+    "Hey, real nice job today, {PLAYER}.\p"
+    "Since ya worked hard, I'll letcha take\n"
+    "off while clean up 'round here.\p"
+    "See y'all at lunch!"
+}
+
+text PS_T_SYS1_R{
     "Take the {COLOR RED}{SHADOW LIGHT_RED}Red Herbs{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}?"
 }
 
-text PS_T_SYS2{
+text PS_T_SYS2_R{
     "Place the {COLOR RED}{SHADOW LIGHT_RED}Red Herbs {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}in the processor?"
+}
+
+text PS_T_SYS3_R{
+    "Package the {COLOR RED}{SHADOW LIGHT_RED}Red Herbs{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}?"
+}
+
+text PS_T_SYS4{
+    "The door is sealed shut."
+}
+
+text PS_T_SYS5_R{
+    "The {COLOR RED}{SHADOW LIGHT_RED}Red Herbs {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}are prepared to ship!"
+}
+
+text PS_T_SYS1_Y{
+    "Take the {COLOR BLUE}{SHADOW LIGHT_BLUE}Yellow Herbs{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}?"
+}
+
+text PS_T_SYS2_Y{
+    "Place the {COLOR BLUE}{SHADOW LIGHT_BLUE}Yellow Herbs {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}in the processor?"
+}
+
+text PS_T_SYS3_Y{
+    "Package the {COLOR BLUE}{SHADOW LIGHT_BLUE}Yellow Herbs{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}?"
+}
+
+text PS_T_SYS5_Y{
+    "The {COLOR BLUE}{SHADOW LIGHT_BLUE}Yellow Herbs {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}are prepared to ship!"
+}
+
+text PS_T_SYS1_G{
+    "Take the {COLOR GREEN}{SHADOW LIGHT_GREEN}Green Herbs{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}?"
+}
+
+text PS_T_SYS2_G{
+    "Place the {COLOR GREEN}{SHADOW LIGHT_GREEN}Green Herbs {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}in the processor?"
+}
+
+text PS_T_SYS3_G{
+    "Package the {COLOR GREEN}{SHADOW LIGHT_GREEN}Green Herbs{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}?"
+}
+
+text PS_T_SYS5_G{
+    "The {COLOR GREEN}{SHADOW LIGHT_GREEN}Green Herbs {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}are prepared to ship!"
 }
 
 text PS_T_Player1{
@@ -397,5 +1110,14 @@ text PS_T_Player1{
 text PS_T_Player2{
     "{COLOR GREEN}{SHADOW LIGHT_GREEN}(I should finish the batch before I\n"
     "move on...)\p"
-    "(That's what Dad would do!)"
+    "(That's what Dad would do.)"
+}
+
+text PS_T_Player3{
+    "{COLOR GREEN}{SHADOW LIGHT_GREEN}(The herb bricks should fit perfectly in\n"
+    "these packages...)"
+}
+
+text PS_T_Player4{
+    "{COLOR GREEN}{SHADOW LIGHT_GREEN}(I need to gather some herbs...)"
 }

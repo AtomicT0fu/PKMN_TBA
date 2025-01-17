@@ -2,7 +2,7 @@
   "id": "MAP_HIGHLAND_FARMS",
   "name": "Highland_Farms",
   "layout": "LAYOUT_HIGHLAND_FARMS",
-  "music": "MUS_LILYCOVE_MUSEUM",
+  "music": "MUS_FORTREE",
   "region_map_section": "MAPSEC_HIGHLAND_FARMS",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

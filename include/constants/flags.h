@@ -656,17 +656,17 @@
 #define FLAG_HIDDEN_ITEM_ROUTE_123_RARE_CANDY                (FLAG_HIDDEN_ITEMS_START + 0x6E)
 #define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                 (FLAG_HIDDEN_ITEMS_START + 0x6F)
 
-#define FLAG_OBT_RED_HERB   0x264 // Player has picked up red herbs from bin
-#define FLAG_OBT_RED_BRICK  0x265 // Player has picked up the red brick
-#define FLAG_NO_INT_BINS    0x266 // Player cannot grab other herbs while doing a batch
-#define FLAG_UNUSED_0x267  0x267 // Unused Flag
-#define FLAG_UNUSED_0x268  0x268 // Unused Flag
-#define FLAG_UNUSED_0x269  0x269 // Unused Flag
-#define FLAG_UNUSED_0x26A  0x26A // Unused Flag
-#define FLAG_UNUSED_0x26B  0x26B // Unused Flag
-#define FLAG_UNUSED_0x26C  0x26C // Unused Flag
-#define FLAG_UNUSED_0x26D  0x26D // Unused Flag
-#define FLAG_UNUSED_0x26E  0x26E // Unused Flag
+#define FLAG_OBT_RED_HERB            0x264 // Player has picked up red herbs from bin
+#define FLAG_OBT_RED_BRICK           0x265 // Player has picked up the red brick
+#define FLAG_PLAYER_HAS_HERBS        0x266 // Player cannot grab other herbs while doing a batch
+#define FLAG_RED_HERB_COMPLETE       0x267 // Red herbs fully packaged
+#define FLAG_OBT_GREEN_HERB          0x268 // Picked up green herbs
+#define FLAG_OBT_GREEN_BRICK         0x269 // Picked up green brick
+#define FLAG_GREEN_HERB_COMPLETE     0x26A // green herb packaged
+#define FLAG_OBT_YELLOW_HERB         0x26B // picked up yellow herb
+#define FLAG_OBT_YELLOW_BRICK        0x26C // picked up yellow brick
+#define FLAG_YELLOW_HERB_COMPLETE    0x26D // yellow herb complete
+#define FLAG_ALL_HERBS_COMPLETE      0x26E // green, red, yellow packaged
 #define FLAG_UNUSED_0x26F  0x26F // Unused Flag
 #define FLAG_UNUSED_0x270  0x270 // Unused Flag
 #define FLAG_UNUSED_0x271  0x271 // Unused Flag

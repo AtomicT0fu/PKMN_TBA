@@ -9,7 +9,7 @@ script WarpToStart{
     delay(60)
     fadescreen(FADE_TO_BLACK)
     call(ReDrawRoom)
-    fadenewbgm(MUS_LILYCOVE_MUSEUM)
+    fadenewbgm(MUS_FORTREE)
     delay(30)
     addobject(1)
     playse(SE_EXIT)
