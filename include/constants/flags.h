@@ -667,7 +667,7 @@
 #define FLAG_OBT_YELLOW_BRICK        0x26C // picked up yellow brick
 #define FLAG_YELLOW_HERB_COMPLETE    0x26D // yellow herb complete
 #define FLAG_ALL_HERBS_COMPLETE      0x26E // green, red, yellow packaged
-#define FLAG_UNUSED_0x26F  0x26F // Unused Flag
+#define FLAG_HIDE_RIVAL_MIKE_1       0x26F // Hides MIKE outside player house 
 #define FLAG_UNUSED_0x270  0x270 // Unused Flag
 #define FLAG_UNUSED_0x271  0x271 // Unused Flag
 #define FLAG_UNUSED_0x272  0x272 // Unused Flag

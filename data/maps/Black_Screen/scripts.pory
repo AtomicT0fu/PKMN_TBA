@@ -54,6 +54,7 @@ script BS_Leave_Bed{
     waitmovement(0)
     playse(SE_EXIT)
     removeobject(2)
+    call(Set_Start_Flags)
     setvar(VAR_ADVENTURE_START, 2)
     release
     end
@@ -118,6 +119,11 @@ script ReDrawRoom{
     setmetatile(7, 6, 0x0072, FALSE) // 56
     special(DrawWholeMapView)
     fadescreenspeed(FADE_FROM_BLACK, 15)
+    return
+}
+
+script Set_Start_Flags{                  //USE TO SET ANY FLAGS NEEDED AT START
+    setflag(FLAG_HIDE_RIVAL_MIKE_1)
     return
 }
 

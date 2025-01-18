@@ -1,7 +1,53 @@
 mapscripts Player_Shed_MapScripts{
+    MAP_SCRIPT_ON_LOAD: Check_Herbs_Complete
     MAP_SCRIPT_ON_FRAME_TABLE[
         VAR_ADVENTURE_START, 4: PS_Dad_Intro
     ]
+}
+
+script Check_Herbs_Complete{
+    if(flag(FLAG_ALL_HERBS_COMPLETE) == TRUE){
+        setmetatile(8, 3, 0x205, TRUE)
+        setmetatile(9, 3, 0x206, TRUE)
+        setmetatile(8, 5, 0x20D, TRUE)
+        setmetatile(9, 5, 0x20E, TRUE)
+        setmetatile(8, 7, 0x20D, TRUE)
+        setmetatile(9, 7, 0x20E, TRUE)
+        setmetatile(0, 4, 0x239, TRUE)
+        setmetatile(0, 5, 0x23A, TRUE)
+        setmetatile(0, 6, 0x238, TRUE)
+    }
+    else{
+    }
+    end
+}
+
+script PS_Dad_Interact{
+    faceplayer
+    if(flag(FLAG_ALL_HERBS_COMPLETE) == TRUE){
+        speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Dad")
+        msgbox(PS_T_Dad15)
+        waitmessage
+        closemessage
+        release
+    }
+    elif((flag(FLAG_OBT_GREEN_BRICK)) || (flag(FLAG_OBT_RED_BRICK)) || (flag(FLAG_OBT_YELLOW_BRICK))){
+        speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Dad")
+        msgbox(PS_T_Dad16)
+        waitmessage
+        closemessage
+        turnobject(1, DIR_WEST)
+        release
+    }
+    else{
+        speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Dad")
+        msgbox(PS_T_Dad16)
+        waitmessage
+        closemessage
+        turnobject(1, DIR_NORTH)
+        release
+    }
+    end
 }
 
 script PS_Dad_Intro{
@@ -589,6 +635,7 @@ script Red_Herb_In_Package{
             msgbox(PS_T_Dad14)
             waitmessage
             closemessage
+            clearflag(FLAG_HIDE_RIVAL_MIKE_1)
             setvar(VAR_ADVENTURE_START, 7)
             releaseall
             end
@@ -679,6 +726,7 @@ script Yellow_Herb_In_Package{
             msgbox(PS_T_Dad14)
             waitmessage
             closemessage
+            clearflag(FLAG_HIDE_RIVAL_MIKE_1)
             setvar(VAR_ADVENTURE_START, 7)
             releaseall
             end
@@ -769,6 +817,7 @@ script Green_Herb_In_Package{
             msgbox(PS_T_Dad14)
             waitmessage
             closemessage
+            clearflag(FLAG_HIDE_RIVAL_MIKE_1)
             setvar(VAR_ADVENTURE_START, 7)
             releaseall
             end
@@ -1049,6 +1098,15 @@ text PS_T_Dad14{
     "Since ya worked hard, I'll letcha take\n"
     "off while clean up 'round here.\p"
     "See y'all at lunch!"
+}
+
+text PS_T_Dad15{
+    "You go on now, {PLAYER}.\n"
+    "This place needs a little fixin' yet."
+}
+
+text PS_T_Dad16{
+    "Come on, {PLAYER}, yer wastin' daylight!"
 }
 
 text PS_T_SYS1_R{

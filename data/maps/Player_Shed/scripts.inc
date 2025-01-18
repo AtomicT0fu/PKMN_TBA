@@ -1,1330 +1,1183 @@
 Player_Shed_MapScripts::
 # 2 "data/maps/Player_Shed/scripts.pory"
+	map_script MAP_SCRIPT_ON_LOAD, Check_Herbs_Complete
+# 3 "data/maps/Player_Shed/scripts.pory"
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, Player_Shed_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
 
 Player_Shed_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
-# 3 "data/maps/Player_Shed/scripts.pory"
+# 4 "data/maps/Player_Shed/scripts.pory"
 	map_script_2 VAR_ADVENTURE_START, 4, PS_Dad_Intro
 	.2byte 0
 
 
-PS_Dad_Intro::
-# 8 "data/maps/Player_Shed/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, PS_Player_Walk1
+Check_Herbs_Complete::
 # 9 "data/maps/Player_Shed/scripts.pory"
-	waitmovement 0
+	goto_if_set FLAG_ALL_HERBS_COMPLETE, Check_Herbs_Complete_2
+Check_Herbs_Complete_1:
+	end
+
+Check_Herbs_Complete_2:
 # 10 "data/maps/Player_Shed/scripts.pory"
-	speakername PS_Dad_Intro_Text_0
+	setmetatile 8, 3, 0x205, TRUE
 # 11 "data/maps/Player_Shed/scripts.pory"
-	msgbox PS_T_Dad1
+	setmetatile 9, 3, 0x206, TRUE
 # 12 "data/maps/Player_Shed/scripts.pory"
-	waitmessage
+	setmetatile 8, 5, 0x20D, TRUE
 # 13 "data/maps/Player_Shed/scripts.pory"
-	closemessage
+	setmetatile 9, 5, 0x20E, TRUE
 # 14 "data/maps/Player_Shed/scripts.pory"
-	applymovement 1, PS_W_Dad1
+	setmetatile 8, 7, 0x20D, TRUE
 # 15 "data/maps/Player_Shed/scripts.pory"
-	delay 10
+	setmetatile 9, 7, 0x20E, TRUE
 # 16 "data/maps/Player_Shed/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, PS_W_Dad1
+	setmetatile 0, 4, 0x239, TRUE
 # 17 "data/maps/Player_Shed/scripts.pory"
-	waitmovement 0
+	setmetatile 0, 5, 0x23A, TRUE
 # 18 "data/maps/Player_Shed/scripts.pory"
-	speakername PS_Dad_Intro_Text_0
-# 19 "data/maps/Player_Shed/scripts.pory"
-	msgbox PS_T_Dad2
-# 20 "data/maps/Player_Shed/scripts.pory"
-	waitmessage
-# 21 "data/maps/Player_Shed/scripts.pory"
-	delay 20
-# 22 "data/maps/Player_Shed/scripts.pory"
-	turnobject 1, DIR_SOUTH
-# 23 "data/maps/Player_Shed/scripts.pory"
-	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
-# 24 "data/maps/Player_Shed/scripts.pory"
-	speakername PS_Dad_Intro_Text_0
-# 25 "data/maps/Player_Shed/scripts.pory"
-	msgbox PS_T_Dad3, MSGBOX_YESNO
+	setmetatile 0, 6, 0x238, TRUE
+	goto Check_Herbs_Complete_1
+
+
+PS_Dad_Interact::
 # 26 "data/maps/Player_Shed/scripts.pory"
+	faceplayer
+# 27 "data/maps/Player_Shed/scripts.pory"
+	goto_if_set FLAG_ALL_HERBS_COMPLETE, PS_Dad_Interact_2
+# 34 "data/maps/Player_Shed/scripts.pory"
+	goto_if_set FLAG_OBT_GREEN_BRICK, PS_Dad_Interact_3
+# 34 "data/maps/Player_Shed/scripts.pory"
+	goto_if_set FLAG_OBT_RED_BRICK, PS_Dad_Interact_3
+# 34 "data/maps/Player_Shed/scripts.pory"
+	goto_if_set FLAG_OBT_YELLOW_BRICK, PS_Dad_Interact_3
+# 43 "data/maps/Player_Shed/scripts.pory"
+	speakername PS_Dad_Interact_Text_0
+# 44 "data/maps/Player_Shed/scripts.pory"
+	msgbox PS_T_Dad16
+# 45 "data/maps/Player_Shed/scripts.pory"
+	waitmessage
+# 46 "data/maps/Player_Shed/scripts.pory"
+	closemessage
+# 47 "data/maps/Player_Shed/scripts.pory"
+	turnobject 1, DIR_NORTH
+# 48 "data/maps/Player_Shed/scripts.pory"
+	release
+PS_Dad_Interact_1:
+	end
+
+PS_Dad_Interact_2:
+# 28 "data/maps/Player_Shed/scripts.pory"
+	speakername PS_Dad_Interact_Text_0
+# 29 "data/maps/Player_Shed/scripts.pory"
+	msgbox PS_T_Dad15
+# 30 "data/maps/Player_Shed/scripts.pory"
+	waitmessage
+# 31 "data/maps/Player_Shed/scripts.pory"
+	closemessage
+# 32 "data/maps/Player_Shed/scripts.pory"
+	release
+	goto PS_Dad_Interact_1
+
+PS_Dad_Interact_3:
+# 35 "data/maps/Player_Shed/scripts.pory"
+	speakername PS_Dad_Interact_Text_0
+# 36 "data/maps/Player_Shed/scripts.pory"
+	msgbox PS_T_Dad16
+# 37 "data/maps/Player_Shed/scripts.pory"
+	waitmessage
+# 38 "data/maps/Player_Shed/scripts.pory"
+	closemessage
+# 39 "data/maps/Player_Shed/scripts.pory"
+	turnobject 1, DIR_WEST
+# 40 "data/maps/Player_Shed/scripts.pory"
+	release
+	goto PS_Dad_Interact_1
+
+
+PS_Dad_Intro::
+# 54 "data/maps/Player_Shed/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, PS_Player_Walk1
+# 55 "data/maps/Player_Shed/scripts.pory"
+	waitmovement 0
+# 56 "data/maps/Player_Shed/scripts.pory"
+	speakername PS_Dad_Interact_Text_0
+# 57 "data/maps/Player_Shed/scripts.pory"
+	msgbox PS_T_Dad1
+# 58 "data/maps/Player_Shed/scripts.pory"
+	waitmessage
+# 59 "data/maps/Player_Shed/scripts.pory"
+	closemessage
+# 60 "data/maps/Player_Shed/scripts.pory"
+	applymovement 1, PS_W_Dad1
+# 61 "data/maps/Player_Shed/scripts.pory"
+	delay 10
+# 62 "data/maps/Player_Shed/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, PS_W_Dad1
+# 63 "data/maps/Player_Shed/scripts.pory"
+	waitmovement 0
+# 64 "data/maps/Player_Shed/scripts.pory"
+	speakername PS_Dad_Interact_Text_0
+# 65 "data/maps/Player_Shed/scripts.pory"
+	msgbox PS_T_Dad2
+# 66 "data/maps/Player_Shed/scripts.pory"
+	waitmessage
+# 67 "data/maps/Player_Shed/scripts.pory"
+	delay 20
+# 68 "data/maps/Player_Shed/scripts.pory"
+	turnobject 1, DIR_SOUTH
+# 69 "data/maps/Player_Shed/scripts.pory"
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
+# 70 "data/maps/Player_Shed/scripts.pory"
+	speakername PS_Dad_Interact_Text_0
+# 71 "data/maps/Player_Shed/scripts.pory"
+	msgbox PS_T_Dad3, MSGBOX_YESNO
+# 72 "data/maps/Player_Shed/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq PS_Dad_Intro_2
-# 33 "data/maps/Player_Shed/scripts.pory"
-	speakername PS_Dad_Intro_Text_0
-# 34 "data/maps/Player_Shed/scripts.pory"
+# 79 "data/maps/Player_Shed/scripts.pory"
+	speakername PS_Dad_Interact_Text_0
+# 80 "data/maps/Player_Shed/scripts.pory"
 	msgbox PS_T_Dad4B
-# 35 "data/maps/Player_Shed/scripts.pory"
+# 81 "data/maps/Player_Shed/scripts.pory"
 	waitmessage
-# 36 "data/maps/Player_Shed/scripts.pory"
+# 82 "data/maps/Player_Shed/scripts.pory"
 	closemessage
 PS_Dad_Intro_1:
-# 38 "data/maps/Player_Shed/scripts.pory"
+# 84 "data/maps/Player_Shed/scripts.pory"
 	applymovement 1, PS_W_Dad2
-# 39 "data/maps/Player_Shed/scripts.pory"
+# 85 "data/maps/Player_Shed/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, PS_W_Player2
-# 40 "data/maps/Player_Shed/scripts.pory"
+# 86 "data/maps/Player_Shed/scripts.pory"
 	waitmovement 0
-# 41 "data/maps/Player_Shed/scripts.pory"
-	speakername PS_Dad_Intro_Text_0
-# 42 "data/maps/Player_Shed/scripts.pory"
+# 87 "data/maps/Player_Shed/scripts.pory"
+	speakername PS_Dad_Interact_Text_0
+# 88 "data/maps/Player_Shed/scripts.pory"
 	msgbox PS_T_Dad5
-# 43 "data/maps/Player_Shed/scripts.pory"
+# 89 "data/maps/Player_Shed/scripts.pory"
 	waitmessage
-# 44 "data/maps/Player_Shed/scripts.pory"
+# 90 "data/maps/Player_Shed/scripts.pory"
 	closemessage
-# 45 "data/maps/Player_Shed/scripts.pory"
+# 91 "data/maps/Player_Shed/scripts.pory"
 	applymovement 1, PS_W_Dad3
-# 46 "data/maps/Player_Shed/scripts.pory"
+# 92 "data/maps/Player_Shed/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, PS_W_Player3
-# 47 "data/maps/Player_Shed/scripts.pory"
+# 93 "data/maps/Player_Shed/scripts.pory"
 	waitmovement 0
-# 48 "data/maps/Player_Shed/scripts.pory"
-	speakername PS_Dad_Intro_Text_0
-# 49 "data/maps/Player_Shed/scripts.pory"
+# 94 "data/maps/Player_Shed/scripts.pory"
+	speakername PS_Dad_Interact_Text_0
+# 95 "data/maps/Player_Shed/scripts.pory"
 	msgbox PS_T_Dad6
-# 50 "data/maps/Player_Shed/scripts.pory"
+# 96 "data/maps/Player_Shed/scripts.pory"
 	waitmessage
-# 51 "data/maps/Player_Shed/scripts.pory"
+# 97 "data/maps/Player_Shed/scripts.pory"
 	turnobject 1, DIR_NORTH
-# 52 "data/maps/Player_Shed/scripts.pory"
+# 98 "data/maps/Player_Shed/scripts.pory"
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_SOUTH
-# 53 "data/maps/Player_Shed/scripts.pory"
+# 99 "data/maps/Player_Shed/scripts.pory"
 	waitmovement 0
-# 54 "data/maps/Player_Shed/scripts.pory"
-	speakername PS_Dad_Intro_Text_0
-# 55 "data/maps/Player_Shed/scripts.pory"
+# 100 "data/maps/Player_Shed/scripts.pory"
+	speakername PS_Dad_Interact_Text_0
+# 101 "data/maps/Player_Shed/scripts.pory"
 	msgbox PS_T_Dad7
-# 56 "data/maps/Player_Shed/scripts.pory"
+# 102 "data/maps/Player_Shed/scripts.pory"
 	waitmessage
-# 57 "data/maps/Player_Shed/scripts.pory"
+# 103 "data/maps/Player_Shed/scripts.pory"
 	closemessage
-# 58 "data/maps/Player_Shed/scripts.pory"
+# 104 "data/maps/Player_Shed/scripts.pory"
 	applymovement 1, PS_W_Dad4
-# 59 "data/maps/Player_Shed/scripts.pory"
+# 105 "data/maps/Player_Shed/scripts.pory"
 	delay 20
-# 60 "data/maps/Player_Shed/scripts.pory"
+# 106 "data/maps/Player_Shed/scripts.pory"
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
-# 61 "data/maps/Player_Shed/scripts.pory"
+# 107 "data/maps/Player_Shed/scripts.pory"
 	waitmovement 1
-# 62 "data/maps/Player_Shed/scripts.pory"
+# 108 "data/maps/Player_Shed/scripts.pory"
 	delay 30
-# 63 "data/maps/Player_Shed/scripts.pory"
+# 109 "data/maps/Player_Shed/scripts.pory"
 	playse SE_SWITCH
-# 64 "data/maps/Player_Shed/scripts.pory"
+# 110 "data/maps/Player_Shed/scripts.pory"
 	setmetatile 6, 2, 0x22E, TRUE
-# 65 "data/maps/Player_Shed/scripts.pory"
+# 111 "data/maps/Player_Shed/scripts.pory"
 	special DrawWholeMapView
-# 66 "data/maps/Player_Shed/scripts.pory"
+# 112 "data/maps/Player_Shed/scripts.pory"
 	waitse
-# 67 "data/maps/Player_Shed/scripts.pory"
+# 113 "data/maps/Player_Shed/scripts.pory"
 	delay 10
-# 68 "data/maps/Player_Shed/scripts.pory"
+# 114 "data/maps/Player_Shed/scripts.pory"
 	playse SE_TRUCK_DOOR
-# 69 "data/maps/Player_Shed/scripts.pory"
+# 115 "data/maps/Player_Shed/scripts.pory"
 	setmetatile 2, 2, 0x225, TRUE
-# 70 "data/maps/Player_Shed/scripts.pory"
+# 116 "data/maps/Player_Shed/scripts.pory"
 	setmetatile 3, 2, 0x226, TRUE
-# 71 "data/maps/Player_Shed/scripts.pory"
+# 117 "data/maps/Player_Shed/scripts.pory"
 	setmetatile 4, 2, 0x227, TRUE
-# 72 "data/maps/Player_Shed/scripts.pory"
+# 118 "data/maps/Player_Shed/scripts.pory"
 	special DrawWholeMapView
-# 73 "data/maps/Player_Shed/scripts.pory"
+# 119 "data/maps/Player_Shed/scripts.pory"
 	waitse
-# 74 "data/maps/Player_Shed/scripts.pory"
+# 120 "data/maps/Player_Shed/scripts.pory"
 	setvar VAR_ADVENTURE_START, 5
-# 75 "data/maps/Player_Shed/scripts.pory"
+# 121 "data/maps/Player_Shed/scripts.pory"
 	release
 	end
 
 PS_Dad_Intro_2:
-# 27 "data/maps/Player_Shed/scripts.pory"
-	speakername PS_Dad_Intro_Text_0
-# 28 "data/maps/Player_Shed/scripts.pory"
+# 73 "data/maps/Player_Shed/scripts.pory"
+	speakername PS_Dad_Interact_Text_0
+# 74 "data/maps/Player_Shed/scripts.pory"
 	msgbox PS_T_Dad4A
-# 29 "data/maps/Player_Shed/scripts.pory"
+# 75 "data/maps/Player_Shed/scripts.pory"
 	waitmessage
-# 30 "data/maps/Player_Shed/scripts.pory"
+# 76 "data/maps/Player_Shed/scripts.pory"
 	closemessage
 	goto PS_Dad_Intro_1
 
 
 RedHerb_Collect::
-# 80 "data/maps/Player_Shed/scripts.pory"
+# 126 "data/maps/Player_Shed/scripts.pory"
 	msgbox PS_T_SYS1_R, MSGBOX_YESNO
-# 81 "data/maps/Player_Shed/scripts.pory"
+# 127 "data/maps/Player_Shed/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq RedHerb_Collect_2
-# 93 "data/maps/Player_Shed/scripts.pory"
+# 139 "data/maps/Player_Shed/scripts.pory"
 	release
 RedHerb_Collect_1:
 	end
 
 RedHerb_Collect_2:
-# 82 "data/maps/Player_Shed/scripts.pory"
+# 128 "data/maps/Player_Shed/scripts.pory"
 	setmetatile 8, 3, 0x205, TRUE
-# 83 "data/maps/Player_Shed/scripts.pory"
+# 129 "data/maps/Player_Shed/scripts.pory"
 	setmetatile 9, 3, 0x206, TRUE
-# 84 "data/maps/Player_Shed/scripts.pory"
+# 130 "data/maps/Player_Shed/scripts.pory"
 	delay 10
-# 85 "data/maps/Player_Shed/scripts.pory"
+# 131 "data/maps/Player_Shed/scripts.pory"
 	playse SE_MUD_BALL
-# 86 "data/maps/Player_Shed/scripts.pory"
+# 132 "data/maps/Player_Shed/scripts.pory"
 	special DrawWholeMapView
-# 87 "data/maps/Player_Shed/scripts.pory"
+# 133 "data/maps/Player_Shed/scripts.pory"
 	waitse
-# 88 "data/maps/Player_Shed/scripts.pory"
+# 134 "data/maps/Player_Shed/scripts.pory"
 	setflag FLAG_OBT_RED_HERB
-# 89 "data/maps/Player_Shed/scripts.pory"
+# 135 "data/maps/Player_Shed/scripts.pory"
 	setflag FLAG_PLAYER_HAS_HERBS
-# 90 "data/maps/Player_Shed/scripts.pory"
+# 136 "data/maps/Player_Shed/scripts.pory"
 	release
 	goto RedHerb_Collect_1
 
 
 YellowHerb_Collect::
-# 99 "data/maps/Player_Shed/scripts.pory"
+# 145 "data/maps/Player_Shed/scripts.pory"
 	msgbox PS_T_SYS1_Y, MSGBOX_YESNO
-# 100 "data/maps/Player_Shed/scripts.pory"
+# 146 "data/maps/Player_Shed/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq YellowHerb_Collect_2
-# 112 "data/maps/Player_Shed/scripts.pory"
+# 158 "data/maps/Player_Shed/scripts.pory"
 	release
 YellowHerb_Collect_1:
 	end
 
 YellowHerb_Collect_2:
-# 101 "data/maps/Player_Shed/scripts.pory"
+# 147 "data/maps/Player_Shed/scripts.pory"
 	setmetatile 8, 5, 0x20D, TRUE
-# 102 "data/maps/Player_Shed/scripts.pory"
+# 148 "data/maps/Player_Shed/scripts.pory"
 	setmetatile 9, 5, 0x20E, TRUE
-# 103 "data/maps/Player_Shed/scripts.pory"
+# 149 "data/maps/Player_Shed/scripts.pory"
 	delay 10
-# 104 "data/maps/Player_Shed/scripts.pory"
+# 150 "data/maps/Player_Shed/scripts.pory"
 	playse SE_MUD_BALL
-# 105 "data/maps/Player_Shed/scripts.pory"
+# 151 "data/maps/Player_Shed/scripts.pory"
 	special DrawWholeMapView
-# 106 "data/maps/Player_Shed/scripts.pory"
+# 152 "data/maps/Player_Shed/scripts.pory"
 	waitse
-# 107 "data/maps/Player_Shed/scripts.pory"
+# 153 "data/maps/Player_Shed/scripts.pory"
 	setflag FLAG_OBT_YELLOW_HERB
-# 108 "data/maps/Player_Shed/scripts.pory"
+# 154 "data/maps/Player_Shed/scripts.pory"
 	setflag FLAG_PLAYER_HAS_HERBS
-# 109 "data/maps/Player_Shed/scripts.pory"
+# 155 "data/maps/Player_Shed/scripts.pory"
 	release
 	goto YellowHerb_Collect_1
 
 
 GreenHerb_Collect::
-# 118 "data/maps/Player_Shed/scripts.pory"
+# 164 "data/maps/Player_Shed/scripts.pory"
 	msgbox PS_T_SYS1_G, MSGBOX_YESNO
-# 119 "data/maps/Player_Shed/scripts.pory"
+# 165 "data/maps/Player_Shed/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq GreenHerb_Collect_2
-# 131 "data/maps/Player_Shed/scripts.pory"
+# 177 "data/maps/Player_Shed/scripts.pory"
 	release
 GreenHerb_Collect_1:
 	end
 
 GreenHerb_Collect_2:
-# 120 "data/maps/Player_Shed/scripts.pory"
+# 166 "data/maps/Player_Shed/scripts.pory"
 	setmetatile 8, 7, 0x20D, TRUE
-# 121 "data/maps/Player_Shed/scripts.pory"
+# 167 "data/maps/Player_Shed/scripts.pory"
 	setmetatile 9, 7, 0x20E, TRUE
-# 122 "data/maps/Player_Shed/scripts.pory"
+# 168 "data/maps/Player_Shed/scripts.pory"
 	delay 10
-# 123 "data/maps/Player_Shed/scripts.pory"
+# 169 "data/maps/Player_Shed/scripts.pory"
 	playse SE_MUD_BALL
-# 124 "data/maps/Player_Shed/scripts.pory"
+# 170 "data/maps/Player_Shed/scripts.pory"
 	special DrawWholeMapView
-# 125 "data/maps/Player_Shed/scripts.pory"
+# 171 "data/maps/Player_Shed/scripts.pory"
 	waitse
-# 126 "data/maps/Player_Shed/scripts.pory"
+# 172 "data/maps/Player_Shed/scripts.pory"
 	setflag FLAG_OBT_GREEN_HERB
-# 127 "data/maps/Player_Shed/scripts.pory"
+# 173 "data/maps/Player_Shed/scripts.pory"
 	setflag FLAG_PLAYER_HAS_HERBS
-# 128 "data/maps/Player_Shed/scripts.pory"
+# 174 "data/maps/Player_Shed/scripts.pory"
 	release
 	goto GreenHerb_Collect_1
 
 
 RedHerb_Bin::
-# 137 "data/maps/Player_Shed/scripts.pory"
+# 183 "data/maps/Player_Shed/scripts.pory"
 	goto_if_set FLAG_OBT_RED_HERB, Bin_Is_Empty
-# 138 "data/maps/Player_Shed/scripts.pory"
+# 184 "data/maps/Player_Shed/scripts.pory"
 	goto_if_set FLAG_OBT_RED_BRICK, Bin_Is_Empty
-# 139 "data/maps/Player_Shed/scripts.pory"
+# 185 "data/maps/Player_Shed/scripts.pory"
 	goto_if_set FLAG_RED_HERB_COMPLETE, Bin_Is_Empty
-# 140 "data/maps/Player_Shed/scripts.pory"
+# 186 "data/maps/Player_Shed/scripts.pory"
 	goto_if_set FLAG_PLAYER_HAS_HERBS, Player_Carrying_Other_Herb
-# 141 "data/maps/Player_Shed/scripts.pory"
+# 187 "data/maps/Player_Shed/scripts.pory"
 	goto_if_unset FLAG_OBT_RED_HERB, RedHerb_Collect
 	return
 
 
 YellowHerb_Bin::
-# 145 "data/maps/Player_Shed/scripts.pory"
+# 191 "data/maps/Player_Shed/scripts.pory"
 	goto_if_set FLAG_OBT_YELLOW_HERB, Bin_Is_Empty
-# 146 "data/maps/Player_Shed/scripts.pory"
+# 192 "data/maps/Player_Shed/scripts.pory"
 	goto_if_set FLAG_OBT_YELLOW_BRICK, Bin_Is_Empty
-# 147 "data/maps/Player_Shed/scripts.pory"
+# 193 "data/maps/Player_Shed/scripts.pory"
 	goto_if_set FLAG_YELLOW_HERB_COMPLETE, Bin_Is_Empty
-# 148 "data/maps/Player_Shed/scripts.pory"
+# 194 "data/maps/Player_Shed/scripts.pory"
 	goto_if_set FLAG_PLAYER_HAS_HERBS, Player_Carrying_Other_Herb
-# 149 "data/maps/Player_Shed/scripts.pory"
+# 195 "data/maps/Player_Shed/scripts.pory"
 	goto_if_unset FLAG_OBT_YELLOW_HERB, YellowHerb_Collect
 	return
 
 
 GreenHerb_Bin::
-# 153 "data/maps/Player_Shed/scripts.pory"
+# 199 "data/maps/Player_Shed/scripts.pory"
 	goto_if_set FLAG_OBT_GREEN_HERB, Bin_Is_Empty
-# 154 "data/maps/Player_Shed/scripts.pory"
+# 200 "data/maps/Player_Shed/scripts.pory"
 	goto_if_set FLAG_OBT_GREEN_BRICK, Bin_Is_Empty
-# 155 "data/maps/Player_Shed/scripts.pory"
+# 201 "data/maps/Player_Shed/scripts.pory"
 	goto_if_set FLAG_GREEN_HERB_COMPLETE, Bin_Is_Empty
-# 156 "data/maps/Player_Shed/scripts.pory"
+# 202 "data/maps/Player_Shed/scripts.pory"
 	goto_if_set FLAG_PLAYER_HAS_HERBS, Player_Carrying_Other_Herb
-# 157 "data/maps/Player_Shed/scripts.pory"
+# 203 "data/maps/Player_Shed/scripts.pory"
 	goto_if_unset FLAG_OBT_GREEN_HERB, GreenHerb_Collect
 	return
 
 
 Bin_Is_Empty::
-# 161 "data/maps/Player_Shed/scripts.pory"
+# 207 "data/maps/Player_Shed/scripts.pory"
 	msgbox PS_T_Player1
-# 162 "data/maps/Player_Shed/scripts.pory"
+# 208 "data/maps/Player_Shed/scripts.pory"
 	waitmessage
-# 163 "data/maps/Player_Shed/scripts.pory"
+# 209 "data/maps/Player_Shed/scripts.pory"
 	closemessage
-# 164 "data/maps/Player_Shed/scripts.pory"
+# 210 "data/maps/Player_Shed/scripts.pory"
 	release
 	end
 
 
 Player_Carrying_Other_Herb::
-# 169 "data/maps/Player_Shed/scripts.pory"
+# 215 "data/maps/Player_Shed/scripts.pory"
 	msgbox PS_T_Player2
-# 170 "data/maps/Player_Shed/scripts.pory"
+# 216 "data/maps/Player_Shed/scripts.pory"
 	waitmessage
-# 171 "data/maps/Player_Shed/scripts.pory"
+# 217 "data/maps/Player_Shed/scripts.pory"
 	closemessage
-# 172 "data/maps/Player_Shed/scripts.pory"
+# 218 "data/maps/Player_Shed/scripts.pory"
 	release
 	end
 
 
 Machine_Interact::
-# 177 "data/maps/Player_Shed/scripts.pory"
+# 223 "data/maps/Player_Shed/scripts.pory"
 	goto_if_set FLAG_ALL_HERBS_COMPLETE, Door_Is_Sealed
-# 178 "data/maps/Player_Shed/scripts.pory"
+# 224 "data/maps/Player_Shed/scripts.pory"
 	goto_if_set FLAG_OBT_RED_HERB, Red_Herb_In_Machine
-# 179 "data/maps/Player_Shed/scripts.pory"
+# 225 "data/maps/Player_Shed/scripts.pory"
 	goto_if_set FLAG_OBT_GREEN_HERB, Green_Herb_In_Machine
-# 180 "data/maps/Player_Shed/scripts.pory"
+# 226 "data/maps/Player_Shed/scripts.pory"
 	goto_if_set FLAG_OBT_YELLOW_HERB, Yellow_Herb_In_Machine
-# 181 "data/maps/Player_Shed/scripts.pory"
+# 227 "data/maps/Player_Shed/scripts.pory"
 	goto_if_set FLAG_OBT_RED_BRICK, Door_Is_Sealed
-# 182 "data/maps/Player_Shed/scripts.pory"
+# 228 "data/maps/Player_Shed/scripts.pory"
 	goto_if_set FLAG_OBT_GREEN_BRICK, Door_Is_Sealed
-# 183 "data/maps/Player_Shed/scripts.pory"
+# 229 "data/maps/Player_Shed/scripts.pory"
 	goto_if_set FLAG_OBT_YELLOW_BRICK, Door_Is_Sealed
-# 184 "data/maps/Player_Shed/scripts.pory"
+# 230 "data/maps/Player_Shed/scripts.pory"
 	goto_if_unset FLAG_PLAYER_HAS_HERBS, Player_Has_No_Herb
 	return
 
 
 Red_Herb_In_Machine::
-# 188 "data/maps/Player_Shed/scripts.pory"
+# 234 "data/maps/Player_Shed/scripts.pory"
 	msgbox PS_T_SYS2_R, MSGBOX_YESNO
-# 189 "data/maps/Player_Shed/scripts.pory"
+# 235 "data/maps/Player_Shed/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Red_Herb_In_Machine_2
-# 283 "data/maps/Player_Shed/scripts.pory"
+# 329 "data/maps/Player_Shed/scripts.pory"
 	release
 Red_Herb_In_Machine_1:
 	end
 
 Red_Herb_In_Machine_2:
-# 190 "data/maps/Player_Shed/scripts.pory"
-	closemessage
-# 191 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 2, 2, 0x235, TRUE
-# 192 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 3, 2, 0x236, TRUE
-# 193 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 4, 2, 0x237, TRUE
-# 194 "data/maps/Player_Shed/scripts.pory"
-	delay 10
-# 195 "data/maps/Player_Shed/scripts.pory"
-	playse SE_BALL
-# 196 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
-# 197 "data/maps/Player_Shed/scripts.pory"
-	waitse
-# 198 "data/maps/Player_Shed/scripts.pory"
-	delay 20
-# 199 "data/maps/Player_Shed/scripts.pory"
-	turnobject 1, DIR_WEST
-# 200 "data/maps/Player_Shed/scripts.pory"
-	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
-# 201 "data/maps/Player_Shed/scripts.pory"
-	speakername PS_Dad_Intro_Text_0
-# 202 "data/maps/Player_Shed/scripts.pory"
-	msgbox PS_T_Dad9
-# 203 "data/maps/Player_Shed/scripts.pory"
-	waitmessage
-# 204 "data/maps/Player_Shed/scripts.pory"
-	closemessage
-# 205 "data/maps/Player_Shed/scripts.pory"
-	turnobject 1, DIR_NORTH
-# 206 "data/maps/Player_Shed/scripts.pory"
-	delay 20
-# 207 "data/maps/Player_Shed/scripts.pory"
-	playse SE_SWITCH
-# 208 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 6, 2, 0x224, TRUE
-# 209 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
-# 210 "data/maps/Player_Shed/scripts.pory"
-	waitse
-# 211 "data/maps/Player_Shed/scripts.pory"
-	delay 10
-# 212 "data/maps/Player_Shed/scripts.pory"
-	playse SE_TRUCK_DOOR
-# 213 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 2, 2, 0x220, TRUE
-# 214 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 3, 2, 0x221, TRUE
-# 215 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 4, 2, 0x222, TRUE
-# 216 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
-# 217 "data/maps/Player_Shed/scripts.pory"
-	waitse
-# 218 "data/maps/Player_Shed/scripts.pory"
-	delay 40
-# 219 "data/maps/Player_Shed/scripts.pory"
-	playse SE_SWITCH
-# 220 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 6, 2, 0x21D, TRUE
-# 221 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
-# 222 "data/maps/Player_Shed/scripts.pory"
-	waitse
-# 223 "data/maps/Player_Shed/scripts.pory"
-	delay 10
-# 224 "data/maps/Player_Shed/scripts.pory"
-	playse SE_ESCALATOR
-# 225 "data/maps/Player_Shed/scripts.pory"
-	waitse
-# 226 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 6, 2, 0x21E, TRUE
-# 227 "data/maps/Player_Shed/scripts.pory"
-	call PS_Grinder_Shake_Vars
-# 228 "data/maps/Player_Shed/scripts.pory"
-	delay 20
-# 229 "data/maps/Player_Shed/scripts.pory"
-	playse SE_CLICK
-# 230 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
-# 231 "data/maps/Player_Shed/scripts.pory"
-	delay 20
-# 232 "data/maps/Player_Shed/scripts.pory"
-	special ShakeCamera
-# 233 "data/maps/Player_Shed/scripts.pory"
-	playse SE_TRUCK_MOVE
-# 234 "data/maps/Player_Shed/scripts.pory"
-	delay 180
-# 235 "data/maps/Player_Shed/scripts.pory"
-	playse SE_TRUCK_STOP
 # 236 "data/maps/Player_Shed/scripts.pory"
-	waitse
+	closemessage
 # 237 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 6, 2, 0x21D, TRUE
+	setmetatile 2, 2, 0x235, TRUE
 # 238 "data/maps/Player_Shed/scripts.pory"
-	playse SE_CLICK
+	setmetatile 3, 2, 0x236, TRUE
 # 239 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
+	setmetatile 4, 2, 0x237, TRUE
 # 240 "data/maps/Player_Shed/scripts.pory"
-	waitse
+	delay 10
 # 241 "data/maps/Player_Shed/scripts.pory"
-	delay 20
+	playse SE_BALL
 # 242 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 6, 2, 0x224, TRUE
+	special DrawWholeMapView
 # 243 "data/maps/Player_Shed/scripts.pory"
-	playse SE_SWITCH
+	waitse
 # 244 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
+	delay 20
 # 245 "data/maps/Player_Shed/scripts.pory"
-	waitse
-# 246 "data/maps/Player_Shed/scripts.pory"
-	delay 40
-# 247 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 6, 2, 0x22F, TRUE
-# 248 "data/maps/Player_Shed/scripts.pory"
-	playse SE_SWITCH
-# 249 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
-# 250 "data/maps/Player_Shed/scripts.pory"
-	waitse
-# 251 "data/maps/Player_Shed/scripts.pory"
-	delay 10
-# 252 "data/maps/Player_Shed/scripts.pory"
-	playse SE_TRUCK_DOOR
-# 253 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 5, 2, 0x234, TRUE
-# 254 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
-# 255 "data/maps/Player_Shed/scripts.pory"
-	waitse
-# 256 "data/maps/Player_Shed/scripts.pory"
-	delay 10
-# 257 "data/maps/Player_Shed/scripts.pory"
 	turnobject 1, DIR_WEST
-# 258 "data/maps/Player_Shed/scripts.pory"
-	speakername PS_Dad_Intro_Text_0
-# 259 "data/maps/Player_Shed/scripts.pory"
-	msgbox PS_T_Dad10
-# 260 "data/maps/Player_Shed/scripts.pory"
-	waitmessage
-# 261 "data/maps/Player_Shed/scripts.pory"
-	closemessage
-# 262 "data/maps/Player_Shed/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, PS_W_Dad1
-# 263 "data/maps/Player_Shed/scripts.pory"
-	waitmovement 0
-# 264 "data/maps/Player_Shed/scripts.pory"
-	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
-# 265 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 5, 2, 0x22D, TRUE
-# 266 "data/maps/Player_Shed/scripts.pory"
-	delay 30
-# 267 "data/maps/Player_Shed/scripts.pory"
-	playse SE_MUD_BALL
-# 268 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
-# 269 "data/maps/Player_Shed/scripts.pory"
-	waitse
-# 270 "data/maps/Player_Shed/scripts.pory"
-	delay 50
-# 271 "data/maps/Player_Shed/scripts.pory"
+# 246 "data/maps/Player_Shed/scripts.pory"
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
-# 272 "data/maps/Player_Shed/scripts.pory"
-	delay 30
-# 273 "data/maps/Player_Shed/scripts.pory"
-	speakername PS_Dad_Intro_Text_0
-# 274 "data/maps/Player_Shed/scripts.pory"
-	msgbox PS_T_Dad11
-# 275 "data/maps/Player_Shed/scripts.pory"
+# 247 "data/maps/Player_Shed/scripts.pory"
+	speakername PS_Dad_Interact_Text_0
+# 248 "data/maps/Player_Shed/scripts.pory"
+	msgbox PS_T_Dad9
+# 249 "data/maps/Player_Shed/scripts.pory"
 	waitmessage
-# 276 "data/maps/Player_Shed/scripts.pory"
+# 250 "data/maps/Player_Shed/scripts.pory"
 	closemessage
+# 251 "data/maps/Player_Shed/scripts.pory"
+	turnobject 1, DIR_NORTH
+# 252 "data/maps/Player_Shed/scripts.pory"
+	delay 20
+# 253 "data/maps/Player_Shed/scripts.pory"
+	playse SE_SWITCH
+# 254 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 6, 2, 0x224, TRUE
+# 255 "data/maps/Player_Shed/scripts.pory"
+	special DrawWholeMapView
+# 256 "data/maps/Player_Shed/scripts.pory"
+	waitse
+# 257 "data/maps/Player_Shed/scripts.pory"
+	delay 10
+# 258 "data/maps/Player_Shed/scripts.pory"
+	playse SE_TRUCK_DOOR
+# 259 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 2, 2, 0x220, TRUE
+# 260 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 3, 2, 0x221, TRUE
+# 261 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 4, 2, 0x222, TRUE
+# 262 "data/maps/Player_Shed/scripts.pory"
+	special DrawWholeMapView
+# 263 "data/maps/Player_Shed/scripts.pory"
+	waitse
+# 264 "data/maps/Player_Shed/scripts.pory"
+	delay 40
+# 265 "data/maps/Player_Shed/scripts.pory"
+	playse SE_SWITCH
+# 266 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 6, 2, 0x21D, TRUE
+# 267 "data/maps/Player_Shed/scripts.pory"
+	special DrawWholeMapView
+# 268 "data/maps/Player_Shed/scripts.pory"
+	waitse
+# 269 "data/maps/Player_Shed/scripts.pory"
+	delay 10
+# 270 "data/maps/Player_Shed/scripts.pory"
+	playse SE_ESCALATOR
+# 271 "data/maps/Player_Shed/scripts.pory"
+	waitse
+# 272 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 6, 2, 0x21E, TRUE
+# 273 "data/maps/Player_Shed/scripts.pory"
+	call PS_Grinder_Shake_Vars
+# 274 "data/maps/Player_Shed/scripts.pory"
+	delay 20
+# 275 "data/maps/Player_Shed/scripts.pory"
+	playse SE_CLICK
+# 276 "data/maps/Player_Shed/scripts.pory"
+	special DrawWholeMapView
 # 277 "data/maps/Player_Shed/scripts.pory"
-	setflag FLAG_OBT_RED_BRICK
+	delay 20
 # 278 "data/maps/Player_Shed/scripts.pory"
-	clearflag FLAG_OBT_RED_HERB
+	special ShakeCamera
 # 279 "data/maps/Player_Shed/scripts.pory"
-	setvar VAR_ADVENTURE_START, 6
+	playse SE_TRUCK_MOVE
 # 280 "data/maps/Player_Shed/scripts.pory"
+	delay 180
+# 281 "data/maps/Player_Shed/scripts.pory"
+	playse SE_TRUCK_STOP
+# 282 "data/maps/Player_Shed/scripts.pory"
+	waitse
+# 283 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 6, 2, 0x21D, TRUE
+# 284 "data/maps/Player_Shed/scripts.pory"
+	playse SE_CLICK
+# 285 "data/maps/Player_Shed/scripts.pory"
+	special DrawWholeMapView
+# 286 "data/maps/Player_Shed/scripts.pory"
+	waitse
+# 287 "data/maps/Player_Shed/scripts.pory"
+	delay 20
+# 288 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 6, 2, 0x224, TRUE
+# 289 "data/maps/Player_Shed/scripts.pory"
+	playse SE_SWITCH
+# 290 "data/maps/Player_Shed/scripts.pory"
+	special DrawWholeMapView
+# 291 "data/maps/Player_Shed/scripts.pory"
+	waitse
+# 292 "data/maps/Player_Shed/scripts.pory"
+	delay 40
+# 293 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 6, 2, 0x22F, TRUE
+# 294 "data/maps/Player_Shed/scripts.pory"
+	playse SE_SWITCH
+# 295 "data/maps/Player_Shed/scripts.pory"
+	special DrawWholeMapView
+# 296 "data/maps/Player_Shed/scripts.pory"
+	waitse
+# 297 "data/maps/Player_Shed/scripts.pory"
+	delay 10
+# 298 "data/maps/Player_Shed/scripts.pory"
+	playse SE_TRUCK_DOOR
+# 299 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 5, 2, 0x234, TRUE
+# 300 "data/maps/Player_Shed/scripts.pory"
+	special DrawWholeMapView
+# 301 "data/maps/Player_Shed/scripts.pory"
+	waitse
+# 302 "data/maps/Player_Shed/scripts.pory"
+	delay 10
+# 303 "data/maps/Player_Shed/scripts.pory"
+	turnobject 1, DIR_WEST
+# 304 "data/maps/Player_Shed/scripts.pory"
+	speakername PS_Dad_Interact_Text_0
+# 305 "data/maps/Player_Shed/scripts.pory"
+	msgbox PS_T_Dad10
+# 306 "data/maps/Player_Shed/scripts.pory"
+	waitmessage
+# 307 "data/maps/Player_Shed/scripts.pory"
+	closemessage
+# 308 "data/maps/Player_Shed/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, PS_W_Dad1
+# 309 "data/maps/Player_Shed/scripts.pory"
+	waitmovement 0
+# 310 "data/maps/Player_Shed/scripts.pory"
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
+# 311 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 5, 2, 0x22D, TRUE
+# 312 "data/maps/Player_Shed/scripts.pory"
+	delay 30
+# 313 "data/maps/Player_Shed/scripts.pory"
+	playse SE_MUD_BALL
+# 314 "data/maps/Player_Shed/scripts.pory"
+	special DrawWholeMapView
+# 315 "data/maps/Player_Shed/scripts.pory"
+	waitse
+# 316 "data/maps/Player_Shed/scripts.pory"
+	delay 50
+# 317 "data/maps/Player_Shed/scripts.pory"
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
+# 318 "data/maps/Player_Shed/scripts.pory"
+	delay 30
+# 319 "data/maps/Player_Shed/scripts.pory"
+	speakername PS_Dad_Interact_Text_0
+# 320 "data/maps/Player_Shed/scripts.pory"
+	msgbox PS_T_Dad11
+# 321 "data/maps/Player_Shed/scripts.pory"
+	waitmessage
+# 322 "data/maps/Player_Shed/scripts.pory"
+	closemessage
+# 323 "data/maps/Player_Shed/scripts.pory"
+	setflag FLAG_OBT_RED_BRICK
+# 324 "data/maps/Player_Shed/scripts.pory"
+	clearflag FLAG_OBT_RED_HERB
+# 325 "data/maps/Player_Shed/scripts.pory"
+	setvar VAR_ADVENTURE_START, 6
+# 326 "data/maps/Player_Shed/scripts.pory"
 	release
 	goto Red_Herb_In_Machine_1
 
 
 Yellow_Herb_In_Machine::
-# 289 "data/maps/Player_Shed/scripts.pory"
+# 335 "data/maps/Player_Shed/scripts.pory"
 	msgbox PS_T_SYS2_Y, MSGBOX_YESNO
-# 290 "data/maps/Player_Shed/scripts.pory"
+# 336 "data/maps/Player_Shed/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Yellow_Herb_In_Machine_2
-# 384 "data/maps/Player_Shed/scripts.pory"
+# 430 "data/maps/Player_Shed/scripts.pory"
 	release
 Yellow_Herb_In_Machine_1:
 	end
 
 Yellow_Herb_In_Machine_2:
-# 291 "data/maps/Player_Shed/scripts.pory"
-	closemessage
-# 292 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 2, 2, 0x23D, TRUE
-# 293 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 3, 2, 0x23E, TRUE
-# 294 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 4, 2, 0x23F, TRUE
-# 295 "data/maps/Player_Shed/scripts.pory"
-	delay 10
-# 296 "data/maps/Player_Shed/scripts.pory"
-	playse SE_BALL
-# 297 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
-# 298 "data/maps/Player_Shed/scripts.pory"
-	waitse
-# 299 "data/maps/Player_Shed/scripts.pory"
-	delay 20
-# 300 "data/maps/Player_Shed/scripts.pory"
-	turnobject 1, DIR_WEST
-# 301 "data/maps/Player_Shed/scripts.pory"
-	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
-# 302 "data/maps/Player_Shed/scripts.pory"
-	speakername PS_Dad_Intro_Text_0
-# 303 "data/maps/Player_Shed/scripts.pory"
-	msgbox PS_T_Dad9
-# 304 "data/maps/Player_Shed/scripts.pory"
-	waitmessage
-# 305 "data/maps/Player_Shed/scripts.pory"
-	closemessage
-# 306 "data/maps/Player_Shed/scripts.pory"
-	turnobject 1, DIR_NORTH
-# 307 "data/maps/Player_Shed/scripts.pory"
-	delay 20
-# 308 "data/maps/Player_Shed/scripts.pory"
-	playse SE_SWITCH
-# 309 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 6, 2, 0x224, TRUE
-# 310 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
-# 311 "data/maps/Player_Shed/scripts.pory"
-	waitse
-# 312 "data/maps/Player_Shed/scripts.pory"
-	delay 10
-# 313 "data/maps/Player_Shed/scripts.pory"
-	playse SE_TRUCK_DOOR
-# 314 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 2, 2, 0x220, TRUE
-# 315 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 3, 2, 0x221, TRUE
-# 316 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 4, 2, 0x222, TRUE
-# 317 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
-# 318 "data/maps/Player_Shed/scripts.pory"
-	waitse
-# 319 "data/maps/Player_Shed/scripts.pory"
-	delay 40
-# 320 "data/maps/Player_Shed/scripts.pory"
-	playse SE_SWITCH
-# 321 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 6, 2, 0x21D, TRUE
-# 322 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
-# 323 "data/maps/Player_Shed/scripts.pory"
-	waitse
-# 324 "data/maps/Player_Shed/scripts.pory"
-	delay 10
-# 325 "data/maps/Player_Shed/scripts.pory"
-	playse SE_ESCALATOR
-# 326 "data/maps/Player_Shed/scripts.pory"
-	waitse
-# 327 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 6, 2, 0x21E, TRUE
-# 328 "data/maps/Player_Shed/scripts.pory"
-	call PS_Grinder_Shake_Vars
-# 329 "data/maps/Player_Shed/scripts.pory"
-	delay 20
-# 330 "data/maps/Player_Shed/scripts.pory"
-	playse SE_CLICK
-# 331 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
-# 332 "data/maps/Player_Shed/scripts.pory"
-	delay 20
-# 333 "data/maps/Player_Shed/scripts.pory"
-	special ShakeCamera
-# 334 "data/maps/Player_Shed/scripts.pory"
-	playse SE_TRUCK_MOVE
-# 335 "data/maps/Player_Shed/scripts.pory"
-	delay 180
-# 336 "data/maps/Player_Shed/scripts.pory"
-	playse SE_TRUCK_STOP
 # 337 "data/maps/Player_Shed/scripts.pory"
-	waitse
+	closemessage
 # 338 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 6, 2, 0x21D, TRUE
+	setmetatile 2, 2, 0x23D, TRUE
 # 339 "data/maps/Player_Shed/scripts.pory"
-	playse SE_CLICK
+	setmetatile 3, 2, 0x23E, TRUE
 # 340 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
+	setmetatile 4, 2, 0x23F, TRUE
 # 341 "data/maps/Player_Shed/scripts.pory"
-	waitse
+	delay 10
 # 342 "data/maps/Player_Shed/scripts.pory"
-	delay 20
+	playse SE_BALL
 # 343 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 6, 2, 0x224, TRUE
+	special DrawWholeMapView
 # 344 "data/maps/Player_Shed/scripts.pory"
-	playse SE_SWITCH
+	waitse
 # 345 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
+	delay 20
 # 346 "data/maps/Player_Shed/scripts.pory"
-	waitse
-# 347 "data/maps/Player_Shed/scripts.pory"
-	delay 40
-# 348 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 6, 2, 0x22F, TRUE
-# 349 "data/maps/Player_Shed/scripts.pory"
-	playse SE_SWITCH
-# 350 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
-# 351 "data/maps/Player_Shed/scripts.pory"
-	waitse
-# 352 "data/maps/Player_Shed/scripts.pory"
-	delay 10
-# 353 "data/maps/Player_Shed/scripts.pory"
-	playse SE_TRUCK_DOOR
-# 354 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 5, 2, 0x23C, TRUE
-# 355 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
-# 356 "data/maps/Player_Shed/scripts.pory"
-	waitse
-# 357 "data/maps/Player_Shed/scripts.pory"
-	delay 10
-# 358 "data/maps/Player_Shed/scripts.pory"
 	turnobject 1, DIR_WEST
-# 359 "data/maps/Player_Shed/scripts.pory"
-	speakername PS_Dad_Intro_Text_0
-# 360 "data/maps/Player_Shed/scripts.pory"
-	msgbox PS_T_Dad10
-# 361 "data/maps/Player_Shed/scripts.pory"
-	waitmessage
-# 362 "data/maps/Player_Shed/scripts.pory"
-	closemessage
-# 363 "data/maps/Player_Shed/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, PS_W_Dad1
-# 364 "data/maps/Player_Shed/scripts.pory"
-	waitmovement 0
-# 365 "data/maps/Player_Shed/scripts.pory"
-	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
-# 366 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 5, 2, 0x22D, TRUE
-# 367 "data/maps/Player_Shed/scripts.pory"
-	delay 30
-# 368 "data/maps/Player_Shed/scripts.pory"
-	playse SE_MUD_BALL
-# 369 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
-# 370 "data/maps/Player_Shed/scripts.pory"
-	waitse
-# 371 "data/maps/Player_Shed/scripts.pory"
-	delay 50
-# 372 "data/maps/Player_Shed/scripts.pory"
+# 347 "data/maps/Player_Shed/scripts.pory"
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
-# 373 "data/maps/Player_Shed/scripts.pory"
-	delay 30
-# 374 "data/maps/Player_Shed/scripts.pory"
-	speakername PS_Dad_Intro_Text_0
-# 375 "data/maps/Player_Shed/scripts.pory"
-	msgbox PS_T_Dad11
-# 376 "data/maps/Player_Shed/scripts.pory"
+# 348 "data/maps/Player_Shed/scripts.pory"
+	speakername PS_Dad_Interact_Text_0
+# 349 "data/maps/Player_Shed/scripts.pory"
+	msgbox PS_T_Dad9
+# 350 "data/maps/Player_Shed/scripts.pory"
 	waitmessage
-# 377 "data/maps/Player_Shed/scripts.pory"
+# 351 "data/maps/Player_Shed/scripts.pory"
 	closemessage
+# 352 "data/maps/Player_Shed/scripts.pory"
+	turnobject 1, DIR_NORTH
+# 353 "data/maps/Player_Shed/scripts.pory"
+	delay 20
+# 354 "data/maps/Player_Shed/scripts.pory"
+	playse SE_SWITCH
+# 355 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 6, 2, 0x224, TRUE
+# 356 "data/maps/Player_Shed/scripts.pory"
+	special DrawWholeMapView
+# 357 "data/maps/Player_Shed/scripts.pory"
+	waitse
+# 358 "data/maps/Player_Shed/scripts.pory"
+	delay 10
+# 359 "data/maps/Player_Shed/scripts.pory"
+	playse SE_TRUCK_DOOR
+# 360 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 2, 2, 0x220, TRUE
+# 361 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 3, 2, 0x221, TRUE
+# 362 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 4, 2, 0x222, TRUE
+# 363 "data/maps/Player_Shed/scripts.pory"
+	special DrawWholeMapView
+# 364 "data/maps/Player_Shed/scripts.pory"
+	waitse
+# 365 "data/maps/Player_Shed/scripts.pory"
+	delay 40
+# 366 "data/maps/Player_Shed/scripts.pory"
+	playse SE_SWITCH
+# 367 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 6, 2, 0x21D, TRUE
+# 368 "data/maps/Player_Shed/scripts.pory"
+	special DrawWholeMapView
+# 369 "data/maps/Player_Shed/scripts.pory"
+	waitse
+# 370 "data/maps/Player_Shed/scripts.pory"
+	delay 10
+# 371 "data/maps/Player_Shed/scripts.pory"
+	playse SE_ESCALATOR
+# 372 "data/maps/Player_Shed/scripts.pory"
+	waitse
+# 373 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 6, 2, 0x21E, TRUE
+# 374 "data/maps/Player_Shed/scripts.pory"
+	call PS_Grinder_Shake_Vars
+# 375 "data/maps/Player_Shed/scripts.pory"
+	delay 20
+# 376 "data/maps/Player_Shed/scripts.pory"
+	playse SE_CLICK
+# 377 "data/maps/Player_Shed/scripts.pory"
+	special DrawWholeMapView
 # 378 "data/maps/Player_Shed/scripts.pory"
-	setflag FLAG_OBT_YELLOW_BRICK
+	delay 20
 # 379 "data/maps/Player_Shed/scripts.pory"
-	clearflag FLAG_OBT_YELLOW_HERB
+	special ShakeCamera
 # 380 "data/maps/Player_Shed/scripts.pory"
-	setvar VAR_ADVENTURE_START, 6
+	playse SE_TRUCK_MOVE
 # 381 "data/maps/Player_Shed/scripts.pory"
+	delay 180
+# 382 "data/maps/Player_Shed/scripts.pory"
+	playse SE_TRUCK_STOP
+# 383 "data/maps/Player_Shed/scripts.pory"
+	waitse
+# 384 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 6, 2, 0x21D, TRUE
+# 385 "data/maps/Player_Shed/scripts.pory"
+	playse SE_CLICK
+# 386 "data/maps/Player_Shed/scripts.pory"
+	special DrawWholeMapView
+# 387 "data/maps/Player_Shed/scripts.pory"
+	waitse
+# 388 "data/maps/Player_Shed/scripts.pory"
+	delay 20
+# 389 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 6, 2, 0x224, TRUE
+# 390 "data/maps/Player_Shed/scripts.pory"
+	playse SE_SWITCH
+# 391 "data/maps/Player_Shed/scripts.pory"
+	special DrawWholeMapView
+# 392 "data/maps/Player_Shed/scripts.pory"
+	waitse
+# 393 "data/maps/Player_Shed/scripts.pory"
+	delay 40
+# 394 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 6, 2, 0x22F, TRUE
+# 395 "data/maps/Player_Shed/scripts.pory"
+	playse SE_SWITCH
+# 396 "data/maps/Player_Shed/scripts.pory"
+	special DrawWholeMapView
+# 397 "data/maps/Player_Shed/scripts.pory"
+	waitse
+# 398 "data/maps/Player_Shed/scripts.pory"
+	delay 10
+# 399 "data/maps/Player_Shed/scripts.pory"
+	playse SE_TRUCK_DOOR
+# 400 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 5, 2, 0x23C, TRUE
+# 401 "data/maps/Player_Shed/scripts.pory"
+	special DrawWholeMapView
+# 402 "data/maps/Player_Shed/scripts.pory"
+	waitse
+# 403 "data/maps/Player_Shed/scripts.pory"
+	delay 10
+# 404 "data/maps/Player_Shed/scripts.pory"
+	turnobject 1, DIR_WEST
+# 405 "data/maps/Player_Shed/scripts.pory"
+	speakername PS_Dad_Interact_Text_0
+# 406 "data/maps/Player_Shed/scripts.pory"
+	msgbox PS_T_Dad10
+# 407 "data/maps/Player_Shed/scripts.pory"
+	waitmessage
+# 408 "data/maps/Player_Shed/scripts.pory"
+	closemessage
+# 409 "data/maps/Player_Shed/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, PS_W_Dad1
+# 410 "data/maps/Player_Shed/scripts.pory"
+	waitmovement 0
+# 411 "data/maps/Player_Shed/scripts.pory"
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
+# 412 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 5, 2, 0x22D, TRUE
+# 413 "data/maps/Player_Shed/scripts.pory"
+	delay 30
+# 414 "data/maps/Player_Shed/scripts.pory"
+	playse SE_MUD_BALL
+# 415 "data/maps/Player_Shed/scripts.pory"
+	special DrawWholeMapView
+# 416 "data/maps/Player_Shed/scripts.pory"
+	waitse
+# 417 "data/maps/Player_Shed/scripts.pory"
+	delay 50
+# 418 "data/maps/Player_Shed/scripts.pory"
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
+# 419 "data/maps/Player_Shed/scripts.pory"
+	delay 30
+# 420 "data/maps/Player_Shed/scripts.pory"
+	speakername PS_Dad_Interact_Text_0
+# 421 "data/maps/Player_Shed/scripts.pory"
+	msgbox PS_T_Dad11
+# 422 "data/maps/Player_Shed/scripts.pory"
+	waitmessage
+# 423 "data/maps/Player_Shed/scripts.pory"
+	closemessage
+# 424 "data/maps/Player_Shed/scripts.pory"
+	setflag FLAG_OBT_YELLOW_BRICK
+# 425 "data/maps/Player_Shed/scripts.pory"
+	clearflag FLAG_OBT_YELLOW_HERB
+# 426 "data/maps/Player_Shed/scripts.pory"
+	setvar VAR_ADVENTURE_START, 6
+# 427 "data/maps/Player_Shed/scripts.pory"
 	release
 	goto Yellow_Herb_In_Machine_1
 
 
 Green_Herb_In_Machine::
-# 390 "data/maps/Player_Shed/scripts.pory"
+# 436 "data/maps/Player_Shed/scripts.pory"
 	msgbox PS_T_SYS2_G, MSGBOX_YESNO
-# 391 "data/maps/Player_Shed/scripts.pory"
+# 437 "data/maps/Player_Shed/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Green_Herb_In_Machine_2
-# 485 "data/maps/Player_Shed/scripts.pory"
+# 531 "data/maps/Player_Shed/scripts.pory"
 	release
 Green_Herb_In_Machine_1:
 	end
 
 Green_Herb_In_Machine_2:
-# 392 "data/maps/Player_Shed/scripts.pory"
-	closemessage
-# 393 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 2, 2, 0x245, TRUE
-# 394 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 3, 2, 0x246, TRUE
-# 395 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 4, 2, 0x247, TRUE
-# 396 "data/maps/Player_Shed/scripts.pory"
-	delay 10
-# 397 "data/maps/Player_Shed/scripts.pory"
-	playse SE_BALL
-# 398 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
-# 399 "data/maps/Player_Shed/scripts.pory"
-	waitse
-# 400 "data/maps/Player_Shed/scripts.pory"
-	delay 20
-# 401 "data/maps/Player_Shed/scripts.pory"
-	turnobject 1, DIR_WEST
-# 402 "data/maps/Player_Shed/scripts.pory"
-	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
-# 403 "data/maps/Player_Shed/scripts.pory"
-	speakername PS_Dad_Intro_Text_0
-# 404 "data/maps/Player_Shed/scripts.pory"
-	msgbox PS_T_Dad9
-# 405 "data/maps/Player_Shed/scripts.pory"
-	waitmessage
-# 406 "data/maps/Player_Shed/scripts.pory"
-	closemessage
-# 407 "data/maps/Player_Shed/scripts.pory"
-	turnobject 1, DIR_NORTH
-# 408 "data/maps/Player_Shed/scripts.pory"
-	delay 20
-# 409 "data/maps/Player_Shed/scripts.pory"
-	playse SE_SWITCH
-# 410 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 6, 2, 0x224, TRUE
-# 411 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
-# 412 "data/maps/Player_Shed/scripts.pory"
-	waitse
-# 413 "data/maps/Player_Shed/scripts.pory"
-	delay 10
-# 414 "data/maps/Player_Shed/scripts.pory"
-	playse SE_TRUCK_DOOR
-# 415 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 2, 2, 0x220, TRUE
-# 416 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 3, 2, 0x221, TRUE
-# 417 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 4, 2, 0x222, TRUE
-# 418 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
-# 419 "data/maps/Player_Shed/scripts.pory"
-	waitse
-# 420 "data/maps/Player_Shed/scripts.pory"
-	delay 40
-# 421 "data/maps/Player_Shed/scripts.pory"
-	playse SE_SWITCH
-# 422 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 6, 2, 0x21D, TRUE
-# 423 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
-# 424 "data/maps/Player_Shed/scripts.pory"
-	waitse
-# 425 "data/maps/Player_Shed/scripts.pory"
-	delay 10
-# 426 "data/maps/Player_Shed/scripts.pory"
-	playse SE_ESCALATOR
-# 427 "data/maps/Player_Shed/scripts.pory"
-	waitse
-# 428 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 6, 2, 0x21E, TRUE
-# 429 "data/maps/Player_Shed/scripts.pory"
-	call PS_Grinder_Shake_Vars
-# 430 "data/maps/Player_Shed/scripts.pory"
-	delay 20
-# 431 "data/maps/Player_Shed/scripts.pory"
-	playse SE_CLICK
-# 432 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
-# 433 "data/maps/Player_Shed/scripts.pory"
-	delay 20
-# 434 "data/maps/Player_Shed/scripts.pory"
-	special ShakeCamera
-# 435 "data/maps/Player_Shed/scripts.pory"
-	playse SE_TRUCK_MOVE
-# 436 "data/maps/Player_Shed/scripts.pory"
-	delay 180
-# 437 "data/maps/Player_Shed/scripts.pory"
-	playse SE_TRUCK_STOP
 # 438 "data/maps/Player_Shed/scripts.pory"
-	waitse
+	closemessage
 # 439 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 6, 2, 0x21D, TRUE
+	setmetatile 2, 2, 0x245, TRUE
 # 440 "data/maps/Player_Shed/scripts.pory"
-	playse SE_CLICK
+	setmetatile 3, 2, 0x246, TRUE
 # 441 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
+	setmetatile 4, 2, 0x247, TRUE
 # 442 "data/maps/Player_Shed/scripts.pory"
-	waitse
+	delay 10
 # 443 "data/maps/Player_Shed/scripts.pory"
-	delay 20
+	playse SE_BALL
 # 444 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 6, 2, 0x224, TRUE
+	special DrawWholeMapView
 # 445 "data/maps/Player_Shed/scripts.pory"
-	playse SE_SWITCH
+	waitse
 # 446 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
+	delay 20
 # 447 "data/maps/Player_Shed/scripts.pory"
-	waitse
-# 448 "data/maps/Player_Shed/scripts.pory"
-	delay 40
-# 449 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 6, 2, 0x22F, TRUE
-# 450 "data/maps/Player_Shed/scripts.pory"
-	playse SE_SWITCH
-# 451 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
-# 452 "data/maps/Player_Shed/scripts.pory"
-	waitse
-# 453 "data/maps/Player_Shed/scripts.pory"
-	delay 10
-# 454 "data/maps/Player_Shed/scripts.pory"
-	playse SE_TRUCK_DOOR
-# 455 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 5, 2, 0x244, TRUE
-# 456 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
-# 457 "data/maps/Player_Shed/scripts.pory"
-	waitse
-# 458 "data/maps/Player_Shed/scripts.pory"
-	delay 10
-# 459 "data/maps/Player_Shed/scripts.pory"
 	turnobject 1, DIR_WEST
-# 460 "data/maps/Player_Shed/scripts.pory"
-	speakername PS_Dad_Intro_Text_0
-# 461 "data/maps/Player_Shed/scripts.pory"
-	msgbox PS_T_Dad10
-# 462 "data/maps/Player_Shed/scripts.pory"
-	waitmessage
-# 463 "data/maps/Player_Shed/scripts.pory"
-	closemessage
-# 464 "data/maps/Player_Shed/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, PS_W_Dad1
-# 465 "data/maps/Player_Shed/scripts.pory"
-	waitmovement 0
-# 466 "data/maps/Player_Shed/scripts.pory"
-	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
-# 467 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 5, 2, 0x22D, TRUE
-# 468 "data/maps/Player_Shed/scripts.pory"
-	delay 30
-# 469 "data/maps/Player_Shed/scripts.pory"
-	playse SE_MUD_BALL
-# 470 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
-# 471 "data/maps/Player_Shed/scripts.pory"
-	waitse
-# 472 "data/maps/Player_Shed/scripts.pory"
-	delay 50
-# 473 "data/maps/Player_Shed/scripts.pory"
+# 448 "data/maps/Player_Shed/scripts.pory"
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
+# 449 "data/maps/Player_Shed/scripts.pory"
+	speakername PS_Dad_Interact_Text_0
+# 450 "data/maps/Player_Shed/scripts.pory"
+	msgbox PS_T_Dad9
+# 451 "data/maps/Player_Shed/scripts.pory"
+	waitmessage
+# 452 "data/maps/Player_Shed/scripts.pory"
+	closemessage
+# 453 "data/maps/Player_Shed/scripts.pory"
+	turnobject 1, DIR_NORTH
+# 454 "data/maps/Player_Shed/scripts.pory"
+	delay 20
+# 455 "data/maps/Player_Shed/scripts.pory"
+	playse SE_SWITCH
+# 456 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 6, 2, 0x224, TRUE
+# 457 "data/maps/Player_Shed/scripts.pory"
+	special DrawWholeMapView
+# 458 "data/maps/Player_Shed/scripts.pory"
+	waitse
+# 459 "data/maps/Player_Shed/scripts.pory"
+	delay 10
+# 460 "data/maps/Player_Shed/scripts.pory"
+	playse SE_TRUCK_DOOR
+# 461 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 2, 2, 0x220, TRUE
+# 462 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 3, 2, 0x221, TRUE
+# 463 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 4, 2, 0x222, TRUE
+# 464 "data/maps/Player_Shed/scripts.pory"
+	special DrawWholeMapView
+# 465 "data/maps/Player_Shed/scripts.pory"
+	waitse
+# 466 "data/maps/Player_Shed/scripts.pory"
+	delay 40
+# 467 "data/maps/Player_Shed/scripts.pory"
+	playse SE_SWITCH
+# 468 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 6, 2, 0x21D, TRUE
+# 469 "data/maps/Player_Shed/scripts.pory"
+	special DrawWholeMapView
+# 470 "data/maps/Player_Shed/scripts.pory"
+	waitse
+# 471 "data/maps/Player_Shed/scripts.pory"
+	delay 10
+# 472 "data/maps/Player_Shed/scripts.pory"
+	playse SE_ESCALATOR
+# 473 "data/maps/Player_Shed/scripts.pory"
+	waitse
 # 474 "data/maps/Player_Shed/scripts.pory"
-	delay 30
+	setmetatile 6, 2, 0x21E, TRUE
 # 475 "data/maps/Player_Shed/scripts.pory"
-	speakername PS_Dad_Intro_Text_0
+	call PS_Grinder_Shake_Vars
 # 476 "data/maps/Player_Shed/scripts.pory"
-	msgbox PS_T_Dad11
+	delay 20
 # 477 "data/maps/Player_Shed/scripts.pory"
-	waitmessage
+	playse SE_CLICK
 # 478 "data/maps/Player_Shed/scripts.pory"
-	closemessage
+	special DrawWholeMapView
 # 479 "data/maps/Player_Shed/scripts.pory"
-	setflag FLAG_OBT_GREEN_BRICK
+	delay 20
 # 480 "data/maps/Player_Shed/scripts.pory"
-	clearflag FLAG_OBT_GREEN_HERB
+	special ShakeCamera
 # 481 "data/maps/Player_Shed/scripts.pory"
-	setvar VAR_ADVENTURE_START, 6
+	playse SE_TRUCK_MOVE
 # 482 "data/maps/Player_Shed/scripts.pory"
-	release
-	goto Green_Herb_In_Machine_1
-
-
-Door_Is_Sealed::
+	delay 180
+# 483 "data/maps/Player_Shed/scripts.pory"
+	playse SE_TRUCK_STOP
+# 484 "data/maps/Player_Shed/scripts.pory"
+	waitse
+# 485 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 6, 2, 0x21D, TRUE
+# 486 "data/maps/Player_Shed/scripts.pory"
+	playse SE_CLICK
+# 487 "data/maps/Player_Shed/scripts.pory"
+	special DrawWholeMapView
+# 488 "data/maps/Player_Shed/scripts.pory"
+	waitse
+# 489 "data/maps/Player_Shed/scripts.pory"
+	delay 20
+# 490 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 6, 2, 0x224, TRUE
 # 491 "data/maps/Player_Shed/scripts.pory"
-	msgbox PS_T_SYS4
+	playse SE_SWITCH
 # 492 "data/maps/Player_Shed/scripts.pory"
-	waitmessage
+	special DrawWholeMapView
 # 493 "data/maps/Player_Shed/scripts.pory"
-	closemessage
+	waitse
 # 494 "data/maps/Player_Shed/scripts.pory"
-	release
-	end
-
-
-Brick_Goes_Here::
+	delay 40
+# 495 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 6, 2, 0x22F, TRUE
+# 496 "data/maps/Player_Shed/scripts.pory"
+	playse SE_SWITCH
+# 497 "data/maps/Player_Shed/scripts.pory"
+	special DrawWholeMapView
+# 498 "data/maps/Player_Shed/scripts.pory"
+	waitse
 # 499 "data/maps/Player_Shed/scripts.pory"
-	msgbox PS_T_Player3
+	delay 10
 # 500 "data/maps/Player_Shed/scripts.pory"
-	waitmessage
+	playse SE_TRUCK_DOOR
 # 501 "data/maps/Player_Shed/scripts.pory"
-	closemessage
+	setmetatile 5, 2, 0x244, TRUE
 # 502 "data/maps/Player_Shed/scripts.pory"
-	release
-	end
-
-
-Red_Herb_Shipment::
+	special DrawWholeMapView
+# 503 "data/maps/Player_Shed/scripts.pory"
+	waitse
+# 504 "data/maps/Player_Shed/scripts.pory"
+	delay 10
+# 505 "data/maps/Player_Shed/scripts.pory"
+	turnobject 1, DIR_WEST
+# 506 "data/maps/Player_Shed/scripts.pory"
+	speakername PS_Dad_Interact_Text_0
 # 507 "data/maps/Player_Shed/scripts.pory"
-	msgbox PS_T_SYS5_R
+	msgbox PS_T_Dad10
 # 508 "data/maps/Player_Shed/scripts.pory"
 	waitmessage
 # 509 "data/maps/Player_Shed/scripts.pory"
 	closemessage
 # 510 "data/maps/Player_Shed/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, PS_W_Dad1
+# 511 "data/maps/Player_Shed/scripts.pory"
+	waitmovement 0
+# 512 "data/maps/Player_Shed/scripts.pory"
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
+# 513 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 5, 2, 0x22D, TRUE
+# 514 "data/maps/Player_Shed/scripts.pory"
+	delay 30
+# 515 "data/maps/Player_Shed/scripts.pory"
+	playse SE_MUD_BALL
+# 516 "data/maps/Player_Shed/scripts.pory"
+	special DrawWholeMapView
+# 517 "data/maps/Player_Shed/scripts.pory"
+	waitse
+# 518 "data/maps/Player_Shed/scripts.pory"
+	delay 50
+# 519 "data/maps/Player_Shed/scripts.pory"
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
+# 520 "data/maps/Player_Shed/scripts.pory"
+	delay 30
+# 521 "data/maps/Player_Shed/scripts.pory"
+	speakername PS_Dad_Interact_Text_0
+# 522 "data/maps/Player_Shed/scripts.pory"
+	msgbox PS_T_Dad11
+# 523 "data/maps/Player_Shed/scripts.pory"
+	waitmessage
+# 524 "data/maps/Player_Shed/scripts.pory"
+	closemessage
+# 525 "data/maps/Player_Shed/scripts.pory"
+	setflag FLAG_OBT_GREEN_BRICK
+# 526 "data/maps/Player_Shed/scripts.pory"
+	clearflag FLAG_OBT_GREEN_HERB
+# 527 "data/maps/Player_Shed/scripts.pory"
+	setvar VAR_ADVENTURE_START, 6
+# 528 "data/maps/Player_Shed/scripts.pory"
+	release
+	goto Green_Herb_In_Machine_1
+
+
+Door_Is_Sealed::
+# 537 "data/maps/Player_Shed/scripts.pory"
+	msgbox PS_T_SYS4
+# 538 "data/maps/Player_Shed/scripts.pory"
+	waitmessage
+# 539 "data/maps/Player_Shed/scripts.pory"
+	closemessage
+# 540 "data/maps/Player_Shed/scripts.pory"
+	release
+	end
+
+
+Brick_Goes_Here::
+# 545 "data/maps/Player_Shed/scripts.pory"
+	msgbox PS_T_Player3
+# 546 "data/maps/Player_Shed/scripts.pory"
+	waitmessage
+# 547 "data/maps/Player_Shed/scripts.pory"
+	closemessage
+# 548 "data/maps/Player_Shed/scripts.pory"
+	release
+	end
+
+
+Red_Herb_Shipment::
+# 553 "data/maps/Player_Shed/scripts.pory"
+	msgbox PS_T_SYS5_R
+# 554 "data/maps/Player_Shed/scripts.pory"
+	waitmessage
+# 555 "data/maps/Player_Shed/scripts.pory"
+	closemessage
+# 556 "data/maps/Player_Shed/scripts.pory"
 	release
 	end
 
 
 Yellow_Herb_Shipment::
-# 515 "data/maps/Player_Shed/scripts.pory"
+# 561 "data/maps/Player_Shed/scripts.pory"
 	msgbox PS_T_SYS5_Y
-# 516 "data/maps/Player_Shed/scripts.pory"
+# 562 "data/maps/Player_Shed/scripts.pory"
 	waitmessage
-# 517 "data/maps/Player_Shed/scripts.pory"
+# 563 "data/maps/Player_Shed/scripts.pory"
 	closemessage
-# 518 "data/maps/Player_Shed/scripts.pory"
+# 564 "data/maps/Player_Shed/scripts.pory"
 	release
 	end
 
 
 Green_Herb_Shipment::
-# 523 "data/maps/Player_Shed/scripts.pory"
+# 569 "data/maps/Player_Shed/scripts.pory"
 	msgbox PS_T_SYS5_G
-# 524 "data/maps/Player_Shed/scripts.pory"
+# 570 "data/maps/Player_Shed/scripts.pory"
 	waitmessage
-# 525 "data/maps/Player_Shed/scripts.pory"
+# 571 "data/maps/Player_Shed/scripts.pory"
 	closemessage
-# 526 "data/maps/Player_Shed/scripts.pory"
+# 572 "data/maps/Player_Shed/scripts.pory"
 	release
 	end
 
 
 Int_Package_Red_Herb::
-# 531 "data/maps/Player_Shed/scripts.pory"
+# 577 "data/maps/Player_Shed/scripts.pory"
 	goto_if_set FLAG_RED_HERB_COMPLETE, Red_Herb_Shipment
-# 532 "data/maps/Player_Shed/scripts.pory"
+# 578 "data/maps/Player_Shed/scripts.pory"
 	goto_if_set FLAG_OBT_RED_BRICK, Red_Herb_In_Package
-# 533 "data/maps/Player_Shed/scripts.pory"
+# 579 "data/maps/Player_Shed/scripts.pory"
 	goto_if_unset FLAG_OBT_RED_BRICK, Brick_Goes_Here
 	return
 
 
 Int_Package_Yellow_Herb::
-# 537 "data/maps/Player_Shed/scripts.pory"
+# 583 "data/maps/Player_Shed/scripts.pory"
 	goto_if_set FLAG_YELLOW_HERB_COMPLETE, Yellow_Herb_Shipment
-# 538 "data/maps/Player_Shed/scripts.pory"
+# 584 "data/maps/Player_Shed/scripts.pory"
 	goto_if_set FLAG_OBT_YELLOW_BRICK, Yellow_Herb_In_Package
-# 539 "data/maps/Player_Shed/scripts.pory"
+# 585 "data/maps/Player_Shed/scripts.pory"
 	goto_if_unset FLAG_OBT_YELLOW_BRICK, Brick_Goes_Here
 	return
 
 
 Int_Package_Green_Herb::
-# 543 "data/maps/Player_Shed/scripts.pory"
+# 589 "data/maps/Player_Shed/scripts.pory"
 	goto_if_set FLAG_GREEN_HERB_COMPLETE, Green_Herb_Shipment
-# 544 "data/maps/Player_Shed/scripts.pory"
+# 590 "data/maps/Player_Shed/scripts.pory"
 	goto_if_set FLAG_OBT_GREEN_BRICK, Green_Herb_In_Package
-# 545 "data/maps/Player_Shed/scripts.pory"
+# 591 "data/maps/Player_Shed/scripts.pory"
 	goto_if_unset FLAG_OBT_GREEN_BRICK, Brick_Goes_Here
 	return
 
 
 Red_Herb_In_Package::
-# 549 "data/maps/Player_Shed/scripts.pory"
+# 595 "data/maps/Player_Shed/scripts.pory"
 	msgbox PS_T_SYS3_R, MSGBOX_YESNO
-# 550 "data/maps/Player_Shed/scripts.pory"
+# 596 "data/maps/Player_Shed/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Red_Herb_In_Package_2
-# 633 "data/maps/Player_Shed/scripts.pory"
+# 680 "data/maps/Player_Shed/scripts.pory"
 	release
 Red_Herb_In_Package_1:
 	end
 
 Red_Herb_In_Package_2:
-# 551 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 0, 4, 0x239, TRUE
-# 552 "data/maps/Player_Shed/scripts.pory"
-	delay 10
-# 553 "data/maps/Player_Shed/scripts.pory"
-	playse SE_BALL
-# 554 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
-# 555 "data/maps/Player_Shed/scripts.pory"
-	waitse
-# 556 "data/maps/Player_Shed/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 557 "data/maps/Player_Shed/scripts.pory"
-	waitfanfare
-# 558 "data/maps/Player_Shed/scripts.pory"
-	delay 30
-# 559 "data/maps/Player_Shed/scripts.pory"
-	clearflag FLAG_OBT_RED_BRICK
-# 560 "data/maps/Player_Shed/scripts.pory"
-	clearflag FLAG_PLAYER_HAS_HERBS
-# 561 "data/maps/Player_Shed/scripts.pory"
-	setflag FLAG_RED_HERB_COMPLETE
-# 562 "data/maps/Player_Shed/scripts.pory"
-	goto_if_set FLAG_RED_HERB_COMPLETE, Red_Herb_In_Package_8
-Red_Herb_In_Package_7:
 # 597 "data/maps/Player_Shed/scripts.pory"
-	closemessage
+	setmetatile 0, 4, 0x239, TRUE
 # 598 "data/maps/Player_Shed/scripts.pory"
-	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
+	delay 10
 # 599 "data/maps/Player_Shed/scripts.pory"
-	delay 30
+	playse SE_BALL
 # 600 "data/maps/Player_Shed/scripts.pory"
-	speakername PS_Dad_Intro_Text_0
+	special DrawWholeMapView
 # 601 "data/maps/Player_Shed/scripts.pory"
-	msgbox PS_T_Dad12
+	waitse
 # 602 "data/maps/Player_Shed/scripts.pory"
-	waitmessage
+	playfanfare MUS_OBTAIN_ITEM
 # 603 "data/maps/Player_Shed/scripts.pory"
-	closemessage
+	waitfanfare
 # 604 "data/maps/Player_Shed/scripts.pory"
 	delay 30
 # 605 "data/maps/Player_Shed/scripts.pory"
-	turnobject 1, DIR_NORTH
+	clearflag FLAG_OBT_RED_BRICK
 # 606 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 6, 2, 0x224, TRUE
-# 607 "data/maps/Player_Shed/scripts.pory"
-	delay 30
-# 608 "data/maps/Player_Shed/scripts.pory"
-	playse SE_SWITCH
-# 609 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
-# 610 "data/maps/Player_Shed/scripts.pory"
-	waitse
-# 611 "data/maps/Player_Shed/scripts.pory"
-	delay 20
-# 612 "data/maps/Player_Shed/scripts.pory"
-	playse SE_TRUCK_DOOR
-# 613 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 5, 2, 0x223, TRUE
-# 614 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
-# 615 "data/maps/Player_Shed/scripts.pory"
-	waitse
-# 616 "data/maps/Player_Shed/scripts.pory"
-	delay 20
-# 617 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 6, 2, 0x22E, TRUE
-# 618 "data/maps/Player_Shed/scripts.pory"
-	playse SE_SWITCH
-# 619 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
-# 620 "data/maps/Player_Shed/scripts.pory"
-	waitse
-# 621 "data/maps/Player_Shed/scripts.pory"
-	delay 20
-# 622 "data/maps/Player_Shed/scripts.pory"
-	playse SE_TRUCK_DOOR
-# 623 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 2, 2, 0x225, TRUE
-# 624 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 3, 2, 0x226, TRUE
-# 625 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 4, 2, 0x227, TRUE
-# 626 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
-# 627 "data/maps/Player_Shed/scripts.pory"
-	waitse
-# 629 "data/maps/Player_Shed/scripts.pory"
-	setvar VAR_ADVENTURE_START, 5
-# 630 "data/maps/Player_Shed/scripts.pory"
-	release
-	goto Red_Herb_In_Package_1
-
-Red_Herb_In_Package_6:
-# 563 "data/maps/Player_Shed/scripts.pory"
-	closemessage
-# 564 "data/maps/Player_Shed/scripts.pory"
-	setflag FLAG_ALL_HERBS_COMPLETE
-# 565 "data/maps/Player_Shed/scripts.pory"
-	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
-# 566 "data/maps/Player_Shed/scripts.pory"
-	delay 30
-# 567 "data/maps/Player_Shed/scripts.pory"
-	speakername PS_Dad_Intro_Text_0
-# 568 "data/maps/Player_Shed/scripts.pory"
-	msgbox PS_T_Dad13
-# 569 "data/maps/Player_Shed/scripts.pory"
-	waitmessage
-# 570 "data/maps/Player_Shed/scripts.pory"
-	closemessage
-# 571 "data/maps/Player_Shed/scripts.pory"
-	delay 30
-# 572 "data/maps/Player_Shed/scripts.pory"
-	turnobject 1, DIR_NORTH
-# 573 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 6, 2, 0x224, TRUE
-# 574 "data/maps/Player_Shed/scripts.pory"
-	delay 30
-# 575 "data/maps/Player_Shed/scripts.pory"
-	playse SE_SWITCH
-# 576 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
-# 577 "data/maps/Player_Shed/scripts.pory"
-	waitse
-# 578 "data/maps/Player_Shed/scripts.pory"
-	delay 20
-# 579 "data/maps/Player_Shed/scripts.pory"
-	playse SE_TRUCK_DOOR
-# 580 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 5, 2, 0x223, TRUE
-# 581 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
-# 582 "data/maps/Player_Shed/scripts.pory"
-	waitse
-# 583 "data/maps/Player_Shed/scripts.pory"
-	delay 30
-# 584 "data/maps/Player_Shed/scripts.pory"
-	applymovement 1, PS_W_Dad5
-# 585 "data/maps/Player_Shed/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, PS_W_Player4_Red
-# 586 "data/maps/Player_Shed/scripts.pory"
-	waitmovement 1
-# 587 "data/maps/Player_Shed/scripts.pory"
-	delay 30
-# 588 "data/maps/Player_Shed/scripts.pory"
-	speakername PS_Dad_Intro_Text_0
-# 589 "data/maps/Player_Shed/scripts.pory"
-	msgbox PS_T_Dad14
-# 590 "data/maps/Player_Shed/scripts.pory"
-	waitmessage
-# 591 "data/maps/Player_Shed/scripts.pory"
-	closemessage
-# 592 "data/maps/Player_Shed/scripts.pory"
-	setvar VAR_ADVENTURE_START, 7
-# 593 "data/maps/Player_Shed/scripts.pory"
-	releaseall
-	end
-
-Red_Herb_In_Package_8:
-# 562 "data/maps/Player_Shed/scripts.pory"
-	goto_if_set FLAG_GREEN_HERB_COMPLETE, Red_Herb_In_Package_10
-	goto Red_Herb_In_Package_7
-
-Red_Herb_In_Package_10:
-# 562 "data/maps/Player_Shed/scripts.pory"
-	goto_if_set FLAG_YELLOW_HERB_COMPLETE, Red_Herb_In_Package_6
-	goto Red_Herb_In_Package_7
-
-
-Yellow_Herb_In_Package::
-# 639 "data/maps/Player_Shed/scripts.pory"
-	msgbox PS_T_SYS3_Y, MSGBOX_YESNO
-# 640 "data/maps/Player_Shed/scripts.pory"
-	compare VAR_RESULT, YES
-	goto_if_eq Yellow_Herb_In_Package_2
-# 722 "data/maps/Player_Shed/scripts.pory"
-	closemessage
-# 723 "data/maps/Player_Shed/scripts.pory"
-	release
-Yellow_Herb_In_Package_1:
-	end
-
-Yellow_Herb_In_Package_2:
-# 641 "data/maps/Player_Shed/scripts.pory"
-	closemessage
-# 642 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 0, 5, 0x23A, TRUE
-# 643 "data/maps/Player_Shed/scripts.pory"
-	delay 10
-# 644 "data/maps/Player_Shed/scripts.pory"
-	playse SE_BALL
-# 645 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
-# 646 "data/maps/Player_Shed/scripts.pory"
-	waitse
-# 647 "data/maps/Player_Shed/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 648 "data/maps/Player_Shed/scripts.pory"
-	waitfanfare
-# 649 "data/maps/Player_Shed/scripts.pory"
-	delay 30
-# 650 "data/maps/Player_Shed/scripts.pory"
-	clearflag FLAG_OBT_YELLOW_BRICK
-# 651 "data/maps/Player_Shed/scripts.pory"
 	clearflag FLAG_PLAYER_HAS_HERBS
-# 652 "data/maps/Player_Shed/scripts.pory"
-	setflag FLAG_YELLOW_HERB_COMPLETE
-# 653 "data/maps/Player_Shed/scripts.pory"
-	goto_if_set FLAG_RED_HERB_COMPLETE, Yellow_Herb_In_Package_8
-Yellow_Herb_In_Package_7:
-# 687 "data/maps/Player_Shed/scripts.pory"
+# 607 "data/maps/Player_Shed/scripts.pory"
+	setflag FLAG_RED_HERB_COMPLETE
+# 608 "data/maps/Player_Shed/scripts.pory"
+	goto_if_set FLAG_RED_HERB_COMPLETE, Red_Herb_In_Package_8
+Red_Herb_In_Package_7:
+# 644 "data/maps/Player_Shed/scripts.pory"
+	closemessage
+# 645 "data/maps/Player_Shed/scripts.pory"
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
-# 688 "data/maps/Player_Shed/scripts.pory"
+# 646 "data/maps/Player_Shed/scripts.pory"
 	delay 30
-# 689 "data/maps/Player_Shed/scripts.pory"
-	speakername PS_Dad_Intro_Text_0
-# 690 "data/maps/Player_Shed/scripts.pory"
+# 647 "data/maps/Player_Shed/scripts.pory"
+	speakername PS_Dad_Interact_Text_0
+# 648 "data/maps/Player_Shed/scripts.pory"
 	msgbox PS_T_Dad12
-# 691 "data/maps/Player_Shed/scripts.pory"
+# 649 "data/maps/Player_Shed/scripts.pory"
 	waitmessage
-# 692 "data/maps/Player_Shed/scripts.pory"
+# 650 "data/maps/Player_Shed/scripts.pory"
 	closemessage
-# 693 "data/maps/Player_Shed/scripts.pory"
+# 651 "data/maps/Player_Shed/scripts.pory"
 	delay 30
-# 694 "data/maps/Player_Shed/scripts.pory"
+# 652 "data/maps/Player_Shed/scripts.pory"
 	turnobject 1, DIR_NORTH
-# 695 "data/maps/Player_Shed/scripts.pory"
+# 653 "data/maps/Player_Shed/scripts.pory"
 	setmetatile 6, 2, 0x224, TRUE
-# 696 "data/maps/Player_Shed/scripts.pory"
-	delay 30
-# 697 "data/maps/Player_Shed/scripts.pory"
-	playse SE_SWITCH
-# 698 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
-# 699 "data/maps/Player_Shed/scripts.pory"
-	waitse
-# 700 "data/maps/Player_Shed/scripts.pory"
-	delay 20
-# 701 "data/maps/Player_Shed/scripts.pory"
-	playse SE_TRUCK_DOOR
-# 702 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 5, 2, 0x223, TRUE
-# 703 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
-# 704 "data/maps/Player_Shed/scripts.pory"
-	waitse
-# 705 "data/maps/Player_Shed/scripts.pory"
-	delay 20
-# 706 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 6, 2, 0x22E, TRUE
-# 707 "data/maps/Player_Shed/scripts.pory"
-	playse SE_SWITCH
-# 708 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
-# 709 "data/maps/Player_Shed/scripts.pory"
-	waitse
-# 710 "data/maps/Player_Shed/scripts.pory"
-	delay 20
-# 711 "data/maps/Player_Shed/scripts.pory"
-	playse SE_TRUCK_DOOR
-# 712 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 2, 2, 0x225, TRUE
-# 713 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 3, 2, 0x226, TRUE
-# 714 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 4, 2, 0x227, TRUE
-# 715 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
-# 716 "data/maps/Player_Shed/scripts.pory"
-	waitse
-# 718 "data/maps/Player_Shed/scripts.pory"
-	setvar VAR_ADVENTURE_START, 5
-# 719 "data/maps/Player_Shed/scripts.pory"
-	release
-	goto Yellow_Herb_In_Package_1
-
-Yellow_Herb_In_Package_6:
 # 654 "data/maps/Player_Shed/scripts.pory"
-	setflag FLAG_ALL_HERBS_COMPLETE
+	delay 30
 # 655 "data/maps/Player_Shed/scripts.pory"
-	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
+	playse SE_SWITCH
 # 656 "data/maps/Player_Shed/scripts.pory"
-	delay 30
+	special DrawWholeMapView
 # 657 "data/maps/Player_Shed/scripts.pory"
-	speakername PS_Dad_Intro_Text_0
+	waitse
 # 658 "data/maps/Player_Shed/scripts.pory"
-	msgbox PS_T_Dad13
+	delay 20
 # 659 "data/maps/Player_Shed/scripts.pory"
-	waitmessage
+	playse SE_TRUCK_DOOR
 # 660 "data/maps/Player_Shed/scripts.pory"
-	closemessage
+	setmetatile 5, 2, 0x223, TRUE
 # 661 "data/maps/Player_Shed/scripts.pory"
-	delay 30
+	special DrawWholeMapView
 # 662 "data/maps/Player_Shed/scripts.pory"
-	turnobject 1, DIR_NORTH
+	waitse
 # 663 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 6, 2, 0x224, TRUE
+	delay 20
 # 664 "data/maps/Player_Shed/scripts.pory"
-	delay 30
+	setmetatile 6, 2, 0x22E, TRUE
 # 665 "data/maps/Player_Shed/scripts.pory"
 	playse SE_SWITCH
 # 666 "data/maps/Player_Shed/scripts.pory"
@@ -1336,176 +1189,180 @@ Yellow_Herb_In_Package_6:
 # 669 "data/maps/Player_Shed/scripts.pory"
 	playse SE_TRUCK_DOOR
 # 670 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 5, 2, 0x223, TRUE
+	setmetatile 2, 2, 0x225, TRUE
 # 671 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
+	setmetatile 3, 2, 0x226, TRUE
 # 672 "data/maps/Player_Shed/scripts.pory"
-	waitse
+	setmetatile 4, 2, 0x227, TRUE
 # 673 "data/maps/Player_Shed/scripts.pory"
-	delay 30
+	special DrawWholeMapView
 # 674 "data/maps/Player_Shed/scripts.pory"
-	applymovement 1, PS_W_Dad5
-# 675 "data/maps/Player_Shed/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, PS_W_Player4_Yellow
+	waitse
 # 676 "data/maps/Player_Shed/scripts.pory"
-	waitmovement 1
+	setvar VAR_ADVENTURE_START, 5
 # 677 "data/maps/Player_Shed/scripts.pory"
-	delay 30
-# 678 "data/maps/Player_Shed/scripts.pory"
-	speakername PS_Dad_Intro_Text_0
-# 679 "data/maps/Player_Shed/scripts.pory"
-	msgbox PS_T_Dad14
-# 680 "data/maps/Player_Shed/scripts.pory"
-	waitmessage
-# 681 "data/maps/Player_Shed/scripts.pory"
+	release
+	goto Red_Herb_In_Package_1
+
+Red_Herb_In_Package_6:
+# 609 "data/maps/Player_Shed/scripts.pory"
 	closemessage
-# 682 "data/maps/Player_Shed/scripts.pory"
+# 610 "data/maps/Player_Shed/scripts.pory"
+	setflag FLAG_ALL_HERBS_COMPLETE
+# 611 "data/maps/Player_Shed/scripts.pory"
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
+# 612 "data/maps/Player_Shed/scripts.pory"
+	delay 30
+# 613 "data/maps/Player_Shed/scripts.pory"
+	speakername PS_Dad_Interact_Text_0
+# 614 "data/maps/Player_Shed/scripts.pory"
+	msgbox PS_T_Dad13
+# 615 "data/maps/Player_Shed/scripts.pory"
+	waitmessage
+# 616 "data/maps/Player_Shed/scripts.pory"
+	closemessage
+# 617 "data/maps/Player_Shed/scripts.pory"
+	delay 30
+# 618 "data/maps/Player_Shed/scripts.pory"
+	turnobject 1, DIR_NORTH
+# 619 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 6, 2, 0x224, TRUE
+# 620 "data/maps/Player_Shed/scripts.pory"
+	delay 30
+# 621 "data/maps/Player_Shed/scripts.pory"
+	playse SE_SWITCH
+# 622 "data/maps/Player_Shed/scripts.pory"
+	special DrawWholeMapView
+# 623 "data/maps/Player_Shed/scripts.pory"
+	waitse
+# 624 "data/maps/Player_Shed/scripts.pory"
+	delay 20
+# 625 "data/maps/Player_Shed/scripts.pory"
+	playse SE_TRUCK_DOOR
+# 626 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 5, 2, 0x223, TRUE
+# 627 "data/maps/Player_Shed/scripts.pory"
+	special DrawWholeMapView
+# 628 "data/maps/Player_Shed/scripts.pory"
+	waitse
+# 629 "data/maps/Player_Shed/scripts.pory"
+	delay 30
+# 630 "data/maps/Player_Shed/scripts.pory"
+	applymovement 1, PS_W_Dad5
+# 631 "data/maps/Player_Shed/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, PS_W_Player4_Red
+# 632 "data/maps/Player_Shed/scripts.pory"
+	waitmovement 1
+# 633 "data/maps/Player_Shed/scripts.pory"
+	delay 30
+# 634 "data/maps/Player_Shed/scripts.pory"
+	speakername PS_Dad_Interact_Text_0
+# 635 "data/maps/Player_Shed/scripts.pory"
+	msgbox PS_T_Dad14
+# 636 "data/maps/Player_Shed/scripts.pory"
+	waitmessage
+# 637 "data/maps/Player_Shed/scripts.pory"
+	closemessage
+# 638 "data/maps/Player_Shed/scripts.pory"
+	clearflag FLAG_HIDE_RIVAL_MIKE_1
+# 639 "data/maps/Player_Shed/scripts.pory"
 	setvar VAR_ADVENTURE_START, 7
-# 683 "data/maps/Player_Shed/scripts.pory"
+# 640 "data/maps/Player_Shed/scripts.pory"
 	releaseall
 	end
 
-Yellow_Herb_In_Package_8:
-# 653 "data/maps/Player_Shed/scripts.pory"
-	goto_if_set FLAG_GREEN_HERB_COMPLETE, Yellow_Herb_In_Package_10
-	goto Yellow_Herb_In_Package_7
+Red_Herb_In_Package_8:
+# 608 "data/maps/Player_Shed/scripts.pory"
+	goto_if_set FLAG_GREEN_HERB_COMPLETE, Red_Herb_In_Package_10
+	goto Red_Herb_In_Package_7
 
-Yellow_Herb_In_Package_10:
-# 653 "data/maps/Player_Shed/scripts.pory"
-	goto_if_set FLAG_YELLOW_HERB_COMPLETE, Yellow_Herb_In_Package_6
-	goto Yellow_Herb_In_Package_7
+Red_Herb_In_Package_10:
+# 608 "data/maps/Player_Shed/scripts.pory"
+	goto_if_set FLAG_YELLOW_HERB_COMPLETE, Red_Herb_In_Package_6
+	goto Red_Herb_In_Package_7
 
 
-Green_Herb_In_Package::
-# 729 "data/maps/Player_Shed/scripts.pory"
-	msgbox PS_T_SYS3_G, MSGBOX_YESNO
-# 730 "data/maps/Player_Shed/scripts.pory"
+Yellow_Herb_In_Package::
+# 686 "data/maps/Player_Shed/scripts.pory"
+	msgbox PS_T_SYS3_Y, MSGBOX_YESNO
+# 687 "data/maps/Player_Shed/scripts.pory"
 	compare VAR_RESULT, YES
-	goto_if_eq Green_Herb_In_Package_2
-# 812 "data/maps/Player_Shed/scripts.pory"
+	goto_if_eq Yellow_Herb_In_Package_2
+# 770 "data/maps/Player_Shed/scripts.pory"
 	closemessage
-# 813 "data/maps/Player_Shed/scripts.pory"
+# 771 "data/maps/Player_Shed/scripts.pory"
 	release
-Green_Herb_In_Package_1:
+Yellow_Herb_In_Package_1:
 	end
 
-Green_Herb_In_Package_2:
-# 731 "data/maps/Player_Shed/scripts.pory"
+Yellow_Herb_In_Package_2:
+# 688 "data/maps/Player_Shed/scripts.pory"
 	closemessage
-# 732 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 0, 6, 0x238, TRUE
-# 733 "data/maps/Player_Shed/scripts.pory"
+# 689 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 0, 5, 0x23A, TRUE
+# 690 "data/maps/Player_Shed/scripts.pory"
 	delay 10
-# 734 "data/maps/Player_Shed/scripts.pory"
+# 691 "data/maps/Player_Shed/scripts.pory"
 	playse SE_BALL
-# 735 "data/maps/Player_Shed/scripts.pory"
+# 692 "data/maps/Player_Shed/scripts.pory"
 	special DrawWholeMapView
-# 736 "data/maps/Player_Shed/scripts.pory"
+# 693 "data/maps/Player_Shed/scripts.pory"
 	waitse
-# 737 "data/maps/Player_Shed/scripts.pory"
+# 694 "data/maps/Player_Shed/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 738 "data/maps/Player_Shed/scripts.pory"
+# 695 "data/maps/Player_Shed/scripts.pory"
 	waitfanfare
-# 739 "data/maps/Player_Shed/scripts.pory"
+# 696 "data/maps/Player_Shed/scripts.pory"
 	delay 30
-# 740 "data/maps/Player_Shed/scripts.pory"
-	clearflag FLAG_OBT_GREEN_BRICK
-# 741 "data/maps/Player_Shed/scripts.pory"
+# 697 "data/maps/Player_Shed/scripts.pory"
+	clearflag FLAG_OBT_YELLOW_BRICK
+# 698 "data/maps/Player_Shed/scripts.pory"
 	clearflag FLAG_PLAYER_HAS_HERBS
-# 742 "data/maps/Player_Shed/scripts.pory"
-	setflag FLAG_GREEN_HERB_COMPLETE
-# 743 "data/maps/Player_Shed/scripts.pory"
-	goto_if_set FLAG_RED_HERB_COMPLETE, Green_Herb_In_Package_8
-Green_Herb_In_Package_7:
-# 777 "data/maps/Player_Shed/scripts.pory"
+# 699 "data/maps/Player_Shed/scripts.pory"
+	setflag FLAG_YELLOW_HERB_COMPLETE
+# 700 "data/maps/Player_Shed/scripts.pory"
+	goto_if_set FLAG_RED_HERB_COMPLETE, Yellow_Herb_In_Package_8
+Yellow_Herb_In_Package_7:
+# 735 "data/maps/Player_Shed/scripts.pory"
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
-# 778 "data/maps/Player_Shed/scripts.pory"
+# 736 "data/maps/Player_Shed/scripts.pory"
 	delay 30
-# 779 "data/maps/Player_Shed/scripts.pory"
-	speakername PS_Dad_Intro_Text_0
-# 780 "data/maps/Player_Shed/scripts.pory"
+# 737 "data/maps/Player_Shed/scripts.pory"
+	speakername PS_Dad_Interact_Text_0
+# 738 "data/maps/Player_Shed/scripts.pory"
 	msgbox PS_T_Dad12
-# 781 "data/maps/Player_Shed/scripts.pory"
+# 739 "data/maps/Player_Shed/scripts.pory"
 	waitmessage
-# 782 "data/maps/Player_Shed/scripts.pory"
+# 740 "data/maps/Player_Shed/scripts.pory"
 	closemessage
-# 783 "data/maps/Player_Shed/scripts.pory"
+# 741 "data/maps/Player_Shed/scripts.pory"
 	delay 30
-# 784 "data/maps/Player_Shed/scripts.pory"
+# 742 "data/maps/Player_Shed/scripts.pory"
 	turnobject 1, DIR_NORTH
-# 785 "data/maps/Player_Shed/scripts.pory"
+# 743 "data/maps/Player_Shed/scripts.pory"
 	setmetatile 6, 2, 0x224, TRUE
-# 786 "data/maps/Player_Shed/scripts.pory"
-	delay 30
-# 787 "data/maps/Player_Shed/scripts.pory"
-	playse SE_SWITCH
-# 788 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
-# 789 "data/maps/Player_Shed/scripts.pory"
-	waitse
-# 790 "data/maps/Player_Shed/scripts.pory"
-	delay 20
-# 791 "data/maps/Player_Shed/scripts.pory"
-	playse SE_TRUCK_DOOR
-# 792 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 5, 2, 0x223, TRUE
-# 793 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
-# 794 "data/maps/Player_Shed/scripts.pory"
-	waitse
-# 795 "data/maps/Player_Shed/scripts.pory"
-	delay 20
-# 796 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 6, 2, 0x22E, TRUE
-# 797 "data/maps/Player_Shed/scripts.pory"
-	playse SE_SWITCH
-# 798 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
-# 799 "data/maps/Player_Shed/scripts.pory"
-	waitse
-# 800 "data/maps/Player_Shed/scripts.pory"
-	delay 20
-# 801 "data/maps/Player_Shed/scripts.pory"
-	playse SE_TRUCK_DOOR
-# 802 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 2, 2, 0x225, TRUE
-# 803 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 3, 2, 0x226, TRUE
-# 804 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 4, 2, 0x227, TRUE
-# 805 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
-# 806 "data/maps/Player_Shed/scripts.pory"
-	waitse
-# 808 "data/maps/Player_Shed/scripts.pory"
-	setvar VAR_ADVENTURE_START, 5
-# 809 "data/maps/Player_Shed/scripts.pory"
-	release
-	goto Green_Herb_In_Package_1
-
-Green_Herb_In_Package_6:
 # 744 "data/maps/Player_Shed/scripts.pory"
-	setflag FLAG_ALL_HERBS_COMPLETE
+	delay 30
 # 745 "data/maps/Player_Shed/scripts.pory"
-	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
+	playse SE_SWITCH
 # 746 "data/maps/Player_Shed/scripts.pory"
-	delay 30
+	special DrawWholeMapView
 # 747 "data/maps/Player_Shed/scripts.pory"
-	speakername PS_Dad_Intro_Text_0
+	waitse
 # 748 "data/maps/Player_Shed/scripts.pory"
-	msgbox PS_T_Dad13
+	delay 20
 # 749 "data/maps/Player_Shed/scripts.pory"
-	waitmessage
+	playse SE_TRUCK_DOOR
 # 750 "data/maps/Player_Shed/scripts.pory"
-	closemessage
+	setmetatile 5, 2, 0x223, TRUE
 # 751 "data/maps/Player_Shed/scripts.pory"
-	delay 30
+	special DrawWholeMapView
 # 752 "data/maps/Player_Shed/scripts.pory"
-	turnobject 1, DIR_NORTH
+	waitse
 # 753 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 6, 2, 0x224, TRUE
+	delay 20
 # 754 "data/maps/Player_Shed/scripts.pory"
-	delay 30
+	setmetatile 6, 2, 0x22E, TRUE
 # 755 "data/maps/Player_Shed/scripts.pory"
 	playse SE_SWITCH
 # 756 "data/maps/Player_Shed/scripts.pory"
@@ -1517,296 +1374,530 @@ Green_Herb_In_Package_6:
 # 759 "data/maps/Player_Shed/scripts.pory"
 	playse SE_TRUCK_DOOR
 # 760 "data/maps/Player_Shed/scripts.pory"
-	setmetatile 5, 2, 0x223, TRUE
+	setmetatile 2, 2, 0x225, TRUE
 # 761 "data/maps/Player_Shed/scripts.pory"
-	special DrawWholeMapView
+	setmetatile 3, 2, 0x226, TRUE
 # 762 "data/maps/Player_Shed/scripts.pory"
-	waitse
+	setmetatile 4, 2, 0x227, TRUE
 # 763 "data/maps/Player_Shed/scripts.pory"
-	delay 30
+	special DrawWholeMapView
 # 764 "data/maps/Player_Shed/scripts.pory"
-	applymovement 1, PS_W_Dad5
-# 765 "data/maps/Player_Shed/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, PS_W_Player4_Green
+	waitse
 # 766 "data/maps/Player_Shed/scripts.pory"
-	waitmovement 1
+	setvar VAR_ADVENTURE_START, 5
 # 767 "data/maps/Player_Shed/scripts.pory"
+	release
+	goto Yellow_Herb_In_Package_1
+
+Yellow_Herb_In_Package_6:
+# 701 "data/maps/Player_Shed/scripts.pory"
+	setflag FLAG_ALL_HERBS_COMPLETE
+# 702 "data/maps/Player_Shed/scripts.pory"
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
+# 703 "data/maps/Player_Shed/scripts.pory"
 	delay 30
-# 768 "data/maps/Player_Shed/scripts.pory"
-	speakername PS_Dad_Intro_Text_0
-# 769 "data/maps/Player_Shed/scripts.pory"
-	msgbox PS_T_Dad14
-# 770 "data/maps/Player_Shed/scripts.pory"
+# 704 "data/maps/Player_Shed/scripts.pory"
+	speakername PS_Dad_Interact_Text_0
+# 705 "data/maps/Player_Shed/scripts.pory"
+	msgbox PS_T_Dad13
+# 706 "data/maps/Player_Shed/scripts.pory"
 	waitmessage
-# 771 "data/maps/Player_Shed/scripts.pory"
+# 707 "data/maps/Player_Shed/scripts.pory"
 	closemessage
-# 772 "data/maps/Player_Shed/scripts.pory"
+# 708 "data/maps/Player_Shed/scripts.pory"
+	delay 30
+# 709 "data/maps/Player_Shed/scripts.pory"
+	turnobject 1, DIR_NORTH
+# 710 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 6, 2, 0x224, TRUE
+# 711 "data/maps/Player_Shed/scripts.pory"
+	delay 30
+# 712 "data/maps/Player_Shed/scripts.pory"
+	playse SE_SWITCH
+# 713 "data/maps/Player_Shed/scripts.pory"
+	special DrawWholeMapView
+# 714 "data/maps/Player_Shed/scripts.pory"
+	waitse
+# 715 "data/maps/Player_Shed/scripts.pory"
+	delay 20
+# 716 "data/maps/Player_Shed/scripts.pory"
+	playse SE_TRUCK_DOOR
+# 717 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 5, 2, 0x223, TRUE
+# 718 "data/maps/Player_Shed/scripts.pory"
+	special DrawWholeMapView
+# 719 "data/maps/Player_Shed/scripts.pory"
+	waitse
+# 720 "data/maps/Player_Shed/scripts.pory"
+	delay 30
+# 721 "data/maps/Player_Shed/scripts.pory"
+	applymovement 1, PS_W_Dad5
+# 722 "data/maps/Player_Shed/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, PS_W_Player4_Yellow
+# 723 "data/maps/Player_Shed/scripts.pory"
+	waitmovement 1
+# 724 "data/maps/Player_Shed/scripts.pory"
+	delay 30
+# 725 "data/maps/Player_Shed/scripts.pory"
+	speakername PS_Dad_Interact_Text_0
+# 726 "data/maps/Player_Shed/scripts.pory"
+	msgbox PS_T_Dad14
+# 727 "data/maps/Player_Shed/scripts.pory"
+	waitmessage
+# 728 "data/maps/Player_Shed/scripts.pory"
+	closemessage
+# 729 "data/maps/Player_Shed/scripts.pory"
+	clearflag FLAG_HIDE_RIVAL_MIKE_1
+# 730 "data/maps/Player_Shed/scripts.pory"
 	setvar VAR_ADVENTURE_START, 7
-# 773 "data/maps/Player_Shed/scripts.pory"
+# 731 "data/maps/Player_Shed/scripts.pory"
+	releaseall
+	end
+
+Yellow_Herb_In_Package_8:
+# 700 "data/maps/Player_Shed/scripts.pory"
+	goto_if_set FLAG_GREEN_HERB_COMPLETE, Yellow_Herb_In_Package_10
+	goto Yellow_Herb_In_Package_7
+
+Yellow_Herb_In_Package_10:
+# 700 "data/maps/Player_Shed/scripts.pory"
+	goto_if_set FLAG_YELLOW_HERB_COMPLETE, Yellow_Herb_In_Package_6
+	goto Yellow_Herb_In_Package_7
+
+
+Green_Herb_In_Package::
+# 777 "data/maps/Player_Shed/scripts.pory"
+	msgbox PS_T_SYS3_G, MSGBOX_YESNO
+# 778 "data/maps/Player_Shed/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq Green_Herb_In_Package_2
+# 861 "data/maps/Player_Shed/scripts.pory"
+	closemessage
+# 862 "data/maps/Player_Shed/scripts.pory"
+	release
+Green_Herb_In_Package_1:
+	end
+
+Green_Herb_In_Package_2:
+# 779 "data/maps/Player_Shed/scripts.pory"
+	closemessage
+# 780 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 0, 6, 0x238, TRUE
+# 781 "data/maps/Player_Shed/scripts.pory"
+	delay 10
+# 782 "data/maps/Player_Shed/scripts.pory"
+	playse SE_BALL
+# 783 "data/maps/Player_Shed/scripts.pory"
+	special DrawWholeMapView
+# 784 "data/maps/Player_Shed/scripts.pory"
+	waitse
+# 785 "data/maps/Player_Shed/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 786 "data/maps/Player_Shed/scripts.pory"
+	waitfanfare
+# 787 "data/maps/Player_Shed/scripts.pory"
+	delay 30
+# 788 "data/maps/Player_Shed/scripts.pory"
+	clearflag FLAG_OBT_GREEN_BRICK
+# 789 "data/maps/Player_Shed/scripts.pory"
+	clearflag FLAG_PLAYER_HAS_HERBS
+# 790 "data/maps/Player_Shed/scripts.pory"
+	setflag FLAG_GREEN_HERB_COMPLETE
+# 791 "data/maps/Player_Shed/scripts.pory"
+	goto_if_set FLAG_RED_HERB_COMPLETE, Green_Herb_In_Package_8
+Green_Herb_In_Package_7:
+# 826 "data/maps/Player_Shed/scripts.pory"
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
+# 827 "data/maps/Player_Shed/scripts.pory"
+	delay 30
+# 828 "data/maps/Player_Shed/scripts.pory"
+	speakername PS_Dad_Interact_Text_0
+# 829 "data/maps/Player_Shed/scripts.pory"
+	msgbox PS_T_Dad12
+# 830 "data/maps/Player_Shed/scripts.pory"
+	waitmessage
+# 831 "data/maps/Player_Shed/scripts.pory"
+	closemessage
+# 832 "data/maps/Player_Shed/scripts.pory"
+	delay 30
+# 833 "data/maps/Player_Shed/scripts.pory"
+	turnobject 1, DIR_NORTH
+# 834 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 6, 2, 0x224, TRUE
+# 835 "data/maps/Player_Shed/scripts.pory"
+	delay 30
+# 836 "data/maps/Player_Shed/scripts.pory"
+	playse SE_SWITCH
+# 837 "data/maps/Player_Shed/scripts.pory"
+	special DrawWholeMapView
+# 838 "data/maps/Player_Shed/scripts.pory"
+	waitse
+# 839 "data/maps/Player_Shed/scripts.pory"
+	delay 20
+# 840 "data/maps/Player_Shed/scripts.pory"
+	playse SE_TRUCK_DOOR
+# 841 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 5, 2, 0x223, TRUE
+# 842 "data/maps/Player_Shed/scripts.pory"
+	special DrawWholeMapView
+# 843 "data/maps/Player_Shed/scripts.pory"
+	waitse
+# 844 "data/maps/Player_Shed/scripts.pory"
+	delay 20
+# 845 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 6, 2, 0x22E, TRUE
+# 846 "data/maps/Player_Shed/scripts.pory"
+	playse SE_SWITCH
+# 847 "data/maps/Player_Shed/scripts.pory"
+	special DrawWholeMapView
+# 848 "data/maps/Player_Shed/scripts.pory"
+	waitse
+# 849 "data/maps/Player_Shed/scripts.pory"
+	delay 20
+# 850 "data/maps/Player_Shed/scripts.pory"
+	playse SE_TRUCK_DOOR
+# 851 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 2, 2, 0x225, TRUE
+# 852 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 3, 2, 0x226, TRUE
+# 853 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 4, 2, 0x227, TRUE
+# 854 "data/maps/Player_Shed/scripts.pory"
+	special DrawWholeMapView
+# 855 "data/maps/Player_Shed/scripts.pory"
+	waitse
+# 857 "data/maps/Player_Shed/scripts.pory"
+	setvar VAR_ADVENTURE_START, 5
+# 858 "data/maps/Player_Shed/scripts.pory"
+	release
+	goto Green_Herb_In_Package_1
+
+Green_Herb_In_Package_6:
+# 792 "data/maps/Player_Shed/scripts.pory"
+	setflag FLAG_ALL_HERBS_COMPLETE
+# 793 "data/maps/Player_Shed/scripts.pory"
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
+# 794 "data/maps/Player_Shed/scripts.pory"
+	delay 30
+# 795 "data/maps/Player_Shed/scripts.pory"
+	speakername PS_Dad_Interact_Text_0
+# 796 "data/maps/Player_Shed/scripts.pory"
+	msgbox PS_T_Dad13
+# 797 "data/maps/Player_Shed/scripts.pory"
+	waitmessage
+# 798 "data/maps/Player_Shed/scripts.pory"
+	closemessage
+# 799 "data/maps/Player_Shed/scripts.pory"
+	delay 30
+# 800 "data/maps/Player_Shed/scripts.pory"
+	turnobject 1, DIR_NORTH
+# 801 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 6, 2, 0x224, TRUE
+# 802 "data/maps/Player_Shed/scripts.pory"
+	delay 30
+# 803 "data/maps/Player_Shed/scripts.pory"
+	playse SE_SWITCH
+# 804 "data/maps/Player_Shed/scripts.pory"
+	special DrawWholeMapView
+# 805 "data/maps/Player_Shed/scripts.pory"
+	waitse
+# 806 "data/maps/Player_Shed/scripts.pory"
+	delay 20
+# 807 "data/maps/Player_Shed/scripts.pory"
+	playse SE_TRUCK_DOOR
+# 808 "data/maps/Player_Shed/scripts.pory"
+	setmetatile 5, 2, 0x223, TRUE
+# 809 "data/maps/Player_Shed/scripts.pory"
+	special DrawWholeMapView
+# 810 "data/maps/Player_Shed/scripts.pory"
+	waitse
+# 811 "data/maps/Player_Shed/scripts.pory"
+	delay 30
+# 812 "data/maps/Player_Shed/scripts.pory"
+	applymovement 1, PS_W_Dad5
+# 813 "data/maps/Player_Shed/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, PS_W_Player4_Green
+# 814 "data/maps/Player_Shed/scripts.pory"
+	waitmovement 1
+# 815 "data/maps/Player_Shed/scripts.pory"
+	delay 30
+# 816 "data/maps/Player_Shed/scripts.pory"
+	speakername PS_Dad_Interact_Text_0
+# 817 "data/maps/Player_Shed/scripts.pory"
+	msgbox PS_T_Dad14
+# 818 "data/maps/Player_Shed/scripts.pory"
+	waitmessage
+# 819 "data/maps/Player_Shed/scripts.pory"
+	closemessage
+# 820 "data/maps/Player_Shed/scripts.pory"
+	clearflag FLAG_HIDE_RIVAL_MIKE_1
+# 821 "data/maps/Player_Shed/scripts.pory"
+	setvar VAR_ADVENTURE_START, 7
+# 822 "data/maps/Player_Shed/scripts.pory"
 	releaseall
 	end
 
 Green_Herb_In_Package_8:
-# 743 "data/maps/Player_Shed/scripts.pory"
+# 791 "data/maps/Player_Shed/scripts.pory"
 	goto_if_set FLAG_GREEN_HERB_COMPLETE, Green_Herb_In_Package_10
 	goto Green_Herb_In_Package_7
 
 Green_Herb_In_Package_10:
-# 743 "data/maps/Player_Shed/scripts.pory"
+# 791 "data/maps/Player_Shed/scripts.pory"
 	goto_if_set FLAG_YELLOW_HERB_COMPLETE, Green_Herb_In_Package_6
 	goto Green_Herb_In_Package_7
 
 
 Player_Has_No_Herb::
-# 819 "data/maps/Player_Shed/scripts.pory"
+# 868 "data/maps/Player_Shed/scripts.pory"
 	msgbox PS_T_Player4
-# 820 "data/maps/Player_Shed/scripts.pory"
+# 869 "data/maps/Player_Shed/scripts.pory"
 	waitmessage
-# 821 "data/maps/Player_Shed/scripts.pory"
+# 870 "data/maps/Player_Shed/scripts.pory"
 	closemessage
-# 822 "data/maps/Player_Shed/scripts.pory"
+# 871 "data/maps/Player_Shed/scripts.pory"
 	release
 	end
 
 
 PS_NoExit_Trig::
-# 827 "data/maps/Player_Shed/scripts.pory"
+# 876 "data/maps/Player_Shed/scripts.pory"
 	lock
-# 828 "data/maps/Player_Shed/scripts.pory"
+# 877 "data/maps/Player_Shed/scripts.pory"
 	special SpawnCameraObject
-# 829 "data/maps/Player_Shed/scripts.pory"
+# 878 "data/maps/Player_Shed/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, PS_CAM_1
-# 830 "data/maps/Player_Shed/scripts.pory"
+# 879 "data/maps/Player_Shed/scripts.pory"
 	waitmovement 0
-# 831 "data/maps/Player_Shed/scripts.pory"
+# 880 "data/maps/Player_Shed/scripts.pory"
 	turnobject 1, DIR_SOUTH
-# 832 "data/maps/Player_Shed/scripts.pory"
+# 881 "data/maps/Player_Shed/scripts.pory"
 	applymovement 1, Univ_Exclam
-# 833 "data/maps/Player_Shed/scripts.pory"
+# 882 "data/maps/Player_Shed/scripts.pory"
 	playse SE_PIN
-# 834 "data/maps/Player_Shed/scripts.pory"
+# 883 "data/maps/Player_Shed/scripts.pory"
 	waitmovement 0
-# 835 "data/maps/Player_Shed/scripts.pory"
+# 884 "data/maps/Player_Shed/scripts.pory"
 	waitse
-# 836 "data/maps/Player_Shed/scripts.pory"
+# 885 "data/maps/Player_Shed/scripts.pory"
 	delay 60
-# 837 "data/maps/Player_Shed/scripts.pory"
-	speakername PS_Dad_Intro_Text_0
-# 838 "data/maps/Player_Shed/scripts.pory"
+# 886 "data/maps/Player_Shed/scripts.pory"
+	speakername PS_Dad_Interact_Text_0
+# 887 "data/maps/Player_Shed/scripts.pory"
 	msgbox PS_T_Dad8
-# 839 "data/maps/Player_Shed/scripts.pory"
+# 888 "data/maps/Player_Shed/scripts.pory"
 	waitmessage
-# 840 "data/maps/Player_Shed/scripts.pory"
+# 889 "data/maps/Player_Shed/scripts.pory"
 	closemessage
-# 841 "data/maps/Player_Shed/scripts.pory"
+# 890 "data/maps/Player_Shed/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Univ_StepUp1
-# 842 "data/maps/Player_Shed/scripts.pory"
+# 891 "data/maps/Player_Shed/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, Univ_StepDown1
-# 843 "data/maps/Player_Shed/scripts.pory"
+# 892 "data/maps/Player_Shed/scripts.pory"
 	turnobject 1, DIR_NORTH
-# 844 "data/maps/Player_Shed/scripts.pory"
+# 893 "data/maps/Player_Shed/scripts.pory"
 	waitmovement OBJ_EVENT_ID_CAMERA
-# 845 "data/maps/Player_Shed/scripts.pory"
+# 894 "data/maps/Player_Shed/scripts.pory"
 	special RemoveCameraObject
-# 846 "data/maps/Player_Shed/scripts.pory"
+# 895 "data/maps/Player_Shed/scripts.pory"
 	releaseall
 	end
 
 
 PS_NoExit_Trig_2::
-# 851 "data/maps/Player_Shed/scripts.pory"
+# 900 "data/maps/Player_Shed/scripts.pory"
 	lock
-# 852 "data/maps/Player_Shed/scripts.pory"
+# 901 "data/maps/Player_Shed/scripts.pory"
 	special SpawnCameraObject
-# 853 "data/maps/Player_Shed/scripts.pory"
+# 902 "data/maps/Player_Shed/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, PS_CAM_1
-# 854 "data/maps/Player_Shed/scripts.pory"
+# 903 "data/maps/Player_Shed/scripts.pory"
 	waitmovement 0
-# 855 "data/maps/Player_Shed/scripts.pory"
+# 904 "data/maps/Player_Shed/scripts.pory"
 	turnobject 1, DIR_SOUTH
-# 856 "data/maps/Player_Shed/scripts.pory"
+# 905 "data/maps/Player_Shed/scripts.pory"
 	applymovement 1, Univ_Exclam
-# 857 "data/maps/Player_Shed/scripts.pory"
+# 906 "data/maps/Player_Shed/scripts.pory"
 	playse SE_PIN
-# 858 "data/maps/Player_Shed/scripts.pory"
+# 907 "data/maps/Player_Shed/scripts.pory"
 	waitmovement 0
-# 859 "data/maps/Player_Shed/scripts.pory"
+# 908 "data/maps/Player_Shed/scripts.pory"
 	waitse
-# 860 "data/maps/Player_Shed/scripts.pory"
+# 909 "data/maps/Player_Shed/scripts.pory"
 	delay 60
-# 861 "data/maps/Player_Shed/scripts.pory"
-	speakername PS_Dad_Intro_Text_0
-# 862 "data/maps/Player_Shed/scripts.pory"
+# 910 "data/maps/Player_Shed/scripts.pory"
+	speakername PS_Dad_Interact_Text_0
+# 911 "data/maps/Player_Shed/scripts.pory"
 	msgbox PS_T_Dad8
-# 863 "data/maps/Player_Shed/scripts.pory"
+# 912 "data/maps/Player_Shed/scripts.pory"
 	waitmessage
-# 864 "data/maps/Player_Shed/scripts.pory"
+# 913 "data/maps/Player_Shed/scripts.pory"
 	closemessage
-# 865 "data/maps/Player_Shed/scripts.pory"
+# 914 "data/maps/Player_Shed/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Univ_StepUp1
-# 866 "data/maps/Player_Shed/scripts.pory"
+# 915 "data/maps/Player_Shed/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, Univ_StepDown1
-# 867 "data/maps/Player_Shed/scripts.pory"
+# 916 "data/maps/Player_Shed/scripts.pory"
 	turnobject 1, DIR_WEST
-# 868 "data/maps/Player_Shed/scripts.pory"
+# 917 "data/maps/Player_Shed/scripts.pory"
 	waitmovement OBJ_EVENT_ID_CAMERA
-# 869 "data/maps/Player_Shed/scripts.pory"
+# 918 "data/maps/Player_Shed/scripts.pory"
 	special RemoveCameraObject
-# 870 "data/maps/Player_Shed/scripts.pory"
+# 919 "data/maps/Player_Shed/scripts.pory"
 	releaseall
 	end
 
 
 PS_Grinder_Shake_Vars::
-# 875 "data/maps/Player_Shed/scripts.pory"
+# 924 "data/maps/Player_Shed/scripts.pory"
 	setvar VAR_0x8004, 1
-# 876 "data/maps/Player_Shed/scripts.pory"
+# 925 "data/maps/Player_Shed/scripts.pory"
 	setvar VAR_0x8005, 1
-# 877 "data/maps/Player_Shed/scripts.pory"
+# 926 "data/maps/Player_Shed/scripts.pory"
 	setvar VAR_0x8006, 45
-# 878 "data/maps/Player_Shed/scripts.pory"
+# 927 "data/maps/Player_Shed/scripts.pory"
 	setvar VAR_0x8007, 5
 	return
 
 
-# 883 "data/maps/Player_Shed/scripts.pory"
+# 932 "data/maps/Player_Shed/scripts.pory"
 PS_Player_Walk1:
-# 884 "data/maps/Player_Shed/scripts.pory"
+# 933 "data/maps/Player_Shed/scripts.pory"
 	walk_up
-# 884 "data/maps/Player_Shed/scripts.pory"
-	walk_up
-	step_end
-
-# 887 "data/maps/Player_Shed/scripts.pory"
-PS_W_Player2:
-# 888 "data/maps/Player_Shed/scripts.pory"
-	walk_up
-# 888 "data/maps/Player_Shed/scripts.pory"
-	walk_up
-# 889 "data/maps/Player_Shed/scripts.pory"
-	walk_left
-# 890 "data/maps/Player_Shed/scripts.pory"
-	face_up
-	step_end
-
-# 893 "data/maps/Player_Shed/scripts.pory"
-PS_W_Player3:
-# 894 "data/maps/Player_Shed/scripts.pory"
-	walk_left
-# 894 "data/maps/Player_Shed/scripts.pory"
-	walk_left
-# 894 "data/maps/Player_Shed/scripts.pory"
-	walk_left
-# 895 "data/maps/Player_Shed/scripts.pory"
-	walk_down
-# 896 "data/maps/Player_Shed/scripts.pory"
-	face_left
-	step_end
-
-# 899 "data/maps/Player_Shed/scripts.pory"
-PS_W_Player4_Red:
-# 900 "data/maps/Player_Shed/scripts.pory"
-	walk_down
-# 901 "data/maps/Player_Shed/scripts.pory"
-	walk_right
-# 901 "data/maps/Player_Shed/scripts.pory"
-	walk_right
-	step_end
-
-# 904 "data/maps/Player_Shed/scripts.pory"
-PS_W_Player4_Yellow:
-# 905 "data/maps/Player_Shed/scripts.pory"
-	walk_right
-# 905 "data/maps/Player_Shed/scripts.pory"
-	walk_right
-	step_end
-
-# 908 "data/maps/Player_Shed/scripts.pory"
-PS_W_Player4_Green:
-# 909 "data/maps/Player_Shed/scripts.pory"
-	walk_up
-# 910 "data/maps/Player_Shed/scripts.pory"
-	walk_right
-# 910 "data/maps/Player_Shed/scripts.pory"
-	walk_right
-	step_end
-
-# 913 "data/maps/Player_Shed/scripts.pory"
-PS_W_Dad1:
-# 914 "data/maps/Player_Shed/scripts.pory"
-	walk_right
-# 914 "data/maps/Player_Shed/scripts.pory"
-	walk_right
-	step_end
-
-# 917 "data/maps/Player_Shed/scripts.pory"
-PS_W_Dad2:
-# 918 "data/maps/Player_Shed/scripts.pory"
-	walk_up
-# 919 "data/maps/Player_Shed/scripts.pory"
-	walk_left
-# 919 "data/maps/Player_Shed/scripts.pory"
-	walk_left
-# 920 "data/maps/Player_Shed/scripts.pory"
-	face_up
-	step_end
-
-# 923 "data/maps/Player_Shed/scripts.pory"
-PS_W_Dad3:
-# 924 "data/maps/Player_Shed/scripts.pory"
-	walk_left
-# 924 "data/maps/Player_Shed/scripts.pory"
-	walk_left
-# 925 "data/maps/Player_Shed/scripts.pory"
-	walk_down
-# 925 "data/maps/Player_Shed/scripts.pory"
-	walk_down
-# 926 "data/maps/Player_Shed/scripts.pory"
-	face_left
-	step_end
-
-# 929 "data/maps/Player_Shed/scripts.pory"
-PS_W_Dad4:
-# 930 "data/maps/Player_Shed/scripts.pory"
-	walk_right
-# 930 "data/maps/Player_Shed/scripts.pory"
-	walk_right
-# 930 "data/maps/Player_Shed/scripts.pory"
-	walk_right
-# 930 "data/maps/Player_Shed/scripts.pory"
-	walk_right
-# 931 "data/maps/Player_Shed/scripts.pory"
-	walk_up
-# 931 "data/maps/Player_Shed/scripts.pory"
-	walk_up
-# 931 "data/maps/Player_Shed/scripts.pory"
+# 933 "data/maps/Player_Shed/scripts.pory"
 	walk_up
 	step_end
 
-# 934 "data/maps/Player_Shed/scripts.pory"
-PS_W_Dad5:
-# 935 "data/maps/Player_Shed/scripts.pory"
-	walk_down
-# 935 "data/maps/Player_Shed/scripts.pory"
-	walk_down
 # 936 "data/maps/Player_Shed/scripts.pory"
+PS_W_Player2:
+# 937 "data/maps/Player_Shed/scripts.pory"
+	walk_up
+# 937 "data/maps/Player_Shed/scripts.pory"
+	walk_up
+# 938 "data/maps/Player_Shed/scripts.pory"
+	walk_left
+# 939 "data/maps/Player_Shed/scripts.pory"
+	face_up
+	step_end
+
+# 942 "data/maps/Player_Shed/scripts.pory"
+PS_W_Player3:
+# 943 "data/maps/Player_Shed/scripts.pory"
+	walk_left
+# 943 "data/maps/Player_Shed/scripts.pory"
+	walk_left
+# 943 "data/maps/Player_Shed/scripts.pory"
+	walk_left
+# 944 "data/maps/Player_Shed/scripts.pory"
+	walk_down
+# 945 "data/maps/Player_Shed/scripts.pory"
+	face_left
+	step_end
+
+# 948 "data/maps/Player_Shed/scripts.pory"
+PS_W_Player4_Red:
+# 949 "data/maps/Player_Shed/scripts.pory"
+	walk_down
+# 950 "data/maps/Player_Shed/scripts.pory"
+	walk_right
+# 950 "data/maps/Player_Shed/scripts.pory"
+	walk_right
+	step_end
+
+# 953 "data/maps/Player_Shed/scripts.pory"
+PS_W_Player4_Yellow:
+# 954 "data/maps/Player_Shed/scripts.pory"
+	walk_right
+# 954 "data/maps/Player_Shed/scripts.pory"
+	walk_right
+	step_end
+
+# 957 "data/maps/Player_Shed/scripts.pory"
+PS_W_Player4_Green:
+# 958 "data/maps/Player_Shed/scripts.pory"
+	walk_up
+# 959 "data/maps/Player_Shed/scripts.pory"
+	walk_right
+# 959 "data/maps/Player_Shed/scripts.pory"
+	walk_right
+	step_end
+
+# 962 "data/maps/Player_Shed/scripts.pory"
+PS_W_Dad1:
+# 963 "data/maps/Player_Shed/scripts.pory"
+	walk_right
+# 963 "data/maps/Player_Shed/scripts.pory"
+	walk_right
+	step_end
+
+# 966 "data/maps/Player_Shed/scripts.pory"
+PS_W_Dad2:
+# 967 "data/maps/Player_Shed/scripts.pory"
+	walk_up
+# 968 "data/maps/Player_Shed/scripts.pory"
+	walk_left
+# 968 "data/maps/Player_Shed/scripts.pory"
+	walk_left
+# 969 "data/maps/Player_Shed/scripts.pory"
+	face_up
+	step_end
+
+# 972 "data/maps/Player_Shed/scripts.pory"
+PS_W_Dad3:
+# 973 "data/maps/Player_Shed/scripts.pory"
+	walk_left
+# 973 "data/maps/Player_Shed/scripts.pory"
+	walk_left
+# 974 "data/maps/Player_Shed/scripts.pory"
+	walk_down
+# 974 "data/maps/Player_Shed/scripts.pory"
+	walk_down
+# 975 "data/maps/Player_Shed/scripts.pory"
+	face_left
+	step_end
+
+# 978 "data/maps/Player_Shed/scripts.pory"
+PS_W_Dad4:
+# 979 "data/maps/Player_Shed/scripts.pory"
+	walk_right
+# 979 "data/maps/Player_Shed/scripts.pory"
+	walk_right
+# 979 "data/maps/Player_Shed/scripts.pory"
+	walk_right
+# 979 "data/maps/Player_Shed/scripts.pory"
+	walk_right
+# 980 "data/maps/Player_Shed/scripts.pory"
+	walk_up
+# 980 "data/maps/Player_Shed/scripts.pory"
+	walk_up
+# 980 "data/maps/Player_Shed/scripts.pory"
+	walk_up
+	step_end
+
+# 983 "data/maps/Player_Shed/scripts.pory"
+PS_W_Dad5:
+# 984 "data/maps/Player_Shed/scripts.pory"
+	walk_down
+# 984 "data/maps/Player_Shed/scripts.pory"
+	walk_down
+# 985 "data/maps/Player_Shed/scripts.pory"
 	walk_left
 	step_end
 
-# 939 "data/maps/Player_Shed/scripts.pory"
+# 988 "data/maps/Player_Shed/scripts.pory"
 PS_CAM_1:
-# 940 "data/maps/Player_Shed/scripts.pory"
+# 989 "data/maps/Player_Shed/scripts.pory"
 	walk_up
-# 940 "data/maps/Player_Shed/scripts.pory"
+# 989 "data/maps/Player_Shed/scripts.pory"
 	walk_up
 	step_end
 
-PS_Dad_Intro_Text_0:
-# 10 "data/maps/Player_Shed/scripts.pory"
+PS_Dad_Interact_Text_0:
+# 28 "data/maps/Player_Shed/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Dad$"
 
 PS_T_Dad1::
-# 949 "data/maps/Player_Shed/scripts.pory"
+# 998 "data/maps/Player_Shed/scripts.pory"
 	.string "Oh boy, there sure aint nothin' like\n"
 	.string "processin' a new batch huh, {PLAYER}?\p"
 	.string "Now I know you've done this plenty of\n"
@@ -1818,23 +1909,23 @@ PS_T_Dad1::
 	.string "condition forever ya know?$"
 
 PS_T_Dad2::
-# 961 "data/maps/Player_Shed/scripts.pory"
+# 1010 "data/maps/Player_Shed/scripts.pory"
 	.string "Over here we got our plucked herbs all\n"
 	.string "sorted in them bins.$"
 
 PS_T_Dad3::
-# 966 "data/maps/Player_Shed/scripts.pory"
+# 1015 "data/maps/Player_Shed/scripts.pory"
 	.string "You 'member what the different colored\n"
 	.string "herbs are for, don't ya?$"
 
 PS_T_Dad4A::
-# 971 "data/maps/Player_Shed/scripts.pory"
+# 1020 "data/maps/Player_Shed/scripts.pory"
 	.string "Haha, of course you would, {PLAYER}.\n"
 	.string "I wouldn't expect anythin' less!\p"
 	.string "Now, let's keep movin'.$"
 
 PS_T_Dad4B::
-# 977 "data/maps/Player_Shed/scripts.pory"
+# 1026 "data/maps/Player_Shed/scripts.pory"
 	.string "No problem kiddo.\n"
 	.string "I'll learn ya up real quick!\p"
 	.string "Our herbs are mighty important to big\n"
@@ -1852,7 +1943,7 @@ PS_T_Dad4B::
 	.string "Now lets keep movin'.$"
 
 PS_T_Dad5::
-# 995 "data/maps/Player_Shed/scripts.pory"
+# 1044 "data/maps/Player_Shed/scripts.pory"
 	.string "Now here's the crown jewel of the farm!\n"
 	.string "The Herb Processor Turbo 9000!\p"
 	.string "This beauty takes our herbs and breaks\n"
@@ -1863,120 +1954,129 @@ PS_T_Dad5::
 	.string "now would we? Haha!$"
 
 PS_T_Dad6::
-# 1006 "data/maps/Player_Shed/scripts.pory"
+# 1055 "data/maps/Player_Shed/scripts.pory"
 	.string "Lastly, we got our packagin' area.\n"
 	.string "Just drop the brick in the same colored\p"
 	.string "box and we'll be good to go!$"
 
 PS_T_Dad7::
-# 1012 "data/maps/Player_Shed/scripts.pory"
+# 1061 "data/maps/Player_Shed/scripts.pory"
 	.string "Alrighty then, {PLAYER}.\p"
 	.string "I'm gonna open the loading door, you go\n"
 	.string "ahead and throw them herbs in!$"
 
 PS_T_Dad8::
-# 1018 "data/maps/Player_Shed/scripts.pory"
+# 1067 "data/maps/Player_Shed/scripts.pory"
 	.string "Where ya goin', {PLAYER}?\n"
 	.string "We got work to do here!$"
 
 PS_T_Dad9::
-# 1023 "data/maps/Player_Shed/scripts.pory"
+# 1072 "data/maps/Player_Shed/scripts.pory"
 	.string "Nice work, {PLAYER}!\n"
 	.string "Let me start 'er up!$"
 
 PS_T_Dad10::
-# 1028 "data/maps/Player_Shed/scripts.pory"
+# 1077 "data/maps/Player_Shed/scripts.pory"
 	.string "One brick ready fer ya, {PLAYER}!$"
 
 PS_T_Dad11::
-# 1032 "data/maps/Player_Shed/scripts.pory"
+# 1081 "data/maps/Player_Shed/scripts.pory"
 	.string "Now go n' get that packaged up!$"
 
 PS_T_Dad12::
-# 1036 "data/maps/Player_Shed/scripts.pory"
+# 1085 "data/maps/Player_Shed/scripts.pory"
 	.string "Looks great, {PLAYER}!\n"
 	.string "Let's get another batch goin'.$"
 
 PS_T_Dad13::
-# 1041 "data/maps/Player_Shed/scripts.pory"
+# 1090 "data/maps/Player_Shed/scripts.pory"
 	.string "Seems like that's all the herbs that\n"
 	.string "needed processin'!\p"
 	.string "Let me just shut this 'ol thing down...$"
 
 PS_T_Dad14::
-# 1047 "data/maps/Player_Shed/scripts.pory"
+# 1096 "data/maps/Player_Shed/scripts.pory"
 	.string "Hey, real nice job today, {PLAYER}.\p"
 	.string "Since ya worked hard, I'll letcha take\n"
 	.string "off while clean up 'round here.\p"
 	.string "See y'all at lunch!$"
 
+PS_T_Dad15::
+# 1103 "data/maps/Player_Shed/scripts.pory"
+	.string "You go on now, {PLAYER}.\n"
+	.string "This place needs a little fixin' yet.$"
+
+PS_T_Dad16::
+# 1108 "data/maps/Player_Shed/scripts.pory"
+	.string "Come on, {PLAYER}, yer wastin' daylight!$"
+
 PS_T_SYS1_R::
-# 1054 "data/maps/Player_Shed/scripts.pory"
+# 1112 "data/maps/Player_Shed/scripts.pory"
 	.string "Take the {COLOR RED}{SHADOW LIGHT_RED}Red Herbs{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}?$"
 
 PS_T_SYS2_R::
-# 1058 "data/maps/Player_Shed/scripts.pory"
+# 1116 "data/maps/Player_Shed/scripts.pory"
 	.string "Place the {COLOR RED}{SHADOW LIGHT_RED}Red Herbs {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}in the processor?$"
 
 PS_T_SYS3_R::
-# 1062 "data/maps/Player_Shed/scripts.pory"
+# 1120 "data/maps/Player_Shed/scripts.pory"
 	.string "Package the {COLOR RED}{SHADOW LIGHT_RED}Red Herbs{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}?$"
 
 PS_T_SYS4::
-# 1066 "data/maps/Player_Shed/scripts.pory"
+# 1124 "data/maps/Player_Shed/scripts.pory"
 	.string "The door is sealed shut.$"
 
 PS_T_SYS5_R::
-# 1070 "data/maps/Player_Shed/scripts.pory"
+# 1128 "data/maps/Player_Shed/scripts.pory"
 	.string "The {COLOR RED}{SHADOW LIGHT_RED}Red Herbs {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}are prepared to ship!$"
 
 PS_T_SYS1_Y::
-# 1074 "data/maps/Player_Shed/scripts.pory"
+# 1132 "data/maps/Player_Shed/scripts.pory"
 	.string "Take the {COLOR BLUE}{SHADOW LIGHT_BLUE}Yellow Herbs{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}?$"
 
 PS_T_SYS2_Y::
-# 1078 "data/maps/Player_Shed/scripts.pory"
+# 1136 "data/maps/Player_Shed/scripts.pory"
 	.string "Place the {COLOR BLUE}{SHADOW LIGHT_BLUE}Yellow Herbs {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}in the processor?$"
 
 PS_T_SYS3_Y::
-# 1082 "data/maps/Player_Shed/scripts.pory"
+# 1140 "data/maps/Player_Shed/scripts.pory"
 	.string "Package the {COLOR BLUE}{SHADOW LIGHT_BLUE}Yellow Herbs{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}?$"
 
 PS_T_SYS5_Y::
-# 1086 "data/maps/Player_Shed/scripts.pory"
+# 1144 "data/maps/Player_Shed/scripts.pory"
 	.string "The {COLOR BLUE}{SHADOW LIGHT_BLUE}Yellow Herbs {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}are prepared to ship!$"
 
 PS_T_SYS1_G::
-# 1090 "data/maps/Player_Shed/scripts.pory"
+# 1148 "data/maps/Player_Shed/scripts.pory"
 	.string "Take the {COLOR GREEN}{SHADOW LIGHT_GREEN}Green Herbs{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}?$"
 
 PS_T_SYS2_G::
-# 1094 "data/maps/Player_Shed/scripts.pory"
+# 1152 "data/maps/Player_Shed/scripts.pory"
 	.string "Place the {COLOR GREEN}{SHADOW LIGHT_GREEN}Green Herbs {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}in the processor?$"
 
 PS_T_SYS3_G::
-# 1098 "data/maps/Player_Shed/scripts.pory"
+# 1156 "data/maps/Player_Shed/scripts.pory"
 	.string "Package the {COLOR GREEN}{SHADOW LIGHT_GREEN}Green Herbs{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}?$"
 
 PS_T_SYS5_G::
-# 1102 "data/maps/Player_Shed/scripts.pory"
+# 1160 "data/maps/Player_Shed/scripts.pory"
 	.string "The {COLOR GREEN}{SHADOW LIGHT_GREEN}Green Herbs {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}are prepared to ship!$"
 
 PS_T_Player1::
-# 1106 "data/maps/Player_Shed/scripts.pory"
+# 1164 "data/maps/Player_Shed/scripts.pory"
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}(Bin looks pretty empty...)$"
 
 PS_T_Player2::
-# 1110 "data/maps/Player_Shed/scripts.pory"
+# 1168 "data/maps/Player_Shed/scripts.pory"
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}(I should finish the batch before I\n"
 	.string "move on...)\p"
 	.string "(That's what Dad would do.)$"
 
 PS_T_Player3::
-# 1116 "data/maps/Player_Shed/scripts.pory"
+# 1174 "data/maps/Player_Shed/scripts.pory"
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}(The herb bricks should fit perfectly in\n"
 	.string "these packages...)$"
 
 PS_T_Player4::
-# 1121 "data/maps/Player_Shed/scripts.pory"
+# 1179 "data/maps/Player_Shed/scripts.pory"
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}(I need to gather some herbs...)$"
