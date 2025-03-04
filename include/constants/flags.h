@@ -668,8 +668,8 @@
 #define FLAG_YELLOW_HERB_COMPLETE    0x26D // yellow herb complete
 #define FLAG_ALL_HERBS_COMPLETE      0x26E // green, red, yellow packaged
 #define FLAG_HIDE_RIVAL_MIKE_1       0x26F // Hides MIKE outside player house 
-#define FLAG_UNUSED_0x270  0x270 // Unused Flag
-#define FLAG_UNUSED_0x271  0x271 // Unused Flag
+#define FLAG_HIDE_RIVAL_MIKE_2       0x270 // Hides MIKE in player house 1F
+#define FLAG_HIDE_RIVAL_MIKE_3       0x271 // Hides MIKE at BO's Ranch
 #define FLAG_UNUSED_0x272  0x272 // Unused Flag
 #define FLAG_UNUSED_0x273  0x273 // Unused Flag
 #define FLAG_UNUSED_0x274  0x274 // Unused Flag
@@ -743,7 +743,7 @@
 #define FLAG_UNUSED_0x2B8  0x2B8 // Unused Flag
 #define FLAG_UNUSED_0x2B9  0x2B9 // Unused Flag
 #define FLAG_UNUSED_0x2BA  0x2BA // Unused Flag
-#define FLAG_UNUSED_0x2BB  0x2BB // Unused Flag
+#define FLAG_AI_BATTLE_SET  0x2BB // use to do ai battle
 
 // Event Flags
 #define FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG                      0x2BC

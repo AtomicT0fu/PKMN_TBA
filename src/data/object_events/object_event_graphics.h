@@ -385,6 +385,10 @@ const u16 gObjectEventPal_ChampionNorman[] = INCBIN_U16("graphics/object_events/
 const u32 gObjectEventPic_RivalMike[] = INCBIN_U32("graphics/object_events/pics/people/rival_mike_ow.4bpp");
 const u16 gObjectEventPal_RivalMike[] = INCBIN_U16("graphics/object_events/palettes/rival_mike_ow.gbapal");
 
+const u32 gObjectEventPic_Dad[] = INCBIN_U32("graphics/object_events/pics/people/dad_ow.4bpp");
+const u16 gObjectEventPal_Dad[] = INCBIN_U16("graphics/object_events/palettes/dad_ow.gbapal");
+
+
 
 
 const u16 gObjectEventPal_Substitute[] = INCBIN_U16("graphics/pokemon/question_mark/overworld.gbapal");

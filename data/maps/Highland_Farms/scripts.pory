@@ -193,6 +193,73 @@ script BattleMike{
     end
 }
 
+script HF_MikeIntro{
+    turnobject(3, DIR_NORTH)
+    applymovement(3, Univ_Exclam)
+    playse(SE_PIN)
+    waitmovement(0)
+    waitse
+    delay(60)
+    applymovement(3, HF_W_Mike1)
+    waitmovement(0)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+    msgbox(HF_T_Mike1)
+    waitmessage
+    closemessage
+    applymovement(3, HF_W_Mike2)
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_EAST)
+    waitmovement(3)
+    opendoor(41, 25)
+    waitdooranim
+    applymovement(3, Univ_StepUp1)
+    waitmovement(0)
+    playse(SE_EXIT)
+    removeobject(3)
+    waitse
+    closedoor(41, 25)
+    waitdooranim
+    setflag(FLAG_HIDE_RIVAL_MIKE_1)
+    setvar(VAR_ADVENTURE_START, 8)
+    clearflag(FLAG_HIDE_RIVAL_MIKE_2)
+    release
+    end
+}
+
+script HF_Mike_ReadyToGo{
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, HF_CAM_2)
+    waitmovement(0)
+    delay(20)
+    playse(SE_DOOR)
+    opendoor(10, 8)
+    waitdooranim
+    addobject(4)
+    applymovement(4, Univ_StepDown1)
+    waitmovement(0)
+    closedoor(10, 8)
+    waitdooranim
+    applymovement(4, Univ_Exclam)
+    playse(SE_PIN)
+    waitmovement(0)
+    waitse
+    delay(60)
+    applymovement(4, HF_W_Mike3)
+    applymovement(OBJ_EVENT_ID_CAMERA, HF_CAM_3)
+    waitmovement(4)
+    special(RemoveCameraObject)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+    msgbox(HF_T_Mike2)
+    closemessage
+    applymovement(OBJ_EVENT_ID_PLAYER, HF_W_Player2)
+    waitmovement(0)
+    applymovement(4, HF_W_Mike4)
+    waitmovement(0)
+    removeobject(4)
+    setvar(VAR_ADVENTURE_START, 14)
+    release
+    end
+}
+
 
 movement HF_CAM_1A{
     walk_up * 4
@@ -202,6 +269,14 @@ movement HF_CAM_1A{
 movement HF_CAM_1B{
     walk_up * 4
     walk_right * 4
+}
+
+movement HF_CAM_2{
+    walk_up * 3
+}
+
+movement HF_CAM_3{
+    walk_fast_down * 3
 }
 
 movement HF_M_Dad1{
@@ -235,6 +310,29 @@ movement HF_M_Player1B{
     walk_up * 5
 }
 
+movement HF_W_Player2{
+    walk_right
+    face_left
+}
+
+movement HF_W_Mike1{
+    walk_fast_up * 2
+}
+
+movement HF_W_Mike2{
+    walk_fast_right * 4
+    face_up
+}
+
+movement HF_W_Mike3{
+    walk_fast_down * 3
+}
+
+movement HF_W_Mike4{
+    walk_faster_down * 8
+}
+
+
 
 
 
@@ -248,10 +346,25 @@ text HF_T_Dad2{
     "I already got them new plants in the \n"
     "ground, and the harvest herbs moved\p"
     "over into the shed.\p"
-    "If you wanna meet me in there, we can\n"
+    "If ya wanna meet me in there, we can\n"
     "get to processin' this new batch.\p"
     "I'll bet'cha we can get finished before\n"
     "Momma finishes lunch if we stick to it!\p"
-    "It sure is great having your help out\n"
+    "It sure is great having yer help out\n"
     "here, {PLAYER}."
+}
+
+text HF_T_Mike1{
+    "{PLAYER}!!\p"
+    "We gotta watch this new Battle Tape\n"
+    "that Ol' Bo lent me!\p"
+    "Come on, let's go!"
+}
+
+text HF_T_Mike2{
+    "Wow, that was pretty quick, {PLAYER}!\n"
+    "But let's see how fast you really are...\p"
+    "Let's race to Old Bo's Ranch!\p"
+    "...\n"
+    "GO!"
 }

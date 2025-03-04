@@ -134,6 +134,9 @@ $(OBJEVENTGFXDIR)/people/gym_leaders/champion_norman_ow_m.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/rival_mike_ow.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
+$(OBJEVENTGFXDIR)/people/dad_ow.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
 $(OBJEVENTGFXDIR)/people/ruby_sapphire_may/walking.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 

@@ -16918,17 +16918,37 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Yellow
 
-Gyarados @ Focus Sash  
-Ability: Intimidate  
-Level: 50  
-Shiny: Yes  
-Tera Type: Water  
-EVs: 252 Atk / 4 SpD / 252 Spe  
-Jolly Nature  
-- Waterfall  
-- Bounce  
-- Earthquake  
-- Dragon Tail
+Arcanine (M) @ Leftovers  
+Ability: Justified  
+Level: 80  
+Tera Type: Fire  
+EVs: 252 HP / 252 Atk / 4 SpD  
+Adamant Nature  
+- Close Combat  
+- Flare Blitz  
+- Wild Charge  
+- Will-O-Wisp
+
+Machamp (M) @ Flame Orb  
+Ability: Guts  
+Level: 80  
+Tera Type: Fighting  
+EVs: 4 HP / 252 Atk / 252 Spe  
+- Close Combat  
+- Facade  
+- Knock Off  
+- Bullet Punch
+
+Alakazam (M) @ Focus Sash  
+Ability: Magic Guard  
+Level: 80  
+Tera Type: Psychic  
+EVs: 4 Def / 252 SpA / 252 Spe  
+IVs: 0 Atk  
+- Psychic  
+- Nasty Plot  
+- Shadow Ball  
+- Energy Ball
 
 === TRAINER_RIVAL_MIKE ===
 Name: MIKE
@@ -16950,3 +16970,46 @@ Adamant Nature
 - Rock Smash  
 - Rock Tomb  
 - Tail Whip
+
+=== TRAINER_CHAMPION_DEE ===
+Name: DEE
+Class: Champion
+Pic: Expert F
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Smart Trainer
+
+Absol (F) @ Salac Berry  
+Ability: Super Luck  
+Level: 80  
+Tera Type: Dark  
+EVs: 252 Atk / 4 SpD / 252 Spe  
+Jolly Nature  
+- Night Slash  
+- Knock Off  
+- Play Rough  
+- Swords Dance
+
+Dusclops @ Eviolite  
+Ability: Pressure  
+Level: 80  
+Shiny: Yes  
+Tera Type: Ghost  
+EVs: 252 HP / 252 Def / 4 SpD  
+Bold Nature  
+- Rest  
+- Sleep Talk  
+- Toxic  
+- Seismic Toss
+
+Scizor (M) @ Expert Belt  
+Ability: Technician  
+Level: 80  
+Tera Type: Bug  
+EVs: 164 HP / 252 Atk / 92 Spe  
+Adamant Nature  
+- Bullet Punch  
+- Swords Dance  
+- Roost  
+- Superpower

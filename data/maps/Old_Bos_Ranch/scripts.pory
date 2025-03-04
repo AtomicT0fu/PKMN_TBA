@@ -1,1 +1,27 @@
 mapscripts Old_Bos_Ranch_MapScripts{}
+
+script OBR_Mike_FollowA{
+    turnobject(2, DIR_SOUTH)
+    applymovement(2, Univ_Exclam)
+    playse(SE_PIN)
+    waitmovement(0)
+    waitse
+    delay(60)
+    applymovement(8, Univ_StepDown1)
+    waitmovement(0)
+    delay(20)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+    msgbox(OBR_T_Mike1)
+    waitmessage
+    closemessage
+
+    setvar(VAR_ADVENTURE_START, 15)
+    release
+    end
+}
+
+text OBR_T_Mike1{
+    "Haha, too slow again, {PLAYER}.\p"
+    "I'll follow behind you so I can catch my\n"
+    "breath, the ranch is just up the path!"
+}

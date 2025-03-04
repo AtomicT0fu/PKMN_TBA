@@ -124,6 +124,7 @@ script ReDrawRoom{
 
 script Set_Start_Flags{                  //USE TO SET ANY FLAGS NEEDED AT START
     setflag(FLAG_HIDE_RIVAL_MIKE_1)
+    setflag(FLAG_HIDE_RIVAL_MIKE_2)
     return
 }
 

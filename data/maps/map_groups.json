@@ -104,7 +104,8 @@
     "Rival_House_1F",
     "Rival_House_B1F",
     "Black_Screen",
-    "Player_Shed"
+    "Player_Shed",
+    "Battle_Stage_Video"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",

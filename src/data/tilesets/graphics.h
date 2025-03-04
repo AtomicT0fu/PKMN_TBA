@@ -1767,3 +1767,22 @@ const u16 gTilesetPalettes_Indoor_Dad_Shed_Equip[][16] =
 };
 
 const u32 gTilesetTiles_Indoor_Dad_Shed_Equip[] = INCBIN_U32("data/tilesets/secondary/indoor_dad_shed_equip/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_Battle_Arena[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/battle_arena/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/battle_arena/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/battle_arena/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/battle_arena/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/battle_arena/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/battle_arena/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/battle_arena/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/battle_arena/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/battle_arena/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/battle_arena/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/battle_arena/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/battle_arena/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/battle_arena/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_Battle_Arena[] = INCBIN_U32("data/tilesets/primary/battle_arena/tiles.4bpp.lz");

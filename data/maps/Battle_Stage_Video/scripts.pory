@@ -1,0 +1,131 @@
+mapscripts Battle_Stage_Video_MapScripts{
+    MAP_SCRIPT_ON_FRAME_TABLE[
+        VAR_ADVENTURE_START, 10: BSV_Scene_Start
+        VAR_ADVENTURE_START, 11: BSV_Post_Battle
+    ]
+}
+
+script BSV_Scene_Start{
+    lock
+    fadescreen(FADE_TO_WHITE)
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, BSV_CAM_1)
+    waitmovement(0)
+    addobject(1)
+    addobject(2)
+    fadescreenspeed(FADE_FROM_WHITE, 4)
+    playbgm(MUS_RG_VICTORY_ROAD, TRUE)
+    delay(60)
+    speakername("{COLOR GREEN}{SHADOW LIGHT_GREEN}{FONT_SHORT}Announcer")
+    msgbox(BSV_T_PA1)
+    waitmessage
+    closemessage
+    playse(SE_APPLAUSE)
+    call(BSV_ShakeScreen_Vars)
+    delay(30)
+    //CHAMPION DEE
+    applymovement(OBJ_EVENT_ID_CAMERA, BSV_CAM_2)
+    waitmovement(0)
+    delay(10)
+    speakername("{COLOR RED}{SHADOW LIGHT_RED}{FONT_SHORT}Dee")
+    msgbox("Go, Absol!")
+    waitmessage
+    closemessage
+    delay(10)
+    playse(SE_BALL_BOUNCE_1)
+    addobject(6)
+    waitse
+    playse(SE_BALL_OPEN)
+    addobject(4)
+    removeobject(6)
+    playmoncry(SPECIES_ABSOL, 2)
+    special(ShakeCamera)
+    waitmoncry
+    delay(80)
+    //CHAMPION NORMAN
+    applymovement(OBJ_EVENT_ID_CAMERA, BSV_CAM_3)
+    waitmovement(0)
+    delay(10)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Norman")
+    msgbox("Arcanine, you're up!")
+    waitmessage
+    closemessage
+    delay(10)
+    playse(SE_BALL_BOUNCE_1)
+    addobject(5)
+    waitse
+    playse(SE_BALL_OPEN)
+    addobject(3)
+    removeobject(5)
+    playmoncry(SPECIES_ARCANINE, 2)
+    special(ShakeCamera)
+    waitmoncry
+    delay(80)
+    //START BATTLE
+    applymovement(OBJ_EVENT_ID_CAMERA, BSV_CAM_2)
+    waitmovement(0)
+    delay(60)
+    playse(SE_M_SKY_UPPERCUT)
+    applymovement(3, BSV_Arcanine_Lunge)
+    applymovement(4, BSV_Absol_Lunge)
+    waitmovement(0)
+    ai_vs_ai_battle(TRAINER_CHAMPION_NORMAN, TRAINER_CHAMPION_DEE)
+    removeobject(3)
+    removeobject(4)
+    setvar(VAR_ADVENTURE_START, 11)
+    release
+    end
+}
+
+script BSV_Post_Battle{
+    delay(20)
+    playse(SE_APPLAUSE)
+    speakername("{COLOR GREEN}{SHADOW LIGHT_GREEN}{FONT_SHORT}Announcer")
+    msgbox(BSV_T_PA2)
+    waitmessage
+    closemessage
+    special(ZeroPlayerPartyMons)
+    warpwhitefade(MAP_PLAYER_HOUSE_1F, 4, 4)
+    setvar(VAR_ADVENTURE_START, 12)
+    release
+    end
+}
+
+script BSV_ShakeScreen_Vars{
+    setvar(VAR_0x8004, 1)
+    setvar(VAR_0x8005, 1)
+    setvar(VAR_0x8006, 6)
+    setvar(VAR_0x8007, 2)
+    return
+}
+
+movement BSV_CAM_1{
+    walk_faster_up * 20
+}
+
+movement BSV_CAM_2{
+    walk_slow_right * 3
+}
+
+movement BSV_CAM_3{
+    walk_slow_left * 6
+}
+
+movement BSV_Arcanine_Lunge{
+    walk_faster_right
+}
+
+movement BSV_Absol_Lunge{
+    walk_faster_left 
+}
+
+text BSV_T_PA1{
+    "IT ALL COMES DOWN TO THIS, FOLKS!\n"
+    "TWO TRAINERS FACING OFF!\p"
+    "ONE WILL CLAIM THE DIVISION TITLE!\n"
+    "NOW, TO THE ACTION!"
+}
+
+text BSV_T_PA2{
+    "AND THE WINNER IS, NORMAN!!!"
+}

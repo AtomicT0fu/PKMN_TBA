@@ -1,7 +1,38 @@
 mapscripts Player_House_1F_MapScripts{
+    MAP_SCRIPT_ON_LOAD: PH1F_Update_Tiles
+    MAP_SCRIPT_ON_TRANSITION: PH1F_UpdateSpritePos
     MAP_SCRIPT_ON_FRAME_TABLE[
         VAR_ADVENTURE_START, 2: PH1F_MomIntro
+        VAR_ADVENTURE_START, 8: PH1F_BattleTapeStart
+        VAR_ADVENTURE_START, 12: PH1F_Post_BattleTape
     ]
+}
+
+script PH1F_UpdateSpritePos{
+    if(var(VAR_ADVENTURE_START) == 8){
+        setobjectxyperm(1, 9, 5)
+        setobjectmovementtype(1, MOVEMENT_TYPE_FACE_LEFT)
+        setobjectmovementtype(2, MOVEMENT_TYPE_WALK_IN_PLACE_LEFT)
+    }
+    elif(var(VAR_ADVENTURE_START) == 12){
+        setobjectxyperm(3, 3, 4)
+        setobjectmovementtype(3, MOVEMENT_TYPE_FACE_UP)
+    }
+    else{
+    }
+    end
+}
+
+script PH1F_Update_Tiles{
+    if(var(VAR_ADVENTURE_START) == 12){
+        setmetatile(3, 2, 0x0BC, TRUE)
+        setmetatile(4, 2, 0x0BD, TRUE)
+        setmetatile(3, 3, 0x0C4, TRUE)
+        setmetatile(4, 3, 0x0C5, TRUE)
+    }
+    else{
+    }
+    end
 }
 
 script PH1F_MomIntro{
@@ -29,6 +60,100 @@ script WarpTo_Test{
     end
 }
 
+
+script PH1F_BattleTapeStart{
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, PH1F_CAM_1)
+    waitmovement(0)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+    msgbox(PH1F_T_Mike1)
+    waitmessage
+    closemessage
+    applymovement(OBJ_EVENT_ID_CAMERA, Univ_StepRight1)
+    waitmovement(0)
+    delay(10)
+    speakername("{COLOR RED}{SHADOW LIGHT_RED}{FONT_SHORT}Mom")
+    msgbox(PH1F_T_Mom2)
+    waitmessage
+    closemessage
+    applymovement(OBJ_EVENT_ID_CAMERA, Univ_StepLeft1)
+    waitmovement(0)
+    turnobject(3, DIR_SOUTH)
+    delay(30)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+    msgbox(PH1F_T_Mike2)
+    waitmessage
+    closemessage
+    applymovement(3, PH1F_W_Mike1)
+    waitmovement(0)
+    setobjectxyperm(3, 3, 4)
+    applymovement(OBJ_EVENT_ID_CAMERA, PH1F_CAM_2)
+    waitmovement(0)
+    special(RemoveCameraObject)
+    setvar(VAR_ADVENTURE_START, 9)
+    release
+    end
+}
+
+script PH1F_BattleTape{
+    turnobject(3, DIR_EAST)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+    msgbox(PH1F_T_Mike3)
+    waitmessage
+    closemessage
+    delay(30)
+    turnobject(3, DIR_NORTH)
+    delay(20)
+    playse(SE_BALL_BOUNCE_1)
+    waitse
+    delay(20)
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+    setmetatile(3, 2, 0x0BC, TRUE)
+    setmetatile(4, 2, 0x0BD, TRUE)
+    setmetatile(3, 3, 0x0C4, TRUE)
+    setmetatile(4, 3, 0x0C5, TRUE)
+    delay(60)
+    playse(SE_SWITCH)
+    special(DrawWholeMapView)
+    waitse
+    setvar(VAR_ADVENTURE_START, 10)
+    warpwhitefade(MAP_BATTLE_STAGE_VIDEO, 15, 29)
+    release
+    end
+}
+
+script PH1F_Post_BattleTape{
+    delay(30)
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_WEST)
+    turnobject(3, DIR_EAST)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+    msgbox(PH1F_T_Mike4)
+    waitmessage
+    closemessage
+    turnobject(3, DIR_NORTH)
+    setmetatile(3, 2, 0x08B, TRUE)
+    setmetatile(4, 2, 0x08C, TRUE)
+    setmetatile(3, 3, 0x093, TRUE)
+    setmetatile(4, 3, 0x094, TRUE)
+    delay(60)
+    playse(SE_SWITCH)
+    special(DrawWholeMapView)
+    waitse
+    delay(20)
+    playse(SE_BALL)
+    waitse
+    delay(20)
+    applymovement(3, PH1F_W_Mike2)
+    waitmovement(0)
+    delay(10)
+    playse(SE_EXIT)
+    removeobject(3)
+    waitse
+    setflag(FLAG_HIDE_RIVAL_MIKE_2)
+    setvar(VAR_ADVENTURE_START, 13)
+    release
+    end
+}
 
 
 //UNIVERSAL MOVEMENTS////////////
@@ -97,6 +222,29 @@ movement PH1F_M_Mom2{
     face_up
 }
 
+movement PH1F_CAM_1{
+    walk_up * 3
+    walk_left * 2
+}
+
+movement PH1F_CAM_2{
+    walk_down * 3
+    walk_right * 2
+}
+
+movement PH1F_W_Mike1{
+    walk_fast_up
+    walk_fast_left * 5
+    face_right
+}
+
+movement PH1F_W_Mike2{
+    walk_fast_left * 2
+    walk_fast_down * 3
+    walk_fast_right * 9
+    walk_fast_down
+}
+
 
 
 text PH1F_T_Mom1{
@@ -109,4 +257,43 @@ text PH1F_T_Mom1{
     "start on the crop today.\p"
     "You'd better get out there, {PLAYER}.\n"
     "You know how much he values your help."
+}
+
+text PH1F_T_Mom2{
+    "You're very welcome sweetie.\n"
+    "You be sure to thank Bo as well!"
+}
+
+text PH1F_T_Mike1{
+    "Thank you so much for letting us use\n"
+    "the TV again!\p"
+    "I wish my Grandparents had one, but\n"
+    "they spend all their money on\p"
+    "PokeTreats for Millie..."
+}
+
+text PH1F_T_Mike2{
+    "Let's go, {PLAYER}!!"
+}
+
+text PH1F_T_Mike3{
+    "Bo said this one is his favorite!\n"
+    "This is going to be so awesome!"
+}
+
+text PH1F_T_Mike4{
+    "That was unbelievable, {PLAYER}!!!\p"
+    "Did you see how strong and cool their\n"
+    "Pokemon were?!\p"
+    "That Arcanine was so powerful...\n"
+    "And that Dusclops, oh man!\p"
+    "Bo sure wasn't kidding, that was great!\p"
+    "Dang, {PLAYER}, if only we could become\n"
+    "Pokemon trainers...\p"
+    "I just know that could be us battling\n"
+    "each other for a title one day!\p"
+    "Well, that'll have to wait.\p"
+    "I gotta feed Millie real quick, but we\n"
+    "should go return this tape together!\p"
+    "Meet me at my Grandparent's house!"
 }

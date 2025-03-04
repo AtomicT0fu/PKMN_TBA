@@ -1176,3 +1176,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Black_Screen/scripts.inc"
 
 	.include "data/maps/Player_Shed/scripts.inc"
+
+	.include "data/maps/Battle_Stage_Video/scripts.inc"

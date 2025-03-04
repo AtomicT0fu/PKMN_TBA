@@ -22,7 +22,7 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MILTANK)",
-      "x": 11,
+      "x": 12,
       "y": 11,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
@@ -34,7 +34,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_NORMAN",
+      "graphics_id": "OBJ_EVENT_GFX_DAD",
       "x": 47,
       "y": 14,
       "elevation": 0,
@@ -49,7 +49,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_RIVAL_MIKE",
       "x": 37,
-      "y": 27,
+      "y": 28,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT",
       "movement_range_x": 0,
@@ -58,6 +58,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "FLAG_HIDE_RIVAL_MIKE_1"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_RIVAL_MIKE",
+      "x": 10,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_CHAMPIONS_ROOM_RIVAL"
     }
   ],
   "warp_events": [
@@ -101,6 +114,24 @@
       "var": "VAR_ADVENTURE_START",
       "var_value": "3",
       "script": "HF_DadIntro_B"
+    },
+    {
+      "type": "trigger",
+      "x": 37,
+      "y": 25,
+      "elevation": 0,
+      "var": "VAR_ADVENTURE_START",
+      "var_value": "7",
+      "script": "HF_MikeIntro"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_ADVENTURE_START",
+      "var_value": "13",
+      "script": "HF_Mike_ReadyToGo"
     }
   ],
   "bg_events": [

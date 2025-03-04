@@ -4530,6 +4530,16 @@
       "secondary_tileset": "gTileset_Indoor_Dad_Shed_Equip",
       "border_filepath": "data/layouts/Player_Shed/border.bin",
       "blockdata_filepath": "data/layouts/Player_Shed/map.bin"
+    },
+    {
+      "id": "LAYOUT_BATTLE_STAGE_VIDEO",
+      "name": "Battle_Stage_Video_Layout",
+      "width": 31,
+      "height": 41,
+      "primary_tileset": "gTileset_Battle_Arena",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Battle_Stage_Video/border.bin",
+      "blockdata_filepath": "data/layouts/Battle_Stage_Video/map.bin"
     }
   ]
 }

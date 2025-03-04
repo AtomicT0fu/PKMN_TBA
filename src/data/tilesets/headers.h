@@ -902,3 +902,14 @@ const struct Tileset gTileset_Indoor_Dad_Shed_Equip =
     .metatileAttributes = gMetatileAttributes_Indoor_Dad_Shed_Equip,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_Battle_Arena =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_Battle_Arena,
+    .palettes = gTilesetPalettes_Battle_Arena,
+    .metatiles = gMetatiles_Battle_Arena,
+    .metatileAttributes = gMetatileAttributes_Battle_Arena,
+    .callback = NULL,
+};
