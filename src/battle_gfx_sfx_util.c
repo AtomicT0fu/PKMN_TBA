@@ -26,6 +26,7 @@
 #include "constants/rgb.h"
 #include "constants/battle_palace.h"
 #include "constants/battle_move_effects.h"
+#include "constants/event_objects.h" // only for SHADOW_SIZE constants
 
 // this file's functions
 static u8 GetBattlePalaceMoveGroup(u8 battler, u16 move);
@@ -434,6 +435,18 @@ void SpriteCB_TrainerSlideIn(struct Sprite *sprite)
     }
 }
 
+void SpriteCB_TrainerSpawn(struct Sprite *sprite)
+{
+    if (!(gIntroSlideFlags & 1))
+    {
+        sprite->x2 = 0;
+        if (sprite->y2 != 0)
+            sprite->callback = SpriteCB_TrainerSlideVertical;
+        else
+            sprite->callback = SpriteCallbackDummy;
+    }
+}
+
 // Slide up to 0 if necessary (used by multi battle intro)
 static void SpriteCB_TrainerSlideVertical(struct Sprite *sprite)
 {
@@ -753,13 +766,21 @@ bool8 BattleLoadAllHealthBoxesGfx(u8 state)
                     LoadCompressedSpriteSheet(&sSpriteSheet_SinglesPlayerHealthbox);
             }
             else if (state == 3)
+            {
                 LoadCompressedSpriteSheet(&sSpriteSheet_SinglesOpponentHealthbox);
+            }
             else if (state == 4)
+            {
                 LoadCompressedSpriteSheet(&sSpriteSheets_HealthBar[GetBattlerPosition(0)]);
+            }
             else if (state == 5)
+            {
                 LoadCompressedSpriteSheet(&sSpriteSheets_HealthBar[GetBattlerPosition(1)]);
+            }
             else
+            {
                 retVal = TRUE;
+            }
         }
         else
         {
@@ -1130,8 +1151,9 @@ void SetBattlerSpriteAffineMode(u8 affineMode)
     }
 }
 
-#define tBattlerId  data[0]
-#define tSpriteSide data[1]
+#define tBattlerId   data[0]
+#define tSpriteSide  data[1]
+#define tBaseTileNum data[2]
 
 #define SPRITE_SIDE_LEFT    0
 #define SPRITE_SIDE_RIGHT   1
@@ -1152,7 +1174,8 @@ void CreateEnemyShadowSprite(u32 battler)
             struct Sprite *sprite = &gSprites[gBattleSpritesDataPtr->healthBoxesData[battler].shadowSpriteIdPrimary];
             sprite->tBattlerId = battler;
             sprite->tSpriteSide = SPRITE_SIDE_LEFT;
-            sprite->oam.tileNum += 8 * size;
+            sprite->tBaseTileNum = sprite->oam.tileNum;
+            sprite->oam.tileNum = sprite->tBaseTileNum + (8 * size);
             sprite->invisible = TRUE;
         }
 
@@ -1165,7 +1188,8 @@ void CreateEnemyShadowSprite(u32 battler)
             struct Sprite *sprite = &gSprites[gBattleSpritesDataPtr->healthBoxesData[battler].shadowSpriteIdSecondary];
             sprite->tBattlerId = battler;
             sprite->tSpriteSide = SPRITE_SIDE_RIGHT;
-            sprite->oam.tileNum += (8 * size) + 4;
+            sprite->tBaseTileNum = sprite->oam.tileNum + 4;
+            sprite->oam.tileNum = sprite->tBaseTileNum + (8 * size);
             sprite->invisible = TRUE;
         }
     }
@@ -1173,12 +1197,13 @@ void CreateEnemyShadowSprite(u32 battler)
     {
         gBattleSpritesDataPtr->healthBoxesData[battler].shadowSpriteIdPrimary = CreateSprite(&gSpriteTemplate_EnemyShadow,
                                                                                              GetBattlerSpriteCoord(battler, BATTLER_COORD_X),
-                                                                                             GetBattlerSpriteCoord(battler, BATTLER_COORD_Y),
+                                                                                             GetBattlerSpriteCoord(battler, BATTLER_COORD_Y) + 29,
                                                                                              0xC8);
         if (gBattleSpritesDataPtr->healthBoxesData[battler].shadowSpriteIdPrimary < MAX_SPRITES)
         {
             struct Sprite *sprite = &gSprites[gBattleSpritesDataPtr->healthBoxesData[battler].shadowSpriteIdPrimary];
             sprite->tBattlerId = battler;
+            sprite->tBaseTileNum = sprite->oam.tileNum;
             sprite->invisible = TRUE;
         }
     }
@@ -1234,13 +1259,16 @@ void SpriteCB_EnemyShadow(struct Sprite *shadowSprite)
         return;
     }
 
-    s8 xOffset = 0, yOffset = 0;
+    s8 xOffset = 0, UNUSED yOffset = 0, size = SHADOW_SIZE_S;
     if (gAnimScriptActive || battlerSprite->invisible)
+    {
         invisible = TRUE;
+    }
     else if (transformSpecies != SPECIES_NONE)
     {
         xOffset = gSpeciesInfo[transformSpecies].enemyShadowXOffset;
         yOffset = gSpeciesInfo[transformSpecies].enemyShadowYOffset;
+        size = gSpeciesInfo[transformSpecies].enemyShadowSize;
 
         invisible = (B_ENEMY_MON_SHADOW_STYLE >= GEN_4 && P_GBA_STYLE_SPECIES_GFX == FALSE)
                   ? gSpeciesInfo[transformSpecies].suppressEnemyShadow
@@ -1251,10 +1279,7 @@ void SpriteCB_EnemyShadow(struct Sprite *shadowSprite)
         u16 species = SanitizeSpeciesId(gBattleMons[battler].species);
         xOffset = gSpeciesInfo[species].enemyShadowXOffset + (shadowSprite->tSpriteSide == SPRITE_SIDE_LEFT ? -16 : 16);
         yOffset = gSpeciesInfo[species].enemyShadowYOffset + 16;
-    }
-    else
-    {
-        yOffset = 29;
+        size = gSpeciesInfo[species].enemyShadowSize;
     }
 
     if (gBattleSpritesDataPtr->battlerData[battler].behindSubstitute)
@@ -1262,8 +1287,13 @@ void SpriteCB_EnemyShadow(struct Sprite *shadowSprite)
 
     shadowSprite->x = battlerSprite->x + xOffset;
     shadowSprite->x2 = battlerSprite->x2;
-    shadowSprite->y = battlerSprite->y + yOffset;
     shadowSprite->invisible = invisible;
+
+    if (B_ENEMY_MON_SHADOW_STYLE >= GEN_4 && P_GBA_STYLE_SPECIES_GFX == FALSE)
+    {
+        shadowSprite->oam.tileNum = shadowSprite->tBaseTileNum + (8 * size);
+        shadowSprite->y = battlerSprite->y + yOffset;
+    }
 }
 
 #undef tBattlerId
