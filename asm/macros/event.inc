@@ -1897,7 +1897,7 @@
 
 @ Sets the text of the name box in the next-shown message box.
 	.macro speakername text:req
-	.byte 0xe5
+	.byte SCR_OP_SPEAKERNAME
 	.4byte \text
 	.endm
 
