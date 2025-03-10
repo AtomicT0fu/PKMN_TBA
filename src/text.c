@@ -303,11 +303,8 @@ static const u8 sMenuCursorDimensions[][2] =
     [FONT_NARROWER]       = { 8,  15 },
     [FONT_SMALL_NARROWER] = { 8,   8 },
     [FONT_SHORT_NARROW]   = { 8,  14 },
-<<<<<<< HEAD
     [FONT_BW_SUMMARY_SCREEN] = { 8,  14 },
-=======
     [FONT_SHORT_NARROWER] = { 8,  14 },
->>>>>>> 89699939de8998c67611122175f75cc7255ec097
 };
 
 static const u16 sFontBoldJapaneseGlyphs[] = INCBIN_U16("graphics/fonts/bold.hwjpnfont");
@@ -882,21 +879,25 @@ static u16 FontFunc_ShortNarrow(struct TextPrinter *textPrinter)
     return RenderText(textPrinter);
 }
 
-<<<<<<< HEAD
 static u16 FontFunc_BW_Summary_Screen(struct TextPrinter *textPrinter)
-=======
-static u16 FontFunc_ShortNarrower(struct TextPrinter *textPrinter)
->>>>>>> 89699939de8998c67611122175f75cc7255ec097
 {
     struct TextPrinterSubStruct *subStruct = (struct TextPrinterSubStruct *)(&textPrinter->subStructFields);
 
     if (subStruct->hasFontIdBeenSet == FALSE)
     {
-<<<<<<< HEAD
         subStruct->fontId = FONT_BW_SUMMARY_SCREEN;
-=======
+        subStruct->hasFontIdBeenSet = TRUE;
+    }
+    return RenderText(textPrinter);
+}
+
+static u16 FontFunc_ShortNarrower(struct TextPrinter *textPrinter)
+{
+    struct TextPrinterSubStruct *subStruct = (struct TextPrinterSubStruct *)(&textPrinter->subStructFields);
+
+    if (subStruct->hasFontIdBeenSet == FALSE)
+    {
         subStruct->fontId = FONT_SHORT_NARROWER;
->>>>>>> 89699939de8998c67611122175f75cc7255ec097
         subStruct->hasFontIdBeenSet = TRUE;
     }
     return RenderText(textPrinter);

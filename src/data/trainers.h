@@ -42410,7 +42410,7 @@ F_TRAINER_FEMALE |
 #line 16964
             .ability = ABILITY_OWN_TEMPO,
 #line 16965
-            .lvl = 15,
+            .lvl = 5,
 #line 16968
             .nature = NATURE_ADAMANT,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
