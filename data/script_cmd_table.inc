@@ -1,8 +1,15 @@
+@ 'requests_effects' should be set to 1 if the command contains a call
+@ to 'Script_RequestEffects', which allows it to be analyzed with
+@ 'RunScriptImmediatelyUntilEffect'.
 	.ifndef SCRIPT_CMD_TABLE_ENTRY_MACRO
 	.set SCRIPT_CMD_TABLE_ENTRY_MACRO, 1
-	.macro script_cmd_table_entry constant:req value:req
+	.macro script_cmd_table_entry constant:req value:req, requests_effects=0
 	.if ALLOCATE_SCRIPT_CMD_TABLE
+	.if \requests_effects == 0
 	.4byte \value
+	.else
+	.4byte \value + ROM_SIZE
+	.endif
 	.else
 	enum \constant
 	.endif

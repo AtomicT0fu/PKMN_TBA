@@ -2,10 +2,10 @@
 #define GUARD_POKEMON_SUMMARY_SCREEN_H
 
 #include "main.h"
+#include "config/summary_screen.h"
 
 extern u8 gLastViewedMonIndex;
 
-extern const u8 gNotDoneYetDescription[];
 extern const struct SpriteTemplate gSpriteTemplate_MoveTypes;
 extern const struct CompressedSpriteSheet gSpriteSheet_MoveTypes;
 extern const struct CompressedSpriteSheet gSpriteSheet_CategoryIcons;
@@ -26,6 +26,13 @@ enum PokemonSummaryScreenMode
     SUMMARY_MODE_LOCK_MOVES,
     SUMMARY_MODE_BOX,
     SUMMARY_MODE_SELECT_MOVE,
+};
+
+enum PokemonSummarySkillsMode
+{
+    SUMMARY_SKILLS_MODE_STATS,
+    SUMMARY_SKILLS_MODE_IVS,
+    SUMMARY_SKILLS_MODE_EVS,
 };
 
 #endif // GUARD_POKEMON_SUMMARY_SCREEN_H
