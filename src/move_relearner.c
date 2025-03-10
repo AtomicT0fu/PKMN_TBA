@@ -158,8 +158,6 @@ enum {
 #define GFXTAG_UI       5525
 #define PALTAG_UI       5526
 
-#define MAX_RELEARNER_MOVES max(MAX_LEVEL_UP_MOVES, 25)
-
 static EWRAM_DATA struct
 {
     u8 state;
@@ -961,5 +959,24 @@ void MoveRelearnerShowHideHearts(s32 moveId)
                 StartSpriteAnim(&gSprites[sMoveRelearnerStruct->heartSpriteIds[i + 8]], 2);
             gSprites[sMoveRelearnerStruct->heartSpriteIds[i + 8]].invisible = FALSE;
         }
+    }
+}
+
+void MoveRelearnerShowHideCategoryIcon(s32 moveId)
+{
+    if (sMoveRelearnerMenuSate.showContestInfo || moveId == LIST_CANCEL)
+    {
+        if (sMoveRelearnerStruct->categoryIconSpriteId != 0xFF)
+            DestroySprite(&gSprites[sMoveRelearnerStruct->categoryIconSpriteId]);
+
+        sMoveRelearnerStruct->categoryIconSpriteId = 0xFF;
+    }
+    else
+    {
+        if (sMoveRelearnerStruct->categoryIconSpriteId == 0xFF)
+            sMoveRelearnerStruct->categoryIconSpriteId = CreateSprite(&gSpriteTemplate_CategoryIcons, 66, 40, 0);
+
+        gSprites[sMoveRelearnerStruct->categoryIconSpriteId].invisible = FALSE;
+        StartSpriteAnim(&gSprites[sMoveRelearnerStruct->categoryIconSpriteId], GetBattleMoveCategory(moveId));
     }
 }
