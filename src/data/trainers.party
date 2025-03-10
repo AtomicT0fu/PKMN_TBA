@@ -17013,3 +17013,19 @@ Adamant Nature
 - Swords Dance  
 - Roost  
 - Superpower
+
+=== TRAINER_RED_E ===
+Name: RED
+Class: Champion
+Pic: Red
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Smart Trainer
+
+Charmander (M)  
+Ability: Blaze  
+Level: 5  
+Tera Type: Fire  
+- Scratch  
+- Growl

@@ -16,192 +16,204 @@ GiveTurtwig::
 	end
 
 
-SetFlags::
+BattleRed_E::
+# 13 "data/maps/TestMap/scripts.pory"
+	lock
 # 14 "data/maps/TestMap/scripts.pory"
-	setflag FLAG_SYS_B_DASH
+	faceplayer
 # 15 "data/maps/TestMap/scripts.pory"
-	setflag FLAG_SYS_POKEDEX_GET
+	trainerbattle_no_intro TRAINER_RED_E, LoseText
 # 16 "data/maps/TestMap/scripts.pory"
-	setflag FLAG_BADGE01_GET
-# 17 "data/maps/TestMap/scripts.pory"
-	setflag FLAG_BADGE02_GET
-# 18 "data/maps/TestMap/scripts.pory"
-	setflag FLAG_BADGE03_GET
-# 19 "data/maps/TestMap/scripts.pory"
-	setflag FLAG_BADGE04_GET
-# 20 "data/maps/TestMap/scripts.pory"
-	setflag FLAG_BADGE05_GET
+	release
+	end
+
+
+SetFlags::
 # 21 "data/maps/TestMap/scripts.pory"
-	setflag FLAG_BADGE06_GET
+	setflag FLAG_SYS_B_DASH
 # 22 "data/maps/TestMap/scripts.pory"
-	setflag FLAG_BADGE07_GET
+	setflag FLAG_SYS_POKEDEX_GET
 # 23 "data/maps/TestMap/scripts.pory"
-	setflag FLAG_BADGE08_GET
+	setflag FLAG_BADGE01_GET
 # 24 "data/maps/TestMap/scripts.pory"
-	playse SE_E
+	setflag FLAG_BADGE02_GET
 # 25 "data/maps/TestMap/scripts.pory"
-	giveitem ITEM_MEGA_RING, 1
+	setflag FLAG_BADGE03_GET
 # 26 "data/maps/TestMap/scripts.pory"
+	setflag FLAG_BADGE04_GET
+# 27 "data/maps/TestMap/scripts.pory"
+	setflag FLAG_BADGE05_GET
+# 28 "data/maps/TestMap/scripts.pory"
+	setflag FLAG_BADGE06_GET
+# 29 "data/maps/TestMap/scripts.pory"
+	setflag FLAG_BADGE07_GET
+# 30 "data/maps/TestMap/scripts.pory"
+	setflag FLAG_BADGE08_GET
+# 31 "data/maps/TestMap/scripts.pory"
+	playse SE_E
+# 32 "data/maps/TestMap/scripts.pory"
+	giveitem ITEM_MEGA_RING, 1
+# 33 "data/maps/TestMap/scripts.pory"
 	releaseall
 	end
 
 
 SignTest::
-# 31 "data/maps/TestMap/scripts.pory"
+# 38 "data/maps/TestMap/scripts.pory"
 	msgbox SignTest_Text_0, MSGBOX_SIGN
-# 32 "data/maps/TestMap/scripts.pory"
+# 39 "data/maps/TestMap/scripts.pory"
 	setflag FLAG_SYS_NATIONAL_DEX
-# 33 "data/maps/TestMap/scripts.pory"
+# 40 "data/maps/TestMap/scripts.pory"
 	special EnableNationalPokedex
-# 34 "data/maps/TestMap/scripts.pory"
+# 41 "data/maps/TestMap/scripts.pory"
 	waitmessage
-# 35 "data/maps/TestMap/scripts.pory"
+# 42 "data/maps/TestMap/scripts.pory"
 	releaseall
 	end
 
 
 NameBoxTest::
-# 40 "data/maps/TestMap/scripts.pory"
+# 47 "data/maps/TestMap/scripts.pory"
 	lock
-# 41 "data/maps/TestMap/scripts.pory"
+# 48 "data/maps/TestMap/scripts.pory"
 	faceplayer
-# 42 "data/maps/TestMap/scripts.pory"
+# 49 "data/maps/TestMap/scripts.pory"
 	speakername NameBoxTest_Text_0
-# 43 "data/maps/TestMap/scripts.pory"
+# 50 "data/maps/TestMap/scripts.pory"
 	msgbox NameBoxTest_Text_1
-# 44 "data/maps/TestMap/scripts.pory"
+# 51 "data/maps/TestMap/scripts.pory"
 	waitmessage
-# 45 "data/maps/TestMap/scripts.pory"
+# 52 "data/maps/TestMap/scripts.pory"
 	closemessage
-# 46 "data/maps/TestMap/scripts.pory"
+# 53 "data/maps/TestMap/scripts.pory"
 	releaseall
 	end
 
 
 NameBoxTest_2::
-# 51 "data/maps/TestMap/scripts.pory"
+# 58 "data/maps/TestMap/scripts.pory"
 	lock
-# 52 "data/maps/TestMap/scripts.pory"
+# 59 "data/maps/TestMap/scripts.pory"
 	faceplayer
-# 53 "data/maps/TestMap/scripts.pory"
+# 60 "data/maps/TestMap/scripts.pory"
 	speakername NameBoxTest_2_Text_0
-# 54 "data/maps/TestMap/scripts.pory"
+# 61 "data/maps/TestMap/scripts.pory"
 	msgbox NameBoxTest_2_Text_1
-# 55 "data/maps/TestMap/scripts.pory"
+# 62 "data/maps/TestMap/scripts.pory"
 	waitmessage
-# 56 "data/maps/TestMap/scripts.pory"
+# 63 "data/maps/TestMap/scripts.pory"
 	closemessage
-# 57 "data/maps/TestMap/scripts.pory"
+# 64 "data/maps/TestMap/scripts.pory"
 	releaseall
 	end
 
 
 TriggerMayFollow::
-# 62 "data/maps/TestMap/scripts.pory"
-	lock
-# 63 "data/maps/TestMap/scripts.pory"
-	speakername TriggerMayFollow_Text_0
-# 64 "data/maps/TestMap/scripts.pory"
-	msgbox TriggerMayFollow_Text_1
-# 65 "data/maps/TestMap/scripts.pory"
-	waitmessage
-# 66 "data/maps/TestMap/scripts.pory"
-	closemessage
-# 67 "data/maps/TestMap/scripts.pory"
-	removeobject 5
-# 68 "data/maps/TestMap/scripts.pory"
-	addobject 6
 # 69 "data/maps/TestMap/scripts.pory"
-	setvar VAR_TEST_1, 1
+	lock
 # 70 "data/maps/TestMap/scripts.pory"
+	speakername TriggerMayFollow_Text_0
+# 71 "data/maps/TestMap/scripts.pory"
+	msgbox TriggerMayFollow_Text_1
+# 72 "data/maps/TestMap/scripts.pory"
+	waitmessage
+# 73 "data/maps/TestMap/scripts.pory"
+	closemessage
+# 74 "data/maps/TestMap/scripts.pory"
+	removeobject 5
+# 75 "data/maps/TestMap/scripts.pory"
+	addobject 6
+# 76 "data/maps/TestMap/scripts.pory"
+	setvar VAR_TEST_1, 1
+# 77 "data/maps/TestMap/scripts.pory"
 	releaseall
 	end
 
 
 AbraTeleport::
-# 75 "data/maps/TestMap/scripts.pory"
+# 82 "data/maps/TestMap/scripts.pory"
 	faceplayer
-# 76 "data/maps/TestMap/scripts.pory"
+# 83 "data/maps/TestMap/scripts.pory"
 	playmoncry SPECIES_ABRA, 0
-# 77 "data/maps/TestMap/scripts.pory"
+# 84 "data/maps/TestMap/scripts.pory"
 	waitmoncry
-# 78 "data/maps/TestMap/scripts.pory"
+# 85 "data/maps/TestMap/scripts.pory"
 	warpteleport MAP_HIGHLAND_FARMS, 41, 27
 	end
 
 
 AbraTeleport_2::
-# 83 "data/maps/TestMap/scripts.pory"
+# 90 "data/maps/TestMap/scripts.pory"
 	faceplayer
-# 84 "data/maps/TestMap/scripts.pory"
+# 91 "data/maps/TestMap/scripts.pory"
 	playmoncry SPECIES_KADABRA, 0
-# 85 "data/maps/TestMap/scripts.pory"
+# 92 "data/maps/TestMap/scripts.pory"
 	waitmoncry
-# 86 "data/maps/TestMap/scripts.pory"
+# 93 "data/maps/TestMap/scripts.pory"
 	warpsilent MAP_BLACK_SCREEN, 5, 4
 	end
 
 
 RedFly::
-# 91 "data/maps/TestMap/scripts.pory"
+# 98 "data/maps/TestMap/scripts.pory"
 	lock
-# 92 "data/maps/TestMap/scripts.pory"
+# 99 "data/maps/TestMap/scripts.pory"
 	setfieldeffectargument 0, 1
-# 93 "data/maps/TestMap/scripts.pory"
+# 100 "data/maps/TestMap/scripts.pory"
 	dofieldeffect FLDEFF_NPCFLY_OUT
-# 94 "data/maps/TestMap/scripts.pory"
+# 101 "data/maps/TestMap/scripts.pory"
 	delay 15
-# 95 "data/maps/TestMap/scripts.pory"
+# 102 "data/maps/TestMap/scripts.pory"
 	removeobject 6
-# 96 "data/maps/TestMap/scripts.pory"
+# 103 "data/maps/TestMap/scripts.pory"
 	waitfieldeffect FLDEFF_NPCFLY_OUT
-# 97 "data/maps/TestMap/scripts.pory"
+# 104 "data/maps/TestMap/scripts.pory"
 	release
 	end
 
 
 FlyIn::
-# 102 "data/maps/TestMap/scripts.pory"
+# 109 "data/maps/TestMap/scripts.pory"
 	lock
-# 103 "data/maps/TestMap/scripts.pory"
+# 110 "data/maps/TestMap/scripts.pory"
 	setfieldeffectargument 0, 2
-# 104 "data/maps/TestMap/scripts.pory"
+# 111 "data/maps/TestMap/scripts.pory"
 	dofieldeffect FLDEFF_NPCFLY_OUT
-# 105 "data/maps/TestMap/scripts.pory"
+# 112 "data/maps/TestMap/scripts.pory"
 	delay 15
-# 106 "data/maps/TestMap/scripts.pory"
+# 113 "data/maps/TestMap/scripts.pory"
 	addobject 6
-# 107 "data/maps/TestMap/scripts.pory"
+# 114 "data/maps/TestMap/scripts.pory"
 	waitfieldeffect FLDEFF_NPCFLY_OUT
-# 108 "data/maps/TestMap/scripts.pory"
+# 115 "data/maps/TestMap/scripts.pory"
 	release
 	end
 
 
 SignTest_Text_0:
-# 31 "data/maps/TestMap/scripts.pory"
+# 38 "data/maps/TestMap/scripts.pory"
 	.string "Hello, world!$"
 
 NameBoxTest_Text_0:
-# 42 "data/maps/TestMap/scripts.pory"
+# 49 "data/maps/TestMap/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}Archie$"
 
 NameBoxTest_Text_1:
-# 43 "data/maps/TestMap/scripts.pory"
+# 50 "data/maps/TestMap/scripts.pory"
 	.string "Expand the Sea!$"
 
 NameBoxTest_2_Text_0:
-# 53 "data/maps/TestMap/scripts.pory"
+# 60 "data/maps/TestMap/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_RED}Maxie$"
 
 NameBoxTest_2_Text_1:
-# 54 "data/maps/TestMap/scripts.pory"
+# 61 "data/maps/TestMap/scripts.pory"
 	.string "Expand the Land!$"
 
 TriggerMayFollow_Text_0:
-# 63 "data/maps/TestMap/scripts.pory"
+# 70 "data/maps/TestMap/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_RED}SYSTEM$"
 
 TriggerMayFollow_Text_1:
-# 64 "data/maps/TestMap/scripts.pory"
+# 71 "data/maps/TestMap/scripts.pory"
 	.string "MAY IS FOLLOWING YOU$"

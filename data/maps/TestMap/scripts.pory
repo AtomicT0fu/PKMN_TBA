@@ -9,6 +9,13 @@ script GiveTurtwig{
     end
 }
 
+script BattleRed_E{
+    lock
+    faceplayer
+    trainerbattle_no_intro(TRAINER_RED_E, LoseText)
+    release
+    end
+}
 
 script SetFlags{
     setflag(FLAG_SYS_B_DASH)
