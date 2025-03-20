@@ -363,7 +363,7 @@ text HF_T_Mike1{
 
 text HF_T_Mike2{
     "Wow, that was pretty quick, {PLAYER}!\n"
-    "But let's see how fast you really are...\p"
+    "But let's see how fast you really are.\p"
     "Let's race to Old Bo's Ranch!\p"
     "...\n"
     "GO!"

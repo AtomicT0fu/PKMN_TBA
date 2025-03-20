@@ -1182,3 +1182,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Battle_Stage_Video/scripts.inc"
 	
 	.include "data/scripts/dexnav.inc"
+
+	.include "data/maps/WindhillHollow/scripts.inc"

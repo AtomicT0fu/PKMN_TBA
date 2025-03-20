@@ -4474,7 +4474,7 @@
     {
       "id": "LAYOUT_OLD_BOS_RANCH",
       "name": "Old_Bos_Ranch_Layout",
-      "width": 36,
+      "width": 46,
       "height": 36,
       "primary_tileset": "gTileset_Grass_1",
       "secondary_tileset": "gTileset_Bo_Ranch",
@@ -4540,6 +4540,16 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/Battle_Stage_Video/border.bin",
       "blockdata_filepath": "data/layouts/Battle_Stage_Video/map.bin"
+    },
+    {
+      "id": "LAYOUT_WINDHILL_HOLLOW",
+      "name": "WindhillHollow_Layout",
+      "width": 56,
+      "height": 34,
+      "primary_tileset": "gTileset_Grass_1",
+      "secondary_tileset": "gTileset_Highland_Farms",
+      "border_filepath": "data/layouts/WindhillHollow/border.bin",
+      "blockdata_filepath": "data/layouts/WindhillHollow/map.bin"
     }
   ]
 }
