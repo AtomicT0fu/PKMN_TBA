@@ -1,0 +1,49 @@
+mapscripts WindhillHollow_MapScripts{}
+
+script WHH_Ponyta_Interact{
+    faceplayer
+    playmoncry(SPECIES_PONYTA, 0)
+    waitmoncry
+    fadescreen(FADE_TO_BLACK)
+    playse(SE_EXIT)
+    waitse
+    removeobject(3)
+    setflag(FLAG_WHH_HIDE_PONYTA)
+    clearflag(FLAG_OBR_SHOW_PONYTA)
+    fadescreen(FADE_FROM_BLACK)
+    addvar(VAR_WHH_STARTERS, 1)
+    release
+    end
+}
+
+script WHH_Mudbray_Interact{
+    faceplayer
+    playmoncry(SPECIES_MUDBRAY, 0)
+    waitmoncry
+    fadescreen(FADE_TO_BLACK)
+    playse(SE_EXIT)
+    waitse
+    removeobject(2)
+    setflag(FLAG_WHH_HIDE_MUDBRAY)
+    clearflag(FLAG_OBR_SHOW_MUDBRAY)
+    fadescreen(FADE_FROM_BLACK)
+    addvar(VAR_WHH_STARTERS, 1)
+    release
+    end
+}
+
+script WHH_Skiddo_Interact{
+    faceplayer
+    playmoncry(SPECIES_SKIDDO, 0)
+    waitmoncry
+    fadescreen(FADE_TO_BLACK)
+    playse(SE_EXIT)
+    waitse
+    removeobject(1)
+    setflag(FLAG_WHH_HIDE_SKIDDO)
+    clearflag(FLAG_OBR_SHOW_SKIDDO)
+    fadescreen(FADE_FROM_BLACK)
+    addvar(VAR_WHH_STARTERS, 1)
+    release
+    end
+}

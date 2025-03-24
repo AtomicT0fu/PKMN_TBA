@@ -24,8 +24,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "WHH_Skiddo_Interact",
+      "flag": "FLAG_WHH_HIDE_SKIDDO"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MUDBRAY)",
@@ -37,8 +37,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "WHH_Mudbray_Interact",
+      "flag": "FLAG_WHH_HIDE_MUDBRAY"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PONYTA)",
@@ -50,8 +50,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "WHH_Ponyta_Interact",
+      "flag": "FLAG_WHH_HIDE_PONYTA"
     }
   ],
   "warp_events": [

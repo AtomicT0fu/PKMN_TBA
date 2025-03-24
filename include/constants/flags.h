@@ -43,21 +43,21 @@
 #define TEMP_FLAGS_END   FLAG_TEMP_1F
 #define NUM_TEMP_FLAGS   (TEMP_FLAGS_END - TEMP_FLAGS_START + 1)
 
-#define FLAG_HIDE_BALL       0x20 // TESTING***
-#define FLAG_HIDE_BALL_2     0x21 // *_*
-#define FLAG_HIDE_BALL_3     0x22 // *_*
-#define FLAG_SUPPRESS_SPEAKER_NAME    0x23 // Hides Speaker box
-#define FLAG_SPROUTS_PLANTED 0x24 // UpdatesSprout Metatiles in Highland_Farms
-#define FLAG_HIDE_DAD_1      0x25 // Hides Intro Dad Sprite In Farm
-#define FLAG_UNUSED_0x026    0x26 // Unused Flag
-#define FLAG_UNUSED_0x027    0x27 // Unused Flag
-#define FLAG_UNUSED_0x028    0x28 // Unused Flag
-#define FLAG_UNUSED_0x029    0x29 // Unused Flag
-#define FLAG_UNUSED_0x02A    0x2A // Unused Flag
-#define FLAG_UNUSED_0x02B    0x2B // Unused Flag
-#define FLAG_UNUSED_0x02C    0x2C // Unused Flag
-#define FLAG_UNUSED_0x02D    0x2D // Unused Flag
-#define FLAG_UNUSED_0x02E    0x2E // Unused Flag
+#define FLAG_HIDE_BALL                      0x20 // TESTING***
+#define FLAG_HIDE_BALL_2                    0x21 // *_*
+#define FLAG_HIDE_BALL_3                    0x22 // *_*
+#define FLAG_SUPPRESS_SPEAKER_NAME          0x23 // Hides Speaker box
+#define FLAG_SPROUTS_PLANTED                0x24 // UpdatesSprout Metatiles in Highland_Farms
+#define FLAG_HIDE_DAD_1                     0x25 // Hides Intro Dad Sprite In Farm
+#define FLAG_OBR_HIDE_SKIDDO_AND_MUDRBAY    0x26 // hides skiddo and mudbray sprites in bos ranch starter intro
+#define FLAG_OBR_HIDE_PONYTA                0x27 // Hides ponyta sprite at bos ranch in starter intro
+#define FLAG_OBR_FENCE_BROKEN               0x28 // Updates broken fence tiles at bo's ranch
+#define FLAG_WHH_HIDE_PONYTA                0x29 // hides ponyta sprite in forest
+#define FLAG_WHH_HIDE_MUDBRAY               0x2A // hides mudbray sprite in forest
+#define FLAG_WHH_HIDE_SKIDDO                0x2B // hides skiddo sprite in forest
+#define FLAG_OBR_SHOW_PONYTA     0x2C // shows ponyta at obr after forest
+#define FLAG_OBR_SHOW_MUDBRAY    0x2D // shows mudbray at obr after forest
+#define FLAG_OBR_SHOW_SKIDDO     0x2E // shows skiddo at obr after forest
 #define FLAG_UNUSED_0x02F    0x2F // Unused Flag
 #define FLAG_UNUSED_0x030    0x30 // Unused Flag
 #define FLAG_UNUSED_0x031    0x31 // Unused Flag
@@ -669,9 +669,9 @@
 #define FLAG_ALL_HERBS_COMPLETE      0x26E // green, red, yellow packaged
 #define FLAG_HIDE_RIVAL_MIKE_1       0x26F // Hides MIKE outside player house 
 #define FLAG_HIDE_RIVAL_MIKE_2       0x270 // Hides MIKE in player house 1F
-#define FLAG_HIDE_RIVAL_MIKE_3       0x271 // Hides MIKE at BO's Ranch
-#define FLAG_UNUSED_0x272  0x272 // Unused Flag
-#define FLAG_UNUSED_0x273  0x273 // Unused Flag
+#define FLAG_OBR_HIDE_RIVAL_MIKE       0x271 // Hides MIKE at BO's Ranch
+#define FLAG_OBR_HIDE_RIVAL_MIKE_2     0x272 // Unused Flag
+#define FLAG_OBR_HIDE_RIVAL_MIKE_3     0x273 // Unused Flag
 #define FLAG_UNUSED_0x274  0x274 // Unused Flag
 #define FLAG_UNUSED_0x275  0x275 // Unused Flag
 #define FLAG_UNUSED_0x276  0x276 // Unused Flag

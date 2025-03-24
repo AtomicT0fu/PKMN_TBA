@@ -132,8 +132,6 @@ BSV_Scene_Start::
 	applymovement 4, BSV_Absol_Lunge
 # 71 "data/maps/Battle_Stage_Video/scripts.pory"
 	waitmovement 0
-# 72 "data/maps/Battle_Stage_Video/scripts.pory"
-	ai_vs_ai_battle TRAINER_CHAMPION_NORMAN, TRAINER_CHAMPION_DEE
 # 73 "data/maps/Battle_Stage_Video/scripts.pory"
 	removeobject 3
 # 74 "data/maps/Battle_Stage_Video/scripts.pory"

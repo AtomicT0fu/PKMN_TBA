@@ -9,7 +9,7 @@ script WarpToStart{
     delay(60)
     fadescreen(FADE_TO_BLACK)
     call(ReDrawRoom)
-    fadenewbgm(MUS_FORTREE)
+    fadenewbgm(MUS_FALLARBOR)
     delay(30)
     addobject(1)
     playse(SE_EXIT)
@@ -125,6 +125,11 @@ script ReDrawRoom{
 script Set_Start_Flags{                  //USE TO SET ANY FLAGS NEEDED AT START
     setflag(FLAG_HIDE_RIVAL_MIKE_1)
     setflag(FLAG_HIDE_RIVAL_MIKE_2)
+    setflag(FLAG_OBR_HIDE_RIVAL_MIKE_2)
+    setflag(FLAG_OBR_HIDE_RIVAL_MIKE_3)
+    setflag(FLAG_OBR_SHOW_MUDBRAY)
+    setflag(FLAG_OBR_SHOW_SKIDDO)
+    setflag(FLAG_OBR_SHOW_PONYTA)
     return
 }
 

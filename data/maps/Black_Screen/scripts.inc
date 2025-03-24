@@ -19,7 +19,7 @@ WarpToStart::
 # 11 "data/maps/Black_Screen/scripts.pory"
 	call ReDrawRoom
 # 12 "data/maps/Black_Screen/scripts.pory"
-	fadenewbgm MUS_FORTREE
+	fadenewbgm MUS_FALLARBOR
 # 13 "data/maps/Black_Screen/scripts.pory"
 	delay 30
 # 14 "data/maps/Black_Screen/scripts.pory"
@@ -238,58 +238,68 @@ Set_Start_Flags::
 	setflag FLAG_HIDE_RIVAL_MIKE_1
 # 127 "data/maps/Black_Screen/scripts.pory"
 	setflag FLAG_HIDE_RIVAL_MIKE_2
+# 128 "data/maps/Black_Screen/scripts.pory"
+	setflag FLAG_OBR_HIDE_RIVAL_MIKE_2
+# 129 "data/maps/Black_Screen/scripts.pory"
+	setflag FLAG_OBR_HIDE_RIVAL_MIKE_3
+# 130 "data/maps/Black_Screen/scripts.pory"
+	setflag FLAG_OBR_SHOW_MUDBRAY
+# 131 "data/maps/Black_Screen/scripts.pory"
+	setflag FLAG_OBR_SHOW_SKIDDO
+# 132 "data/maps/Black_Screen/scripts.pory"
+	setflag FLAG_OBR_SHOW_PONYTA
 	return
 
 
-# 136 "data/maps/Black_Screen/scripts.pory"
+# 141 "data/maps/Black_Screen/scripts.pory"
 PHB1F_Lillipup_Walk1:
-# 137 "data/maps/Black_Screen/scripts.pory"
+# 142 "data/maps/Black_Screen/scripts.pory"
 	walk_fast_down
-# 137 "data/maps/Black_Screen/scripts.pory"
+# 142 "data/maps/Black_Screen/scripts.pory"
 	walk_fast_down
-# 137 "data/maps/Black_Screen/scripts.pory"
+# 142 "data/maps/Black_Screen/scripts.pory"
 	walk_fast_down
-# 138 "data/maps/Black_Screen/scripts.pory"
+# 143 "data/maps/Black_Screen/scripts.pory"
 	walk_fast_right
-# 138 "data/maps/Black_Screen/scripts.pory"
+# 143 "data/maps/Black_Screen/scripts.pory"
 	walk_fast_right
 	step_end
 
-# 141 "data/maps/Black_Screen/scripts.pory"
+# 146 "data/maps/Black_Screen/scripts.pory"
 JumpInPlace_Down:
-# 142 "data/maps/Black_Screen/scripts.pory"
+# 147 "data/maps/Black_Screen/scripts.pory"
 	jump_in_place_down
 	step_end
 
-# 145 "data/maps/Black_Screen/scripts.pory"
+# 150 "data/maps/Black_Screen/scripts.pory"
 JumpInPlace_Right:
-# 146 "data/maps/Black_Screen/scripts.pory"
+# 151 "data/maps/Black_Screen/scripts.pory"
 	jump_in_place_right
 	step_end
 
-# 149 "data/maps/Black_Screen/scripts.pory"
+# 154 "data/maps/Black_Screen/scripts.pory"
 JumpInPlace_Up:
-# 150 "data/maps/Black_Screen/scripts.pory"
+# 155 "data/maps/Black_Screen/scripts.pory"
 	jump_in_place_up
 	step_end
 
-# 153 "data/maps/Black_Screen/scripts.pory"
+# 158 "data/maps/Black_Screen/scripts.pory"
 BS_Lilli_Ex1:
-# 154 "data/maps/Black_Screen/scripts.pory"
+# 159 "data/maps/Black_Screen/scripts.pory"
 	emote_exclamation_mark
 	step_end
 
-# 157 "data/maps/Black_Screen/scripts.pory"
+# 162 "data/maps/Black_Screen/scripts.pory"
 BS_Lilli_Move1:
-# 158 "data/maps/Black_Screen/scripts.pory"
+# 163 "data/maps/Black_Screen/scripts.pory"
 	walk_fast_left
-# 158 "data/maps/Black_Screen/scripts.pory"
+# 163 "data/maps/Black_Screen/scripts.pory"
 	walk_fast_left
-# 159 "data/maps/Black_Screen/scripts.pory"
+# 164 "data/maps/Black_Screen/scripts.pory"
 	walk_fast_up
-# 159 "data/maps/Black_Screen/scripts.pory"
+# 164 "data/maps/Black_Screen/scripts.pory"
 	walk_fast_up
-# 159 "data/maps/Black_Screen/scripts.pory"
+# 164 "data/maps/Black_Screen/scripts.pory"
 	walk_fast_up
 	step_end
 
@@ -298,9 +308,9 @@ BS_Leave_Bed_Text_0:
 	.string "{COLOR RED}{SHADOW LIGHT_RED}{FONT_SHORT}Mom$"
 
 BS_T_Mom1::
-# 164 "data/maps/Black_Screen/scripts.pory"
+# 169 "data/maps/Black_Screen/scripts.pory"
 	.string "{FONT_SMALL_NARROWER}Lilli!$"
 
 BS_T_Mom2::
-# 168 "data/maps/Black_Screen/scripts.pory"
+# 173 "data/maps/Black_Screen/scripts.pory"
 	.string "{FONT_SMALL_NARROWER}Where'd you go, sweetie??$"

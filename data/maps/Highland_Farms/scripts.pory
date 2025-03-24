@@ -248,8 +248,7 @@ script HF_Mike_ReadyToGo{
     waitmovement(4)
     special(RemoveCameraObject)
     speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
-    msgbox(HF_T_Mike2)
-    closemessage
+    msgbox(HF_T_Mike2, MSGBOX_AUTOCLOSE)
     applymovement(OBJ_EVENT_ID_PLAYER, HF_W_Player2)
     waitmovement(0)
     applymovement(4, HF_W_Mike4)
@@ -362,9 +361,7 @@ text HF_T_Mike1{
 }
 
 text HF_T_Mike2{
-    "Wow, that was pretty quick, {PLAYER}!\n"
-    "But let's see how fast you really are.\p"
-    "Let's race to Old Bo's Ranch!\p"
-    "...\n"
-    "GO!"
+    "Hey, that was pretty quick, {PLAYER}!\n"
+    "How about a race down to Bo's ranch?!\p"
+    "Three... {PAUSE 30}Two... {PAUSE 30}GO!"
 }

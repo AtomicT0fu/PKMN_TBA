@@ -2,7 +2,7 @@
   "id": "MAP_OLD_BOS_RANCH",
   "name": "Old_Bos_Ranch",
   "layout": "LAYOUT_OLD_BOS_RANCH",
-  "music": "MUS_LILYCOVE_MUSEUM",
+  "music": "MUS_FALLARBOR",
   "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -83,7 +83,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_OBR_HIDE_SKIDDO_AND_MUDRBAY"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(SKIDDO)",
@@ -96,7 +96,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_OBR_HIDE_SKIDDO_AND_MUDRBAY"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PONYTA)",
@@ -109,12 +109,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_OBR_HIDE_PONYTA"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_RIVAL_MIKE",
-      "x": 19,
-      "y": 15,
+      "x": 24,
+      "y": 12,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_LEFT_AND_RIGHT",
       "movement_range_x": 0,
@@ -122,7 +122,72 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_HIDE_RIVAL_MIKE_3"
+      "flag": "FLAG_OBR_HIDE_RIVAL_MIKE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_RIVAL_MIKE",
+      "x": 29,
+      "y": 9,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_OBR_HIDE_RIVAL_MIKE_2"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_RIVAL_MIKE",
+      "x": 7,
+      "y": 13,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OBR_Mike_Interact_ForestEntrance",
+      "flag": "FLAG_OBR_HIDE_RIVAL_MIKE_3"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MUDBRAY)",
+      "x": 6,
+      "y": 12,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_OBR_SHOW_MUDBRAY"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PONYTA)",
+      "x": 7,
+      "y": 12,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_OBR_SHOW_PONYTA"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SKIDDO)",
+      "x": 8,
+      "y": 12,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_OBR_SHOW_SKIDDO"
     }
   ],
   "warp_events": [
@@ -151,8 +216,8 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 19,
-      "y": 17,
+      "x": 22,
+      "y": 13,
       "elevation": 0,
       "var": "VAR_ADVENTURE_START",
       "var_value": "14",
@@ -160,12 +225,75 @@
     },
     {
       "type": "trigger",
-      "x": 18,
-      "y": 17,
+      "x": 22,
+      "y": 14,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
-      "var_value": "0",
-      "script": "NULL"
+      "var": "VAR_ADVENTURE_START",
+      "var_value": "14",
+      "script": "OBR_Mike_FollowB"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_ADVENTURE_START",
+      "var_value": "15",
+      "script": "OBR_TurnBackA"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_ADVENTURE_START",
+      "var_value": "15",
+      "script": "OBR_TurnBackB"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_ADVENTURE_START",
+      "var_value": "15",
+      "script": "OBR_TurnBackB"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_WHH_STARTERS",
+      "var_value": "1",
+      "script": "OBR_OneStarterFound"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_WHH_STARTERS",
+      "var_value": "1",
+      "script": "OBR_OneStarterFound"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_WHH_STARTERS",
+      "var_value": "2",
+      "script": "OBR_TwoStartersFound"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_WHH_STARTERS",
+      "var_value": "2",
+      "script": "OBR_TwoStartersFound"
     }
   ],
   "bg_events": [

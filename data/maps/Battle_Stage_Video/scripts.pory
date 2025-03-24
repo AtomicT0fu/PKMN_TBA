@@ -69,7 +69,7 @@ script BSV_Scene_Start{
     applymovement(3, BSV_Arcanine_Lunge)
     applymovement(4, BSV_Absol_Lunge)
     waitmovement(0)
-    ai_vs_ai_battle(TRAINER_CHAMPION_NORMAN, TRAINER_CHAMPION_DEE)
+    //ai_vs_ai_battle(TRAINER_CHAMPION_NORMAN, TRAINER_CHAMPION_DEE)
     removeobject(3)
     removeobject(4)
     setvar(VAR_ADVENTURE_START, 11)

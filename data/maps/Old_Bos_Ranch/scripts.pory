@@ -1,27 +1,855 @@
-mapscripts Old_Bos_Ranch_MapScripts{}
+mapscripts Old_Bos_Ranch_MapScripts{
+    MAP_SCRIPT_ON_LOAD: CheckFenceFlag
+    MAP_SCRIPT_ON_FRAME_TABLE[
+        VAR_WHH_STARTERS, 3: OBR_AllStartersFound
+    ]
+}
 
 script OBR_Mike_FollowA{
-    turnobject(2, DIR_SOUTH)
-    applymovement(2, Univ_Exclam)
+    turnobject(8, DIR_WEST)
+    applymovement(8, Univ_Exclam)
     playse(SE_PIN)
     waitmovement(0)
     waitse
     delay(60)
-    applymovement(8, Univ_StepDown1)
+    applymovement(8, OBR_M_Mike1)
     waitmovement(0)
     delay(20)
     speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
     msgbox(OBR_T_Mike1)
     waitmessage
     closemessage
-
+    applymovement(8, OBR_M_Mike2)
+    applymovement(OBJ_EVENT_ID_PLAYER, OBR_M_Player1)
+    waitmovement(0)
+    delay(40)
+    playse(SE_MUD_BALL)
+    delay(20)
+    playse(SE_MUD_BALL)
+    delay(20)
+    playse(SE_MUD_BALL)
+    delay(80)
+    playse(SE_MUD_BALL)
+    delay(20)
+    playse(SE_MUD_BALL)
+    delay(20)
+    playse(SE_MUD_BALL)
+    delay(60)
+    playse(SE_PIN)
+    applymovement(8, Univ_Question)
+    waitmovement(0)
+    delay(60)
+    turnobject(8, DIR_SOUTH)
+    delay(20)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+    msgbox(OBR_T_Mike2)
+    waitmessage
+    closemessage
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, OBR_M_CamPan1)
+    waitmovement(0)
+    delay(60)
+    playse(SE_BIKE_HOP)
+    applymovement(7, Univ_JumpIP_1Down)
+    waitmovement(0)
+    playse(SE_BIKE_HOP)
+    applymovement(7, Univ_JumpIP_1Down)
+    waitmovement(0)
+    delay(40)
+    playse(SE_BIKE_HOP)
+    applymovement(5, Univ_JumpIP_1Up)
+    delay(10)
+    playse(SE_BIKE_HOP)
+    applymovement(6, Univ_JumpIP_1Up)
+    waitmovement(0)
+    delay(60)
+    applymovement(7, OBR_M_Ponyta1)
+    applymovement(OBJ_EVENT_ID_CAMERA, OBR_M_Ponyta1)
+    waitmovement(0)
+    turnobject(5, DIR_WEST)
+    turnobject(6, DIR_WEST)
+    delay(60)
+    playmoncry(SPECIES_PONYTA, 0)
+    waitmoncry
+    playse(SE_BIKE_HOP)
+    applymovement(7, Univ_JumpIP_1Left)
+    waitmovement(0)
+    delay(20)
+    playmoncry(SPECIES_PONYTA, 0)
+    waitmoncry
+    turnobject(8, DIR_EAST)
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_EAST)
+    playse(SE_PIN)
+    playse(SE_PIN)
+    applymovement(8, Univ_Exclam)
+    applymovement(OBJ_EVENT_ID_PLAYER, Univ_Exclam)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_CAMERA, OBR_M_CamPan2)
+    waitmovement(0)
+    special(RemoveCameraObject)
+    delay(20)
+    turnobject(8, DIR_SOUTH)
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+    delay(20)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+    msgbox(OBR_T_Mike3)
+    waitmessage
+    closemessage
+    applymovement(8, OBR_M_Mike3)
+    applymovement(OBJ_EVENT_ID_PLAYER, OBR_M_Player2)
+    waitmovement(0)
+    delay(30)
+    playmoncry(SPECIES_PONYTA, 0)
+    waitmoncry
+    playse(SE_BIKE_HOP)
+    applymovement(7, Univ_JumpIP_1Left)
+    waitmovement(0)
+    delay(20)
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, OBR_M_CamPan3)
+    waitmovement(0)
+    delay(40)
+    setmetatile(30, 18, 0x267, TRUE)
+    setmetatile(30, 19, 0x000, FALSE)
+    setmetatile(30, 20, 0x25F, TRUE)
+    playse(SE_EFFECTIVE)
+    applymovement(5, OBR_M_Mudbray1)
+    special(DrawWholeMapView)
+    setflag(FLAG_OBR_FENCE_BROKEN)
+    waitmovement(0)
+    delay(60)
+    turnobject(5, DIR_EAST)
+    delay(20)
+    playse(SE_BIKE_HOP)
+    applymovement(5, Univ_JumpIP_1Right)
+    delay(10)    
+    playse(SE_BIKE_HOP)
+    applymovement(6, Univ_JumpIP_1Left)
+    waitmovement(0)
+    delay(60)
+    applymovement(5, OBR_M_Mudbray2)
+    applymovement(6, OBR_M_Skiddo1)
+    waitmovement(0)
+    removeobject(5)
+    removeobject(6)
+    setflag(FLAG_OBR_HIDE_SKIDDO_AND_MUDRBAY)
+    applymovement(OBJ_EVENT_ID_CAMERA, OBR_M_CamPan4)
+    waitmovement(0)
+    delay(30)
+    turnobject(7, DIR_SOUTH)
+    delay(20)
+    playse(SE_BIKE_HOP)
+    applymovement(7, Univ_JumpIP_1Down)
+    waitmovement(0)
+    delay(20)
+    applymovement(7, OBR_M_Ponyta2)
+    applymovement(OBJ_EVENT_ID_CAMERA, OBR_M_CamPan5)
+    waitmovement(7)
+    removeobject(8)
+    setflag(FLAG_OBR_HIDE_RIVAL_MIKE)
+    clearflag(FLAG_OBR_HIDE_RIVAL_MIKE_2)
+    addobject(9)
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_WEST)
+    applymovement(7, OBR_M_Ponyta3)
+    applymovement(OBJ_EVENT_ID_CAMERA, OBR_M_CamPan6)
+    waitmovement(7)
+    removeobject(7)
+    setflag(FLAG_OBR_HIDE_PONYTA)
+    delay(20)
+    applymovement(OBJ_EVENT_ID_CAMERA, OBR_M_CamPan7)
+    waitmovement(0)
+    special(RemoveCameraObject)
+    playbgm(MUS_HELP, FALSE)
+    playse(SE_PIN)
+    applymovement(9, Univ_Exclam)
+    waitmovement(9)
+    delay(20)
+    applymovement(9, OBR_M_Mike4)
+    waitmovement(9)
+    delay(20)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+    msgbox(OBR_T_Mike4)
+    waitmessage
+    closemessage
+    applymovement(9, OBR_M_Mike5)
+    waitmovement(0)
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+    delay(20)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+    msgbox(OBR_T_Mike5)
+    waitmessage
+    closemessage
+    applymovement(9, OBR_M_Mike6)
+    waitmovement(9)
+    applymovement(9, OBR_M_Mike7)
+    applymovement(OBJ_EVENT_ID_PLAYER, OBR_M_Player3)
+    waitmovement(0)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+    msgbox(OBR_T_Mike6)
+    waitmessage
+    closemessage
+    delay(60)
+    turnobject(9, DIR_SOUTH)
+    delay(30)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+    msgbox(OBR_T_Mike7, MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES){
+        speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+        msgbox(OBR_T_Mike8)
+        waitmessage
+        closemessage
+        delay(40)
+        playse(SE_REPEL)
+        waitse
+        setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+        msgbox(OBR_T_System1)
+        waitmessage
+        closemessage
+        delay(40)
+        clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+        speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+        msgbox(OBR_T_Mike9)
+        waitmessage
+        closemessage
+        applymovement(9, OBR_M_Mike8)
+        applymovement(OBJ_EVENT_ID_PLAYER, OBR_M_Player4)
+        waitmovement(0)
+        turnobject(9, DIR_NORTH)
+        clearflag(FLAG_OBR_HIDE_RIVAL_MIKE_3)
+        addobject(10)
+        removeobject(9)
+        setflag(FLAG_OBR_HIDE_RIVAL_MIKE_2)
+    }
+    else{
+        delay(40)
+        playse(SE_REPEL)
+        waitse
+        setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+        msgbox(OBR_T_System1)
+        waitmessage
+        closemessage
+        delay(40)
+        clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+        speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+        msgbox(OBR_T_Mike10)
+        waitmessage
+        closemessage
+        applymovement(9, OBR_M_Mike8)
+        applymovement(OBJ_EVENT_ID_PLAYER, OBR_M_Player4)
+        waitmovement(0)
+        turnobject(9, DIR_NORTH)
+        clearflag(FLAG_OBR_HIDE_RIVAL_MIKE_3)
+        addobject(10)
+        removeobject(9)
+        setflag(FLAG_OBR_HIDE_RIVAL_MIKE_2)
+    }
     setvar(VAR_ADVENTURE_START, 15)
     release
     end
 }
 
-text OBR_T_Mike1{
-    "Haha, too slow again, {PLAYER}.\p"
-    "I'll follow behind you so I can catch my\n"
-    "breath, the ranch is just up the path!"
+script OBR_Mike_FollowB{
+    turnobject(8, DIR_WEST)
+    applymovement(8, Univ_Exclam)
+    playse(SE_PIN)
+    waitmovement(0)
+    waitse
+    delay(60)
+    applymovement(8, OBR_M_Mike1_B)
+    waitmovement(0)
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+    delay(20)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+    msgbox(OBR_T_Mike1)
+    waitmessage
+    closemessage
+    applymovement(8, OBR_M_Mike2_B)
+    applymovement(OBJ_EVENT_ID_PLAYER, OBR_M_Player1_B)
+    waitmovement(0)
+    delay(40)
+    playse(SE_MUD_BALL)
+    delay(20)
+    playse(SE_MUD_BALL)
+    delay(20)
+    playse(SE_MUD_BALL)
+    delay(80)
+    playse(SE_MUD_BALL)
+    delay(20)
+    playse(SE_MUD_BALL)
+    delay(20)
+    playse(SE_MUD_BALL)
+    delay(60)
+    playse(SE_PIN)
+    applymovement(8, Univ_Question)
+    waitmovement(0)
+    delay(60)
+    turnobject(8, DIR_SOUTH)
+    delay(20)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+    msgbox(OBR_T_Mike2)
+    waitmessage
+    closemessage
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, OBR_M_CamPan1)
+    waitmovement(0)
+    delay(60)
+    playse(SE_BIKE_HOP)
+    applymovement(7, Univ_JumpIP_1Down)
+    waitmovement(0)
+    playse(SE_BIKE_HOP)
+    applymovement(7, Univ_JumpIP_1Down)
+    waitmovement(0)
+    delay(40)
+    playse(SE_BIKE_HOP)
+    applymovement(5, Univ_JumpIP_1Up)
+    delay(10)
+    playse(SE_BIKE_HOP)
+    applymovement(6, Univ_JumpIP_1Up)
+    waitmovement(0)
+    delay(60)
+    applymovement(7, OBR_M_Ponyta1)
+    applymovement(OBJ_EVENT_ID_CAMERA, OBR_M_Ponyta1)
+    waitmovement(0)
+    turnobject(5, DIR_WEST)
+    turnobject(6, DIR_WEST)
+    delay(60)
+    playmoncry(SPECIES_PONYTA, 0)
+    waitmoncry
+    playse(SE_BIKE_HOP)
+    applymovement(7, Univ_JumpIP_1Left)
+    waitmovement(0)
+    delay(20)
+    playmoncry(SPECIES_PONYTA, 0)
+    waitmoncry
+    turnobject(8, DIR_EAST)
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_EAST)
+    playse(SE_PIN)
+    playse(SE_PIN)
+    applymovement(8, Univ_Exclam)
+    applymovement(OBJ_EVENT_ID_PLAYER, Univ_Exclam)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_CAMERA, OBR_M_CamPan2)
+    waitmovement(0)
+    special(RemoveCameraObject)
+    delay(20)
+    turnobject(8, DIR_SOUTH)
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+    delay(20)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+    msgbox(OBR_T_Mike3)
+    waitmessage
+    closemessage
+    applymovement(8, OBR_M_Mike3)
+    applymovement(OBJ_EVENT_ID_PLAYER, OBR_M_Player2)
+    waitmovement(0)
+    delay(30)
+    playmoncry(SPECIES_PONYTA, 0)
+    waitmoncry
+    playse(SE_BIKE_HOP)
+    applymovement(7, Univ_JumpIP_1Left)
+    waitmovement(0)
+    delay(20)
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, OBR_M_CamPan3)
+    waitmovement(0)
+    delay(40)
+    setmetatile(30, 18, 0x267, TRUE)
+    setmetatile(30, 19, 0x000, FALSE)
+    setmetatile(30, 20, 0x25F, TRUE)
+    playse(SE_EFFECTIVE)
+    applymovement(5, OBR_M_Mudbray1)
+    special(DrawWholeMapView)
+    setflag(FLAG_OBR_FENCE_BROKEN)
+    waitmovement(0)
+    delay(60)
+    turnobject(5, DIR_EAST)
+    delay(20)
+    playse(SE_BIKE_HOP)
+    applymovement(5, Univ_JumpIP_1Right)
+    delay(10)    
+    playse(SE_BIKE_HOP)
+    applymovement(6, Univ_JumpIP_1Left)
+    waitmovement(0)
+    delay(60)
+    applymovement(5, OBR_M_Mudbray2)
+    applymovement(6, OBR_M_Skiddo1)
+    waitmovement(0)
+    removeobject(5)
+    removeobject(6)
+    setflag(FLAG_OBR_HIDE_SKIDDO_AND_MUDRBAY)
+    applymovement(OBJ_EVENT_ID_CAMERA, OBR_M_CamPan4)
+    waitmovement(0)
+    delay(30)
+    turnobject(7, DIR_SOUTH)
+    delay(20)
+    playse(SE_BIKE_HOP)
+    applymovement(7, Univ_JumpIP_1Down)
+    waitmovement(0)
+    delay(20)
+    applymovement(7, OBR_M_Ponyta2)
+    applymovement(OBJ_EVENT_ID_CAMERA, OBR_M_CamPan5)
+    waitmovement(7)
+    removeobject(8)
+    setflag(FLAG_OBR_HIDE_RIVAL_MIKE)
+    clearflag(FLAG_OBR_HIDE_RIVAL_MIKE_2)
+    addobject(9)
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_WEST)
+    applymovement(7, OBR_M_Ponyta3)
+    applymovement(OBJ_EVENT_ID_CAMERA, OBR_M_CamPan6)
+    waitmovement(7)
+    removeobject(7)
+    setflag(FLAG_OBR_HIDE_PONYTA)
+    delay(20)
+    applymovement(OBJ_EVENT_ID_CAMERA, OBR_M_CamPan7)
+    waitmovement(0)
+    special(RemoveCameraObject)
+    playbgm(MUS_HELP, FALSE)
+    playse(SE_PIN)
+    applymovement(9, Univ_Exclam)
+    waitmovement(9)
+    delay(20)
+    applymovement(9, OBR_M_Mike4)
+    waitmovement(9)
+    delay(20)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+    msgbox(OBR_T_Mike4)
+    waitmessage
+    closemessage
+    applymovement(9, OBR_M_Mike5)
+    waitmovement(0)
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+    delay(20)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+    msgbox(OBR_T_Mike5)
+    waitmessage
+    closemessage
+    applymovement(9, OBR_M_Mike6)
+    waitmovement(9)
+    applymovement(9, OBR_M_Mike7)
+    applymovement(OBJ_EVENT_ID_PLAYER, OBR_M_Player3)
+    waitmovement(0)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+    msgbox(OBR_T_Mike6)
+    waitmessage
+    closemessage
+    delay(60)
+    turnobject(9, DIR_SOUTH)
+    delay(30)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+    msgbox(OBR_T_Mike7, MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES){
+        speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+        msgbox(OBR_T_Mike8)
+        waitmessage
+        closemessage
+        delay(40)
+        playse(SE_REPEL)
+        waitse
+        setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+        msgbox(OBR_T_System1)
+        waitmessage
+        closemessage
+        delay(40)
+        clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+        speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+        msgbox(OBR_T_Mike9)
+        waitmessage
+        closemessage
+        applymovement(9, OBR_M_Mike8)
+        applymovement(OBJ_EVENT_ID_PLAYER, OBR_M_Player4)
+        waitmovement(0)
+        turnobject(9, DIR_NORTH)
+        clearflag(FLAG_OBR_HIDE_RIVAL_MIKE_3)
+        addobject(10)
+        removeobject(9)
+        setflag(FLAG_OBR_HIDE_RIVAL_MIKE_2)
+    }
+    else{
+        delay(40)
+        playse(SE_REPEL)
+        waitse
+        setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+        msgbox(OBR_T_System1)
+        waitmessage
+        closemessage
+        delay(40)
+        clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+        speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+        msgbox(OBR_T_Mike10)
+        waitmessage
+        closemessage
+        applymovement(9, OBR_M_Mike8)
+        applymovement(OBJ_EVENT_ID_PLAYER, OBR_M_Player4)
+        waitmovement(0)
+        turnobject(9, DIR_NORTH)
+        clearflag(FLAG_OBR_HIDE_RIVAL_MIKE_3)
+        addobject(10)
+        removeobject(9)
+        setflag(FLAG_OBR_HIDE_RIVAL_MIKE_2)
+    }
+    setvar(VAR_ADVENTURE_START, 15)
+    release
+    end
 }
+
+script OBR_Mike_Interact_ForestEntrance{
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+    msgbox(OBR_T_Mike11)
+    waitmessage
+    closemessage
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+    delay(10)
+    release
+    end
+}
+
+script OBR_TurnBackA{
+    turnobject(10, DIR_WEST)
+    delay(20)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+    msgbox(OBR_T_Mike11)
+    waitmessage
+    closemessage
+    applymovement(OBJ_EVENT_ID_PLAYER, Univ_StepUp1)
+    waitmovement(0)
+    turnobject(10, DIR_NORTH)
+    release
+    end
+}
+
+script OBR_TurnBackB{
+    turnobject(10, DIR_EAST)
+    delay(20)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+    msgbox(OBR_T_Mike11)
+    waitmessage
+    closemessage
+    applymovement(OBJ_EVENT_ID_PLAYER, Univ_StepUp1)
+    waitmovement(0)
+    turnobject(10, DIR_NORTH)
+    release
+    end
+}
+
+script OBR_OneStarterFound{ 
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, Univ_StepDown1)
+    waitmovement(0)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+    msgbox(OBR_T_Mike12)
+    waitmessage
+    closemessage
+    applymovement(OBJ_EVENT_ID_CAMERA, Univ_StepUp1)
+    waitmovement(0)
+    special(RemoveCameraObject)
+    applymovement(OBJ_EVENT_ID_PLAYER, Univ_StepUp1)
+    waitmovement(0)
+    release
+    end
+}
+
+script OBR_TwoStartersFound{
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, Univ_StepDown1)
+    waitmovement(0)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+    msgbox(OBR_T_Mike13)
+    waitmessage
+    closemessage
+    applymovement(OBJ_EVENT_ID_CAMERA, Univ_StepUp1)
+    waitmovement(0)
+    special(RemoveCameraObject)
+    applymovement(OBJ_EVENT_ID_PLAYER, Univ_StepUp1)
+    waitmovement(0)
+    release
+    end
+}
+
+script OBR_AllStartersFound{
+    release
+    end
+}
+
+script CheckFenceFlag{
+    if(flag(FLAG_OBR_FENCE_BROKEN) == TRUE){
+        setmetatile(30, 18, 0x267, TRUE)
+        setmetatile(30, 19, 0x000, FALSE)
+        setmetatile(30, 20, 0x25F, TRUE)
+    }
+    else{
+    }
+    end
+}
+
+
+movement OBR_M_Mike1{
+    walk_down
+    walk_left
+}
+
+movement OBR_M_Mike1_B{
+    walk_left * 2
+    walk_down
+}
+
+movement OBR_M_Mike2{
+    walk_right
+    walk_up * 3
+    walk_right * 2
+    walk_up
+}
+
+movement OBR_M_Mike2_B{
+    walk_up 
+    walk_right * 2
+    walk_up * 2
+    walk_right * 2
+    walk_up
+}
+
+movement OBR_M_Mike3{
+    walk_fast_right * 3
+}
+
+movement OBR_M_Mike4{
+    walk_fast_left
+}
+
+movement OBR_M_Mike5{
+    walk_fast_right
+    face_down
+}
+
+movement OBR_M_Mike6{
+    walk_faster_left
+    walk_faster_down
+    face_left
+}
+
+movement OBR_M_Mike7{
+    walk_fast_left * 4
+    walk_fast_down * 3
+    walk_fast_left * 4
+    walk_fast_down * 2
+    walk_fast_left
+    walk_fast_down * 2
+    walk_fast_left * 11
+    walk_fast_up * 4
+}
+
+movement OBR_M_Mike8{
+    walk_left
+    face_right
+}
+
+movement OBR_M_Player1{
+    walk_right * 2
+    walk_up * 3
+    walk_right * 2
+    face_up
+}
+
+movement OBR_M_Player1_B{
+    walk_up * 2
+    walk_right * 2
+    walk_up * 2
+    walk_right * 2
+    face_up
+}
+
+movement OBR_M_Player2{
+    walk_right * 3
+}
+
+movement OBR_M_Player3{
+    walk_fast_left * 5
+    walk_fast_down * 3
+    walk_fast_left * 4
+    walk_fast_down * 2
+    walk_fast_left
+    walk_fast_down * 2
+    walk_fast_left * 11
+    walk_fast_up * 3
+}
+
+movement OBR_M_Player4{
+    walk_up * 2
+}
+
+movement OBR_M_CamPan1{
+    walk_slow_right * 5
+    walk_slow_down * 8
+}
+
+movement OBR_M_CamPan2{
+    walk_left * 5
+}
+
+movement OBR_M_CamPan3{
+    walk_slow_right * 2
+    walk_slow_down * 8
+}
+
+movement OBR_M_CamPan4{
+    walk_fast_up * 8
+}
+
+movement OBR_M_CamPan5{
+    walk_fast_down * 9
+}
+
+movement OBR_M_CamPan6{
+    walk_fast_left * 3
+    walk_fast_down * 2
+    walk_fast_left
+    walk_fast_down * 2
+    walk_fast_left * 5
+    walk_fast_up * 2
+    walk_fast_left * 2
+    walk_fast_up * 2
+    walk_fast_left * 2
+    walk_fast_up * 2
+}
+
+movement OBR_M_CamPan7{
+    walk_diag_northeast * 7
+    walk_right * 4
+}
+
+movement OBR_M_Ponyta1{
+    walk_up * 8
+    face_left
+}
+
+movement OBR_M_Ponyta2{
+    walk_fast_down * 9
+}
+
+movement OBR_M_Ponyta3{
+    walk_fast_left * 3
+    walk_fast_down * 2
+    walk_fast_left
+    walk_fast_down * 2
+    walk_fast_left * 5
+    walk_fast_up * 2
+    walk_fast_left * 2
+    walk_fast_up * 2
+    walk_fast_left * 2
+    walk_fast_up * 2
+    walk_fast_left * 10
+}
+
+movement OBR_M_Mudbray1{
+    slide_left
+    face_left
+}
+
+movement OBR_M_Mudbray2{
+    walk_fast_left * 2
+    walk_fast_down * 2
+    walk_fast_left
+    walk_fast_down
+    walk_fast_left
+    walk_fast_down * 6
+}
+
+movement OBR_M_Skiddo1{
+    walk_fast_left * 4
+    walk_fast_down * 2
+    walk_fast_left
+    walk_fast_down
+    walk_fast_left
+    walk_fast_down * 6
+}
+
+text OBR_T_Mike1{
+    "Haha! Too slow again!\n"
+    "Maybe next time, huh?\p"
+    "Just messin' with ya, {PLAYER}.\p"
+    "Let's get this tape back to Bo!"
+}
+
+text OBR_T_Mike2{
+    "... Huh.\n"
+    "{PAUSE 20}I guess Bo isn't home right now.\p"
+    "Let's just wait here for a little while,\n"
+    "{PLAYER}, I'm sure he'll be back soon."
+}
+
+text OBR_T_Mike3{
+    "Look how adorable that Ponyta is,\n"
+    "{PLAYER}!\p"
+    "We gotta go over and say hello!"
+}
+
+text OBR_T_Mike4{
+    "Wha- wha- WHAT??!!"
+}
+
+text OBR_T_Mike5{
+    "{PLAYER}, did you just see that?!\p"
+    "I think those Pokemon just ran into the\n"
+    "woods!\p"
+    "We have to do something about this,\n"
+    "{PLAYER}, we gotta get Bo's Pokemon\l"
+    "back right away!"
+}
+
+text OBR_T_Mike6{
+    "... {PAUSE 30}dang."
+}
+
+text OBR_T_Mike7{
+    "I just realized I only have one repel...\p"
+    "We can't risk going in there without a\n"
+    "repel or a Pokemon of our own, {PLAYER},\l"
+    "there's wild Pokemon in there!\p"
+    "These aren't like the Pokemon from Bo's\n"
+    "Ranch.\p"
+    "A wild Pokemon can seriously mess you\n"
+    "up, {PLAYER}!\p"
+    "Maybe... {PAUSE 30}You should go?\p"
+    "Come on {PLAYER}, I'm a little tired and\n"
+    "I think I have a stuffy nose too!\p"
+    "Please, {PLAYER} you gotta go save Bo's\n"
+    "Pokemon!"
+}
+
+text OBR_T_Mike8{
+    "Oh man, you're brave, {PLAYER}!"
+}
+
+text OBR_T_Mike9{
+    "Alright, {PLAYER}, be quick!\n"
+    "That repel won't last forever!"
+}
+
+text OBR_T_Mike10{
+    "Ah jeez!\n"
+    "Oh man I'm so sorry, {PLAYER}!\p"
+    "Dang I can't believe my hand slipped\n"
+    "like that!\p"
+    "You better get going though, {PLAYER},\n"
+    "that repel doesn't last forever!"
+}
+
+text OBR_T_Mike11{
+    "Uh... {PAUSE 30}{PLAYER}, where are you going?!\p"
+    "Go find Bo's Pokemon before the repel\n"
+    "runs out!"
+}
+
+text OBR_T_Mike12{
+    "Looks like we're still missin' two\n"
+    "Pokemon over here, {PLAYER}!"
+}
+
+text OBR_T_Mike13{
+    "Only one more, {PLAYER}!\n"
+    "Hurry, before that repel wears off!"
+}
+
+text OBR_T_System1{
+    "{COLOR BLUE}{SHADOW LIGHT_BLUE}Mike {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}sprayed the repel on {PLAYER}."
+}
+
