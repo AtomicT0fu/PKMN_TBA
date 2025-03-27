@@ -1184,3 +1184,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/scripts/dexnav.inc"
 
 	.include "data/maps/WindhillHollow/scripts.inc"
+
+	.include "data/maps/Route89/scripts.inc"

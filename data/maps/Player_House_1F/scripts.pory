@@ -46,9 +46,18 @@ script PH1F_MomIntro{
     speakername("{COLOR RED}{SHADOW LIGHT_RED}{FONT_SHORT}Mom")
     msgbox(PH1F_T_Mom1)
     closemessage
+    playfanfare(MUS_OBTAIN_ITEM)
+    setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+    msgbox(PH1F_T_System1)
+    waitfanfare
+    msgbox(PH1F_T_System2)
+    waitmessage
+    closemessage
+    clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
     applymovement(1, PH1F_M_Mom2)
     waitmovement(0)
     setvar(VAR_ADVENTURE_START, 3)
+    setflag(FLAG_SYS_B_DASH)
     releaseall
     end
 }
@@ -90,7 +99,41 @@ script PH1F_BattleTapeStart{
     applymovement(OBJ_EVENT_ID_CAMERA, PH1F_CAM_2)
     waitmovement(0)
     special(RemoveCameraObject)
+    applymovement(OBJ_EVENT_ID_PLAYER, Univ_StepUp1)
+    waitmovement(0)
     setvar(VAR_ADVENTURE_START, 9)
+    release
+    end
+}
+
+script PH1F_BattleTape_TurnBack{
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, PH1F_CAM_3)
+    waitmovement(0)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+    msgbox(PH1F_T_Mike5)
+    waitmessage
+    closemessage
+    applymovement(OBJ_EVENT_ID_CAMERA, PH1F_CAM_3R)
+    applymovement(OBJ_EVENT_ID_PLAYER, Univ_StepUp1)
+    waitmovement(OBJ_EVENT_ID_CAMERA)
+    special(RemoveCameraObject)
+    release
+    end
+}
+
+script PH1F_BattleTape_TurnBack_B{
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, PH1F_CAM_4)
+    waitmovement(0)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+    msgbox(PH1F_T_Mike5)
+    waitmessage
+    closemessage
+    applymovement(OBJ_EVENT_ID_CAMERA, PH1F_CAM_4R)
+    applymovement(OBJ_EVENT_ID_PLAYER, Univ_StepDown1)
+    waitmovement(OBJ_EVENT_ID_CAMERA)
+    special(RemoveCameraObject)
     release
     end
 }
@@ -149,6 +192,7 @@ script PH1F_Post_BattleTape{
     playse(SE_EXIT)
     removeobject(3)
     waitse
+    delay(60)
     setflag(FLAG_HIDE_RIVAL_MIKE_2)
     setvar(VAR_ADVENTURE_START, 13)
     release
@@ -193,6 +237,22 @@ movement Univ_StepLeft1{
     walk_left
 }
 
+movement Univ_StepNE1{
+    walk_diag_northeast
+}
+
+movement Univ_StepNW1{
+    walk_diag_northwest
+}
+
+movement Univ_StepSE1{
+    walk_diag_southeast
+}
+
+movement Univ_StepSW1{
+    walk_diag_southwest
+}
+
 movement Univ_JumpIP_1Up{
     jump_in_place_up
 }
@@ -208,6 +268,23 @@ movement Univ_JumpIP_1Right{
 movement Univ_JumpIP_1Left{
     jump_in_place_left
 }
+
+movement Univ_SlideUp1{
+    slide_up
+}
+
+movement Univ_SlideDown1{
+    slide_down
+}
+
+movement Univ_SlideRight1{
+    slide_right
+}
+
+movement Univ_SlideLeft1{
+    slide_left
+}
+
 /////////////////////////////////
 
 
@@ -229,6 +306,24 @@ movement PH1F_CAM_1{
 
 movement PH1F_CAM_2{
     walk_down * 3
+    walk_right * 2
+}
+
+movement PH1F_CAM_3{
+    walk_diag_northwest * 4
+}
+
+movement PH1F_CAM_3R{
+    walk_diag_southeast * 3
+    walk_right
+}
+
+movement PH1F_CAM_4{
+    walk_diag_southwest
+    walk_left
+}
+
+movement PH1F_CAM_4R{
     walk_right * 2
 }
 
@@ -256,7 +351,10 @@ text PH1F_T_Mom1{
     "Your father wanted to get an early\n" 
     "start on the crop today.\p"
     "You'd better get out there, {PLAYER}.\n"
-    "You know how much he values your help."
+    "You know how much he values your help.\p"
+    "By the way, your running shoes came in\n"
+    "from the city.\p"
+    "Here you go!"
 }
 
 text PH1F_T_Mom2{
@@ -281,6 +379,11 @@ text PH1F_T_Mike3{
     "This is going to be so awesome!"
 }
 
+text PH1F_T_Mike5{
+    "Where ya goin, {PLAYER}?!\n"
+    "Get over here!"
+}
+
 text PH1F_T_Mike4{
     "That was unbelievable, {PLAYER}!!!\p"
     "Did you see how strong and cool their\n"
@@ -296,4 +399,12 @@ text PH1F_T_Mike4{
     "I gotta feed Millie real quick, but we\n"
     "should go return this tape together!\p"
     "Meet me at my Grandparent's house!"
+}
+
+text PH1F_T_System1{
+    "{PLAYER} received the Running Shoes!"
+}
+
+text PH1F_T_System2{
+    "'Hold {B_BUTTON} to run like the wind!'"
 }

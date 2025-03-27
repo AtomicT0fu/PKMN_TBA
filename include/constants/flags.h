@@ -49,19 +49,19 @@
 #define FLAG_SUPPRESS_SPEAKER_NAME          0x23 // Hides Speaker box
 #define FLAG_SPROUTS_PLANTED                0x24 // UpdatesSprout Metatiles in Highland_Farms
 #define FLAG_HIDE_DAD_1                     0x25 // Hides Intro Dad Sprite In Farm
-#define FLAG_OBR_HIDE_SKIDDO_AND_MUDRBAY    0x26 // hides skiddo and mudbray sprites in bos ranch starter intro
-#define FLAG_OBR_HIDE_PONYTA                0x27 // Hides ponyta sprite at bos ranch in starter intro
+#define FLAG_OBR_HIDE_OSHAWOTT_AND_TURTWIG    0x26 // hides OSHAWOTT and TURTWIG sprites in bos ranch starter intro
+#define FLAG_OBR_HIDE_LITTEN                0x27 // Hides LITTEN sprite at bos ranch in starter intro
 #define FLAG_OBR_FENCE_BROKEN               0x28 // Updates broken fence tiles at bo's ranch
-#define FLAG_WHH_HIDE_PONYTA                0x29 // hides ponyta sprite in forest
-#define FLAG_WHH_HIDE_MUDBRAY               0x2A // hides mudbray sprite in forest
-#define FLAG_WHH_HIDE_SKIDDO                0x2B // hides skiddo sprite in forest
-#define FLAG_OBR_SHOW_PONYTA     0x2C // shows ponyta at obr after forest
-#define FLAG_OBR_SHOW_MUDBRAY    0x2D // shows mudbray at obr after forest
-#define FLAG_OBR_SHOW_SKIDDO     0x2E // shows skiddo at obr after forest
-#define FLAG_UNUSED_0x02F    0x2F // Unused Flag
-#define FLAG_UNUSED_0x030    0x30 // Unused Flag
-#define FLAG_UNUSED_0x031    0x31 // Unused Flag
-#define FLAG_UNUSED_0x032    0x32 // Unused Flag
+#define FLAG_WHH_HIDE_LITTEN                0x29 // hides LITTEN sprite in forest
+#define FLAG_WHH_HIDE_TURTWIG               0x2A // hides TURTWIG sprite in forest
+#define FLAG_WHH_HIDE_OSHAWOTT                0x2B // hides OSHAWOTT sprite in forest
+#define FLAG_OBR_SHOW_LITTEN                0x2C // shows LITTEN at obr after forest
+#define FLAG_OBR_SHOW_TURTWIG               0x2D // shows TURTWIG at obr after forest
+#define FLAG_OBR_SHOW_OSHAWOTT              0x2E // shows OSHAWOTT at obr after forest
+#define FLAG_OBR_SHOW_OLD_BO                0x2F // shows bo inspecting broken fence at obr
+#define FLAG_TEST_SHOW_BALL                 0x30 // Unused Flag
+#define FLAG_RUNNING_SHOES_IN_ROOM          0x31 // Allows player to get running shoes 
+#define FLAG_OBR_REMOVE_LOG           0x32 // removes log infront of the woods at obr
 #define FLAG_UNUSED_0x033    0x33 // Unused Flag
 #define FLAG_UNUSED_0x034    0x34 // Unused Flag
 #define FLAG_UNUSED_0x035    0x35 // Unused Flag

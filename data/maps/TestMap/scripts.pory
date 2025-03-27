@@ -115,3 +115,32 @@ script FlyIn{
     release 
     end
 }
+
+script Set_Priority_Test{
+    playse(SE_CARD)
+    clearflag(FLAG_TEST_SHOW_BALL)
+    addobject(7)
+    setobjectsubpriority(7, MAP_TEST_MAP, 0)
+    setobjectsubpriority(6, MAP_TEST_MAP, 3)
+    waitse
+    release
+    end
+}
+
+script ThrowBall{
+    faceplayer
+    playse(SE_BALL_THROW)
+    addobject(7)
+    setobjectsubpriority(7, MAP_TEST_MAP, 0)
+    setobjectsubpriority(6, MAP_TEST_MAP, 3)
+    waitse
+    delay(30)
+    playse(SE_BALL_OPEN)
+    removeobject(6)
+    waitse
+    delay(30)
+    playse(SE_BALL)
+    removeobject(7)
+    release
+    end
+}

@@ -4550,6 +4550,16 @@
       "secondary_tileset": "gTileset_Highland_Farms",
       "border_filepath": "data/layouts/WindhillHollow/border.bin",
       "blockdata_filepath": "data/layouts/WindhillHollow/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE89",
+      "name": "Route89_Layout",
+      "width": 60,
+      "height": 60,
+      "primary_tileset": "gTileset_Grass_1",
+      "secondary_tileset": "gTileset_Highland_Farms",
+      "border_filepath": "data/layouts/Route89/border.bin",
+      "blockdata_filepath": "data/layouts/Route89/map.bin"
     }
   ]
 }

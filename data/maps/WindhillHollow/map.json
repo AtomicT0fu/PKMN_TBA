@@ -15,7 +15,7 @@
   "connections": 0,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SKIDDO)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(OSHAWOTT)",
       "x": 42,
       "y": 32,
       "elevation": 0,
@@ -24,11 +24,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "WHH_Skiddo_Interact",
-      "flag": "FLAG_WHH_HIDE_SKIDDO"
+      "script": "WHH_Oshawott_Interact",
+      "flag": "FLAG_WHH_HIDE_OSHAWOTT"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MUDBRAY)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TURTWIG)",
       "x": 23,
       "y": 16,
       "elevation": 0,
@@ -37,11 +37,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "WHH_Mudbray_Interact",
-      "flag": "FLAG_WHH_HIDE_MUDBRAY"
+      "script": "WHH_Turtwig_Interact",
+      "flag": "FLAG_WHH_HIDE_TURTWIG"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PONYTA)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(LITTEN)",
       "x": 3,
       "y": 18,
       "elevation": 0,
@@ -50,8 +50,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "WHH_Ponyta_Interact",
-      "flag": "FLAG_WHH_HIDE_PONYTA"
+      "script": "WHH_Litten_Interact",
+      "flag": "FLAG_WHH_HIDE_LITTEN"
     }
   ],
   "warp_events": [

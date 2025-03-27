@@ -73,7 +73,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MUDBRAY)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TURTWIG)",
       "x": 31,
       "y": 19,
       "elevation": 0,
@@ -83,10 +83,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_OBR_HIDE_SKIDDO_AND_MUDRBAY"
+      "flag": "FLAG_OBR_HIDE_OSHAWOTT_AND_TURTWIG"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SKIDDO)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(OSHAWOTT)",
       "x": 32,
       "y": 19,
       "elevation": 0,
@@ -96,10 +96,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_OBR_HIDE_SKIDDO_AND_MUDRBAY"
+      "flag": "FLAG_OBR_HIDE_OSHAWOTT_AND_TURTWIG"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PONYTA)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(LITTEN)",
       "x": 31,
       "y": 18,
       "elevation": 0,
@@ -109,7 +109,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_OBR_HIDE_PONYTA"
+      "flag": "FLAG_OBR_HIDE_LITTEN"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_RIVAL_MIKE",
@@ -151,7 +151,7 @@
       "flag": "FLAG_OBR_HIDE_RIVAL_MIKE_3"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MUDBRAY)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TURTWIG)",
       "x": 6,
       "y": 12,
       "elevation": 0,
@@ -160,11 +160,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_OBR_SHOW_MUDBRAY"
+      "script": "OBR_ChooseTurtwig",
+      "flag": "FLAG_OBR_SHOW_TURTWIG"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PONYTA)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(LITTEN)",
       "x": 7,
       "y": 12,
       "elevation": 0,
@@ -173,11 +173,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_OBR_SHOW_PONYTA"
+      "script": "OBR_ChooseLitten",
+      "flag": "FLAG_OBR_SHOW_LITTEN"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SKIDDO)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(OSHAWOTT)",
       "x": 8,
       "y": 12,
       "elevation": 0,
@@ -186,8 +186,60 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
+      "script": "OBR_ChooseOshawott",
+      "flag": "FLAG_OBR_SHOW_OSHAWOTT"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
+      "x": 26,
+      "y": 23,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_OBR_SHOW_SKIDDO"
+      "flag": "FLAG_OBR_SHOW_OLD_BO"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 25,
+      "y": 26,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_CHAMPIONS_ROOM_RIVAL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 26,
+      "y": 26,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_CHAMPIONS_ROOM_RIVAL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 27,
+      "y": 26,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_CHAMPIONS_ROOM_RIVAL"
     }
   ],
   "warp_events": [
@@ -294,9 +346,79 @@
       "var": "VAR_WHH_STARTERS",
       "var_value": "2",
       "script": "OBR_TwoStartersFound"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_WHH_STARTERS",
+      "var_value": "3",
+      "script": "OBR_AllStartersFound_A"
+    },
+    {
+      "type": "trigger",
+      "x": 22,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_ADVENTURE_START",
+      "var_value": "17",
+      "script": "OBR_StarterTurnAround_Trig_A"
+    },
+    {
+      "type": "trigger",
+      "x": 20,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_ADVENTURE_START",
+      "var_value": "17",
+      "script": "OBR_StarterTurnAround_Trig_A"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_ADVENTURE_START",
+      "var_value": "17",
+      "script": "OBR_StarterTurnAround_Trig_B"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 27,
+      "elevation": 0,
+      "var": "VAR_ADVENTURE_START",
+      "var_value": "17",
+      "script": "OBR_StarterTurnAround_Trig_C"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 28,
+      "elevation": 0,
+      "var": "VAR_ADVENTURE_START",
+      "var_value": "17",
+      "script": "OBR_StarterTurnAround_Trig_C"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_WHH_STARTERS",
+      "var_value": "3",
+      "script": "OBR_AllStartersFound_B"
     }
   ],
   "bg_events": [
-
+    {
+      "type": "sign",
+      "x": 26,
+      "y": 8,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "OBR_DoorIsLocked"
+    }
   ]
 }

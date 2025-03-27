@@ -79,6 +79,24 @@
       "var": "VAR_ADVENTURE_START",
       "var_value": "9",
       "script": "PH1F_BattleTape"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_ADVENTURE_START",
+      "var_value": "9",
+      "script": "PH1F_BattleTape_TurnBack"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_ADVENTURE_START",
+      "var_value": "9",
+      "script": "PH1F_BattleTape_TurnBack_B"
     }
   ],
   "bg_events": [

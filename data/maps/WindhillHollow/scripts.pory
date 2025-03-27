@@ -1,49 +1,50 @@
 mapscripts WindhillHollow_MapScripts{}
 
-script WHH_Ponyta_Interact{
+script WHH_Litten_Interact{
     faceplayer
-    playmoncry(SPECIES_PONYTA, 0)
+    playmoncry(SPECIES_LITTEN, 0)
     waitmoncry
     fadescreen(FADE_TO_BLACK)
     playse(SE_EXIT)
     waitse
     removeobject(3)
-    setflag(FLAG_WHH_HIDE_PONYTA)
-    clearflag(FLAG_OBR_SHOW_PONYTA)
+    setflag(FLAG_WHH_HIDE_LITTEN)
+    clearflag(FLAG_OBR_SHOW_LITTEN)
     fadescreen(FADE_FROM_BLACK)
     addvar(VAR_WHH_STARTERS, 1)
     release
     end
 }
 
-script WHH_Mudbray_Interact{
+script WHH_Turtwig_Interact{
     faceplayer
-    playmoncry(SPECIES_MUDBRAY, 0)
+    playmoncry(SPECIES_TURTWIG, 0)
     waitmoncry
     fadescreen(FADE_TO_BLACK)
     playse(SE_EXIT)
     waitse
     removeobject(2)
-    setflag(FLAG_WHH_HIDE_MUDBRAY)
-    clearflag(FLAG_OBR_SHOW_MUDBRAY)
+    setflag(FLAG_WHH_HIDE_TURTWIG)
+    clearflag(FLAG_OBR_SHOW_TURTWIG)
     fadescreen(FADE_FROM_BLACK)
     addvar(VAR_WHH_STARTERS, 1)
     release
     end
 }
 
-script WHH_Skiddo_Interact{
+script WHH_Oshawott_Interact{
     faceplayer
-    playmoncry(SPECIES_SKIDDO, 0)
+    playmoncry(SPECIES_OSHAWOTT, 0)
     waitmoncry
     fadescreen(FADE_TO_BLACK)
     playse(SE_EXIT)
     waitse
     removeobject(1)
-    setflag(FLAG_WHH_HIDE_SKIDDO)
-    clearflag(FLAG_OBR_SHOW_SKIDDO)
+    setflag(FLAG_WHH_HIDE_OSHAWOTT)
+    clearflag(FLAG_OBR_SHOW_OSHAWOTT)
     fadescreen(FADE_FROM_BLACK)
     addvar(VAR_WHH_STARTERS, 1)
     release
     end
 }
+

@@ -2,11 +2,11 @@ WindhillHollow_MapScripts::
 	.byte 0
 
 
-WHH_Ponyta_Interact::
+WHH_Litten_Interact::
 # 4 "data/maps/WindhillHollow/scripts.pory"
 	faceplayer
 # 5 "data/maps/WindhillHollow/scripts.pory"
-	playmoncry SPECIES_PONYTA, 0
+	playmoncry SPECIES_LITTEN, 0
 # 6 "data/maps/WindhillHollow/scripts.pory"
 	waitmoncry
 # 7 "data/maps/WindhillHollow/scripts.pory"
@@ -18,9 +18,9 @@ WHH_Ponyta_Interact::
 # 10 "data/maps/WindhillHollow/scripts.pory"
 	removeobject 3
 # 11 "data/maps/WindhillHollow/scripts.pory"
-	setflag FLAG_WHH_HIDE_PONYTA
+	setflag FLAG_WHH_HIDE_LITTEN
 # 12 "data/maps/WindhillHollow/scripts.pory"
-	clearflag FLAG_OBR_SHOW_PONYTA
+	clearflag FLAG_OBR_SHOW_LITTEN
 # 13 "data/maps/WindhillHollow/scripts.pory"
 	fadescreen FADE_FROM_BLACK
 # 14 "data/maps/WindhillHollow/scripts.pory"
@@ -30,11 +30,11 @@ WHH_Ponyta_Interact::
 	end
 
 
-WHH_Mudbray_Interact::
+WHH_Turtwig_Interact::
 # 20 "data/maps/WindhillHollow/scripts.pory"
 	faceplayer
 # 21 "data/maps/WindhillHollow/scripts.pory"
-	playmoncry SPECIES_MUDBRAY, 0
+	playmoncry SPECIES_TURTWIG, 0
 # 22 "data/maps/WindhillHollow/scripts.pory"
 	waitmoncry
 # 23 "data/maps/WindhillHollow/scripts.pory"
@@ -46,9 +46,9 @@ WHH_Mudbray_Interact::
 # 26 "data/maps/WindhillHollow/scripts.pory"
 	removeobject 2
 # 27 "data/maps/WindhillHollow/scripts.pory"
-	setflag FLAG_WHH_HIDE_MUDBRAY
+	setflag FLAG_WHH_HIDE_TURTWIG
 # 28 "data/maps/WindhillHollow/scripts.pory"
-	clearflag FLAG_OBR_SHOW_MUDBRAY
+	clearflag FLAG_OBR_SHOW_TURTWIG
 # 29 "data/maps/WindhillHollow/scripts.pory"
 	fadescreen FADE_FROM_BLACK
 # 30 "data/maps/WindhillHollow/scripts.pory"
@@ -58,11 +58,11 @@ WHH_Mudbray_Interact::
 	end
 
 
-WHH_Skiddo_Interact::
+WHH_Oshawott_Interact::
 # 36 "data/maps/WindhillHollow/scripts.pory"
 	faceplayer
 # 37 "data/maps/WindhillHollow/scripts.pory"
-	playmoncry SPECIES_SKIDDO, 0
+	playmoncry SPECIES_OSHAWOTT, 0
 # 38 "data/maps/WindhillHollow/scripts.pory"
 	waitmoncry
 # 39 "data/maps/WindhillHollow/scripts.pory"
@@ -74,9 +74,9 @@ WHH_Skiddo_Interact::
 # 42 "data/maps/WindhillHollow/scripts.pory"
 	removeobject 1
 # 43 "data/maps/WindhillHollow/scripts.pory"
-	setflag FLAG_WHH_HIDE_SKIDDO
+	setflag FLAG_WHH_HIDE_OSHAWOTT
 # 44 "data/maps/WindhillHollow/scripts.pory"
-	clearflag FLAG_OBR_SHOW_SKIDDO
+	clearflag FLAG_OBR_SHOW_OSHAWOTT
 # 45 "data/maps/WindhillHollow/scripts.pory"
 	fadescreen FADE_FROM_BLACK
 # 46 "data/maps/WindhillHollow/scripts.pory"

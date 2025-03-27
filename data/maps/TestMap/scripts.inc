@@ -190,6 +190,56 @@ FlyIn::
 	end
 
 
+Set_Priority_Test::
+# 120 "data/maps/TestMap/scripts.pory"
+	playse SE_CARD
+# 121 "data/maps/TestMap/scripts.pory"
+	clearflag FLAG_TEST_SHOW_BALL
+# 122 "data/maps/TestMap/scripts.pory"
+	addobject 7
+# 123 "data/maps/TestMap/scripts.pory"
+	setobjectsubpriority 7, MAP_TEST_MAP, 0
+# 124 "data/maps/TestMap/scripts.pory"
+	setobjectsubpriority 6, MAP_TEST_MAP, 3
+# 125 "data/maps/TestMap/scripts.pory"
+	waitse
+# 126 "data/maps/TestMap/scripts.pory"
+	release
+	end
+
+
+ThrowBall::
+# 131 "data/maps/TestMap/scripts.pory"
+	faceplayer
+# 132 "data/maps/TestMap/scripts.pory"
+	playse SE_BALL_THROW
+# 133 "data/maps/TestMap/scripts.pory"
+	addobject 7
+# 134 "data/maps/TestMap/scripts.pory"
+	setobjectsubpriority 7, MAP_TEST_MAP, 0
+# 135 "data/maps/TestMap/scripts.pory"
+	setobjectsubpriority 6, MAP_TEST_MAP, 3
+# 136 "data/maps/TestMap/scripts.pory"
+	waitse
+# 137 "data/maps/TestMap/scripts.pory"
+	delay 30
+# 138 "data/maps/TestMap/scripts.pory"
+	playse SE_BALL_OPEN
+# 139 "data/maps/TestMap/scripts.pory"
+	removeobject 6
+# 140 "data/maps/TestMap/scripts.pory"
+	waitse
+# 141 "data/maps/TestMap/scripts.pory"
+	delay 30
+# 142 "data/maps/TestMap/scripts.pory"
+	playse SE_BALL
+# 143 "data/maps/TestMap/scripts.pory"
+	removeobject 7
+# 144 "data/maps/TestMap/scripts.pory"
+	release
+	end
+
+
 SignTest_Text_0:
 # 38 "data/maps/TestMap/scripts.pory"
 	.string "Hello, world!$"

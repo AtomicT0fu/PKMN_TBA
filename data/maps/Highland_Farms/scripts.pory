@@ -255,6 +255,7 @@ script HF_Mike_ReadyToGo{
     waitmovement(0)
     removeobject(4)
     setvar(VAR_ADVENTURE_START, 14)
+    clearflag(FLAG_OBR_HIDE_RIVAL_MIKE)
     release
     end
 }

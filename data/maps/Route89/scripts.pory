@@ -1,0 +1,20 @@
+mapscripts Route89_MapScripts{}
+
+script RT89_Psyduck_Interact{
+    faceplayer
+    playmoncry(SPECIES_PSYDUCK, 0)
+    waitmoncry
+    msgbox(RT89_T_Psyduck)
+    closemessage
+    release
+    end
+}
+
+
+
+
+
+
+text RT89_T_Psyduck{
+    "Psyduck appears to be in a trance."
+}

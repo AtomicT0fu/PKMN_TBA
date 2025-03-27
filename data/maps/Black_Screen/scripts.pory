@@ -123,13 +123,17 @@ script ReDrawRoom{
 }
 
 script Set_Start_Flags{                  //USE TO SET ANY FLAGS NEEDED AT START
+    setflag(FLAG_OBR_HIDE_RIVAL_MIKE)
     setflag(FLAG_HIDE_RIVAL_MIKE_1)
     setflag(FLAG_HIDE_RIVAL_MIKE_2)
     setflag(FLAG_OBR_HIDE_RIVAL_MIKE_2)
     setflag(FLAG_OBR_HIDE_RIVAL_MIKE_3)
-    setflag(FLAG_OBR_SHOW_MUDBRAY)
-    setflag(FLAG_OBR_SHOW_SKIDDO)
-    setflag(FLAG_OBR_SHOW_PONYTA)
+    setflag(FLAG_OBR_SHOW_TURTWIG)
+    setflag(FLAG_OBR_SHOW_OSHAWOTT)
+    setflag(FLAG_OBR_SHOW_LITTEN)
+    setflag(FLAG_OBR_SHOW_OLD_BO)
+    //TEST_FLAGS
+    setflag(FLAG_TEST_SHOW_BALL)
     return
 }
 

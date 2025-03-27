@@ -17,6 +17,11 @@
       "map": "MAP_HIGHLAND_PATH",
       "offset": -14,
       "direction": "down"
+    },
+    {
+      "map": "MAP_ROUTE89",
+      "offset": 16,
+      "direction": "up"
     }
   ],
   "object_events": [
