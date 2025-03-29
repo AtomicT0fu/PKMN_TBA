@@ -46,6 +46,19 @@ script PH1F_MomIntro{
     speakername("{COLOR RED}{SHADOW LIGHT_RED}{FONT_SHORT}Mom")
     msgbox(PH1F_T_Mom1)
     closemessage
+    applymovement(1, PH1F_M_Mom2)
+    waitmovement(0)
+    delay(30)
+    playse(SE_PIN)
+    applymovement(1, Univ_Exclam)
+    waitmovement(0)
+    delay(60)
+    applymovement(1, PH1F_M_Mom3)
+    waitmovement(0)
+    delay(20)
+    speakername("{COLOR RED}{SHADOW LIGHT_RED}{FONT_SHORT}Mom")
+    msgbox(PH1F_T_Mom6)
+    closemessage
     playfanfare(MUS_OBTAIN_ITEM)
     setflag(FLAG_SUPPRESS_SPEAKER_NAME)
     msgbox(PH1F_T_System1)
@@ -54,11 +67,105 @@ script PH1F_MomIntro{
     waitmessage
     closemessage
     clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
-    applymovement(1, PH1F_M_Mom2)
+    applymovement(1,PH1F_M_Mom4)
     waitmovement(0)
     setvar(VAR_ADVENTURE_START, 3)
     setflag(FLAG_SYS_B_DASH)
     releaseall
+    end
+}
+
+script PH1F_MomInteract{
+    faceplayer
+    if(var(VAR_ADVENTURE_START) == 3){ //After Mom intro
+        speakername("{COLOR RED}{SHADOW LIGHT_RED}{FONT_SHORT}Mom")
+        msgbox(PH1F_T_Mom3)
+        waitmessage
+        closemessage
+        turnobject(1, DIR_NORTH)
+    }
+    elif(var(VAR_ADVENTURE_START) == 4){ // Post DadIntro
+        speakername("{COLOR RED}{SHADOW LIGHT_RED}{FONT_SHORT}Mom")
+        msgbox(PH1F_T_Mom3)
+        waitmessage
+        closemessage
+        turnobject(1, DIR_NORTH)
+    }
+    elif(var(VAR_ADVENTURE_START) == 9){ // Post BattleTapeIntro
+        speakername("{COLOR RED}{SHADOW LIGHT_RED}{FONT_SHORT}Mom")
+        msgbox(PH1F_T_Mom4)
+        waitmessage
+        closemessage
+    }
+    elif(var(VAR_ADVENTURE_START) == 13){ // Post BattleTape
+        speakername("{COLOR RED}{SHADOW LIGHT_RED}{FONT_SHORT}Mom")
+        msgbox(PH1F_T_Mom5)
+        waitmessage
+        closemessage
+        turnobject(1, DIR_NORTH)
+    }
+    elif(var(VAR_ADVENTURE_START) == 14){ // Post Mike go to Bos Ranch
+        speakername("{COLOR RED}{SHADOW LIGHT_RED}{FONT_SHORT}Mom")
+        msgbox(PH1F_T_Mom5)
+        waitmessage
+        closemessage
+        turnobject(1, DIR_NORTH)
+    }
+    else{
+        speakername("{COLOR RED}{SHADOW LIGHT_RED}{FONT_SHORT}Mom")
+        msgbox("VAR Switch Error.")
+        waitmessage
+        closemessage
+        turnobject(1, DIR_NORTH)
+    }
+    release
+    end
+}
+
+script PH1F_Lilli_Interact{
+    if(var(VAR_ADVENTURE_START) == 9){
+        faceplayer
+        playmoncry(SPECIES_LILLIPUP, 0)
+        waitmoncry
+        turnobject(2, DIR_WEST)
+    }
+    else{
+        faceplayer
+        playmoncry(SPECIES_LILLIPUP, 0)
+        waitmoncry
+        turnobject(2, DIR_NORTH)
+    }
+    release
+    end
+}
+
+script PH1F_Dresser_Interact{
+    setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+    msgbox(PH1F_T_Dresser)
+    waitmessage
+    closemessage
+    clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+    release
+    end
+}
+
+script PH1F_Picture_Interact{
+    setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+    msgbox(PH1F_T_Picture)
+    waitmessage
+    closemessage
+    clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+    release
+    end
+}
+
+script PH1F_Oven_Interact{
+    setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+    msgbox(PH1F_T_Oven)
+    waitmessage
+    closemessage
+    clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+    release
     end
 }
 
@@ -295,6 +402,16 @@ movement PH1F_M_Mom1{
 
 movement PH1F_M_Mom2{
     walk_down
+    walk_right * 2
+}
+
+movement PH1F_M_Mom3{
+    walk_left * 2
+    walk_up
+}
+
+movement PH1F_M_Mom4{
+    walk_down
     walk_right * 4
     face_up
 }
@@ -351,15 +468,33 @@ text PH1F_T_Mom1{
     "Your father wanted to get an early\n" 
     "start on the crop today.\p"
     "You'd better get out there, {PLAYER}.\n"
-    "You know how much he values your help.\p"
-    "By the way, your running shoes came in\n"
-    "from the city.\p"
+    "You know how much he values your help."
+}
+
+text PH1F_T_Mom6{
+    "Silly me, I almost forgot!\n"
+    "Your running shoes came in from the\l"
+    "city this morning.\p"
     "Here you go!"
 }
 
 text PH1F_T_Mom2{
     "You're very welcome sweetie.\n"
     "You be sure to thank Bo as well!"
+}
+
+text PH1F_T_Mom3{
+    "Don't forget to help your father,\n"
+    "{PLAYER}, he shouldn't do all that work\l"
+    "by himself."
+}
+
+text PH1F_T_Mom4{
+    "You two enjoy your movie, {PLAYER}!"
+}
+
+text PH1F_T_Mom5{
+    "Lunch should be ready soon, sweetie!"
 }
 
 text PH1F_T_Mike1{
@@ -407,4 +542,18 @@ text PH1F_T_System1{
 
 text PH1F_T_System2{
     "'Hold {B_BUTTON} to run like the wind!'"
+}
+
+text PH1F_T_Dresser{
+    "The drawers are filled with old-style\n"
+    "Western films."
+}
+
+text PH1F_T_Picture{
+    "It is a beautiful sunset painting.\n"
+    "The artist is clearly very talented."
+}
+
+text PH1F_T_Oven{
+    "It smells delicious!"
 }

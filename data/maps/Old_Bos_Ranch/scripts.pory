@@ -1,10 +1,23 @@
 mapscripts Old_Bos_Ranch_MapScripts{
     MAP_SCRIPT_ON_LOAD: OBR_UpdateMetatiles
+    MAP_SCRIPT_ON_TRANSITION: OBR_Set_Music
 }
 
 
 
 //------------------------[[EVENT_SCRIPTS]]-----------------------------
+
+script OBR_Set_Music{
+    if(var(VAR_WHH_STARTERS) == 3){
+        playbgm(MUS_FALLARBOR, TRUE)
+    }
+    elif(var(VAR_ADVENTURE_START) == 15){
+        playbgm(MUS_HELP, FALSE)
+    }
+    else{
+        playbgm(MUS_FALLARBOR, TRUE)
+    }
+}
 
 script OBR_DoorIsLocked{
     if(flag(FLAG_SYS_POKEMON_GET) == FALSE){
@@ -266,6 +279,7 @@ script OBR_Mike_FollowA{
         removeobject(9)
         setflag(FLAG_OBR_HIDE_RIVAL_MIKE_2)
     }
+    setflag(FLAG_PAUSE_ENCOUNTERS)
     setvar(VAR_ADVENTURE_START, 15)
     release
     end
@@ -513,6 +527,7 @@ script OBR_Mike_FollowB{
         removeobject(9)
         setflag(FLAG_OBR_HIDE_RIVAL_MIKE_2)
     }
+    setflag(FLAG_PAUSE_ENCOUNTERS)
     setvar(VAR_ADVENTURE_START, 15)
     release
     end
@@ -1091,6 +1106,7 @@ script OBR_ChooseTurtwig{
         setmetatile(26, 8, 0x241, TRUE)
         special(DrawWholeMapView)
         setvar(VAR_ADVENTURE_START, 18)
+        clearflag(FLAG_PAUSE_ENCOUNTERS)
     }
     else{
         closemessage
@@ -1216,6 +1232,7 @@ script OBR_ChooseLitten{
         setmetatile(26, 8, 0x241, TRUE)
         special(DrawWholeMapView)
         setvar(VAR_ADVENTURE_START, 18)
+        clearflag(FLAG_PAUSE_ENCOUNTERS)
     }
     else{
         closemessage
@@ -1341,6 +1358,7 @@ script OBR_ChooseOshawott{
         setmetatile(26, 8, 0x241, TRUE)
         special(DrawWholeMapView)
         setvar(VAR_ADVENTURE_START, 18)
+        clearflag(FLAG_PAUSE_ENCOUNTERS)
     }
     else{
         closemessage
@@ -1703,7 +1721,8 @@ movement OBR_M_Turtwig2{
     walk_fast_left
     walk_fast_down
     walk_fast_left
-    walk_fast_down * 6
+    walk_fast_down
+    walk_fast_left * 6
 }
 
 movement OBR_M_Turtwig3{
@@ -1742,7 +1761,8 @@ movement OBR_M_Oshawott1{
     walk_fast_left
     walk_fast_down
     walk_fast_left
-    walk_fast_down * 6
+    walk_fast_down
+    walk_fast_left * 6
 }
 
 movement OBR_M_Oshawott2{

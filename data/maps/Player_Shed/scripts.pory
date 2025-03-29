@@ -1096,7 +1096,7 @@ text PS_T_Dad13{
 text PS_T_Dad14{
     "Hey, real nice job today, {PLAYER}.\p"
     "Since ya worked hard, I'll letcha take\n"
-    "off while clean up 'round here.\p"
+    "off while I clean up 'round here.\p"
     "See y'all at lunch!"
 }
 
@@ -1162,20 +1162,18 @@ text PS_T_SYS5_G{
 }
 
 text PS_T_Player1{
-    "{COLOR GREEN}{SHADOW LIGHT_GREEN}(Bin looks pretty empty...)"
+    "The bin is empty."
 }
 
 text PS_T_Player2{
-    "{COLOR GREEN}{SHADOW LIGHT_GREEN}(I should finish the batch before I\n"
-    "move on...)\p"
-    "(That's what Dad would do.)"
+    "Dad's words echoed...\n"
+    "''Always finish wat'cha started!''"
 }
 
 text PS_T_Player3{
-    "{COLOR GREEN}{SHADOW LIGHT_GREEN}(The herb bricks should fit perfectly in\n"
-    "these packages...)"
+    "An herb brick would fit perfectly."
 }
 
 text PS_T_Player4{
-    "{COLOR GREEN}{SHADOW LIGHT_GREEN}(I need to gather some herbs...)"
+    "You must gather some herbs."
 }

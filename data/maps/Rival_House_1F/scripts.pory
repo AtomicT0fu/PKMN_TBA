@@ -1,0 +1,33 @@
+mapscripts Rival_House_1F_MapScripts{}
+
+script RH1F_Mamaw_Interact{
+    faceplayer
+    speakername("{COLOR RED}{SHADOW LIGHT_RED}{FONT_SHORT}Mamaw")
+    msgbox(RH1F_T_Mamaw1)
+    waitmessage
+    closemessage
+    release
+    end
+}
+
+script RH1F_Papaw_Interact{
+    faceplayer
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Papaw")
+    msgbox(RH1F_T_Papaw1)
+    waitmessage
+    closemessage
+    release
+    end
+}
+
+text RH1F_T_Mamaw1{
+    "Hello there dear.\n"
+    "I hope yer doin' well!"
+}
+
+text RH1F_T_Papaw1{
+    "Oh well hey there, {PLAYER}!\n"
+    "How's yer Pops doin'?\p"
+    "You make sure he don't work himself too\n"
+    "hard out there!"
+}

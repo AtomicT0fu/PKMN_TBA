@@ -1998,7 +1998,7 @@ PS_T_Dad14::
 # 1096 "data/maps/Player_Shed/scripts.pory"
 	.string "Hey, real nice job today, {PLAYER}.\p"
 	.string "Since ya worked hard, I'll letcha take\n"
-	.string "off while clean up 'round here.\p"
+	.string "off while I clean up 'round here.\p"
 	.string "See y'all at lunch!$"
 
 PS_T_Dad15::
@@ -2064,19 +2064,17 @@ PS_T_SYS5_G::
 
 PS_T_Player1::
 # 1164 "data/maps/Player_Shed/scripts.pory"
-	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}(Bin looks pretty empty...)$"
+	.string "The bin is empty.$"
 
 PS_T_Player2::
 # 1168 "data/maps/Player_Shed/scripts.pory"
-	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}(I should finish the batch before I\n"
-	.string "move on...)\p"
-	.string "(That's what Dad would do.)$"
+	.string "Dad's words echoed...\n"
+	.string "''Always finish wat'cha started!''$"
 
 PS_T_Player3::
-# 1174 "data/maps/Player_Shed/scripts.pory"
-	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}(The herb bricks should fit perfectly in\n"
-	.string "these packages...)$"
+# 1173 "data/maps/Player_Shed/scripts.pory"
+	.string "An herb brick would fit perfectly.$"
 
 PS_T_Player4::
-# 1179 "data/maps/Player_Shed/scripts.pory"
-	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}(I need to gather some herbs...)$"
+# 1177 "data/maps/Player_Shed/scripts.pory"
+	.string "You must gather some herbs.$"

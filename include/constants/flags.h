@@ -62,8 +62,8 @@
 #define FLAG_TEST_SHOW_BALL                 0x30 // Unused Flag
 #define FLAG_RUNNING_SHOES_IN_ROOM          0x31 // Allows player to get running shoes 
 #define FLAG_OBR_REMOVE_LOG           0x32 // removes log infront of the woods at obr
-#define FLAG_UNUSED_0x033    0x33 // Unused Flag
-#define FLAG_UNUSED_0x034    0x34 // Unused Flag
+#define FLAG_PAUSE_ENCOUNTERS         0x33 // Pauses OW_Encounter flag kind of like a repel
+#define FLAG_PAUSE_FOLLOWERS          0x34 // Hides follower pokemon for length of time
 #define FLAG_UNUSED_0x035    0x35 // Unused Flag
 #define FLAG_UNUSED_0x036    0x36 // Unused Flag
 #define FLAG_UNUSED_0x037    0x37 // Unused Flag

@@ -4544,7 +4544,7 @@
     {
       "id": "LAYOUT_WINDHILL_HOLLOW",
       "name": "WindhillHollow_Layout",
-      "width": 56,
+      "width": 66,
       "height": 34,
       "primary_tileset": "gTileset_Grass_1",
       "secondary_tileset": "gTileset_Highland_Farms",

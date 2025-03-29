@@ -42,6 +42,47 @@ BattleNorman::
 	end
 
 
+PHB1F_BattleManual_Interact::
+# 28 "data/maps/Player_House_B1F/scripts.pory"
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
+# 29 "data/maps/Player_House_B1F/scripts.pory"
+	msgbox PHB1F_T_BattleManual
+# 30 "data/maps/Player_House_B1F/scripts.pory"
+	waitmessage
+# 31 "data/maps/Player_House_B1F/scripts.pory"
+	closemessage
+# 32 "data/maps/Player_House_B1F/scripts.pory"
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+# 33 "data/maps/Player_House_B1F/scripts.pory"
+	release
+	end
+
+
+PHB1F_CustomizeCharacter::
+# 38 "data/maps/Player_House_B1F/scripts.pory"
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
+# 39 "data/maps/Player_House_B1F/scripts.pory"
+	msgbox PHB1F_CustomizeCharacter_Text_0
+# 40 "data/maps/Player_House_B1F/scripts.pory"
+	waitmessage
+# 41 "data/maps/Player_House_B1F/scripts.pory"
+	closemessage
+# 42 "data/maps/Player_House_B1F/scripts.pory"
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+# 43 "data/maps/Player_House_B1F/scripts.pory"
+	release
+	end
+
+
 GiveMon4_Text_0:
 # 8 "data/maps/Player_House_B1F/scripts.pory"
 	.string "{PLAYER} took Munchlax!$"
+
+PHB1F_CustomizeCharacter_Text_0:
+# 39 "data/maps/Player_House_B1F/scripts.pory"
+	.string "Customization coming soon <3$"
+
+PHB1F_T_BattleManual::
+# 47 "data/maps/Player_House_B1F/scripts.pory"
+	.string "There are stacks of instructional\n"
+	.string "Pokemon battle manuals.$"

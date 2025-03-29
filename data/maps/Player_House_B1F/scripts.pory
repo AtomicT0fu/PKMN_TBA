@@ -23,3 +23,28 @@ script BattleNorman{
     release
     end
 }
+
+script PHB1F_BattleManual_Interact{
+    setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+    msgbox(PHB1F_T_BattleManual)
+    waitmessage
+    closemessage
+    clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+    release
+    end
+}
+
+script PHB1F_CustomizeCharacter{
+    setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+    msgbox("Customization coming soon <3")
+    waitmessage
+    closemessage
+    clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+    release
+    end
+}
+
+text PHB1F_T_BattleManual{
+    "There are stacks of instructional\n"
+    "Pokemon battle manuals."
+}
