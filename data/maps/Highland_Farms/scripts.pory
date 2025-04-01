@@ -1,8 +1,14 @@
 mapscripts Highland_Farms_MapScripts{
-    MAP_SCRIPT_ON_LOAD: CheckSproutFlag
+    MAP_SCRIPT_ON_LOAD: HF_UpdateMetatiles
     MAP_SCRIPT_ON_TRANSITION: HF_UpdateSpritePos
 }
 
+
+script HF_UpdateMetatiles{
+    call(CheckSproutFlag)
+    call(HF_CheckLogFlag)
+    end
+}
 
 script HF_UpdateSpritePos{
     if(var(VAR_ADVENTURE_START) == 18){
@@ -13,7 +19,7 @@ script HF_UpdateSpritePos{
     }
     elif(var(VAR_ADVENTURE_START) == 19){
         setobjectxyperm(4, 10, 19)
-        setobjectmovementtype(4, MOVEMENT_TYPE_LOOK_AROUND)
+        setobjectmovementtype(4, MOVEMENT_TYPE_FACE_DOWN)
     }
     else{
     }
@@ -21,12 +27,24 @@ script HF_UpdateSpritePos{
 }
 
 script HF_Mike_Interact{
-    faceplayer
-    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
-    msgbox(HF_T_Mike3)
-    waitmessage
-    closemessage
-    turnobject(4, DIR_EAST)
+    if(var(VAR_ADVENTURE_START) == 20){
+        faceplayer
+        speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+        msgbox(HF_T_Mike8)
+        waitmessage
+        closemessage
+        turnobject(4, DIR_WEST)
+    }
+    elif(var(VAR_ADVENTURE_START) == 18){
+        faceplayer
+        speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+        msgbox(HF_T_Mike3)
+        waitmessage
+        closemessage
+        turnobject(4, DIR_EAST)
+    }
+    else{
+    }
     release
     end
 }
@@ -248,7 +266,17 @@ script CheckSproutFlag{
     }
     else{
     }
-    end
+    return
+}
+
+script HF_CheckLogFlag{
+    if(flag(FLAG_HF_REMOVE_LOG) == TRUE){
+        setmetatile(2, 12, 0x000, FALSE)
+        setmetatile(3, 12, 0x000, FALSE)
+    }
+    else{
+    }
+    return
 }
 
 script BattleMike{
@@ -326,6 +354,84 @@ script HF_Mike_ReadyToGo{
     end
 }
 
+script HF_FirstBattleIntro_Trigger{
+    setmetatile(2, 12, 0x000, FALSE)
+    setmetatile(3, 12, 0x000, FALSE)
+    setflag(FLAG_HF_REMOVE_LOG)
+    turnobject(4, DIR_SOUTH)
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, HF_CAM_2)
+    waitmovement(0)
+    delay(20)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+    msgbox(HF_T_Mike4)
+    waitmessage
+    closemessage
+    applymovement(OBJ_EVENT_ID_PLAYER, HF_M_Player2)
+    waitmovement(0)
+    delay(20)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+    msgbox(HF_T_Mike5, MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES){
+        speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+        msgbox(HF_T_Mike6_Yes)
+        waitmessage
+        closemessage
+    }
+    else{
+        speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+        msgbox(HF_T_Mike6_No)
+        waitmessage
+        closemessage
+    }
+    applymovement(4, HF_M_Mike5)
+    applymovement(OBJ_EVENT_ID_CAMERA, HF_M_Mike5)
+    applymovement(OBJ_EVENT_ID_PLAYER, HF_M_Player3)
+    waitmovement(0)
+    delay(10)
+    applymovement(OBJ_EVENT_ID_PLAYER, Univ_Exclam)
+    playse(SE_PIN)
+    waitmovement(0)
+    waitse
+    delay(100)
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_EAST)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+    msgbox(HF_T_Mike7)
+    waitmessage
+    closemessage
+    applymovement(4, HF_M_Mike6)
+    waitmovement(0)
+    setobjectxyperm(4, 11, 5)
+    setobjectmovementtype(4, MOVEMENT_TYPE_FACE_LEFT)
+    delay(20)
+    applymovement(OBJ_EVENT_ID_CAMERA, Univ_StepLeft1)
+    waitmovement(0)
+    special(RemoveCameraObject)
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+    setvar(VAR_ADVENTURE_START, 20)
+    release
+    end
+}
+
+script HF_NoExitBattleStage_Trigger{
+    special(SpawnCameraObject)
+    applymovement(4, Univ_Exclam)
+    playse(SE_PIN)
+    applymovement(OBJ_EVENT_ID_CAMERA, HF_CAM_4)
+    waitmovement(0)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+    msgbox(HF_T_Mike9)
+    waitmessage
+    closemessage
+    applymovement(OBJ_EVENT_ID_CAMERA, HF_CAM_4R)
+    waitmovement(0)
+    special(RemoveCameraObject)
+    applymovement(OBJ_EVENT_ID_PLAYER, Univ_StepUp1)
+    waitmovement(0)
+    release
+    end
+}
+
 
 movement HF_CAM_1A{
     walk_diag_northeast * 3
@@ -342,6 +448,14 @@ movement HF_CAM_2{
 
 movement HF_CAM_3{
     walk_fast_down * 3
+}
+
+movement HF_CAM_4{
+    walk_diag_northeast * 4
+}
+
+movement HF_CAM_4R{
+    walk_diag_southwest * 4
 }
 
 movement HF_M_Dad1{
@@ -389,6 +503,22 @@ movement HF_W_Mike2{
     face_up
 }
 
+movement HF_M_Player2{
+    walk_up * 2
+}
+
+movement HF_M_Player3{
+    walk_up
+    walk_left * 5
+    walk_up * 2
+    walk_left * 2
+    walk_up * 6
+    walk_right * 2
+    walk_up * 4
+    walk_right * 3
+    face_up
+}
+
 movement HF_W_Mike3{
     walk_fast_down * 3
 }
@@ -397,6 +527,22 @@ movement HF_W_Mike4{
     walk_faster_down * 8
 }
 
+movement HF_M_Mike5{
+    walk_left * 5
+    walk_up * 2
+    walk_left * 2
+    walk_up * 6
+    walk_right * 2
+    walk_up * 4
+    walk_right * 4
+    face_left
+}
+
+movement HF_M_Mike6{
+    walk_fast_up * 2
+    walk_fast_right * 2
+    face_left
+}
 
 
 
@@ -436,6 +582,56 @@ text HF_T_Mike3{
     "Hey, {PLAYER}, almost done over here.\n"
     "Come back in a lil' bit, I got somethin'\l"
     "to show you!"
+}
+
+text HF_T_Mike4{
+    "Come on, {PLAYER}!\n"
+    "I can't wait anymore!"
+}
+
+text HF_T_Mike5{
+    "Alright, so what I'm about to show you,\n"
+    "I've been workin' on for a while now...\p"
+    "I didn't know if we would ever get to \n"
+    "use it or not, but just in case we\l"
+    "became real Pokemon Trainers, I knew we\l"
+    "would need it!\p"
+    "{PLAYER}... {PAUSE 30}are you ready?"
+}
+
+text HF_T_Mike6_Yes{
+    "Haha! I knew you would be excited,\n"
+    "{PLAYER}!\l"
+    "Follow me!"
+}
+
+text HF_T_Mike6_No{
+    "Oh, come on, don't be like that,\n"
+    "{PLAYER}.\l"
+    "Just follow me, would'ya?"
+}
+
+text HF_T_Mike7{
+    "Well, what do you think?!\p"
+    "It's our very own battle stage,\n"
+    "{PLAYER}!!\p"
+    "I wanted to make sure that our first\n"
+    "battle was in an arena just like Sammy\l"
+    "and Agatha used to compete in!\p"
+    "Well... {PAUSE 30}Pretty close, right?\p"
+    "Let's go, {PLAYER}, we gotta test it out\n"
+    "right away!"
+}
+
+text HF_T_Mike8{
+    "Hurry up, {PLAYER}!\n"
+    "Go stand on your side so we can get\l"
+    "this battle started!!"
+}
+
+text HF_T_Mike9{
+    "Don't be timid now, {PLAYER}!\n"
+    "Get back here and battle!"
 }
 
 text HF_T_Mamaw1{

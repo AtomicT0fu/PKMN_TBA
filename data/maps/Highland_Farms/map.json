@@ -150,6 +150,33 @@
       "var": "VAR_ADVENTURE_START",
       "var_value": "13",
       "script": "HF_Mike_ReadyToGo"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 22,
+      "elevation": 0,
+      "var": "VAR_ADVENTURE_START",
+      "var_value": "19",
+      "script": "HF_FirstBattleIntro_Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_ADVENTURE_START",
+      "var_value": "20",
+      "script": "HF_NoExitBattleStage_Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_ADVENTURE_START",
+      "var_value": "20",
+      "script": "HF_NoExitBattleStage_Trigger"
     }
   ],
   "bg_events": [

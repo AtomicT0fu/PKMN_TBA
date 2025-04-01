@@ -68,7 +68,7 @@
 #define FLAG_HF_HIDE_RIVAL_MIKE       0x36 // mike sprite highland farms for intro arc
 #define FLAG_RH1F_HIDE_MAMAW          0x37 // hides and shows mamaw in mikes house
 #define FLAG_PS_HIDE_DAD              0x38 // Hides dad sprite in shed
-#define FLAG_UNUSED_0x039    0x39 // Unused Flag
+#define FLAG_HF_REMOVE_LOG            0x39 // removes log in front 
 #define FLAG_UNUSED_0x03A    0x3A // Unused Flag
 #define FLAG_UNUSED_0x03B    0x3B // Unused Flag
 #define FLAG_UNUSED_0x03C    0x3C // Unused Flag
