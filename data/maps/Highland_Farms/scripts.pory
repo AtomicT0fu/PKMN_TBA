@@ -1,6 +1,72 @@
 mapscripts Highland_Farms_MapScripts{
     MAP_SCRIPT_ON_LOAD: CheckSproutFlag
+    MAP_SCRIPT_ON_TRANSITION: HF_UpdateSpritePos
 }
+
+
+script HF_UpdateSpritePos{
+    if(var(VAR_ADVENTURE_START) == 18){
+        setobjectxyperm(1, 12, 19)
+        setobjectxyperm(4, 11, 19)
+        setobjectmovementtype(1, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN)
+        setobjectmovementtype(4, MOVEMENT_TYPE_FACE_RIGHT)
+    }
+    elif(var(VAR_ADVENTURE_START) == 19){
+        setobjectxyperm(4, 10, 19)
+        setobjectmovementtype(4, MOVEMENT_TYPE_LOOK_AROUND)
+    }
+    else{
+    }
+    end
+}
+
+script HF_Mike_Interact{
+    faceplayer
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+    msgbox(HF_T_Mike3)
+    waitmessage
+    closemessage
+    turnobject(4, DIR_EAST)
+    release
+    end
+}
+
+script HF_Mamaw_Interact{
+    faceplayer
+    speakername("{COLOR RED}{SHADOW LIGHT_RED}{FONT_SHORT}Mamaw")
+    msgbox(HF_T_Mamaw1)
+    waitmessage
+    closemessage
+    turnobject(5, DIR_WEST)
+    release
+    end
+}
+
+script HF_Millie_Interact{
+    if(var(VAR_ADVENTURE_START) == 18){
+        lock
+        faceplayer
+        playmoncry(SPECIES_MILTANK, 0)
+        waitmoncry
+        playse(SE_PIN)
+        applymovement(1, Univ_Heart)
+        waitmovement(0)
+        setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+        msgbox("Millie loves to be brushed!")
+        waitmessage
+        closemessage
+        clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+    }
+    else{
+        lock
+        faceplayer
+        playmoncry(SPECIES_MILTANK, 0)
+        waitmoncry
+    }
+    release
+    end
+}
+
 
 script HF_DadIntro_A{
     special(SpawnCameraObject)
@@ -14,7 +80,7 @@ script HF_DadIntro_A{
     playse(SE_M_DIG)
     waitse
     waitmovement(2)
-    setmetatile(47, 13, 0x00EF, TRUE)
+    setmetatile(47, 21, 0x00EF, TRUE)
     playse(SE_BALL_BOUNCE_1)
     special(DrawWholeMapView)
     waitse
@@ -29,7 +95,7 @@ script HF_DadIntro_A{
     playse(SE_M_DIG)
     waitse
     waitmovement(2)
-    setmetatile(46, 13, 0x0268, TRUE)
+    setmetatile(46, 21, 0x0268, TRUE)
     playse(SE_BALL_BOUNCE_1)
     special(DrawWholeMapView)
     waitse
@@ -44,7 +110,7 @@ script HF_DadIntro_A{
     playse(SE_M_DIG)
     waitse
     waitmovement(2)
-    setmetatile(45, 13, 0x026A, TRUE)
+    setmetatile(45, 21, 0x026A, TRUE)
     playse(SE_BALL_BOUNCE_1)
     special(DrawWholeMapView)
     waitse
@@ -69,14 +135,14 @@ script HF_DadIntro_A{
     closemessage
     applymovement(2, HF_M_Dad4)
     waitmovement(0)
-    opendoor(45, 7)
+    opendoor(45, 15)
     waitdooranim
     applymovement(2, Univ_StepUp1)
     waitmovement(0)
     playse(SE_EXIT)
     removeobject(2)
     waitse
-    closedoor(45, 7)
+    closedoor(45, 15)
     waitdooranim
     applymovement(OBJ_EVENT_ID_CAMERA, Univ_StepDown1)
     waitmovement(0)
@@ -100,7 +166,7 @@ script HF_DadIntro_B{
     playse(SE_M_DIG)
     waitse
     waitmovement(2)
-    setmetatile(47, 13, 0x00EF, TRUE)
+    setmetatile(47, 21, 0x00EF, TRUE)
     playse(SE_BALL_BOUNCE_1)
     special(DrawWholeMapView)
     waitse
@@ -115,7 +181,7 @@ script HF_DadIntro_B{
     playse(SE_M_DIG)
     waitse
     waitmovement(2)
-    setmetatile(46, 13, 0x0268, TRUE)
+    setmetatile(46, 21, 0x0268, TRUE)
     playse(SE_BALL_BOUNCE_1)
     special(DrawWholeMapView)
     waitse
@@ -130,7 +196,7 @@ script HF_DadIntro_B{
     playse(SE_M_DIG)
     waitse
     waitmovement(2)
-    setmetatile(45, 13, 0x026A, TRUE)
+    setmetatile(45, 21, 0x026A, TRUE)
     playse(SE_BALL_BOUNCE_1)
     special(DrawWholeMapView)
     waitse
@@ -155,14 +221,14 @@ script HF_DadIntro_B{
     closemessage
     applymovement(2, HF_M_Dad4)
     waitmovement(0)
-    opendoor(45, 7)
+    opendoor(45, 15)
     waitdooranim
     applymovement(2, Univ_StepUp1)
     waitmovement(0)
     playse(SE_EXIT)
     removeobject(2)
     waitse
-    closedoor(45, 7)
+    closedoor(45, 15)
     waitdooranim
     applymovement(OBJ_EVENT_ID_CAMERA, Univ_StepDown1)
     waitmovement(0)
@@ -176,9 +242,9 @@ script HF_DadIntro_B{
 
 script CheckSproutFlag{
     if(flag(FLAG_SPROUTS_PLANTED) == TRUE){
-        setmetatile(47, 13, 0x00EF, TRUE)
-        setmetatile(46, 13, 0x0268, TRUE)
-        setmetatile(45, 13, 0x026A, TRUE)
+        setmetatile(47, 21, 0x00EF, TRUE)
+        setmetatile(46, 21, 0x0268, TRUE)
+        setmetatile(45, 21, 0x026A, TRUE)
     }
     else{
     }
@@ -209,14 +275,14 @@ script HF_MikeIntro{
     applymovement(3, HF_W_Mike2)
     turnobject(OBJ_EVENT_ID_PLAYER, DIR_EAST)
     waitmovement(3)
-    opendoor(41, 25)
+    opendoor(41, 33)
     waitdooranim
     applymovement(3, Univ_StepUp1)
     waitmovement(0)
     playse(SE_EXIT)
     removeobject(3)
     waitse
-    closedoor(41, 25)
+    closedoor(41, 33)
     waitdooranim
     setflag(FLAG_HIDE_RIVAL_MIKE_1)
     setvar(VAR_ADVENTURE_START, 8)
@@ -231,12 +297,12 @@ script HF_Mike_ReadyToGo{
     waitmovement(0)
     delay(20)
     playse(SE_DOOR)
-    opendoor(10, 8)
+    opendoor(10, 16)
     waitdooranim
     addobject(4)
     applymovement(4, Univ_StepDown1)
     waitmovement(0)
-    closedoor(10, 8)
+    closedoor(10, 16)
     waitdooranim
     applymovement(4, Univ_Exclam)
     playse(SE_PIN)
@@ -262,13 +328,12 @@ script HF_Mike_ReadyToGo{
 
 
 movement HF_CAM_1A{
-    walk_up * 4
-    walk_right * 3
+    walk_diag_northeast * 3
+    walk_up
 }
 
 movement HF_CAM_1B{
-    walk_up * 4
-    walk_right * 4
+    walk_diag_northeast * 4
 }
 
 movement HF_CAM_2{
@@ -344,7 +409,7 @@ text HF_T_Dad1{
 
 text HF_T_Dad2{
     "I already got them new plants in the \n"
-    "ground, and the harvest herbs moved\p"
+    "ground, n' the harvest herbs moved\l"
     "over into the shed.\p"
     "If ya wanna meet me in there, we can\n"
     "get to processin' this new batch.\p"
@@ -365,4 +430,16 @@ text HF_T_Mike2{
     "Hey, that was pretty quick, {PLAYER}!\n"
     "How about a race down to Bo's ranch?!\p"
     "Three... {PAUSE 30}Two... {PAUSE 30}GO!"
+}
+
+text HF_T_Mike3{
+    "Hey, {PLAYER}, almost done over here.\n"
+    "Come back in a lil' bit, I got somethin'\l"
+    "to show you!"
+}
+
+text HF_T_Mamaw1{
+    "Takin' care of Millie brings ol' Mamaw so\n"
+    "much joy.\p"
+    "I jus' love seein' her happy!"
 }

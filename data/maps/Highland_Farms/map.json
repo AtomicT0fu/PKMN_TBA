@@ -20,7 +20,7 @@
     },
     {
       "map": "MAP_ROUTE89",
-      "offset": 16,
+      "offset": 22,
       "direction": "up"
     }
   ],
@@ -28,20 +28,20 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MILTANK)",
       "x": 12,
-      "y": 11,
+      "y": 19,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "HF_Millie_Interact",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_DAD",
       "x": 47,
-      "y": 14,
+      "y": 22,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
@@ -54,7 +54,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_RIVAL_MIKE",
       "x": 37,
-      "y": 28,
+      "y": 36,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT",
       "movement_range_x": 0,
@@ -67,35 +67,48 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_RIVAL_MIKE",
       "x": 10,
-      "y": 8,
+      "y": 16,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_HIDE_CHAMPIONS_ROOM_RIVAL"
+      "script": "HF_Mike_Interact",
+      "flag": "FLAG_HF_HIDE_RIVAL_MIKE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAMAW",
+      "x": 13,
+      "y": 19,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "HF_Mamaw_Interact",
+      "flag": "FLAG_HF_HIDE_MAMAW"
     }
   ],
   "warp_events": [
     {
       "x": 41,
-      "y": 25,
+      "y": 33,
       "elevation": 0,
       "dest_map": "MAP_PLAYER_HOUSE_1F",
       "dest_warp_id": "0"
     },
     {
       "x": 4,
-      "y": 15,
+      "y": 23,
       "elevation": 0,
       "dest_map": "MAP_RIVAL_HOUSE_1F",
       "dest_warp_id": "0"
     },
     {
       "x": 45,
-      "y": 7,
+      "y": 15,
       "elevation": 0,
       "dest_map": "MAP_PLAYER_SHED",
       "dest_warp_id": "0"
@@ -105,7 +118,7 @@
     {
       "type": "trigger",
       "x": 42,
-      "y": 18,
+      "y": 26,
       "elevation": 0,
       "var": "VAR_ADVENTURE_START",
       "var_value": "3",
@@ -114,7 +127,7 @@
     {
       "type": "trigger",
       "x": 41,
-      "y": 18,
+      "y": 26,
       "elevation": 0,
       "var": "VAR_ADVENTURE_START",
       "var_value": "3",
@@ -123,7 +136,7 @@
     {
       "type": "trigger",
       "x": 37,
-      "y": 25,
+      "y": 33,
       "elevation": 0,
       "var": "VAR_ADVENTURE_START",
       "var_value": "7",
@@ -132,7 +145,7 @@
     {
       "type": "trigger",
       "x": 10,
-      "y": 13,
+      "y": 21,
       "elevation": 0,
       "var": "VAR_ADVENTURE_START",
       "var_value": "13",

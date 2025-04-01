@@ -4445,7 +4445,7 @@
       "id": "LAYOUT_HIGHLAND_FARMS",
       "name": "Highland_Farms_Layout",
       "width": 58,
-      "height": 40,
+      "height": 48,
       "primary_tileset": "gTileset_Grass_1",
       "secondary_tileset": "gTileset_Highland_Farms",
       "border_filepath": "data/layouts/Highland_Farms/border.bin",

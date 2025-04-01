@@ -132,6 +132,8 @@ script Set_Start_Flags{                  //USE TO SET ANY FLAGS NEEDED AT START
     setflag(FLAG_OBR_SHOW_OSHAWOTT)
     setflag(FLAG_OBR_SHOW_LITTEN)
     setflag(FLAG_OBR_SHOW_OLD_BO)
+    setflag(FLAG_HF_HIDE_MAMAW)
+    setflag(FLAG_HF_HIDE_RIVAL_MIKE)
     //TEST_FLAGS
     setflag(FLAG_TEST_SHOW_BALL)
     return

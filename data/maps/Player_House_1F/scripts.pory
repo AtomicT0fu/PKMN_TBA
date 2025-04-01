@@ -5,6 +5,7 @@ mapscripts Player_House_1F_MapScripts{
         VAR_ADVENTURE_START, 2: PH1F_MomIntro
         VAR_ADVENTURE_START, 8: PH1F_BattleTapeStart
         VAR_ADVENTURE_START, 12: PH1F_Post_BattleTape
+        VAR_ADVENTURE_START, 18: PH1F_Mom_PostStarter
     ]
 }
 
@@ -16,6 +17,12 @@ script PH1F_UpdateSpritePos{
     }
     elif(var(VAR_ADVENTURE_START) == 12){
         setobjectxyperm(3, 3, 4)
+        setobjectmovementtype(3, MOVEMENT_TYPE_FACE_UP)
+    }
+    elif(var(VAR_ADVENTURE_START) == 18){
+        setobjectxyperm(1, 9, 5)
+        setobjectxyperm(2, 8, 5)
+        setobjectxyperm(3, 10, 8)
         setobjectmovementtype(3, MOVEMENT_TYPE_FACE_UP)
     }
     else{
@@ -48,7 +55,7 @@ script PH1F_MomIntro{
     closemessage
     applymovement(1, PH1F_M_Mom2)
     waitmovement(0)
-    delay(30)
+    delay(10)
     playse(SE_PIN)
     applymovement(1, Univ_Exclam)
     waitmovement(0)
@@ -306,6 +313,195 @@ script PH1F_Post_BattleTape{
     end
 }
 
+script PH1F_Mom_PostStarter{
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, PH1F_CAM_5)
+    waitmovement(0)
+    delay(20)
+    applymovement(1, Univ_Exclam)
+    playse(SE_PIN)
+    waitmovement(0)
+    delay(30)
+    turnobject(1, DIR_SOUTH)
+    delay(5)
+    turnobject(2, DIR_SOUTH)
+    delay(60)
+    applymovement(OBJ_EVENT_ID_CAMERA, PH1F_CAM_6)
+    applymovement(2, PH1F_M_Lilli_1)
+    applymovement(1, PH1F_M_Mom5)
+    waitmovement(0)
+    delay(20)
+    speakername("{COLOR RED}{SHADOW LIGHT_RED}{FONT_SHORT}Mom")
+    msgbox(PH1F_T_Mom7)
+    waitmessage
+    closemessage
+    applymovement(2, Univ_Exclam)
+    playse(SE_PIN)
+    waitmovement(0)
+    delay(30)
+    playmoncry(SPECIES_LILLIPUP, 0)
+    waitmoncry
+    applymovement(2, PH1F_M_Lilli_2)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_CAMERA, Univ_StepSW1)
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_WEST)
+    turnobject(1, DIR_WEST)
+    playse(SE_BIKE_HOP)
+    applymovement(2, Univ_JumpIP_1Right)
+    waitmovement(0)
+    playse(SE_BIKE_HOP)
+    applymovement(2, Univ_JumpIP_1Right)
+    waitmovement(0)
+    delay(20)
+    applymovement(2, PH1F_M_Lilli_3)
+    waitmovement(0)
+    playse(SE_BIKE_HOP)
+    applymovement(2, Univ_JumpIP_1Right)
+    waitmovement(0)
+    playse(SE_BIKE_HOP)
+    applymovement(2, Univ_JumpIP_1Right)
+    waitmovement(0)
+    delay(20)
+    playmoncry(SPECIES_LILLIPUP, 0)
+    waitmoncry
+    delay(40)
+    applymovement(OBJ_EVENT_ID_CAMERA, Univ_StepNE1)
+    waitmovement(0)
+    delay(20)
+    playse(SE_PIN)
+    applymovement(1, Univ_Question)
+    waitmovement(0)
+    delay(30)
+    turnobject(1, DIR_SOUTH)
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+    delay(20)
+    speakername("{COLOR RED}{SHADOW LIGHT_RED}{FONT_SHORT}Mom")
+    msgbox(PH1F_T_Mom8)
+    waitmessage
+    closemessage
+    playse(SE_DOOR)
+    delay(10)
+    addobject(3)
+    applymovement(OBJ_EVENT_ID_PLAYER, PH1F_M_Player1)
+    waitmovement(0)
+    delay(30)
+    applymovement(OBJ_EVENT_ID_CAMERA, Univ_StepDown1)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+    msgbox(PH1F_T_Mike6)
+    waitmessage
+    closemessage
+    delay(60)
+    applymovement(OBJ_EVENT_ID_CAMERA, Univ_StepLeft1)
+    waitmovement(0)
+    playse(SE_BIKE_HOP)
+    applymovement(2, Univ_JumpIP_1Right)
+    waitmovement(0)
+    turnobject(3, DIR_WEST)
+    playse(SE_BIKE_HOP)
+    applymovement(2, Univ_JumpIP_1Right)
+    waitmovement(0)
+    delay(20)
+    applymovement(2, PH1F_M_Lilli_3)
+    waitmovement(0)
+    playse(SE_BIKE_HOP)
+    applymovement(2, Univ_JumpIP_1Right)
+    waitmovement(0)
+    playse(SE_BIKE_HOP)
+    applymovement(2, Univ_JumpIP_1Right)
+    waitmovement(0)
+    delay(20)
+    playmoncry(SPECIES_LILLIPUP, 0)
+    waitmoncry
+    delay(40)
+    applymovement(OBJ_EVENT_ID_CAMERA, Univ_StepNE1)
+    waitmovement(0)
+    delay(20)
+    turnobject(3, DIR_NORTH)
+    speakername("{COLOR RED}{SHADOW LIGHT_RED}{FONT_SHORT}Mom")
+    msgbox(PH1F_T_Mom9)
+    waitmessage
+    closemessage
+    applymovement(OBJ_EVENT_ID_CAMERA, Univ_StepDown1)
+    waitmovement(0)
+    delay(20)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+    msgbox(PH1F_T_Mike7)
+    waitmessage
+    closemessage
+    applymovement(OBJ_EVENT_ID_CAMERA, Univ_StepUp1)
+    waitmovement(0)
+    delay(20)
+    playse(SE_PIN)
+    applymovement(1, Univ_Exclam)
+    waitmovement(0)
+    delay(20)
+    applymovement(OBJ_EVENT_ID_CAMERA, Univ_StepRight1)
+    applymovement(1, PH1F_M_Mom6)
+    waitmovement(OBJ_EVENT_ID_CAMERA)
+    turnobject(3, DIR_EAST)
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+    delay(20)
+    speakername("{COLOR RED}{SHADOW LIGHT_RED}{FONT_SHORT}Mom")
+    msgbox(PH1F_T_Mom10)
+    waitmessage
+    closemessage
+    applymovement(OBJ_EVENT_ID_CAMERA, Univ_StepLeft1)
+    applymovement(1, PH1F_M_Mom7)
+    waitmovement(0)
+    turnobject(3, DIR_NORTH)
+    delay(20)
+    speakername("{COLOR RED}{SHADOW LIGHT_RED}{FONT_SHORT}Mom")
+    msgbox(PH1F_T_Mom11)
+    waitmessage
+    closemessage
+    applymovement(1, PH1F_M_Mom8)
+    waitmovement(0)
+    delay(30)
+    turnobject(1, DIR_SOUTH)
+    delay(20)
+    speakername("{COLOR RED}{SHADOW LIGHT_RED}{FONT_SHORT}Mom")
+    msgbox("Let's go, my little Lillipad!")
+    waitmessage
+    closemessage
+    delay(20)
+    playse(SE_BIKE_HOP)
+    applymovement(2, Univ_JumpIP_1Right)
+    waitmovement(0)
+    delay(20)
+    applymovement(2, PH1F_M_Lilli_3)
+    waitmovement(0)
+    playmoncry(SPECIES_LILLIPUP, 0)
+    waitmoncry
+    applymovement(1, Univ_StepUp1)
+    applymovement(2, PH1F_M_Lilli_4)
+    waitmovement(0)
+    delay(30)
+    applymovement(OBJ_EVENT_ID_CAMERA, Univ_StepDown1)
+    waitmovement(0)
+    turnobject(3, DIR_EAST)
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_WEST)
+    delay(20)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+    msgbox(PH1F_T_Mike8)
+    waitmessage
+    closemessage
+    delay(20)
+    turnobject(3, DIR_SOUTH)
+    delay(20)
+    playse(SE_EXIT)
+    removeobject(3)
+    waitse
+    delay(20)
+    applymovement(OBJ_EVENT_ID_CAMERA, Univ_StepRight1)
+    waitmovement(0)
+    special(RemoveCameraObject)
+    setflag(FLAG_HF_HIDE_MAMAW)
+    clearflag(FLAG_RH1F_HIDE_MAMAW)
+    setvar(VAR_ADVENTURE_START, 19)
+    releaseall
+    end
+}
+
 
 //UNIVERSAL MOVEMENTS////////////
 movement Univ_Exclam{
@@ -416,14 +612,74 @@ movement PH1F_M_Mom4{
     face_up
 }
 
+movement PH1F_M_Mom5{
+    walk_down * 2
+    walk_right
+    face_down
+}
+
+movement PH1F_M_Mom6{
+    walk_fast_right
+    face_down
+}
+
+movement PH1F_M_Mom7{
+    walk_left
+    face_down
+}
+
+movement PH1F_M_Mom8{
+    walk_left
+    walk_up
+}
+
+movement PH1F_M_Lilli_1{
+    walk_right
+    walk_down * 2
+}
+
+movement PH1F_M_Lilli_2{
+    walk_fast_down
+    face_right
+}
+
+movement PH1F_M_Lilli_3{
+    face_up
+    face_left
+    face_down
+    face_right
+    face_up
+    face_left
+    face_down
+    face_right
+    face_up
+    face_left
+    face_down
+    face_right
+    face_up
+    face_left
+    face_down
+    face_right
+    face_up
+    face_left
+    face_down
+    face_right
+}
+
+movement PH1F_M_Lilli_4{
+    walk_fast_up * 2
+    walk_fast_left
+    walk_fast_up
+}
+
 movement PH1F_CAM_1{
-    walk_up * 3
-    walk_left * 2
+    walk_diag_northwest * 2
+    walk_up
 }
 
 movement PH1F_CAM_2{
-    walk_down * 3
-    walk_right * 2
+    walk_diag_southeast * 2
+    walk_down
 }
 
 movement PH1F_CAM_3{
@@ -444,6 +700,14 @@ movement PH1F_CAM_4R{
     walk_right * 2
 }
 
+movement PH1F_CAM_5{
+    walk_up * 3
+}
+
+movement PH1F_CAM_6{
+    walk_down * 2
+}
+
 movement PH1F_W_Mike1{
     walk_fast_up
     walk_fast_left * 5
@@ -455,6 +719,12 @@ movement PH1F_W_Mike2{
     walk_fast_down * 3
     walk_fast_right * 9
     walk_fast_down
+}
+
+movement PH1F_M_Player1{
+    face_left
+    slide_right
+    face_left
 }
 
 
@@ -497,11 +767,74 @@ text PH1F_T_Mom5{
     "Lunch should be ready soon, sweetie!"
 }
 
+text PH1F_T_Mom7{
+    "There you are, {PLAYER}!\n"
+    "You missed lunch, sweetie, your father\l"
+    "and I were worried!\p"
+    "What took you so long?!"
+}
+
+text PH1F_T_Mom8{
+    "Huh... {PAUSE 30}that's so strange.\n"
+    "I've only seen Lilli act like that when\l"
+    "there was another Pokemon nearby.\p"
+    "Is there something you need to tell me,\n"
+    "honey?"
+}
+
+text PH1F_T_Mom9{
+    "Mike, someone needs to tell me what's\n"
+    "going on here!\p"
+    "Lilli is acting like there are Pokemon in\n"
+    "the room, and I don't know how that\l"
+    "would be possible."
+}
+
+text PH1F_T_Mom10{
+    "{PLAYER}, I cannot believe you would do\n"
+    "something so reckless!\p"
+    "Do you know how lucky you are that you\n"
+    "weren't seriously hurt?!\p"
+    "I guess I am... {PAUSE 30}proud of you.\p"
+    "You risked your safety to help get\n"
+    "someone's Pokemon back.\p"
+    "I know I would be grateful if someone\n"
+    "did that for Lilli.\p"
+    "But wow, you two really have your own\n"
+    "Pokemon now?\p"
+    "I wanted to go on a Pokemon adventure\n"
+    "when I was a little girl...\p"
+    "Reading about all the elite trainers\n"
+    "in the newspapers was my favorite\l"
+    "thing to do back then!\p"
+    "I was going to go for it too, but then I\n"
+    "met the love of my life.\l"
+    "I wouldn't change a thing!\p"
+    "I'll cheer you on the whole way if you're\n"
+    "really going to do this, {PLAYER},\l"
+    "but I would hold off on telling your\l"
+    "Father about all this for now...\p"
+    "He can't let go of his dream that you\n"
+    "will take over the farm one day, this\l"
+    "might break his heart.\p"
+    "Luckily, he's in town right now picking\n"
+    "up some Tauros manure.\p"
+    "I'll try to soften the blow when he\n"
+    "gets back."
+
+}
+
+text PH1F_T_Mom11{
+    "You be safe out there too, sweetie!\p"
+    "Make sure you tell your Grandparents\n"
+    "about your plans as well!"
+}
+
 text PH1F_T_Mike1{
     "Thank you so much for letting us use\n"
     "the TV again!\p"
     "I wish my Grandparents had one, but\n"
-    "they spend all their money on\p"
+    "they spend all their money on\l"
     "PokeTreats for Millie..."
 }
 
@@ -527,13 +860,44 @@ text PH1F_T_Mike4{
     "And that Dusclops, oh man!\p"
     "Bo sure wasn't kidding, that was great!\p"
     "Dang, {PLAYER}, if only we could become\n"
-    "Pokemon trainers...\p"
-    "I just know that could be us battling\n"
+    "Pokemon trainers...\l"
+    "I just know that could be us battling\l"
     "each other for a title one day!\p"
     "Well, that'll have to wait.\p"
     "I gotta feed Millie real quick, but we\n"
     "should go return this tape together!\p"
     "Meet me at my Grandparent's house!"
+}
+
+text PH1F_T_Mike6{
+    "Oh... {PAUSE 30}Shoot... {PAUSE 30}Hi, sorry, I just came over\n"
+    "to tell {PLAYER} something!\p"
+    "It isn't serious or anything like that,\n"
+    "just nothin' but some yappin' as Papaw\l"
+    "always says, haha!\p"
+    "..."
+}
+
+text PH1F_T_Mike7{
+    "Well um... {PAUSE 30}so me and {PLAYER} went to\n"
+    "Bo's house to return that battle tape...{PAUSE 30}\p"
+    "We were waiting for him to get home\n"
+    "when some of his Pokemon escaped the\l"
+    "ranch!\p"
+    "{PLAYER} rescued them from the woods,\n"
+    "and Bo asked if we wanted to take one,\l"
+    "so we said yes!\p"
+    "I hope this doesn't get {PLAYER} in\n"
+    "trouble!\p"
+    "We've just wanted to become Pokemon\n"
+    "Trainers for so long, and this seemed\l"
+    "like our only chance!!"
+}
+
+text PH1F_T_Mike8{
+    "Alright, {PLAYER}, I guess it's time!\n"
+    "Meet me in Millie's pen, I have something\l"
+    "incredible to show you!"
 }
 
 text PH1F_T_System1{

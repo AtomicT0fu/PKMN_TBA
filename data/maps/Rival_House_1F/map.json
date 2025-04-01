@@ -15,7 +15,7 @@
   "connections": 0,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
+      "graphics_id": "OBJ_EVENT_GFX_MAMAW",
       "x": 5,
       "y": 4,
       "elevation": 0,
@@ -25,10 +25,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "RH1F_Mamaw_Interact",
-      "flag": "0"
+      "flag": "FLAG_RH1F_HIDE_MAMAW"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
+      "graphics_id": "OBJ_EVENT_GFX_PAPAW",
       "x": 2,
       "y": 4,
       "elevation": 0,

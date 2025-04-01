@@ -1,23 +1,10 @@
 mapscripts Old_Bos_Ranch_MapScripts{
     MAP_SCRIPT_ON_LOAD: OBR_UpdateMetatiles
-    MAP_SCRIPT_ON_TRANSITION: OBR_Set_Music
 }
 
 
 
 //------------------------[[EVENT_SCRIPTS]]-----------------------------
-
-script OBR_Set_Music{
-    if(var(VAR_WHH_STARTERS) == 3){
-        playbgm(MUS_FALLARBOR, TRUE)
-    }
-    elif(var(VAR_ADVENTURE_START) == 15){
-        playbgm(MUS_HELP, FALSE)
-    }
-    else{
-        playbgm(MUS_FALLARBOR, TRUE)
-    }
-}
 
 script OBR_DoorIsLocked{
     if(flag(FLAG_SYS_POKEMON_GET) == FALSE){
@@ -1107,6 +1094,11 @@ script OBR_ChooseTurtwig{
         special(DrawWholeMapView)
         setvar(VAR_ADVENTURE_START, 18)
         clearflag(FLAG_PAUSE_ENCOUNTERS)
+        setflag(FLAG_PS_HIDE_DAD)
+        setflag(FLAG_PAUSE_FOLLOWERS)
+        setflag(FLAG_RH1F_HIDE_MAMAW)
+        clearflag(FLAG_HF_HIDE_MAMAW)
+        clearflag(FLAG_HF_HIDE_RIVAL_MIKE)
     }
     else{
         closemessage
@@ -1233,6 +1225,11 @@ script OBR_ChooseLitten{
         special(DrawWholeMapView)
         setvar(VAR_ADVENTURE_START, 18)
         clearflag(FLAG_PAUSE_ENCOUNTERS)
+        setflag(FLAG_PS_HIDE_DAD)
+        setflag(FLAG_PAUSE_FOLLOWERS)
+        setflag(FLAG_RH1F_HIDE_MAMAW)
+        clearflag(FLAG_HF_HIDE_MAMAW)
+        clearflag(FLAG_HF_HIDE_RIVAL_MIKE)
     }
     else{
         closemessage
@@ -1359,6 +1356,11 @@ script OBR_ChooseOshawott{
         special(DrawWholeMapView)
         setvar(VAR_ADVENTURE_START, 18)
         clearflag(FLAG_PAUSE_ENCOUNTERS)
+        setflag(FLAG_PAUSE_FOLLOWERS)
+        setflag(FLAG_PS_HIDE_DAD)
+        setflag(FLAG_RH1F_HIDE_MAMAW)
+        clearflag(FLAG_HF_HIDE_MAMAW)
+        clearflag(FLAG_HF_HIDE_RIVAL_MIKE)
     }
     else{
         closemessage
@@ -1601,8 +1603,8 @@ movement OBR_M_Player7{
 //-----CAMERA-------
 
 movement OBR_M_CamPan1{
-    walk_slow_right * 5
-    walk_slow_down * 8
+    walk_slow_diag_southeast * 5
+    walk_slow_down * 3
 }
 
 movement OBR_M_CamPan2{
@@ -1610,8 +1612,8 @@ movement OBR_M_CamPan2{
 }
 
 movement OBR_M_CamPan3{
-    walk_slow_right * 2
-    walk_slow_down * 8
+    walk_slow_diag_southeast * 2
+    walk_slow_down * 6
 }
 
 movement OBR_M_CamPan4{

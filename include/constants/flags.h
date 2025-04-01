@@ -64,10 +64,10 @@
 #define FLAG_OBR_REMOVE_LOG           0x32 // removes log infront of the woods at obr
 #define FLAG_PAUSE_ENCOUNTERS         0x33 // Pauses OW_Encounter flag kind of like a repel
 #define FLAG_PAUSE_FOLLOWERS          0x34 // Hides follower pokemon for length of time
-#define FLAG_UNUSED_0x035    0x35 // Unused Flag
-#define FLAG_UNUSED_0x036    0x36 // Unused Flag
-#define FLAG_UNUSED_0x037    0x37 // Unused Flag
-#define FLAG_UNUSED_0x038    0x38 // Unused Flag
+#define FLAG_HF_HIDE_MAMAW            0x35 // shows mamaw brushing millie
+#define FLAG_HF_HIDE_RIVAL_MIKE       0x36 // mike sprite highland farms for intro arc
+#define FLAG_RH1F_HIDE_MAMAW          0x37 // hides and shows mamaw in mikes house
+#define FLAG_PS_HIDE_DAD              0x38 // Hides dad sprite in shed
 #define FLAG_UNUSED_0x039    0x39 // Unused Flag
 #define FLAG_UNUSED_0x03A    0x3A // Unused Flag
 #define FLAG_UNUSED_0x03B    0x3B // Unused Flag

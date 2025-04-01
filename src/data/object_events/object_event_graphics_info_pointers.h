@@ -238,6 +238,10 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HoOh;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ChampionNorman;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RivalMike;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Dad;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OldBo;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MomNew;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Papaw;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mamaw;
 
 
 // Begin pokemon event objects
@@ -496,6 +500,10 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_CHAMPION_NORMAN] =          &gObjectEventGraphicsInfo_ChampionNorman,
     [OBJ_EVENT_GFX_RIVAL_MIKE] =               &gObjectEventGraphicsInfo_RivalMike,
     [OBJ_EVENT_GFX_DAD] =                      &gObjectEventGraphicsInfo_Dad,
+    [OBJ_EVENT_GFX_OLD_BO] =                   &gObjectEventGraphicsInfo_OldBo,
+    [OBJ_EVENT_GFX_MOM_NEW] =                  &gObjectEventGraphicsInfo_MomNew,
+    [OBJ_EVENT_GFX_PAPAW] =                    &gObjectEventGraphicsInfo_Papaw,
+    [OBJ_EVENT_GFX_MAMAW] =                    &gObjectEventGraphicsInfo_Mamaw,
 
 };
 

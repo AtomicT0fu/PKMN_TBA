@@ -153,6 +153,20 @@ const u32 gObjectEventPic_Tate[] = INCBIN_U32("graphics/object_events/pics/peopl
 const u32 gObjectEventPic_Wallace[] = INCBIN_U32("graphics/object_events/pics/people/wallace.4bpp");
 const u32 gObjectEventPic_Steven[] = INCBIN_U32("graphics/object_events/pics/people/steven.4bpp");
 const u32 gObjectEventPic_Wally[] = INCBIN_U32("graphics/object_events/pics/people/wally.4bpp");
+
+const u32 gObjectEventPic_OldBo[] = INCBIN_U32("graphics/object_events/pics/people/old_bo_ow.4bpp");
+const u16 gObjectEventPal_OldBo[] = INCBIN_U16("graphics/object_events/pics/people/old_bo_ow.gbapal");
+
+const u32 gObjectEventPic_MomNew[] = INCBIN_U32("graphics/object_events/pics/people/mom_ow.4bpp");
+const u16 gObjectEventPal_MomNew[] = INCBIN_U16("graphics/object_events/pics/people/mom_ow.gbapal");
+
+const u32 gObjectEventPic_Papaw[] = INCBIN_U32("graphics/object_events/pics/people/papaw_ow.4bpp");
+const u16 gObjectEventPal_Papaw[] = INCBIN_U16("graphics/object_events/pics/people/papaw_ow.gbapal");
+
+const u32 gObjectEventPic_Mamaw[] = INCBIN_U32("graphics/object_events/pics/people/mamaw_ow.4bpp");
+const u16 gObjectEventPal_Mamaw[] = INCBIN_U16("graphics/object_events/pics/people/mamaw_ow.gbapal");
+
+
 const u32 gObjectEventPic_RubySapphireLittleBoy[] = INCBIN_U32("graphics/object_events/pics/people/rs_little_boy.4bpp");
 const u32 gObjectEventPic_HotSpringsOldWoman[] = INCBIN_U32("graphics/object_events/pics/people/hot_springs_old_woman.4bpp");
 const u32 gObjectEventPic_LatiasLatios[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/latias_latios.4bpp");

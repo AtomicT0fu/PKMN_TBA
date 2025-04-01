@@ -1901,7 +1901,7 @@ PS_T_Dad1::
 	.string "Oh boy, there sure aint nothin' like\n"
 	.string "processin' a new batch huh, {PLAYER}?\p"
 	.string "Now I know you've done this plenty of\n"
-	.string "times, but I'm gonna give you the\p"
+	.string "times, but I'm gonna give you the\l"
 	.string "rundown again.\p"
 	.string "One day you're gonna have to do this all\n"
 	.string "on 'yer own!\p"
@@ -1929,10 +1929,10 @@ PS_T_Dad4B::
 	.string "No problem kiddo.\n"
 	.string "I'll learn ya up real quick!\p"
 	.string "Our herbs are mighty important to big\n"
-	.string "city supplement companies.\p"
-	.string "All those items that them hot shot\n"
-	.string "title contenders use on their Pokemon\p"
-	.string "to make 'em real strong, depend on the\n"
+	.string "city supplement companies.\l"
+	.string "All those items that them hot shot\l"
+	.string "title contenders use on their Pokemon\l"
+	.string "to make 'em real strong, depend on the\l"
 	.string "herbs we grow here on the farm!\p"
 	.string "Our Red Herbs are used fer a Pokemon's\n"
 	.string "physical stats.\p"
@@ -1947,134 +1947,135 @@ PS_T_Dad5::
 	.string "Now here's the crown jewel of the farm!\n"
 	.string "The Herb Processor Turbo 9000!\p"
 	.string "This beauty takes our herbs and breaks\n"
-	.string "'em down real nice into compact bricks.\p"
-	.string "That way they're nice'n easy to handle.\p"
+	.string "'em down real nice into compact bricks,\l"
+	.string "that way they're nice'n easy to handle.\p"
 	.string "Them city boys got some soft hands...\p"
 	.string "We wouldn't want them gettin' a splinter\n"
-	.string "now would we? Haha!$"
+	.string "now would we?\l"
+	.string "Haha!$"
 
 PS_T_Dad6::
-# 1055 "data/maps/Player_Shed/scripts.pory"
+# 1056 "data/maps/Player_Shed/scripts.pory"
 	.string "Lastly, we got our packagin' area.\n"
-	.string "Just drop the brick in the same colored\p"
+	.string "Just drop the brick in the same colored\l"
 	.string "box and we'll be good to go!$"
 
 PS_T_Dad7::
-# 1061 "data/maps/Player_Shed/scripts.pory"
+# 1062 "data/maps/Player_Shed/scripts.pory"
 	.string "Alrighty then, {PLAYER}.\p"
 	.string "I'm gonna open the loading door, you go\n"
 	.string "ahead and throw them herbs in!$"
 
 PS_T_Dad8::
-# 1067 "data/maps/Player_Shed/scripts.pory"
+# 1068 "data/maps/Player_Shed/scripts.pory"
 	.string "Where ya goin', {PLAYER}?\n"
 	.string "We got work to do here!$"
 
 PS_T_Dad9::
-# 1072 "data/maps/Player_Shed/scripts.pory"
+# 1073 "data/maps/Player_Shed/scripts.pory"
 	.string "Nice work, {PLAYER}!\n"
 	.string "Let me start 'er up!$"
 
 PS_T_Dad10::
-# 1077 "data/maps/Player_Shed/scripts.pory"
+# 1078 "data/maps/Player_Shed/scripts.pory"
 	.string "One brick ready fer ya, {PLAYER}!$"
 
 PS_T_Dad11::
-# 1081 "data/maps/Player_Shed/scripts.pory"
+# 1082 "data/maps/Player_Shed/scripts.pory"
 	.string "Now go n' get that packaged up!$"
 
 PS_T_Dad12::
-# 1085 "data/maps/Player_Shed/scripts.pory"
+# 1086 "data/maps/Player_Shed/scripts.pory"
 	.string "Looks great, {PLAYER}!\n"
 	.string "Let's get another batch goin'.$"
 
 PS_T_Dad13::
-# 1090 "data/maps/Player_Shed/scripts.pory"
+# 1091 "data/maps/Player_Shed/scripts.pory"
 	.string "Seems like that's all the herbs that\n"
 	.string "needed processin'!\p"
 	.string "Let me just shut this 'ol thing down...$"
 
 PS_T_Dad14::
-# 1096 "data/maps/Player_Shed/scripts.pory"
-	.string "Hey, real nice job today, {PLAYER}.\p"
-	.string "Since ya worked hard, I'll letcha take\n"
+# 1097 "data/maps/Player_Shed/scripts.pory"
+	.string "Hey, real nice job today, {PLAYER}.\n"
+	.string "Since ya worked hard, I'll letcha take\l"
 	.string "off while I clean up 'round here.\p"
 	.string "See y'all at lunch!$"
 
 PS_T_Dad15::
-# 1103 "data/maps/Player_Shed/scripts.pory"
+# 1104 "data/maps/Player_Shed/scripts.pory"
 	.string "You go on now, {PLAYER}.\n"
 	.string "This place needs a little fixin' yet.$"
 
 PS_T_Dad16::
-# 1108 "data/maps/Player_Shed/scripts.pory"
+# 1109 "data/maps/Player_Shed/scripts.pory"
 	.string "Come on, {PLAYER}, yer wastin' daylight!$"
 
 PS_T_SYS1_R::
-# 1112 "data/maps/Player_Shed/scripts.pory"
+# 1113 "data/maps/Player_Shed/scripts.pory"
 	.string "Take the {COLOR RED}{SHADOW LIGHT_RED}Red Herbs{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}?$"
 
 PS_T_SYS2_R::
-# 1116 "data/maps/Player_Shed/scripts.pory"
+# 1117 "data/maps/Player_Shed/scripts.pory"
 	.string "Place the {COLOR RED}{SHADOW LIGHT_RED}Red Herbs {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}in the processor?$"
 
 PS_T_SYS3_R::
-# 1120 "data/maps/Player_Shed/scripts.pory"
+# 1121 "data/maps/Player_Shed/scripts.pory"
 	.string "Package the {COLOR RED}{SHADOW LIGHT_RED}Red Herbs{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}?$"
 
 PS_T_SYS4::
-# 1124 "data/maps/Player_Shed/scripts.pory"
+# 1125 "data/maps/Player_Shed/scripts.pory"
 	.string "The door is sealed shut.$"
 
 PS_T_SYS5_R::
-# 1128 "data/maps/Player_Shed/scripts.pory"
+# 1129 "data/maps/Player_Shed/scripts.pory"
 	.string "The {COLOR RED}{SHADOW LIGHT_RED}Red Herbs {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}are prepared to ship!$"
 
 PS_T_SYS1_Y::
-# 1132 "data/maps/Player_Shed/scripts.pory"
+# 1133 "data/maps/Player_Shed/scripts.pory"
 	.string "Take the {COLOR BLUE}{SHADOW LIGHT_BLUE}Yellow Herbs{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}?$"
 
 PS_T_SYS2_Y::
-# 1136 "data/maps/Player_Shed/scripts.pory"
+# 1137 "data/maps/Player_Shed/scripts.pory"
 	.string "Place the {COLOR BLUE}{SHADOW LIGHT_BLUE}Yellow Herbs {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}in the processor?$"
 
 PS_T_SYS3_Y::
-# 1140 "data/maps/Player_Shed/scripts.pory"
+# 1141 "data/maps/Player_Shed/scripts.pory"
 	.string "Package the {COLOR BLUE}{SHADOW LIGHT_BLUE}Yellow Herbs{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}?$"
 
 PS_T_SYS5_Y::
-# 1144 "data/maps/Player_Shed/scripts.pory"
+# 1145 "data/maps/Player_Shed/scripts.pory"
 	.string "The {COLOR BLUE}{SHADOW LIGHT_BLUE}Yellow Herbs {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}are prepared to ship!$"
 
 PS_T_SYS1_G::
-# 1148 "data/maps/Player_Shed/scripts.pory"
+# 1149 "data/maps/Player_Shed/scripts.pory"
 	.string "Take the {COLOR GREEN}{SHADOW LIGHT_GREEN}Green Herbs{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}?$"
 
 PS_T_SYS2_G::
-# 1152 "data/maps/Player_Shed/scripts.pory"
+# 1153 "data/maps/Player_Shed/scripts.pory"
 	.string "Place the {COLOR GREEN}{SHADOW LIGHT_GREEN}Green Herbs {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}in the processor?$"
 
 PS_T_SYS3_G::
-# 1156 "data/maps/Player_Shed/scripts.pory"
+# 1157 "data/maps/Player_Shed/scripts.pory"
 	.string "Package the {COLOR GREEN}{SHADOW LIGHT_GREEN}Green Herbs{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}?$"
 
 PS_T_SYS5_G::
-# 1160 "data/maps/Player_Shed/scripts.pory"
+# 1161 "data/maps/Player_Shed/scripts.pory"
 	.string "The {COLOR GREEN}{SHADOW LIGHT_GREEN}Green Herbs {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}are prepared to ship!$"
 
 PS_T_Player1::
-# 1164 "data/maps/Player_Shed/scripts.pory"
+# 1165 "data/maps/Player_Shed/scripts.pory"
 	.string "The bin is empty.$"
 
 PS_T_Player2::
-# 1168 "data/maps/Player_Shed/scripts.pory"
+# 1169 "data/maps/Player_Shed/scripts.pory"
 	.string "Dad's words echoed...\n"
 	.string "''Always finish wat'cha started!''$"
 
 PS_T_Player3::
-# 1173 "data/maps/Player_Shed/scripts.pory"
+# 1174 "data/maps/Player_Shed/scripts.pory"
 	.string "An herb brick would fit perfectly.$"
 
 PS_T_Player4::
-# 1177 "data/maps/Player_Shed/scripts.pory"
+# 1178 "data/maps/Player_Shed/scripts.pory"
 	.string "You must gather some herbs.$"

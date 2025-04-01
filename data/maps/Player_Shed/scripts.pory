@@ -999,7 +999,7 @@ text PS_T_Dad1{
     "Oh boy, there sure aint nothin' like\n"
     "processin' a new batch huh, {PLAYER}?\p"
     "Now I know you've done this plenty of\n"
-    "times, but I'm gonna give you the\p"
+    "times, but I'm gonna give you the\l"
     "rundown again.\p"
     "One day you're gonna have to do this all\n"
     "on 'yer own!\p"
@@ -1027,10 +1027,10 @@ text PS_T_Dad4B{
     "No problem kiddo.\n"
     "I'll learn ya up real quick!\p"
     "Our herbs are mighty important to big\n"
-    "city supplement companies.\p"
-    "All those items that them hot shot\n"
-    "title contenders use on their Pokemon\p"
-    "to make 'em real strong, depend on the\n"
+    "city supplement companies.\l"
+    "All those items that them hot shot\l"
+    "title contenders use on their Pokemon\l"
+    "to make 'em real strong, depend on the\l"
     "herbs we grow here on the farm!\p"
     "Our Red Herbs are used fer a Pokemon's\n"
     "physical stats.\p"
@@ -1045,16 +1045,17 @@ text PS_T_Dad5{
     "Now here's the crown jewel of the farm!\n"
     "The Herb Processor Turbo 9000!\p"
     "This beauty takes our herbs and breaks\n"
-    "'em down real nice into compact bricks.\p"
-    "That way they're nice'n easy to handle.\p"
+    "'em down real nice into compact bricks,\l"
+    "that way they're nice'n easy to handle.\p"
     "Them city boys got some soft hands...\p"
     "We wouldn't want them gettin' a splinter\n"
-    "now would we? Haha!"
+    "now would we?\l"
+    "Haha!"
 }
 
 text PS_T_Dad6{
     "Lastly, we got our packagin' area.\n"
-    "Just drop the brick in the same colored\p"
+    "Just drop the brick in the same colored\l"
     "box and we'll be good to go!"
 }
 
@@ -1094,8 +1095,8 @@ text PS_T_Dad13{
 }
 
 text PS_T_Dad14{
-    "Hey, real nice job today, {PLAYER}.\p"
-    "Since ya worked hard, I'll letcha take\n"
+    "Hey, real nice job today, {PLAYER}.\n"
+    "Since ya worked hard, I'll letcha take\l"
     "off while I clean up 'round here.\p"
     "See y'all at lunch!"
 }
