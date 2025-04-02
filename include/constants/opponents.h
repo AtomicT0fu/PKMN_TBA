@@ -863,6 +863,9 @@
 #define TRAINER_RIVAL_MIKE                  857
 #define TRAINER_CHAMPION_DEE                858
 #define TRAINER_RED_E                       859
+#define TRAINER_HF_MIKE_TURTWIG             860
+#define TRAINER_HF_MIKE_LITTEN              861
+#define TRAINER_HF_MIKE_OSHAWOTT            862
 
 
 
@@ -870,7 +873,7 @@
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT                      860
+#define TRAINERS_COUNT                      863
 #define MAX_TRAINERS_COUNT                  864
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

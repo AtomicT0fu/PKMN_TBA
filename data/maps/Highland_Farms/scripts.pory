@@ -1,8 +1,30 @@
 mapscripts Highland_Farms_MapScripts{
     MAP_SCRIPT_ON_LOAD: HF_UpdateMetatiles
     MAP_SCRIPT_ON_TRANSITION: HF_UpdateSpritePos
+    MAP_SCRIPT_ON_RESUME: HF_RemoveRivalPokemon
 }
 
+script TestBattle_HF{
+    trainerbattle_no_intro(TRAINER_CALVIN_1, HF_T_MikeLoseBattle)
+    end
+}
+
+script HF_RemoveRivalPokemon{
+    specialvar(VAR_RESULT, GetBattleOutcome)
+    if(var(VAR_RESULT) == B_OUTCOME_WON){
+        removeobject(11)
+        removeobject(12)
+        removeobject(13)
+    }
+    if(var(VAR_RESULT) == B_OUTCOME_LOST){
+        removeobject(8)
+        removeobject(9)
+        removeobject(10)
+    }
+    else{
+    }
+    end
+}
 
 script HF_UpdateMetatiles{
     call(CheckSproutFlag)
@@ -430,8 +452,249 @@ script HF_NoExitBattleStage_Trigger{
     waitmovement(0)
     release
     end
+} 
+
+script HF_FirstBattleStart_Trigger{
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_EAST)
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, HF_CAM_5)
+    waitmovement(0)
+    delay(30)
+    playbgm(MUS_RG_ENCOUNTER_RIVAL, FALSE)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+    msgbox(HF_T_Mike10)
+    waitmessage
+    closemessage
+    delay(30)
+    call(HF_HandleBattleSprites_Rival)
+    delay(30)
+    applymovement(OBJ_EVENT_ID_CAMERA, HF_CAM_5R)
+    waitmovement(0)
+    delay(60)
+    call(HF_HandleBattleSprites_Player)
+    delay(60)
+    applymovement(OBJ_EVENT_ID_CAMERA, HF_CAM_6)
+    waitmovement(0)
+    call(HF_StartBattle_1)
+    fadedefaultbgm
+    delay(60)
+    call(HF_RemovePlayerPokemon_PostBattle)
+    delay(60)
+    playfanfare(MUS_OBTAIN_BADGE)
+    waitfanfare
+    setvar(VAR_ADVENTURE_START, 21)
+    release
+    end
 }
 
+script HF_RemovePlayerPokemon_PostBattle{
+     if(var(VAR_STARTER_MON) == 2){ //Player = OSHAWOTT, Rival = TURTWIG
+        applymovement(10, Univ_StepLeft1)
+        waitmovement(0)
+        playmoncry(SPECIES_OSHAWOTT, 0)
+        waitmoncry
+        playse(SE_BIKE_HOP)
+        applymovement(10, Univ_JumpIP_1Left)
+        waitmovement(0)
+        delay(30)
+        playse(SE_BALL_BOUNCE_1)
+        addobject(7)
+        setobjectsubpriority(7, MAP_HIGHLAND_FARMS, 0)
+        setobjectsubpriority(10, MAP_HIGHLAND_FARMS, 3)
+        waitse
+        delay(30)
+        playse(SE_BALL_OPEN)
+        removeobject(10)
+        waitse
+        delay(30)
+        playse(SE_RG_BAG_POCKET)
+        removeobject(7)
+        waitse
+    }
+    elif(var(VAR_STARTER_MON) == 1){ //Player = LITTEN, Rival = OSHAWOTT
+        applymovement(9, Univ_StepLeft1)
+        waitmovement(0)
+        playmoncry(SPECIES_LITTEN, 0)
+        waitmoncry
+        playse(SE_BIKE_HOP)
+        applymovement(9, Univ_JumpIP_1Left)
+        waitmovement(0)
+        delay(30)
+        playse(SE_BALL_BOUNCE_1)
+        addobject(7)
+        setobjectsubpriority(7, MAP_HIGHLAND_FARMS, 0)
+        setobjectsubpriority(9, MAP_HIGHLAND_FARMS, 3)
+        waitse
+        delay(30)
+        playse(SE_BALL_OPEN)
+        removeobject(9)
+        waitse
+        delay(30)
+        playse(SE_RG_BAG_POCKET)
+        removeobject(7)
+        waitse
+    }
+    elif(var(VAR_STARTER_MON) == 0){ //Player = TURTWIG, Rival = LITTEN
+        applymovement(8, Univ_StepLeft1)
+        waitmovement(0)
+        playmoncry(SPECIES_TURTWIG, 0)
+        waitmoncry
+        playse(SE_BIKE_HOP)
+        applymovement(8, Univ_JumpIP_1Left)
+        waitmovement(0)
+        delay(30)
+        playse(SE_BALL_BOUNCE_1)
+        addobject(7)
+        setobjectsubpriority(7, MAP_HIGHLAND_FARMS, 0)
+        setobjectsubpriority(8, MAP_HIGHLAND_FARMS, 3)
+        waitse
+        delay(30)
+        playse(SE_BALL_OPEN)
+        removeobject(8)
+        waitse
+        delay(30)
+        playse(SE_RG_BAG_POCKET)
+        removeobject(7)
+        waitse
+    }
+    return
+}
+
+script HF_StartBattle_1{
+    if(var(VAR_STARTER_MON) == 2){ //Player = OSHAWOTT, Rival = TURTWIG
+        playse(SE_M_GUST2)
+        applymovement(10, HF_M_PlayerPokemon)
+        delay(10)
+        playse(SE_M_GUST2)
+        applymovement(11, HF_M_RivalPokemon)
+        waitmovement(0)
+        trainerbattle_no_intro(TRAINER_HF_MIKE_TURTWIG, HF_T_MikeLoseBattle)
+        return
+    }
+    elif(var(VAR_STARTER_MON) == 1){ //Player = LITTEN, Rival = OSHAWOTT
+        playse(SE_M_GUST2)
+        applymovement(9, HF_M_PlayerPokemon)
+        delay(10)
+        playse(SE_M_GUST2)
+        applymovement(13, HF_M_RivalPokemon)
+        waitmovement(0)
+        trainerbattle_no_intro(TRAINER_HF_MIKE_OSHAWOTT, HF_T_MikeLoseBattle)
+        return
+    }
+    elif(var(VAR_STARTER_MON) == 0){ //Player = TURTWIG, Rival = LITTEN
+        playse(SE_M_GUST2)
+        applymovement(8, HF_M_PlayerPokemon)
+        delay(10)
+        playse(SE_M_GUST2)
+        applymovement(12, HF_M_RivalPokemon)
+        waitmovement(0)
+        trainerbattle_no_intro(TRAINER_HF_MIKE_LITTEN, HF_T_MikeLoseBattle)
+        return
+    }
+}
+
+// 0=TURTWIG, 1=LITTEN, 2=OSHAWOTT
+
+script HF_HandleBattleSprites_Rival{
+    if(var(VAR_STARTER_MON) == 2){ //Rival has TURTWIG
+        speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+        msgbox(HF_T_MikeGoTurtwig)
+        closemessage
+        playse(SE_BALL_THROW)
+        waitse
+        playse(SE_BALL_BOUNCE_1)
+        addobject(6)
+        waitse
+        delay(30)
+        playse(SE_BALL_OPEN)
+        addobject(11)
+        removeobject(6)
+        waitse
+        playmoncry(SPECIES_TURTWIG, 2)
+        waitmoncry
+    }
+    elif(var(VAR_STARTER_MON) == 1){ //Rival has OSHAWOTT
+        speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+        msgbox(HF_T_MikeGoOshawott)
+        closemessage
+        playse(SE_BALL_THROW)
+        waitse
+        playse(SE_BALL_BOUNCE_1)
+        addobject(6)
+        waitse
+        delay(30)
+        playse(SE_BALL_OPEN)
+        addobject(13)
+        removeobject(6)
+        waitse
+        playmoncry(SPECIES_OSHAWOTT, 2)
+        waitmoncry
+    }
+    elif(var(VAR_STARTER_MON) == 0){ //Rival has LITTEN
+        speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+        msgbox(HF_T_MikeGoLitten)
+        closemessage
+        playse(SE_BALL_THROW)
+        waitse
+        playse(SE_BALL_BOUNCE_1)
+        addobject(6)
+        waitse
+        delay(30)
+        playse(SE_BALL_OPEN)
+        addobject(12)
+        removeobject(6)
+        waitse
+        playmoncry(SPECIES_LITTEN, 2)
+        waitmoncry
+    }
+    return
+}
+
+script HF_HandleBattleSprites_Player{
+    if(var(VAR_STARTER_MON) == 2){ //Player has OSHAWOTT
+        playse(SE_BALL_THROW)
+        waitse
+        playse(SE_BALL_BOUNCE_1)
+        addobject(7)
+        waitse
+        delay(30)
+        playse(SE_BALL_OPEN)
+        addobject(10)
+        removeobject(7)
+        waitse
+        playmoncry(SPECIES_OSHAWOTT, 2)
+        waitmoncry
+    }
+    elif(var(VAR_STARTER_MON) == 1){ //Player has LITTEN
+        playse(SE_BALL_THROW)
+        waitse
+        playse(SE_BALL_BOUNCE_1)
+        addobject(7)
+        waitse
+        delay(30)
+        playse(SE_BALL_OPEN)
+        addobject(9)
+        removeobject(7)
+        waitse
+        playmoncry(SPECIES_LITTEN, 2)
+        waitmoncry
+    }
+    elif(var(VAR_STARTER_MON) == 0){ //Player has TURTWIG
+        playse(SE_BALL_THROW)
+        waitse
+        playse(SE_BALL_BOUNCE_1)
+        addobject(7)
+        waitse
+        delay(30)
+        playse(SE_BALL_OPEN)
+        addobject(8)
+        removeobject(7)
+        waitse
+        playmoncry(SPECIES_TURTWIG, 2)
+        waitmoncry
+    }
+    return
+}
 
 movement HF_CAM_1A{
     walk_diag_northeast * 3
@@ -456,6 +719,18 @@ movement HF_CAM_4{
 
 movement HF_CAM_4R{
     walk_diag_southwest * 4
+}
+
+movement HF_CAM_5{
+    walk_right * 5
+}
+
+movement HF_CAM_5R{
+    walk_left * 5
+}
+
+movement HF_CAM_6{
+    walk_fast_right * 2
 }
 
 movement HF_M_Dad1{
@@ -541,6 +816,16 @@ movement HF_M_Mike5{
 movement HF_M_Mike6{
     walk_fast_up * 2
     walk_fast_right * 2
+    face_left
+}
+
+movement HF_M_PlayerPokemon{
+    slide_right
+    face_right
+}
+
+movement HF_M_RivalPokemon{
+    slide_left
     face_left
 }
 
@@ -632,6 +917,27 @@ text HF_T_Mike8{
 text HF_T_Mike9{
     "Don't be timid now, {PLAYER}!\n"
     "Get back here and battle!"
+}
+
+text HF_T_Mike10{
+    "This is so cool!\n"
+    "Let's do this, {PLAYER}!"
+}
+
+text HF_T_MikeGoTurtwig{
+    "Go, Turtwig!"
+}
+
+text HF_T_MikeGoLitten{
+    "Go, Litten!"
+}
+
+text HF_T_MikeGoOshawott{
+    "Go, Oshawott!"
+}
+
+text HF_T_MikeLoseBattle{
+    "Not the start I was lookin' for..."
 }
 
 text HF_T_Mamaw1{

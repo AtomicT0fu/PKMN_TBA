@@ -612,6 +612,15 @@ const struct WindowTemplate * const gBattleWindowTemplates[] =
 
 const struct BattleBackground sBattleTerrainTable[] =
 {
+    [BATTLE_TERRAIN_GRASS_DIRT] =
+    {
+        .tileset = gBattleTerrainTiles_GrassDirt,
+        .tilemap = gBattleTerrainTilemap_GrassDirt,
+        .entryTileset = gBattleTerrainAnimTiles_GrassDirt,
+        .entryTilemap = gBattleTerrainAnimTilemap_GrassDirt,
+        .palette = gBattleTerrainPalette_GrassDirt,
+    },
+
     [BATTLE_TERRAIN_GRASS] =
     {
         .tileset = gBattleTerrainTiles_TallGrass,

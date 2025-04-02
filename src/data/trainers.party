@@ -17029,3 +17029,60 @@ Level: 5
 Tera Type: Fire  
 - Scratch  
 - Growl
+
+=== TRAINER_HF_MIKE_TURTWIG ===
+Name: MIKE
+Class: Rival
+Pic: Rival Mike
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Blue
+
+Turtwig (M)  
+Ability: Overgrow  
+Level: 5  
+Tera Type: Grass  
+Relaxed Nature  
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe  
+- Tackle  
+- Withdraw
+
+=== TRAINER_HF_MIKE_LITTEN ===
+Name: MIKE
+Class: Rival
+Pic: Rival Mike
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Blue
+
+Litten (M)  
+Ability: Blaze  
+Level: 5  
+Tera Type: Fire  
+Hasty Nature  
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe  
+- Scratch  
+- Growl
+
+=== TRAINER_HF_MIKE_OSHAWOTT ===
+Name: MIKE
+Class: Rival
+Pic: Rival Mike
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+Mugshot: Blue
+
+Oshawott (M)  
+Ability: Torrent  
+Level: 5  
+Tera Type: Water  
+Modest Nature  
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe  
+- Tackle  
+- Tail Whip

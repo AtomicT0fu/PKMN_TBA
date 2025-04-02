@@ -42569,3 +42569,138 @@ F_TRAINER_FEMALE |
             },
         },
     },
+#line 17033
+    [DIFFICULTY_NORMAL][TRAINER_HF_MIKE_TURTWIG] =
+    {
+#line 17034
+        .trainerName = _("MIKE"),
+#line 17035
+        .trainerClass = TRAINER_CLASS_RIVAL,
+#line 17036
+        .trainerPic = TRAINER_PIC_RIVAL_MIKE,
+        .encounterMusic_gender =
+#line 17038
+            TRAINER_ENCOUNTER_MUSIC_MALE,
+#line 17039
+        .doubleBattle = FALSE,
+#line 17040
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 17041
+        .mugshotColor = MUGSHOT_COLOR_BLUE,
+        .partySize = 1,
+        .party = (const struct TrainerMon[])
+        {
+            {
+#line 17043
+            .species = SPECIES_TURTWIG,
+#line 17043
+            .gender = TRAINER_MON_MALE,
+#line 17048
+            .iv = TRAINER_PARTY_IVS(10, 10, 10, 10, 10, 10),
+#line 17044
+            .ability = ABILITY_OVERGROW,
+#line 17045
+            .lvl = 5,
+#line 17047
+            .nature = NATURE_RELAXED,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+#line 17046
+            .teraType = TYPE_GRASS,
+            .moves = {
+#line 17049
+                MOVE_TACKLE,
+                MOVE_WITHDRAW,
+            },
+            },
+        },
+    },
+#line 17052
+    [DIFFICULTY_NORMAL][TRAINER_HF_MIKE_LITTEN] =
+    {
+#line 17053
+        .trainerName = _("MIKE"),
+#line 17054
+        .trainerClass = TRAINER_CLASS_RIVAL,
+#line 17055
+        .trainerPic = TRAINER_PIC_RIVAL_MIKE,
+        .encounterMusic_gender =
+#line 17057
+            TRAINER_ENCOUNTER_MUSIC_MALE,
+#line 17058
+        .doubleBattle = FALSE,
+#line 17059
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 17060
+        .mugshotColor = MUGSHOT_COLOR_BLUE,
+        .partySize = 1,
+        .party = (const struct TrainerMon[])
+        {
+            {
+#line 17062
+            .species = SPECIES_LITTEN,
+#line 17062
+            .gender = TRAINER_MON_MALE,
+#line 17067
+            .iv = TRAINER_PARTY_IVS(10, 10, 10, 10, 10, 10),
+#line 17063
+            .ability = ABILITY_BLAZE,
+#line 17064
+            .lvl = 5,
+#line 17066
+            .nature = NATURE_HASTY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+#line 17065
+            .teraType = TYPE_FIRE,
+            .moves = {
+#line 17068
+                MOVE_SCRATCH,
+                MOVE_GROWL,
+            },
+            },
+        },
+    },
+#line 17071
+    [DIFFICULTY_NORMAL][TRAINER_HF_MIKE_OSHAWOTT] =
+    {
+#line 17072
+        .trainerName = _("MIKE"),
+#line 17073
+        .trainerClass = TRAINER_CLASS_RIVAL,
+#line 17074
+        .trainerPic = TRAINER_PIC_RIVAL_MIKE,
+        .encounterMusic_gender =
+#line 17076
+            TRAINER_ENCOUNTER_MUSIC_MALE,
+#line 17077
+        .doubleBattle = FALSE,
+#line 17078
+        .aiFlags = AI_FLAG_BASIC_TRAINER,
+#line 17079
+        .mugshotColor = MUGSHOT_COLOR_BLUE,
+        .partySize = 1,
+        .party = (const struct TrainerMon[])
+        {
+            {
+#line 17081
+            .species = SPECIES_OSHAWOTT,
+#line 17081
+            .gender = TRAINER_MON_MALE,
+#line 17086
+            .iv = TRAINER_PARTY_IVS(10, 10, 10, 10, 10, 10),
+#line 17082
+            .ability = ABILITY_TORRENT,
+#line 17083
+            .lvl = 5,
+#line 17085
+            .nature = NATURE_MODEST,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+#line 17084
+            .teraType = TYPE_WATER,
+            .moves = {
+#line 17087
+                MOVE_TACKLE,
+                MOVE_TAIL_WHIP,
+            },
+            },
+        },
+    },

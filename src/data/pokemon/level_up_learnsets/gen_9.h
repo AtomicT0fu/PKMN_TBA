@@ -9871,9 +9871,9 @@ static const struct LevelUpMove sDeoxysSpeedLevelUpLearnset[] = {
 static const struct LevelUpMove sTurtwigLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
     LEVEL_UP_MOVE( 5, MOVE_WITHDRAW),
-    LEVEL_UP_MOVE( 9, MOVE_ABSORB),
-    LEVEL_UP_MOVE(13, MOVE_RAZOR_LEAF),
-    LEVEL_UP_MOVE(17, MOVE_CURSE),
+    LEVEL_UP_MOVE( 8, MOVE_ABSORB),
+    LEVEL_UP_MOVE(12, MOVE_RAZOR_LEAF),
+    LEVEL_UP_MOVE(16, MOVE_CURSE),
     LEVEL_UP_MOVE(21, MOVE_BITE),
     LEVEL_UP_MOVE(25, MOVE_MEGA_DRAIN),
     LEVEL_UP_MOVE(29, MOVE_LEECH_SEED),
@@ -16547,8 +16547,8 @@ static const struct LevelUpMove sDecidueyeHisuiLevelUpLearnset[] = {
 static const struct LevelUpMove sLittenLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_SCRATCH),
     LEVEL_UP_MOVE( 1, MOVE_GROWL),
-    LEVEL_UP_MOVE( 3, MOVE_EMBER),
     LEVEL_UP_MOVE( 6, MOVE_LICK),
+    LEVEL_UP_MOVE( 8, MOVE_EMBER),
     LEVEL_UP_MOVE( 9, MOVE_ROAR),
     LEVEL_UP_MOVE(12, MOVE_FURY_SWIPES),
     LEVEL_UP_MOVE(15, MOVE_BITE),

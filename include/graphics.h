@@ -216,6 +216,13 @@ extern const u32 gMultiBattleIntroBg_Opponent_Tilemap[];
 extern const u32 gMultiBattleIntroBg_Player_Tilemap[];
 
 // battle terrains
+extern const u32 gBattleTerrainTiles_GrassDirt[];
+extern const u32 gBattleTerrainTilemap_GrassDirt[];
+extern const u32 gBattleTerrainAnimTiles_GrassDirt[];
+extern const u32 gBattleTerrainAnimTilemap_GrassDirt[];
+extern const u32 gBattleTerrainPalette_GrassDirt[];
+
+
 extern const u32 gBattleTerrainTiles_TallGrass[];
 extern const u32 gBattleTerrainTilemap_TallGrass[];
 extern const u32 gBattleTerrainAnimTiles_TallGrass[];

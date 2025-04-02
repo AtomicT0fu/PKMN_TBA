@@ -610,6 +610,9 @@ u8 BattleSetup_GetTerrainId(void)
     u16 tileBehavior;
     s16 x, y;
 
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(HIGHLAND_FARMS) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(HIGHLAND_FARMS))
+        return BATTLE_TERRAIN_GRASS_DIRT;
+
     if (I_FISHING_ENVIRONMENT >= GEN_4 && gIsFishingEncounter)
         GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
     else
