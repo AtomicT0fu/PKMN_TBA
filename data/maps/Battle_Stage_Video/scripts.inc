@@ -132,132 +132,136 @@ BSV_Scene_Start::
 	applymovement 4, BSV_Absol_Lunge
 # 71 "data/maps/Battle_Stage_Video/scripts.pory"
 	waitmovement 0
+# 72 "data/maps/Battle_Stage_Video/scripts.pory"
+	ai_vs_ai_battle TRAINER_CHAMPION_NORMAN, TRAINER_CHAMPION_DEE
 # 73 "data/maps/Battle_Stage_Video/scripts.pory"
 	removeobject 3
 # 74 "data/maps/Battle_Stage_Video/scripts.pory"
 	removeobject 4
 # 75 "data/maps/Battle_Stage_Video/scripts.pory"
-	setvar VAR_ADVENTURE_START, 11
+	clearflag FLAG_AI_BATTLE_SET
 # 76 "data/maps/Battle_Stage_Video/scripts.pory"
+	setvar VAR_ADVENTURE_START, 11
+# 77 "data/maps/Battle_Stage_Video/scripts.pory"
 	release
 	end
 
 
 BSV_Post_Battle::
-# 81 "data/maps/Battle_Stage_Video/scripts.pory"
-	delay 20
 # 82 "data/maps/Battle_Stage_Video/scripts.pory"
-	playse SE_APPLAUSE
+	delay 20
 # 83 "data/maps/Battle_Stage_Video/scripts.pory"
-	speakername BSV_Scene_Start_Text_0
+	playse SE_APPLAUSE
 # 84 "data/maps/Battle_Stage_Video/scripts.pory"
-	msgbox BSV_T_PA2
+	speakername BSV_Scene_Start_Text_0
 # 85 "data/maps/Battle_Stage_Video/scripts.pory"
-	waitmessage
+	msgbox BSV_T_PA2
 # 86 "data/maps/Battle_Stage_Video/scripts.pory"
-	closemessage
+	waitmessage
 # 87 "data/maps/Battle_Stage_Video/scripts.pory"
-	special ZeroPlayerPartyMons
+	closemessage
 # 88 "data/maps/Battle_Stage_Video/scripts.pory"
-	warpwhitefade MAP_PLAYER_HOUSE_1F, 4, 4
+	special ZeroPlayerPartyMons
 # 89 "data/maps/Battle_Stage_Video/scripts.pory"
-	setvar VAR_ADVENTURE_START, 12
+	warpwhitefade MAP_PLAYER_HOUSE_1F, 4, 4
 # 90 "data/maps/Battle_Stage_Video/scripts.pory"
+	setvar VAR_ADVENTURE_START, 12
+# 91 "data/maps/Battle_Stage_Video/scripts.pory"
 	release
 	end
 
 
 BSV_ShakeScreen_Vars::
-# 95 "data/maps/Battle_Stage_Video/scripts.pory"
-	setvar VAR_0x8004, 1
 # 96 "data/maps/Battle_Stage_Video/scripts.pory"
-	setvar VAR_0x8005, 1
+	setvar VAR_0x8004, 1
 # 97 "data/maps/Battle_Stage_Video/scripts.pory"
-	setvar VAR_0x8006, 6
+	setvar VAR_0x8005, 1
 # 98 "data/maps/Battle_Stage_Video/scripts.pory"
+	setvar VAR_0x8006, 6
+# 99 "data/maps/Battle_Stage_Video/scripts.pory"
 	setvar VAR_0x8007, 2
 	return
 
 
-# 102 "data/maps/Battle_Stage_Video/scripts.pory"
+# 103 "data/maps/Battle_Stage_Video/scripts.pory"
 BSV_CAM_1:
-# 103 "data/maps/Battle_Stage_Video/scripts.pory"
+# 104 "data/maps/Battle_Stage_Video/scripts.pory"
 	walk_faster_up
-# 103 "data/maps/Battle_Stage_Video/scripts.pory"
+# 104 "data/maps/Battle_Stage_Video/scripts.pory"
 	walk_faster_up
-# 103 "data/maps/Battle_Stage_Video/scripts.pory"
+# 104 "data/maps/Battle_Stage_Video/scripts.pory"
 	walk_faster_up
-# 103 "data/maps/Battle_Stage_Video/scripts.pory"
+# 104 "data/maps/Battle_Stage_Video/scripts.pory"
 	walk_faster_up
-# 103 "data/maps/Battle_Stage_Video/scripts.pory"
+# 104 "data/maps/Battle_Stage_Video/scripts.pory"
 	walk_faster_up
-# 103 "data/maps/Battle_Stage_Video/scripts.pory"
+# 104 "data/maps/Battle_Stage_Video/scripts.pory"
 	walk_faster_up
-# 103 "data/maps/Battle_Stage_Video/scripts.pory"
+# 104 "data/maps/Battle_Stage_Video/scripts.pory"
 	walk_faster_up
-# 103 "data/maps/Battle_Stage_Video/scripts.pory"
+# 104 "data/maps/Battle_Stage_Video/scripts.pory"
 	walk_faster_up
-# 103 "data/maps/Battle_Stage_Video/scripts.pory"
+# 104 "data/maps/Battle_Stage_Video/scripts.pory"
 	walk_faster_up
-# 103 "data/maps/Battle_Stage_Video/scripts.pory"
+# 104 "data/maps/Battle_Stage_Video/scripts.pory"
 	walk_faster_up
-# 103 "data/maps/Battle_Stage_Video/scripts.pory"
+# 104 "data/maps/Battle_Stage_Video/scripts.pory"
 	walk_faster_up
-# 103 "data/maps/Battle_Stage_Video/scripts.pory"
+# 104 "data/maps/Battle_Stage_Video/scripts.pory"
 	walk_faster_up
-# 103 "data/maps/Battle_Stage_Video/scripts.pory"
+# 104 "data/maps/Battle_Stage_Video/scripts.pory"
 	walk_faster_up
-# 103 "data/maps/Battle_Stage_Video/scripts.pory"
+# 104 "data/maps/Battle_Stage_Video/scripts.pory"
 	walk_faster_up
-# 103 "data/maps/Battle_Stage_Video/scripts.pory"
+# 104 "data/maps/Battle_Stage_Video/scripts.pory"
 	walk_faster_up
-# 103 "data/maps/Battle_Stage_Video/scripts.pory"
+# 104 "data/maps/Battle_Stage_Video/scripts.pory"
 	walk_faster_up
-# 103 "data/maps/Battle_Stage_Video/scripts.pory"
+# 104 "data/maps/Battle_Stage_Video/scripts.pory"
 	walk_faster_up
-# 103 "data/maps/Battle_Stage_Video/scripts.pory"
+# 104 "data/maps/Battle_Stage_Video/scripts.pory"
 	walk_faster_up
-# 103 "data/maps/Battle_Stage_Video/scripts.pory"
+# 104 "data/maps/Battle_Stage_Video/scripts.pory"
 	walk_faster_up
-# 103 "data/maps/Battle_Stage_Video/scripts.pory"
+# 104 "data/maps/Battle_Stage_Video/scripts.pory"
 	walk_faster_up
 	step_end
 
-# 106 "data/maps/Battle_Stage_Video/scripts.pory"
+# 107 "data/maps/Battle_Stage_Video/scripts.pory"
 BSV_CAM_2:
-# 107 "data/maps/Battle_Stage_Video/scripts.pory"
+# 108 "data/maps/Battle_Stage_Video/scripts.pory"
 	walk_slow_right
-# 107 "data/maps/Battle_Stage_Video/scripts.pory"
+# 108 "data/maps/Battle_Stage_Video/scripts.pory"
 	walk_slow_right
-# 107 "data/maps/Battle_Stage_Video/scripts.pory"
+# 108 "data/maps/Battle_Stage_Video/scripts.pory"
 	walk_slow_right
 	step_end
 
-# 110 "data/maps/Battle_Stage_Video/scripts.pory"
+# 111 "data/maps/Battle_Stage_Video/scripts.pory"
 BSV_CAM_3:
-# 111 "data/maps/Battle_Stage_Video/scripts.pory"
+# 112 "data/maps/Battle_Stage_Video/scripts.pory"
 	walk_slow_left
-# 111 "data/maps/Battle_Stage_Video/scripts.pory"
+# 112 "data/maps/Battle_Stage_Video/scripts.pory"
 	walk_slow_left
-# 111 "data/maps/Battle_Stage_Video/scripts.pory"
+# 112 "data/maps/Battle_Stage_Video/scripts.pory"
 	walk_slow_left
-# 111 "data/maps/Battle_Stage_Video/scripts.pory"
+# 112 "data/maps/Battle_Stage_Video/scripts.pory"
 	walk_slow_left
-# 111 "data/maps/Battle_Stage_Video/scripts.pory"
+# 112 "data/maps/Battle_Stage_Video/scripts.pory"
 	walk_slow_left
-# 111 "data/maps/Battle_Stage_Video/scripts.pory"
+# 112 "data/maps/Battle_Stage_Video/scripts.pory"
 	walk_slow_left
 	step_end
 
-# 114 "data/maps/Battle_Stage_Video/scripts.pory"
-BSV_Arcanine_Lunge:
 # 115 "data/maps/Battle_Stage_Video/scripts.pory"
+BSV_Arcanine_Lunge:
+# 116 "data/maps/Battle_Stage_Video/scripts.pory"
 	walk_faster_right
 	step_end
 
-# 118 "data/maps/Battle_Stage_Video/scripts.pory"
-BSV_Absol_Lunge:
 # 119 "data/maps/Battle_Stage_Video/scripts.pory"
+BSV_Absol_Lunge:
+# 120 "data/maps/Battle_Stage_Video/scripts.pory"
 	walk_faster_left
 	step_end
 
@@ -282,12 +286,12 @@ BSV_Scene_Start_Text_4:
 	.string "Arcanine, you're up!$"
 
 BSV_T_PA1::
-# 122 "data/maps/Battle_Stage_Video/scripts.pory"
+# 123 "data/maps/Battle_Stage_Video/scripts.pory"
 	.string "IT ALL COMES DOWN TO THIS, FOLKS!\n"
 	.string "TWO TRAINERS FACING OFF!\p"
 	.string "ONE WILL CLAIM THE DIVISION TITLE!\n"
 	.string "NOW, TO THE ACTION!$"
 
 BSV_T_PA2::
-# 129 "data/maps/Battle_Stage_Video/scripts.pory"
+# 130 "data/maps/Battle_Stage_Video/scripts.pory"
 	.string "AND THE WINNER IS, NORMAN!!!$"

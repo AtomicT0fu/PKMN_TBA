@@ -26,6 +26,25 @@ script HF_RemoveRivalPokemon{
     end
 }
 
+script HF_RivalShed_IsDoorLocked{
+    if(flag(FLAG_UNLOCK_RIVAL_SHED) == TRUE){
+        setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+        msgbox("The door is unlocked.")
+        waitmessage
+        closemessage
+        clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+    }
+    else{
+        setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+        msgbox("The door is locked.")
+        waitmessage
+        closemessage
+        clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+    }
+    release
+    end
+}
+
 script HF_UpdateMetatiles{
     call(CheckSproutFlag)
     call(HF_CheckLogFlag)
@@ -345,6 +364,8 @@ script HF_Mike_ReadyToGo{
     special(SpawnCameraObject)
     applymovement(OBJ_EVENT_ID_CAMERA, HF_CAM_2)
     waitmovement(0)
+    setmetatile(10, 16, 0x219, TRUE)
+    special(DrawWholeMapView)
     delay(20)
     playse(SE_DOOR)
     opendoor(10, 16)
@@ -370,6 +391,8 @@ script HF_Mike_ReadyToGo{
     applymovement(4, HF_W_Mike4)
     waitmovement(0)
     removeobject(4)
+    setmetatile(10, 16, 0x226, TRUE)
+    special(DrawWholeMapView)
     setvar(VAR_ADVENTURE_START, 14)
     clearflag(FLAG_OBR_HIDE_RIVAL_MIKE)
     release
@@ -457,6 +480,7 @@ script HF_NoExitBattleStage_Trigger{
 script HF_FirstBattleStart_Trigger{
     turnobject(OBJ_EVENT_ID_PLAYER, DIR_EAST)
     special(SpawnCameraObject)
+    fadeoutbgm(1)
     applymovement(OBJ_EVENT_ID_CAMERA, HF_CAM_5)
     waitmovement(0)
     delay(30)
@@ -470,18 +494,28 @@ script HF_FirstBattleStart_Trigger{
     delay(30)
     applymovement(OBJ_EVENT_ID_CAMERA, HF_CAM_5R)
     waitmovement(0)
-    delay(60)
+    special(RemoveCameraObject)
+    delay(30)
     call(HF_HandleBattleSprites_Player)
-    delay(60)
-    applymovement(OBJ_EVENT_ID_CAMERA, HF_CAM_6)
-    waitmovement(0)
+    delay(30)
     call(HF_StartBattle_1)
     fadedefaultbgm
     delay(60)
     call(HF_RemovePlayerPokemon_PostBattle)
     delay(60)
-    playfanfare(MUS_OBTAIN_BADGE)
-    waitfanfare
+    applymovement(4, HF_M_Mike7)
+    applymovement(OBJ_EVENT_ID_PLAYER, HF_M_Player4)
+    waitmovement(0)
+    delay(30)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+    msgbox(HF_T_Mike11)
+    waitmessage
+    closemessage
+    applymovement(4, HF_M_Mike8)
+    waitmovement(0)
+    removeobject(4)
+    setflag(FLAG_HF_HIDE_RIVAL_MIKE)
+    clearflag(FLAG_RHB1F_HIDE_RIVAL)
     setvar(VAR_ADVENTURE_START, 21)
     release
     end
@@ -769,6 +803,10 @@ movement HF_W_Player2{
     face_left
 }
 
+movement HF_M_Player4{
+    walk_right * 2
+}
+
 movement HF_W_Mike1{
     walk_fast_up * 2
 }
@@ -817,6 +855,16 @@ movement HF_M_Mike6{
     walk_fast_up * 2
     walk_fast_right * 2
     face_left
+}
+
+movement HF_M_Mike7{
+    walk_left * 2
+}
+
+movement HF_M_Mike8{
+    walk_down * 2
+    walk_left * 5
+    walk_down * 5
 }
 
 movement HF_M_PlayerPokemon{
@@ -870,17 +918,15 @@ text HF_T_Mike3{
 }
 
 text HF_T_Mike4{
-    "Come on, {PLAYER}!\n"
-    "I can't wait anymore!"
+    "Hurry up, {PLAYER}!"
 }
 
 text HF_T_Mike5{
-    "Alright, so what I'm about to show you,\n"
-    "I've been workin' on for a while now...\p"
-    "I didn't know if we would ever get to \n"
-    "use it or not, but just in case we\l"
-    "became real Pokemon Trainers, I knew we\l"
-    "would need it!\p"
+    "Alright, so I've been workin' on this for\n"
+    "a while now...\p"
+    "I knew one day we would need one of\n"
+    "these, I just didn't think it would be\l"
+    "this soon!\p"
     "{PLAYER}... {PAUSE 30}are you ready?"
 }
 
@@ -898,8 +944,7 @@ text HF_T_Mike6_No{
 
 text HF_T_Mike7{
     "Well, what do you think?!\p"
-    "It's our very own battle stage,\n"
-    "{PLAYER}!!\p"
+    "It's our very own battle stage!!\p"
     "I wanted to make sure that our first\n"
     "battle was in an arena just like Sammy\l"
     "and Agatha used to compete in!\p"
@@ -920,8 +965,19 @@ text HF_T_Mike9{
 }
 
 text HF_T_Mike10{
-    "This is so cool!\n"
-    "Let's do this, {PLAYER}!"
+    "Let's do this!"
+}
+
+text HF_T_Mike11{
+    "Man, I was really hoping I could win\n"
+    "that first one...\p"
+    "But no matter what, that was the most\n"
+    "fun I've ever had!\p"
+    "It seems like we both have a good bond\n"
+    "with our Pokemon too.\p"
+    "Anyways, I gotta go n' let this lil' fella\n"
+    "rest for a while.\p"
+    "See ya later, {PLAYER}!"
 }
 
 text HF_T_MikeGoTurtwig{

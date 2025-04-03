@@ -46,1159 +46,1155 @@ HF_RemoveRivalPokemon_5:
 	goto HF_RemoveRivalPokemon_4
 
 
-HF_UpdateMetatiles::
+HF_RivalShed_IsDoorLocked::
 # 30 "data/maps/Highland_Farms/scripts.pory"
-	call CheckSproutFlag
+	goto_if_set FLAG_UNLOCK_RIVAL_SHED, HF_RivalShed_IsDoorLocked_2
+# 38 "data/maps/Highland_Farms/scripts.pory"
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
+# 39 "data/maps/Highland_Farms/scripts.pory"
+	msgbox HF_RivalShed_IsDoorLocked_Text_1
+# 40 "data/maps/Highland_Farms/scripts.pory"
+	waitmessage
+# 41 "data/maps/Highland_Farms/scripts.pory"
+	closemessage
+# 42 "data/maps/Highland_Farms/scripts.pory"
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+HF_RivalShed_IsDoorLocked_1:
+# 44 "data/maps/Highland_Farms/scripts.pory"
+	release
+	end
+
+HF_RivalShed_IsDoorLocked_2:
 # 31 "data/maps/Highland_Farms/scripts.pory"
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
+# 32 "data/maps/Highland_Farms/scripts.pory"
+	msgbox HF_RivalShed_IsDoorLocked_Text_0
+# 33 "data/maps/Highland_Farms/scripts.pory"
+	waitmessage
+# 34 "data/maps/Highland_Farms/scripts.pory"
+	closemessage
+# 35 "data/maps/Highland_Farms/scripts.pory"
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+	goto HF_RivalShed_IsDoorLocked_1
+
+
+HF_UpdateMetatiles::
+# 49 "data/maps/Highland_Farms/scripts.pory"
+	call CheckSproutFlag
+# 50 "data/maps/Highland_Farms/scripts.pory"
 	call HF_CheckLogFlag
 	end
 
 
 HF_UpdateSpritePos::
-# 36 "data/maps/Highland_Farms/scripts.pory"
+# 55 "data/maps/Highland_Farms/scripts.pory"
 	compare VAR_ADVENTURE_START, 18
 	goto_if_eq HF_UpdateSpritePos_2
-# 42 "data/maps/Highland_Farms/scripts.pory"
+# 61 "data/maps/Highland_Farms/scripts.pory"
 	compare VAR_ADVENTURE_START, 19
 	goto_if_eq HF_UpdateSpritePos_3
 HF_UpdateSpritePos_1:
 	end
 
 HF_UpdateSpritePos_2:
-# 37 "data/maps/Highland_Farms/scripts.pory"
+# 56 "data/maps/Highland_Farms/scripts.pory"
 	setobjectxyperm 1, 12, 19
-# 38 "data/maps/Highland_Farms/scripts.pory"
+# 57 "data/maps/Highland_Farms/scripts.pory"
 	setobjectxyperm 4, 11, 19
-# 39 "data/maps/Highland_Farms/scripts.pory"
+# 58 "data/maps/Highland_Farms/scripts.pory"
 	setobjectmovementtype 1, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN
-# 40 "data/maps/Highland_Farms/scripts.pory"
+# 59 "data/maps/Highland_Farms/scripts.pory"
 	setobjectmovementtype 4, MOVEMENT_TYPE_FACE_RIGHT
 	goto HF_UpdateSpritePos_1
 
 HF_UpdateSpritePos_3:
-# 43 "data/maps/Highland_Farms/scripts.pory"
+# 62 "data/maps/Highland_Farms/scripts.pory"
 	setobjectxyperm 4, 10, 19
-# 44 "data/maps/Highland_Farms/scripts.pory"
+# 63 "data/maps/Highland_Farms/scripts.pory"
 	setobjectmovementtype 4, MOVEMENT_TYPE_FACE_DOWN
 	goto HF_UpdateSpritePos_1
 
 
 HF_Mike_Interact::
-# 52 "data/maps/Highland_Farms/scripts.pory"
+# 71 "data/maps/Highland_Farms/scripts.pory"
 	compare VAR_ADVENTURE_START, 20
 	goto_if_eq HF_Mike_Interact_2
-# 60 "data/maps/Highland_Farms/scripts.pory"
+# 79 "data/maps/Highland_Farms/scripts.pory"
 	compare VAR_ADVENTURE_START, 18
 	goto_if_eq HF_Mike_Interact_3
 HF_Mike_Interact_1:
-# 70 "data/maps/Highland_Farms/scripts.pory"
+# 89 "data/maps/Highland_Farms/scripts.pory"
 	release
 	end
 
 HF_Mike_Interact_2:
-# 53 "data/maps/Highland_Farms/scripts.pory"
+# 72 "data/maps/Highland_Farms/scripts.pory"
 	faceplayer
-# 54 "data/maps/Highland_Farms/scripts.pory"
+# 73 "data/maps/Highland_Farms/scripts.pory"
 	speakername HF_Mike_Interact_Text_0
-# 55 "data/maps/Highland_Farms/scripts.pory"
+# 74 "data/maps/Highland_Farms/scripts.pory"
 	msgbox HF_T_Mike8
-# 56 "data/maps/Highland_Farms/scripts.pory"
+# 75 "data/maps/Highland_Farms/scripts.pory"
 	waitmessage
-# 57 "data/maps/Highland_Farms/scripts.pory"
+# 76 "data/maps/Highland_Farms/scripts.pory"
 	closemessage
-# 58 "data/maps/Highland_Farms/scripts.pory"
+# 77 "data/maps/Highland_Farms/scripts.pory"
 	turnobject 4, DIR_WEST
 	goto HF_Mike_Interact_1
 
 HF_Mike_Interact_3:
-# 61 "data/maps/Highland_Farms/scripts.pory"
+# 80 "data/maps/Highland_Farms/scripts.pory"
 	faceplayer
-# 62 "data/maps/Highland_Farms/scripts.pory"
+# 81 "data/maps/Highland_Farms/scripts.pory"
 	speakername HF_Mike_Interact_Text_0
-# 63 "data/maps/Highland_Farms/scripts.pory"
+# 82 "data/maps/Highland_Farms/scripts.pory"
 	msgbox HF_T_Mike3
-# 64 "data/maps/Highland_Farms/scripts.pory"
+# 83 "data/maps/Highland_Farms/scripts.pory"
 	waitmessage
-# 65 "data/maps/Highland_Farms/scripts.pory"
+# 84 "data/maps/Highland_Farms/scripts.pory"
 	closemessage
-# 66 "data/maps/Highland_Farms/scripts.pory"
+# 85 "data/maps/Highland_Farms/scripts.pory"
 	turnobject 4, DIR_EAST
 	goto HF_Mike_Interact_1
 
 
 HF_Mamaw_Interact::
-# 75 "data/maps/Highland_Farms/scripts.pory"
+# 94 "data/maps/Highland_Farms/scripts.pory"
 	faceplayer
-# 76 "data/maps/Highland_Farms/scripts.pory"
+# 95 "data/maps/Highland_Farms/scripts.pory"
 	speakername HF_Mamaw_Interact_Text_0
-# 77 "data/maps/Highland_Farms/scripts.pory"
+# 96 "data/maps/Highland_Farms/scripts.pory"
 	msgbox HF_T_Mamaw1
-# 78 "data/maps/Highland_Farms/scripts.pory"
+# 97 "data/maps/Highland_Farms/scripts.pory"
 	waitmessage
-# 79 "data/maps/Highland_Farms/scripts.pory"
+# 98 "data/maps/Highland_Farms/scripts.pory"
 	closemessage
-# 80 "data/maps/Highland_Farms/scripts.pory"
+# 99 "data/maps/Highland_Farms/scripts.pory"
 	turnobject 5, DIR_WEST
-# 81 "data/maps/Highland_Farms/scripts.pory"
+# 100 "data/maps/Highland_Farms/scripts.pory"
 	release
 	end
 
 
 HF_Millie_Interact::
-# 86 "data/maps/Highland_Farms/scripts.pory"
+# 105 "data/maps/Highland_Farms/scripts.pory"
 	compare VAR_ADVENTURE_START, 18
 	goto_if_eq HF_Millie_Interact_2
-# 101 "data/maps/Highland_Farms/scripts.pory"
+# 120 "data/maps/Highland_Farms/scripts.pory"
 	lock
-# 102 "data/maps/Highland_Farms/scripts.pory"
+# 121 "data/maps/Highland_Farms/scripts.pory"
 	faceplayer
-# 103 "data/maps/Highland_Farms/scripts.pory"
+# 122 "data/maps/Highland_Farms/scripts.pory"
 	playmoncry SPECIES_MILTANK, 0
-# 104 "data/maps/Highland_Farms/scripts.pory"
+# 123 "data/maps/Highland_Farms/scripts.pory"
 	waitmoncry
 HF_Millie_Interact_1:
-# 106 "data/maps/Highland_Farms/scripts.pory"
+# 125 "data/maps/Highland_Farms/scripts.pory"
 	release
 	end
 
 HF_Millie_Interact_2:
-# 87 "data/maps/Highland_Farms/scripts.pory"
+# 106 "data/maps/Highland_Farms/scripts.pory"
 	lock
-# 88 "data/maps/Highland_Farms/scripts.pory"
+# 107 "data/maps/Highland_Farms/scripts.pory"
 	faceplayer
-# 89 "data/maps/Highland_Farms/scripts.pory"
+# 108 "data/maps/Highland_Farms/scripts.pory"
 	playmoncry SPECIES_MILTANK, 0
-# 90 "data/maps/Highland_Farms/scripts.pory"
+# 109 "data/maps/Highland_Farms/scripts.pory"
 	waitmoncry
-# 91 "data/maps/Highland_Farms/scripts.pory"
+# 110 "data/maps/Highland_Farms/scripts.pory"
 	playse SE_PIN
-# 92 "data/maps/Highland_Farms/scripts.pory"
+# 111 "data/maps/Highland_Farms/scripts.pory"
 	applymovement 1, Univ_Heart
-# 93 "data/maps/Highland_Farms/scripts.pory"
+# 112 "data/maps/Highland_Farms/scripts.pory"
 	waitmovement 0
-# 94 "data/maps/Highland_Farms/scripts.pory"
+# 113 "data/maps/Highland_Farms/scripts.pory"
 	setflag FLAG_SUPPRESS_SPEAKER_NAME
-# 95 "data/maps/Highland_Farms/scripts.pory"
+# 114 "data/maps/Highland_Farms/scripts.pory"
 	msgbox HF_Millie_Interact_Text_0
-# 96 "data/maps/Highland_Farms/scripts.pory"
+# 115 "data/maps/Highland_Farms/scripts.pory"
 	waitmessage
-# 97 "data/maps/Highland_Farms/scripts.pory"
+# 116 "data/maps/Highland_Farms/scripts.pory"
 	closemessage
-# 98 "data/maps/Highland_Farms/scripts.pory"
+# 117 "data/maps/Highland_Farms/scripts.pory"
 	clearflag FLAG_SUPPRESS_SPEAKER_NAME
 	goto HF_Millie_Interact_1
 
 
 HF_DadIntro_A::
-# 112 "data/maps/Highland_Farms/scripts.pory"
-	special SpawnCameraObject
-# 113 "data/maps/Highland_Farms/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, HF_CAM_1A
-# 114 "data/maps/Highland_Farms/scripts.pory"
-	waitmovement 0
-# 115 "data/maps/Highland_Farms/scripts.pory"
-	applymovement 2, HF_M_Dad1
-# 116 "data/maps/Highland_Farms/scripts.pory"
-	playse SE_M_DIG
-# 117 "data/maps/Highland_Farms/scripts.pory"
-	waitse
-# 118 "data/maps/Highland_Farms/scripts.pory"
-	playse SE_M_DIG
-# 119 "data/maps/Highland_Farms/scripts.pory"
-	waitse
-# 120 "data/maps/Highland_Farms/scripts.pory"
-	playse SE_M_DIG
-# 121 "data/maps/Highland_Farms/scripts.pory"
-	waitse
-# 122 "data/maps/Highland_Farms/scripts.pory"
-	waitmovement 2
-# 123 "data/maps/Highland_Farms/scripts.pory"
-	setmetatile 47, 21, 0x00EF, TRUE
-# 124 "data/maps/Highland_Farms/scripts.pory"
-	playse SE_BALL_BOUNCE_1
-# 125 "data/maps/Highland_Farms/scripts.pory"
-	special DrawWholeMapView
-# 126 "data/maps/Highland_Farms/scripts.pory"
-	waitse
-# 127 "data/maps/Highland_Farms/scripts.pory"
-	delay 30
-# 128 "data/maps/Highland_Farms/scripts.pory"
-	applymovement 2, HF_M_Dad2
-# 129 "data/maps/Highland_Farms/scripts.pory"
-	waitmovement 0
-# 130 "data/maps/Highland_Farms/scripts.pory"
-	applymovement 2, HF_M_Dad1
 # 131 "data/maps/Highland_Farms/scripts.pory"
-	playse SE_M_DIG
+	special SpawnCameraObject
 # 132 "data/maps/Highland_Farms/scripts.pory"
-	waitse
+	applymovement OBJ_EVENT_ID_CAMERA, HF_CAM_1A
 # 133 "data/maps/Highland_Farms/scripts.pory"
-	playse SE_M_DIG
+	waitmovement 0
 # 134 "data/maps/Highland_Farms/scripts.pory"
-	waitse
+	applymovement 2, HF_M_Dad1
 # 135 "data/maps/Highland_Farms/scripts.pory"
 	playse SE_M_DIG
 # 136 "data/maps/Highland_Farms/scripts.pory"
 	waitse
 # 137 "data/maps/Highland_Farms/scripts.pory"
-	waitmovement 2
+	playse SE_M_DIG
 # 138 "data/maps/Highland_Farms/scripts.pory"
-	setmetatile 46, 21, 0x0268, TRUE
+	waitse
 # 139 "data/maps/Highland_Farms/scripts.pory"
-	playse SE_BALL_BOUNCE_1
+	playse SE_M_DIG
 # 140 "data/maps/Highland_Farms/scripts.pory"
-	special DrawWholeMapView
+	waitse
 # 141 "data/maps/Highland_Farms/scripts.pory"
-	waitse
+	waitmovement 2
 # 142 "data/maps/Highland_Farms/scripts.pory"
-	delay 30
+	setmetatile 47, 21, 0x00EF, TRUE
 # 143 "data/maps/Highland_Farms/scripts.pory"
-	applymovement 2, HF_M_Dad2
+	playse SE_BALL_BOUNCE_1
 # 144 "data/maps/Highland_Farms/scripts.pory"
-	waitmovement 0
+	special DrawWholeMapView
 # 145 "data/maps/Highland_Farms/scripts.pory"
-	applymovement 2, HF_M_Dad1
+	waitse
 # 146 "data/maps/Highland_Farms/scripts.pory"
-	playse SE_M_DIG
+	delay 30
 # 147 "data/maps/Highland_Farms/scripts.pory"
-	waitse
+	applymovement 2, HF_M_Dad2
 # 148 "data/maps/Highland_Farms/scripts.pory"
-	playse SE_M_DIG
+	waitmovement 0
 # 149 "data/maps/Highland_Farms/scripts.pory"
-	waitse
+	applymovement 2, HF_M_Dad1
 # 150 "data/maps/Highland_Farms/scripts.pory"
 	playse SE_M_DIG
 # 151 "data/maps/Highland_Farms/scripts.pory"
 	waitse
 # 152 "data/maps/Highland_Farms/scripts.pory"
-	waitmovement 2
+	playse SE_M_DIG
 # 153 "data/maps/Highland_Farms/scripts.pory"
-	setmetatile 45, 21, 0x026A, TRUE
-# 154 "data/maps/Highland_Farms/scripts.pory"
-	playse SE_BALL_BOUNCE_1
-# 155 "data/maps/Highland_Farms/scripts.pory"
-	special DrawWholeMapView
-# 156 "data/maps/Highland_Farms/scripts.pory"
 	waitse
+# 154 "data/maps/Highland_Farms/scripts.pory"
+	playse SE_M_DIG
+# 155 "data/maps/Highland_Farms/scripts.pory"
+	waitse
+# 156 "data/maps/Highland_Farms/scripts.pory"
+	waitmovement 2
 # 157 "data/maps/Highland_Farms/scripts.pory"
-	delay 30
+	setmetatile 46, 21, 0x0268, TRUE
 # 158 "data/maps/Highland_Farms/scripts.pory"
-	applymovement 2, HF_M_Dad3
+	playse SE_BALL_BOUNCE_1
 # 159 "data/maps/Highland_Farms/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, HF_M_Dad3
+	special DrawWholeMapView
 # 160 "data/maps/Highland_Farms/scripts.pory"
-	waitmovement 0
+	waitse
 # 161 "data/maps/Highland_Farms/scripts.pory"
-	delay 60
+	delay 30
 # 162 "data/maps/Highland_Farms/scripts.pory"
-	turnobject 2, DIR_SOUTH
+	applymovement 2, HF_M_Dad2
 # 163 "data/maps/Highland_Farms/scripts.pory"
-	applymovement 2, Univ_Exclam
-# 164 "data/maps/Highland_Farms/scripts.pory"
-	playse SE_PIN
-# 165 "data/maps/Highland_Farms/scripts.pory"
 	waitmovement 0
+# 164 "data/maps/Highland_Farms/scripts.pory"
+	applymovement 2, HF_M_Dad1
+# 165 "data/maps/Highland_Farms/scripts.pory"
+	playse SE_M_DIG
 # 166 "data/maps/Highland_Farms/scripts.pory"
 	waitse
 # 167 "data/maps/Highland_Farms/scripts.pory"
-	delay 60
+	playse SE_M_DIG
 # 168 "data/maps/Highland_Farms/scripts.pory"
-	speakername HF_DadIntro_A_Text_0
-# 169 "data/maps/Highland_Farms/scripts.pory"
-	msgbox HF_T_Dad1
-# 170 "data/maps/Highland_Farms/scripts.pory"
-	closemessage
-# 171 "data/maps/Highland_Farms/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, HF_M_Player1A
-# 172 "data/maps/Highland_Farms/scripts.pory"
-	waitmovement 0
-# 173 "data/maps/Highland_Farms/scripts.pory"
-	speakername HF_DadIntro_A_Text_0
-# 174 "data/maps/Highland_Farms/scripts.pory"
-	msgbox HF_T_Dad2
-# 175 "data/maps/Highland_Farms/scripts.pory"
-	closemessage
-# 176 "data/maps/Highland_Farms/scripts.pory"
-	applymovement 2, HF_M_Dad4
-# 177 "data/maps/Highland_Farms/scripts.pory"
-	waitmovement 0
-# 178 "data/maps/Highland_Farms/scripts.pory"
-	opendoor 45, 15
-# 179 "data/maps/Highland_Farms/scripts.pory"
-	waitdooranim
-# 180 "data/maps/Highland_Farms/scripts.pory"
-	applymovement 2, Univ_StepUp1
-# 181 "data/maps/Highland_Farms/scripts.pory"
-	waitmovement 0
-# 182 "data/maps/Highland_Farms/scripts.pory"
-	playse SE_EXIT
-# 183 "data/maps/Highland_Farms/scripts.pory"
-	removeobject 2
-# 184 "data/maps/Highland_Farms/scripts.pory"
 	waitse
-# 185 "data/maps/Highland_Farms/scripts.pory"
-	closedoor 45, 15
-# 186 "data/maps/Highland_Farms/scripts.pory"
-	waitdooranim
-# 187 "data/maps/Highland_Farms/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, Univ_StepDown1
-# 188 "data/maps/Highland_Farms/scripts.pory"
+# 169 "data/maps/Highland_Farms/scripts.pory"
+	playse SE_M_DIG
+# 170 "data/maps/Highland_Farms/scripts.pory"
+	waitse
+# 171 "data/maps/Highland_Farms/scripts.pory"
+	waitmovement 2
+# 172 "data/maps/Highland_Farms/scripts.pory"
+	setmetatile 45, 21, 0x026A, TRUE
+# 173 "data/maps/Highland_Farms/scripts.pory"
+	playse SE_BALL_BOUNCE_1
+# 174 "data/maps/Highland_Farms/scripts.pory"
+	special DrawWholeMapView
+# 175 "data/maps/Highland_Farms/scripts.pory"
+	waitse
+# 176 "data/maps/Highland_Farms/scripts.pory"
+	delay 30
+# 177 "data/maps/Highland_Farms/scripts.pory"
+	applymovement 2, HF_M_Dad3
+# 178 "data/maps/Highland_Farms/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, HF_M_Dad3
+# 179 "data/maps/Highland_Farms/scripts.pory"
 	waitmovement 0
+# 180 "data/maps/Highland_Farms/scripts.pory"
+	delay 60
+# 181 "data/maps/Highland_Farms/scripts.pory"
+	turnobject 2, DIR_SOUTH
+# 182 "data/maps/Highland_Farms/scripts.pory"
+	applymovement 2, Univ_Exclam
+# 183 "data/maps/Highland_Farms/scripts.pory"
+	playse SE_PIN
+# 184 "data/maps/Highland_Farms/scripts.pory"
+	waitmovement 0
+# 185 "data/maps/Highland_Farms/scripts.pory"
+	waitse
+# 186 "data/maps/Highland_Farms/scripts.pory"
+	delay 60
+# 187 "data/maps/Highland_Farms/scripts.pory"
+	speakername HF_DadIntro_A_Text_0
+# 188 "data/maps/Highland_Farms/scripts.pory"
+	msgbox HF_T_Dad1
 # 189 "data/maps/Highland_Farms/scripts.pory"
-	special RemoveCameraObject
+	closemessage
 # 190 "data/maps/Highland_Farms/scripts.pory"
-	setflag FLAG_HIDE_DAD_1
+	applymovement OBJ_EVENT_ID_PLAYER, HF_M_Player1A
 # 191 "data/maps/Highland_Farms/scripts.pory"
-	setflag FLAG_SPROUTS_PLANTED
+	waitmovement 0
 # 192 "data/maps/Highland_Farms/scripts.pory"
-	setvar VAR_ADVENTURE_START, 4
+	speakername HF_DadIntro_A_Text_0
 # 193 "data/maps/Highland_Farms/scripts.pory"
+	msgbox HF_T_Dad2
+# 194 "data/maps/Highland_Farms/scripts.pory"
+	closemessage
+# 195 "data/maps/Highland_Farms/scripts.pory"
+	applymovement 2, HF_M_Dad4
+# 196 "data/maps/Highland_Farms/scripts.pory"
+	waitmovement 0
+# 197 "data/maps/Highland_Farms/scripts.pory"
+	opendoor 45, 15
+# 198 "data/maps/Highland_Farms/scripts.pory"
+	waitdooranim
+# 199 "data/maps/Highland_Farms/scripts.pory"
+	applymovement 2, Univ_StepUp1
+# 200 "data/maps/Highland_Farms/scripts.pory"
+	waitmovement 0
+# 201 "data/maps/Highland_Farms/scripts.pory"
+	playse SE_EXIT
+# 202 "data/maps/Highland_Farms/scripts.pory"
+	removeobject 2
+# 203 "data/maps/Highland_Farms/scripts.pory"
+	waitse
+# 204 "data/maps/Highland_Farms/scripts.pory"
+	closedoor 45, 15
+# 205 "data/maps/Highland_Farms/scripts.pory"
+	waitdooranim
+# 206 "data/maps/Highland_Farms/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, Univ_StepDown1
+# 207 "data/maps/Highland_Farms/scripts.pory"
+	waitmovement 0
+# 208 "data/maps/Highland_Farms/scripts.pory"
+	special RemoveCameraObject
+# 209 "data/maps/Highland_Farms/scripts.pory"
+	setflag FLAG_HIDE_DAD_1
+# 210 "data/maps/Highland_Farms/scripts.pory"
+	setflag FLAG_SPROUTS_PLANTED
+# 211 "data/maps/Highland_Farms/scripts.pory"
+	setvar VAR_ADVENTURE_START, 4
+# 212 "data/maps/Highland_Farms/scripts.pory"
 	release
 	end
 
 
 HF_DadIntro_B::
-# 198 "data/maps/Highland_Farms/scripts.pory"
-	special SpawnCameraObject
-# 199 "data/maps/Highland_Farms/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, HF_CAM_1B
-# 200 "data/maps/Highland_Farms/scripts.pory"
-	waitmovement 0
-# 201 "data/maps/Highland_Farms/scripts.pory"
-	applymovement 2, HF_M_Dad1
-# 202 "data/maps/Highland_Farms/scripts.pory"
-	playse SE_M_DIG
-# 203 "data/maps/Highland_Farms/scripts.pory"
-	waitse
-# 204 "data/maps/Highland_Farms/scripts.pory"
-	playse SE_M_DIG
-# 205 "data/maps/Highland_Farms/scripts.pory"
-	waitse
-# 206 "data/maps/Highland_Farms/scripts.pory"
-	playse SE_M_DIG
-# 207 "data/maps/Highland_Farms/scripts.pory"
-	waitse
-# 208 "data/maps/Highland_Farms/scripts.pory"
-	waitmovement 2
-# 209 "data/maps/Highland_Farms/scripts.pory"
-	setmetatile 47, 21, 0x00EF, TRUE
-# 210 "data/maps/Highland_Farms/scripts.pory"
-	playse SE_BALL_BOUNCE_1
-# 211 "data/maps/Highland_Farms/scripts.pory"
-	special DrawWholeMapView
-# 212 "data/maps/Highland_Farms/scripts.pory"
-	waitse
-# 213 "data/maps/Highland_Farms/scripts.pory"
-	delay 30
-# 214 "data/maps/Highland_Farms/scripts.pory"
-	applymovement 2, HF_M_Dad2
-# 215 "data/maps/Highland_Farms/scripts.pory"
-	waitmovement 0
-# 216 "data/maps/Highland_Farms/scripts.pory"
-	applymovement 2, HF_M_Dad1
 # 217 "data/maps/Highland_Farms/scripts.pory"
-	playse SE_M_DIG
+	special SpawnCameraObject
 # 218 "data/maps/Highland_Farms/scripts.pory"
-	waitse
+	applymovement OBJ_EVENT_ID_CAMERA, HF_CAM_1B
 # 219 "data/maps/Highland_Farms/scripts.pory"
-	playse SE_M_DIG
+	waitmovement 0
 # 220 "data/maps/Highland_Farms/scripts.pory"
-	waitse
+	applymovement 2, HF_M_Dad1
 # 221 "data/maps/Highland_Farms/scripts.pory"
 	playse SE_M_DIG
 # 222 "data/maps/Highland_Farms/scripts.pory"
 	waitse
 # 223 "data/maps/Highland_Farms/scripts.pory"
-	waitmovement 2
+	playse SE_M_DIG
 # 224 "data/maps/Highland_Farms/scripts.pory"
-	setmetatile 46, 21, 0x0268, TRUE
+	waitse
 # 225 "data/maps/Highland_Farms/scripts.pory"
-	playse SE_BALL_BOUNCE_1
+	playse SE_M_DIG
 # 226 "data/maps/Highland_Farms/scripts.pory"
-	special DrawWholeMapView
+	waitse
 # 227 "data/maps/Highland_Farms/scripts.pory"
-	waitse
+	waitmovement 2
 # 228 "data/maps/Highland_Farms/scripts.pory"
-	delay 30
+	setmetatile 47, 21, 0x00EF, TRUE
 # 229 "data/maps/Highland_Farms/scripts.pory"
-	applymovement 2, HF_M_Dad2
+	playse SE_BALL_BOUNCE_1
 # 230 "data/maps/Highland_Farms/scripts.pory"
-	waitmovement 0
+	special DrawWholeMapView
 # 231 "data/maps/Highland_Farms/scripts.pory"
-	applymovement 2, HF_M_Dad1
+	waitse
 # 232 "data/maps/Highland_Farms/scripts.pory"
-	playse SE_M_DIG
+	delay 30
 # 233 "data/maps/Highland_Farms/scripts.pory"
-	waitse
+	applymovement 2, HF_M_Dad2
 # 234 "data/maps/Highland_Farms/scripts.pory"
-	playse SE_M_DIG
+	waitmovement 0
 # 235 "data/maps/Highland_Farms/scripts.pory"
-	waitse
+	applymovement 2, HF_M_Dad1
 # 236 "data/maps/Highland_Farms/scripts.pory"
 	playse SE_M_DIG
 # 237 "data/maps/Highland_Farms/scripts.pory"
 	waitse
 # 238 "data/maps/Highland_Farms/scripts.pory"
-	waitmovement 2
+	playse SE_M_DIG
 # 239 "data/maps/Highland_Farms/scripts.pory"
-	setmetatile 45, 21, 0x026A, TRUE
-# 240 "data/maps/Highland_Farms/scripts.pory"
-	playse SE_BALL_BOUNCE_1
-# 241 "data/maps/Highland_Farms/scripts.pory"
-	special DrawWholeMapView
-# 242 "data/maps/Highland_Farms/scripts.pory"
 	waitse
+# 240 "data/maps/Highland_Farms/scripts.pory"
+	playse SE_M_DIG
+# 241 "data/maps/Highland_Farms/scripts.pory"
+	waitse
+# 242 "data/maps/Highland_Farms/scripts.pory"
+	waitmovement 2
 # 243 "data/maps/Highland_Farms/scripts.pory"
-	delay 30
+	setmetatile 46, 21, 0x0268, TRUE
 # 244 "data/maps/Highland_Farms/scripts.pory"
-	applymovement 2, HF_M_Dad3
+	playse SE_BALL_BOUNCE_1
 # 245 "data/maps/Highland_Farms/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, HF_M_Dad3
+	special DrawWholeMapView
 # 246 "data/maps/Highland_Farms/scripts.pory"
-	waitmovement 0
+	waitse
 # 247 "data/maps/Highland_Farms/scripts.pory"
-	delay 60
+	delay 30
 # 248 "data/maps/Highland_Farms/scripts.pory"
-	turnobject 2, DIR_SOUTH
+	applymovement 2, HF_M_Dad2
 # 249 "data/maps/Highland_Farms/scripts.pory"
-	applymovement 2, Univ_Exclam
-# 250 "data/maps/Highland_Farms/scripts.pory"
-	playse SE_PIN
-# 251 "data/maps/Highland_Farms/scripts.pory"
 	waitmovement 0
+# 250 "data/maps/Highland_Farms/scripts.pory"
+	applymovement 2, HF_M_Dad1
+# 251 "data/maps/Highland_Farms/scripts.pory"
+	playse SE_M_DIG
 # 252 "data/maps/Highland_Farms/scripts.pory"
 	waitse
 # 253 "data/maps/Highland_Farms/scripts.pory"
-	delay 60
+	playse SE_M_DIG
 # 254 "data/maps/Highland_Farms/scripts.pory"
-	speakername HF_DadIntro_A_Text_0
-# 255 "data/maps/Highland_Farms/scripts.pory"
-	msgbox HF_T_Dad1
-# 256 "data/maps/Highland_Farms/scripts.pory"
-	closemessage
-# 257 "data/maps/Highland_Farms/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, HF_M_Player1B
-# 258 "data/maps/Highland_Farms/scripts.pory"
-	waitmovement 0
-# 259 "data/maps/Highland_Farms/scripts.pory"
-	speakername HF_DadIntro_A_Text_0
-# 260 "data/maps/Highland_Farms/scripts.pory"
-	msgbox HF_T_Dad2
-# 261 "data/maps/Highland_Farms/scripts.pory"
-	closemessage
-# 262 "data/maps/Highland_Farms/scripts.pory"
-	applymovement 2, HF_M_Dad4
-# 263 "data/maps/Highland_Farms/scripts.pory"
-	waitmovement 0
-# 264 "data/maps/Highland_Farms/scripts.pory"
-	opendoor 45, 15
-# 265 "data/maps/Highland_Farms/scripts.pory"
-	waitdooranim
-# 266 "data/maps/Highland_Farms/scripts.pory"
-	applymovement 2, Univ_StepUp1
-# 267 "data/maps/Highland_Farms/scripts.pory"
-	waitmovement 0
-# 268 "data/maps/Highland_Farms/scripts.pory"
-	playse SE_EXIT
-# 269 "data/maps/Highland_Farms/scripts.pory"
-	removeobject 2
-# 270 "data/maps/Highland_Farms/scripts.pory"
 	waitse
-# 271 "data/maps/Highland_Farms/scripts.pory"
-	closedoor 45, 15
-# 272 "data/maps/Highland_Farms/scripts.pory"
-	waitdooranim
-# 273 "data/maps/Highland_Farms/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, Univ_StepDown1
-# 274 "data/maps/Highland_Farms/scripts.pory"
+# 255 "data/maps/Highland_Farms/scripts.pory"
+	playse SE_M_DIG
+# 256 "data/maps/Highland_Farms/scripts.pory"
+	waitse
+# 257 "data/maps/Highland_Farms/scripts.pory"
+	waitmovement 2
+# 258 "data/maps/Highland_Farms/scripts.pory"
+	setmetatile 45, 21, 0x026A, TRUE
+# 259 "data/maps/Highland_Farms/scripts.pory"
+	playse SE_BALL_BOUNCE_1
+# 260 "data/maps/Highland_Farms/scripts.pory"
+	special DrawWholeMapView
+# 261 "data/maps/Highland_Farms/scripts.pory"
+	waitse
+# 262 "data/maps/Highland_Farms/scripts.pory"
+	delay 30
+# 263 "data/maps/Highland_Farms/scripts.pory"
+	applymovement 2, HF_M_Dad3
+# 264 "data/maps/Highland_Farms/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, HF_M_Dad3
+# 265 "data/maps/Highland_Farms/scripts.pory"
 	waitmovement 0
+# 266 "data/maps/Highland_Farms/scripts.pory"
+	delay 60
+# 267 "data/maps/Highland_Farms/scripts.pory"
+	turnobject 2, DIR_SOUTH
+# 268 "data/maps/Highland_Farms/scripts.pory"
+	applymovement 2, Univ_Exclam
+# 269 "data/maps/Highland_Farms/scripts.pory"
+	playse SE_PIN
+# 270 "data/maps/Highland_Farms/scripts.pory"
+	waitmovement 0
+# 271 "data/maps/Highland_Farms/scripts.pory"
+	waitse
+# 272 "data/maps/Highland_Farms/scripts.pory"
+	delay 60
+# 273 "data/maps/Highland_Farms/scripts.pory"
+	speakername HF_DadIntro_A_Text_0
+# 274 "data/maps/Highland_Farms/scripts.pory"
+	msgbox HF_T_Dad1
 # 275 "data/maps/Highland_Farms/scripts.pory"
-	special RemoveCameraObject
+	closemessage
 # 276 "data/maps/Highland_Farms/scripts.pory"
-	setflag FLAG_HIDE_DAD_1
+	applymovement OBJ_EVENT_ID_PLAYER, HF_M_Player1B
 # 277 "data/maps/Highland_Farms/scripts.pory"
-	setflag FLAG_SPROUTS_PLANTED
+	waitmovement 0
 # 278 "data/maps/Highland_Farms/scripts.pory"
-	setvar VAR_ADVENTURE_START, 4
+	speakername HF_DadIntro_A_Text_0
 # 279 "data/maps/Highland_Farms/scripts.pory"
+	msgbox HF_T_Dad2
+# 280 "data/maps/Highland_Farms/scripts.pory"
+	closemessage
+# 281 "data/maps/Highland_Farms/scripts.pory"
+	applymovement 2, HF_M_Dad4
+# 282 "data/maps/Highland_Farms/scripts.pory"
+	waitmovement 0
+# 283 "data/maps/Highland_Farms/scripts.pory"
+	opendoor 45, 15
+# 284 "data/maps/Highland_Farms/scripts.pory"
+	waitdooranim
+# 285 "data/maps/Highland_Farms/scripts.pory"
+	applymovement 2, Univ_StepUp1
+# 286 "data/maps/Highland_Farms/scripts.pory"
+	waitmovement 0
+# 287 "data/maps/Highland_Farms/scripts.pory"
+	playse SE_EXIT
+# 288 "data/maps/Highland_Farms/scripts.pory"
+	removeobject 2
+# 289 "data/maps/Highland_Farms/scripts.pory"
+	waitse
+# 290 "data/maps/Highland_Farms/scripts.pory"
+	closedoor 45, 15
+# 291 "data/maps/Highland_Farms/scripts.pory"
+	waitdooranim
+# 292 "data/maps/Highland_Farms/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, Univ_StepDown1
+# 293 "data/maps/Highland_Farms/scripts.pory"
+	waitmovement 0
+# 294 "data/maps/Highland_Farms/scripts.pory"
+	special RemoveCameraObject
+# 295 "data/maps/Highland_Farms/scripts.pory"
+	setflag FLAG_HIDE_DAD_1
+# 296 "data/maps/Highland_Farms/scripts.pory"
+	setflag FLAG_SPROUTS_PLANTED
+# 297 "data/maps/Highland_Farms/scripts.pory"
+	setvar VAR_ADVENTURE_START, 4
+# 298 "data/maps/Highland_Farms/scripts.pory"
 	release
 	end
 
 
 CheckSproutFlag::
-# 284 "data/maps/Highland_Farms/scripts.pory"
+# 303 "data/maps/Highland_Farms/scripts.pory"
 	goto_if_set FLAG_SPROUTS_PLANTED, CheckSproutFlag_2
 CheckSproutFlag_1:
 	return
 
 CheckSproutFlag_2:
-# 285 "data/maps/Highland_Farms/scripts.pory"
+# 304 "data/maps/Highland_Farms/scripts.pory"
 	setmetatile 47, 21, 0x00EF, TRUE
-# 286 "data/maps/Highland_Farms/scripts.pory"
+# 305 "data/maps/Highland_Farms/scripts.pory"
 	setmetatile 46, 21, 0x0268, TRUE
-# 287 "data/maps/Highland_Farms/scripts.pory"
+# 306 "data/maps/Highland_Farms/scripts.pory"
 	setmetatile 45, 21, 0x026A, TRUE
 	goto CheckSproutFlag_1
 
 
 HF_CheckLogFlag::
-# 295 "data/maps/Highland_Farms/scripts.pory"
+# 314 "data/maps/Highland_Farms/scripts.pory"
 	goto_if_set FLAG_HF_REMOVE_LOG, HF_CheckLogFlag_2
 HF_CheckLogFlag_1:
 	return
 
 HF_CheckLogFlag_2:
-# 296 "data/maps/Highland_Farms/scripts.pory"
+# 315 "data/maps/Highland_Farms/scripts.pory"
 	setmetatile 2, 12, 0x000, FALSE
-# 297 "data/maps/Highland_Farms/scripts.pory"
+# 316 "data/maps/Highland_Farms/scripts.pory"
 	setmetatile 3, 12, 0x000, FALSE
 	goto HF_CheckLogFlag_1
 
 
 BattleMike::
-# 305 "data/maps/Highland_Farms/scripts.pory"
+# 324 "data/maps/Highland_Farms/scripts.pory"
 	lock
-# 306 "data/maps/Highland_Farms/scripts.pory"
+# 325 "data/maps/Highland_Farms/scripts.pory"
 	faceplayer
-# 307 "data/maps/Highland_Farms/scripts.pory"
+# 326 "data/maps/Highland_Farms/scripts.pory"
 	trainerbattle_no_intro TRAINER_RIVAL_MIKE, LoseText
-# 308 "data/maps/Highland_Farms/scripts.pory"
+# 327 "data/maps/Highland_Farms/scripts.pory"
 	release
 	end
 
 
 HF_MikeIntro::
-# 313 "data/maps/Highland_Farms/scripts.pory"
-	turnobject 3, DIR_NORTH
-# 314 "data/maps/Highland_Farms/scripts.pory"
-	applymovement 3, Univ_Exclam
-# 315 "data/maps/Highland_Farms/scripts.pory"
-	playse SE_PIN
-# 316 "data/maps/Highland_Farms/scripts.pory"
-	waitmovement 0
-# 317 "data/maps/Highland_Farms/scripts.pory"
-	waitse
-# 318 "data/maps/Highland_Farms/scripts.pory"
-	delay 60
-# 319 "data/maps/Highland_Farms/scripts.pory"
-	applymovement 3, HF_W_Mike1
-# 320 "data/maps/Highland_Farms/scripts.pory"
-	waitmovement 0
-# 321 "data/maps/Highland_Farms/scripts.pory"
-	speakername HF_Mike_Interact_Text_0
-# 322 "data/maps/Highland_Farms/scripts.pory"
-	msgbox HF_T_Mike1
-# 323 "data/maps/Highland_Farms/scripts.pory"
-	waitmessage
-# 324 "data/maps/Highland_Farms/scripts.pory"
-	closemessage
-# 325 "data/maps/Highland_Farms/scripts.pory"
-	applymovement 3, HF_W_Mike2
-# 326 "data/maps/Highland_Farms/scripts.pory"
-	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
-# 327 "data/maps/Highland_Farms/scripts.pory"
-	waitmovement 3
-# 328 "data/maps/Highland_Farms/scripts.pory"
-	opendoor 41, 33
-# 329 "data/maps/Highland_Farms/scripts.pory"
-	waitdooranim
-# 330 "data/maps/Highland_Farms/scripts.pory"
-	applymovement 3, Univ_StepUp1
-# 331 "data/maps/Highland_Farms/scripts.pory"
-	waitmovement 0
 # 332 "data/maps/Highland_Farms/scripts.pory"
-	playse SE_EXIT
+	turnobject 3, DIR_NORTH
 # 333 "data/maps/Highland_Farms/scripts.pory"
-	removeobject 3
+	applymovement 3, Univ_Exclam
 # 334 "data/maps/Highland_Farms/scripts.pory"
-	waitse
+	playse SE_PIN
 # 335 "data/maps/Highland_Farms/scripts.pory"
-	closedoor 41, 33
+	waitmovement 0
 # 336 "data/maps/Highland_Farms/scripts.pory"
-	waitdooranim
+	waitse
 # 337 "data/maps/Highland_Farms/scripts.pory"
-	setflag FLAG_HIDE_RIVAL_MIKE_1
+	delay 60
 # 338 "data/maps/Highland_Farms/scripts.pory"
-	setvar VAR_ADVENTURE_START, 8
+	applymovement 3, HF_W_Mike1
 # 339 "data/maps/Highland_Farms/scripts.pory"
-	clearflag FLAG_HIDE_RIVAL_MIKE_2
+	waitmovement 0
 # 340 "data/maps/Highland_Farms/scripts.pory"
+	speakername HF_Mike_Interact_Text_0
+# 341 "data/maps/Highland_Farms/scripts.pory"
+	msgbox HF_T_Mike1
+# 342 "data/maps/Highland_Farms/scripts.pory"
+	waitmessage
+# 343 "data/maps/Highland_Farms/scripts.pory"
+	closemessage
+# 344 "data/maps/Highland_Farms/scripts.pory"
+	applymovement 3, HF_W_Mike2
+# 345 "data/maps/Highland_Farms/scripts.pory"
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
+# 346 "data/maps/Highland_Farms/scripts.pory"
+	waitmovement 3
+# 347 "data/maps/Highland_Farms/scripts.pory"
+	opendoor 41, 33
+# 348 "data/maps/Highland_Farms/scripts.pory"
+	waitdooranim
+# 349 "data/maps/Highland_Farms/scripts.pory"
+	applymovement 3, Univ_StepUp1
+# 350 "data/maps/Highland_Farms/scripts.pory"
+	waitmovement 0
+# 351 "data/maps/Highland_Farms/scripts.pory"
+	playse SE_EXIT
+# 352 "data/maps/Highland_Farms/scripts.pory"
+	removeobject 3
+# 353 "data/maps/Highland_Farms/scripts.pory"
+	waitse
+# 354 "data/maps/Highland_Farms/scripts.pory"
+	closedoor 41, 33
+# 355 "data/maps/Highland_Farms/scripts.pory"
+	waitdooranim
+# 356 "data/maps/Highland_Farms/scripts.pory"
+	setflag FLAG_HIDE_RIVAL_MIKE_1
+# 357 "data/maps/Highland_Farms/scripts.pory"
+	setvar VAR_ADVENTURE_START, 8
+# 358 "data/maps/Highland_Farms/scripts.pory"
+	clearflag FLAG_HIDE_RIVAL_MIKE_2
+# 359 "data/maps/Highland_Farms/scripts.pory"
 	release
 	end
 
 
 HF_Mike_ReadyToGo::
-# 345 "data/maps/Highland_Farms/scripts.pory"
-	special SpawnCameraObject
-# 346 "data/maps/Highland_Farms/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, HF_CAM_2
-# 347 "data/maps/Highland_Farms/scripts.pory"
-	waitmovement 0
-# 348 "data/maps/Highland_Farms/scripts.pory"
-	delay 20
-# 349 "data/maps/Highland_Farms/scripts.pory"
-	playse SE_DOOR
-# 350 "data/maps/Highland_Farms/scripts.pory"
-	opendoor 10, 16
-# 351 "data/maps/Highland_Farms/scripts.pory"
-	waitdooranim
-# 352 "data/maps/Highland_Farms/scripts.pory"
-	addobject 4
-# 353 "data/maps/Highland_Farms/scripts.pory"
-	applymovement 4, Univ_StepDown1
-# 354 "data/maps/Highland_Farms/scripts.pory"
-	waitmovement 0
-# 355 "data/maps/Highland_Farms/scripts.pory"
-	closedoor 10, 16
-# 356 "data/maps/Highland_Farms/scripts.pory"
-	waitdooranim
-# 357 "data/maps/Highland_Farms/scripts.pory"
-	applymovement 4, Univ_Exclam
-# 358 "data/maps/Highland_Farms/scripts.pory"
-	playse SE_PIN
-# 359 "data/maps/Highland_Farms/scripts.pory"
-	waitmovement 0
-# 360 "data/maps/Highland_Farms/scripts.pory"
-	waitse
-# 361 "data/maps/Highland_Farms/scripts.pory"
-	delay 60
-# 362 "data/maps/Highland_Farms/scripts.pory"
-	applymovement 4, HF_W_Mike3
-# 363 "data/maps/Highland_Farms/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, HF_CAM_3
 # 364 "data/maps/Highland_Farms/scripts.pory"
-	waitmovement 4
+	special SpawnCameraObject
 # 365 "data/maps/Highland_Farms/scripts.pory"
-	special RemoveCameraObject
+	applymovement OBJ_EVENT_ID_CAMERA, HF_CAM_2
 # 366 "data/maps/Highland_Farms/scripts.pory"
-	speakername HF_Mike_Interact_Text_0
+	waitmovement 0
 # 367 "data/maps/Highland_Farms/scripts.pory"
-	msgbox HF_T_Mike2, MSGBOX_AUTOCLOSE
+	setmetatile 10, 16, 0x219, TRUE
 # 368 "data/maps/Highland_Farms/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, HF_W_Player2
+	special DrawWholeMapView
 # 369 "data/maps/Highland_Farms/scripts.pory"
-	waitmovement 0
+	delay 20
 # 370 "data/maps/Highland_Farms/scripts.pory"
-	applymovement 4, HF_W_Mike4
+	playse SE_DOOR
 # 371 "data/maps/Highland_Farms/scripts.pory"
-	waitmovement 0
+	opendoor 10, 16
 # 372 "data/maps/Highland_Farms/scripts.pory"
-	removeobject 4
+	waitdooranim
 # 373 "data/maps/Highland_Farms/scripts.pory"
-	setvar VAR_ADVENTURE_START, 14
+	addobject 4
 # 374 "data/maps/Highland_Farms/scripts.pory"
-	clearflag FLAG_OBR_HIDE_RIVAL_MIKE
+	applymovement 4, Univ_StepDown1
 # 375 "data/maps/Highland_Farms/scripts.pory"
+	waitmovement 0
+# 376 "data/maps/Highland_Farms/scripts.pory"
+	closedoor 10, 16
+# 377 "data/maps/Highland_Farms/scripts.pory"
+	waitdooranim
+# 378 "data/maps/Highland_Farms/scripts.pory"
+	applymovement 4, Univ_Exclam
+# 379 "data/maps/Highland_Farms/scripts.pory"
+	playse SE_PIN
+# 380 "data/maps/Highland_Farms/scripts.pory"
+	waitmovement 0
+# 381 "data/maps/Highland_Farms/scripts.pory"
+	waitse
+# 382 "data/maps/Highland_Farms/scripts.pory"
+	delay 60
+# 383 "data/maps/Highland_Farms/scripts.pory"
+	applymovement 4, HF_W_Mike3
+# 384 "data/maps/Highland_Farms/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, HF_CAM_3
+# 385 "data/maps/Highland_Farms/scripts.pory"
+	waitmovement 4
+# 386 "data/maps/Highland_Farms/scripts.pory"
+	special RemoveCameraObject
+# 387 "data/maps/Highland_Farms/scripts.pory"
+	speakername HF_Mike_Interact_Text_0
+# 388 "data/maps/Highland_Farms/scripts.pory"
+	msgbox HF_T_Mike2, MSGBOX_AUTOCLOSE
+# 389 "data/maps/Highland_Farms/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, HF_W_Player2
+# 390 "data/maps/Highland_Farms/scripts.pory"
+	waitmovement 0
+# 391 "data/maps/Highland_Farms/scripts.pory"
+	applymovement 4, HF_W_Mike4
+# 392 "data/maps/Highland_Farms/scripts.pory"
+	waitmovement 0
+# 393 "data/maps/Highland_Farms/scripts.pory"
+	removeobject 4
+# 394 "data/maps/Highland_Farms/scripts.pory"
+	setmetatile 10, 16, 0x226, TRUE
+# 395 "data/maps/Highland_Farms/scripts.pory"
+	special DrawWholeMapView
+# 396 "data/maps/Highland_Farms/scripts.pory"
+	setvar VAR_ADVENTURE_START, 14
+# 397 "data/maps/Highland_Farms/scripts.pory"
+	clearflag FLAG_OBR_HIDE_RIVAL_MIKE
+# 398 "data/maps/Highland_Farms/scripts.pory"
 	release
 	end
 
 
 HF_FirstBattleIntro_Trigger::
-# 380 "data/maps/Highland_Farms/scripts.pory"
+# 403 "data/maps/Highland_Farms/scripts.pory"
 	setmetatile 2, 12, 0x000, FALSE
-# 381 "data/maps/Highland_Farms/scripts.pory"
-	setmetatile 3, 12, 0x000, FALSE
-# 382 "data/maps/Highland_Farms/scripts.pory"
-	setflag FLAG_HF_REMOVE_LOG
-# 383 "data/maps/Highland_Farms/scripts.pory"
-	turnobject 4, DIR_SOUTH
-# 384 "data/maps/Highland_Farms/scripts.pory"
-	special SpawnCameraObject
-# 385 "data/maps/Highland_Farms/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, HF_CAM_2
-# 386 "data/maps/Highland_Farms/scripts.pory"
-	waitmovement 0
-# 387 "data/maps/Highland_Farms/scripts.pory"
-	delay 20
-# 388 "data/maps/Highland_Farms/scripts.pory"
-	speakername HF_Mike_Interact_Text_0
-# 389 "data/maps/Highland_Farms/scripts.pory"
-	msgbox HF_T_Mike4
-# 390 "data/maps/Highland_Farms/scripts.pory"
-	waitmessage
-# 391 "data/maps/Highland_Farms/scripts.pory"
-	closemessage
-# 392 "data/maps/Highland_Farms/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, HF_M_Player2
-# 393 "data/maps/Highland_Farms/scripts.pory"
-	waitmovement 0
-# 394 "data/maps/Highland_Farms/scripts.pory"
-	delay 20
-# 395 "data/maps/Highland_Farms/scripts.pory"
-	speakername HF_Mike_Interact_Text_0
-# 396 "data/maps/Highland_Farms/scripts.pory"
-	msgbox HF_T_Mike5, MSGBOX_YESNO
-# 397 "data/maps/Highland_Farms/scripts.pory"
-	compare VAR_RESULT, YES
-	goto_if_eq HF_FirstBattleIntro_Trigger_2
 # 404 "data/maps/Highland_Farms/scripts.pory"
-	speakername HF_Mike_Interact_Text_0
+	setmetatile 3, 12, 0x000, FALSE
 # 405 "data/maps/Highland_Farms/scripts.pory"
-	msgbox HF_T_Mike6_No
+	setflag FLAG_HF_REMOVE_LOG
 # 406 "data/maps/Highland_Farms/scripts.pory"
-	waitmessage
+	turnobject 4, DIR_SOUTH
 # 407 "data/maps/Highland_Farms/scripts.pory"
-	closemessage
-HF_FirstBattleIntro_Trigger_1:
+	special SpawnCameraObject
+# 408 "data/maps/Highland_Farms/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, HF_CAM_2
 # 409 "data/maps/Highland_Farms/scripts.pory"
-	applymovement 4, HF_M_Mike5
-# 410 "data/maps/Highland_Farms/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, HF_M_Mike5
-# 411 "data/maps/Highland_Farms/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, HF_M_Player3
-# 412 "data/maps/Highland_Farms/scripts.pory"
 	waitmovement 0
+# 410 "data/maps/Highland_Farms/scripts.pory"
+	delay 20
+# 411 "data/maps/Highland_Farms/scripts.pory"
+	speakername HF_Mike_Interact_Text_0
+# 412 "data/maps/Highland_Farms/scripts.pory"
+	msgbox HF_T_Mike4
 # 413 "data/maps/Highland_Farms/scripts.pory"
-	delay 10
+	waitmessage
 # 414 "data/maps/Highland_Farms/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Univ_Exclam
+	closemessage
 # 415 "data/maps/Highland_Farms/scripts.pory"
-	playse SE_PIN
+	applymovement OBJ_EVENT_ID_PLAYER, HF_M_Player2
 # 416 "data/maps/Highland_Farms/scripts.pory"
 	waitmovement 0
 # 417 "data/maps/Highland_Farms/scripts.pory"
-	waitse
-# 418 "data/maps/Highland_Farms/scripts.pory"
-	delay 100
-# 419 "data/maps/Highland_Farms/scripts.pory"
-	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
-# 420 "data/maps/Highland_Farms/scripts.pory"
-	speakername HF_Mike_Interact_Text_0
-# 421 "data/maps/Highland_Farms/scripts.pory"
-	msgbox HF_T_Mike7
-# 422 "data/maps/Highland_Farms/scripts.pory"
-	waitmessage
-# 423 "data/maps/Highland_Farms/scripts.pory"
-	closemessage
-# 424 "data/maps/Highland_Farms/scripts.pory"
-	applymovement 4, HF_M_Mike6
-# 425 "data/maps/Highland_Farms/scripts.pory"
-	waitmovement 0
-# 426 "data/maps/Highland_Farms/scripts.pory"
-	setobjectxyperm 4, 11, 5
-# 427 "data/maps/Highland_Farms/scripts.pory"
-	setobjectmovementtype 4, MOVEMENT_TYPE_FACE_LEFT
-# 428 "data/maps/Highland_Farms/scripts.pory"
 	delay 20
+# 418 "data/maps/Highland_Farms/scripts.pory"
+	speakername HF_Mike_Interact_Text_0
+# 419 "data/maps/Highland_Farms/scripts.pory"
+	msgbox HF_T_Mike5, MSGBOX_YESNO
+# 420 "data/maps/Highland_Farms/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq HF_FirstBattleIntro_Trigger_2
+# 427 "data/maps/Highland_Farms/scripts.pory"
+	speakername HF_Mike_Interact_Text_0
+# 428 "data/maps/Highland_Farms/scripts.pory"
+	msgbox HF_T_Mike6_No
 # 429 "data/maps/Highland_Farms/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, Univ_StepLeft1
+	waitmessage
 # 430 "data/maps/Highland_Farms/scripts.pory"
-	waitmovement 0
-# 431 "data/maps/Highland_Farms/scripts.pory"
-	special RemoveCameraObject
+	closemessage
+HF_FirstBattleIntro_Trigger_1:
 # 432 "data/maps/Highland_Farms/scripts.pory"
-	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
+	applymovement 4, HF_M_Mike5
 # 433 "data/maps/Highland_Farms/scripts.pory"
-	setvar VAR_ADVENTURE_START, 20
+	applymovement OBJ_EVENT_ID_CAMERA, HF_M_Mike5
 # 434 "data/maps/Highland_Farms/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, HF_M_Player3
+# 435 "data/maps/Highland_Farms/scripts.pory"
+	waitmovement 0
+# 436 "data/maps/Highland_Farms/scripts.pory"
+	delay 10
+# 437 "data/maps/Highland_Farms/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Univ_Exclam
+# 438 "data/maps/Highland_Farms/scripts.pory"
+	playse SE_PIN
+# 439 "data/maps/Highland_Farms/scripts.pory"
+	waitmovement 0
+# 440 "data/maps/Highland_Farms/scripts.pory"
+	waitse
+# 441 "data/maps/Highland_Farms/scripts.pory"
+	delay 100
+# 442 "data/maps/Highland_Farms/scripts.pory"
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
+# 443 "data/maps/Highland_Farms/scripts.pory"
+	speakername HF_Mike_Interact_Text_0
+# 444 "data/maps/Highland_Farms/scripts.pory"
+	msgbox HF_T_Mike7
+# 445 "data/maps/Highland_Farms/scripts.pory"
+	waitmessage
+# 446 "data/maps/Highland_Farms/scripts.pory"
+	closemessage
+# 447 "data/maps/Highland_Farms/scripts.pory"
+	applymovement 4, HF_M_Mike6
+# 448 "data/maps/Highland_Farms/scripts.pory"
+	waitmovement 0
+# 449 "data/maps/Highland_Farms/scripts.pory"
+	setobjectxyperm 4, 11, 5
+# 450 "data/maps/Highland_Farms/scripts.pory"
+	setobjectmovementtype 4, MOVEMENT_TYPE_FACE_LEFT
+# 451 "data/maps/Highland_Farms/scripts.pory"
+	delay 20
+# 452 "data/maps/Highland_Farms/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, Univ_StepLeft1
+# 453 "data/maps/Highland_Farms/scripts.pory"
+	waitmovement 0
+# 454 "data/maps/Highland_Farms/scripts.pory"
+	special RemoveCameraObject
+# 455 "data/maps/Highland_Farms/scripts.pory"
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
+# 456 "data/maps/Highland_Farms/scripts.pory"
+	setvar VAR_ADVENTURE_START, 20
+# 457 "data/maps/Highland_Farms/scripts.pory"
 	release
 	end
 
 HF_FirstBattleIntro_Trigger_2:
-# 398 "data/maps/Highland_Farms/scripts.pory"
+# 421 "data/maps/Highland_Farms/scripts.pory"
 	speakername HF_Mike_Interact_Text_0
-# 399 "data/maps/Highland_Farms/scripts.pory"
+# 422 "data/maps/Highland_Farms/scripts.pory"
 	msgbox HF_T_Mike6_Yes
-# 400 "data/maps/Highland_Farms/scripts.pory"
+# 423 "data/maps/Highland_Farms/scripts.pory"
 	waitmessage
-# 401 "data/maps/Highland_Farms/scripts.pory"
+# 424 "data/maps/Highland_Farms/scripts.pory"
 	closemessage
 	goto HF_FirstBattleIntro_Trigger_1
 
 
 HF_NoExitBattleStage_Trigger::
-# 439 "data/maps/Highland_Farms/scripts.pory"
+# 462 "data/maps/Highland_Farms/scripts.pory"
 	special SpawnCameraObject
-# 440 "data/maps/Highland_Farms/scripts.pory"
+# 463 "data/maps/Highland_Farms/scripts.pory"
 	applymovement 4, Univ_Exclam
-# 441 "data/maps/Highland_Farms/scripts.pory"
+# 464 "data/maps/Highland_Farms/scripts.pory"
 	playse SE_PIN
-# 442 "data/maps/Highland_Farms/scripts.pory"
+# 465 "data/maps/Highland_Farms/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, HF_CAM_4
-# 443 "data/maps/Highland_Farms/scripts.pory"
+# 466 "data/maps/Highland_Farms/scripts.pory"
 	waitmovement 0
-# 444 "data/maps/Highland_Farms/scripts.pory"
+# 467 "data/maps/Highland_Farms/scripts.pory"
 	speakername HF_Mike_Interact_Text_0
-# 445 "data/maps/Highland_Farms/scripts.pory"
+# 468 "data/maps/Highland_Farms/scripts.pory"
 	msgbox HF_T_Mike9
-# 446 "data/maps/Highland_Farms/scripts.pory"
+# 469 "data/maps/Highland_Farms/scripts.pory"
 	waitmessage
-# 447 "data/maps/Highland_Farms/scripts.pory"
+# 470 "data/maps/Highland_Farms/scripts.pory"
 	closemessage
-# 448 "data/maps/Highland_Farms/scripts.pory"
+# 471 "data/maps/Highland_Farms/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, HF_CAM_4R
-# 449 "data/maps/Highland_Farms/scripts.pory"
+# 472 "data/maps/Highland_Farms/scripts.pory"
 	waitmovement 0
-# 450 "data/maps/Highland_Farms/scripts.pory"
+# 473 "data/maps/Highland_Farms/scripts.pory"
 	special RemoveCameraObject
-# 451 "data/maps/Highland_Farms/scripts.pory"
+# 474 "data/maps/Highland_Farms/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Univ_StepUp1
-# 452 "data/maps/Highland_Farms/scripts.pory"
+# 475 "data/maps/Highland_Farms/scripts.pory"
 	waitmovement 0
-# 453 "data/maps/Highland_Farms/scripts.pory"
+# 476 "data/maps/Highland_Farms/scripts.pory"
 	release
 	end
 
 
 HF_FirstBattleStart_Trigger::
-# 458 "data/maps/Highland_Farms/scripts.pory"
-	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
-# 459 "data/maps/Highland_Farms/scripts.pory"
-	special SpawnCameraObject
-# 460 "data/maps/Highland_Farms/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, HF_CAM_5
-# 461 "data/maps/Highland_Farms/scripts.pory"
-	waitmovement 0
-# 462 "data/maps/Highland_Farms/scripts.pory"
-	delay 30
-# 463 "data/maps/Highland_Farms/scripts.pory"
-	playbgm MUS_RG_ENCOUNTER_RIVAL, FALSE
-# 464 "data/maps/Highland_Farms/scripts.pory"
-	speakername HF_Mike_Interact_Text_0
-# 465 "data/maps/Highland_Farms/scripts.pory"
-	msgbox HF_T_Mike10
-# 466 "data/maps/Highland_Farms/scripts.pory"
-	waitmessage
-# 467 "data/maps/Highland_Farms/scripts.pory"
-	closemessage
-# 468 "data/maps/Highland_Farms/scripts.pory"
-	delay 30
-# 469 "data/maps/Highland_Farms/scripts.pory"
-	call HF_HandleBattleSprites_Rival
-# 470 "data/maps/Highland_Farms/scripts.pory"
-	delay 30
-# 471 "data/maps/Highland_Farms/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, HF_CAM_5R
-# 472 "data/maps/Highland_Farms/scripts.pory"
-	waitmovement 0
-# 473 "data/maps/Highland_Farms/scripts.pory"
-	delay 60
-# 474 "data/maps/Highland_Farms/scripts.pory"
-	call HF_HandleBattleSprites_Player
-# 475 "data/maps/Highland_Farms/scripts.pory"
-	delay 60
-# 476 "data/maps/Highland_Farms/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, HF_CAM_6
-# 477 "data/maps/Highland_Farms/scripts.pory"
-	waitmovement 0
-# 478 "data/maps/Highland_Farms/scripts.pory"
-	call HF_StartBattle_1
-# 479 "data/maps/Highland_Farms/scripts.pory"
-	fadedefaultbgm
-# 480 "data/maps/Highland_Farms/scripts.pory"
-	delay 60
 # 481 "data/maps/Highland_Farms/scripts.pory"
-	call HF_RemovePlayerPokemon_PostBattle
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
 # 482 "data/maps/Highland_Farms/scripts.pory"
-	delay 60
+	special SpawnCameraObject
 # 483 "data/maps/Highland_Farms/scripts.pory"
-	playfanfare MUS_OBTAIN_BADGE
+	fadeoutbgm 1
 # 484 "data/maps/Highland_Farms/scripts.pory"
-	waitfanfare
+	applymovement OBJ_EVENT_ID_CAMERA, HF_CAM_5
 # 485 "data/maps/Highland_Farms/scripts.pory"
-	setvar VAR_ADVENTURE_START, 21
+	waitmovement 0
 # 486 "data/maps/Highland_Farms/scripts.pory"
+	delay 30
+# 487 "data/maps/Highland_Farms/scripts.pory"
+	playbgm MUS_RG_ENCOUNTER_RIVAL, FALSE
+# 488 "data/maps/Highland_Farms/scripts.pory"
+	speakername HF_Mike_Interact_Text_0
+# 489 "data/maps/Highland_Farms/scripts.pory"
+	msgbox HF_T_Mike10
+# 490 "data/maps/Highland_Farms/scripts.pory"
+	waitmessage
+# 491 "data/maps/Highland_Farms/scripts.pory"
+	closemessage
+# 492 "data/maps/Highland_Farms/scripts.pory"
+	delay 30
+# 493 "data/maps/Highland_Farms/scripts.pory"
+	call HF_HandleBattleSprites_Rival
+# 494 "data/maps/Highland_Farms/scripts.pory"
+	delay 30
+# 495 "data/maps/Highland_Farms/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, HF_CAM_5R
+# 496 "data/maps/Highland_Farms/scripts.pory"
+	waitmovement 0
+# 497 "data/maps/Highland_Farms/scripts.pory"
+	special RemoveCameraObject
+# 498 "data/maps/Highland_Farms/scripts.pory"
+	delay 30
+# 499 "data/maps/Highland_Farms/scripts.pory"
+	call HF_HandleBattleSprites_Player
+# 500 "data/maps/Highland_Farms/scripts.pory"
+	delay 30
+# 501 "data/maps/Highland_Farms/scripts.pory"
+	call HF_StartBattle_1
+# 502 "data/maps/Highland_Farms/scripts.pory"
+	fadedefaultbgm
+# 503 "data/maps/Highland_Farms/scripts.pory"
+	delay 60
+# 504 "data/maps/Highland_Farms/scripts.pory"
+	call HF_RemovePlayerPokemon_PostBattle
+# 505 "data/maps/Highland_Farms/scripts.pory"
+	delay 60
+# 506 "data/maps/Highland_Farms/scripts.pory"
+	applymovement 4, HF_M_Mike7
+# 507 "data/maps/Highland_Farms/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, HF_M_Player4
+# 508 "data/maps/Highland_Farms/scripts.pory"
+	waitmovement 0
+# 509 "data/maps/Highland_Farms/scripts.pory"
+	delay 30
+# 510 "data/maps/Highland_Farms/scripts.pory"
+	speakername HF_Mike_Interact_Text_0
+# 511 "data/maps/Highland_Farms/scripts.pory"
+	msgbox HF_T_Mike11
+# 512 "data/maps/Highland_Farms/scripts.pory"
+	waitmessage
+# 513 "data/maps/Highland_Farms/scripts.pory"
+	closemessage
+# 514 "data/maps/Highland_Farms/scripts.pory"
+	applymovement 4, HF_M_Mike8
+# 515 "data/maps/Highland_Farms/scripts.pory"
+	waitmovement 0
+# 516 "data/maps/Highland_Farms/scripts.pory"
+	removeobject 4
+# 517 "data/maps/Highland_Farms/scripts.pory"
+	setflag FLAG_HF_HIDE_RIVAL_MIKE
+# 518 "data/maps/Highland_Farms/scripts.pory"
+	clearflag FLAG_RHB1F_HIDE_RIVAL
+# 519 "data/maps/Highland_Farms/scripts.pory"
+	setvar VAR_ADVENTURE_START, 21
+# 520 "data/maps/Highland_Farms/scripts.pory"
 	release
 	end
 
 
 HF_RemovePlayerPokemon_PostBattle::
-# 491 "data/maps/Highland_Farms/scripts.pory"
+# 525 "data/maps/Highland_Farms/scripts.pory"
 	compare VAR_STARTER_MON, 2
 	goto_if_eq HF_RemovePlayerPokemon_PostBattle_2
-# 514 "data/maps/Highland_Farms/scripts.pory"
+# 548 "data/maps/Highland_Farms/scripts.pory"
 	compare VAR_STARTER_MON, 1
 	goto_if_eq HF_RemovePlayerPokemon_PostBattle_3
-# 537 "data/maps/Highland_Farms/scripts.pory"
+# 571 "data/maps/Highland_Farms/scripts.pory"
 	compare VAR_STARTER_MON, 0
 	goto_if_eq HF_RemovePlayerPokemon_PostBattle_4
 HF_RemovePlayerPokemon_PostBattle_1:
 	return
 
 HF_RemovePlayerPokemon_PostBattle_2:
-# 492 "data/maps/Highland_Farms/scripts.pory"
+# 526 "data/maps/Highland_Farms/scripts.pory"
 	applymovement 10, Univ_StepLeft1
-# 493 "data/maps/Highland_Farms/scripts.pory"
+# 527 "data/maps/Highland_Farms/scripts.pory"
 	waitmovement 0
-# 494 "data/maps/Highland_Farms/scripts.pory"
+# 528 "data/maps/Highland_Farms/scripts.pory"
 	playmoncry SPECIES_OSHAWOTT, 0
-# 495 "data/maps/Highland_Farms/scripts.pory"
+# 529 "data/maps/Highland_Farms/scripts.pory"
 	waitmoncry
-# 496 "data/maps/Highland_Farms/scripts.pory"
+# 530 "data/maps/Highland_Farms/scripts.pory"
 	playse SE_BIKE_HOP
-# 497 "data/maps/Highland_Farms/scripts.pory"
+# 531 "data/maps/Highland_Farms/scripts.pory"
 	applymovement 10, Univ_JumpIP_1Left
-# 498 "data/maps/Highland_Farms/scripts.pory"
+# 532 "data/maps/Highland_Farms/scripts.pory"
 	waitmovement 0
-# 499 "data/maps/Highland_Farms/scripts.pory"
+# 533 "data/maps/Highland_Farms/scripts.pory"
 	delay 30
-# 500 "data/maps/Highland_Farms/scripts.pory"
+# 534 "data/maps/Highland_Farms/scripts.pory"
 	playse SE_BALL_BOUNCE_1
-# 501 "data/maps/Highland_Farms/scripts.pory"
+# 535 "data/maps/Highland_Farms/scripts.pory"
 	addobject 7
-# 502 "data/maps/Highland_Farms/scripts.pory"
+# 536 "data/maps/Highland_Farms/scripts.pory"
 	setobjectsubpriority 7, MAP_HIGHLAND_FARMS, 0
-# 503 "data/maps/Highland_Farms/scripts.pory"
+# 537 "data/maps/Highland_Farms/scripts.pory"
 	setobjectsubpriority 10, MAP_HIGHLAND_FARMS, 3
-# 504 "data/maps/Highland_Farms/scripts.pory"
+# 538 "data/maps/Highland_Farms/scripts.pory"
 	waitse
-# 505 "data/maps/Highland_Farms/scripts.pory"
+# 539 "data/maps/Highland_Farms/scripts.pory"
 	delay 30
-# 506 "data/maps/Highland_Farms/scripts.pory"
+# 540 "data/maps/Highland_Farms/scripts.pory"
 	playse SE_BALL_OPEN
-# 507 "data/maps/Highland_Farms/scripts.pory"
+# 541 "data/maps/Highland_Farms/scripts.pory"
 	removeobject 10
-# 508 "data/maps/Highland_Farms/scripts.pory"
+# 542 "data/maps/Highland_Farms/scripts.pory"
 	waitse
-# 509 "data/maps/Highland_Farms/scripts.pory"
+# 543 "data/maps/Highland_Farms/scripts.pory"
 	delay 30
-# 510 "data/maps/Highland_Farms/scripts.pory"
+# 544 "data/maps/Highland_Farms/scripts.pory"
 	playse SE_RG_BAG_POCKET
-# 511 "data/maps/Highland_Farms/scripts.pory"
+# 545 "data/maps/Highland_Farms/scripts.pory"
 	removeobject 7
-# 512 "data/maps/Highland_Farms/scripts.pory"
+# 546 "data/maps/Highland_Farms/scripts.pory"
 	waitse
 	goto HF_RemovePlayerPokemon_PostBattle_1
 
 HF_RemovePlayerPokemon_PostBattle_3:
-# 515 "data/maps/Highland_Farms/scripts.pory"
+# 549 "data/maps/Highland_Farms/scripts.pory"
 	applymovement 9, Univ_StepLeft1
-# 516 "data/maps/Highland_Farms/scripts.pory"
+# 550 "data/maps/Highland_Farms/scripts.pory"
 	waitmovement 0
-# 517 "data/maps/Highland_Farms/scripts.pory"
+# 551 "data/maps/Highland_Farms/scripts.pory"
 	playmoncry SPECIES_LITTEN, 0
-# 518 "data/maps/Highland_Farms/scripts.pory"
+# 552 "data/maps/Highland_Farms/scripts.pory"
 	waitmoncry
-# 519 "data/maps/Highland_Farms/scripts.pory"
+# 553 "data/maps/Highland_Farms/scripts.pory"
 	playse SE_BIKE_HOP
-# 520 "data/maps/Highland_Farms/scripts.pory"
+# 554 "data/maps/Highland_Farms/scripts.pory"
 	applymovement 9, Univ_JumpIP_1Left
-# 521 "data/maps/Highland_Farms/scripts.pory"
+# 555 "data/maps/Highland_Farms/scripts.pory"
 	waitmovement 0
-# 522 "data/maps/Highland_Farms/scripts.pory"
+# 556 "data/maps/Highland_Farms/scripts.pory"
 	delay 30
-# 523 "data/maps/Highland_Farms/scripts.pory"
+# 557 "data/maps/Highland_Farms/scripts.pory"
 	playse SE_BALL_BOUNCE_1
-# 524 "data/maps/Highland_Farms/scripts.pory"
+# 558 "data/maps/Highland_Farms/scripts.pory"
 	addobject 7
-# 525 "data/maps/Highland_Farms/scripts.pory"
+# 559 "data/maps/Highland_Farms/scripts.pory"
 	setobjectsubpriority 7, MAP_HIGHLAND_FARMS, 0
-# 526 "data/maps/Highland_Farms/scripts.pory"
+# 560 "data/maps/Highland_Farms/scripts.pory"
 	setobjectsubpriority 9, MAP_HIGHLAND_FARMS, 3
-# 527 "data/maps/Highland_Farms/scripts.pory"
+# 561 "data/maps/Highland_Farms/scripts.pory"
 	waitse
-# 528 "data/maps/Highland_Farms/scripts.pory"
+# 562 "data/maps/Highland_Farms/scripts.pory"
 	delay 30
-# 529 "data/maps/Highland_Farms/scripts.pory"
+# 563 "data/maps/Highland_Farms/scripts.pory"
 	playse SE_BALL_OPEN
-# 530 "data/maps/Highland_Farms/scripts.pory"
+# 564 "data/maps/Highland_Farms/scripts.pory"
 	removeobject 9
-# 531 "data/maps/Highland_Farms/scripts.pory"
+# 565 "data/maps/Highland_Farms/scripts.pory"
 	waitse
-# 532 "data/maps/Highland_Farms/scripts.pory"
+# 566 "data/maps/Highland_Farms/scripts.pory"
 	delay 30
-# 533 "data/maps/Highland_Farms/scripts.pory"
+# 567 "data/maps/Highland_Farms/scripts.pory"
 	playse SE_RG_BAG_POCKET
-# 534 "data/maps/Highland_Farms/scripts.pory"
+# 568 "data/maps/Highland_Farms/scripts.pory"
 	removeobject 7
-# 535 "data/maps/Highland_Farms/scripts.pory"
+# 569 "data/maps/Highland_Farms/scripts.pory"
 	waitse
 	goto HF_RemovePlayerPokemon_PostBattle_1
 
 HF_RemovePlayerPokemon_PostBattle_4:
-# 538 "data/maps/Highland_Farms/scripts.pory"
+# 572 "data/maps/Highland_Farms/scripts.pory"
 	applymovement 8, Univ_StepLeft1
-# 539 "data/maps/Highland_Farms/scripts.pory"
+# 573 "data/maps/Highland_Farms/scripts.pory"
 	waitmovement 0
-# 540 "data/maps/Highland_Farms/scripts.pory"
+# 574 "data/maps/Highland_Farms/scripts.pory"
 	playmoncry SPECIES_TURTWIG, 0
-# 541 "data/maps/Highland_Farms/scripts.pory"
+# 575 "data/maps/Highland_Farms/scripts.pory"
 	waitmoncry
-# 542 "data/maps/Highland_Farms/scripts.pory"
+# 576 "data/maps/Highland_Farms/scripts.pory"
 	playse SE_BIKE_HOP
-# 543 "data/maps/Highland_Farms/scripts.pory"
+# 577 "data/maps/Highland_Farms/scripts.pory"
 	applymovement 8, Univ_JumpIP_1Left
-# 544 "data/maps/Highland_Farms/scripts.pory"
+# 578 "data/maps/Highland_Farms/scripts.pory"
 	waitmovement 0
-# 545 "data/maps/Highland_Farms/scripts.pory"
+# 579 "data/maps/Highland_Farms/scripts.pory"
 	delay 30
-# 546 "data/maps/Highland_Farms/scripts.pory"
+# 580 "data/maps/Highland_Farms/scripts.pory"
 	playse SE_BALL_BOUNCE_1
-# 547 "data/maps/Highland_Farms/scripts.pory"
+# 581 "data/maps/Highland_Farms/scripts.pory"
 	addobject 7
-# 548 "data/maps/Highland_Farms/scripts.pory"
+# 582 "data/maps/Highland_Farms/scripts.pory"
 	setobjectsubpriority 7, MAP_HIGHLAND_FARMS, 0
-# 549 "data/maps/Highland_Farms/scripts.pory"
+# 583 "data/maps/Highland_Farms/scripts.pory"
 	setobjectsubpriority 8, MAP_HIGHLAND_FARMS, 3
-# 550 "data/maps/Highland_Farms/scripts.pory"
+# 584 "data/maps/Highland_Farms/scripts.pory"
 	waitse
-# 551 "data/maps/Highland_Farms/scripts.pory"
+# 585 "data/maps/Highland_Farms/scripts.pory"
 	delay 30
-# 552 "data/maps/Highland_Farms/scripts.pory"
+# 586 "data/maps/Highland_Farms/scripts.pory"
 	playse SE_BALL_OPEN
-# 553 "data/maps/Highland_Farms/scripts.pory"
+# 587 "data/maps/Highland_Farms/scripts.pory"
 	removeobject 8
-# 554 "data/maps/Highland_Farms/scripts.pory"
+# 588 "data/maps/Highland_Farms/scripts.pory"
 	waitse
-# 555 "data/maps/Highland_Farms/scripts.pory"
+# 589 "data/maps/Highland_Farms/scripts.pory"
 	delay 30
-# 556 "data/maps/Highland_Farms/scripts.pory"
+# 590 "data/maps/Highland_Farms/scripts.pory"
 	playse SE_RG_BAG_POCKET
-# 557 "data/maps/Highland_Farms/scripts.pory"
+# 591 "data/maps/Highland_Farms/scripts.pory"
 	removeobject 7
-# 558 "data/maps/Highland_Farms/scripts.pory"
+# 592 "data/maps/Highland_Farms/scripts.pory"
 	waitse
 	goto HF_RemovePlayerPokemon_PostBattle_1
 
 
 HF_StartBattle_1::
-# 564 "data/maps/Highland_Farms/scripts.pory"
+# 598 "data/maps/Highland_Farms/scripts.pory"
 	compare VAR_STARTER_MON, 2
 	goto_if_eq HF_StartBattle_1_1
-# 574 "data/maps/Highland_Farms/scripts.pory"
+# 608 "data/maps/Highland_Farms/scripts.pory"
 	compare VAR_STARTER_MON, 1
 	goto_if_eq HF_StartBattle_1_2
-# 584 "data/maps/Highland_Farms/scripts.pory"
+# 618 "data/maps/Highland_Farms/scripts.pory"
 	compare VAR_STARTER_MON, 0
 	goto_if_eq HF_StartBattle_1_3
 	return
 
 HF_StartBattle_1_1:
-# 565 "data/maps/Highland_Farms/scripts.pory"
+# 599 "data/maps/Highland_Farms/scripts.pory"
 	playse SE_M_GUST2
-# 566 "data/maps/Highland_Farms/scripts.pory"
+# 600 "data/maps/Highland_Farms/scripts.pory"
 	applymovement 10, HF_M_PlayerPokemon
-# 567 "data/maps/Highland_Farms/scripts.pory"
+# 601 "data/maps/Highland_Farms/scripts.pory"
 	delay 10
-# 568 "data/maps/Highland_Farms/scripts.pory"
+# 602 "data/maps/Highland_Farms/scripts.pory"
 	playse SE_M_GUST2
-# 569 "data/maps/Highland_Farms/scripts.pory"
+# 603 "data/maps/Highland_Farms/scripts.pory"
 	applymovement 11, HF_M_RivalPokemon
-# 570 "data/maps/Highland_Farms/scripts.pory"
+# 604 "data/maps/Highland_Farms/scripts.pory"
 	waitmovement 0
-# 571 "data/maps/Highland_Farms/scripts.pory"
+# 605 "data/maps/Highland_Farms/scripts.pory"
 	trainerbattle_no_intro TRAINER_HF_MIKE_TURTWIG, HF_T_MikeLoseBattle
 	return
 
 HF_StartBattle_1_2:
-# 575 "data/maps/Highland_Farms/scripts.pory"
+# 609 "data/maps/Highland_Farms/scripts.pory"
 	playse SE_M_GUST2
-# 576 "data/maps/Highland_Farms/scripts.pory"
+# 610 "data/maps/Highland_Farms/scripts.pory"
 	applymovement 9, HF_M_PlayerPokemon
-# 577 "data/maps/Highland_Farms/scripts.pory"
+# 611 "data/maps/Highland_Farms/scripts.pory"
 	delay 10
-# 578 "data/maps/Highland_Farms/scripts.pory"
+# 612 "data/maps/Highland_Farms/scripts.pory"
 	playse SE_M_GUST2
-# 579 "data/maps/Highland_Farms/scripts.pory"
+# 613 "data/maps/Highland_Farms/scripts.pory"
 	applymovement 13, HF_M_RivalPokemon
-# 580 "data/maps/Highland_Farms/scripts.pory"
+# 614 "data/maps/Highland_Farms/scripts.pory"
 	waitmovement 0
-# 581 "data/maps/Highland_Farms/scripts.pory"
+# 615 "data/maps/Highland_Farms/scripts.pory"
 	trainerbattle_no_intro TRAINER_HF_MIKE_OSHAWOTT, HF_T_MikeLoseBattle
 	return
 
 HF_StartBattle_1_3:
-# 585 "data/maps/Highland_Farms/scripts.pory"
+# 619 "data/maps/Highland_Farms/scripts.pory"
 	playse SE_M_GUST2
-# 586 "data/maps/Highland_Farms/scripts.pory"
+# 620 "data/maps/Highland_Farms/scripts.pory"
 	applymovement 8, HF_M_PlayerPokemon
-# 587 "data/maps/Highland_Farms/scripts.pory"
+# 621 "data/maps/Highland_Farms/scripts.pory"
 	delay 10
-# 588 "data/maps/Highland_Farms/scripts.pory"
+# 622 "data/maps/Highland_Farms/scripts.pory"
 	playse SE_M_GUST2
-# 589 "data/maps/Highland_Farms/scripts.pory"
+# 623 "data/maps/Highland_Farms/scripts.pory"
 	applymovement 12, HF_M_RivalPokemon
-# 590 "data/maps/Highland_Farms/scripts.pory"
+# 624 "data/maps/Highland_Farms/scripts.pory"
 	waitmovement 0
-# 591 "data/maps/Highland_Farms/scripts.pory"
+# 625 "data/maps/Highland_Farms/scripts.pory"
 	trainerbattle_no_intro TRAINER_HF_MIKE_LITTEN, HF_T_MikeLoseBattle
 	return
 
 
 HF_HandleBattleSprites_Rival::
-# 599 "data/maps/Highland_Farms/scripts.pory"
+# 633 "data/maps/Highland_Farms/scripts.pory"
 	compare VAR_STARTER_MON, 2
 	goto_if_eq HF_HandleBattleSprites_Rival_2
-# 616 "data/maps/Highland_Farms/scripts.pory"
+# 650 "data/maps/Highland_Farms/scripts.pory"
 	compare VAR_STARTER_MON, 1
 	goto_if_eq HF_HandleBattleSprites_Rival_3
-# 633 "data/maps/Highland_Farms/scripts.pory"
+# 667 "data/maps/Highland_Farms/scripts.pory"
 	compare VAR_STARTER_MON, 0
 	goto_if_eq HF_HandleBattleSprites_Rival_4
 HF_HandleBattleSprites_Rival_1:
 	return
 
 HF_HandleBattleSprites_Rival_2:
-# 600 "data/maps/Highland_Farms/scripts.pory"
-	speakername HF_Mike_Interact_Text_0
-# 601 "data/maps/Highland_Farms/scripts.pory"
-	msgbox HF_T_MikeGoTurtwig
-# 602 "data/maps/Highland_Farms/scripts.pory"
-	closemessage
-# 603 "data/maps/Highland_Farms/scripts.pory"
-	playse SE_BALL_THROW
-# 604 "data/maps/Highland_Farms/scripts.pory"
-	waitse
-# 605 "data/maps/Highland_Farms/scripts.pory"
-	playse SE_BALL_BOUNCE_1
-# 606 "data/maps/Highland_Farms/scripts.pory"
-	addobject 6
-# 607 "data/maps/Highland_Farms/scripts.pory"
-	waitse
-# 608 "data/maps/Highland_Farms/scripts.pory"
-	delay 30
-# 609 "data/maps/Highland_Farms/scripts.pory"
-	playse SE_BALL_OPEN
-# 610 "data/maps/Highland_Farms/scripts.pory"
-	addobject 11
-# 611 "data/maps/Highland_Farms/scripts.pory"
-	removeobject 6
-# 612 "data/maps/Highland_Farms/scripts.pory"
-	waitse
-# 613 "data/maps/Highland_Farms/scripts.pory"
-	playmoncry SPECIES_TURTWIG, 2
-# 614 "data/maps/Highland_Farms/scripts.pory"
-	waitmoncry
-	goto HF_HandleBattleSprites_Rival_1
-
-HF_HandleBattleSprites_Rival_3:
-# 617 "data/maps/Highland_Farms/scripts.pory"
-	speakername HF_Mike_Interact_Text_0
-# 618 "data/maps/Highland_Farms/scripts.pory"
-	msgbox HF_T_MikeGoOshawott
-# 619 "data/maps/Highland_Farms/scripts.pory"
-	closemessage
-# 620 "data/maps/Highland_Farms/scripts.pory"
-	playse SE_BALL_THROW
-# 621 "data/maps/Highland_Farms/scripts.pory"
-	waitse
-# 622 "data/maps/Highland_Farms/scripts.pory"
-	playse SE_BALL_BOUNCE_1
-# 623 "data/maps/Highland_Farms/scripts.pory"
-	addobject 6
-# 624 "data/maps/Highland_Farms/scripts.pory"
-	waitse
-# 625 "data/maps/Highland_Farms/scripts.pory"
-	delay 30
-# 626 "data/maps/Highland_Farms/scripts.pory"
-	playse SE_BALL_OPEN
-# 627 "data/maps/Highland_Farms/scripts.pory"
-	addobject 13
-# 628 "data/maps/Highland_Farms/scripts.pory"
-	removeobject 6
-# 629 "data/maps/Highland_Farms/scripts.pory"
-	waitse
-# 630 "data/maps/Highland_Farms/scripts.pory"
-	playmoncry SPECIES_OSHAWOTT, 2
-# 631 "data/maps/Highland_Farms/scripts.pory"
-	waitmoncry
-	goto HF_HandleBattleSprites_Rival_1
-
-HF_HandleBattleSprites_Rival_4:
 # 634 "data/maps/Highland_Farms/scripts.pory"
 	speakername HF_Mike_Interact_Text_0
 # 635 "data/maps/Highland_Farms/scripts.pory"
-	msgbox HF_T_MikeGoLitten
+	msgbox HF_T_MikeGoTurtwig
 # 636 "data/maps/Highland_Farms/scripts.pory"
 	closemessage
 # 637 "data/maps/Highland_Farms/scripts.pory"
@@ -1216,530 +1212,648 @@ HF_HandleBattleSprites_Rival_4:
 # 643 "data/maps/Highland_Farms/scripts.pory"
 	playse SE_BALL_OPEN
 # 644 "data/maps/Highland_Farms/scripts.pory"
-	addobject 12
+	addobject 11
 # 645 "data/maps/Highland_Farms/scripts.pory"
 	removeobject 6
 # 646 "data/maps/Highland_Farms/scripts.pory"
 	waitse
 # 647 "data/maps/Highland_Farms/scripts.pory"
-	playmoncry SPECIES_LITTEN, 2
+	playmoncry SPECIES_TURTWIG, 2
 # 648 "data/maps/Highland_Farms/scripts.pory"
+	waitmoncry
+	goto HF_HandleBattleSprites_Rival_1
+
+HF_HandleBattleSprites_Rival_3:
+# 651 "data/maps/Highland_Farms/scripts.pory"
+	speakername HF_Mike_Interact_Text_0
+# 652 "data/maps/Highland_Farms/scripts.pory"
+	msgbox HF_T_MikeGoOshawott
+# 653 "data/maps/Highland_Farms/scripts.pory"
+	closemessage
+# 654 "data/maps/Highland_Farms/scripts.pory"
+	playse SE_BALL_THROW
+# 655 "data/maps/Highland_Farms/scripts.pory"
+	waitse
+# 656 "data/maps/Highland_Farms/scripts.pory"
+	playse SE_BALL_BOUNCE_1
+# 657 "data/maps/Highland_Farms/scripts.pory"
+	addobject 6
+# 658 "data/maps/Highland_Farms/scripts.pory"
+	waitse
+# 659 "data/maps/Highland_Farms/scripts.pory"
+	delay 30
+# 660 "data/maps/Highland_Farms/scripts.pory"
+	playse SE_BALL_OPEN
+# 661 "data/maps/Highland_Farms/scripts.pory"
+	addobject 13
+# 662 "data/maps/Highland_Farms/scripts.pory"
+	removeobject 6
+# 663 "data/maps/Highland_Farms/scripts.pory"
+	waitse
+# 664 "data/maps/Highland_Farms/scripts.pory"
+	playmoncry SPECIES_OSHAWOTT, 2
+# 665 "data/maps/Highland_Farms/scripts.pory"
+	waitmoncry
+	goto HF_HandleBattleSprites_Rival_1
+
+HF_HandleBattleSprites_Rival_4:
+# 668 "data/maps/Highland_Farms/scripts.pory"
+	speakername HF_Mike_Interact_Text_0
+# 669 "data/maps/Highland_Farms/scripts.pory"
+	msgbox HF_T_MikeGoLitten
+# 670 "data/maps/Highland_Farms/scripts.pory"
+	closemessage
+# 671 "data/maps/Highland_Farms/scripts.pory"
+	playse SE_BALL_THROW
+# 672 "data/maps/Highland_Farms/scripts.pory"
+	waitse
+# 673 "data/maps/Highland_Farms/scripts.pory"
+	playse SE_BALL_BOUNCE_1
+# 674 "data/maps/Highland_Farms/scripts.pory"
+	addobject 6
+# 675 "data/maps/Highland_Farms/scripts.pory"
+	waitse
+# 676 "data/maps/Highland_Farms/scripts.pory"
+	delay 30
+# 677 "data/maps/Highland_Farms/scripts.pory"
+	playse SE_BALL_OPEN
+# 678 "data/maps/Highland_Farms/scripts.pory"
+	addobject 12
+# 679 "data/maps/Highland_Farms/scripts.pory"
+	removeobject 6
+# 680 "data/maps/Highland_Farms/scripts.pory"
+	waitse
+# 681 "data/maps/Highland_Farms/scripts.pory"
+	playmoncry SPECIES_LITTEN, 2
+# 682 "data/maps/Highland_Farms/scripts.pory"
 	waitmoncry
 	goto HF_HandleBattleSprites_Rival_1
 
 
 HF_HandleBattleSprites_Player::
-# 654 "data/maps/Highland_Farms/scripts.pory"
+# 688 "data/maps/Highland_Farms/scripts.pory"
 	compare VAR_STARTER_MON, 2
 	goto_if_eq HF_HandleBattleSprites_Player_2
-# 668 "data/maps/Highland_Farms/scripts.pory"
+# 702 "data/maps/Highland_Farms/scripts.pory"
 	compare VAR_STARTER_MON, 1
 	goto_if_eq HF_HandleBattleSprites_Player_3
-# 682 "data/maps/Highland_Farms/scripts.pory"
+# 716 "data/maps/Highland_Farms/scripts.pory"
 	compare VAR_STARTER_MON, 0
 	goto_if_eq HF_HandleBattleSprites_Player_4
 HF_HandleBattleSprites_Player_1:
 	return
 
 HF_HandleBattleSprites_Player_2:
-# 655 "data/maps/Highland_Farms/scripts.pory"
+# 689 "data/maps/Highland_Farms/scripts.pory"
 	playse SE_BALL_THROW
-# 656 "data/maps/Highland_Farms/scripts.pory"
+# 690 "data/maps/Highland_Farms/scripts.pory"
 	waitse
-# 657 "data/maps/Highland_Farms/scripts.pory"
+# 691 "data/maps/Highland_Farms/scripts.pory"
 	playse SE_BALL_BOUNCE_1
-# 658 "data/maps/Highland_Farms/scripts.pory"
+# 692 "data/maps/Highland_Farms/scripts.pory"
 	addobject 7
-# 659 "data/maps/Highland_Farms/scripts.pory"
+# 693 "data/maps/Highland_Farms/scripts.pory"
 	waitse
-# 660 "data/maps/Highland_Farms/scripts.pory"
+# 694 "data/maps/Highland_Farms/scripts.pory"
 	delay 30
-# 661 "data/maps/Highland_Farms/scripts.pory"
+# 695 "data/maps/Highland_Farms/scripts.pory"
 	playse SE_BALL_OPEN
-# 662 "data/maps/Highland_Farms/scripts.pory"
+# 696 "data/maps/Highland_Farms/scripts.pory"
 	addobject 10
-# 663 "data/maps/Highland_Farms/scripts.pory"
+# 697 "data/maps/Highland_Farms/scripts.pory"
 	removeobject 7
-# 664 "data/maps/Highland_Farms/scripts.pory"
+# 698 "data/maps/Highland_Farms/scripts.pory"
 	waitse
-# 665 "data/maps/Highland_Farms/scripts.pory"
+# 699 "data/maps/Highland_Farms/scripts.pory"
 	playmoncry SPECIES_OSHAWOTT, 2
-# 666 "data/maps/Highland_Farms/scripts.pory"
+# 700 "data/maps/Highland_Farms/scripts.pory"
 	waitmoncry
 	goto HF_HandleBattleSprites_Player_1
 
 HF_HandleBattleSprites_Player_3:
-# 669 "data/maps/Highland_Farms/scripts.pory"
+# 703 "data/maps/Highland_Farms/scripts.pory"
 	playse SE_BALL_THROW
-# 670 "data/maps/Highland_Farms/scripts.pory"
+# 704 "data/maps/Highland_Farms/scripts.pory"
 	waitse
-# 671 "data/maps/Highland_Farms/scripts.pory"
+# 705 "data/maps/Highland_Farms/scripts.pory"
 	playse SE_BALL_BOUNCE_1
-# 672 "data/maps/Highland_Farms/scripts.pory"
+# 706 "data/maps/Highland_Farms/scripts.pory"
 	addobject 7
-# 673 "data/maps/Highland_Farms/scripts.pory"
+# 707 "data/maps/Highland_Farms/scripts.pory"
 	waitse
-# 674 "data/maps/Highland_Farms/scripts.pory"
+# 708 "data/maps/Highland_Farms/scripts.pory"
 	delay 30
-# 675 "data/maps/Highland_Farms/scripts.pory"
+# 709 "data/maps/Highland_Farms/scripts.pory"
 	playse SE_BALL_OPEN
-# 676 "data/maps/Highland_Farms/scripts.pory"
+# 710 "data/maps/Highland_Farms/scripts.pory"
 	addobject 9
-# 677 "data/maps/Highland_Farms/scripts.pory"
+# 711 "data/maps/Highland_Farms/scripts.pory"
 	removeobject 7
-# 678 "data/maps/Highland_Farms/scripts.pory"
+# 712 "data/maps/Highland_Farms/scripts.pory"
 	waitse
-# 679 "data/maps/Highland_Farms/scripts.pory"
+# 713 "data/maps/Highland_Farms/scripts.pory"
 	playmoncry SPECIES_LITTEN, 2
-# 680 "data/maps/Highland_Farms/scripts.pory"
+# 714 "data/maps/Highland_Farms/scripts.pory"
 	waitmoncry
 	goto HF_HandleBattleSprites_Player_1
 
 HF_HandleBattleSprites_Player_4:
-# 683 "data/maps/Highland_Farms/scripts.pory"
+# 717 "data/maps/Highland_Farms/scripts.pory"
 	playse SE_BALL_THROW
-# 684 "data/maps/Highland_Farms/scripts.pory"
+# 718 "data/maps/Highland_Farms/scripts.pory"
 	waitse
-# 685 "data/maps/Highland_Farms/scripts.pory"
+# 719 "data/maps/Highland_Farms/scripts.pory"
 	playse SE_BALL_BOUNCE_1
-# 686 "data/maps/Highland_Farms/scripts.pory"
+# 720 "data/maps/Highland_Farms/scripts.pory"
 	addobject 7
-# 687 "data/maps/Highland_Farms/scripts.pory"
+# 721 "data/maps/Highland_Farms/scripts.pory"
 	waitse
-# 688 "data/maps/Highland_Farms/scripts.pory"
+# 722 "data/maps/Highland_Farms/scripts.pory"
 	delay 30
-# 689 "data/maps/Highland_Farms/scripts.pory"
+# 723 "data/maps/Highland_Farms/scripts.pory"
 	playse SE_BALL_OPEN
-# 690 "data/maps/Highland_Farms/scripts.pory"
+# 724 "data/maps/Highland_Farms/scripts.pory"
 	addobject 8
-# 691 "data/maps/Highland_Farms/scripts.pory"
+# 725 "data/maps/Highland_Farms/scripts.pory"
 	removeobject 7
-# 692 "data/maps/Highland_Farms/scripts.pory"
+# 726 "data/maps/Highland_Farms/scripts.pory"
 	waitse
-# 693 "data/maps/Highland_Farms/scripts.pory"
+# 727 "data/maps/Highland_Farms/scripts.pory"
 	playmoncry SPECIES_TURTWIG, 2
-# 694 "data/maps/Highland_Farms/scripts.pory"
+# 728 "data/maps/Highland_Farms/scripts.pory"
 	waitmoncry
 	goto HF_HandleBattleSprites_Player_1
 
 
-# 699 "data/maps/Highland_Farms/scripts.pory"
+# 733 "data/maps/Highland_Farms/scripts.pory"
 HF_CAM_1A:
-# 700 "data/maps/Highland_Farms/scripts.pory"
+# 734 "data/maps/Highland_Farms/scripts.pory"
 	walk_diag_northeast
-# 700 "data/maps/Highland_Farms/scripts.pory"
+# 734 "data/maps/Highland_Farms/scripts.pory"
 	walk_diag_northeast
-# 700 "data/maps/Highland_Farms/scripts.pory"
+# 734 "data/maps/Highland_Farms/scripts.pory"
 	walk_diag_northeast
-# 701 "data/maps/Highland_Farms/scripts.pory"
+# 735 "data/maps/Highland_Farms/scripts.pory"
 	walk_up
 	step_end
 
-# 704 "data/maps/Highland_Farms/scripts.pory"
+# 738 "data/maps/Highland_Farms/scripts.pory"
 HF_CAM_1B:
-# 705 "data/maps/Highland_Farms/scripts.pory"
+# 739 "data/maps/Highland_Farms/scripts.pory"
 	walk_diag_northeast
-# 705 "data/maps/Highland_Farms/scripts.pory"
+# 739 "data/maps/Highland_Farms/scripts.pory"
 	walk_diag_northeast
-# 705 "data/maps/Highland_Farms/scripts.pory"
+# 739 "data/maps/Highland_Farms/scripts.pory"
 	walk_diag_northeast
-# 705 "data/maps/Highland_Farms/scripts.pory"
-	walk_diag_northeast
-	step_end
-
-# 708 "data/maps/Highland_Farms/scripts.pory"
-HF_CAM_2:
-# 709 "data/maps/Highland_Farms/scripts.pory"
-	walk_up
-# 709 "data/maps/Highland_Farms/scripts.pory"
-	walk_up
-# 709 "data/maps/Highland_Farms/scripts.pory"
-	walk_up
-	step_end
-
-# 712 "data/maps/Highland_Farms/scripts.pory"
-HF_CAM_3:
-# 713 "data/maps/Highland_Farms/scripts.pory"
-	walk_fast_down
-# 713 "data/maps/Highland_Farms/scripts.pory"
-	walk_fast_down
-# 713 "data/maps/Highland_Farms/scripts.pory"
-	walk_fast_down
-	step_end
-
-# 716 "data/maps/Highland_Farms/scripts.pory"
-HF_CAM_4:
-# 717 "data/maps/Highland_Farms/scripts.pory"
-	walk_diag_northeast
-# 717 "data/maps/Highland_Farms/scripts.pory"
-	walk_diag_northeast
-# 717 "data/maps/Highland_Farms/scripts.pory"
-	walk_diag_northeast
-# 717 "data/maps/Highland_Farms/scripts.pory"
+# 739 "data/maps/Highland_Farms/scripts.pory"
 	walk_diag_northeast
 	step_end
 
-# 720 "data/maps/Highland_Farms/scripts.pory"
-HF_CAM_4R:
-# 721 "data/maps/Highland_Farms/scripts.pory"
-	walk_diag_southwest
-# 721 "data/maps/Highland_Farms/scripts.pory"
-	walk_diag_southwest
-# 721 "data/maps/Highland_Farms/scripts.pory"
-	walk_diag_southwest
-# 721 "data/maps/Highland_Farms/scripts.pory"
-	walk_diag_southwest
-	step_end
-
-# 724 "data/maps/Highland_Farms/scripts.pory"
-HF_CAM_5:
-# 725 "data/maps/Highland_Farms/scripts.pory"
-	walk_right
-# 725 "data/maps/Highland_Farms/scripts.pory"
-	walk_right
-# 725 "data/maps/Highland_Farms/scripts.pory"
-	walk_right
-# 725 "data/maps/Highland_Farms/scripts.pory"
-	walk_right
-# 725 "data/maps/Highland_Farms/scripts.pory"
-	walk_right
-	step_end
-
-# 728 "data/maps/Highland_Farms/scripts.pory"
-HF_CAM_5R:
-# 729 "data/maps/Highland_Farms/scripts.pory"
-	walk_left
-# 729 "data/maps/Highland_Farms/scripts.pory"
-	walk_left
-# 729 "data/maps/Highland_Farms/scripts.pory"
-	walk_left
-# 729 "data/maps/Highland_Farms/scripts.pory"
-	walk_left
-# 729 "data/maps/Highland_Farms/scripts.pory"
-	walk_left
-	step_end
-
-# 732 "data/maps/Highland_Farms/scripts.pory"
-HF_CAM_6:
-# 733 "data/maps/Highland_Farms/scripts.pory"
-	walk_fast_right
-# 733 "data/maps/Highland_Farms/scripts.pory"
-	walk_fast_right
-	step_end
-
-# 736 "data/maps/Highland_Farms/scripts.pory"
-HF_M_Dad1:
-# 737 "data/maps/Highland_Farms/scripts.pory"
-	walk_in_place_up
-# 737 "data/maps/Highland_Farms/scripts.pory"
-	walk_in_place_up
-# 737 "data/maps/Highland_Farms/scripts.pory"
-	walk_in_place_up
-	step_end
-
-# 740 "data/maps/Highland_Farms/scripts.pory"
-HF_M_Dad2:
-# 741 "data/maps/Highland_Farms/scripts.pory"
-	walk_left
 # 742 "data/maps/Highland_Farms/scripts.pory"
-	face_up
+HF_CAM_2:
+# 743 "data/maps/Highland_Farms/scripts.pory"
+	walk_up
+# 743 "data/maps/Highland_Farms/scripts.pory"
+	walk_up
+# 743 "data/maps/Highland_Farms/scripts.pory"
+	walk_up
 	step_end
 
-# 745 "data/maps/Highland_Farms/scripts.pory"
-HF_M_Dad3:
 # 746 "data/maps/Highland_Farms/scripts.pory"
-	walk_left
+HF_CAM_3:
 # 747 "data/maps/Highland_Farms/scripts.pory"
-	walk_up
-# 748 "data/maps/Highland_Farms/scripts.pory"
-	walk_left
-# 748 "data/maps/Highland_Farms/scripts.pory"
-	walk_left
-# 749 "data/maps/Highland_Farms/scripts.pory"
-	walk_up
+	walk_fast_down
+# 747 "data/maps/Highland_Farms/scripts.pory"
+	walk_fast_down
+# 747 "data/maps/Highland_Farms/scripts.pory"
+	walk_fast_down
 	step_end
 
-# 752 "data/maps/Highland_Farms/scripts.pory"
-HF_M_Dad4:
-# 753 "data/maps/Highland_Farms/scripts.pory"
-	walk_up
-# 753 "data/maps/Highland_Farms/scripts.pory"
-	walk_up
-# 753 "data/maps/Highland_Farms/scripts.pory"
-	walk_up
+# 750 "data/maps/Highland_Farms/scripts.pory"
+HF_CAM_4:
+# 751 "data/maps/Highland_Farms/scripts.pory"
+	walk_diag_northeast
+# 751 "data/maps/Highland_Farms/scripts.pory"
+	walk_diag_northeast
+# 751 "data/maps/Highland_Farms/scripts.pory"
+	walk_diag_northeast
+# 751 "data/maps/Highland_Farms/scripts.pory"
+	walk_diag_northeast
+	step_end
+
 # 754 "data/maps/Highland_Farms/scripts.pory"
-	walk_right
-# 754 "data/maps/Highland_Farms/scripts.pory"
-	walk_right
-# 754 "data/maps/Highland_Farms/scripts.pory"
-	walk_right
+HF_CAM_4R:
 # 755 "data/maps/Highland_Farms/scripts.pory"
-	walk_up
+	walk_diag_southwest
+# 755 "data/maps/Highland_Farms/scripts.pory"
+	walk_diag_southwest
+# 755 "data/maps/Highland_Farms/scripts.pory"
+	walk_diag_southwest
+# 755 "data/maps/Highland_Farms/scripts.pory"
+	walk_diag_southwest
 	step_end
 
 # 758 "data/maps/Highland_Farms/scripts.pory"
-HF_M_Player1A:
+HF_CAM_5:
 # 759 "data/maps/Highland_Farms/scripts.pory"
-	walk_up
+	walk_right
 # 759 "data/maps/Highland_Farms/scripts.pory"
-	walk_up
+	walk_right
 # 759 "data/maps/Highland_Farms/scripts.pory"
-	walk_up
+	walk_right
 # 759 "data/maps/Highland_Farms/scripts.pory"
-	walk_up
+	walk_right
 # 759 "data/maps/Highland_Farms/scripts.pory"
-	walk_up
+	walk_right
 	step_end
 
 # 762 "data/maps/Highland_Farms/scripts.pory"
-HF_M_Player1B:
+HF_CAM_5R:
 # 763 "data/maps/Highland_Farms/scripts.pory"
-	walk_fast_right
-# 764 "data/maps/Highland_Farms/scripts.pory"
-	walk_up
-# 764 "data/maps/Highland_Farms/scripts.pory"
-	walk_up
-# 764 "data/maps/Highland_Farms/scripts.pory"
-	walk_up
-# 764 "data/maps/Highland_Farms/scripts.pory"
-	walk_up
-# 764 "data/maps/Highland_Farms/scripts.pory"
-	walk_up
+	walk_left
+# 763 "data/maps/Highland_Farms/scripts.pory"
+	walk_left
+# 763 "data/maps/Highland_Farms/scripts.pory"
+	walk_left
+# 763 "data/maps/Highland_Farms/scripts.pory"
+	walk_left
+# 763 "data/maps/Highland_Farms/scripts.pory"
+	walk_left
 	step_end
 
+# 766 "data/maps/Highland_Farms/scripts.pory"
+HF_CAM_6:
 # 767 "data/maps/Highland_Farms/scripts.pory"
-HF_W_Player2:
-# 768 "data/maps/Highland_Farms/scripts.pory"
-	walk_right
-# 769 "data/maps/Highland_Farms/scripts.pory"
-	face_left
+	walk_fast_right
+# 767 "data/maps/Highland_Farms/scripts.pory"
+	walk_fast_right
 	step_end
 
-# 772 "data/maps/Highland_Farms/scripts.pory"
-HF_W_Mike1:
-# 773 "data/maps/Highland_Farms/scripts.pory"
-	walk_fast_up
-# 773 "data/maps/Highland_Farms/scripts.pory"
-	walk_fast_up
+# 770 "data/maps/Highland_Farms/scripts.pory"
+HF_M_Dad1:
+# 771 "data/maps/Highland_Farms/scripts.pory"
+	walk_in_place_up
+# 771 "data/maps/Highland_Farms/scripts.pory"
+	walk_in_place_up
+# 771 "data/maps/Highland_Farms/scripts.pory"
+	walk_in_place_up
 	step_end
 
+# 774 "data/maps/Highland_Farms/scripts.pory"
+HF_M_Dad2:
+# 775 "data/maps/Highland_Farms/scripts.pory"
+	walk_left
 # 776 "data/maps/Highland_Farms/scripts.pory"
-HF_W_Mike2:
-# 777 "data/maps/Highland_Farms/scripts.pory"
-	walk_fast_right
-# 777 "data/maps/Highland_Farms/scripts.pory"
-	walk_fast_right
-# 777 "data/maps/Highland_Farms/scripts.pory"
-	walk_fast_right
-# 777 "data/maps/Highland_Farms/scripts.pory"
-	walk_fast_right
-# 778 "data/maps/Highland_Farms/scripts.pory"
 	face_up
 	step_end
 
+# 779 "data/maps/Highland_Farms/scripts.pory"
+HF_M_Dad3:
+# 780 "data/maps/Highland_Farms/scripts.pory"
+	walk_left
 # 781 "data/maps/Highland_Farms/scripts.pory"
-HF_M_Player2:
-# 782 "data/maps/Highland_Farms/scripts.pory"
 	walk_up
 # 782 "data/maps/Highland_Farms/scripts.pory"
+	walk_left
+# 782 "data/maps/Highland_Farms/scripts.pory"
+	walk_left
+# 783 "data/maps/Highland_Farms/scripts.pory"
 	walk_up
 	step_end
 
-# 785 "data/maps/Highland_Farms/scripts.pory"
-HF_M_Player3:
 # 786 "data/maps/Highland_Farms/scripts.pory"
+HF_M_Dad4:
+# 787 "data/maps/Highland_Farms/scripts.pory"
 	walk_up
 # 787 "data/maps/Highland_Farms/scripts.pory"
-	walk_left
+	walk_up
 # 787 "data/maps/Highland_Farms/scripts.pory"
-	walk_left
-# 787 "data/maps/Highland_Farms/scripts.pory"
-	walk_left
-# 787 "data/maps/Highland_Farms/scripts.pory"
-	walk_left
-# 787 "data/maps/Highland_Farms/scripts.pory"
-	walk_left
-# 788 "data/maps/Highland_Farms/scripts.pory"
 	walk_up
 # 788 "data/maps/Highland_Farms/scripts.pory"
-	walk_up
+	walk_right
+# 788 "data/maps/Highland_Farms/scripts.pory"
+	walk_right
+# 788 "data/maps/Highland_Farms/scripts.pory"
+	walk_right
 # 789 "data/maps/Highland_Farms/scripts.pory"
-	walk_left
-# 789 "data/maps/Highland_Farms/scripts.pory"
-	walk_left
-# 790 "data/maps/Highland_Farms/scripts.pory"
 	walk_up
-# 790 "data/maps/Highland_Farms/scripts.pory"
-	walk_up
-# 790 "data/maps/Highland_Farms/scripts.pory"
-	walk_up
-# 790 "data/maps/Highland_Farms/scripts.pory"
-	walk_up
-# 790 "data/maps/Highland_Farms/scripts.pory"
-	walk_up
-# 790 "data/maps/Highland_Farms/scripts.pory"
-	walk_up
-# 791 "data/maps/Highland_Farms/scripts.pory"
-	walk_right
-# 791 "data/maps/Highland_Farms/scripts.pory"
-	walk_right
-# 792 "data/maps/Highland_Farms/scripts.pory"
-	walk_up
-# 792 "data/maps/Highland_Farms/scripts.pory"
-	walk_up
-# 792 "data/maps/Highland_Farms/scripts.pory"
-	walk_up
-# 792 "data/maps/Highland_Farms/scripts.pory"
-	walk_up
-# 793 "data/maps/Highland_Farms/scripts.pory"
-	walk_right
-# 793 "data/maps/Highland_Farms/scripts.pory"
-	walk_right
-# 793 "data/maps/Highland_Farms/scripts.pory"
-	walk_right
-# 794 "data/maps/Highland_Farms/scripts.pory"
-	face_up
 	step_end
 
+# 792 "data/maps/Highland_Farms/scripts.pory"
+HF_M_Player1A:
+# 793 "data/maps/Highland_Farms/scripts.pory"
+	walk_up
+# 793 "data/maps/Highland_Farms/scripts.pory"
+	walk_up
+# 793 "data/maps/Highland_Farms/scripts.pory"
+	walk_up
+# 793 "data/maps/Highland_Farms/scripts.pory"
+	walk_up
+# 793 "data/maps/Highland_Farms/scripts.pory"
+	walk_up
+	step_end
+
+# 796 "data/maps/Highland_Farms/scripts.pory"
+HF_M_Player1B:
 # 797 "data/maps/Highland_Farms/scripts.pory"
-HF_W_Mike3:
+	walk_fast_right
 # 798 "data/maps/Highland_Farms/scripts.pory"
-	walk_fast_down
+	walk_up
 # 798 "data/maps/Highland_Farms/scripts.pory"
-	walk_fast_down
+	walk_up
 # 798 "data/maps/Highland_Farms/scripts.pory"
-	walk_fast_down
+	walk_up
+# 798 "data/maps/Highland_Farms/scripts.pory"
+	walk_up
+# 798 "data/maps/Highland_Farms/scripts.pory"
+	walk_up
 	step_end
 
 # 801 "data/maps/Highland_Farms/scripts.pory"
-HF_W_Mike4:
+HF_W_Player2:
 # 802 "data/maps/Highland_Farms/scripts.pory"
-	walk_faster_down
-# 802 "data/maps/Highland_Farms/scripts.pory"
-	walk_faster_down
-# 802 "data/maps/Highland_Farms/scripts.pory"
-	walk_faster_down
-# 802 "data/maps/Highland_Farms/scripts.pory"
-	walk_faster_down
-# 802 "data/maps/Highland_Farms/scripts.pory"
-	walk_faster_down
-# 802 "data/maps/Highland_Farms/scripts.pory"
-	walk_faster_down
-# 802 "data/maps/Highland_Farms/scripts.pory"
-	walk_faster_down
-# 802 "data/maps/Highland_Farms/scripts.pory"
-	walk_faster_down
-	step_end
-
-# 805 "data/maps/Highland_Farms/scripts.pory"
-HF_M_Mike5:
-# 806 "data/maps/Highland_Farms/scripts.pory"
-	walk_left
-# 806 "data/maps/Highland_Farms/scripts.pory"
-	walk_left
-# 806 "data/maps/Highland_Farms/scripts.pory"
-	walk_left
-# 806 "data/maps/Highland_Farms/scripts.pory"
-	walk_left
-# 806 "data/maps/Highland_Farms/scripts.pory"
-	walk_left
-# 807 "data/maps/Highland_Farms/scripts.pory"
-	walk_up
-# 807 "data/maps/Highland_Farms/scripts.pory"
-	walk_up
-# 808 "data/maps/Highland_Farms/scripts.pory"
-	walk_left
-# 808 "data/maps/Highland_Farms/scripts.pory"
-	walk_left
-# 809 "data/maps/Highland_Farms/scripts.pory"
-	walk_up
-# 809 "data/maps/Highland_Farms/scripts.pory"
-	walk_up
-# 809 "data/maps/Highland_Farms/scripts.pory"
-	walk_up
-# 809 "data/maps/Highland_Farms/scripts.pory"
-	walk_up
-# 809 "data/maps/Highland_Farms/scripts.pory"
-	walk_up
-# 809 "data/maps/Highland_Farms/scripts.pory"
-	walk_up
-# 810 "data/maps/Highland_Farms/scripts.pory"
 	walk_right
-# 810 "data/maps/Highland_Farms/scripts.pory"
-	walk_right
-# 811 "data/maps/Highland_Farms/scripts.pory"
-	walk_up
-# 811 "data/maps/Highland_Farms/scripts.pory"
-	walk_up
-# 811 "data/maps/Highland_Farms/scripts.pory"
-	walk_up
-# 811 "data/maps/Highland_Farms/scripts.pory"
-	walk_up
-# 812 "data/maps/Highland_Farms/scripts.pory"
-	walk_right
-# 812 "data/maps/Highland_Farms/scripts.pory"
-	walk_right
-# 812 "data/maps/Highland_Farms/scripts.pory"
-	walk_right
-# 812 "data/maps/Highland_Farms/scripts.pory"
-	walk_right
-# 813 "data/maps/Highland_Farms/scripts.pory"
+# 803 "data/maps/Highland_Farms/scripts.pory"
 	face_left
 	step_end
 
+# 806 "data/maps/Highland_Farms/scripts.pory"
+HF_M_Player4:
+# 807 "data/maps/Highland_Farms/scripts.pory"
+	walk_right
+# 807 "data/maps/Highland_Farms/scripts.pory"
+	walk_right
+	step_end
+
+# 810 "data/maps/Highland_Farms/scripts.pory"
+HF_W_Mike1:
+# 811 "data/maps/Highland_Farms/scripts.pory"
+	walk_fast_up
+# 811 "data/maps/Highland_Farms/scripts.pory"
+	walk_fast_up
+	step_end
+
+# 814 "data/maps/Highland_Farms/scripts.pory"
+HF_W_Mike2:
+# 815 "data/maps/Highland_Farms/scripts.pory"
+	walk_fast_right
+# 815 "data/maps/Highland_Farms/scripts.pory"
+	walk_fast_right
+# 815 "data/maps/Highland_Farms/scripts.pory"
+	walk_fast_right
+# 815 "data/maps/Highland_Farms/scripts.pory"
+	walk_fast_right
 # 816 "data/maps/Highland_Farms/scripts.pory"
-HF_M_Mike6:
-# 817 "data/maps/Highland_Farms/scripts.pory"
-	walk_fast_up
-# 817 "data/maps/Highland_Farms/scripts.pory"
-	walk_fast_up
-# 818 "data/maps/Highland_Farms/scripts.pory"
-	walk_fast_right
-# 818 "data/maps/Highland_Farms/scripts.pory"
-	walk_fast_right
+	face_up
+	step_end
+
 # 819 "data/maps/Highland_Farms/scripts.pory"
+HF_M_Player2:
+# 820 "data/maps/Highland_Farms/scripts.pory"
+	walk_up
+# 820 "data/maps/Highland_Farms/scripts.pory"
+	walk_up
+	step_end
+
+# 823 "data/maps/Highland_Farms/scripts.pory"
+HF_M_Player3:
+# 824 "data/maps/Highland_Farms/scripts.pory"
+	walk_up
+# 825 "data/maps/Highland_Farms/scripts.pory"
+	walk_left
+# 825 "data/maps/Highland_Farms/scripts.pory"
+	walk_left
+# 825 "data/maps/Highland_Farms/scripts.pory"
+	walk_left
+# 825 "data/maps/Highland_Farms/scripts.pory"
+	walk_left
+# 825 "data/maps/Highland_Farms/scripts.pory"
+	walk_left
+# 826 "data/maps/Highland_Farms/scripts.pory"
+	walk_up
+# 826 "data/maps/Highland_Farms/scripts.pory"
+	walk_up
+# 827 "data/maps/Highland_Farms/scripts.pory"
+	walk_left
+# 827 "data/maps/Highland_Farms/scripts.pory"
+	walk_left
+# 828 "data/maps/Highland_Farms/scripts.pory"
+	walk_up
+# 828 "data/maps/Highland_Farms/scripts.pory"
+	walk_up
+# 828 "data/maps/Highland_Farms/scripts.pory"
+	walk_up
+# 828 "data/maps/Highland_Farms/scripts.pory"
+	walk_up
+# 828 "data/maps/Highland_Farms/scripts.pory"
+	walk_up
+# 828 "data/maps/Highland_Farms/scripts.pory"
+	walk_up
+# 829 "data/maps/Highland_Farms/scripts.pory"
+	walk_right
+# 829 "data/maps/Highland_Farms/scripts.pory"
+	walk_right
+# 830 "data/maps/Highland_Farms/scripts.pory"
+	walk_up
+# 830 "data/maps/Highland_Farms/scripts.pory"
+	walk_up
+# 830 "data/maps/Highland_Farms/scripts.pory"
+	walk_up
+# 830 "data/maps/Highland_Farms/scripts.pory"
+	walk_up
+# 831 "data/maps/Highland_Farms/scripts.pory"
+	walk_right
+# 831 "data/maps/Highland_Farms/scripts.pory"
+	walk_right
+# 831 "data/maps/Highland_Farms/scripts.pory"
+	walk_right
+# 832 "data/maps/Highland_Farms/scripts.pory"
+	face_up
+	step_end
+
+# 835 "data/maps/Highland_Farms/scripts.pory"
+HF_W_Mike3:
+# 836 "data/maps/Highland_Farms/scripts.pory"
+	walk_fast_down
+# 836 "data/maps/Highland_Farms/scripts.pory"
+	walk_fast_down
+# 836 "data/maps/Highland_Farms/scripts.pory"
+	walk_fast_down
+	step_end
+
+# 839 "data/maps/Highland_Farms/scripts.pory"
+HF_W_Mike4:
+# 840 "data/maps/Highland_Farms/scripts.pory"
+	walk_faster_down
+# 840 "data/maps/Highland_Farms/scripts.pory"
+	walk_faster_down
+# 840 "data/maps/Highland_Farms/scripts.pory"
+	walk_faster_down
+# 840 "data/maps/Highland_Farms/scripts.pory"
+	walk_faster_down
+# 840 "data/maps/Highland_Farms/scripts.pory"
+	walk_faster_down
+# 840 "data/maps/Highland_Farms/scripts.pory"
+	walk_faster_down
+# 840 "data/maps/Highland_Farms/scripts.pory"
+	walk_faster_down
+# 840 "data/maps/Highland_Farms/scripts.pory"
+	walk_faster_down
+	step_end
+
+# 843 "data/maps/Highland_Farms/scripts.pory"
+HF_M_Mike5:
+# 844 "data/maps/Highland_Farms/scripts.pory"
+	walk_left
+# 844 "data/maps/Highland_Farms/scripts.pory"
+	walk_left
+# 844 "data/maps/Highland_Farms/scripts.pory"
+	walk_left
+# 844 "data/maps/Highland_Farms/scripts.pory"
+	walk_left
+# 844 "data/maps/Highland_Farms/scripts.pory"
+	walk_left
+# 845 "data/maps/Highland_Farms/scripts.pory"
+	walk_up
+# 845 "data/maps/Highland_Farms/scripts.pory"
+	walk_up
+# 846 "data/maps/Highland_Farms/scripts.pory"
+	walk_left
+# 846 "data/maps/Highland_Farms/scripts.pory"
+	walk_left
+# 847 "data/maps/Highland_Farms/scripts.pory"
+	walk_up
+# 847 "data/maps/Highland_Farms/scripts.pory"
+	walk_up
+# 847 "data/maps/Highland_Farms/scripts.pory"
+	walk_up
+# 847 "data/maps/Highland_Farms/scripts.pory"
+	walk_up
+# 847 "data/maps/Highland_Farms/scripts.pory"
+	walk_up
+# 847 "data/maps/Highland_Farms/scripts.pory"
+	walk_up
+# 848 "data/maps/Highland_Farms/scripts.pory"
+	walk_right
+# 848 "data/maps/Highland_Farms/scripts.pory"
+	walk_right
+# 849 "data/maps/Highland_Farms/scripts.pory"
+	walk_up
+# 849 "data/maps/Highland_Farms/scripts.pory"
+	walk_up
+# 849 "data/maps/Highland_Farms/scripts.pory"
+	walk_up
+# 849 "data/maps/Highland_Farms/scripts.pory"
+	walk_up
+# 850 "data/maps/Highland_Farms/scripts.pory"
+	walk_right
+# 850 "data/maps/Highland_Farms/scripts.pory"
+	walk_right
+# 850 "data/maps/Highland_Farms/scripts.pory"
+	walk_right
+# 850 "data/maps/Highland_Farms/scripts.pory"
+	walk_right
+# 851 "data/maps/Highland_Farms/scripts.pory"
 	face_left
 	step_end
 
-# 822 "data/maps/Highland_Farms/scripts.pory"
+# 854 "data/maps/Highland_Farms/scripts.pory"
+HF_M_Mike6:
+# 855 "data/maps/Highland_Farms/scripts.pory"
+	walk_fast_up
+# 855 "data/maps/Highland_Farms/scripts.pory"
+	walk_fast_up
+# 856 "data/maps/Highland_Farms/scripts.pory"
+	walk_fast_right
+# 856 "data/maps/Highland_Farms/scripts.pory"
+	walk_fast_right
+# 857 "data/maps/Highland_Farms/scripts.pory"
+	face_left
+	step_end
+
+# 860 "data/maps/Highland_Farms/scripts.pory"
+HF_M_Mike7:
+# 861 "data/maps/Highland_Farms/scripts.pory"
+	walk_left
+# 861 "data/maps/Highland_Farms/scripts.pory"
+	walk_left
+	step_end
+
+# 864 "data/maps/Highland_Farms/scripts.pory"
+HF_M_Mike8:
+# 865 "data/maps/Highland_Farms/scripts.pory"
+	walk_down
+# 865 "data/maps/Highland_Farms/scripts.pory"
+	walk_down
+# 866 "data/maps/Highland_Farms/scripts.pory"
+	walk_left
+# 866 "data/maps/Highland_Farms/scripts.pory"
+	walk_left
+# 866 "data/maps/Highland_Farms/scripts.pory"
+	walk_left
+# 866 "data/maps/Highland_Farms/scripts.pory"
+	walk_left
+# 866 "data/maps/Highland_Farms/scripts.pory"
+	walk_left
+# 867 "data/maps/Highland_Farms/scripts.pory"
+	walk_down
+# 867 "data/maps/Highland_Farms/scripts.pory"
+	walk_down
+# 867 "data/maps/Highland_Farms/scripts.pory"
+	walk_down
+# 867 "data/maps/Highland_Farms/scripts.pory"
+	walk_down
+# 867 "data/maps/Highland_Farms/scripts.pory"
+	walk_down
+	step_end
+
+# 870 "data/maps/Highland_Farms/scripts.pory"
 HF_M_PlayerPokemon:
-# 823 "data/maps/Highland_Farms/scripts.pory"
+# 871 "data/maps/Highland_Farms/scripts.pory"
 	slide_right
-# 824 "data/maps/Highland_Farms/scripts.pory"
+# 872 "data/maps/Highland_Farms/scripts.pory"
 	face_right
 	step_end
 
-# 827 "data/maps/Highland_Farms/scripts.pory"
+# 875 "data/maps/Highland_Farms/scripts.pory"
 HF_M_RivalPokemon:
-# 828 "data/maps/Highland_Farms/scripts.pory"
+# 876 "data/maps/Highland_Farms/scripts.pory"
 	slide_left
-# 829 "data/maps/Highland_Farms/scripts.pory"
+# 877 "data/maps/Highland_Farms/scripts.pory"
 	face_left
 	step_end
 
+HF_RivalShed_IsDoorLocked_Text_0:
+# 32 "data/maps/Highland_Farms/scripts.pory"
+	.string "The door is unlocked.$"
+
+HF_RivalShed_IsDoorLocked_Text_1:
+# 39 "data/maps/Highland_Farms/scripts.pory"
+	.string "The door is locked.$"
+
 HF_Mike_Interact_Text_0:
-# 54 "data/maps/Highland_Farms/scripts.pory"
+# 73 "data/maps/Highland_Farms/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike$"
 
 HF_Mamaw_Interact_Text_0:
-# 76 "data/maps/Highland_Farms/scripts.pory"
+# 95 "data/maps/Highland_Farms/scripts.pory"
 	.string "{COLOR RED}{SHADOW LIGHT_RED}{FONT_SHORT}Mamaw$"
 
 HF_Millie_Interact_Text_0:
-# 95 "data/maps/Highland_Farms/scripts.pory"
+# 114 "data/maps/Highland_Farms/scripts.pory"
 	.string "Millie loves to be brushed!$"
 
 HF_DadIntro_A_Text_0:
-# 168 "data/maps/Highland_Farms/scripts.pory"
+# 187 "data/maps/Highland_Farms/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Dad$"
 
 HF_T_Dad1::
-# 836 "data/maps/Highland_Farms/scripts.pory"
+# 884 "data/maps/Highland_Farms/scripts.pory"
 	.string "Mornin', {PLAYER}!\n"
 	.string "Come on over here, we got a job to do.$"
 
 HF_T_Dad2::
-# 841 "data/maps/Highland_Farms/scripts.pory"
+# 889 "data/maps/Highland_Farms/scripts.pory"
 	.string "I already got them new plants in the \n"
 	.string "ground, n' the harvest herbs moved\l"
 	.string "over into the shed.\p"
@@ -1751,56 +1865,53 @@ HF_T_Dad2::
 	.string "here, {PLAYER}.$"
 
 HF_T_Mike1::
-# 853 "data/maps/Highland_Farms/scripts.pory"
+# 901 "data/maps/Highland_Farms/scripts.pory"
 	.string "{PLAYER}!!\p"
 	.string "We gotta watch this new Battle Tape\n"
 	.string "that Ol' Bo lent me!\p"
 	.string "Come on, let's go!$"
 
 HF_T_Mike2::
-# 860 "data/maps/Highland_Farms/scripts.pory"
+# 908 "data/maps/Highland_Farms/scripts.pory"
 	.string "Hey, that was pretty quick, {PLAYER}!\n"
 	.string "How about a race down to Bo's ranch?!\p"
 	.string "Three... {PAUSE 30}Two... {PAUSE 30}GO!$"
 
 HF_T_Mike3::
-# 866 "data/maps/Highland_Farms/scripts.pory"
+# 914 "data/maps/Highland_Farms/scripts.pory"
 	.string "Hey, {PLAYER}, almost done over here.\n"
 	.string "Come back in a lil' bit, I got somethin'\l"
 	.string "to show you!$"
 
 HF_T_Mike4::
-# 872 "data/maps/Highland_Farms/scripts.pory"
-	.string "Come on, {PLAYER}!\n"
-	.string "I can't wait anymore!$"
+# 920 "data/maps/Highland_Farms/scripts.pory"
+	.string "Hurry up, {PLAYER}!$"
 
 HF_T_Mike5::
-# 877 "data/maps/Highland_Farms/scripts.pory"
-	.string "Alright, so what I'm about to show you,\n"
-	.string "I've been workin' on for a while now...\p"
-	.string "I didn't know if we would ever get to \n"
-	.string "use it or not, but just in case we\l"
-	.string "became real Pokemon Trainers, I knew we\l"
-	.string "would need it!\p"
+# 924 "data/maps/Highland_Farms/scripts.pory"
+	.string "Alright, so I've been workin' on this for\n"
+	.string "a while now...\p"
+	.string "I knew one day we would need one of\n"
+	.string "these, I just didn't think it would be\l"
+	.string "this soon!\p"
 	.string "{PLAYER}... {PAUSE 30}are you ready?$"
 
 HF_T_Mike6_Yes::
-# 887 "data/maps/Highland_Farms/scripts.pory"
+# 933 "data/maps/Highland_Farms/scripts.pory"
 	.string "Haha! I knew you would be excited,\n"
 	.string "{PLAYER}!\l"
 	.string "Follow me!$"
 
 HF_T_Mike6_No::
-# 893 "data/maps/Highland_Farms/scripts.pory"
+# 939 "data/maps/Highland_Farms/scripts.pory"
 	.string "Oh, come on, don't be like that,\n"
 	.string "{PLAYER}.\l"
 	.string "Just follow me, would'ya?$"
 
 HF_T_Mike7::
-# 899 "data/maps/Highland_Farms/scripts.pory"
+# 945 "data/maps/Highland_Farms/scripts.pory"
 	.string "Well, what do you think?!\p"
-	.string "It's our very own battle stage,\n"
-	.string "{PLAYER}!!\p"
+	.string "It's our very own battle stage!!\p"
 	.string "I wanted to make sure that our first\n"
 	.string "battle was in an arena just like Sammy\l"
 	.string "and Agatha used to compete in!\p"
@@ -1809,39 +1920,50 @@ HF_T_Mike7::
 	.string "right away!$"
 
 HF_T_Mike8::
-# 911 "data/maps/Highland_Farms/scripts.pory"
+# 956 "data/maps/Highland_Farms/scripts.pory"
 	.string "Hurry up, {PLAYER}!\n"
 	.string "Go stand on your side so we can get\l"
 	.string "this battle started!!$"
 
 HF_T_Mike9::
-# 917 "data/maps/Highland_Farms/scripts.pory"
+# 962 "data/maps/Highland_Farms/scripts.pory"
 	.string "Don't be timid now, {PLAYER}!\n"
 	.string "Get back here and battle!$"
 
 HF_T_Mike10::
-# 922 "data/maps/Highland_Farms/scripts.pory"
-	.string "This is so cool!\n"
-	.string "Let's do this, {PLAYER}!$"
+# 967 "data/maps/Highland_Farms/scripts.pory"
+	.string "Let's do this!$"
+
+HF_T_Mike11::
+# 971 "data/maps/Highland_Farms/scripts.pory"
+	.string "Man, I was really hoping I could win\n"
+	.string "that first one...\p"
+	.string "But no matter what, that was the most\n"
+	.string "fun I've ever had!\p"
+	.string "It seems like we both have a good bond\n"
+	.string "with our Pokemon too.\p"
+	.string "Anyways, I gotta go n' let this lil' fella\n"
+	.string "rest for a while.\p"
+	.string "See ya later, {PLAYER}!$"
 
 HF_T_MikeGoTurtwig::
-# 927 "data/maps/Highland_Farms/scripts.pory"
+# 983 "data/maps/Highland_Farms/scripts.pory"
 	.string "Go, Turtwig!$"
 
 HF_T_MikeGoLitten::
-# 931 "data/maps/Highland_Farms/scripts.pory"
+# 987 "data/maps/Highland_Farms/scripts.pory"
 	.string "Go, Litten!$"
 
 HF_T_MikeGoOshawott::
-# 935 "data/maps/Highland_Farms/scripts.pory"
+# 991 "data/maps/Highland_Farms/scripts.pory"
 	.string "Go, Oshawott!$"
 
 HF_T_MikeLoseBattle::
-# 939 "data/maps/Highland_Farms/scripts.pory"
+# 995 "data/maps/Highland_Farms/scripts.pory"
 	.string "Not the start I was lookin' for...$"
 
 HF_T_Mamaw1::
-# 943 "data/maps/Highland_Farms/scripts.pory"
+# 999 "data/maps/Highland_Farms/scripts.pory"
 	.string "Takin' care of Millie brings ol' Mamaw so\n"
 	.string "much joy.\p"
 	.string "I jus' love seein' her happy!$"

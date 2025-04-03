@@ -1,88 +1,101 @@
 Player_House_B1F_MapScripts::
+# 2 "data/maps/Player_House_B1F/scripts.pory"
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, Player_House_B1F_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
+
+Player_House_B1F_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
+# 3 "data/maps/Player_House_B1F/scripts.pory"
+	map_script_2 VAR_ADVENTURE_START, 20, ResetFirstBattleVar
+	.2byte 0
+
+
+ResetFirstBattleVar::
+# 8 "data/maps/Player_House_B1F/scripts.pory"
+	setvar VAR_ADVENTURE_START, 19
+	end
 
 
 GiveMon4::
-# 4 "data/maps/Player_House_B1F/scripts.pory"
-	lock
-# 5 "data/maps/Player_House_B1F/scripts.pory"
-	removeobject 1
-# 6 "data/maps/Player_House_B1F/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 7 "data/maps/Player_House_B1F/scripts.pory"
-	showmonpic SPECIES_MUNCHLAX, 10, 3
-# 8 "data/maps/Player_House_B1F/scripts.pory"
-	msgbox GiveMon4_Text_0
-# 9 "data/maps/Player_House_B1F/scripts.pory"
-	givemon SPECIES_MUNCHLAX, 50, ITEM_EVIOLITE, ITEM_CHERISH_BALL, 3, 1, MALE, 252, 252, 4, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_EARTHQUAKE, MOVE_PLAY_ROUGH, MOVE_CLOSE_COMBAT, MOVE_SCALE_SHOT, FALSE
-# 10 "data/maps/Player_House_B1F/scripts.pory"
-	waitfanfare
-# 11 "data/maps/Player_House_B1F/scripts.pory"
-	hidemonpic
-# 12 "data/maps/Player_House_B1F/scripts.pory"
-	closemessage
 # 13 "data/maps/Player_House_B1F/scripts.pory"
-	setflag FLAG_HIDE_BALL
+	lock
 # 14 "data/maps/Player_House_B1F/scripts.pory"
-	setflag FLAG_SYS_POKEMON_GET
+	removeobject 1
 # 15 "data/maps/Player_House_B1F/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 16 "data/maps/Player_House_B1F/scripts.pory"
+	showmonpic SPECIES_MUNCHLAX, 10, 3
+# 17 "data/maps/Player_House_B1F/scripts.pory"
+	msgbox GiveMon4_Text_0
+# 18 "data/maps/Player_House_B1F/scripts.pory"
+	givemon SPECIES_MUNCHLAX, 50, ITEM_EVIOLITE, ITEM_CHERISH_BALL, 3, 1, MALE, 252, 252, 4, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_EARTHQUAKE, MOVE_PLAY_ROUGH, MOVE_CLOSE_COMBAT, MOVE_SCALE_SHOT, FALSE
+# 19 "data/maps/Player_House_B1F/scripts.pory"
+	waitfanfare
+# 20 "data/maps/Player_House_B1F/scripts.pory"
+	hidemonpic
+# 21 "data/maps/Player_House_B1F/scripts.pory"
+	closemessage
+# 22 "data/maps/Player_House_B1F/scripts.pory"
+	setflag FLAG_HIDE_BALL
+# 23 "data/maps/Player_House_B1F/scripts.pory"
+	setflag FLAG_SYS_POKEMON_GET
+# 24 "data/maps/Player_House_B1F/scripts.pory"
 	release
 	end
 
 
 BattleNorman::
-# 20 "data/maps/Player_House_B1F/scripts.pory"
+# 29 "data/maps/Player_House_B1F/scripts.pory"
 	lock
-# 21 "data/maps/Player_House_B1F/scripts.pory"
+# 30 "data/maps/Player_House_B1F/scripts.pory"
 	faceplayer
-# 22 "data/maps/Player_House_B1F/scripts.pory"
+# 31 "data/maps/Player_House_B1F/scripts.pory"
 	trainerbattle_no_intro TRAINER_CHAMPION_NORMAN, LoseText
-# 23 "data/maps/Player_House_B1F/scripts.pory"
+# 32 "data/maps/Player_House_B1F/scripts.pory"
 	release
 	end
 
 
 PHB1F_BattleManual_Interact::
-# 28 "data/maps/Player_House_B1F/scripts.pory"
+# 37 "data/maps/Player_House_B1F/scripts.pory"
 	setflag FLAG_SUPPRESS_SPEAKER_NAME
-# 29 "data/maps/Player_House_B1F/scripts.pory"
+# 38 "data/maps/Player_House_B1F/scripts.pory"
 	msgbox PHB1F_T_BattleManual
-# 30 "data/maps/Player_House_B1F/scripts.pory"
+# 39 "data/maps/Player_House_B1F/scripts.pory"
 	waitmessage
-# 31 "data/maps/Player_House_B1F/scripts.pory"
+# 40 "data/maps/Player_House_B1F/scripts.pory"
 	closemessage
-# 32 "data/maps/Player_House_B1F/scripts.pory"
+# 41 "data/maps/Player_House_B1F/scripts.pory"
 	clearflag FLAG_SUPPRESS_SPEAKER_NAME
-# 33 "data/maps/Player_House_B1F/scripts.pory"
+# 42 "data/maps/Player_House_B1F/scripts.pory"
 	release
 	end
 
 
 PHB1F_CustomizeCharacter::
-# 38 "data/maps/Player_House_B1F/scripts.pory"
+# 47 "data/maps/Player_House_B1F/scripts.pory"
 	setflag FLAG_SUPPRESS_SPEAKER_NAME
-# 39 "data/maps/Player_House_B1F/scripts.pory"
+# 48 "data/maps/Player_House_B1F/scripts.pory"
 	msgbox PHB1F_CustomizeCharacter_Text_0
-# 40 "data/maps/Player_House_B1F/scripts.pory"
+# 49 "data/maps/Player_House_B1F/scripts.pory"
 	waitmessage
-# 41 "data/maps/Player_House_B1F/scripts.pory"
+# 50 "data/maps/Player_House_B1F/scripts.pory"
 	closemessage
-# 42 "data/maps/Player_House_B1F/scripts.pory"
+# 51 "data/maps/Player_House_B1F/scripts.pory"
 	clearflag FLAG_SUPPRESS_SPEAKER_NAME
-# 43 "data/maps/Player_House_B1F/scripts.pory"
+# 52 "data/maps/Player_House_B1F/scripts.pory"
 	release
 	end
 
 
 GiveMon4_Text_0:
-# 8 "data/maps/Player_House_B1F/scripts.pory"
+# 17 "data/maps/Player_House_B1F/scripts.pory"
 	.string "{PLAYER} took Munchlax!$"
 
 PHB1F_CustomizeCharacter_Text_0:
-# 39 "data/maps/Player_House_B1F/scripts.pory"
+# 48 "data/maps/Player_House_B1F/scripts.pory"
 	.string "Customization coming soon <3$"
 
 PHB1F_T_BattleManual::
-# 47 "data/maps/Player_House_B1F/scripts.pory"
+# 56 "data/maps/Player_House_B1F/scripts.pory"
 	.string "There are stacks of instructional\n"
 	.string "Pokemon battle manuals.$"

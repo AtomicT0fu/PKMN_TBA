@@ -1,4 +1,13 @@
-mapscripts Player_House_B1F_MapScripts{}
+mapscripts Player_House_B1F_MapScripts{
+    MAP_SCRIPT_ON_FRAME_TABLE[
+        VAR_ADVENTURE_START, 20: ResetFirstBattleVar
+    ]
+}
+
+script ResetFirstBattleVar{
+    setvar(VAR_ADVENTURE_START, 19)
+    end
+}
 
 script GiveMon4{
     lock

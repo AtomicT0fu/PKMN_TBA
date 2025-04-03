@@ -342,15 +342,15 @@ OBR_Mike_FollowA::
 # 180 "data/maps/Old_Bos_Ranch/scripts.pory"
 	setflag FLAG_OBR_HIDE_LITTEN
 # 181 "data/maps/Old_Bos_Ranch/scripts.pory"
-	delay 20
+	fadeoutbgm 1
 # 182 "data/maps/Old_Bos_Ranch/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, OBR_M_CamPan7
-# 183 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitmovement 0
-# 184 "data/maps/Old_Bos_Ranch/scripts.pory"
-	special RemoveCameraObject
-# 185 "data/maps/Old_Bos_Ranch/scripts.pory"
 	playbgm MUS_HELP, FALSE
+# 183 "data/maps/Old_Bos_Ranch/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, OBR_M_CamPan7
+# 184 "data/maps/Old_Bos_Ranch/scripts.pory"
+	waitmovement 0
+# 185 "data/maps/Old_Bos_Ranch/scripts.pory"
+	special RemoveCameraObject
 # 186 "data/maps/Old_Bos_Ranch/scripts.pory"
 	playse SE_PIN
 # 187 "data/maps/Old_Bos_Ranch/scripts.pory"
@@ -833,15 +833,15 @@ OBR_Mike_FollowB::
 # 428 "data/maps/Old_Bos_Ranch/scripts.pory"
 	setflag FLAG_OBR_HIDE_LITTEN
 # 429 "data/maps/Old_Bos_Ranch/scripts.pory"
-	delay 20
+	fadeoutbgm 1
 # 430 "data/maps/Old_Bos_Ranch/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, OBR_M_CamPan7
-# 431 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitmovement 0
-# 432 "data/maps/Old_Bos_Ranch/scripts.pory"
-	special RemoveCameraObject
-# 433 "data/maps/Old_Bos_Ranch/scripts.pory"
 	playbgm MUS_HELP, FALSE
+# 431 "data/maps/Old_Bos_Ranch/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, OBR_M_CamPan7
+# 432 "data/maps/Old_Bos_Ranch/scripts.pory"
+	waitmovement 0
+# 433 "data/maps/Old_Bos_Ranch/scripts.pory"
+	special RemoveCameraObject
 # 434 "data/maps/Old_Bos_Ranch/scripts.pory"
 	playse SE_PIN
 # 435 "data/maps/Old_Bos_Ranch/scripts.pory"
@@ -1904,10 +1904,10 @@ OBR_ChooseTurtwig::
 # 986 "data/maps/Old_Bos_Ranch/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq OBR_ChooseTurtwig_2
-# 1104 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1106 "data/maps/Old_Bos_Ranch/scripts.pory"
 	closemessage
 OBR_ChooseTurtwig_1:
-# 1106 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1108 "data/maps/Old_Bos_Ranch/scripts.pory"
 	release
 	end
 
@@ -2132,6 +2132,10 @@ OBR_ChooseTurtwig_5:
 	clearflag FLAG_HF_HIDE_MAMAW
 # 1101 "data/maps/Old_Bos_Ranch/scripts.pory"
 	clearflag FLAG_HF_HIDE_RIVAL_MIKE
+# 1102 "data/maps/Old_Bos_Ranch/scripts.pory"
+	clearflag FLAG_ITEM_WHH_MIRACLE_SEED
+# 1103 "data/maps/Old_Bos_Ranch/scripts.pory"
+	setrespawn HEAL_LOCATION_PLAYER_HOUSE
 	goto OBR_ChooseTurtwig_1
 
 OBR_ChooseTurtwig_6:
@@ -2145,229 +2149,225 @@ OBR_ChooseTurtwig_6:
 
 
 OBR_ChooseLitten::
-# 1111 "data/maps/Old_Bos_Ranch/scripts.pory"
-	faceplayer
-# 1112 "data/maps/Old_Bos_Ranch/scripts.pory"
-	playmoncry SPECIES_LITTEN, 0
 # 1113 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitmoncry
+	faceplayer
 # 1114 "data/maps/Old_Bos_Ranch/scripts.pory"
-	setflag FLAG_SUPPRESS_SPEAKER_NAME
+	playmoncry SPECIES_LITTEN, 0
 # 1115 "data/maps/Old_Bos_Ranch/scripts.pory"
-	msgbox OBR_ChooseLitten_Text_0, MSGBOX_YESNO
+	waitmoncry
 # 1116 "data/maps/Old_Bos_Ranch/scripts.pory"
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
+# 1117 "data/maps/Old_Bos_Ranch/scripts.pory"
+	msgbox OBR_ChooseLitten_Text_0, MSGBOX_YESNO
+# 1118 "data/maps/Old_Bos_Ranch/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq OBR_ChooseLitten_2
-# 1235 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1237 "data/maps/Old_Bos_Ranch/scripts.pory"
 	closemessage
 OBR_ChooseLitten_1:
-# 1237 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1239 "data/maps/Old_Bos_Ranch/scripts.pory"
 	release
 	end
 
 OBR_ChooseLitten_2:
-# 1117 "data/maps/Old_Bos_Ranch/scripts.pory"
-	closemessage
-# 1118 "data/maps/Old_Bos_Ranch/scripts.pory"
-	playmoncry SPECIES_LITTEN, 0
 # 1119 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitmoncry
-# 1120 "data/maps/Old_Bos_Ranch/scripts.pory"
-	delay 60
-# 1121 "data/maps/Old_Bos_Ranch/scripts.pory"
-	addobject 16
-# 1122 "data/maps/Old_Bos_Ranch/scripts.pory"
-	setobjectsubpriority 16, MAP_OLD_BOS_RANCH, 0
-# 1123 "data/maps/Old_Bos_Ranch/scripts.pory"
-	setobjectsubpriority 12, MAP_OLD_BOS_RANCH, 3
-# 1124 "data/maps/Old_Bos_Ranch/scripts.pory"
-	playse SE_BALL_THROW
-# 1125 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitse
-# 1126 "data/maps/Old_Bos_Ranch/scripts.pory"
-	delay 30
-# 1127 "data/maps/Old_Bos_Ranch/scripts.pory"
-	playse SE_BALL_OPEN
-# 1128 "data/maps/Old_Bos_Ranch/scripts.pory"
-	removeobject 12
-# 1129 "data/maps/Old_Bos_Ranch/scripts.pory"
-	setflag FLAG_OBR_SHOW_LITTEN
-# 1130 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitse
-# 1131 "data/maps/Old_Bos_Ranch/scripts.pory"
-	delay 60
-# 1132 "data/maps/Old_Bos_Ranch/scripts.pory"
-	playse SE_RG_BALL_CLICK
-# 1133 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitse
-# 1134 "data/maps/Old_Bos_Ranch/scripts.pory"
-	delay 40
-# 1135 "data/maps/Old_Bos_Ranch/scripts.pory"
-	playse SE_RG_BAG_POCKET
-# 1136 "data/maps/Old_Bos_Ranch/scripts.pory"
-	removeobject 16
-# 1137 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitse
-# 1138 "data/maps/Old_Bos_Ranch/scripts.pory"
-	delay 60
-# 1139 "data/maps/Old_Bos_Ranch/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 1140 "data/maps/Old_Bos_Ranch/scripts.pory"
-	msgbox OBR_ChooseLitten_Text_1
-# 1141 "data/maps/Old_Bos_Ranch/scripts.pory"
-	givemon SPECIES_LITTEN, 5, ITEM_ORAN_BERRY, ITEM_POKE_BALL
-# 1142 "data/maps/Old_Bos_Ranch/scripts.pory"
-	setflag FLAG_SYS_POKEMON_GET
-# 1143 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitfanfare
-# 1144 "data/maps/Old_Bos_Ranch/scripts.pory"
 	closemessage
+# 1120 "data/maps/Old_Bos_Ranch/scripts.pory"
+	playmoncry SPECIES_LITTEN, 0
+# 1121 "data/maps/Old_Bos_Ranch/scripts.pory"
+	waitmoncry
+# 1122 "data/maps/Old_Bos_Ranch/scripts.pory"
+	delay 60
+# 1123 "data/maps/Old_Bos_Ranch/scripts.pory"
+	addobject 16
+# 1124 "data/maps/Old_Bos_Ranch/scripts.pory"
+	setobjectsubpriority 16, MAP_OLD_BOS_RANCH, 0
+# 1125 "data/maps/Old_Bos_Ranch/scripts.pory"
+	setobjectsubpriority 12, MAP_OLD_BOS_RANCH, 3
+# 1126 "data/maps/Old_Bos_Ranch/scripts.pory"
+	playse SE_BALL_THROW
+# 1127 "data/maps/Old_Bos_Ranch/scripts.pory"
+	waitse
+# 1128 "data/maps/Old_Bos_Ranch/scripts.pory"
+	delay 30
+# 1129 "data/maps/Old_Bos_Ranch/scripts.pory"
+	playse SE_BALL_OPEN
+# 1130 "data/maps/Old_Bos_Ranch/scripts.pory"
+	removeobject 12
+# 1131 "data/maps/Old_Bos_Ranch/scripts.pory"
+	setflag FLAG_OBR_SHOW_LITTEN
+# 1132 "data/maps/Old_Bos_Ranch/scripts.pory"
+	waitse
+# 1133 "data/maps/Old_Bos_Ranch/scripts.pory"
+	delay 60
+# 1134 "data/maps/Old_Bos_Ranch/scripts.pory"
+	playse SE_RG_BALL_CLICK
+# 1135 "data/maps/Old_Bos_Ranch/scripts.pory"
+	waitse
+# 1136 "data/maps/Old_Bos_Ranch/scripts.pory"
+	delay 40
+# 1137 "data/maps/Old_Bos_Ranch/scripts.pory"
+	playse SE_RG_BAG_POCKET
+# 1138 "data/maps/Old_Bos_Ranch/scripts.pory"
+	removeobject 16
+# 1139 "data/maps/Old_Bos_Ranch/scripts.pory"
+	waitse
+# 1140 "data/maps/Old_Bos_Ranch/scripts.pory"
+	delay 60
+# 1141 "data/maps/Old_Bos_Ranch/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 1142 "data/maps/Old_Bos_Ranch/scripts.pory"
+	msgbox OBR_ChooseLitten_Text_1
+# 1143 "data/maps/Old_Bos_Ranch/scripts.pory"
+	givemon SPECIES_LITTEN, 5, ITEM_ORAN_BERRY, ITEM_POKE_BALL
+# 1144 "data/maps/Old_Bos_Ranch/scripts.pory"
+	setflag FLAG_SYS_POKEMON_GET
 # 1145 "data/maps/Old_Bos_Ranch/scripts.pory"
-	msgbox Give_Litten_Nickname, MSGBOX_YESNO
+	waitfanfare
 # 1146 "data/maps/Old_Bos_Ranch/scripts.pory"
+	closemessage
+# 1147 "data/maps/Old_Bos_Ranch/scripts.pory"
+	msgbox Give_Litten_Nickname, MSGBOX_YESNO
+# 1148 "data/maps/Old_Bos_Ranch/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq OBR_ChooseLitten_6
-# 1152 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1154 "data/maps/Old_Bos_Ranch/scripts.pory"
 	closemessage
 OBR_ChooseLitten_5:
-# 1154 "data/maps/Old_Bos_Ranch/scripts.pory"
-	setvar VAR_STARTER_MON, 1
-# 1155 "data/maps/Old_Bos_Ranch/scripts.pory"
-	applymovement 10, OBR_M_Mike13_ToOshawott
 # 1156 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitmovement 0
+	setvar VAR_STARTER_MON, 1
 # 1157 "data/maps/Old_Bos_Ranch/scripts.pory"
-	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
+	applymovement 10, OBR_M_Mike13_ToOshawott
 # 1158 "data/maps/Old_Bos_Ranch/scripts.pory"
-	delay 30
+	waitmovement 0
 # 1159 "data/maps/Old_Bos_Ranch/scripts.pory"
-	clearflag FLAG_SUPPRESS_SPEAKER_NAME
-# 1160 "data/maps/Old_Bos_Ranch/scripts.pory"
-	speakername OBR_Mike_FollowA_Text_0
-# 1161 "data/maps/Old_Bos_Ranch/scripts.pory"
-	msgbox OBR_T_Mike22
-# 1162 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitmessage
-# 1163 "data/maps/Old_Bos_Ranch/scripts.pory"
-	closemessage
-# 1164 "data/maps/Old_Bos_Ranch/scripts.pory"
-	delay 60
-# 1165 "data/maps/Old_Bos_Ranch/scripts.pory"
-	addobject 17
-# 1166 "data/maps/Old_Bos_Ranch/scripts.pory"
-	setobjectsubpriority 17, MAP_OLD_BOS_RANCH, 0
-# 1167 "data/maps/Old_Bos_Ranch/scripts.pory"
-	setobjectsubpriority 13, MAP_OLD_BOS_RANCH, 3
-# 1168 "data/maps/Old_Bos_Ranch/scripts.pory"
-	playse SE_BALL_THROW
-# 1169 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitse
-# 1170 "data/maps/Old_Bos_Ranch/scripts.pory"
-	delay 30
-# 1171 "data/maps/Old_Bos_Ranch/scripts.pory"
-	playse SE_BALL_OPEN
-# 1172 "data/maps/Old_Bos_Ranch/scripts.pory"
-	removeobject 13
-# 1173 "data/maps/Old_Bos_Ranch/scripts.pory"
-	setflag FLAG_OBR_SHOW_OSHAWOTT
-# 1174 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitse
-# 1175 "data/maps/Old_Bos_Ranch/scripts.pory"
-	delay 60
-# 1176 "data/maps/Old_Bos_Ranch/scripts.pory"
-	playse SE_RG_BALL_CLICK
-# 1177 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitse
-# 1178 "data/maps/Old_Bos_Ranch/scripts.pory"
-	delay 40
-# 1179 "data/maps/Old_Bos_Ranch/scripts.pory"
-	playse SE_RG_BAG_POCKET
-# 1180 "data/maps/Old_Bos_Ranch/scripts.pory"
-	removeobject 17
-# 1181 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitse
-# 1182 "data/maps/Old_Bos_Ranch/scripts.pory"
-	delay 60
-# 1183 "data/maps/Old_Bos_Ranch/scripts.pory"
-	playmoncry SPECIES_TURTWIG, 11
-# 1184 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitmoncry
-# 1185 "data/maps/Old_Bos_Ranch/scripts.pory"
-	turnobject 10, DIR_WEST
-# 1186 "data/maps/Old_Bos_Ranch/scripts.pory"
-	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
-# 1187 "data/maps/Old_Bos_Ranch/scripts.pory"
-	applymovement 11, OBR_M_Turtwig5
-# 1188 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitmovement 0
-# 1189 "data/maps/Old_Bos_Ranch/scripts.pory"
-	removeobject 11
-# 1190 "data/maps/Old_Bos_Ranch/scripts.pory"
-	setflag FLAG_OBR_SHOW_TURTWIG
-# 1191 "data/maps/Old_Bos_Ranch/scripts.pory"
-	delay 60
-# 1192 "data/maps/Old_Bos_Ranch/scripts.pory"
-	special SpawnCameraObject
-# 1193 "data/maps/Old_Bos_Ranch/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, Univ_StepNW1
-# 1194 "data/maps/Old_Bos_Ranch/scripts.pory"
-	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
-# 1195 "data/maps/Old_Bos_Ranch/scripts.pory"
-	turnobject 10, DIR_NORTH
-# 1196 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitmovement OBJ_EVENT_ID_CAMERA
-# 1197 "data/maps/Old_Bos_Ranch/scripts.pory"
-	delay 40
-# 1198 "data/maps/Old_Bos_Ranch/scripts.pory"
-	speakername OBR_AllStartersFound_A_Text_0
-# 1199 "data/maps/Old_Bos_Ranch/scripts.pory"
-	msgbox OBR_T_Bo7
-# 1200 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitmessage
-# 1201 "data/maps/Old_Bos_Ranch/scripts.pory"
-	closemessage
-# 1202 "data/maps/Old_Bos_Ranch/scripts.pory"
-	applymovement 14, OBR_M_Bo2
-# 1203 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitmovement 0
-# 1204 "data/maps/Old_Bos_Ranch/scripts.pory"
-	removeobject 14
-# 1205 "data/maps/Old_Bos_Ranch/scripts.pory"
-	setflag FLAG_OBR_SHOW_OLD_BO
-# 1206 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitmovement 0
-# 1207 "data/maps/Old_Bos_Ranch/scripts.pory"
-	delay 40
-# 1208 "data/maps/Old_Bos_Ranch/scripts.pory"
-	turnobject 10, DIR_WEST
-# 1209 "data/maps/Old_Bos_Ranch/scripts.pory"
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
-# 1210 "data/maps/Old_Bos_Ranch/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, Univ_StepSE1
-# 1211 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitmovement 0
-# 1212 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1160 "data/maps/Old_Bos_Ranch/scripts.pory"
 	delay 30
-# 1213 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1161 "data/maps/Old_Bos_Ranch/scripts.pory"
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+# 1162 "data/maps/Old_Bos_Ranch/scripts.pory"
 	speakername OBR_Mike_FollowA_Text_0
-# 1214 "data/maps/Old_Bos_Ranch/scripts.pory"
-	msgbox OBR_T_Mike23
-# 1215 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1163 "data/maps/Old_Bos_Ranch/scripts.pory"
+	msgbox OBR_T_Mike22
+# 1164 "data/maps/Old_Bos_Ranch/scripts.pory"
 	waitmessage
-# 1216 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1165 "data/maps/Old_Bos_Ranch/scripts.pory"
 	closemessage
+# 1166 "data/maps/Old_Bos_Ranch/scripts.pory"
+	delay 60
+# 1167 "data/maps/Old_Bos_Ranch/scripts.pory"
+	addobject 17
+# 1168 "data/maps/Old_Bos_Ranch/scripts.pory"
+	setobjectsubpriority 17, MAP_OLD_BOS_RANCH, 0
+# 1169 "data/maps/Old_Bos_Ranch/scripts.pory"
+	setobjectsubpriority 13, MAP_OLD_BOS_RANCH, 3
+# 1170 "data/maps/Old_Bos_Ranch/scripts.pory"
+	playse SE_BALL_THROW
+# 1171 "data/maps/Old_Bos_Ranch/scripts.pory"
+	waitse
+# 1172 "data/maps/Old_Bos_Ranch/scripts.pory"
+	delay 30
+# 1173 "data/maps/Old_Bos_Ranch/scripts.pory"
+	playse SE_BALL_OPEN
+# 1174 "data/maps/Old_Bos_Ranch/scripts.pory"
+	removeobject 13
+# 1175 "data/maps/Old_Bos_Ranch/scripts.pory"
+	setflag FLAG_OBR_SHOW_OSHAWOTT
+# 1176 "data/maps/Old_Bos_Ranch/scripts.pory"
+	waitse
+# 1177 "data/maps/Old_Bos_Ranch/scripts.pory"
+	delay 60
+# 1178 "data/maps/Old_Bos_Ranch/scripts.pory"
+	playse SE_RG_BALL_CLICK
+# 1179 "data/maps/Old_Bos_Ranch/scripts.pory"
+	waitse
+# 1180 "data/maps/Old_Bos_Ranch/scripts.pory"
+	delay 40
+# 1181 "data/maps/Old_Bos_Ranch/scripts.pory"
+	playse SE_RG_BAG_POCKET
+# 1182 "data/maps/Old_Bos_Ranch/scripts.pory"
+	removeobject 17
+# 1183 "data/maps/Old_Bos_Ranch/scripts.pory"
+	waitse
+# 1184 "data/maps/Old_Bos_Ranch/scripts.pory"
+	delay 60
+# 1185 "data/maps/Old_Bos_Ranch/scripts.pory"
+	playmoncry SPECIES_TURTWIG, 11
+# 1186 "data/maps/Old_Bos_Ranch/scripts.pory"
+	waitmoncry
+# 1187 "data/maps/Old_Bos_Ranch/scripts.pory"
+	turnobject 10, DIR_WEST
+# 1188 "data/maps/Old_Bos_Ranch/scripts.pory"
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
+# 1189 "data/maps/Old_Bos_Ranch/scripts.pory"
+	applymovement 11, OBR_M_Turtwig5
+# 1190 "data/maps/Old_Bos_Ranch/scripts.pory"
+	waitmovement 0
+# 1191 "data/maps/Old_Bos_Ranch/scripts.pory"
+	removeobject 11
+# 1192 "data/maps/Old_Bos_Ranch/scripts.pory"
+	setflag FLAG_OBR_SHOW_TURTWIG
+# 1193 "data/maps/Old_Bos_Ranch/scripts.pory"
+	delay 60
+# 1194 "data/maps/Old_Bos_Ranch/scripts.pory"
+	special SpawnCameraObject
+# 1195 "data/maps/Old_Bos_Ranch/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, Univ_StepNW1
+# 1196 "data/maps/Old_Bos_Ranch/scripts.pory"
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
+# 1197 "data/maps/Old_Bos_Ranch/scripts.pory"
+	turnobject 10, DIR_NORTH
+# 1198 "data/maps/Old_Bos_Ranch/scripts.pory"
+	waitmovement OBJ_EVENT_ID_CAMERA
+# 1199 "data/maps/Old_Bos_Ranch/scripts.pory"
+	delay 40
+# 1200 "data/maps/Old_Bos_Ranch/scripts.pory"
+	speakername OBR_AllStartersFound_A_Text_0
+# 1201 "data/maps/Old_Bos_Ranch/scripts.pory"
+	msgbox OBR_T_Bo7
+# 1202 "data/maps/Old_Bos_Ranch/scripts.pory"
+	waitmessage
+# 1203 "data/maps/Old_Bos_Ranch/scripts.pory"
+	closemessage
+# 1204 "data/maps/Old_Bos_Ranch/scripts.pory"
+	applymovement 14, OBR_M_Bo2
+# 1205 "data/maps/Old_Bos_Ranch/scripts.pory"
+	waitmovement 0
+# 1206 "data/maps/Old_Bos_Ranch/scripts.pory"
+	removeobject 14
+# 1207 "data/maps/Old_Bos_Ranch/scripts.pory"
+	setflag FLAG_OBR_SHOW_OLD_BO
+# 1208 "data/maps/Old_Bos_Ranch/scripts.pory"
+	waitmovement 0
+# 1209 "data/maps/Old_Bos_Ranch/scripts.pory"
+	delay 40
+# 1210 "data/maps/Old_Bos_Ranch/scripts.pory"
+	turnobject 10, DIR_WEST
+# 1211 "data/maps/Old_Bos_Ranch/scripts.pory"
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
+# 1212 "data/maps/Old_Bos_Ranch/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, Univ_StepSE1
+# 1213 "data/maps/Old_Bos_Ranch/scripts.pory"
+	waitmovement 0
+# 1214 "data/maps/Old_Bos_Ranch/scripts.pory"
+	delay 30
+# 1215 "data/maps/Old_Bos_Ranch/scripts.pory"
+	speakername OBR_Mike_FollowA_Text_0
+# 1216 "data/maps/Old_Bos_Ranch/scripts.pory"
+	msgbox OBR_T_Mike23
 # 1217 "data/maps/Old_Bos_Ranch/scripts.pory"
-	applymovement 10, OBR_M_Mike15_LeaveScene_Litten
+	waitmessage
 # 1218 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitmovement 0
+	closemessage
 # 1219 "data/maps/Old_Bos_Ranch/scripts.pory"
-	removeobject 10
+	applymovement 10, OBR_M_Mike15_LeaveScene_Litten
 # 1220 "data/maps/Old_Bos_Ranch/scripts.pory"
-	setflag FLAG_OBR_HIDE_RIVAL_MIKE_3
-# 1221 "data/maps/Old_Bos_Ranch/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, Univ_StepLeft1
-# 1222 "data/maps/Old_Bos_Ranch/scripts.pory"
 	waitmovement 0
+# 1221 "data/maps/Old_Bos_Ranch/scripts.pory"
+	removeobject 10
+# 1222 "data/maps/Old_Bos_Ranch/scripts.pory"
+	setflag FLAG_OBR_HIDE_RIVAL_MIKE_3
 # 1223 "data/maps/Old_Bos_Ranch/scripts.pory"
 	special RemoveCameraObject
 # 1224 "data/maps/Old_Bos_Ranch/scripts.pory"
@@ -2388,466 +2388,442 @@ OBR_ChooseLitten_5:
 	clearflag FLAG_HF_HIDE_MAMAW
 # 1232 "data/maps/Old_Bos_Ranch/scripts.pory"
 	clearflag FLAG_HF_HIDE_RIVAL_MIKE
+# 1233 "data/maps/Old_Bos_Ranch/scripts.pory"
+	clearflag FLAG_ITEM_WHH_CHARCOAL
+# 1234 "data/maps/Old_Bos_Ranch/scripts.pory"
+	setrespawn HEAL_LOCATION_PLAYER_HOUSE
 	goto OBR_ChooseLitten_1
 
 OBR_ChooseLitten_6:
-# 1147 "data/maps/Old_Bos_Ranch/scripts.pory"
-	call Common_EventScript_GetGiftMonPartySlot
-# 1148 "data/maps/Old_Bos_Ranch/scripts.pory"
-	call Common_EventScript_NameReceivedPartyMon
 # 1149 "data/maps/Old_Bos_Ranch/scripts.pory"
+	call Common_EventScript_GetGiftMonPartySlot
+# 1150 "data/maps/Old_Bos_Ranch/scripts.pory"
+	call Common_EventScript_NameReceivedPartyMon
+# 1151 "data/maps/Old_Bos_Ranch/scripts.pory"
 	closemessage
 	goto OBR_ChooseLitten_5
 
 
 OBR_ChooseOshawott::
-# 1242 "data/maps/Old_Bos_Ranch/scripts.pory"
-	faceplayer
-# 1243 "data/maps/Old_Bos_Ranch/scripts.pory"
-	playmoncry SPECIES_OSHAWOTT, 0
 # 1244 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitmoncry
+	faceplayer
 # 1245 "data/maps/Old_Bos_Ranch/scripts.pory"
-	setflag FLAG_SUPPRESS_SPEAKER_NAME
+	playmoncry SPECIES_OSHAWOTT, 0
 # 1246 "data/maps/Old_Bos_Ranch/scripts.pory"
-	msgbox OBR_ChooseOshawott_Text_0, MSGBOX_YESNO
+	waitmoncry
 # 1247 "data/maps/Old_Bos_Ranch/scripts.pory"
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
+# 1248 "data/maps/Old_Bos_Ranch/scripts.pory"
+	msgbox OBR_ChooseOshawott_Text_0, MSGBOX_YESNO
+# 1249 "data/maps/Old_Bos_Ranch/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq OBR_ChooseOshawott_2
-# 1366 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1370 "data/maps/Old_Bos_Ranch/scripts.pory"
 	closemessage
 OBR_ChooseOshawott_1:
-# 1368 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1372 "data/maps/Old_Bos_Ranch/scripts.pory"
 	release
 	end
 
 OBR_ChooseOshawott_2:
-# 1248 "data/maps/Old_Bos_Ranch/scripts.pory"
-	closemessage
-# 1249 "data/maps/Old_Bos_Ranch/scripts.pory"
-	playmoncry SPECIES_OSHAWOTT, 0
 # 1250 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitmoncry
-# 1251 "data/maps/Old_Bos_Ranch/scripts.pory"
-	delay 60
-# 1252 "data/maps/Old_Bos_Ranch/scripts.pory"
-	addobject 17
-# 1253 "data/maps/Old_Bos_Ranch/scripts.pory"
-	setobjectsubpriority 17, MAP_OLD_BOS_RANCH, 0
-# 1254 "data/maps/Old_Bos_Ranch/scripts.pory"
-	setobjectsubpriority 13, MAP_OLD_BOS_RANCH, 3
-# 1255 "data/maps/Old_Bos_Ranch/scripts.pory"
-	playse SE_BALL_THROW
-# 1256 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitse
-# 1257 "data/maps/Old_Bos_Ranch/scripts.pory"
-	delay 30
-# 1258 "data/maps/Old_Bos_Ranch/scripts.pory"
-	playse SE_BALL_OPEN
-# 1259 "data/maps/Old_Bos_Ranch/scripts.pory"
-	removeobject 13
-# 1260 "data/maps/Old_Bos_Ranch/scripts.pory"
-	setflag FLAG_OBR_SHOW_LITTEN
-# 1261 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitse
-# 1262 "data/maps/Old_Bos_Ranch/scripts.pory"
-	delay 60
-# 1263 "data/maps/Old_Bos_Ranch/scripts.pory"
-	playse SE_RG_BALL_CLICK
-# 1264 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitse
-# 1265 "data/maps/Old_Bos_Ranch/scripts.pory"
-	delay 40
-# 1266 "data/maps/Old_Bos_Ranch/scripts.pory"
-	playse SE_RG_BAG_POCKET
-# 1267 "data/maps/Old_Bos_Ranch/scripts.pory"
-	removeobject 17
-# 1268 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitse
-# 1269 "data/maps/Old_Bos_Ranch/scripts.pory"
-	delay 60
-# 1270 "data/maps/Old_Bos_Ranch/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 1271 "data/maps/Old_Bos_Ranch/scripts.pory"
-	msgbox OBR_ChooseOshawott_Text_1
-# 1272 "data/maps/Old_Bos_Ranch/scripts.pory"
-	givemon SPECIES_OSHAWOTT, 5, ITEM_ORAN_BERRY, ITEM_POKE_BALL
-# 1273 "data/maps/Old_Bos_Ranch/scripts.pory"
-	setflag FLAG_SYS_POKEMON_GET
-# 1274 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitfanfare
-# 1275 "data/maps/Old_Bos_Ranch/scripts.pory"
 	closemessage
+# 1251 "data/maps/Old_Bos_Ranch/scripts.pory"
+	playmoncry SPECIES_OSHAWOTT, 0
+# 1252 "data/maps/Old_Bos_Ranch/scripts.pory"
+	waitmoncry
+# 1253 "data/maps/Old_Bos_Ranch/scripts.pory"
+	delay 60
+# 1254 "data/maps/Old_Bos_Ranch/scripts.pory"
+	addobject 17
+# 1255 "data/maps/Old_Bos_Ranch/scripts.pory"
+	setobjectsubpriority 17, MAP_OLD_BOS_RANCH, 0
+# 1256 "data/maps/Old_Bos_Ranch/scripts.pory"
+	setobjectsubpriority 13, MAP_OLD_BOS_RANCH, 3
+# 1257 "data/maps/Old_Bos_Ranch/scripts.pory"
+	playse SE_BALL_THROW
+# 1258 "data/maps/Old_Bos_Ranch/scripts.pory"
+	waitse
+# 1259 "data/maps/Old_Bos_Ranch/scripts.pory"
+	delay 30
+# 1260 "data/maps/Old_Bos_Ranch/scripts.pory"
+	playse SE_BALL_OPEN
+# 1261 "data/maps/Old_Bos_Ranch/scripts.pory"
+	removeobject 13
+# 1262 "data/maps/Old_Bos_Ranch/scripts.pory"
+	setflag FLAG_OBR_SHOW_LITTEN
+# 1263 "data/maps/Old_Bos_Ranch/scripts.pory"
+	waitse
+# 1264 "data/maps/Old_Bos_Ranch/scripts.pory"
+	delay 60
+# 1265 "data/maps/Old_Bos_Ranch/scripts.pory"
+	playse SE_RG_BALL_CLICK
+# 1266 "data/maps/Old_Bos_Ranch/scripts.pory"
+	waitse
+# 1267 "data/maps/Old_Bos_Ranch/scripts.pory"
+	delay 40
+# 1268 "data/maps/Old_Bos_Ranch/scripts.pory"
+	playse SE_RG_BAG_POCKET
+# 1269 "data/maps/Old_Bos_Ranch/scripts.pory"
+	removeobject 17
+# 1270 "data/maps/Old_Bos_Ranch/scripts.pory"
+	waitse
+# 1271 "data/maps/Old_Bos_Ranch/scripts.pory"
+	delay 60
+# 1272 "data/maps/Old_Bos_Ranch/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 1273 "data/maps/Old_Bos_Ranch/scripts.pory"
+	msgbox OBR_ChooseOshawott_Text_1
+# 1274 "data/maps/Old_Bos_Ranch/scripts.pory"
+	givemon SPECIES_OSHAWOTT, 5, ITEM_ORAN_BERRY, ITEM_POKE_BALL
+# 1275 "data/maps/Old_Bos_Ranch/scripts.pory"
+	setflag FLAG_SYS_POKEMON_GET
 # 1276 "data/maps/Old_Bos_Ranch/scripts.pory"
-	msgbox Give_Oshawott_Nickname, MSGBOX_YESNO
+	waitfanfare
 # 1277 "data/maps/Old_Bos_Ranch/scripts.pory"
+	closemessage
+# 1278 "data/maps/Old_Bos_Ranch/scripts.pory"
+	msgbox Give_Oshawott_Nickname, MSGBOX_YESNO
+# 1279 "data/maps/Old_Bos_Ranch/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq OBR_ChooseOshawott_6
-# 1283 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1285 "data/maps/Old_Bos_Ranch/scripts.pory"
 	closemessage
 OBR_ChooseOshawott_5:
-# 1285 "data/maps/Old_Bos_Ranch/scripts.pory"
-	setvar VAR_STARTER_MON, 2
-# 1286 "data/maps/Old_Bos_Ranch/scripts.pory"
-	applymovement 10, OBR_M_Mike13_ToTurtwig
 # 1287 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitmovement 0
+	setvar VAR_STARTER_MON, 2
 # 1288 "data/maps/Old_Bos_Ranch/scripts.pory"
-	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
+	applymovement 10, OBR_M_Mike13_ToTurtwig
 # 1289 "data/maps/Old_Bos_Ranch/scripts.pory"
-	delay 30
+	waitmovement 0
 # 1290 "data/maps/Old_Bos_Ranch/scripts.pory"
-	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
 # 1291 "data/maps/Old_Bos_Ranch/scripts.pory"
-	speakername OBR_Mike_FollowA_Text_0
+	delay 30
 # 1292 "data/maps/Old_Bos_Ranch/scripts.pory"
-	msgbox OBR_T_Mike22
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
 # 1293 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitmessage
-# 1294 "data/maps/Old_Bos_Ranch/scripts.pory"
-	closemessage
-# 1295 "data/maps/Old_Bos_Ranch/scripts.pory"
-	delay 60
-# 1296 "data/maps/Old_Bos_Ranch/scripts.pory"
-	addobject 15
-# 1297 "data/maps/Old_Bos_Ranch/scripts.pory"
-	setobjectsubpriority 15, MAP_OLD_BOS_RANCH, 0
-# 1298 "data/maps/Old_Bos_Ranch/scripts.pory"
-	setobjectsubpriority 11, MAP_OLD_BOS_RANCH, 3
-# 1299 "data/maps/Old_Bos_Ranch/scripts.pory"
-	playse SE_BALL_THROW
-# 1300 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitse
-# 1301 "data/maps/Old_Bos_Ranch/scripts.pory"
-	delay 30
-# 1302 "data/maps/Old_Bos_Ranch/scripts.pory"
-	playse SE_BALL_OPEN
-# 1303 "data/maps/Old_Bos_Ranch/scripts.pory"
-	removeobject 11
-# 1304 "data/maps/Old_Bos_Ranch/scripts.pory"
-	setflag FLAG_OBR_SHOW_OSHAWOTT
-# 1305 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitse
-# 1306 "data/maps/Old_Bos_Ranch/scripts.pory"
-	delay 60
-# 1307 "data/maps/Old_Bos_Ranch/scripts.pory"
-	playse SE_RG_BALL_CLICK
-# 1308 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitse
-# 1309 "data/maps/Old_Bos_Ranch/scripts.pory"
-	delay 40
-# 1310 "data/maps/Old_Bos_Ranch/scripts.pory"
-	playse SE_RG_BAG_POCKET
-# 1311 "data/maps/Old_Bos_Ranch/scripts.pory"
-	removeobject 15
-# 1312 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitse
-# 1313 "data/maps/Old_Bos_Ranch/scripts.pory"
-	delay 60
-# 1314 "data/maps/Old_Bos_Ranch/scripts.pory"
-	playmoncry SPECIES_LITTEN, 11
-# 1315 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitmoncry
-# 1316 "data/maps/Old_Bos_Ranch/scripts.pory"
-	turnobject 10, DIR_EAST
-# 1317 "data/maps/Old_Bos_Ranch/scripts.pory"
-	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
-# 1318 "data/maps/Old_Bos_Ranch/scripts.pory"
-	applymovement 12, OBR_M_Litten6
-# 1319 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitmovement 0
-# 1320 "data/maps/Old_Bos_Ranch/scripts.pory"
-	removeobject 12
-# 1321 "data/maps/Old_Bos_Ranch/scripts.pory"
-	setflag FLAG_OBR_SHOW_TURTWIG
-# 1322 "data/maps/Old_Bos_Ranch/scripts.pory"
-	delay 60
-# 1323 "data/maps/Old_Bos_Ranch/scripts.pory"
-	special SpawnCameraObject
-# 1324 "data/maps/Old_Bos_Ranch/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, Univ_StepNW1
-# 1325 "data/maps/Old_Bos_Ranch/scripts.pory"
-	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
-# 1326 "data/maps/Old_Bos_Ranch/scripts.pory"
-	turnobject 10, DIR_NORTH
-# 1327 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitmovement OBJ_EVENT_ID_CAMERA
-# 1328 "data/maps/Old_Bos_Ranch/scripts.pory"
-	delay 40
-# 1329 "data/maps/Old_Bos_Ranch/scripts.pory"
-	speakername OBR_AllStartersFound_A_Text_0
-# 1330 "data/maps/Old_Bos_Ranch/scripts.pory"
-	msgbox OBR_T_Bo7
-# 1331 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitmessage
-# 1332 "data/maps/Old_Bos_Ranch/scripts.pory"
-	closemessage
-# 1333 "data/maps/Old_Bos_Ranch/scripts.pory"
-	applymovement 14, OBR_M_Bo2
-# 1334 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitmovement 0
-# 1335 "data/maps/Old_Bos_Ranch/scripts.pory"
-	removeobject 14
-# 1336 "data/maps/Old_Bos_Ranch/scripts.pory"
-	setflag FLAG_OBR_SHOW_OLD_BO
-# 1337 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitmovement 0
-# 1338 "data/maps/Old_Bos_Ranch/scripts.pory"
-	delay 40
-# 1339 "data/maps/Old_Bos_Ranch/scripts.pory"
-	applymovement 10, Univ_StepRight1
-# 1340 "data/maps/Old_Bos_Ranch/scripts.pory"
-	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
-# 1341 "data/maps/Old_Bos_Ranch/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, Univ_StepDown1
-# 1342 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitmovement 0
-# 1343 "data/maps/Old_Bos_Ranch/scripts.pory"
-	delay 30
-# 1344 "data/maps/Old_Bos_Ranch/scripts.pory"
 	speakername OBR_Mike_FollowA_Text_0
-# 1345 "data/maps/Old_Bos_Ranch/scripts.pory"
-	msgbox OBR_T_Mike23
-# 1346 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1294 "data/maps/Old_Bos_Ranch/scripts.pory"
+	msgbox OBR_T_Mike22
+# 1295 "data/maps/Old_Bos_Ranch/scripts.pory"
 	waitmessage
-# 1347 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1296 "data/maps/Old_Bos_Ranch/scripts.pory"
 	closemessage
+# 1297 "data/maps/Old_Bos_Ranch/scripts.pory"
+	delay 60
+# 1298 "data/maps/Old_Bos_Ranch/scripts.pory"
+	addobject 15
+# 1299 "data/maps/Old_Bos_Ranch/scripts.pory"
+	setobjectsubpriority 15, MAP_OLD_BOS_RANCH, 0
+# 1300 "data/maps/Old_Bos_Ranch/scripts.pory"
+	setobjectsubpriority 11, MAP_OLD_BOS_RANCH, 3
+# 1301 "data/maps/Old_Bos_Ranch/scripts.pory"
+	playse SE_BALL_THROW
+# 1302 "data/maps/Old_Bos_Ranch/scripts.pory"
+	waitse
+# 1303 "data/maps/Old_Bos_Ranch/scripts.pory"
+	delay 30
+# 1304 "data/maps/Old_Bos_Ranch/scripts.pory"
+	playse SE_BALL_OPEN
+# 1305 "data/maps/Old_Bos_Ranch/scripts.pory"
+	removeobject 11
+# 1306 "data/maps/Old_Bos_Ranch/scripts.pory"
+	setflag FLAG_OBR_SHOW_OSHAWOTT
+# 1307 "data/maps/Old_Bos_Ranch/scripts.pory"
+	waitse
+# 1308 "data/maps/Old_Bos_Ranch/scripts.pory"
+	delay 60
+# 1309 "data/maps/Old_Bos_Ranch/scripts.pory"
+	playse SE_RG_BALL_CLICK
+# 1310 "data/maps/Old_Bos_Ranch/scripts.pory"
+	waitse
+# 1311 "data/maps/Old_Bos_Ranch/scripts.pory"
+	delay 40
+# 1312 "data/maps/Old_Bos_Ranch/scripts.pory"
+	playse SE_RG_BAG_POCKET
+# 1313 "data/maps/Old_Bos_Ranch/scripts.pory"
+	removeobject 15
+# 1314 "data/maps/Old_Bos_Ranch/scripts.pory"
+	waitse
+# 1315 "data/maps/Old_Bos_Ranch/scripts.pory"
+	delay 60
+# 1316 "data/maps/Old_Bos_Ranch/scripts.pory"
+	playmoncry SPECIES_LITTEN, 11
+# 1317 "data/maps/Old_Bos_Ranch/scripts.pory"
+	waitmoncry
+# 1318 "data/maps/Old_Bos_Ranch/scripts.pory"
+	turnobject 10, DIR_EAST
+# 1319 "data/maps/Old_Bos_Ranch/scripts.pory"
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
+# 1320 "data/maps/Old_Bos_Ranch/scripts.pory"
+	applymovement 12, OBR_M_Litten6
+# 1321 "data/maps/Old_Bos_Ranch/scripts.pory"
+	waitmovement 0
+# 1322 "data/maps/Old_Bos_Ranch/scripts.pory"
+	removeobject 12
+# 1323 "data/maps/Old_Bos_Ranch/scripts.pory"
+	setflag FLAG_OBR_SHOW_TURTWIG
+# 1324 "data/maps/Old_Bos_Ranch/scripts.pory"
+	delay 60
+# 1325 "data/maps/Old_Bos_Ranch/scripts.pory"
+	special SpawnCameraObject
+# 1326 "data/maps/Old_Bos_Ranch/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, Univ_StepNW1
+# 1327 "data/maps/Old_Bos_Ranch/scripts.pory"
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
+# 1328 "data/maps/Old_Bos_Ranch/scripts.pory"
+	turnobject 10, DIR_NORTH
+# 1329 "data/maps/Old_Bos_Ranch/scripts.pory"
+	waitmovement OBJ_EVENT_ID_CAMERA
+# 1330 "data/maps/Old_Bos_Ranch/scripts.pory"
+	delay 40
+# 1331 "data/maps/Old_Bos_Ranch/scripts.pory"
+	speakername OBR_AllStartersFound_A_Text_0
+# 1332 "data/maps/Old_Bos_Ranch/scripts.pory"
+	msgbox OBR_T_Bo7
+# 1333 "data/maps/Old_Bos_Ranch/scripts.pory"
+	waitmessage
+# 1334 "data/maps/Old_Bos_Ranch/scripts.pory"
+	closemessage
+# 1335 "data/maps/Old_Bos_Ranch/scripts.pory"
+	applymovement 14, OBR_M_Bo2
+# 1336 "data/maps/Old_Bos_Ranch/scripts.pory"
+	waitmovement 0
+# 1337 "data/maps/Old_Bos_Ranch/scripts.pory"
+	removeobject 14
+# 1338 "data/maps/Old_Bos_Ranch/scripts.pory"
+	setflag FLAG_OBR_SHOW_OLD_BO
+# 1339 "data/maps/Old_Bos_Ranch/scripts.pory"
+	waitmovement 0
+# 1340 "data/maps/Old_Bos_Ranch/scripts.pory"
+	delay 40
+# 1341 "data/maps/Old_Bos_Ranch/scripts.pory"
+	applymovement 10, Univ_StepRight1
+# 1342 "data/maps/Old_Bos_Ranch/scripts.pory"
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
+# 1343 "data/maps/Old_Bos_Ranch/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, Univ_StepDown1
+# 1344 "data/maps/Old_Bos_Ranch/scripts.pory"
+	waitmovement 0
+# 1345 "data/maps/Old_Bos_Ranch/scripts.pory"
+	delay 30
+# 1346 "data/maps/Old_Bos_Ranch/scripts.pory"
+	speakername OBR_Mike_FollowA_Text_0
+# 1347 "data/maps/Old_Bos_Ranch/scripts.pory"
+	msgbox OBR_T_Mike23
 # 1348 "data/maps/Old_Bos_Ranch/scripts.pory"
-	applymovement 10, OBR_M_Mike15_LeaveScene_Oshawott
+	waitmessage
 # 1349 "data/maps/Old_Bos_Ranch/scripts.pory"
-	waitmovement 0
+	closemessage
 # 1350 "data/maps/Old_Bos_Ranch/scripts.pory"
-	removeobject 10
+	applymovement 10, OBR_M_Mike15_LeaveScene_Oshawott
 # 1351 "data/maps/Old_Bos_Ranch/scripts.pory"
-	setflag FLAG_OBR_HIDE_RIVAL_MIKE_3
-# 1352 "data/maps/Old_Bos_Ranch/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, Univ_StepRight1
-# 1353 "data/maps/Old_Bos_Ranch/scripts.pory"
 	waitmovement 0
+# 1352 "data/maps/Old_Bos_Ranch/scripts.pory"
+	removeobject 10
+# 1353 "data/maps/Old_Bos_Ranch/scripts.pory"
+	setflag FLAG_OBR_HIDE_RIVAL_MIKE_3
 # 1354 "data/maps/Old_Bos_Ranch/scripts.pory"
-	special RemoveCameraObject
+	applymovement OBJ_EVENT_ID_CAMERA, Univ_StepRight1
 # 1355 "data/maps/Old_Bos_Ranch/scripts.pory"
-	setmetatile 26, 8, 0x241, TRUE
+	waitmovement 0
 # 1356 "data/maps/Old_Bos_Ranch/scripts.pory"
-	special DrawWholeMapView
+	special RemoveCameraObject
 # 1357 "data/maps/Old_Bos_Ranch/scripts.pory"
-	setvar VAR_ADVENTURE_START, 18
+	setmetatile 26, 8, 0x241, TRUE
 # 1358 "data/maps/Old_Bos_Ranch/scripts.pory"
-	clearflag FLAG_PAUSE_ENCOUNTERS
+	special DrawWholeMapView
 # 1359 "data/maps/Old_Bos_Ranch/scripts.pory"
-	setflag FLAG_PAUSE_FOLLOWERS
+	setvar VAR_ADVENTURE_START, 18
 # 1360 "data/maps/Old_Bos_Ranch/scripts.pory"
-	setflag FLAG_PS_HIDE_DAD
+	clearflag FLAG_PAUSE_ENCOUNTERS
 # 1361 "data/maps/Old_Bos_Ranch/scripts.pory"
-	setflag FLAG_RH1F_HIDE_MAMAW
+	setflag FLAG_PAUSE_FOLLOWERS
 # 1362 "data/maps/Old_Bos_Ranch/scripts.pory"
-	clearflag FLAG_HF_HIDE_MAMAW
+	setflag FLAG_PS_HIDE_DAD
 # 1363 "data/maps/Old_Bos_Ranch/scripts.pory"
+	setflag FLAG_RH1F_HIDE_MAMAW
+# 1364 "data/maps/Old_Bos_Ranch/scripts.pory"
+	clearflag FLAG_HF_HIDE_MAMAW
+# 1365 "data/maps/Old_Bos_Ranch/scripts.pory"
 	clearflag FLAG_HF_HIDE_RIVAL_MIKE
+# 1366 "data/maps/Old_Bos_Ranch/scripts.pory"
+	clearflag FLAG_ITEM_WHH_MYSTIC_WATER
+# 1367 "data/maps/Old_Bos_Ranch/scripts.pory"
+	setrespawn HEAL_LOCATION_PLAYER_HOUSE
 	goto OBR_ChooseOshawott_1
 
 OBR_ChooseOshawott_6:
-# 1278 "data/maps/Old_Bos_Ranch/scripts.pory"
-	call Common_EventScript_GetGiftMonPartySlot
-# 1279 "data/maps/Old_Bos_Ranch/scripts.pory"
-	call Common_EventScript_NameReceivedPartyMon
 # 1280 "data/maps/Old_Bos_Ranch/scripts.pory"
+	call Common_EventScript_GetGiftMonPartySlot
+# 1281 "data/maps/Old_Bos_Ranch/scripts.pory"
+	call Common_EventScript_NameReceivedPartyMon
+# 1282 "data/maps/Old_Bos_Ranch/scripts.pory"
 	closemessage
 	goto OBR_ChooseOshawott_5
 
 
 OBR_UpdateMetatiles::
-# 1373 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1377 "data/maps/Old_Bos_Ranch/scripts.pory"
 	call OBR_CheckLogFlag
-# 1374 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1378 "data/maps/Old_Bos_Ranch/scripts.pory"
 	call CheckFenceFlag
-# 1375 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1379 "data/maps/Old_Bos_Ranch/scripts.pory"
 	call OBR_CheckDoorLock
-# 1376 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1380 "data/maps/Old_Bos_Ranch/scripts.pory"
 	release
 	end
 
 
 CheckFenceFlag::
-# 1381 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1385 "data/maps/Old_Bos_Ranch/scripts.pory"
 	goto_if_set FLAG_OBR_FENCE_BROKEN, CheckFenceFlag_2
 CheckFenceFlag_1:
 	return
 
 CheckFenceFlag_2:
-# 1382 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1386 "data/maps/Old_Bos_Ranch/scripts.pory"
 	setmetatile 30, 18, 0x267, TRUE
-# 1383 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1387 "data/maps/Old_Bos_Ranch/scripts.pory"
 	setmetatile 30, 19, 0x000, FALSE
-# 1384 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1388 "data/maps/Old_Bos_Ranch/scripts.pory"
 	setmetatile 30, 20, 0x25F, TRUE
 	goto CheckFenceFlag_1
 
 
 OBR_CheckDoorLock::
-# 1392 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1396 "data/maps/Old_Bos_Ranch/scripts.pory"
 	goto_if_set FLAG_SYS_POKEMON_GET, OBR_CheckDoorLock_2
 OBR_CheckDoorLock_1:
 	return
 
 OBR_CheckDoorLock_2:
-# 1393 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1397 "data/maps/Old_Bos_Ranch/scripts.pory"
 	setmetatile 26, 8, 0x241, TRUE
 	goto OBR_CheckDoorLock_1
 
 
 OBR_CheckLogFlag::
-# 1401 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1405 "data/maps/Old_Bos_Ranch/scripts.pory"
 	goto_if_set FLAG_OBR_REMOVE_LOG, OBR_CheckLogFlag_2
 OBR_CheckLogFlag_1:
 	return
 
 OBR_CheckLogFlag_2:
-# 1402 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1406 "data/maps/Old_Bos_Ranch/scripts.pory"
 	setmetatile 6, 11, 0x004, FALSE
-# 1403 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1407 "data/maps/Old_Bos_Ranch/scripts.pory"
 	setmetatile 7, 11, 0x000, FALSE
 	goto OBR_CheckLogFlag_1
 
 
-# 1417 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1421 "data/maps/Old_Bos_Ranch/scripts.pory"
 OBR_M_Mike1:
-# 1418 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1419 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_left
-	step_end
-
 # 1422 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
+# 1423 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_left
+	step_end
+
+# 1426 "data/maps/Old_Bos_Ranch/scripts.pory"
 OBR_M_Mike1_B:
-# 1423 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1427 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_left
-# 1423 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1427 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_left
-# 1424 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1428 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_down
 	step_end
 
-# 1427 "data/maps/Old_Bos_Ranch/scripts.pory"
-OBR_M_Mike2:
-# 1428 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1429 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_up
-# 1429 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_up
-# 1429 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_up
-# 1430 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1430 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
 # 1431 "data/maps/Old_Bos_Ranch/scripts.pory"
+OBR_M_Mike2:
+# 1432 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1433 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_up
-	step_end
-
+# 1433 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_up
+# 1433 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_up
 # 1434 "data/maps/Old_Bos_Ranch/scripts.pory"
-OBR_M_Mike2_B:
+	walk_right
+# 1434 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
 # 1435 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_up
-# 1436 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1436 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1437 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_up
-# 1437 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_up
-# 1438 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1438 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1439 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_up
 	step_end
 
+# 1438 "data/maps/Old_Bos_Ranch/scripts.pory"
+OBR_M_Mike2_B:
+# 1439 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_up
+# 1440 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1440 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1441 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_up
+# 1441 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_up
 # 1442 "data/maps/Old_Bos_Ranch/scripts.pory"
-OBR_M_Mike3:
+	walk_right
+# 1442 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
 # 1443 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_right
-# 1443 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_right
-# 1443 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_right
+	walk_up
 	step_end
 
 # 1446 "data/maps/Old_Bos_Ranch/scripts.pory"
-OBR_M_Mike4:
+OBR_M_Mike3:
 # 1447 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
+	walk_fast_right
+# 1447 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_right
+# 1447 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_right
 	step_end
 
 # 1450 "data/maps/Old_Bos_Ranch/scripts.pory"
-OBR_M_Mike5:
+OBR_M_Mike4:
 # 1451 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
+	step_end
+
+# 1454 "data/maps/Old_Bos_Ranch/scripts.pory"
+OBR_M_Mike5:
+# 1455 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_right
-# 1452 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1456 "data/maps/Old_Bos_Ranch/scripts.pory"
 	face_down
 	step_end
 
-# 1455 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1459 "data/maps/Old_Bos_Ranch/scripts.pory"
 OBR_M_Mike6:
-# 1456 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1460 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_faster_left
-# 1457 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1461 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_faster_down
-# 1458 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1462 "data/maps/Old_Bos_Ranch/scripts.pory"
 	face_left
 	step_end
 
-# 1461 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1465 "data/maps/Old_Bos_Ranch/scripts.pory"
 OBR_M_Mike7:
-# 1462 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1466 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
-# 1462 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1466 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
-# 1462 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1466 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
-# 1462 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
-# 1463 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
-# 1463 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
-# 1463 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
-# 1464 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
-# 1464 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
-# 1464 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
-# 1464 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
-# 1465 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
-# 1465 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
 # 1466 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
 # 1467 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_down
 # 1467 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_down
-# 1468 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
-# 1468 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
-# 1468 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
-# 1468 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
-# 1468 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
-# 1468 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
-# 1468 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
+# 1467 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_down
 # 1468 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
 # 1468 "data/maps/Old_Bos_Ranch/scripts.pory"
@@ -2857,355 +2833,355 @@ OBR_M_Mike7:
 # 1468 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
 # 1469 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_down
+# 1469 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_down
+# 1470 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
+# 1471 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_down
+# 1471 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_down
+# 1472 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
+# 1472 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
+# 1472 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
+# 1472 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
+# 1472 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
+# 1472 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
+# 1472 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
+# 1472 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
+# 1472 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
+# 1472 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
+# 1472 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
+# 1473 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_up
-# 1469 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1473 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_up
-# 1469 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1473 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_up
-# 1469 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1473 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_up
 	step_end
 
-# 1472 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1476 "data/maps/Old_Bos_Ranch/scripts.pory"
 OBR_M_Mike8:
-# 1473 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1477 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_left
-# 1474 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1478 "data/maps/Old_Bos_Ranch/scripts.pory"
 	face_right
 	step_end
 
-# 1477 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1481 "data/maps/Old_Bos_Ranch/scripts.pory"
 OBR_M_Mike9:
-# 1478 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1482 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_right
-# 1479 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1483 "data/maps/Old_Bos_Ranch/scripts.pory"
 	face_down
 	step_end
 
-# 1482 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1486 "data/maps/Old_Bos_Ranch/scripts.pory"
 OBR_M_Mike10:
-# 1483 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1487 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_down
-# 1483 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1483 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1484 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1484 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1484 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1484 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1484 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1484 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1484 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1484 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1484 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1484 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1485 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1485 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1486 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1486 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
 # 1487 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_down
 # 1487 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_down
 # 1488 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_right
+# 1488 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1488 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1488 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1488 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1488 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1488 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1488 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1488 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1488 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1489 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
+# 1489 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
+# 1490 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1490 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1491 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
+# 1491 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
+# 1492 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
 	step_end
 
-# 1491 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1495 "data/maps/Old_Bos_Ranch/scripts.pory"
 OBR_M_Mike11:
-# 1492 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1492 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1493 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1493 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1494 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1495 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1495 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1495 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
 # 1496 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
+# 1496 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
+# 1497 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1497 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1498 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
+# 1499 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1499 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1499 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1500 "data/maps/Old_Bos_Ranch/scripts.pory"
 	face_up
 	step_end
 
-# 1499 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1503 "data/maps/Old_Bos_Ranch/scripts.pory"
 OBR_M_Mike12:
-# 1500 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1504 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_faster_up
-# 1501 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1505 "data/maps/Old_Bos_Ranch/scripts.pory"
 	face_left
 	step_end
 
-# 1504 "data/maps/Old_Bos_Ranch/scripts.pory"
-OBR_M_Mike13_ToLitten:
-# 1505 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
-# 1505 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
-	step_end
-
 # 1508 "data/maps/Old_Bos_Ranch/scripts.pory"
-OBR_M_Mike13_ToTurtwig:
+OBR_M_Mike13_ToLitten:
 # 1509 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_down
-# 1510 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
-# 1511 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1509 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_down
 	step_end
 
+# 1512 "data/maps/Old_Bos_Ranch/scripts.pory"
+OBR_M_Mike13_ToTurtwig:
+# 1513 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_down
 # 1514 "data/maps/Old_Bos_Ranch/scripts.pory"
-OBR_M_Mike13_ToOshawott:
+	walk_fast_left
 # 1515 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_down
-# 1516 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_right
-# 1517 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
 	step_end
 
+# 1518 "data/maps/Old_Bos_Ranch/scripts.pory"
+OBR_M_Mike13_ToOshawott:
+# 1519 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_down
 # 1520 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_right
+# 1521 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_down
+	step_end
+
+# 1524 "data/maps/Old_Bos_Ranch/scripts.pory"
 OBR_M_Mike15_LeaveScene_Turtwig:
-# 1521 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1525 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_down
-# 1521 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1525 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_down
-# 1522 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1526 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_right
-# 1522 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1526 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_right
-# 1522 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1526 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_right
-# 1522 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1526 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_right
-# 1523 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
-# 1523 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
-# 1524 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_right
-# 1524 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_right
-# 1524 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_right
-# 1524 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_right
-# 1524 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_right
-# 1524 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_right
-# 1524 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_right
-# 1524 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_right
-# 1524 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_right
-# 1524 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_right
-	step_end
-
 # 1527 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_down
+# 1527 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_down
+# 1528 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_right
+# 1528 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_right
+# 1528 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_right
+# 1528 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_right
+# 1528 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_right
+# 1528 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_right
+# 1528 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_right
+# 1528 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_right
+# 1528 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_right
+# 1528 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_right
+	step_end
+
+# 1531 "data/maps/Old_Bos_Ranch/scripts.pory"
 OBR_M_Mike15_LeaveScene_Litten:
-# 1528 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1532 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_down
-# 1528 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1532 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_down
-# 1529 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1533 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_right
-# 1529 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1533 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_right
-# 1529 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1533 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_right
-# 1530 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
-# 1530 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
-# 1531 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_right
-# 1531 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_right
-# 1531 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_right
-# 1531 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_right
-# 1531 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_right
-# 1531 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_right
-# 1531 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_right
-# 1531 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_right
-# 1531 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_right
-# 1531 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_right
-	step_end
-
 # 1534 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_down
+# 1534 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_down
+# 1535 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_right
+# 1535 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_right
+# 1535 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_right
+# 1535 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_right
+# 1535 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_right
+# 1535 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_right
+# 1535 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_right
+# 1535 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_right
+# 1535 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_right
+# 1535 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_right
+	step_end
+
+# 1538 "data/maps/Old_Bos_Ranch/scripts.pory"
 OBR_M_Mike15_LeaveScene_Oshawott:
-# 1535 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1539 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_down
-# 1535 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1539 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_down
-# 1536 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1540 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_right
-# 1536 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1540 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_right
-# 1536 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1540 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_right
-# 1536 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1540 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_right
-# 1536 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1540 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_right
-# 1537 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1541 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_down
-# 1537 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1541 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_down
-# 1538 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1542 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_right
-# 1538 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1542 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_right
-# 1538 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1542 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_right
-# 1538 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1542 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_right
-# 1538 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1542 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_right
-# 1538 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1542 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_right
-# 1538 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1542 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_right
-# 1538 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1542 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_right
-# 1538 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1542 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_right
-# 1538 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1542 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_right
 	step_end
 
-# 1543 "data/maps/Old_Bos_Ranch/scripts.pory"
-OBR_M_Player1:
-# 1544 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1544 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1545 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_up
-# 1545 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_up
-# 1545 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_up
-# 1546 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1546 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
 # 1547 "data/maps/Old_Bos_Ranch/scripts.pory"
-	face_up
-	step_end
-
+OBR_M_Player1:
+# 1548 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1548 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1549 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_up
+# 1549 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_up
+# 1549 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_up
 # 1550 "data/maps/Old_Bos_Ranch/scripts.pory"
-OBR_M_Player1_B:
+	walk_right
+# 1550 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
 # 1551 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_up
-# 1551 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_up
-# 1552 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1552 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1553 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_up
-# 1553 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_up
-# 1554 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1554 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1555 "data/maps/Old_Bos_Ranch/scripts.pory"
 	face_up
 	step_end
 
+# 1554 "data/maps/Old_Bos_Ranch/scripts.pory"
+OBR_M_Player1_B:
+# 1555 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_up
+# 1555 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_up
+# 1556 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1556 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1557 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_up
+# 1557 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_up
 # 1558 "data/maps/Old_Bos_Ranch/scripts.pory"
-OBR_M_Player2:
-# 1559 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1558 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_right
 # 1559 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1559 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
+	face_up
 	step_end
 
 # 1562 "data/maps/Old_Bos_Ranch/scripts.pory"
+OBR_M_Player2:
+# 1563 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1563 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1563 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+	step_end
+
+# 1566 "data/maps/Old_Bos_Ranch/scripts.pory"
 OBR_M_Player3:
-# 1563 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1567 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
-# 1563 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1567 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
-# 1563 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1567 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
-# 1563 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1567 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
-# 1563 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
-# 1564 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
-# 1564 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
-# 1564 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
-# 1565 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
-# 1565 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
-# 1565 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
-# 1565 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
-# 1566 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
-# 1566 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
 # 1567 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
 # 1568 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_down
 # 1568 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_down
-# 1569 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
-# 1569 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
-# 1569 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
-# 1569 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
-# 1569 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
-# 1569 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
-# 1569 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
+# 1568 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_down
 # 1569 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
 # 1569 "data/maps/Old_Bos_Ranch/scripts.pory"
@@ -3215,221 +3191,233 @@ OBR_M_Player3:
 # 1569 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
 # 1570 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_up
+	walk_fast_down
 # 1570 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_up
-# 1570 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_up
-	step_end
-
+	walk_fast_down
+# 1571 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
+# 1572 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_down
+# 1572 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_down
 # 1573 "data/maps/Old_Bos_Ranch/scripts.pory"
-OBR_M_Player4:
+	walk_fast_left
+# 1573 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
+# 1573 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
+# 1573 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
+# 1573 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
+# 1573 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
+# 1573 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
+# 1573 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
+# 1573 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
+# 1573 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
+# 1573 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
 # 1574 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_up
+	walk_fast_up
 # 1574 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_up
+	walk_fast_up
+# 1574 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_up
 	step_end
 
 # 1577 "data/maps/Old_Bos_Ranch/scripts.pory"
-OBR_M_Player5:
+OBR_M_Player4:
 # 1578 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_up
+# 1578 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_up
+	step_end
+
+# 1581 "data/maps/Old_Bos_Ranch/scripts.pory"
+OBR_M_Player5:
+# 1582 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_down
-# 1579 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1583 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_right
-# 1580 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1584 "data/maps/Old_Bos_Ranch/scripts.pory"
 	face_down
 	step_end
 
-# 1583 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1587 "data/maps/Old_Bos_Ranch/scripts.pory"
 OBR_M_Player6:
-# 1584 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1585 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1586 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1586 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1586 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1586 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1586 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1587 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1587 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1587 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1587 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1587 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1587 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1587 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1587 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1587 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1587 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1588 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
 # 1588 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_down
 # 1589 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_right
-	step_end
-
+# 1590 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
+# 1590 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
+# 1590 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
+# 1590 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
+# 1590 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
+# 1591 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1591 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1591 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1591 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1591 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1591 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1591 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1591 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1591 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1591 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
 # 1592 "data/maps/Old_Bos_Ranch/scripts.pory"
-OBR_M_Player7:
+	walk_down
+# 1592 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
 # 1593 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_right
-# 1594 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1594 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1595 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
+	step_end
+
 # 1596 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1596 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1597 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
+OBR_M_Player7:
 # 1597 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_right
 # 1598 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_down
-# 1599 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
+# 1598 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
 # 1599 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_right
 # 1600 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
+# 1600 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
+# 1601 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1601 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1602 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
+# 1603 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1603 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1604 "data/maps/Old_Bos_Ranch/scripts.pory"
 	face_up
 	step_end
 
-# 1605 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1609 "data/maps/Old_Bos_Ranch/scripts.pory"
 OBR_M_CamPan1:
-# 1606 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_slow_diag_southeast
-# 1606 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_slow_diag_southeast
-# 1606 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_slow_diag_southeast
-# 1606 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_slow_diag_southeast
-# 1606 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_slow_diag_southeast
-# 1607 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_slow_down
-# 1607 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_slow_down
-# 1607 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_slow_down
-	step_end
-
 # 1610 "data/maps/Old_Bos_Ranch/scripts.pory"
-OBR_M_CamPan2:
+	walk_slow_diag_southeast
+# 1610 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_slow_diag_southeast
+# 1610 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_slow_diag_southeast
+# 1610 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_slow_diag_southeast
+# 1610 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_slow_diag_southeast
 # 1611 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_left
+	walk_slow_down
 # 1611 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_left
+	walk_slow_down
 # 1611 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_left
-# 1611 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_left
-# 1611 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_left
+	walk_slow_down
 	step_end
 
 # 1614 "data/maps/Old_Bos_Ranch/scripts.pory"
-OBR_M_CamPan3:
+OBR_M_CamPan2:
 # 1615 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_slow_diag_southeast
+	walk_left
 # 1615 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_slow_diag_southeast
-# 1616 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_slow_down
-# 1616 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_slow_down
-# 1616 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_slow_down
-# 1616 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_slow_down
-# 1616 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_slow_down
-# 1616 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_slow_down
+	walk_left
+# 1615 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_left
+# 1615 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_left
+# 1615 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_left
 	step_end
 
+# 1618 "data/maps/Old_Bos_Ranch/scripts.pory"
+OBR_M_CamPan3:
 # 1619 "data/maps/Old_Bos_Ranch/scripts.pory"
-OBR_M_CamPan4:
+	walk_slow_diag_southeast
+# 1619 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_slow_diag_southeast
 # 1620 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_up
+	walk_slow_down
 # 1620 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_up
+	walk_slow_down
 # 1620 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_up
+	walk_slow_down
 # 1620 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_up
+	walk_slow_down
 # 1620 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_up
+	walk_slow_down
 # 1620 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_up
-# 1620 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_up
-# 1620 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_up
+	walk_slow_down
 	step_end
 
 # 1623 "data/maps/Old_Bos_Ranch/scripts.pory"
-OBR_M_CamPan5:
+OBR_M_CamPan4:
 # 1624 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
+	walk_fast_up
 # 1624 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
+	walk_fast_up
 # 1624 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
+	walk_fast_up
 # 1624 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
+	walk_fast_up
 # 1624 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
+	walk_fast_up
 # 1624 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
+	walk_fast_up
 # 1624 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
+	walk_fast_up
 # 1624 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
-# 1624 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
+	walk_fast_up
 	step_end
 
 # 1627 "data/maps/Old_Bos_Ranch/scripts.pory"
+OBR_M_CamPan5:
+# 1628 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_down
+# 1628 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_down
+# 1628 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_down
+# 1628 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_down
+# 1628 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_down
+# 1628 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_down
+# 1628 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_down
+# 1628 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_down
+# 1628 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_down
+	step_end
+
+# 1631 "data/maps/Old_Bos_Ranch/scripts.pory"
 OBR_M_CamPan6:
-# 1628 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
-# 1628 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
-# 1628 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
-# 1629 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
-# 1629 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
-# 1630 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
-# 1631 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
-# 1631 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
-# 1632 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
-# 1632 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
 # 1632 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
 # 1632 "data/maps/Old_Bos_Ranch/scripts.pory"
@@ -3437,17 +3425,21 @@ OBR_M_CamPan6:
 # 1632 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
 # 1633 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_up
+	walk_fast_down
 # 1633 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_up
-# 1634 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
+	walk_fast_down
 # 1634 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
 # 1635 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_up
+	walk_fast_down
 # 1635 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_up
+	walk_fast_down
+# 1636 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
+# 1636 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
+# 1636 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
 # 1636 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
 # 1636 "data/maps/Old_Bos_Ranch/scripts.pory"
@@ -3456,140 +3448,136 @@ OBR_M_CamPan6:
 	walk_fast_up
 # 1637 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_up
-	step_end
-
+# 1638 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
+# 1638 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
+# 1639 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_up
+# 1639 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_up
 # 1640 "data/maps/Old_Bos_Ranch/scripts.pory"
-OBR_M_CamPan7:
+	walk_fast_left
+# 1640 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
 # 1641 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_diag_northeast
+	walk_fast_up
 # 1641 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_diag_northeast
-# 1641 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_diag_northeast
-# 1641 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_diag_northeast
-# 1641 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_diag_northeast
-# 1641 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_diag_northeast
-# 1641 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_diag_northeast
-# 1642 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1642 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1642 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1642 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
+	walk_fast_up
 	step_end
 
+# 1644 "data/maps/Old_Bos_Ranch/scripts.pory"
+OBR_M_CamPan7:
 # 1645 "data/maps/Old_Bos_Ranch/scripts.pory"
-OBR_M_CamPan8:
+	walk_diag_northeast
+# 1645 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_diag_northeast
+# 1645 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_diag_northeast
+# 1645 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_diag_northeast
+# 1645 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_diag_northeast
+# 1645 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_diag_northeast
+# 1645 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_diag_northeast
 # 1646 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_diag_southeast
+	walk_right
 # 1646 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_diag_southeast
+	walk_right
 # 1646 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_diag_southeast
+	walk_right
+# 1646 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
 	step_end
 
 # 1649 "data/maps/Old_Bos_Ranch/scripts.pory"
-OBR_M_CamPan8_R:
+OBR_M_CamPan8:
 # 1650 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_diag_northwest
+	walk_diag_southeast
 # 1650 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_diag_northwest
+	walk_diag_southeast
 # 1650 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_diag_northwest
+	walk_diag_southeast
 	step_end
 
 # 1653 "data/maps/Old_Bos_Ranch/scripts.pory"
-OBR_M_CamPan9:
+OBR_M_CamPan8_R:
 # 1654 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_diag_southwest
+	walk_diag_northwest
 # 1654 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_diag_southwest
+	walk_diag_northwest
 # 1654 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_diag_southwest
+	walk_diag_northwest
 	step_end
 
 # 1657 "data/maps/Old_Bos_Ranch/scripts.pory"
+OBR_M_CamPan9:
+# 1658 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_diag_southwest
+# 1658 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_diag_southwest
+# 1658 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_diag_southwest
+	step_end
+
+# 1661 "data/maps/Old_Bos_Ranch/scripts.pory"
 OBR_M_CamPan9_R:
-# 1658 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1662 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_diag_northeast
-# 1658 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1662 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_diag_northeast
-# 1658 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1662 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_diag_northeast
 	step_end
 
-# 1663 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1667 "data/maps/Old_Bos_Ranch/scripts.pory"
 OBR_M_Litten1:
-# 1664 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1668 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_up
-# 1664 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1668 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_up
-# 1664 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1668 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_up
-# 1664 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1668 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_up
-# 1664 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1668 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_up
-# 1664 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1668 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_up
-# 1664 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1668 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_up
-# 1664 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1668 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_up
-# 1665 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1669 "data/maps/Old_Bos_Ranch/scripts.pory"
 	face_left
 	step_end
 
-# 1668 "data/maps/Old_Bos_Ranch/scripts.pory"
-OBR_M_Litten2:
-# 1669 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
-# 1669 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
-# 1669 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
-# 1669 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
-# 1669 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
-# 1669 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
-# 1669 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
-# 1669 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
-# 1669 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
-	step_end
-
 # 1672 "data/maps/Old_Bos_Ranch/scripts.pory"
+OBR_M_Litten2:
+# 1673 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_down
+# 1673 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_down
+# 1673 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_down
+# 1673 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_down
+# 1673 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_down
+# 1673 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_down
+# 1673 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_down
+# 1673 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_down
+# 1673 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_down
+	step_end
+
+# 1676 "data/maps/Old_Bos_Ranch/scripts.pory"
 OBR_M_Litten3:
-# 1673 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
-# 1673 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
-# 1673 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
-# 1674 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
-# 1674 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
-# 1675 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
-# 1676 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
-# 1676 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
-# 1677 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
-# 1677 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
 # 1677 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
 # 1677 "data/maps/Old_Bos_Ranch/scripts.pory"
@@ -3597,17 +3585,21 @@ OBR_M_Litten3:
 # 1677 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
 # 1678 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_up
+	walk_fast_down
 # 1678 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_up
-# 1679 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
+	walk_fast_down
 # 1679 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
 # 1680 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_up
+	walk_fast_down
 # 1680 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_up
+	walk_fast_down
+# 1681 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
+# 1681 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
+# 1681 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
 # 1681 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
 # 1681 "data/maps/Old_Bos_Ranch/scripts.pory"
@@ -3620,88 +3612,92 @@ OBR_M_Litten3:
 	walk_fast_left
 # 1683 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
-# 1683 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1684 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_up
+# 1684 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_up
+# 1685 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
-# 1683 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1685 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
-# 1683 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1686 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_up
+# 1686 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_up
+# 1687 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
-# 1683 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1687 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
-# 1683 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1687 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
-# 1683 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1687 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
-# 1683 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1687 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
-# 1683 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1687 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
+# 1687 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
+# 1687 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
+# 1687 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
+# 1687 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
 	step_end
 
-# 1686 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1690 "data/maps/Old_Bos_Ranch/scripts.pory"
 OBR_M_Litten4:
-# 1687 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1687 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1687 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1687 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1687 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1688 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1688 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1688 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1688 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1688 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1688 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1688 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1688 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1688 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1688 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1689 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1689 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1690 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1690 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
 # 1691 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_down
-	step_end
-
+# 1691 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
+# 1691 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
+# 1691 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
+# 1691 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
+# 1692 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1692 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1692 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1692 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1692 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1692 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1692 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1692 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1692 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1692 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1693 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
+# 1693 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
 # 1694 "data/maps/Old_Bos_Ranch/scripts.pory"
-OBR_M_Litten5:
+	walk_right
+# 1694 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
 # 1695 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_down
-# 1696 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1697 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1697 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
+	step_end
+
 # 1698 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1698 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1699 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
+OBR_M_Litten5:
 # 1699 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_down
 # 1700 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_right
+# 1701 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
 # 1701 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_down
 # 1702 "data/maps/Old_Bos_Ranch/scripts.pory"
@@ -3709,145 +3705,143 @@ OBR_M_Litten5:
 # 1702 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_right
 # 1703 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
+# 1703 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
+# 1704 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1705 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
+# 1706 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1706 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1707 "data/maps/Old_Bos_Ranch/scripts.pory"
 	face_up
 	step_end
 
-# 1706 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1710 "data/maps/Old_Bos_Ranch/scripts.pory"
 OBR_M_Litten6:
-# 1707 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_faster_up
-# 1707 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_faster_up
-# 1708 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_faster_right
-# 1709 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_faster_up
-# 1709 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_faster_up
-# 1709 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_faster_up
-# 1710 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_faster_right
-# 1710 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_faster_right
 # 1711 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_faster_up
 # 1711 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_faster_up
 # 1712 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_faster_right
-# 1712 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1713 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_faster_up
+# 1713 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_faster_up
+# 1713 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_faster_up
+# 1714 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_faster_right
-# 1712 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1714 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_faster_right
-# 1712 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1715 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_faster_up
+# 1715 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_faster_up
+# 1716 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_faster_right
-# 1712 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1716 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_faster_right
+# 1716 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_faster_right
+# 1716 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_faster_right
+# 1716 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_faster_right
 	step_end
 
-# 1715 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1719 "data/maps/Old_Bos_Ranch/scripts.pory"
 OBR_M_Turtwig1:
-# 1716 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1720 "data/maps/Old_Bos_Ranch/scripts.pory"
 	slide_left
-# 1717 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1721 "data/maps/Old_Bos_Ranch/scripts.pory"
 	face_left
 	step_end
 
-# 1720 "data/maps/Old_Bos_Ranch/scripts.pory"
-OBR_M_Turtwig2:
-# 1721 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
-# 1721 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
-# 1722 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
-# 1722 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
-# 1723 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
 # 1724 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
+OBR_M_Turtwig2:
+# 1725 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
 # 1725 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
 # 1726 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_down
+# 1726 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_down
 # 1727 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
-# 1727 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1728 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_down
+# 1729 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
-# 1727 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1730 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_down
+# 1731 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
-# 1727 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1731 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
-# 1727 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1731 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
-# 1727 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1731 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
+# 1731 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
+# 1731 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
 	step_end
 
-# 1730 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1734 "data/maps/Old_Bos_Ranch/scripts.pory"
 OBR_M_Turtwig3:
-# 1731 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1732 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1732 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1732 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1732 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1732 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1733 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1733 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1733 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1733 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1733 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1733 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1733 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1733 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1733 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1733 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1734 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1734 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1735 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
 # 1735 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_right
 # 1736 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
+# 1736 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
+# 1736 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
+# 1736 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
+# 1736 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
+# 1737 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1737 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1737 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1737 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1737 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1737 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1737 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1737 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1737 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1737 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1738 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
+# 1738 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
+# 1739 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1739 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1740 "data/maps/Old_Bos_Ranch/scripts.pory"
 	face_down
 	step_end
 
-# 1739 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1743 "data/maps/Old_Bos_Ranch/scripts.pory"
 OBR_M_Turtwig4:
-# 1740 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1740 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1741 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1742 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1742 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1743 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1743 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
 # 1744 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_down
 # 1744 "data/maps/Old_Bos_Ranch/scripts.pory"
@@ -3856,227 +3850,241 @@ OBR_M_Turtwig4:
 	walk_right
 # 1746 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_down
+# 1746 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
+# 1747 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
 # 1747 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_right
 # 1748 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
+# 1748 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
+# 1749 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1750 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
+# 1751 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1752 "data/maps/Old_Bos_Ranch/scripts.pory"
 	face_up
 	step_end
 
-# 1751 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1755 "data/maps/Old_Bos_Ranch/scripts.pory"
 OBR_M_Turtwig5:
-# 1752 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_up
-# 1752 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_up
-# 1753 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_faster_right
-# 1753 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_faster_right
-# 1754 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_faster_up
-# 1754 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_faster_up
-# 1754 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_faster_up
-# 1755 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_faster_right
-# 1755 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_faster_right
 # 1756 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_faster_up
+	walk_fast_up
 # 1756 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_up
+# 1757 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_faster_right
+# 1757 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_faster_right
+# 1758 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_faster_up
-# 1757 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1758 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_faster_up
+# 1758 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_faster_up
+# 1759 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_faster_right
-# 1757 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1759 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_faster_right
-# 1757 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1760 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_faster_up
+# 1760 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_faster_up
+# 1761 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_faster_right
-# 1757 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1761 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_faster_right
-# 1757 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1761 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_faster_right
+# 1761 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_faster_right
+# 1761 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_faster_right
 	step_end
 
-# 1760 "data/maps/Old_Bos_Ranch/scripts.pory"
-OBR_M_Oshawott1:
-# 1761 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
-# 1761 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
-# 1761 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
-# 1761 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
-# 1762 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
-# 1762 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
-# 1763 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_left
 # 1764 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_fast_down
+OBR_M_Oshawott1:
+# 1765 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
+# 1765 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
+# 1765 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
 # 1765 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
 # 1766 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_down
+# 1766 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_down
 # 1767 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
-# 1767 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1768 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_down
+# 1769 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
-# 1767 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1770 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_down
+# 1771 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
-# 1767 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1771 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
-# 1767 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1771 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
-# 1767 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1771 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
+# 1771 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_fast_left
+# 1771 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_fast_left
 	step_end
 
-# 1770 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1774 "data/maps/Old_Bos_Ranch/scripts.pory"
 OBR_M_Oshawott2:
-# 1771 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1775 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_down
-# 1771 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1775 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_down
-# 1771 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1771 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1772 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1772 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1772 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1772 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1772 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1772 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1772 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1772 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1772 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1772 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1773 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1773 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1774 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1774 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
 # 1775 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_down
 # 1775 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_down
 # 1776 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1776 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1776 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1776 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1776 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1776 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1776 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1776 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1776 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1776 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1777 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
+# 1777 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
+# 1778 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1778 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1779 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
+# 1779 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
+# 1780 "data/maps/Old_Bos_Ranch/scripts.pory"
 	face_right
 	step_end
 
-# 1779 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1783 "data/maps/Old_Bos_Ranch/scripts.pory"
 OBR_M_Oshawott3:
-# 1780 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1781 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1781 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1782 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1782 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
-# 1783 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
-# 1783 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_down
 # 1784 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_right
+# 1785 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
 # 1785 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_down
 # 1786 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_right
 # 1786 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_right
-# 1786 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_right
 # 1787 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
+# 1787 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
+# 1788 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1789 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_down
+# 1790 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1790 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1790 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_right
+# 1791 "data/maps/Old_Bos_Ranch/scripts.pory"
 	face_up
 	step_end
 
-# 1790 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1794 "data/maps/Old_Bos_Ranch/scripts.pory"
 OBR_M_Oshawott4:
-# 1791 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1795 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_faster_up
-# 1791 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1795 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_faster_up
-# 1791 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1795 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_faster_up
-# 1791 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1795 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_faster_up
-# 1791 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1795 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_faster_up
-# 1792 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1796 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_faster_right
-# 1792 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1796 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_faster_right
-# 1793 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1797 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_faster_up
-# 1793 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1797 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_faster_up
-# 1794 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1798 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_faster_right
-# 1794 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1798 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_faster_right
-# 1794 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1798 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_faster_right
-# 1794 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1798 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_faster_right
-# 1794 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1798 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_faster_right
 	step_end
 
-# 1799 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1803 "data/maps/Old_Bos_Ranch/scripts.pory"
 OBR_M_Bo1:
-# 1800 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1804 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_left
-# 1801 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1805 "data/maps/Old_Bos_Ranch/scripts.pory"
 	face_down
 	step_end
 
-# 1804 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1808 "data/maps/Old_Bos_Ranch/scripts.pory"
 OBR_M_Bo2:
-# 1805 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1809 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_left
-# 1805 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1809 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_left
-# 1805 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_left
-# 1806 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_up
-# 1806 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_up
-# 1807 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_left
-# 1807 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_left
-# 1808 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_up
-# 1808 "data/maps/Old_Bos_Ranch/scripts.pory"
-	walk_up
 # 1809 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_left
 # 1810 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_up
 # 1810 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_up
-# 1810 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1811 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_left
+# 1811 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_left
+# 1812 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_up
+# 1812 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_up
+# 1813 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_left
+# 1814 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_up
+# 1814 "data/maps/Old_Bos_Ranch/scripts.pory"
+	walk_up
+# 1814 "data/maps/Old_Bos_Ranch/scripts.pory"
 	walk_up
 	step_end
 
@@ -4105,47 +4113,47 @@ OBR_ChooseTurtwig_Text_1:
 	.string "{PLAYER} received {COLOR GREEN}{SHADOW LIGHT_GREEN}Turtwig{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}!$"
 
 OBR_ChooseLitten_Text_0:
-# 1115 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1117 "data/maps/Old_Bos_Ranch/scripts.pory"
 	.string "Choose {COLOR RED}{SHADOW LIGHT_RED}Litten{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}?$"
 
 OBR_ChooseLitten_Text_1:
-# 1140 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1142 "data/maps/Old_Bos_Ranch/scripts.pory"
 	.string "{PLAYER} received {COLOR RED}{SHADOW LIGHT_RED}Litten{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}!$"
 
 OBR_ChooseOshawott_Text_0:
-# 1246 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1248 "data/maps/Old_Bos_Ranch/scripts.pory"
 	.string "Choose {COLOR BLUE}{SHADOW LIGHT_BLUE}Oshawott{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}?$"
 
 OBR_ChooseOshawott_Text_1:
-# 1271 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1273 "data/maps/Old_Bos_Ranch/scripts.pory"
 	.string "{PLAYER} received {COLOR BLUE}{SHADOW LIGHT_BLUE}Oshawott{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}!$"
 
 OBR_T_Mike1::
-# 1821 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1825 "data/maps/Old_Bos_Ranch/scripts.pory"
 	.string "Haha! Too slow again!\n"
 	.string "Maybe next time, huh?\p"
 	.string "Just messin' with ya, {PLAYER}.\p"
 	.string "Let's get this tape back to Bo!$"
 
 OBR_T_Mike2::
-# 1828 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1832 "data/maps/Old_Bos_Ranch/scripts.pory"
 	.string "... Huh.\n"
 	.string "{PAUSE 20}I guess Bo isn't home right now.\p"
 	.string "Let's just wait here for a little while,\n"
 	.string "{PLAYER}, I'm sure he'll be back soon.$"
 
 OBR_T_Mike3::
-# 1835 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1839 "data/maps/Old_Bos_Ranch/scripts.pory"
 	.string "Look how adorable that Litten is,\n"
 	.string "{PLAYER}!\p"
 	.string "We gotta go over and say hello!$"
 
 OBR_T_Mike4::
-# 1841 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1845 "data/maps/Old_Bos_Ranch/scripts.pory"
 	.string "Wha- wha- WHAT??!!$"
 
 OBR_T_Mike5::
-# 1845 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1849 "data/maps/Old_Bos_Ranch/scripts.pory"
 	.string "{PLAYER}, did you just see that?!\p"
 	.string "I think those Pokemon just ran into the\n"
 	.string "woods!\p"
@@ -4154,11 +4162,11 @@ OBR_T_Mike5::
 	.string "back right away!$"
 
 OBR_T_Mike6::
-# 1854 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1858 "data/maps/Old_Bos_Ranch/scripts.pory"
 	.string "... {PAUSE 30}dang.$"
 
 OBR_T_Mike7::
-# 1858 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1862 "data/maps/Old_Bos_Ranch/scripts.pory"
 	.string "I just realized I only have one repel...\p"
 	.string "We can't risk going in there without a\n"
 	.string "repel or a Pokemon of our own, {PLAYER},\l"
@@ -4174,16 +4182,16 @@ OBR_T_Mike7::
 	.string "Pokemon!$"
 
 OBR_T_Mike8::
-# 1874 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1878 "data/maps/Old_Bos_Ranch/scripts.pory"
 	.string "Oh man, you're brave, {PLAYER}!$"
 
 OBR_T_Mike9::
-# 1878 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1882 "data/maps/Old_Bos_Ranch/scripts.pory"
 	.string "Alright, {PLAYER}, be quick!\n"
 	.string "That repel won't last forever!$"
 
 OBR_T_Mike10::
-# 1883 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1887 "data/maps/Old_Bos_Ranch/scripts.pory"
 	.string "Ah jeez!\n"
 	.string "Oh man I'm so sorry, {PLAYER}!\p"
 	.string "Dang I can't believe my hand slipped\n"
@@ -4192,23 +4200,23 @@ OBR_T_Mike10::
 	.string "that repel doesn't last forever!$"
 
 OBR_T_Mike11::
-# 1892 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1896 "data/maps/Old_Bos_Ranch/scripts.pory"
 	.string "Uh... {PAUSE 30}{PLAYER}, where are you going?!\p"
 	.string "Go find Bo's Pokemon before the repel\n"
 	.string "runs out!$"
 
 OBR_T_Mike12::
-# 1898 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1902 "data/maps/Old_Bos_Ranch/scripts.pory"
 	.string "Looks like we're still missin' two\n"
 	.string "Pokemon over here, {PLAYER}!$"
 
 OBR_T_Mike13::
-# 1903 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1907 "data/maps/Old_Bos_Ranch/scripts.pory"
 	.string "Only one more, {PLAYER}!\n"
 	.string "Hurry, before that repel wears off!$"
 
 OBR_T_Mike14::
-# 1908 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1912 "data/maps/Old_Bos_Ranch/scripts.pory"
 	.string "Awesome job, {PLAYER}!\p"
 	.string "You're amazing, I can't believe you're\n"
 	.string "brave enough to go and do that all by\l"
@@ -4217,12 +4225,12 @@ OBR_T_Mike14::
 	.string "back where they belong!$"
 
 OBR_T_Mike15::
-# 1917 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1921 "data/maps/Old_Bos_Ranch/scripts.pory"
 	.string "Hey, {PLAYER}, I think I see Ol' Bo up\n"
 	.string "ahead!$"
 
 OBR_T_Mike16::
-# 1922 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1926 "data/maps/Old_Bos_Ranch/scripts.pory"
 	.string "It was all {PLAYER}, Bo!\p"
 	.string "It should be made into a comic book, it\n"
 	.string "was incredible!\p"
@@ -4231,7 +4239,7 @@ OBR_T_Mike16::
 	.string "into the woods and rescued them!$"
 
 OBR_T_Mike17::
-# 1931 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1935 "data/maps/Old_Bos_Ranch/scripts.pory"
 	.string "Oh man, yes of course, absolutely!\p"
 	.string "I was just talkin' with {PLAYER} about\n"
 	.string "this after the last tape we watched!\p"
@@ -4243,25 +4251,25 @@ OBR_T_Mike17::
 	.string "the moment.$"
 
 OBR_T_Mike18::
-# 1943 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1947 "data/maps/Old_Bos_Ranch/scripts.pory"
 	.string "YES!\n"
 	.string "Of course, yes!\p"
 	.string "We're gonna take such good care of\n"
 	.string "them Bo, we promise!$"
 
 OBR_T_Mike19::
-# 1950 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1954 "data/maps/Old_Bos_Ranch/scripts.pory"
 	.string "We super promise don't we, {PLAYER}?!$"
 
 OBR_T_Mike20::
-# 1954 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1958 "data/maps/Old_Bos_Ranch/scripts.pory"
 	.string "Oh man, Bo thank you so much!\p"
 	.string "Once me and {PLAYER} are super famous\n"
 	.string "we're gonna build you a huge addition to\l"
 	.string "the ranch!$"
 
 OBR_T_Mike21::
-# 1961 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1965 "data/maps/Old_Bos_Ranch/scripts.pory"
 	.string "{PLAYER}... {PAUSE 30}you should pick first.\p"
 	.string "The way you rushed into action was so\n"
 	.string "cool... {PAUSE 30}I wish I could be more like that.\p"
@@ -4269,7 +4277,7 @@ OBR_T_Mike21::
 	.string "{PLAYER}, go ahead!$"
 
 OBR_T_Mike23::
-# 1969 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1973 "data/maps/Old_Bos_Ranch/scripts.pory"
 	.string "{PLAYER}, this is unbelievable!\n"
 	.string "I never thought we could actually have\l"
 	.string "Pokemon of our own!\l"
@@ -4285,12 +4293,12 @@ OBR_T_Mike23::
 	.string "I'll see ya later, {PLAYER}!$"
 
 OBR_T_Mike22::
-# 1985 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1989 "data/maps/Old_Bos_Ranch/scripts.pory"
 	.string "Alright, OK!\n"
 	.string "I choose this one!!$"
 
 OBR_T_Bo1::
-# 1990 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 1994 "data/maps/Old_Bos_Ranch/scripts.pory"
 	.string "Mike, {PLAYER}!\p"
 	.string "Boy am I glad to see youse guys were\n"
 	.string "'round when them buggers made their\l"
@@ -4301,7 +4309,7 @@ OBR_T_Bo1::
 	.string "Pokemon to defend yerselves!$"
 
 OBR_T_Bo2::
-# 2001 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 2005 "data/maps/Old_Bos_Ranch/scripts.pory"
 	.string "HAHA! Impressive, {PLAYER}!\n"
 	.string "Yer sure a brave young gun aren't ya?\p"
 	.string "Say... {PAUSE 30}ya'll are always borrowin' from my\n"
@@ -4310,7 +4318,7 @@ OBR_T_Bo2::
 	.string "real battles of yer own someday?$"
 
 OBR_T_Bo3::
-# 2011 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 2015 "data/maps/Old_Bos_Ranch/scripts.pory"
 	.string "Hmm... battle for a title, but no Pokemon\n"
 	.string "huh?\p"
 	.string "Well... {PAUSE 30}yous' did save me a lotta hassle\n"
@@ -4323,7 +4331,7 @@ OBR_T_Bo3::
 	.string "of these little fellers as yer own?$"
 
 OBR_T_Bo4::
-# 2024 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 2028 "data/maps/Old_Bos_Ranch/scripts.pory"
 	.string "HAH! That's nice lad, but Old Bo can\n"
 	.string "barely keep track of the Pokemon he's\l"
 	.string "got!\p"
@@ -4334,18 +4342,18 @@ OBR_T_Bo4::
 	.string "Who's gonna pick first?!$"
 
 OBR_T_Bo5::
-# 2035 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 2039 "data/maps/Old_Bos_Ranch/scripts.pory"
 	.string "Well, you heard 'em, {PLAYER}.\n"
 	.string "Go on n' choose yer Pokemon!\p"
 	.string "Here's a PokeBall to hold 'em in.$"
 
 OBR_T_Bo6::
-# 2041 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 2045 "data/maps/Old_Bos_Ranch/scripts.pory"
 	.string "Where ya goin', {PLAYER}?\n"
 	.string "Come on back n' pick a Pokemon!$"
 
 OBR_T_Bo7::
-# 2046 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 2050 "data/maps/Old_Bos_Ranch/scripts.pory"
 	.string "Don't yous worry about that lil' feller.\n"
 	.string "I'll be sure to find a good home for 'em.\p"
 	.string "Anways, y'all take care of those\n"
@@ -4356,21 +4364,21 @@ OBR_T_Bo7::
 	.string "See y'all young guns later!$"
 
 OBR_T_System1::
-# 2057 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 2061 "data/maps/Old_Bos_Ranch/scripts.pory"
 	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}Mike {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}sprayed the repel on {PLAYER}.$"
 
 OBR_T_System2::
-# 2061 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 2065 "data/maps/Old_Bos_Ranch/scripts.pory"
 	.string "{PLAYER} recieved one PokeBall!$"
 
 Give_Turtwig_Nickname::
-# 2065 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 2069 "data/maps/Old_Bos_Ranch/scripts.pory"
 	.string "Give a nickname to {COLOR GREEN}{SHADOW LIGHT_GREEN}Turtwig{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}?$"
 
 Give_Litten_Nickname::
-# 2069 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 2073 "data/maps/Old_Bos_Ranch/scripts.pory"
 	.string "Give a nickname to {COLOR RED}{SHADOW LIGHT_RED}Litten{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}?$"
 
 Give_Oshawott_Nickname::
-# 2073 "data/maps/Old_Bos_Ranch/scripts.pory"
+# 2077 "data/maps/Old_Bos_Ranch/scripts.pory"
 	.string "Give a nickname to {COLOR BLUE}{SHADOW LIGHT_BLUE}Oshawott{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}?$"

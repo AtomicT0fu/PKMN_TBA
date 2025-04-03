@@ -235,81 +235,91 @@ ReDrawRoom::
 
 Set_Start_Flags::
 # 126 "data/maps/Black_Screen/scripts.pory"
-	setflag FLAG_OBR_HIDE_RIVAL_MIKE
+	setflag FLAG_PAUSE_FOLLOWERS
 # 127 "data/maps/Black_Screen/scripts.pory"
-	setflag FLAG_HIDE_RIVAL_MIKE_1
+	setflag FLAG_OBR_HIDE_RIVAL_MIKE
 # 128 "data/maps/Black_Screen/scripts.pory"
-	setflag FLAG_HIDE_RIVAL_MIKE_2
+	setflag FLAG_HIDE_RIVAL_MIKE_1
 # 129 "data/maps/Black_Screen/scripts.pory"
-	setflag FLAG_OBR_HIDE_RIVAL_MIKE_2
+	setflag FLAG_HIDE_RIVAL_MIKE_2
 # 130 "data/maps/Black_Screen/scripts.pory"
-	setflag FLAG_OBR_HIDE_RIVAL_MIKE_3
+	setflag FLAG_OBR_HIDE_RIVAL_MIKE_2
 # 131 "data/maps/Black_Screen/scripts.pory"
-	setflag FLAG_OBR_SHOW_TURTWIG
+	setflag FLAG_OBR_HIDE_RIVAL_MIKE_3
 # 132 "data/maps/Black_Screen/scripts.pory"
-	setflag FLAG_OBR_SHOW_OSHAWOTT
+	setflag FLAG_OBR_SHOW_TURTWIG
 # 133 "data/maps/Black_Screen/scripts.pory"
-	setflag FLAG_OBR_SHOW_LITTEN
+	setflag FLAG_OBR_SHOW_OSHAWOTT
 # 134 "data/maps/Black_Screen/scripts.pory"
-	setflag FLAG_OBR_SHOW_OLD_BO
+	setflag FLAG_OBR_SHOW_LITTEN
 # 135 "data/maps/Black_Screen/scripts.pory"
-	setflag FLAG_HF_HIDE_MAMAW
+	setflag FLAG_OBR_SHOW_OLD_BO
 # 136 "data/maps/Black_Screen/scripts.pory"
+	setflag FLAG_HF_HIDE_MAMAW
+# 137 "data/maps/Black_Screen/scripts.pory"
 	setflag FLAG_HF_HIDE_RIVAL_MIKE
 # 138 "data/maps/Black_Screen/scripts.pory"
+	setflag FLAG_RHB1F_HIDE_RIVAL
+# 139 "data/maps/Black_Screen/scripts.pory"
+	setflag FLAG_ITEM_WHH_MIRACLE_SEED
+# 140 "data/maps/Black_Screen/scripts.pory"
+	setflag FLAG_ITEM_WHH_CHARCOAL
+# 141 "data/maps/Black_Screen/scripts.pory"
+	setflag FLAG_ITEM_WHH_MYSTIC_WATER
+# 143 "data/maps/Black_Screen/scripts.pory"
 	setflag FLAG_TEST_SHOW_BALL
 	return
 
 
-# 147 "data/maps/Black_Screen/scripts.pory"
+# 152 "data/maps/Black_Screen/scripts.pory"
 PHB1F_Lillipup_Walk1:
-# 148 "data/maps/Black_Screen/scripts.pory"
+# 153 "data/maps/Black_Screen/scripts.pory"
 	walk_fast_down
-# 148 "data/maps/Black_Screen/scripts.pory"
+# 153 "data/maps/Black_Screen/scripts.pory"
 	walk_fast_down
-# 148 "data/maps/Black_Screen/scripts.pory"
+# 153 "data/maps/Black_Screen/scripts.pory"
 	walk_fast_down
-# 149 "data/maps/Black_Screen/scripts.pory"
+# 154 "data/maps/Black_Screen/scripts.pory"
 	walk_fast_right
-# 149 "data/maps/Black_Screen/scripts.pory"
+# 154 "data/maps/Black_Screen/scripts.pory"
 	walk_fast_right
 	step_end
 
-# 152 "data/maps/Black_Screen/scripts.pory"
+# 157 "data/maps/Black_Screen/scripts.pory"
 JumpInPlace_Down:
-# 153 "data/maps/Black_Screen/scripts.pory"
+# 158 "data/maps/Black_Screen/scripts.pory"
 	jump_in_place_down
 	step_end
 
-# 156 "data/maps/Black_Screen/scripts.pory"
+# 161 "data/maps/Black_Screen/scripts.pory"
 JumpInPlace_Right:
-# 157 "data/maps/Black_Screen/scripts.pory"
+# 162 "data/maps/Black_Screen/scripts.pory"
 	jump_in_place_right
 	step_end
 
-# 160 "data/maps/Black_Screen/scripts.pory"
+# 165 "data/maps/Black_Screen/scripts.pory"
 JumpInPlace_Up:
-# 161 "data/maps/Black_Screen/scripts.pory"
+# 166 "data/maps/Black_Screen/scripts.pory"
 	jump_in_place_up
 	step_end
 
-# 164 "data/maps/Black_Screen/scripts.pory"
+# 169 "data/maps/Black_Screen/scripts.pory"
 BS_Lilli_Ex1:
-# 165 "data/maps/Black_Screen/scripts.pory"
+# 170 "data/maps/Black_Screen/scripts.pory"
 	emote_exclamation_mark
 	step_end
 
-# 168 "data/maps/Black_Screen/scripts.pory"
+# 173 "data/maps/Black_Screen/scripts.pory"
 BS_Lilli_Move1:
-# 169 "data/maps/Black_Screen/scripts.pory"
+# 174 "data/maps/Black_Screen/scripts.pory"
 	walk_fast_left
-# 169 "data/maps/Black_Screen/scripts.pory"
+# 174 "data/maps/Black_Screen/scripts.pory"
 	walk_fast_left
-# 170 "data/maps/Black_Screen/scripts.pory"
+# 175 "data/maps/Black_Screen/scripts.pory"
 	walk_fast_up
-# 170 "data/maps/Black_Screen/scripts.pory"
+# 175 "data/maps/Black_Screen/scripts.pory"
 	walk_fast_up
-# 170 "data/maps/Black_Screen/scripts.pory"
+# 175 "data/maps/Black_Screen/scripts.pory"
 	walk_fast_up
 	step_end
 
@@ -318,9 +328,9 @@ BS_Leave_Bed_Text_0:
 	.string "{COLOR RED}{SHADOW LIGHT_RED}{FONT_SHORT}Mom$"
 
 BS_T_Mom1::
-# 175 "data/maps/Black_Screen/scripts.pory"
+# 180 "data/maps/Black_Screen/scripts.pory"
 	.string "{FONT_SMALL_NARROWER}Lilli!$"
 
 BS_T_Mom2::
-# 179 "data/maps/Black_Screen/scripts.pory"
+# 184 "data/maps/Black_Screen/scripts.pory"
 	.string "{FONT_SMALL_NARROWER}Where'd you go, sweetie??$"

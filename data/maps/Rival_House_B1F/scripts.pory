@@ -1,0 +1,20 @@
+mapscripts Rival_House_B1F_MapScripts{}
+
+script RHB1F_Mike_Interact{
+    faceplayer
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+    msgbox(RHB1F_T_Mike1)
+    waitmessage
+    closemessage
+    turnobject(1, DIR_SOUTH)
+    release
+    end
+}
+
+
+text RHB1F_T_Mike1{
+    "Just readin' up on some new battle\n"
+    "techniques.\p"
+    "You better watch out next time,\n"
+    "{PLAYER}!"
+}

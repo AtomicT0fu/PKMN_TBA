@@ -85,3 +85,27 @@ WHH_Oshawott_Interact::
 	release
 	end
 
+
+WHH_Find_MiracleSeed::
+# 52 "data/maps/WindhillHollow/scripts.pory"
+	finditem ITEM_MIRACLE_SEED, 1
+# 53 "data/maps/WindhillHollow/scripts.pory"
+	release
+	end
+
+
+WHH_Find_Charcoal::
+# 58 "data/maps/WindhillHollow/scripts.pory"
+	finditem ITEM_CHARCOAL, 1
+# 59 "data/maps/WindhillHollow/scripts.pory"
+	release
+	end
+
+
+WHH_Find_MysticWater::
+# 64 "data/maps/WindhillHollow/scripts.pory"
+	finditem ITEM_MYSTIC_WATER, 1
+# 65 "data/maps/WindhillHollow/scripts.pory"
+	release
+	end
+

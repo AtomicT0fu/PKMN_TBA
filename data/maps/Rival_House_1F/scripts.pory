@@ -21,7 +21,7 @@ script RH1F_Papaw_Interact{
 }
 
 text RH1F_T_Mamaw1{
-    "Hello there dear.\n"
+    "Hello there, dear.\n"
     "I hope yer doin' well!"
 }
 

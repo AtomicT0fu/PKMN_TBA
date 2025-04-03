@@ -711,669 +711,671 @@ PH1F_Mom_PostStarter::
 # 382 "data/maps/Player_House_1F/scripts.pory"
 	playse SE_DOOR
 # 383 "data/maps/Player_House_1F/scripts.pory"
-	delay 10
+	delay 20
 # 384 "data/maps/Player_House_1F/scripts.pory"
-	addobject 3
+	playse SE_WALL_HIT
 # 385 "data/maps/Player_House_1F/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, PH1F_M_Player1
+	addobject 3
 # 386 "data/maps/Player_House_1F/scripts.pory"
-	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, PH1F_M_Player1
 # 387 "data/maps/Player_House_1F/scripts.pory"
-	delay 30
+	waitmovement 0
 # 388 "data/maps/Player_House_1F/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, Univ_StepDown1
+	delay 30
 # 389 "data/maps/Player_House_1F/scripts.pory"
-	speakername PH1F_BattleTapeStart_Text_0
+	applymovement OBJ_EVENT_ID_CAMERA, Univ_StepDown1
 # 390 "data/maps/Player_House_1F/scripts.pory"
-	msgbox PH1F_T_Mike6
+	speakername PH1F_BattleTapeStart_Text_0
 # 391 "data/maps/Player_House_1F/scripts.pory"
-	waitmessage
+	msgbox PH1F_T_Mike6
 # 392 "data/maps/Player_House_1F/scripts.pory"
-	closemessage
+	waitmessage
 # 393 "data/maps/Player_House_1F/scripts.pory"
-	delay 60
+	closemessage
 # 394 "data/maps/Player_House_1F/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, Univ_StepLeft1
+	delay 20
 # 395 "data/maps/Player_House_1F/scripts.pory"
-	waitmovement 0
-# 396 "data/maps/Player_House_1F/scripts.pory"
-	playse SE_BIKE_HOP
-# 397 "data/maps/Player_House_1F/scripts.pory"
-	applymovement 2, Univ_JumpIP_1Right
-# 398 "data/maps/Player_House_1F/scripts.pory"
-	waitmovement 0
-# 399 "data/maps/Player_House_1F/scripts.pory"
-	turnobject 3, DIR_WEST
-# 400 "data/maps/Player_House_1F/scripts.pory"
-	playse SE_BIKE_HOP
-# 401 "data/maps/Player_House_1F/scripts.pory"
-	applymovement 2, Univ_JumpIP_1Right
-# 402 "data/maps/Player_House_1F/scripts.pory"
-	waitmovement 0
-# 403 "data/maps/Player_House_1F/scripts.pory"
-	delay 20
-# 404 "data/maps/Player_House_1F/scripts.pory"
-	applymovement 2, PH1F_M_Lilli_3
-# 405 "data/maps/Player_House_1F/scripts.pory"
-	waitmovement 0
-# 406 "data/maps/Player_House_1F/scripts.pory"
-	playse SE_BIKE_HOP
-# 407 "data/maps/Player_House_1F/scripts.pory"
-	applymovement 2, Univ_JumpIP_1Right
-# 408 "data/maps/Player_House_1F/scripts.pory"
-	waitmovement 0
-# 409 "data/maps/Player_House_1F/scripts.pory"
-	playse SE_BIKE_HOP
-# 410 "data/maps/Player_House_1F/scripts.pory"
-	applymovement 2, Univ_JumpIP_1Right
-# 411 "data/maps/Player_House_1F/scripts.pory"
-	waitmovement 0
-# 412 "data/maps/Player_House_1F/scripts.pory"
-	delay 20
-# 413 "data/maps/Player_House_1F/scripts.pory"
-	playmoncry SPECIES_LILLIPUP, 0
-# 414 "data/maps/Player_House_1F/scripts.pory"
-	waitmoncry
-# 415 "data/maps/Player_House_1F/scripts.pory"
-	delay 40
-# 416 "data/maps/Player_House_1F/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, Univ_StepNE1
-# 417 "data/maps/Player_House_1F/scripts.pory"
-	waitmovement 0
-# 418 "data/maps/Player_House_1F/scripts.pory"
-	delay 20
-# 419 "data/maps/Player_House_1F/scripts.pory"
-	turnobject 3, DIR_NORTH
-# 420 "data/maps/Player_House_1F/scripts.pory"
-	speakername PH1F_MomIntro_Text_0
-# 421 "data/maps/Player_House_1F/scripts.pory"
-	msgbox PH1F_T_Mom9
-# 422 "data/maps/Player_House_1F/scripts.pory"
-	waitmessage
-# 423 "data/maps/Player_House_1F/scripts.pory"
-	closemessage
-# 424 "data/maps/Player_House_1F/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, Univ_StepDown1
-# 425 "data/maps/Player_House_1F/scripts.pory"
-	waitmovement 0
-# 426 "data/maps/Player_House_1F/scripts.pory"
-	delay 20
-# 427 "data/maps/Player_House_1F/scripts.pory"
-	speakername PH1F_BattleTapeStart_Text_0
-# 428 "data/maps/Player_House_1F/scripts.pory"
-	msgbox PH1F_T_Mike7
-# 429 "data/maps/Player_House_1F/scripts.pory"
-	waitmessage
-# 430 "data/maps/Player_House_1F/scripts.pory"
-	closemessage
-# 431 "data/maps/Player_House_1F/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, Univ_StepUp1
-# 432 "data/maps/Player_House_1F/scripts.pory"
-	waitmovement 0
-# 433 "data/maps/Player_House_1F/scripts.pory"
-	delay 20
-# 434 "data/maps/Player_House_1F/scripts.pory"
-	playse SE_PIN
-# 435 "data/maps/Player_House_1F/scripts.pory"
-	applymovement 1, Univ_Exclam
-# 436 "data/maps/Player_House_1F/scripts.pory"
-	waitmovement 0
-# 437 "data/maps/Player_House_1F/scripts.pory"
-	delay 20
-# 438 "data/maps/Player_House_1F/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, Univ_StepRight1
-# 439 "data/maps/Player_House_1F/scripts.pory"
-	applymovement 1, PH1F_M_Mom6
-# 440 "data/maps/Player_House_1F/scripts.pory"
-	waitmovement OBJ_EVENT_ID_CAMERA
-# 441 "data/maps/Player_House_1F/scripts.pory"
-	turnobject 3, DIR_EAST
-# 442 "data/maps/Player_House_1F/scripts.pory"
-	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
-# 443 "data/maps/Player_House_1F/scripts.pory"
-	delay 20
-# 444 "data/maps/Player_House_1F/scripts.pory"
-	speakername PH1F_MomIntro_Text_0
-# 445 "data/maps/Player_House_1F/scripts.pory"
-	msgbox PH1F_T_Mom10
-# 446 "data/maps/Player_House_1F/scripts.pory"
-	waitmessage
-# 447 "data/maps/Player_House_1F/scripts.pory"
-	closemessage
-# 448 "data/maps/Player_House_1F/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, Univ_StepLeft1
-# 449 "data/maps/Player_House_1F/scripts.pory"
-	applymovement 1, PH1F_M_Mom7
-# 450 "data/maps/Player_House_1F/scripts.pory"
+# 396 "data/maps/Player_House_1F/scripts.pory"
 	waitmovement 0
-# 451 "data/maps/Player_House_1F/scripts.pory"
-	turnobject 3, DIR_NORTH
-# 452 "data/maps/Player_House_1F/scripts.pory"
-	delay 20
-# 453 "data/maps/Player_House_1F/scripts.pory"
-	speakername PH1F_MomIntro_Text_0
-# 454 "data/maps/Player_House_1F/scripts.pory"
-	msgbox PH1F_T_Mom11
-# 455 "data/maps/Player_House_1F/scripts.pory"
-	waitmessage
-# 456 "data/maps/Player_House_1F/scripts.pory"
-	closemessage
-# 457 "data/maps/Player_House_1F/scripts.pory"
-	applymovement 1, PH1F_M_Mom8
-# 458 "data/maps/Player_House_1F/scripts.pory"
-	waitmovement 0
-# 459 "data/maps/Player_House_1F/scripts.pory"
-	delay 30
-# 460 "data/maps/Player_House_1F/scripts.pory"
-	turnobject 1, DIR_SOUTH
-# 461 "data/maps/Player_House_1F/scripts.pory"
-	delay 20
-# 462 "data/maps/Player_House_1F/scripts.pory"
-	speakername PH1F_MomIntro_Text_0
-# 463 "data/maps/Player_House_1F/scripts.pory"
-	msgbox PH1F_Mom_PostStarter_Text_0
-# 464 "data/maps/Player_House_1F/scripts.pory"
-	waitmessage
-# 465 "data/maps/Player_House_1F/scripts.pory"
-	closemessage
-# 466 "data/maps/Player_House_1F/scripts.pory"
-	delay 20
-# 467 "data/maps/Player_House_1F/scripts.pory"
+# 397 "data/maps/Player_House_1F/scripts.pory"
 	playse SE_BIKE_HOP
-# 468 "data/maps/Player_House_1F/scripts.pory"
+# 398 "data/maps/Player_House_1F/scripts.pory"
 	applymovement 2, Univ_JumpIP_1Right
-# 469 "data/maps/Player_House_1F/scripts.pory"
+# 399 "data/maps/Player_House_1F/scripts.pory"
 	waitmovement 0
-# 470 "data/maps/Player_House_1F/scripts.pory"
+# 400 "data/maps/Player_House_1F/scripts.pory"
+	turnobject 3, DIR_WEST
+# 401 "data/maps/Player_House_1F/scripts.pory"
+	playse SE_BIKE_HOP
+# 402 "data/maps/Player_House_1F/scripts.pory"
+	applymovement 2, Univ_JumpIP_1Right
+# 403 "data/maps/Player_House_1F/scripts.pory"
+	waitmovement 0
+# 404 "data/maps/Player_House_1F/scripts.pory"
 	delay 20
-# 471 "data/maps/Player_House_1F/scripts.pory"
+# 405 "data/maps/Player_House_1F/scripts.pory"
 	applymovement 2, PH1F_M_Lilli_3
-# 472 "data/maps/Player_House_1F/scripts.pory"
+# 406 "data/maps/Player_House_1F/scripts.pory"
 	waitmovement 0
-# 473 "data/maps/Player_House_1F/scripts.pory"
+# 407 "data/maps/Player_House_1F/scripts.pory"
+	playse SE_BIKE_HOP
+# 408 "data/maps/Player_House_1F/scripts.pory"
+	applymovement 2, Univ_JumpIP_1Right
+# 409 "data/maps/Player_House_1F/scripts.pory"
+	waitmovement 0
+# 410 "data/maps/Player_House_1F/scripts.pory"
+	playse SE_BIKE_HOP
+# 411 "data/maps/Player_House_1F/scripts.pory"
+	applymovement 2, Univ_JumpIP_1Right
+# 412 "data/maps/Player_House_1F/scripts.pory"
+	waitmovement 0
+# 413 "data/maps/Player_House_1F/scripts.pory"
+	delay 20
+# 414 "data/maps/Player_House_1F/scripts.pory"
 	playmoncry SPECIES_LILLIPUP, 0
-# 474 "data/maps/Player_House_1F/scripts.pory"
+# 415 "data/maps/Player_House_1F/scripts.pory"
 	waitmoncry
-# 475 "data/maps/Player_House_1F/scripts.pory"
-	applymovement 1, Univ_StepUp1
-# 476 "data/maps/Player_House_1F/scripts.pory"
-	applymovement 2, PH1F_M_Lilli_4
-# 477 "data/maps/Player_House_1F/scripts.pory"
+# 416 "data/maps/Player_House_1F/scripts.pory"
+	delay 40
+# 417 "data/maps/Player_House_1F/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, Univ_StepNE1
+# 418 "data/maps/Player_House_1F/scripts.pory"
 	waitmovement 0
-# 478 "data/maps/Player_House_1F/scripts.pory"
-	delay 30
-# 479 "data/maps/Player_House_1F/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, Univ_StepDown1
-# 480 "data/maps/Player_House_1F/scripts.pory"
-	waitmovement 0
-# 481 "data/maps/Player_House_1F/scripts.pory"
-	turnobject 3, DIR_EAST
-# 482 "data/maps/Player_House_1F/scripts.pory"
-	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
-# 483 "data/maps/Player_House_1F/scripts.pory"
+# 419 "data/maps/Player_House_1F/scripts.pory"
 	delay 20
-# 484 "data/maps/Player_House_1F/scripts.pory"
-	speakername PH1F_BattleTapeStart_Text_0
-# 485 "data/maps/Player_House_1F/scripts.pory"
-	msgbox PH1F_T_Mike8
-# 486 "data/maps/Player_House_1F/scripts.pory"
+# 420 "data/maps/Player_House_1F/scripts.pory"
+	turnobject 3, DIR_NORTH
+# 421 "data/maps/Player_House_1F/scripts.pory"
+	speakername PH1F_MomIntro_Text_0
+# 422 "data/maps/Player_House_1F/scripts.pory"
+	msgbox PH1F_T_Mom9
+# 423 "data/maps/Player_House_1F/scripts.pory"
 	waitmessage
-# 487 "data/maps/Player_House_1F/scripts.pory"
+# 424 "data/maps/Player_House_1F/scripts.pory"
 	closemessage
-# 488 "data/maps/Player_House_1F/scripts.pory"
-	delay 20
-# 489 "data/maps/Player_House_1F/scripts.pory"
-	turnobject 3, DIR_SOUTH
-# 490 "data/maps/Player_House_1F/scripts.pory"
-	delay 20
-# 491 "data/maps/Player_House_1F/scripts.pory"
-	playse SE_EXIT
-# 492 "data/maps/Player_House_1F/scripts.pory"
-	removeobject 3
-# 493 "data/maps/Player_House_1F/scripts.pory"
-	waitse
-# 494 "data/maps/Player_House_1F/scripts.pory"
-	delay 20
-# 495 "data/maps/Player_House_1F/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, Univ_StepRight1
-# 496 "data/maps/Player_House_1F/scripts.pory"
+# 425 "data/maps/Player_House_1F/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, Univ_StepDown1
+# 426 "data/maps/Player_House_1F/scripts.pory"
 	waitmovement 0
+# 427 "data/maps/Player_House_1F/scripts.pory"
+	delay 20
+# 428 "data/maps/Player_House_1F/scripts.pory"
+	speakername PH1F_BattleTapeStart_Text_0
+# 429 "data/maps/Player_House_1F/scripts.pory"
+	msgbox PH1F_T_Mike7
+# 430 "data/maps/Player_House_1F/scripts.pory"
+	waitmessage
+# 431 "data/maps/Player_House_1F/scripts.pory"
+	closemessage
+# 432 "data/maps/Player_House_1F/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, Univ_StepUp1
+# 433 "data/maps/Player_House_1F/scripts.pory"
+	waitmovement 0
+# 434 "data/maps/Player_House_1F/scripts.pory"
+	delay 20
+# 435 "data/maps/Player_House_1F/scripts.pory"
+	playse SE_PIN
+# 436 "data/maps/Player_House_1F/scripts.pory"
+	applymovement 1, Univ_Exclam
+# 437 "data/maps/Player_House_1F/scripts.pory"
+	waitmovement 0
+# 438 "data/maps/Player_House_1F/scripts.pory"
+	delay 20
+# 439 "data/maps/Player_House_1F/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, Univ_StepRight1
+# 440 "data/maps/Player_House_1F/scripts.pory"
+	applymovement 1, PH1F_M_Mom6
+# 441 "data/maps/Player_House_1F/scripts.pory"
+	waitmovement OBJ_EVENT_ID_CAMERA
+# 442 "data/maps/Player_House_1F/scripts.pory"
+	turnobject 3, DIR_EAST
+# 443 "data/maps/Player_House_1F/scripts.pory"
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
+# 444 "data/maps/Player_House_1F/scripts.pory"
+	delay 20
+# 445 "data/maps/Player_House_1F/scripts.pory"
+	speakername PH1F_MomIntro_Text_0
+# 446 "data/maps/Player_House_1F/scripts.pory"
+	msgbox PH1F_T_Mom10
+# 447 "data/maps/Player_House_1F/scripts.pory"
+	waitmessage
+# 448 "data/maps/Player_House_1F/scripts.pory"
+	closemessage
+# 449 "data/maps/Player_House_1F/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, Univ_StepLeft1
+# 450 "data/maps/Player_House_1F/scripts.pory"
+	applymovement 1, PH1F_M_Mom7
+# 451 "data/maps/Player_House_1F/scripts.pory"
+	waitmovement 0
+# 452 "data/maps/Player_House_1F/scripts.pory"
+	turnobject 3, DIR_NORTH
+# 453 "data/maps/Player_House_1F/scripts.pory"
+	delay 20
+# 454 "data/maps/Player_House_1F/scripts.pory"
+	speakername PH1F_MomIntro_Text_0
+# 455 "data/maps/Player_House_1F/scripts.pory"
+	msgbox PH1F_T_Mom11
+# 456 "data/maps/Player_House_1F/scripts.pory"
+	waitmessage
+# 457 "data/maps/Player_House_1F/scripts.pory"
+	closemessage
+# 458 "data/maps/Player_House_1F/scripts.pory"
+	applymovement 1, PH1F_M_Mom8
+# 459 "data/maps/Player_House_1F/scripts.pory"
+	waitmovement 0
+# 460 "data/maps/Player_House_1F/scripts.pory"
+	delay 30
+# 461 "data/maps/Player_House_1F/scripts.pory"
+	turnobject 1, DIR_SOUTH
+# 462 "data/maps/Player_House_1F/scripts.pory"
+	delay 20
+# 463 "data/maps/Player_House_1F/scripts.pory"
+	speakername PH1F_MomIntro_Text_0
+# 464 "data/maps/Player_House_1F/scripts.pory"
+	msgbox PH1F_Mom_PostStarter_Text_0
+# 465 "data/maps/Player_House_1F/scripts.pory"
+	waitmessage
+# 466 "data/maps/Player_House_1F/scripts.pory"
+	closemessage
+# 467 "data/maps/Player_House_1F/scripts.pory"
+	delay 20
+# 468 "data/maps/Player_House_1F/scripts.pory"
+	playse SE_BIKE_HOP
+# 469 "data/maps/Player_House_1F/scripts.pory"
+	applymovement 2, Univ_JumpIP_1Right
+# 470 "data/maps/Player_House_1F/scripts.pory"
+	waitmovement 0
+# 471 "data/maps/Player_House_1F/scripts.pory"
+	delay 20
+# 472 "data/maps/Player_House_1F/scripts.pory"
+	applymovement 2, PH1F_M_Lilli_3
+# 473 "data/maps/Player_House_1F/scripts.pory"
+	waitmovement 0
+# 474 "data/maps/Player_House_1F/scripts.pory"
+	playmoncry SPECIES_LILLIPUP, 0
+# 475 "data/maps/Player_House_1F/scripts.pory"
+	waitmoncry
+# 476 "data/maps/Player_House_1F/scripts.pory"
+	applymovement 1, Univ_StepUp1
+# 477 "data/maps/Player_House_1F/scripts.pory"
+	applymovement 2, PH1F_M_Lilli_4
+# 478 "data/maps/Player_House_1F/scripts.pory"
+	waitmovement 0
+# 479 "data/maps/Player_House_1F/scripts.pory"
+	delay 30
+# 480 "data/maps/Player_House_1F/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, Univ_StepDown1
+# 481 "data/maps/Player_House_1F/scripts.pory"
+	waitmovement 0
+# 482 "data/maps/Player_House_1F/scripts.pory"
+	turnobject 3, DIR_EAST
+# 483 "data/maps/Player_House_1F/scripts.pory"
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
+# 484 "data/maps/Player_House_1F/scripts.pory"
+	delay 20
+# 485 "data/maps/Player_House_1F/scripts.pory"
+	speakername PH1F_BattleTapeStart_Text_0
+# 486 "data/maps/Player_House_1F/scripts.pory"
+	msgbox PH1F_T_Mike8
+# 487 "data/maps/Player_House_1F/scripts.pory"
+	waitmessage
+# 488 "data/maps/Player_House_1F/scripts.pory"
+	closemessage
+# 489 "data/maps/Player_House_1F/scripts.pory"
+	delay 20
+# 490 "data/maps/Player_House_1F/scripts.pory"
+	turnobject 3, DIR_SOUTH
+# 491 "data/maps/Player_House_1F/scripts.pory"
+	delay 20
+# 492 "data/maps/Player_House_1F/scripts.pory"
+	playse SE_EXIT
+# 493 "data/maps/Player_House_1F/scripts.pory"
+	removeobject 3
+# 494 "data/maps/Player_House_1F/scripts.pory"
+	waitse
+# 495 "data/maps/Player_House_1F/scripts.pory"
+	delay 20
+# 496 "data/maps/Player_House_1F/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, Univ_StepRight1
 # 497 "data/maps/Player_House_1F/scripts.pory"
-	special RemoveCameraObject
+	waitmovement 0
 # 498 "data/maps/Player_House_1F/scripts.pory"
-	setflag FLAG_HF_HIDE_MAMAW
+	special RemoveCameraObject
 # 499 "data/maps/Player_House_1F/scripts.pory"
-	clearflag FLAG_RH1F_HIDE_MAMAW
+	setflag FLAG_HF_HIDE_MAMAW
 # 500 "data/maps/Player_House_1F/scripts.pory"
-	setvar VAR_ADVENTURE_START, 19
+	clearflag FLAG_RH1F_HIDE_MAMAW
 # 501 "data/maps/Player_House_1F/scripts.pory"
+	setvar VAR_ADVENTURE_START, 19
+# 502 "data/maps/Player_House_1F/scripts.pory"
 	releaseall
 	end
 
 
-# 507 "data/maps/Player_House_1F/scripts.pory"
-Univ_Exclam:
 # 508 "data/maps/Player_House_1F/scripts.pory"
+Univ_Exclam:
+# 509 "data/maps/Player_House_1F/scripts.pory"
 	emote_exclamation_mark
 	step_end
 
-# 511 "data/maps/Player_House_1F/scripts.pory"
-Univ_Question:
 # 512 "data/maps/Player_House_1F/scripts.pory"
+Univ_Question:
+# 513 "data/maps/Player_House_1F/scripts.pory"
 	emote_question_mark
 	step_end
 
-# 515 "data/maps/Player_House_1F/scripts.pory"
-Univ_DoubleExclam:
 # 516 "data/maps/Player_House_1F/scripts.pory"
+Univ_DoubleExclam:
+# 517 "data/maps/Player_House_1F/scripts.pory"
 	emote_double_exclamation_mark
 	step_end
 
-# 519 "data/maps/Player_House_1F/scripts.pory"
-Univ_Heart:
 # 520 "data/maps/Player_House_1F/scripts.pory"
+Univ_Heart:
+# 521 "data/maps/Player_House_1F/scripts.pory"
 	emote_heart
 	step_end
 
-# 523 "data/maps/Player_House_1F/scripts.pory"
-Univ_X:
 # 524 "data/maps/Player_House_1F/scripts.pory"
+Univ_X:
+# 525 "data/maps/Player_House_1F/scripts.pory"
 	emote_x
 	step_end
 
-# 527 "data/maps/Player_House_1F/scripts.pory"
-Univ_StepUp1:
 # 528 "data/maps/Player_House_1F/scripts.pory"
+Univ_StepUp1:
+# 529 "data/maps/Player_House_1F/scripts.pory"
 	walk_up
 	step_end
 
-# 531 "data/maps/Player_House_1F/scripts.pory"
-Univ_StepDown1:
 # 532 "data/maps/Player_House_1F/scripts.pory"
+Univ_StepDown1:
+# 533 "data/maps/Player_House_1F/scripts.pory"
 	walk_down
 	step_end
 
-# 535 "data/maps/Player_House_1F/scripts.pory"
-Univ_StepRight1:
 # 536 "data/maps/Player_House_1F/scripts.pory"
+Univ_StepRight1:
+# 537 "data/maps/Player_House_1F/scripts.pory"
 	walk_right
 	step_end
 
-# 539 "data/maps/Player_House_1F/scripts.pory"
-Univ_StepLeft1:
 # 540 "data/maps/Player_House_1F/scripts.pory"
+Univ_StepLeft1:
+# 541 "data/maps/Player_House_1F/scripts.pory"
 	walk_left
 	step_end
 
-# 543 "data/maps/Player_House_1F/scripts.pory"
-Univ_StepNE1:
 # 544 "data/maps/Player_House_1F/scripts.pory"
+Univ_StepNE1:
+# 545 "data/maps/Player_House_1F/scripts.pory"
 	walk_diag_northeast
 	step_end
 
-# 547 "data/maps/Player_House_1F/scripts.pory"
-Univ_StepNW1:
 # 548 "data/maps/Player_House_1F/scripts.pory"
+Univ_StepNW1:
+# 549 "data/maps/Player_House_1F/scripts.pory"
 	walk_diag_northwest
 	step_end
 
-# 551 "data/maps/Player_House_1F/scripts.pory"
-Univ_StepSE1:
 # 552 "data/maps/Player_House_1F/scripts.pory"
+Univ_StepSE1:
+# 553 "data/maps/Player_House_1F/scripts.pory"
 	walk_diag_southeast
 	step_end
 
-# 555 "data/maps/Player_House_1F/scripts.pory"
-Univ_StepSW1:
 # 556 "data/maps/Player_House_1F/scripts.pory"
+Univ_StepSW1:
+# 557 "data/maps/Player_House_1F/scripts.pory"
 	walk_diag_southwest
 	step_end
 
-# 559 "data/maps/Player_House_1F/scripts.pory"
-Univ_JumpIP_1Up:
 # 560 "data/maps/Player_House_1F/scripts.pory"
+Univ_JumpIP_1Up:
+# 561 "data/maps/Player_House_1F/scripts.pory"
 	jump_in_place_up
 	step_end
 
-# 563 "data/maps/Player_House_1F/scripts.pory"
-Univ_JumpIP_1Down:
 # 564 "data/maps/Player_House_1F/scripts.pory"
+Univ_JumpIP_1Down:
+# 565 "data/maps/Player_House_1F/scripts.pory"
 	jump_in_place_down
 	step_end
 
-# 567 "data/maps/Player_House_1F/scripts.pory"
-Univ_JumpIP_1Right:
 # 568 "data/maps/Player_House_1F/scripts.pory"
+Univ_JumpIP_1Right:
+# 569 "data/maps/Player_House_1F/scripts.pory"
 	jump_in_place_right
 	step_end
 
-# 571 "data/maps/Player_House_1F/scripts.pory"
-Univ_JumpIP_1Left:
 # 572 "data/maps/Player_House_1F/scripts.pory"
+Univ_JumpIP_1Left:
+# 573 "data/maps/Player_House_1F/scripts.pory"
 	jump_in_place_left
 	step_end
 
-# 575 "data/maps/Player_House_1F/scripts.pory"
-Univ_SlideUp1:
 # 576 "data/maps/Player_House_1F/scripts.pory"
+Univ_SlideUp1:
+# 577 "data/maps/Player_House_1F/scripts.pory"
 	slide_up
 	step_end
 
-# 579 "data/maps/Player_House_1F/scripts.pory"
-Univ_SlideDown1:
 # 580 "data/maps/Player_House_1F/scripts.pory"
+Univ_SlideDown1:
+# 581 "data/maps/Player_House_1F/scripts.pory"
 	slide_down
 	step_end
 
-# 583 "data/maps/Player_House_1F/scripts.pory"
-Univ_SlideRight1:
 # 584 "data/maps/Player_House_1F/scripts.pory"
+Univ_SlideRight1:
+# 585 "data/maps/Player_House_1F/scripts.pory"
 	slide_right
 	step_end
 
-# 587 "data/maps/Player_House_1F/scripts.pory"
-Univ_SlideLeft1:
 # 588 "data/maps/Player_House_1F/scripts.pory"
+Univ_SlideLeft1:
+# 589 "data/maps/Player_House_1F/scripts.pory"
 	slide_left
 	step_end
 
-# 594 "data/maps/Player_House_1F/scripts.pory"
+# 595 "data/maps/Player_House_1F/scripts.pory"
 PH1F_M_Mom1:
-# 595 "data/maps/Player_House_1F/scripts.pory"
-	walk_left
-# 595 "data/maps/Player_House_1F/scripts.pory"
-	walk_left
-# 595 "data/maps/Player_House_1F/scripts.pory"
-	walk_left
-# 595 "data/maps/Player_House_1F/scripts.pory"
+# 596 "data/maps/Player_House_1F/scripts.pory"
 	walk_left
 # 596 "data/maps/Player_House_1F/scripts.pory"
+	walk_left
+# 596 "data/maps/Player_House_1F/scripts.pory"
+	walk_left
+# 596 "data/maps/Player_House_1F/scripts.pory"
+	walk_left
+# 597 "data/maps/Player_House_1F/scripts.pory"
 	walk_up
 	step_end
 
-# 599 "data/maps/Player_House_1F/scripts.pory"
-PH1F_M_Mom2:
 # 600 "data/maps/Player_House_1F/scripts.pory"
+PH1F_M_Mom2:
+# 601 "data/maps/Player_House_1F/scripts.pory"
 	walk_down
-# 601 "data/maps/Player_House_1F/scripts.pory"
+# 602 "data/maps/Player_House_1F/scripts.pory"
 	walk_right
-# 601 "data/maps/Player_House_1F/scripts.pory"
+# 602 "data/maps/Player_House_1F/scripts.pory"
 	walk_right
 	step_end
 
-# 604 "data/maps/Player_House_1F/scripts.pory"
+# 605 "data/maps/Player_House_1F/scripts.pory"
 PH1F_M_Mom3:
-# 605 "data/maps/Player_House_1F/scripts.pory"
-	walk_left
-# 605 "data/maps/Player_House_1F/scripts.pory"
+# 606 "data/maps/Player_House_1F/scripts.pory"
 	walk_left
 # 606 "data/maps/Player_House_1F/scripts.pory"
+	walk_left
+# 607 "data/maps/Player_House_1F/scripts.pory"
 	walk_up
 	step_end
 
-# 609 "data/maps/Player_House_1F/scripts.pory"
-PH1F_M_Mom4:
 # 610 "data/maps/Player_House_1F/scripts.pory"
+PH1F_M_Mom4:
+# 611 "data/maps/Player_House_1F/scripts.pory"
 	walk_down
-# 611 "data/maps/Player_House_1F/scripts.pory"
-	walk_right
-# 611 "data/maps/Player_House_1F/scripts.pory"
-	walk_right
-# 611 "data/maps/Player_House_1F/scripts.pory"
-	walk_right
-# 611 "data/maps/Player_House_1F/scripts.pory"
+# 612 "data/maps/Player_House_1F/scripts.pory"
 	walk_right
 # 612 "data/maps/Player_House_1F/scripts.pory"
+	walk_right
+# 612 "data/maps/Player_House_1F/scripts.pory"
+	walk_right
+# 612 "data/maps/Player_House_1F/scripts.pory"
+	walk_right
+# 613 "data/maps/Player_House_1F/scripts.pory"
 	face_up
 	step_end
 
-# 615 "data/maps/Player_House_1F/scripts.pory"
+# 616 "data/maps/Player_House_1F/scripts.pory"
 PH1F_M_Mom5:
-# 616 "data/maps/Player_House_1F/scripts.pory"
-	walk_down
-# 616 "data/maps/Player_House_1F/scripts.pory"
+# 617 "data/maps/Player_House_1F/scripts.pory"
 	walk_down
 # 617 "data/maps/Player_House_1F/scripts.pory"
-	walk_right
+	walk_down
 # 618 "data/maps/Player_House_1F/scripts.pory"
+	walk_right
+# 619 "data/maps/Player_House_1F/scripts.pory"
 	face_down
 	step_end
 
-# 621 "data/maps/Player_House_1F/scripts.pory"
-PH1F_M_Mom6:
 # 622 "data/maps/Player_House_1F/scripts.pory"
-	walk_fast_right
+PH1F_M_Mom6:
 # 623 "data/maps/Player_House_1F/scripts.pory"
+	walk_fast_right
+# 624 "data/maps/Player_House_1F/scripts.pory"
 	face_down
 	step_end
 
-# 626 "data/maps/Player_House_1F/scripts.pory"
-PH1F_M_Mom7:
 # 627 "data/maps/Player_House_1F/scripts.pory"
-	walk_left
+PH1F_M_Mom7:
 # 628 "data/maps/Player_House_1F/scripts.pory"
+	walk_left
+# 629 "data/maps/Player_House_1F/scripts.pory"
 	face_down
 	step_end
 
-# 631 "data/maps/Player_House_1F/scripts.pory"
-PH1F_M_Mom8:
 # 632 "data/maps/Player_House_1F/scripts.pory"
-	walk_left
+PH1F_M_Mom8:
 # 633 "data/maps/Player_House_1F/scripts.pory"
+	walk_left
+# 634 "data/maps/Player_House_1F/scripts.pory"
 	walk_up
 	step_end
 
-# 636 "data/maps/Player_House_1F/scripts.pory"
-PH1F_M_Lilli_1:
 # 637 "data/maps/Player_House_1F/scripts.pory"
+PH1F_M_Lilli_1:
+# 638 "data/maps/Player_House_1F/scripts.pory"
 	walk_right
-# 638 "data/maps/Player_House_1F/scripts.pory"
+# 639 "data/maps/Player_House_1F/scripts.pory"
 	walk_down
-# 638 "data/maps/Player_House_1F/scripts.pory"
+# 639 "data/maps/Player_House_1F/scripts.pory"
 	walk_down
 	step_end
 
-# 641 "data/maps/Player_House_1F/scripts.pory"
-PH1F_M_Lilli_2:
 # 642 "data/maps/Player_House_1F/scripts.pory"
-	walk_fast_down
+PH1F_M_Lilli_2:
 # 643 "data/maps/Player_House_1F/scripts.pory"
+	walk_fast_down
+# 644 "data/maps/Player_House_1F/scripts.pory"
 	face_right
 	step_end
 
-# 646 "data/maps/Player_House_1F/scripts.pory"
-PH1F_M_Lilli_3:
 # 647 "data/maps/Player_House_1F/scripts.pory"
-	face_up
+PH1F_M_Lilli_3:
 # 648 "data/maps/Player_House_1F/scripts.pory"
-	face_left
+	face_up
 # 649 "data/maps/Player_House_1F/scripts.pory"
-	face_down
+	face_left
 # 650 "data/maps/Player_House_1F/scripts.pory"
-	face_right
+	face_down
 # 651 "data/maps/Player_House_1F/scripts.pory"
-	face_up
+	face_right
 # 652 "data/maps/Player_House_1F/scripts.pory"
-	face_left
+	face_up
 # 653 "data/maps/Player_House_1F/scripts.pory"
-	face_down
+	face_left
 # 654 "data/maps/Player_House_1F/scripts.pory"
-	face_right
+	face_down
 # 655 "data/maps/Player_House_1F/scripts.pory"
-	face_up
+	face_right
 # 656 "data/maps/Player_House_1F/scripts.pory"
-	face_left
+	face_up
 # 657 "data/maps/Player_House_1F/scripts.pory"
-	face_down
+	face_left
 # 658 "data/maps/Player_House_1F/scripts.pory"
-	face_right
+	face_down
 # 659 "data/maps/Player_House_1F/scripts.pory"
-	face_up
-# 660 "data/maps/Player_House_1F/scripts.pory"
-	face_left
-# 661 "data/maps/Player_House_1F/scripts.pory"
-	face_down
-# 662 "data/maps/Player_House_1F/scripts.pory"
 	face_right
-# 663 "data/maps/Player_House_1F/scripts.pory"
+# 660 "data/maps/Player_House_1F/scripts.pory"
 	face_up
-# 664 "data/maps/Player_House_1F/scripts.pory"
+# 661 "data/maps/Player_House_1F/scripts.pory"
 	face_left
-# 665 "data/maps/Player_House_1F/scripts.pory"
+# 662 "data/maps/Player_House_1F/scripts.pory"
 	face_down
+# 663 "data/maps/Player_House_1F/scripts.pory"
+	face_right
+# 664 "data/maps/Player_House_1F/scripts.pory"
+	face_up
+# 665 "data/maps/Player_House_1F/scripts.pory"
+	face_left
 # 666 "data/maps/Player_House_1F/scripts.pory"
+	face_down
+# 667 "data/maps/Player_House_1F/scripts.pory"
 	face_right
 	step_end
 
-# 669 "data/maps/Player_House_1F/scripts.pory"
+# 670 "data/maps/Player_House_1F/scripts.pory"
 PH1F_M_Lilli_4:
-# 670 "data/maps/Player_House_1F/scripts.pory"
-	walk_fast_up
-# 670 "data/maps/Player_House_1F/scripts.pory"
+# 671 "data/maps/Player_House_1F/scripts.pory"
 	walk_fast_up
 # 671 "data/maps/Player_House_1F/scripts.pory"
-	walk_fast_left
+	walk_fast_up
 # 672 "data/maps/Player_House_1F/scripts.pory"
+	walk_fast_left
+# 673 "data/maps/Player_House_1F/scripts.pory"
 	walk_fast_up
 	step_end
 
-# 675 "data/maps/Player_House_1F/scripts.pory"
+# 676 "data/maps/Player_House_1F/scripts.pory"
 PH1F_CAM_1:
-# 676 "data/maps/Player_House_1F/scripts.pory"
-	walk_diag_northwest
-# 676 "data/maps/Player_House_1F/scripts.pory"
+# 677 "data/maps/Player_House_1F/scripts.pory"
 	walk_diag_northwest
 # 677 "data/maps/Player_House_1F/scripts.pory"
+	walk_diag_northwest
+# 678 "data/maps/Player_House_1F/scripts.pory"
 	walk_up
 	step_end
 
-# 680 "data/maps/Player_House_1F/scripts.pory"
+# 681 "data/maps/Player_House_1F/scripts.pory"
 PH1F_CAM_2:
-# 681 "data/maps/Player_House_1F/scripts.pory"
-	walk_diag_southeast
-# 681 "data/maps/Player_House_1F/scripts.pory"
+# 682 "data/maps/Player_House_1F/scripts.pory"
 	walk_diag_southeast
 # 682 "data/maps/Player_House_1F/scripts.pory"
+	walk_diag_southeast
+# 683 "data/maps/Player_House_1F/scripts.pory"
 	walk_down
 	step_end
 
-# 685 "data/maps/Player_House_1F/scripts.pory"
+# 686 "data/maps/Player_House_1F/scripts.pory"
 PH1F_CAM_3:
-# 686 "data/maps/Player_House_1F/scripts.pory"
+# 687 "data/maps/Player_House_1F/scripts.pory"
 	walk_diag_northwest
-# 686 "data/maps/Player_House_1F/scripts.pory"
+# 687 "data/maps/Player_House_1F/scripts.pory"
 	walk_diag_northwest
-# 686 "data/maps/Player_House_1F/scripts.pory"
+# 687 "data/maps/Player_House_1F/scripts.pory"
 	walk_diag_northwest
-# 686 "data/maps/Player_House_1F/scripts.pory"
+# 687 "data/maps/Player_House_1F/scripts.pory"
 	walk_diag_northwest
 	step_end
 
-# 689 "data/maps/Player_House_1F/scripts.pory"
+# 690 "data/maps/Player_House_1F/scripts.pory"
 PH1F_CAM_3R:
-# 690 "data/maps/Player_House_1F/scripts.pory"
-	walk_diag_southeast
-# 690 "data/maps/Player_House_1F/scripts.pory"
-	walk_diag_southeast
-# 690 "data/maps/Player_House_1F/scripts.pory"
+# 691 "data/maps/Player_House_1F/scripts.pory"
 	walk_diag_southeast
 # 691 "data/maps/Player_House_1F/scripts.pory"
+	walk_diag_southeast
+# 691 "data/maps/Player_House_1F/scripts.pory"
+	walk_diag_southeast
+# 692 "data/maps/Player_House_1F/scripts.pory"
 	walk_right
 	step_end
 
-# 694 "data/maps/Player_House_1F/scripts.pory"
-PH1F_CAM_4:
 # 695 "data/maps/Player_House_1F/scripts.pory"
-	walk_diag_southwest
+PH1F_CAM_4:
 # 696 "data/maps/Player_House_1F/scripts.pory"
+	walk_diag_southwest
+# 697 "data/maps/Player_House_1F/scripts.pory"
 	walk_left
 	step_end
 
-# 699 "data/maps/Player_House_1F/scripts.pory"
+# 700 "data/maps/Player_House_1F/scripts.pory"
 PH1F_CAM_4R:
-# 700 "data/maps/Player_House_1F/scripts.pory"
+# 701 "data/maps/Player_House_1F/scripts.pory"
 	walk_right
-# 700 "data/maps/Player_House_1F/scripts.pory"
+# 701 "data/maps/Player_House_1F/scripts.pory"
 	walk_right
 	step_end
 
-# 703 "data/maps/Player_House_1F/scripts.pory"
+# 704 "data/maps/Player_House_1F/scripts.pory"
 PH1F_CAM_5:
-# 704 "data/maps/Player_House_1F/scripts.pory"
+# 705 "data/maps/Player_House_1F/scripts.pory"
 	walk_up
-# 704 "data/maps/Player_House_1F/scripts.pory"
+# 705 "data/maps/Player_House_1F/scripts.pory"
 	walk_up
-# 704 "data/maps/Player_House_1F/scripts.pory"
+# 705 "data/maps/Player_House_1F/scripts.pory"
 	walk_up
 	step_end
 
-# 707 "data/maps/Player_House_1F/scripts.pory"
+# 708 "data/maps/Player_House_1F/scripts.pory"
 PH1F_CAM_6:
-# 708 "data/maps/Player_House_1F/scripts.pory"
+# 709 "data/maps/Player_House_1F/scripts.pory"
 	walk_down
-# 708 "data/maps/Player_House_1F/scripts.pory"
+# 709 "data/maps/Player_House_1F/scripts.pory"
 	walk_down
 	step_end
 
-# 711 "data/maps/Player_House_1F/scripts.pory"
-PH1F_W_Mike1:
 # 712 "data/maps/Player_House_1F/scripts.pory"
+PH1F_W_Mike1:
+# 713 "data/maps/Player_House_1F/scripts.pory"
 	walk_fast_up
-# 713 "data/maps/Player_House_1F/scripts.pory"
-	walk_fast_left
-# 713 "data/maps/Player_House_1F/scripts.pory"
-	walk_fast_left
-# 713 "data/maps/Player_House_1F/scripts.pory"
-	walk_fast_left
-# 713 "data/maps/Player_House_1F/scripts.pory"
-	walk_fast_left
-# 713 "data/maps/Player_House_1F/scripts.pory"
+# 714 "data/maps/Player_House_1F/scripts.pory"
 	walk_fast_left
 # 714 "data/maps/Player_House_1F/scripts.pory"
+	walk_fast_left
+# 714 "data/maps/Player_House_1F/scripts.pory"
+	walk_fast_left
+# 714 "data/maps/Player_House_1F/scripts.pory"
+	walk_fast_left
+# 714 "data/maps/Player_House_1F/scripts.pory"
+	walk_fast_left
+# 715 "data/maps/Player_House_1F/scripts.pory"
 	face_right
 	step_end
 
-# 717 "data/maps/Player_House_1F/scripts.pory"
+# 718 "data/maps/Player_House_1F/scripts.pory"
 PH1F_W_Mike2:
-# 718 "data/maps/Player_House_1F/scripts.pory"
-	walk_fast_left
-# 718 "data/maps/Player_House_1F/scripts.pory"
+# 719 "data/maps/Player_House_1F/scripts.pory"
 	walk_fast_left
 # 719 "data/maps/Player_House_1F/scripts.pory"
-	walk_fast_down
-# 719 "data/maps/Player_House_1F/scripts.pory"
-	walk_fast_down
-# 719 "data/maps/Player_House_1F/scripts.pory"
+	walk_fast_left
+# 720 "data/maps/Player_House_1F/scripts.pory"
 	walk_fast_down
 # 720 "data/maps/Player_House_1F/scripts.pory"
-	walk_fast_right
+	walk_fast_down
 # 720 "data/maps/Player_House_1F/scripts.pory"
-	walk_fast_right
-# 720 "data/maps/Player_House_1F/scripts.pory"
-	walk_fast_right
-# 720 "data/maps/Player_House_1F/scripts.pory"
-	walk_fast_right
-# 720 "data/maps/Player_House_1F/scripts.pory"
-	walk_fast_right
-# 720 "data/maps/Player_House_1F/scripts.pory"
-	walk_fast_right
-# 720 "data/maps/Player_House_1F/scripts.pory"
-	walk_fast_right
-# 720 "data/maps/Player_House_1F/scripts.pory"
-	walk_fast_right
-# 720 "data/maps/Player_House_1F/scripts.pory"
+	walk_fast_down
+# 721 "data/maps/Player_House_1F/scripts.pory"
 	walk_fast_right
 # 721 "data/maps/Player_House_1F/scripts.pory"
+	walk_fast_right
+# 721 "data/maps/Player_House_1F/scripts.pory"
+	walk_fast_right
+# 721 "data/maps/Player_House_1F/scripts.pory"
+	walk_fast_right
+# 721 "data/maps/Player_House_1F/scripts.pory"
+	walk_fast_right
+# 721 "data/maps/Player_House_1F/scripts.pory"
+	walk_fast_right
+# 721 "data/maps/Player_House_1F/scripts.pory"
+	walk_fast_right
+# 721 "data/maps/Player_House_1F/scripts.pory"
+	walk_fast_right
+# 721 "data/maps/Player_House_1F/scripts.pory"
+	walk_fast_right
+# 722 "data/maps/Player_House_1F/scripts.pory"
 	walk_fast_down
 	step_end
 
-# 724 "data/maps/Player_House_1F/scripts.pory"
-PH1F_M_Player1:
 # 725 "data/maps/Player_House_1F/scripts.pory"
-	face_left
+PH1F_M_Player1:
 # 726 "data/maps/Player_House_1F/scripts.pory"
-	slide_right
+	face_left
 # 727 "data/maps/Player_House_1F/scripts.pory"
+	slide_right
+# 728 "data/maps/Player_House_1F/scripts.pory"
 	face_left
 	step_end
 
@@ -1390,11 +1392,11 @@ PH1F_BattleTapeStart_Text_0:
 	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike$"
 
 PH1F_Mom_PostStarter_Text_0:
-# 463 "data/maps/Player_House_1F/scripts.pory"
+# 464 "data/maps/Player_House_1F/scripts.pory"
 	.string "Let's go, my little Lillipad!$"
 
 PH1F_T_Mom1::
-# 732 "data/maps/Player_House_1F/scripts.pory"
+# 733 "data/maps/Player_House_1F/scripts.pory"
 	.string "Oh, good morning honey! I'm sorry if\n"
 	.string "Lilli woke you...\p"
 	.string "Isn't she the cutest little Lillipad\n"
@@ -1406,40 +1408,40 @@ PH1F_T_Mom1::
 	.string "You know how much he values your help.$"
 
 PH1F_T_Mom6::
-# 744 "data/maps/Player_House_1F/scripts.pory"
+# 745 "data/maps/Player_House_1F/scripts.pory"
 	.string "Silly me, I almost forgot!\n"
 	.string "Your running shoes came in from the\l"
 	.string "city this morning.\p"
 	.string "Here you go!$"
 
 PH1F_T_Mom2::
-# 751 "data/maps/Player_House_1F/scripts.pory"
+# 752 "data/maps/Player_House_1F/scripts.pory"
 	.string "You're very welcome sweetie.\n"
 	.string "You be sure to thank Bo as well!$"
 
 PH1F_T_Mom3::
-# 756 "data/maps/Player_House_1F/scripts.pory"
+# 757 "data/maps/Player_House_1F/scripts.pory"
 	.string "Don't forget to help your father,\n"
 	.string "{PLAYER}, he shouldn't do all that work\l"
 	.string "by himself.$"
 
 PH1F_T_Mom4::
-# 762 "data/maps/Player_House_1F/scripts.pory"
+# 763 "data/maps/Player_House_1F/scripts.pory"
 	.string "You two enjoy your movie, {PLAYER}!$"
 
 PH1F_T_Mom5::
-# 766 "data/maps/Player_House_1F/scripts.pory"
+# 767 "data/maps/Player_House_1F/scripts.pory"
 	.string "Lunch should be ready soon, sweetie!$"
 
 PH1F_T_Mom7::
-# 770 "data/maps/Player_House_1F/scripts.pory"
+# 771 "data/maps/Player_House_1F/scripts.pory"
 	.string "There you are, {PLAYER}!\n"
 	.string "You missed lunch, sweetie, your father\l"
 	.string "and I were worried!\p"
 	.string "What took you so long?!$"
 
 PH1F_T_Mom8::
-# 777 "data/maps/Player_House_1F/scripts.pory"
+# 778 "data/maps/Player_House_1F/scripts.pory"
 	.string "Huh... {PAUSE 30}that's so strange.\n"
 	.string "I've only seen Lilli act like that when\l"
 	.string "there was another Pokemon nearby.\p"
@@ -1447,7 +1449,7 @@ PH1F_T_Mom8::
 	.string "honey?$"
 
 PH1F_T_Mom9::
-# 785 "data/maps/Player_House_1F/scripts.pory"
+# 786 "data/maps/Player_House_1F/scripts.pory"
 	.string "Mike, someone needs to tell me what's\n"
 	.string "going on here!\p"
 	.string "Lilli is acting like there are Pokemon in\n"
@@ -1455,12 +1457,12 @@ PH1F_T_Mom9::
 	.string "would be possible.$"
 
 PH1F_T_Mom10::
-# 793 "data/maps/Player_House_1F/scripts.pory"
+# 794 "data/maps/Player_House_1F/scripts.pory"
 	.string "{PLAYER}, I cannot believe you would do\n"
 	.string "something so reckless!\p"
 	.string "Do you know how lucky you are that you\n"
 	.string "weren't seriously hurt?!\p"
-	.string "I guess I am... {PAUSE 30}proud of you.\p"
+	.string "I guess I am proud of you, though.\p"
 	.string "You risked your safety to help get\n"
 	.string "someone's Pokemon back.\p"
 	.string "I know I would be grateful if someone\n"
@@ -1478,7 +1480,7 @@ PH1F_T_Mom10::
 	.string "I'll cheer you on the whole way if you're\n"
 	.string "really going to do this, {PLAYER},\l"
 	.string "but I would hold off on telling your\l"
-	.string "Father about all this for now...\p"
+	.string "Father about all this for now.\p"
 	.string "He can't let go of his dream that you\n"
 	.string "will take over the farm one day, this\l"
 	.string "might break his heart.\p"
@@ -1488,13 +1490,13 @@ PH1F_T_Mom10::
 	.string "gets back.$"
 
 PH1F_T_Mom11::
-# 827 "data/maps/Player_House_1F/scripts.pory"
+# 828 "data/maps/Player_House_1F/scripts.pory"
 	.string "You be safe out there too, sweetie!\p"
 	.string "Make sure you tell your Grandparents\n"
-	.string "about your plans as well!$"
+	.string "about your plans!$"
 
 PH1F_T_Mike1::
-# 833 "data/maps/Player_House_1F/scripts.pory"
+# 834 "data/maps/Player_House_1F/scripts.pory"
 	.string "Thank you so much for letting us use\n"
 	.string "the TV again!\p"
 	.string "I wish my Grandparents had one, but\n"
@@ -1502,21 +1504,21 @@ PH1F_T_Mike1::
 	.string "PokeTreats for Millie...$"
 
 PH1F_T_Mike2::
-# 841 "data/maps/Player_House_1F/scripts.pory"
+# 842 "data/maps/Player_House_1F/scripts.pory"
 	.string "Let's go, {PLAYER}!!$"
 
 PH1F_T_Mike3::
-# 845 "data/maps/Player_House_1F/scripts.pory"
+# 846 "data/maps/Player_House_1F/scripts.pory"
 	.string "Bo said this one is his favorite!\n"
 	.string "This is going to be so awesome!$"
 
 PH1F_T_Mike5::
-# 850 "data/maps/Player_House_1F/scripts.pory"
+# 851 "data/maps/Player_House_1F/scripts.pory"
 	.string "Where ya goin, {PLAYER}?!\n"
 	.string "Get over here!$"
 
 PH1F_T_Mike4::
-# 855 "data/maps/Player_House_1F/scripts.pory"
+# 856 "data/maps/Player_House_1F/scripts.pory"
 	.string "That was unbelievable, {PLAYER}!!!\p"
 	.string "Did you see how strong and cool their\n"
 	.string "Pokemon were?!\p"
@@ -1533,7 +1535,7 @@ PH1F_T_Mike4::
 	.string "Meet me at my Grandparent's house!$"
 
 PH1F_T_Mike6::
-# 872 "data/maps/Player_House_1F/scripts.pory"
+# 873 "data/maps/Player_House_1F/scripts.pory"
 	.string "Oh... {PAUSE 30}Shoot... {PAUSE 30}Hi, sorry, I just came over\n"
 	.string "to tell {PLAYER} something!\p"
 	.string "It isn't serious or anything like that,\n"
@@ -1542,7 +1544,7 @@ PH1F_T_Mike6::
 	.string "...$"
 
 PH1F_T_Mike7::
-# 881 "data/maps/Player_House_1F/scripts.pory"
+# 882 "data/maps/Player_House_1F/scripts.pory"
 	.string "Well um... {PAUSE 30}so me and {PLAYER} went to\n"
 	.string "Bo's house to return that battle tape...{PAUSE 30}\p"
 	.string "We were waiting for him to get home\n"
@@ -1558,29 +1560,29 @@ PH1F_T_Mike7::
 	.string "like our only chance!!$"
 
 PH1F_T_Mike8::
-# 897 "data/maps/Player_House_1F/scripts.pory"
+# 898 "data/maps/Player_House_1F/scripts.pory"
 	.string "Alright, {PLAYER}, I guess it's time!\n"
 	.string "Meet me in Millie's pen, I have something\l"
 	.string "incredible to show you!$"
 
 PH1F_T_System1::
-# 903 "data/maps/Player_House_1F/scripts.pory"
+# 904 "data/maps/Player_House_1F/scripts.pory"
 	.string "{PLAYER} received the Running Shoes!$"
 
 PH1F_T_System2::
-# 907 "data/maps/Player_House_1F/scripts.pory"
+# 908 "data/maps/Player_House_1F/scripts.pory"
 	.string "'Hold {B_BUTTON} to run like the wind!'$"
 
 PH1F_T_Dresser::
-# 911 "data/maps/Player_House_1F/scripts.pory"
+# 912 "data/maps/Player_House_1F/scripts.pory"
 	.string "The drawers are filled with old-style\n"
 	.string "Western films.$"
 
 PH1F_T_Picture::
-# 916 "data/maps/Player_House_1F/scripts.pory"
+# 917 "data/maps/Player_House_1F/scripts.pory"
 	.string "It is a beautiful sunset painting.\n"
 	.string "The artist is clearly very talented.$"
 
 PH1F_T_Oven::
-# 921 "data/maps/Player_House_1F/scripts.pory"
+# 922 "data/maps/Player_House_1F/scripts.pory"
 	.string "It smells delicious!$"

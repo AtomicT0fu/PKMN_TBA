@@ -178,11 +178,11 @@ script OBR_Mike_FollowA{
     waitmovement(7)
     removeobject(7)
     setflag(FLAG_OBR_HIDE_LITTEN)
-    delay(20)
+    fadeoutbgm(1)
+    playbgm(MUS_HELP, FALSE)
     applymovement(OBJ_EVENT_ID_CAMERA, OBR_M_CamPan7)
     waitmovement(0)
     special(RemoveCameraObject)
-    playbgm(MUS_HELP, FALSE)
     playse(SE_PIN)
     applymovement(9, Univ_Exclam)
     waitmovement(9)
@@ -426,11 +426,11 @@ script OBR_Mike_FollowB{
     waitmovement(7)
     removeobject(7)
     setflag(FLAG_OBR_HIDE_LITTEN)
-    delay(20)
+    fadeoutbgm(1)
+    playbgm(MUS_HELP, FALSE)
     applymovement(OBJ_EVENT_ID_CAMERA, OBR_M_CamPan7)
     waitmovement(0)
     special(RemoveCameraObject)
-    playbgm(MUS_HELP, FALSE)
     playse(SE_PIN)
     applymovement(9, Univ_Exclam)
     waitmovement(9)
@@ -1099,6 +1099,8 @@ script OBR_ChooseTurtwig{
         setflag(FLAG_RH1F_HIDE_MAMAW)
         clearflag(FLAG_HF_HIDE_MAMAW)
         clearflag(FLAG_HF_HIDE_RIVAL_MIKE)
+        clearflag(FLAG_ITEM_WHH_MIRACLE_SEED)
+        setrespawn(HEAL_LOCATION_PLAYER_HOUSE)
     }
     else{
         closemessage
@@ -1218,8 +1220,6 @@ script OBR_ChooseLitten{
         waitmovement(0)
         removeobject(10)
         setflag(FLAG_OBR_HIDE_RIVAL_MIKE_3)
-        applymovement(OBJ_EVENT_ID_CAMERA, Univ_StepLeft1)
-        waitmovement(0)
         special(RemoveCameraObject)
         setmetatile(26, 8, 0x241, TRUE)
         special(DrawWholeMapView)
@@ -1230,6 +1230,8 @@ script OBR_ChooseLitten{
         setflag(FLAG_RH1F_HIDE_MAMAW)
         clearflag(FLAG_HF_HIDE_MAMAW)
         clearflag(FLAG_HF_HIDE_RIVAL_MIKE)
+        clearflag(FLAG_ITEM_WHH_CHARCOAL)
+        setrespawn(HEAL_LOCATION_PLAYER_HOUSE)
     }
     else{
         closemessage
@@ -1361,6 +1363,8 @@ script OBR_ChooseOshawott{
         setflag(FLAG_RH1F_HIDE_MAMAW)
         clearflag(FLAG_HF_HIDE_MAMAW)
         clearflag(FLAG_HF_HIDE_RIVAL_MIKE)
+        clearflag(FLAG_ITEM_WHH_MYSTIC_WATER)
+        setrespawn(HEAL_LOCATION_PLAYER_HOUSE)
     }
     else{
         closemessage

@@ -69,8 +69,8 @@
 #define FLAG_RH1F_HIDE_MAMAW          0x37 // hides and shows mamaw in mikes house
 #define FLAG_PS_HIDE_DAD              0x38 // Hides dad sprite in shed
 #define FLAG_HF_REMOVE_LOG            0x39 // removes log in front 
-#define FLAG_UNUSED_0x03A    0x3A // Unused Flag
-#define FLAG_UNUSED_0x03B    0x3B // Unused Flag
+#define FLAG_RHB1F_HIDE_RIVAL         0x3A // shows rival in rival basement after first battle
+#define FLAG_UNLOCK_RIVAL_SHED        0x3B // unlocks shed door in rivals yard
 #define FLAG_UNUSED_0x03C    0x3C // Unused Flag
 #define FLAG_UNUSED_0x03D    0x3D // Unused Flag
 #define FLAG_UNUSED_0x03E    0x3E // Unused Flag
@@ -1222,9 +1222,9 @@
 #define FLAG_ITEM_SAFARI_ZONE_NORTH_EAST_NUGGET                     0x491
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_BIG_PEARL                  0x492
 
-#define FLAG_UNUSED_0x493                                           0x493 // Unused Flag
-#define FLAG_UNUSED_0x494                                           0x494 // Unused Flag
-#define FLAG_UNUSED_0x495                                           0x495 // Unused Flag
+#define FLAG_ITEM_WHH_MIRACLE_SEED                                  0x493 
+#define FLAG_ITEM_WHH_CHARCOAL                                      0x494 
+#define FLAG_ITEM_WHH_MYSTIC_WATER                                  0x495 
 #define FLAG_UNUSED_0x496                                           0x496 // Unused Flag
 #define FLAG_UNUSED_0x497                                           0x497 // Unused Flag
 #define FLAG_UNUSED_0x498                                           0x498 // Unused Flag

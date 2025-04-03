@@ -380,7 +380,8 @@ script PH1F_Mom_PostStarter{
     waitmessage
     closemessage
     playse(SE_DOOR)
-    delay(10)
+    delay(20)
+    playse(SE_WALL_HIT)
     addobject(3)
     applymovement(OBJ_EVENT_ID_PLAYER, PH1F_M_Player1)
     waitmovement(0)
@@ -390,7 +391,7 @@ script PH1F_Mom_PostStarter{
     msgbox(PH1F_T_Mike6)
     waitmessage
     closemessage
-    delay(60)
+    delay(20)
     applymovement(OBJ_EVENT_ID_CAMERA, Univ_StepLeft1)
     waitmovement(0)
     playse(SE_BIKE_HOP)
@@ -795,7 +796,7 @@ text PH1F_T_Mom10{
     "something so reckless!\p"
     "Do you know how lucky you are that you\n"
     "weren't seriously hurt?!\p"
-    "I guess I am... {PAUSE 30}proud of you.\p"
+    "I guess I am proud of you, though.\p"
     "You risked your safety to help get\n"
     "someone's Pokemon back.\p"
     "I know I would be grateful if someone\n"
@@ -813,7 +814,7 @@ text PH1F_T_Mom10{
     "I'll cheer you on the whole way if you're\n"
     "really going to do this, {PLAYER},\l"
     "but I would hold off on telling your\l"
-    "Father about all this for now...\p"
+    "Father about all this for now.\p"
     "He can't let go of his dream that you\n"
     "will take over the farm one day, this\l"
     "might break his heart.\p"
@@ -827,7 +828,7 @@ text PH1F_T_Mom10{
 text PH1F_T_Mom11{
     "You be safe out there too, sweetie!\p"
     "Make sure you tell your Grandparents\n"
-    "about your plans as well!"
+    "about your plans!"
 }
 
 text PH1F_T_Mike1{

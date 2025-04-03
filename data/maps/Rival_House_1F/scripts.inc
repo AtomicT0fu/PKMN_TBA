@@ -44,7 +44,7 @@ RH1F_Papaw_Interact_Text_0:
 
 RH1F_T_Mamaw1::
 # 23 "data/maps/Rival_House_1F/scripts.pory"
-	.string "Hello there dear.\n"
+	.string "Hello there, dear.\n"
 	.string "I hope yer doin' well!$"
 
 RH1F_T_Papaw1::

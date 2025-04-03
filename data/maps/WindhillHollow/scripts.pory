@@ -48,3 +48,20 @@ script WHH_Oshawott_Interact{
     end
 }
 
+script WHH_Find_MiracleSeed{
+    finditem(ITEM_MIRACLE_SEED, 1)
+    release
+    end
+}
+
+script WHH_Find_Charcoal{
+    finditem(ITEM_CHARCOAL, 1)
+    release
+    end
+}
+
+script WHH_Find_MysticWater{
+    finditem(ITEM_MYSTIC_WATER, 1)
+    release
+    end
+}
