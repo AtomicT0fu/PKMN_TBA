@@ -621,6 +621,24 @@ const struct BattleBackground sBattleTerrainTable[] =
         .palette = gBattleTerrainPalette_GrassDirt,
     },
 
+    [BATTLE_TERRAIN_GRASS_PINE] =
+    {
+        .tileset = gBattleTerrainTiles_GrassPine,
+        .tilemap = gBattleTerrainTilemap_GrassPine,
+        .entryTileset = gBattleTerrainAnimTiles_GrassPine,
+        .entryTilemap = gBattleTerrainAnimTilemap_GrassPine,
+        .palette = gBattleTerrainPalette_GrassPine,
+    },
+
+    [BATTLE_TERRAIN_FOREST_PINE] =
+    {
+        .tileset = gBattleTerrainTiles_ForestPine,
+        .tilemap = gBattleTerrainTilemap_ForestPine,
+        .entryTileset = gBattleTerrainAnimTiles_ForestPine,
+        .entryTilemap = gBattleTerrainAnimTilemap_ForestPine,
+        .palette = gBattleTerrainPalette_ForestPine,
+    },
+
     [BATTLE_TERRAIN_GRASS] =
     {
         .tileset = gBattleTerrainTiles_TallGrass,

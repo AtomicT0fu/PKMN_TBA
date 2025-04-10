@@ -613,6 +613,15 @@ u8 BattleSetup_GetTerrainId(void)
     if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(HIGHLAND_FARMS) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(HIGHLAND_FARMS))
         return BATTLE_TERRAIN_GRASS_DIRT;
 
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE89) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE89))
+        return BATTLE_TERRAIN_GRASS_PINE;
+
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(WINDHILL_HOLLOW) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(WINDHILL_HOLLOW))
+        return BATTLE_TERRAIN_FOREST_PINE;
+
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(OLD_BOS_RANCH) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(OLD_BOS_RANCH))
+        return BATTLE_TERRAIN_GRASS_PINE;
+
     if (I_FISHING_ENVIRONMENT >= GEN_4 && gIsFishingEncounter)
         GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
     else

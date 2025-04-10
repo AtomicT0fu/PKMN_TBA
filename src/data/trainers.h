@@ -42596,7 +42596,7 @@ F_TRAINER_FEMALE |
 #line 17043
             .gender = TRAINER_MON_MALE,
 #line 17048
-            .iv = TRAINER_PARTY_IVS(10, 10, 10, 10, 10, 10),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 17044
             .ability = ABILITY_OVERGROW,
 #line 17045
@@ -42641,7 +42641,7 @@ F_TRAINER_FEMALE |
 #line 17062
             .gender = TRAINER_MON_MALE,
 #line 17067
-            .iv = TRAINER_PARTY_IVS(10, 10, 10, 10, 10, 10),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 17063
             .ability = ABILITY_BLAZE,
 #line 17064
@@ -42686,7 +42686,7 @@ F_TRAINER_FEMALE |
 #line 17081
             .gender = TRAINER_MON_MALE,
 #line 17086
-            .iv = TRAINER_PARTY_IVS(10, 10, 10, 10, 10, 10),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 17082
             .ability = ABILITY_TORRENT,
 #line 17083

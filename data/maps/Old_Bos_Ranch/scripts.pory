@@ -25,6 +25,15 @@ script OBR_DoorIsLocked{
     end
 }
 
+script OBR_OldBosRanch_Sign{
+    setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+    msgbox("Old Bo's Ranch", MSGBOX_SIGN)
+    closemessage
+    clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+    release
+    end
+}
+
 script OBR_Mike_FollowA{
     setmetatile(6, 11, 0x004, FALSE)
     setmetatile(7, 11, 0x000, FALSE)
@@ -1100,6 +1109,7 @@ script OBR_ChooseTurtwig{
         clearflag(FLAG_HF_HIDE_MAMAW)
         clearflag(FLAG_HF_HIDE_RIVAL_MIKE)
         clearflag(FLAG_ITEM_WHH_MIRACLE_SEED)
+        clearflag(FLAG_OBH1F_HIDE_BO)
         setrespawn(HEAL_LOCATION_PLAYER_HOUSE)
     }
     else{
@@ -1231,6 +1241,7 @@ script OBR_ChooseLitten{
         clearflag(FLAG_HF_HIDE_MAMAW)
         clearflag(FLAG_HF_HIDE_RIVAL_MIKE)
         clearflag(FLAG_ITEM_WHH_CHARCOAL)
+        clearflag(FLAG_OBH1F_HIDE_BO)
         setrespawn(HEAL_LOCATION_PLAYER_HOUSE)
     }
     else{
@@ -1364,6 +1375,7 @@ script OBR_ChooseOshawott{
         clearflag(FLAG_HF_HIDE_MAMAW)
         clearflag(FLAG_HF_HIDE_RIVAL_MIKE)
         clearflag(FLAG_ITEM_WHH_MYSTIC_WATER)
+        clearflag(FLAG_OBH1F_HIDE_BO)
         setrespawn(HEAL_LOCATION_PLAYER_HOUSE)
     }
     else{

@@ -2,6 +2,9 @@ mapscripts Highland_Farms_MapScripts{
     MAP_SCRIPT_ON_LOAD: HF_UpdateMetatiles
     MAP_SCRIPT_ON_TRANSITION: HF_UpdateSpritePos
     MAP_SCRIPT_ON_RESUME: HF_RemoveRivalPokemon
+    MAP_SCRIPT_ON_FRAME_TABLE[
+        VAR_ADVENTURE_START, 24: HF_Mike_Farewell
+    ]
 }
 
 script TestBattle_HF{
@@ -62,8 +65,30 @@ script HF_UpdateSpritePos{
         setobjectxyperm(4, 10, 19)
         setobjectmovementtype(4, MOVEMENT_TYPE_FACE_DOWN)
     }
+    elif(var(VAR_ADVENTURE_START) == 24){
+        setobjectxyperm(3, 41, 35)
+        setobjectmovementtype(3, MOVEMENT_TYPE_FACE_DOWN)
+    }
     else{
     }
+    end
+}
+
+script HF_PlayerHouse_Sign{
+    setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+    msgbox("{PLAYER}'s House", MSGBOX_SIGN)
+    closemessage
+    clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+    release
+    end
+}
+
+script HF_RivalHouse_Sign{
+    setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+    msgbox("Mike's House", MSGBOX_SIGN)
+    closemessage
+    clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+    release
     end
 }
 
@@ -121,6 +146,45 @@ script HF_Millie_Interact{
         faceplayer
         playmoncry(SPECIES_MILTANK, 0)
         waitmoncry
+    }
+    release
+    end
+}
+
+script HF_DadInteract{
+    if(var(VAR_ADVENTURE_START) == 22){
+        fadeoutbgm(2)
+        playbgm(MUS_END, FALSE)
+        delay(180)
+        speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Dad")
+        msgbox(HF_T_Dad3, MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES){
+            closemessage
+            faceplayer
+            speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Dad")
+            msgbox(HF_T_Dad4_Yes)
+            waitmessage
+            closemessage
+            turnobject(16, DIR_WEST)
+        }
+        else{
+            closemessage
+            faceplayer
+            speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Dad")
+            msgbox(HF_T_Dad4_No)
+            waitmessage
+            closemessage
+            turnobject(16, DIR_WEST)
+        }
+    setvar(VAR_ADVENTURE_START, 23)
+    fadeoutbgm(2)
+    playbgm(MUS_FALLARBOR, FALSE)
+    }
+    else{
+        speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Dad")
+        msgbox("...")
+        waitmessage
+        closemessage
     }
     release
     end
@@ -730,6 +794,119 @@ script HF_HandleBattleSprites_Player{
     return
 }
 
+script HF_DadRunFromHouse_A{
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, HF_CAM_7A)
+    waitmovement(0)
+    playse(SE_DOOR)
+    opendoor(41, 33)
+    waitdooranim
+    addobject(14)
+    applymovement(14, HF_M_Dad5)
+    waitmovement(0)
+    closedoor(41, 33)
+    waitdooranim
+    applymovement(14, HF_M_Dad6)
+    waitmovement(0)
+    removeobject(14)
+    playse(SE_DOOR)
+    opendoor(41, 33)
+    waitdooranim
+    addobject(15)
+    applymovement(15, HF_M_Mom1)
+    waitmovement(0)
+    closedoor(41, 33)
+    speakername("{COLOR RED}{SHADOW LIGHT_RED}{FONT_SHORT}Mom")
+    msgbox(HF_T_Mom1)
+    waitmessage
+    closemessage
+    delay(30)
+    turnobject(15, DIR_NORTH)
+    playse(SE_DOOR)
+    opendoor(41, 33)
+    waitdooranim
+    applymovement(15, Univ_StepUp1)
+    delay(20)
+    playse(SE_EXIT)
+    removeobject(15)
+    waitse
+    closedoor(41, 33)
+    delay(30)
+    applymovement(OBJ_EVENT_ID_CAMERA, HF_CAM_7A_R)
+    waitmovement(0)
+    special(RemoveCameraObject)
+    clearflag(FLAG_HF_HIDE_DAD_2)
+    setvar(VAR_ADVENTURE_START, 22)
+    release
+    end
+}
+
+script HF_DadRunFromHouse_B{
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, HF_CAM_7B)
+    waitmovement(0)
+    playse(SE_DOOR)
+    opendoor(41, 33)
+    waitdooranim
+    addobject(14)
+    applymovement(14, HF_M_Dad5)
+    waitmovement(0)
+    closedoor(41, 33)
+    waitdooranim
+    applymovement(14, HF_M_Dad6)
+    waitmovement(0)
+    removeobject(14)
+    playse(SE_DOOR)
+    opendoor(41, 33)
+    waitdooranim
+    addobject(15)
+    applymovement(15, HF_M_Mom1)
+    waitmovement(0)
+    closedoor(41, 33)
+    speakername("{COLOR RED}{SHADOW LIGHT_RED}{FONT_SHORT}Mom")
+    msgbox(HF_T_Mom1)
+    waitmessage
+    closemessage
+    delay(30)
+    turnobject(15, DIR_NORTH)
+    playse(SE_DOOR)
+    opendoor(41, 33)
+    waitdooranim
+    applymovement(15, Univ_StepUp1)
+    delay(20)
+    playse(SE_EXIT)
+    removeobject(15)
+    waitse
+    closedoor(41, 33)
+    delay(30)
+    applymovement(OBJ_EVENT_ID_CAMERA, HF_CAM_7B_R)
+    waitmovement(0)
+    special(RemoveCameraObject)
+    clearflag(FLAG_HF_HIDE_DAD_2)
+    setvar(VAR_ADVENTURE_START, 22)
+    release
+    end
+}
+
+script HF_Mike_Farewell{
+    turnobject(3, DIR_NORTH)
+    playse(SE_PIN)
+    applymovement(3, Univ_Exclam)
+    waitmovement(0)
+    delay(30)
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Mike")
+    msgbox(HF_T_Mike12)
+    waitmessage
+    closemessage
+    applymovement(3, HF_M_Mike9)
+    waitmovement(0)
+    removeobject(3)
+    setflag(FLAG_HIDE_RIVAL_MIKE_1)
+    setvar(VAR_ADVENTURE_START, 25)
+    release
+    end
+}
+
 movement HF_CAM_1A{
     walk_diag_northeast * 3
     walk_up
@@ -767,6 +944,24 @@ movement HF_CAM_6{
     walk_fast_right * 2
 }
 
+movement HF_CAM_7A{
+    walk_diag_northeast * 6
+}
+
+movement HF_CAM_7A_R{
+    walk_diag_southwest * 6
+}
+
+movement HF_CAM_7B{
+    walk_diag_northeast * 5
+    walk_up * 2
+}
+
+movement HF_CAM_7B_R{
+    walk_diag_southwest * 5
+    walk_down * 2
+}
+
 movement HF_M_Dad1{
     walk_in_place_up * 3
 }
@@ -787,6 +982,15 @@ movement HF_M_Dad4{
     walk_up * 3
     walk_right * 3
     walk_up
+}
+
+movement HF_M_Dad5{
+    walk_fast_down
+}
+
+movement HF_M_Dad6{
+    walk_fast_left * 4
+    walk_fast_up * 5
 }
 
 movement HF_M_Player1A{
@@ -867,6 +1071,17 @@ movement HF_M_Mike8{
     walk_down * 5
 }
 
+movement HF_M_Mike9{
+    walk_fast_down * 2
+    walk_fast_left * 3
+    walk_fast_down * 6
+}
+
+movement HF_M_Mom1{
+    walk_down
+    face_left
+}
+
 movement HF_M_PlayerPokemon{
     slide_right
     face_right
@@ -896,6 +1111,35 @@ text HF_T_Dad2{
     "Momma finishes lunch if we stick to it!\p"
     "It sure is great having yer help out\n"
     "here, {PLAYER}."
+}
+
+text HF_T_Dad3{
+    "...{PAUSE 60}\n"
+    "Is this really what ya want, {PLAYER}?\p"
+}
+
+text HF_T_Dad4_Yes{
+    "Well, at least I didn't raise ya to lie...\p"
+    "I just can't believe this life ain't good\n"
+    "'nough for ya, {PLAYER}.\p"
+    "I just thought you were better than\n"
+    "that.\p"
+    "You go on now, {PLAYER}, I'm sure you've\n"
+    "got plenty of important big city things\l"
+    "to be doin'.\p"
+    "Just leave me be."
+}
+
+text HF_T_Dad4_No{
+    "Now I know I didn't raise ya to lie...\p"
+    "I just can't believe this life ain't good\n"
+    "'nough for ya, {PLAYER}.\p"
+    "I just thought you were better than\n"
+    "that.\p"
+    "You go on now, {PLAYER}, I'm sure you've\n"
+    "got plenty of important big city things\l"
+    "to be doin'.\p"
+    "Just leave your old man be."
 }
 
 text HF_T_Mike1{
@@ -980,6 +1224,26 @@ text HF_T_Mike11{
     "See ya later, {PLAYER}!"
 }
 
+text HF_T_Mike12{
+    "Hey, {PLAYER}!\p"
+    "Just wanted to stop by before I hit the\n"
+    "road!\p"
+    "I'm gonna head North on Rt. 89 toward\n"
+    "Verde Village, Bo said there was some\l"
+    "sort of ''Trainer School'' there.\p"
+    "Not that I need anyone to teach me how\n"
+    "to battle or anything, haha!\p"
+    "Anyways, if you're heading the same way\n"
+    "and run into that pesky flock of\l"
+    "Psyduck, just turn your Pokémon loose\l"
+    "on 'em!\p"
+    "Don't let anyone beat you before we\n"
+    "battle again, {PLAYER}.\p"
+    "Your first loss is going to be to me!\n"
+    "See ya!"
+
+}
+
 text HF_T_MikeGoTurtwig{
     "Go, Turtwig!"
 }
@@ -1000,4 +1264,11 @@ text HF_T_Mamaw1{
     "Takin' care of Millie brings ol' Mamaw so\n"
     "much joy.\p"
     "I jus' love seein' her happy!"
+}
+
+text HF_T_Mom1{
+    "Honey, where are you going?!\n"
+    "You're taking this too personally!\p"
+    "...{PAUSE 30}\n"
+    "{FONT_SMALL_NARROWER}Oh boy."
 }

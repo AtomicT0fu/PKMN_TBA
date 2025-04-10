@@ -266,60 +266,64 @@ Set_Start_Flags::
 	setflag FLAG_ITEM_WHH_CHARCOAL
 # 141 "data/maps/Black_Screen/scripts.pory"
 	setflag FLAG_ITEM_WHH_MYSTIC_WATER
+# 142 "data/maps/Black_Screen/scripts.pory"
+	setflag FLAG_HF_HIDE_DAD_2
 # 143 "data/maps/Black_Screen/scripts.pory"
+	setflag FLAG_OBH1F_HIDE_BO
+# 145 "data/maps/Black_Screen/scripts.pory"
 	setflag FLAG_TEST_SHOW_BALL
 	return
 
 
-# 152 "data/maps/Black_Screen/scripts.pory"
+# 154 "data/maps/Black_Screen/scripts.pory"
 PHB1F_Lillipup_Walk1:
-# 153 "data/maps/Black_Screen/scripts.pory"
+# 155 "data/maps/Black_Screen/scripts.pory"
 	walk_fast_down
-# 153 "data/maps/Black_Screen/scripts.pory"
+# 155 "data/maps/Black_Screen/scripts.pory"
 	walk_fast_down
-# 153 "data/maps/Black_Screen/scripts.pory"
+# 155 "data/maps/Black_Screen/scripts.pory"
 	walk_fast_down
-# 154 "data/maps/Black_Screen/scripts.pory"
+# 156 "data/maps/Black_Screen/scripts.pory"
 	walk_fast_right
-# 154 "data/maps/Black_Screen/scripts.pory"
+# 156 "data/maps/Black_Screen/scripts.pory"
 	walk_fast_right
 	step_end
 
-# 157 "data/maps/Black_Screen/scripts.pory"
+# 159 "data/maps/Black_Screen/scripts.pory"
 JumpInPlace_Down:
-# 158 "data/maps/Black_Screen/scripts.pory"
+# 160 "data/maps/Black_Screen/scripts.pory"
 	jump_in_place_down
 	step_end
 
-# 161 "data/maps/Black_Screen/scripts.pory"
+# 163 "data/maps/Black_Screen/scripts.pory"
 JumpInPlace_Right:
-# 162 "data/maps/Black_Screen/scripts.pory"
+# 164 "data/maps/Black_Screen/scripts.pory"
 	jump_in_place_right
 	step_end
 
-# 165 "data/maps/Black_Screen/scripts.pory"
+# 167 "data/maps/Black_Screen/scripts.pory"
 JumpInPlace_Up:
-# 166 "data/maps/Black_Screen/scripts.pory"
+# 168 "data/maps/Black_Screen/scripts.pory"
 	jump_in_place_up
 	step_end
 
-# 169 "data/maps/Black_Screen/scripts.pory"
+# 171 "data/maps/Black_Screen/scripts.pory"
 BS_Lilli_Ex1:
-# 170 "data/maps/Black_Screen/scripts.pory"
+# 172 "data/maps/Black_Screen/scripts.pory"
 	emote_exclamation_mark
 	step_end
 
-# 173 "data/maps/Black_Screen/scripts.pory"
+# 175 "data/maps/Black_Screen/scripts.pory"
 BS_Lilli_Move1:
-# 174 "data/maps/Black_Screen/scripts.pory"
+# 176 "data/maps/Black_Screen/scripts.pory"
 	walk_fast_left
-# 174 "data/maps/Black_Screen/scripts.pory"
+# 176 "data/maps/Black_Screen/scripts.pory"
 	walk_fast_left
-# 175 "data/maps/Black_Screen/scripts.pory"
+# 177 "data/maps/Black_Screen/scripts.pory"
 	walk_fast_up
-# 175 "data/maps/Black_Screen/scripts.pory"
+# 177 "data/maps/Black_Screen/scripts.pory"
 	walk_fast_up
-# 175 "data/maps/Black_Screen/scripts.pory"
+# 177 "data/maps/Black_Screen/scripts.pory"
 	walk_fast_up
 	step_end
 
@@ -328,9 +332,9 @@ BS_Leave_Bed_Text_0:
 	.string "{COLOR RED}{SHADOW LIGHT_RED}{FONT_SHORT}Mom$"
 
 BS_T_Mom1::
-# 180 "data/maps/Black_Screen/scripts.pory"
+# 182 "data/maps/Black_Screen/scripts.pory"
 	.string "{FONT_SMALL_NARROWER}Lilli!$"
 
 BS_T_Mom2::
-# 184 "data/maps/Black_Screen/scripts.pory"
+# 186 "data/maps/Black_Screen/scripts.pory"
 	.string "{FONT_SMALL_NARROWER}Where'd you go, sweetie??$"

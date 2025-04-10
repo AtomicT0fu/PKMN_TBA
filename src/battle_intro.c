@@ -24,6 +24,8 @@ static const u8 sBattleAnimBgCnts[] = {REG_OFFSET_BG0CNT, REG_OFFSET_BG1CNT, REG
 
 static const TaskFunc sBattleIntroSlideFuncs[] =
 {
+    [BATTLE_TERRAIN_FOREST_PINE] = BattleIntroSlide1,
+    [BATTLE_TERRAIN_GRASS_PINE] = BattleIntroSlide1,
     [BATTLE_TERRAIN_GRASS_DIRT] = BattleIntroSlide1,
     [BATTLE_TERRAIN_GRASS]      = BattleIntroSlide1,
     [BATTLE_TERRAIN_LONG_GRASS] = BattleIntroSlide1,

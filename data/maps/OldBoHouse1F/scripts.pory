@@ -1,0 +1,12 @@
+mapscripts OldBoHouse1F_MapScripts{}
+
+script OBH1F_OldBo_Interact{
+    faceplayer
+    speakername("{COLOR BLUE}{SHADOW LIGHT_BLUE}{FONT_SHORT}Old Bo")
+    msgbox("Hello, world!")
+    waitmessage
+    closemessage
+    turnobject(1, DIR_EAST)
+    release
+    end
+}

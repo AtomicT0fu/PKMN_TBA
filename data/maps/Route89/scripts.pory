@@ -1,20 +1,118 @@
 mapscripts Route89_MapScripts{}
 
 script RT89_Psyduck_Interact{
-    faceplayer
-    playmoncry(SPECIES_PSYDUCK, 0)
-    waitmoncry
-    msgbox(RT89_T_Psyduck)
-    closemessage
-    release
+    setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+    if(var(VAR_ADVENTURE_START) == 25){ 
+        faceplayer
+        playmoncry(SPECIES_PSYDUCK, 11)
+        waitmoncry
+        msgbox(RT89_T_PokePsyduck, MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES){
+            closemessage
+            delay(10)
+            playse(SE_WALL_HIT)
+            waitse
+            delay(10)
+            setwildbattle(SPECIES_PSYDUCK, 5, ITEM_NONE)
+            call(RT89_ShakeScreen_Vars_Psyduck)
+            playse(SE_PIN)
+            applymovement(VAR_LAST_TALKED, Univ_Exclam)
+            waitmovement(0)
+            delay(20)
+            playmoncry(SPECIES_PSYDUCK, 2)
+            special(ShakeCamera)
+            waitmoncry
+            delay(20)
+            msgbox("Psyduck attacked!")
+            closemessage
+            dowildbattle
+            call(RT89_Psyduck_PostWin)
+        }
+        else{
+            closemessage
+        }
+    }
+    else{
+        faceplayer
+        playmoncry(SPECIES_PSYDUCK, 11)
+        waitmoncry
+        msgbox(RT89_T_Psyduck)
+        closemessage
+    }
+    clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+    releaseall
     end
 }
 
+script RT89_Psyduck_PostWin{
+    specialvar(VAR_RESULT, GetBattleOutcome)
+    if(var(VAR_RESULT) == B_OUTCOME_RAN){
+        return
+    }
+    elif(var(VAR_RESULT) == B_OUTCOME_WON){
+        lockall
+        playmoncry(SPECIES_PSYDUCK, 0)
+        turnobject(2, DIR_NORTH)
+        waitmoncry
+        playmoncry(SPECIES_PSYDUCK, 0)
+        turnobject(3, DIR_NORTH)
+        waitmoncry
+        playmoncry(SPECIES_PSYDUCK, 0)
+        turnobject(1, DIR_NORTH)
+        waitmoncry
+        playmoncry(SPECIES_PSYDUCK, 0)
+        turnobject(5, DIR_NORTH)
+        waitmoncry
+        playmoncry(SPECIES_PSYDUCK, 0)
+        turnobject(4, DIR_NORTH)
+        waitmoncry
+        applymovement(1, RT89_M_Psyduck1A)
+        applymovement(2, RT89_M_Psyduck1A)
+        applymovement(3, RT89_M_Psyduck1A)
+        applymovement(4, RT89_M_Psyduck1A)
+        applymovement(5, RT89_M_Psyduck1B)
+        waitmovement(0)
+        removeobject(1)
+        removeobject(2)
+        removeobject(3)
+        removeobject(4)
+        removeobject(5)
+        setflag(FLAG_RT89_PSYDUCK)
+        msgbox("The Psyduck flock fled...")
+        waitmessage
+        closemessage
+        setvar(VAR_ADVENTURE_START, 26)
+        return
+    }
+    else{
+    }
+}
 
+script RT89_ShakeScreen_Vars_Psyduck{
+    setvar(VAR_0x8004, 1)
+    setvar(VAR_0x8005, 1)
+    setvar(VAR_0x8006, 6)
+    setvar(VAR_0x8007, 2)
+    return
+}
 
+movement RT89_M_Psyduck1A{
+    walk_fast_up * 10
+    walk_fast_left * 6
+}
 
+movement RT89_M_Psyduck1B{
+    walk_fast_right
+    walk_fast_up * 10
+    walk_fast_left * 6
+}
 
 
 text RT89_T_Psyduck{
     "Psyduck appears to be in a trance."
+}
+
+text RT89_T_PokePsyduck{
+    "Psyduck appears to be in a trance.\p"
+    "Poke Psyduck?"
 }

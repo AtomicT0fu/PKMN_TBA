@@ -2,10 +2,11 @@ mapscripts Player_House_1F_MapScripts{
     MAP_SCRIPT_ON_LOAD: PH1F_Update_Tiles
     MAP_SCRIPT_ON_TRANSITION: PH1F_UpdateSpritePos
     MAP_SCRIPT_ON_FRAME_TABLE[
-        VAR_ADVENTURE_START, 2: PH1F_MomIntro
-        VAR_ADVENTURE_START, 8: PH1F_BattleTapeStart
+        VAR_ADVENTURE_START, 2:  PH1F_MomIntro
+        VAR_ADVENTURE_START, 8:  PH1F_BattleTapeStart
         VAR_ADVENTURE_START, 12: PH1F_Post_BattleTape
         VAR_ADVENTURE_START, 18: PH1F_Mom_PostStarter
+        VAR_ADVENTURE_START, 23: PH1F_MomFarewell
     ]
 }
 
@@ -24,6 +25,18 @@ script PH1F_UpdateSpritePos{
         setobjectxyperm(2, 8, 5)
         setobjectxyperm(3, 10, 8)
         setobjectmovementtype(3, MOVEMENT_TYPE_FACE_UP)
+    }
+    elif(var(VAR_ADVENTURE_START) == 22){
+        setobjectxyperm(1, 2, 6)
+        setobjectxyperm(2, 3, 7)
+        setobjectmovementtype(1, MOVEMENT_TYPE_FACE_RIGHT)
+        setobjectmovementtype(2, MOVEMENT_TYPE_WALK_IN_PLACE_UP)
+    }
+    elif(var(VAR_ADVENTURE_START) == 23){
+        setobjectxyperm(1, 2, 6)
+        setobjectxyperm(2, 2, 5)
+        setobjectmovementtype(1, MOVEMENT_TYPE_FACE_RIGHT)
+        setobjectmovementtype(2, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN)
     }
     else{
     }
@@ -117,6 +130,13 @@ script PH1F_MomInteract{
         waitmessage
         closemessage
         turnobject(1, DIR_NORTH)
+    }
+    elif(var(VAR_ADVENTURE_START) == 22){
+        speakername("{COLOR RED}{SHADOW LIGHT_RED}{FONT_SHORT}Mom")
+        msgbox(PH1F_T_Mom12)
+        waitmessage
+        closemessage
+        turnobject(1, DIR_EAST)
     }
     else{
         speakername("{COLOR RED}{SHADOW LIGHT_RED}{FONT_SHORT}Mom")
@@ -503,6 +523,88 @@ script PH1F_Mom_PostStarter{
     end
 }
 
+script PH1F_MomFarewell{
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, PH1F_CAM_7)
+    waitmovement(0)
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_WEST)
+    applymovement(1, PH1F_M_Mom9)
+    applymovement(2, PH1F_M_Lilli5)
+    waitmovement(1)
+    applymovement(1, PH1F_M_Mom10)
+    applymovement(OBJ_EVENT_ID_CAMERA, PH1F_CAM_7R)
+    applymovement(2, PH1F_M_Lilli6)
+    waitmovement(0)
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+    delay(30)
+    speakername("{COLOR RED}{SHADOW LIGHT_RED}{FONT_SHORT}Mom")
+    msgbox(PH1F_T_Mom13)
+    waitmessage
+    closemessage
+    delay(20)
+    playse(SE_BALL)
+    waitse
+    playfanfare(MUS_RG_OBTAIN_KEY_ITEM)
+    setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+    msgbox("{PLAYER} recieved the PokeNav!")
+    setflag(FLAG_SYS_POKENAV_GET)
+    waitfanfare
+    closemessage
+    clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+    delay(20)
+    speakername("{COLOR RED}{SHADOW LIGHT_RED}{FONT_SHORT}Mom")
+    msgbox(PH1F_T_Mom14)
+    waitmessage
+    closemessage
+    turnobject(1, DIR_WEST)
+    speakername("{COLOR RED}{SHADOW LIGHT_RED}{FONT_SHORT}Mom")
+    msgbox(PH1F_T_Mom15)
+    waitmessage
+    closemessage
+    playmoncry(SPECIES_LILLIPUP, 0)
+    waitmoncry
+    playse(SE_BIKE_HOP)
+    applymovement(2, Univ_JumpIP_1Right)
+    waitmovement(0)
+    playse(SE_BIKE_HOP)
+    applymovement(2, Univ_JumpIP_1Right)
+    waitmovement(0)
+    delay(20)
+    playse(SE_PIN)
+    applymovement(2, Univ_Heart)
+    waitmovement(0)
+    delay(30)
+    turnobject(1, DIR_SOUTH)
+    delay(30)
+    speakername("{COLOR RED}{SHADOW LIGHT_RED}{FONT_SHORT}Mom")
+    msgbox(PH1F_T_Mom16)
+    waitmessage
+    closemessage
+    turnobject(1, DIR_WEST)
+    speakername("{COLOR RED}{SHADOW LIGHT_RED}{FONT_SHORT}Mom")
+    msgbox(PH1F_T_Mom17)
+    waitmessage
+    closemessage
+    playmoncry(SPECIES_LILLIPUP, 0)
+    waitmoncry
+    playse(SE_BIKE_HOP)
+    applymovement(2, Univ_JumpIP_1Right)
+    waitmovement(0)
+    applymovement(2, Univ_StepUp1)
+    waitmovement(0)
+    applymovement(1, PH1F_M_Mom11)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_CAMERA, Univ_StepDown1)
+    waitmovement(0)
+    special(RemoveCameraObject)
+    clearflag(FLAG_PAUSE_FOLLOWERS)
+    clearflag(FLAG_HIDE_RIVAL_MIKE_1)
+    setflag(FLAG_RHB1F_HIDE_RIVAL)
+    setvar(VAR_ADVENTURE_START, 24)
+    releaseall
+    end
+}
+
 
 //UNIVERSAL MOVEMENTS////////////
 movement Univ_Exclam{
@@ -634,6 +736,23 @@ movement PH1F_M_Mom8{
     walk_up
 }
 
+movement PH1F_M_Mom9{
+    walk_down
+    walk_right * 4
+}
+
+movement PH1F_M_Mom10{
+    walk_right * 4
+    face_down
+}
+
+movement PH1F_M_Mom11{
+    walk_left * 2
+    walk_up * 2
+    walk_right * 3
+    face_up
+}
+
 movement PH1F_M_Lilli_1{
     walk_right
     walk_down * 2
@@ -673,6 +792,15 @@ movement PH1F_M_Lilli_4{
     walk_fast_up
 }
 
+movement PH1F_M_Lilli5{
+    walk_down * 2
+    walk_right *3
+}
+
+movement PH1F_M_Lilli6{
+    walk_right * 4
+}
+
 movement PH1F_CAM_1{
     walk_diag_northwest * 2
     walk_up
@@ -707,6 +835,15 @@ movement PH1F_CAM_5{
 
 movement PH1F_CAM_6{
     walk_down * 2
+}
+
+movement PH1F_CAM_7{
+    walk_diag_northwest
+    walk_left * 3
+}
+
+movement PH1F_CAM_7R{
+    walk_right * 4
 }
 
 movement PH1F_W_Mike1{
@@ -829,6 +966,54 @@ text PH1F_T_Mom11{
     "You be safe out there too, sweetie!\p"
     "Make sure you tell your Grandparents\n"
     "about your plans!"
+}
+
+text PH1F_T_Mom12{
+    "He didn't take that well at all,\n"
+    "{PLAYER}...\p"
+    "I think you should go out there and try\n"
+    "to talk to him.\p"
+    "At the very least, you need to say\n"
+    "goodbye; he's probably out back\l"
+    "somewhere."
+}
+
+text PH1F_T_Mom13{
+    "Don't worry about your father,\n"
+    "{PLAYER}, he's just hurt right now, I'm\l"
+    "sure he will come around!\p"
+    "Oh!\n"
+    "That reminds me!\p"
+    "He never even answers this thing, I\n"
+    "figure you'll get more use out of it on\l"
+    "the road."
+}
+
+text PH1F_T_Mom14{
+    "Don't forget to call your Mom every\n"
+    "once in a while!\p"
+    "Also, {PLAYER}, you should try walking\n"
+    "with your Pokemon instead of keeping it\l"
+    "inside a Pokeball all the time!\p"
+    "Your Pokemon will surely be happier\n"
+    "walking alongside you, I never keep\l"
+    "Lilli in her ball, and look how amazing my\l"
+    "sweet little angel is!"
+}
+
+text PH1F_T_Mom15{
+    "Isn't that right my little Lillipad?"
+}
+
+text PH1F_T_Mom16{
+    "Alright, sweetie, you be safe out there,\n"
+    "okay?\p"
+    "Just know that I am always rooting for\n"
+    "you, {PLAYER}!"
+}
+
+text PH1F_T_Mom17{
+    "Go back on your mat, little one!"
 }
 
 text PH1F_T_Mike1{

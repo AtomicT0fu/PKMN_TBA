@@ -71,9 +71,9 @@
 #define FLAG_HF_REMOVE_LOG            0x39 // removes log in front 
 #define FLAG_RHB1F_HIDE_RIVAL         0x3A // shows rival in rival basement after first battle
 #define FLAG_UNLOCK_RIVAL_SHED        0x3B // unlocks shed door in rivals yard
-#define FLAG_UNUSED_0x03C    0x3C // Unused Flag
-#define FLAG_UNUSED_0x03D    0x3D // Unused Flag
-#define FLAG_UNUSED_0x03E    0x3E // Unused Flag
+#define FLAG_HF_HIDE_DAD_2            0x3C // Shows Dad by pond being emo
+#define FLAG_RT89_PSYDUCK             0x3D // Hides Psyduck blocking RT89 entrance
+#define FLAG_OBH1F_HIDE_BO            0x3E // Hides Bo sprite in his house
 #define FLAG_UNUSED_0x03F    0x3F // Unused Flag
 #define FLAG_UNUSED_0x040    0x40 // Unused Flag
 #define FLAG_UNUSED_0x041    0x41 // Unused Flag

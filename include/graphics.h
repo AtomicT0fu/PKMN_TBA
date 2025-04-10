@@ -222,6 +222,17 @@ extern const u32 gBattleTerrainAnimTiles_GrassDirt[];
 extern const u32 gBattleTerrainAnimTilemap_GrassDirt[];
 extern const u32 gBattleTerrainPalette_GrassDirt[];
 
+extern const u32 gBattleTerrainTiles_GrassPine[];
+extern const u32 gBattleTerrainTilemap_GrassPine[];
+extern const u32 gBattleTerrainAnimTiles_GrassPine[];
+extern const u32 gBattleTerrainAnimTilemap_GrassPine[];
+extern const u32 gBattleTerrainPalette_GrassPine[];
+
+extern const u32 gBattleTerrainTiles_ForestPine[];
+extern const u32 gBattleTerrainTilemap_ForestPine[];
+extern const u32 gBattleTerrainAnimTiles_ForestPine[];
+extern const u32 gBattleTerrainAnimTilemap_ForestPine[];
+extern const u32 gBattleTerrainPalette_ForestPine[];
 
 extern const u32 gBattleTerrainTiles_TallGrass[];
 extern const u32 gBattleTerrainTilemap_TallGrass[];

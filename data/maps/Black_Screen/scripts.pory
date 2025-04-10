@@ -139,6 +139,8 @@ script Set_Start_Flags{                  //USE TO SET ANY FLAGS NEEDED AT START
     setflag(FLAG_ITEM_WHH_MIRACLE_SEED)
     setflag(FLAG_ITEM_WHH_CHARCOAL)
     setflag(FLAG_ITEM_WHH_MYSTIC_WATER)
+    setflag(FLAG_HF_HIDE_DAD_2)
+    setflag(FLAG_OBH1F_HIDE_BO)
     //TEST_FLAGS
     setflag(FLAG_TEST_SHOW_BALL)
     return
