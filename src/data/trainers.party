@@ -94,35 +94,54 @@ Geodude
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_AQUA_HIDEOUT_1 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
+=== TRAINER_BUG_CATCHER_SATOSHI ===
+Name: SATOSHI
+Class: Bug Catcher
+Pic: Bug Catcher
 Gender: Male
-Music: Aqua
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+
+Caterpie (F)  
+Ability: Shield Dust  
+Level: 6  
+Tera Type: Bug  
+Adamant Nature  
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe  
+- String Shot  
+- Tackle  
+
+Kakuna (M)  
+Ability: Shed Skin  
+Level: 8  
+Tera Type: Bug  
+Impish Nature  
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe  
+- Harden  
+- Poison Sting  
+- String Shot  
+
+=== TRAINER_PICNICKER_CARLY ===
+Name: CARLY
+Class: Picnicker
+Pic: Picnicker
+Gender: Female
+Music: Girl
 Double Battle: No
 AI: Check Bad Move
 
-Poochyena
-Level: 32
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Patrat (M)  
+Ability: Analytic  
+Level: 8  
+Tera Type: Normal  
+Brave Nature  
+IVs: 5 HP / 5 Atk / 5 Def / 5 SpA / 5 SpD / 0 Spe  
+- Bite  
+- Bide  
+- Leer  
 
-=== TRAINER_GRUNT_AQUA_HIDEOUT_2 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
-Gender: Male
-Music: Aqua
-Double Battle: No
-AI: Check Bad Move
 
-Zubat
-Level: 31
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Carvanha
-Level: 31
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_3 ===
 Name: GRUNT
@@ -6023,21 +6042,24 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Zigzagoon
-Level: 17
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Headbutt
-- Sand Attack
-- Growl
-- Thunderbolt
+Rattata (M)  
+Ability: Guts  
+Level: 4  
+Tera Type: Normal  
+Jolly Nature  
+IVs: 0 HP / 0 Def / 0 SpA / 0 SpD / 0 Spe  
+- Quick Attack  
+- Tail Whip  
 
-Gulpin
-Level: 17
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Amnesia
-- Sludge
-- Yawn
-- Pound
+Ekans (M)  
+Ability: Intimidate  
+Level: 5  
+Tera Type: Poison  
+Adamant Nature  
+IVs: 0 HP / 0 Def / 0 SpA / 0 SpD / 0 Spe  
+- Wrap  
+- Poison Sting  
+- Leer  
 
 === TRAINER_QUINCY ===
 Name: QUINCY

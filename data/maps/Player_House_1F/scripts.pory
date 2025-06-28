@@ -138,9 +138,18 @@ script PH1F_MomInteract{
         closemessage
         turnobject(1, DIR_EAST)
     }
-    else{
+    elif(var(VAR_ADVENTURE_START) >= 24){
         speakername("{COLOR RED}{SHADOW LIGHT_RED}{FONT_SHORT}Mom")
-        msgbox("VAR Switch Error.")
+        msgbox(PH1F_T_MomHealParty)
+        waitmessage
+        closemessage
+        fadescreen(FADE_TO_BLACK)
+        playfanfare(MUS_RG_HEAL)
+        waitfanfare
+        special(HealPlayerParty)
+        fadescreen(FADE_FROM_BLACK)
+        speakername("{COLOR RED}{SHADOW LIGHT_RED}{FONT_SHORT}Mom")
+        msgbox(PH1F_T_MomPostHeal)
         waitmessage
         closemessage
         turnobject(1, DIR_NORTH)
@@ -1014,6 +1023,18 @@ text PH1F_T_Mom16{
 
 text PH1F_T_Mom17{
     "Go back on your mat, little one!"
+}
+
+text PH1F_T_MomHealParty{
+    "Hello there, sweetie!\p"
+    "Oh my, you and your Pokémon look\n"
+    "exhausted, {PLAYER}!\l"
+    "You should get some rest."
+}
+
+text PH1F_T_MomPostHeal{
+    "Wow, you look much better!\n"
+    "You stay safe now, {PLAYER}."
 }
 
 text PH1F_T_Mike1{

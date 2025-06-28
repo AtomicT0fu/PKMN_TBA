@@ -1,5 +1,6 @@
 mapscripts WindhillHollow_MapScripts{}
 
+
 script WHH_Litten_Interact{
     faceplayer
     playmoncry(SPECIES_LITTEN, 0)

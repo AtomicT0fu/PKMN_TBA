@@ -3,109 +3,109 @@ WindhillHollow_MapScripts::
 
 
 WHH_Litten_Interact::
-# 4 "data/maps/WindhillHollow/scripts.pory"
-	faceplayer
 # 5 "data/maps/WindhillHollow/scripts.pory"
-	playmoncry SPECIES_LITTEN, 0
+	faceplayer
 # 6 "data/maps/WindhillHollow/scripts.pory"
-	waitmoncry
+	playmoncry SPECIES_LITTEN, 0
 # 7 "data/maps/WindhillHollow/scripts.pory"
-	fadescreen FADE_TO_BLACK
+	waitmoncry
 # 8 "data/maps/WindhillHollow/scripts.pory"
-	playse SE_EXIT
+	fadescreen FADE_TO_BLACK
 # 9 "data/maps/WindhillHollow/scripts.pory"
-	waitse
+	playse SE_EXIT
 # 10 "data/maps/WindhillHollow/scripts.pory"
-	removeobject 3
+	waitse
 # 11 "data/maps/WindhillHollow/scripts.pory"
-	setflag FLAG_WHH_HIDE_LITTEN
+	removeobject 3
 # 12 "data/maps/WindhillHollow/scripts.pory"
-	clearflag FLAG_OBR_SHOW_LITTEN
+	setflag FLAG_WHH_HIDE_LITTEN
 # 13 "data/maps/WindhillHollow/scripts.pory"
-	fadescreen FADE_FROM_BLACK
+	clearflag FLAG_OBR_SHOW_LITTEN
 # 14 "data/maps/WindhillHollow/scripts.pory"
-	addvar VAR_WHH_STARTERS, 1
+	fadescreen FADE_FROM_BLACK
 # 15 "data/maps/WindhillHollow/scripts.pory"
+	addvar VAR_WHH_STARTERS, 1
+# 16 "data/maps/WindhillHollow/scripts.pory"
 	release
 	end
 
 
 WHH_Turtwig_Interact::
-# 20 "data/maps/WindhillHollow/scripts.pory"
-	faceplayer
 # 21 "data/maps/WindhillHollow/scripts.pory"
-	playmoncry SPECIES_TURTWIG, 0
+	faceplayer
 # 22 "data/maps/WindhillHollow/scripts.pory"
-	waitmoncry
+	playmoncry SPECIES_TURTWIG, 0
 # 23 "data/maps/WindhillHollow/scripts.pory"
-	fadescreen FADE_TO_BLACK
+	waitmoncry
 # 24 "data/maps/WindhillHollow/scripts.pory"
-	playse SE_EXIT
+	fadescreen FADE_TO_BLACK
 # 25 "data/maps/WindhillHollow/scripts.pory"
-	waitse
+	playse SE_EXIT
 # 26 "data/maps/WindhillHollow/scripts.pory"
-	removeobject 2
+	waitse
 # 27 "data/maps/WindhillHollow/scripts.pory"
-	setflag FLAG_WHH_HIDE_TURTWIG
+	removeobject 2
 # 28 "data/maps/WindhillHollow/scripts.pory"
-	clearflag FLAG_OBR_SHOW_TURTWIG
+	setflag FLAG_WHH_HIDE_TURTWIG
 # 29 "data/maps/WindhillHollow/scripts.pory"
-	fadescreen FADE_FROM_BLACK
+	clearflag FLAG_OBR_SHOW_TURTWIG
 # 30 "data/maps/WindhillHollow/scripts.pory"
-	addvar VAR_WHH_STARTERS, 1
+	fadescreen FADE_FROM_BLACK
 # 31 "data/maps/WindhillHollow/scripts.pory"
+	addvar VAR_WHH_STARTERS, 1
+# 32 "data/maps/WindhillHollow/scripts.pory"
 	release
 	end
 
 
 WHH_Oshawott_Interact::
-# 36 "data/maps/WindhillHollow/scripts.pory"
-	faceplayer
 # 37 "data/maps/WindhillHollow/scripts.pory"
-	playmoncry SPECIES_OSHAWOTT, 0
+	faceplayer
 # 38 "data/maps/WindhillHollow/scripts.pory"
-	waitmoncry
+	playmoncry SPECIES_OSHAWOTT, 0
 # 39 "data/maps/WindhillHollow/scripts.pory"
-	fadescreen FADE_TO_BLACK
+	waitmoncry
 # 40 "data/maps/WindhillHollow/scripts.pory"
-	playse SE_EXIT
+	fadescreen FADE_TO_BLACK
 # 41 "data/maps/WindhillHollow/scripts.pory"
-	waitse
+	playse SE_EXIT
 # 42 "data/maps/WindhillHollow/scripts.pory"
-	removeobject 1
+	waitse
 # 43 "data/maps/WindhillHollow/scripts.pory"
-	setflag FLAG_WHH_HIDE_OSHAWOTT
+	removeobject 1
 # 44 "data/maps/WindhillHollow/scripts.pory"
-	clearflag FLAG_OBR_SHOW_OSHAWOTT
+	setflag FLAG_WHH_HIDE_OSHAWOTT
 # 45 "data/maps/WindhillHollow/scripts.pory"
-	fadescreen FADE_FROM_BLACK
+	clearflag FLAG_OBR_SHOW_OSHAWOTT
 # 46 "data/maps/WindhillHollow/scripts.pory"
-	addvar VAR_WHH_STARTERS, 1
+	fadescreen FADE_FROM_BLACK
 # 47 "data/maps/WindhillHollow/scripts.pory"
+	addvar VAR_WHH_STARTERS, 1
+# 48 "data/maps/WindhillHollow/scripts.pory"
 	release
 	end
 
 
 WHH_Find_MiracleSeed::
-# 52 "data/maps/WindhillHollow/scripts.pory"
-	finditem ITEM_MIRACLE_SEED, 1
 # 53 "data/maps/WindhillHollow/scripts.pory"
+	finditem ITEM_MIRACLE_SEED, 1
+# 54 "data/maps/WindhillHollow/scripts.pory"
 	release
 	end
 
 
 WHH_Find_Charcoal::
-# 58 "data/maps/WindhillHollow/scripts.pory"
-	finditem ITEM_CHARCOAL, 1
 # 59 "data/maps/WindhillHollow/scripts.pory"
+	finditem ITEM_CHARCOAL, 1
+# 60 "data/maps/WindhillHollow/scripts.pory"
 	release
 	end
 
 
 WHH_Find_MysticWater::
-# 64 "data/maps/WindhillHollow/scripts.pory"
-	finditem ITEM_MYSTIC_WATER, 1
 # 65 "data/maps/WindhillHollow/scripts.pory"
+	finditem ITEM_MYSTIC_WATER, 1
+# 66 "data/maps/WindhillHollow/scripts.pory"
 	release
 	end
 

@@ -1188,3 +1188,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Route89/scripts.inc"
 
 	.include "data/maps/OldBoHouse1F/scripts.inc"
+
+	.include "data/maps/VerdeVillage/scripts.inc"

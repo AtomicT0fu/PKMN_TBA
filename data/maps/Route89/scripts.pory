@@ -1,4 +1,6 @@
-mapscripts Route89_MapScripts{}
+mapscripts Route89_MapScripts{
+    MAP_SCRIPT_ON_RESUME: RT89_RemovePhantump
+}
 
 script RT89_Psyduck_Interact{
     setflag(FLAG_SUPPRESS_SPEAKER_NAME)
@@ -13,7 +15,7 @@ script RT89_Psyduck_Interact{
             playse(SE_WALL_HIT)
             waitse
             delay(10)
-            setwildbattle(SPECIES_PSYDUCK, 5, ITEM_NONE)
+            setwildbattle(SPECIES_PSYDUCK, 4, ITEM_NONE)
             call(RT89_ShakeScreen_Vars_Psyduck)
             playse(SE_PIN)
             applymovement(VAR_LAST_TALKED, Univ_Exclam)
@@ -96,6 +98,135 @@ script RT89_ShakeScreen_Vars_Psyduck{
     return
 }
 
+script RT89_ShakeScreen_Vars_KickLog{
+    setvar(VAR_0x8004, 1)
+    setvar(VAR_0x8005, 1)
+    setvar(VAR_0x8006, 3)
+    setvar(VAR_0x8007, 2)
+    return
+}
+
+script RT89_Hiker_Interact{
+    lockall
+    faceplayer
+    msgbox(RT89_T_HikerInt)
+    waitmessage
+    closemessage
+    releaseall
+    end
+}
+
+script RT89_PhantumpLog{
+    setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+    if(flag(FLAG_RT89_PHANTUMP_DEFEATED) == TRUE){
+        msgbox("The log is silent.")
+        closemessage
+    }
+    else{
+        msgbox(RT89_T_Log, MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES){
+            closemessage
+            call(RT89_ShakeScreen_Vars_KickLog)
+            delay(20)
+            playse(SE_M_MEGA_KICK2)
+            special(ShakeCamera)
+            waitse
+            delay(20)
+            addobject(10)
+            playmoncry(SPECIES_PHANTUMP, 2)
+            waitmoncry
+            applymovement(OBJ_EVENT_ID_PLAYER, Univ_Exclam)
+            playse(SE_PIN)
+            waitmovement(0)
+            delay(30)
+            msgbox("The wild Pokemon attacked!")
+            waitmessage
+            closemessage
+            setwildbattle(SPECIES_PHANTUMP, 8, ITEM_NONE)
+            dowildbattle
+            call(RT89_PhantumpPostBattle)
+        }
+        else{
+        }
+    }
+    release
+    end
+}
+
+script RT89_RemovePhantump{
+    specialvar(VAR_RESULT, GetBattleOutcome)
+    if(var(VAR_RESULT) == B_OUTCOME_WON){
+        removeobject(10)
+    }
+    elif(var(VAR_RESULT) == B_OUTCOME_CAUGHT){
+        removeobject(10)
+    }
+    else{
+    }
+    end
+}
+
+script RT89_PhantumpPostBattle{
+    specialvar(VAR_RESULT, GetBattleOutcome)
+    if(var(VAR_RESULT) == B_OUTCOME_WON){
+        setflag(FLAG_RT89_PHANTUMP_DEFEATED)
+    }
+    elif(var(VAR_RESULT) == B_OUTCOME_CAUGHT){
+        setflag(FLAG_RT89_PHANTUMP_DEFEATED)
+    }
+    elif(var(VAR_RESULT) == B_OUTCOME_RAN){
+        delay(30)
+        applymovement(10, RT89_M_Phantump1)
+        playse(SE_NOT_EFFECTIVE)
+        applymovement(OBJ_EVENT_ID_PLAYER, RT89_M_Player1)
+        waitmovement(0)
+        delay(30)
+        playmoncry(SPECIES_PHANTUMP, 2)
+        waitmoncry
+        delay(30)
+        applymovement(10, Univ_StepLeft1)
+        waitmovement(0)
+        delay(20)
+        playse(SE_FU_ZAKU)
+        removeobject(10)
+        waitse
+    }
+    return
+}
+
+script RT89_Trainer_YoungsterBen{
+    trainerbattle_single(TRAINER_BEN, RT89_T_YoungsterBen_Intro, RT89_T_YoungsterBen_Lose)
+    msgbox(RT89_T_YoungsterBen_PostBattle)
+    waitmessage
+    closemessage
+    releaseall
+    end
+}
+
+script RT89_Trainer_BugCatcherSatoshi{
+    trainerbattle_single(TRAINER_BUG_CATCHER_SATOSHI, RT89_T_BugCatcherSatoshi_Intro, RT89_T_BugCatcherSatoshi_Lose)
+    msgbox(RT89_T_BugCatcherSatoshi_PostBattle)
+    waitmessage
+    closemessage
+    releaseall
+    end
+}
+
+script RT89_Trainer_PicnickerCarly{
+    trainerbattle_single(TRAINER_PICNICKER_CARLY, RT89_T_PicnickerCarly_Intro, RT89_T_PicnickerCarly_Lose)
+    msgbox(RT89_T_PicnickerCarly_PostBattle)
+    waitmessage
+    closemessage
+    releaseall
+    end
+}
+
+script RT89_Item_Potion{
+    finditem(ITEM_POTION, 1)
+    release
+    end
+}
+
 movement RT89_M_Psyduck1A{
     walk_fast_up * 10
     walk_fast_left * 6
@@ -107,6 +238,15 @@ movement RT89_M_Psyduck1B{
     walk_fast_left * 6
 }
 
+movement RT89_M_Phantump1{
+    slide_right
+    face_right
+}
+
+movement RT89_M_Player1{
+    jump_right
+}
+
 
 text RT89_T_Psyduck{
     "Psyduck appears to be in a trance."
@@ -116,3 +256,56 @@ text RT89_T_PokePsyduck{
     "Psyduck appears to be in a trance.\p"
     "Poke Psyduck?"
 }
+
+text RT89_T_HikerInt{
+    "Don't worry about me, all of my Pokémon\n"
+    "are exhausted right now.\p"
+    "But there are some more trainers up the\n"
+    "road to chellenge!"
+}
+
+text RT89_T_YoungsterBen_Intro{
+    "Hi! I like shorts!\n"
+    "They're delightfully comfy and easy to\l"
+    "wear!"
+}
+
+text RT89_T_YoungsterBen_Lose{
+    "I don't believe it!"
+}
+
+text RT89_T_YoungsterBen_PostBattle{
+    "Maybe I should get some cargo shorts\n"
+    "so I can hold more Pokémon..."
+}
+
+text RT89_T_Log{
+    "Noises can be heard inside...\p"
+    "Kick the log?"
+}
+
+text RT89_T_BugCatcherSatoshi_Intro{
+    "Hi! Do you like BUG Pokémon?"
+}
+
+text RT89_T_BugCatcherSatoshi_Lose{
+    "Bummer."
+}
+
+text RT89_T_BugCatcherSatoshi_PostBattle{
+    "Hm, maybe I should mix up my team a bit."
+}
+
+text RT89_T_PicnickerCarly_Intro{
+    "Hold it! You have a Pokémon!\n"
+    "That means you have to battle me!"
+}
+
+text RT89_T_PicnickerCarly_Lose{
+    "Hey, you're good!"
+}
+
+text RT89_T_PicnickerCarly_PostBattle{
+    "Being a trainer is the best, huh?"
+}
+

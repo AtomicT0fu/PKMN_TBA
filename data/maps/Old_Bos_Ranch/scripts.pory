@@ -55,18 +55,19 @@ script OBR_Mike_FollowA{
     applymovement(OBJ_EVENT_ID_PLAYER, OBR_M_Player1)
     waitmovement(0)
     delay(40)
-    playse(SE_MUD_BALL)
+    playse(SE_ARENA_TIMEUP1)
     delay(20)
-    playse(SE_MUD_BALL)
+    playse(SE_ARENA_TIMEUP1)
     delay(20)
-    playse(SE_MUD_BALL)
+    playse(SE_ARENA_TIMEUP1)
     delay(80)
-    playse(SE_MUD_BALL)
+    playse(SE_ARENA_TIMEUP1)
     delay(20)
-    playse(SE_MUD_BALL)
+    playse(SE_ARENA_TIMEUP1)
     delay(20)
-    playse(SE_MUD_BALL)
-    delay(60)
+    playse(SE_ARENA_TIMEUP1)
+    waitse
+    delay(30)
     playse(SE_PIN)
     applymovement(8, Univ_Question)
     waitmovement(0)
@@ -303,18 +304,19 @@ script OBR_Mike_FollowB{
     applymovement(OBJ_EVENT_ID_PLAYER, OBR_M_Player1_B)
     waitmovement(0)
     delay(40)
-    playse(SE_MUD_BALL)
+    playse(SE_ARENA_TIMEUP1)
     delay(20)
-    playse(SE_MUD_BALL)
+    playse(SE_ARENA_TIMEUP1)
     delay(20)
-    playse(SE_MUD_BALL)
+    playse(SE_ARENA_TIMEUP1)
     delay(80)
-    playse(SE_MUD_BALL)
+    playse(SE_ARENA_TIMEUP1)
     delay(20)
-    playse(SE_MUD_BALL)
+    playse(SE_ARENA_TIMEUP1)
     delay(20)
-    playse(SE_MUD_BALL)
-    delay(60)
+    playse(SE_ARENA_TIMEUP1)
+    waitse
+    delay(30)
     playse(SE_PIN)
     applymovement(8, Univ_Question)
     waitmovement(0)
@@ -1923,9 +1925,6 @@ text OBR_T_Mike13{
 
 text OBR_T_Mike14{
     "Awesome job, {PLAYER}!\p"
-    "You're amazing, I can't believe you're\n"
-    "brave enough to go and do that all by\l"
-    "yourself!\p"
     "Now let's get these sneaky Pokemon\n"
     "back where they belong!"
 }
@@ -1975,11 +1974,10 @@ text OBR_T_Mike20{
 }
 
 text OBR_T_Mike21{
-    "{PLAYER}... {PAUSE 30}you should pick first.\p"
-    "The way you rushed into action was so\n"
-    "cool... {PAUSE 30}I wish I could be more like that.\p"
-    "This only happened because of you,\n"
-    "{PLAYER}, go ahead!"
+    "You should pick first, {PLAYER}!\p"
+    "Go on now, I wouldn't want ya to have\n"
+    "any excuses after I win our first\l"
+    "battle, haha!"
 }
 
 text OBR_T_Mike23{
@@ -1990,7 +1988,7 @@ text OBR_T_Mike23{
     "{PLAYER}, we gotta test 'em out right\n"
     "away, let's have a battle, you and me!\p"
     "Wait... {PAUSE 30}shoot, I forgot I'm supposed\n"
-    "to help my Grandma brush Millie.\p"
+    "to help Mamaw brush Millie.\p"
     "Dang, I guess we're gonna have to do it\n"
     "some other time...\p"
     "How about you meet me back at my house\n"

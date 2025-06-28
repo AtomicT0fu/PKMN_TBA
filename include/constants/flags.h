@@ -74,7 +74,7 @@
 #define FLAG_HF_HIDE_DAD_2            0x3C // Shows Dad by pond being emo
 #define FLAG_RT89_PSYDUCK             0x3D // Hides Psyduck blocking RT89 entrance
 #define FLAG_OBH1F_HIDE_BO            0x3E // Hides Bo sprite in his house
-#define FLAG_UNUSED_0x03F    0x3F // Unused Flag
+#define FLAG_RT89_PHANTUMP_DEFEATED   0x3F // Defeated or caught phantump in log route 89
 #define FLAG_UNUSED_0x040    0x40 // Unused Flag
 #define FLAG_UNUSED_0x041    0x41 // Unused Flag
 #define FLAG_UNUSED_0x042    0x42 // Unused Flag
@@ -1225,7 +1225,7 @@
 #define FLAG_ITEM_WHH_MIRACLE_SEED                                  0x493 
 #define FLAG_ITEM_WHH_CHARCOAL                                      0x494 
 #define FLAG_ITEM_WHH_MYSTIC_WATER                                  0x495 
-#define FLAG_UNUSED_0x496                                           0x496 // Unused Flag
+#define FLAG_ITEM_RT89_POTION                                       0x496 
 #define FLAG_UNUSED_0x497                                           0x497 // Unused Flag
 #define FLAG_UNUSED_0x498                                           0x498 // Unused Flag
 #define FLAG_UNUSED_0x499                                           0x499 // Unused Flag

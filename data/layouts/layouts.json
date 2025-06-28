@@ -4555,7 +4555,7 @@
       "id": "LAYOUT_ROUTE89",
       "name": "Route89_Layout",
       "width": 60,
-      "height": 60,
+      "height": 66,
       "primary_tileset": "gTileset_Grass_1",
       "secondary_tileset": "gTileset_Highland_Farms",
       "border_filepath": "data/layouts/Route89/border.bin",
@@ -4570,6 +4570,16 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/OldBoHouse1F/border.bin",
       "blockdata_filepath": "data/layouts/OldBoHouse1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_VERDE_VILLAGE",
+      "name": "VerdeVillage_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_Grass_1",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/VerdeVillage/border.bin",
+      "blockdata_filepath": "data/layouts/VerdeVillage/map.bin"
     }
   ]
 }

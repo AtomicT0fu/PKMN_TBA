@@ -2368,7 +2368,7 @@ HF_T_Dad4_No::
 	.string "You go on now, {PLAYER}, I'm sure you've\n"
 	.string "got plenty of important big city things\l"
 	.string "to be doin'.\p"
-	.string "Just leave your old man be.$"
+	.string "Just leave me be.$"
 
 HF_T_Mike1::
 # 1145 "data/maps/Highland_Farms/scripts.pory"
